@@ -274,12 +274,12 @@
       "DR-011", "DR-012", "DR-015", "DR-016", "DR-017", "DR-018"
     ],
     "drs_proposed_at_snapshot": [
-      "DR-013", "DR-014", "DR-019", "DR-020", "DR-021"
+      "DR-013", "DR-014", "DR-019", "DR-020", "DR-021", "DR-022"
     ],
     "drs_proposed_opted_in_early": [
-      "DR-020", "DR-021"
+      "DR-020", "DR-021", "DR-022"
     ],
-    "drs_proposed_opted_in_early_rationale": "Brand bootstrap 2026-05-10 uses Content_Templates v1.3 + HYBRID internal linking pattern from inception to avoid retrofit at Stage 1.5 migration",
+    "drs_proposed_opted_in_early_rationale": "Brand bootstrap 2026-05-10 uses Content_Templates v1.3 + HYBRID internal linking pattern from inception to avoid retrofit at Stage 1.5 migration. DR-022 adopted 2026-05-11 — SmileScape is the field test for Lean Phase B + Two-Layer Sitemap; current keyword-research-dump.md serves as keyword-seed-list.md per new naming.",
     "snapshot_taken_at": "2026-05-10",
     "snapshot_taken_at_stage": "Stage 1 Phase E (sitemap WIP)",
     "next_snapshot_due_at_stage": "Stage 1 Gate (sitemap approved + entity graph + KW research complete)"
