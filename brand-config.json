@@ -1,0 +1,268 @@
+{
+  "$schema": "https://eywa-protocol.thegifteddigital.com/schemas/brand-config-v1.json",
+  "_doc": "Brand-level configuration for SmileScape Dental Clinic — EYWA Protocol implementation",
+
+  "brand_id": "smile-scape",
+  "brand_name": "SmileScape Dental Clinic",
+  "brand_name_translations": {
+    "th": "คลินิกทันตกรรม สไมล์สเคป",
+    "en": "SmileScape Dental Clinic",
+    "zh": null,
+    "ja": null,
+    "ko": null,
+    "ar": null,
+    "fr": null,
+    "es": null
+  },
+
+  "domain": "smilescapeclinic.com",
+  "domain_alternates": [],
+
+  "vertical_family": "dental_clinic",
+  "healthcare_format": "specialty_clinic",
+  "positioning_tier": "MID_VALUE",
+
+  "active_languages": ["th", "en"],
+  "default_language": "th",
+  "future_languages": ["zh"],
+
+  "brand_concept": {
+    "tagline_th": "รากฐานฟันที่มั่นคง... เพื่อความสุขที่ยั่งยืนตลอดชีวิต",
+    "tagline_en": "The Lifetime Foundation",
+    "core_positioning": "Implant-First Clinic — ตัวจริงด้านรากฟันเทียม + ทันตกรรมครบวงจรเป็น supporting",
+    "tone": "Professional & Clear, Humble yet Confident, Evidence-based, Family-warmth",
+    "persona": "The Trusted Expert"
+  },
+
+  "core_values_smile_dna": {
+    "S": "Sincere Care — ดูแลอย่างจริงใจ",
+    "M": "Mastery — ความเชี่ยวชาญเฉพาะทางระดับสากล",
+    "I": "Integrity — ซื่อสัตย์ ไม่ over-treatment",
+    "L": "Lifelong Learning — เรียนรู้วิทยาการใหม่ๆ ต่อเนื่อง",
+    "E": "Efficiency — Digital 100% workflow"
+  },
+
+  "signature_offerings": [
+    {
+      "name": "Blue Diamond Implant System",
+      "abbreviation": "Blue Diamond",
+      "url_slug": "blue-diamond-implant",
+      "type": "signature_treatment",
+      "country_origin": "Korea",
+      "warranty": "lifetime",
+      "promo_starting_price": 29900,
+      "promo_currency": "THB",
+      "_note": "Hero service — flagship promo with 0% installment"
+    },
+    {
+      "name": "Sausage Technique (Bone Regeneration)",
+      "abbreviation": "Sausage Technique",
+      "url_slug": "sausage-bone-regeneration",
+      "type": "signature_technique",
+      "_note": "Studied directly with Dr. Istvan Urban (Hungary)"
+    },
+    {
+      "name": "All-on-X Immediate Loading",
+      "abbreviation": "All-on-X",
+      "url_slug": "all-on-x",
+      "type": "signature_treatment",
+      "_note": "Studied at ILAPEO Brazil — full-arch immediate loading"
+    },
+    {
+      "name": "Soft Tissue Management & Gum Aesthetic",
+      "abbreviation": "Soft Tissue",
+      "url_slug": "soft-tissue-management",
+      "type": "signature_technique",
+      "_note": "Studied with Dr. Ricardo Kern (Brazil)"
+    }
+  ],
+
+  "specialty_focus": [
+    "dental_implant",
+    "bone_grafting",
+    "all_on_x",
+    "smile_design",
+    "orthodontics_clear_aligner",
+    "general_restorative_dentistry"
+  ],
+
+  "implant_brands_offered": [
+    {
+      "brand": "Blue Diamond",
+      "country": "Korea",
+      "tier": "value_premium",
+      "warranty": "lifetime",
+      "is_hero": true
+    },
+    {
+      "brand": "Osstem",
+      "country": "Korea",
+      "tier": "value",
+      "warranty": "extended"
+    },
+    {
+      "brand": "Straumann",
+      "country": "Switzerland",
+      "tier": "premium",
+      "warranty": "extended"
+    },
+    {
+      "brand": "Ceramic Implant",
+      "country": "TBD",
+      "tier": "premium_metal_free",
+      "warranty": "extended",
+      "_differentiator": "metal-free option for sensitive patients + front teeth aesthetics"
+    }
+  ],
+
+  "orthodontics_brands": [
+    {
+      "brand": "TrioClear",
+      "country": "HK",
+      "manufacturer": "Modern Dental",
+      "type": "clear_aligner",
+      "_note": "Premium aligner — NOT same as Invisalign"
+    },
+    {
+      "brand": "Damon System",
+      "type": "self_ligating_braces"
+    }
+  ],
+
+  "branches": [
+    {
+      "name": "รัตนาธิเบศร์",
+      "transit": "MRT สีม่วง สถานีรัตนาธิเบศร์",
+      "type": "primary"
+    },
+    {
+      "name": "ศรีนครินทร์",
+      "transit": "MRT สีเหลือง",
+      "type": "primary"
+    }
+  ],
+
+  "founders": {
+    "primary": {
+      "name_th": "ทพ. วรภัทร จรางกุล",
+      "nickname": "หมอแฮม",
+      "title": "Medical Director & Lead Implantologist",
+      "credentials": [
+        "เกียรตินิยมอันดับ 1 (เหรียญทอง) — มหาวิทยาลัยมหิดล",
+        "วุฒิบัตรศัลยกรรมช่องปากและขากรรไกร — จุฬาลงกรณ์มหาวิทยาลัย",
+        "M.Sc. Implantology — มหิดล",
+        "M.Sc. Implantology — IMC Germany",
+        "Global Masterclasses: Dr. Istvan Urban (Hungary), Dr. Ricardo Kern (Brazil), ILAPEO (Brazil)"
+      ]
+    },
+    "co_founder": {
+      "name_th": "ทพญ. แพรว",
+      "title": "Co-Founder",
+      "specialty": "TBD",
+      "_note": "Spousal partnership — รายละเอียดจะเติมเมื่อได้ข้อมูลเพิ่ม"
+    }
+  },
+
+  "cpt_activation_flags": {
+    "_doc": "Tier 1 always-active. Tier 2/3 conditional based on brand needs.",
+
+    "tier_1_active": {
+      "doctor": true,
+      "branch": true,
+      "procedure": true,
+      "treatment": true,
+      "technology": true,
+      "condition": true,
+      "case_study": true,
+      "post": true
+    },
+
+    "tier_2_active": {
+      "program": false,
+      "signature_system": true
+    },
+
+    "tier_3_active": {
+      "ingredient": false,
+      "product": false,
+      "drug": false,
+      "lab_test": false
+    }
+  },
+
+  "brand_profile_keys": {
+    "founding_year": "TBD",
+    "license_number": "TBD",
+    "license_authority": "กรมสนับสนุนบริการสุขภาพ",
+    "primary_address_th": "TBD",
+    "primary_phone": "TBD",
+    "primary_email": "TBD",
+    "facebook_subbrand": "รากฟันเทียม by SmileScape (TBD — ต้อง confirm กับ user)",
+
+    "social_media": {
+      "facebook": null,
+      "instagram": null,
+      "line": null,
+      "youtube": null,
+      "tiktok": null,
+      "google_business_profile": null
+    },
+
+    "wikidata_id": null,
+    "schema_org_type": ["MedicalClinic", "Dentist", "MedicalBusiness"]
+  },
+
+  "content_strategy": {
+    "primary_audience": "thai_patients_30_60",
+    "secondary_audience": ["thai_patients_60_plus", "international_medical_tourism_future"],
+    "translation_strategy": "ai_draft_human_review",
+    "editorial_review_required": true,
+    "minimum_evidence_tier_for_publication": 4,
+    "family_standard_principle": "ถ้าเคสนี้เราไม่กล้าทำให้พ่อแม่ตัวเอง เราจะไม่ทำคนไข้เด็ดขาด"
+  },
+
+  "team_assignment": {
+    "_doc": "Notion workspace + n8n flow config — tracked outside of this file",
+    "primary_team": "team_alpha",
+    "notion_workspace_url": "TBD"
+  },
+
+  "kpi_targets": {
+    "_doc": "Per-brand KPI targets. See Bible Part 20.",
+    "organic_traffic_monthly_pv": 50000,
+    "ai_citation_rate_target": 0.25,
+    "branded_search_volume_target": 2000,
+    "core_web_vitals_lcp_target": 2.5,
+    "wcag_compliance_target": "AA"
+  },
+
+  "engagement": {
+    "deal_status": "CLOSED",
+    "deal_closed_date": "2026-04-08",
+    "founding_partner_rate_month_1": 69000,
+    "founding_partner_rate_month_19_plus": 25000,
+    "currency": "THB",
+    "month_1_start": "2026-04",
+    "_doc": "Founding Partner Rate declining structure"
+  },
+
+  "deployment": {
+    "wordpress_version_required": "6.5+",
+    "php_version_required": "8.2+",
+    "hosting_environment": "TBD",
+    "cdn_provider": "TBD",
+    "current_site_state": "near_empty (~4-5 pages, SEO=0)",
+    "rebuild_required": true
+  },
+
+  "metadata": {
+    "config_version": "1.0",
+    "eywa_protocol_version": "v3.14",
+    "schema_overview_version": "v1.10",
+    "content_templates_version": "v1.3 internal (DRAFT)",
+    "decision_records_version": "v1.7",
+    "handover_version": "v1.6",
+    "created_at": "2026-05-10",
+    "last_updated_at": "2026-05-10"
+  }
+}
