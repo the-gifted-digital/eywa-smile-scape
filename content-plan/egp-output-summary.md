@@ -1,9 +1,11 @@
 # SmileScape Dental Clinic — EGP Output Summary (Planning File)
 
 > **Phase:** Stage 1 → Phase C (Entity Genesis) — COMPLETE
-> **Date:** 2026-05-11
-> **Bible ref:** Part 2.6 — Entity Genesis Protocol (EGP)
-> **Handover ref:** §7.4 — Phase C Deliverables
+> **Date:** 2026-05-12
+> **Bible ref:** v3.15 Part 2.6 — Entity Genesis Protocol (EGP)
+> **Schema ref:** v1.11 (37 tables — DR-024 ext + DR-025 Local SEO restored)
+> **Handover ref:** v1.9 §7.4 — Phase C Deliverables
+> **DR snapshot:** Locked DR-001..018 + DR-024 + DR-025 / Proposed DR-013/014/019/020/021/022
 
 ---
 
@@ -14,8 +16,13 @@
 | `clusters.md` | ✅ DONE | 15 clusters across 7 domains |
 | `entities.md` | ✅ DONE | 83 entities, 12-column schema, types per Bible Appendix A.1 |
 | `relationships.md` | ✅ DONE | 101 edges, 10 edge types, slug-based |
-| `branches.md` | ✅ DONE | 2 branches per Schema_Overview §3.2 (Local SEO) |
+| `branches.md` | ✅ DONE | 2 branches per Schema v1.11 §3.2 — `seo_branches` ~40 cols (DR-025) |
+| `reviews.md` | ✅ SKELETON | Per Schema v1.11 §3.5 — `seo_reviews` (Flow E1 ingest at Stage 1.5) |
+| `directory-listings.md` | ✅ SKELETON | Per Schema v1.11 §3.6 — `seo_directory_listings` (~50/branch, Flow E3 audit) |
+| `gbp-posts.md` | ✅ SKELETON | Per Schema v1.11 §3.7 — `seo_gbp_posts` (~40 posts/yr seed, Flow E2/E4) |
 | `egp-output-summary.md` | ✅ DONE | This file |
+
+> **Stage 1.5 entity extension binding (DR-024):** Condition entities (14) → `seo_entity_condition` (ICD-10 already in entities.md, SNOMED/MeSH/prevalence_thailand populated at flat-load). Product (9) → `seo_entity_product`. Anatomy (6) → `seo_entity_anatomy` (FMA/UBERON IDs added at flat-load). Organization (3) → `seo_entity_organization`. No Phase C schema change required.
 
 ---
 
@@ -157,14 +164,29 @@
 
 To run before flat-load to Supabase:
 
+**Entity Graph (Stage 1.5 step 2 — Entity Genesis flat-load):**
+
 - [ ] `eug_preflight_check()` — slug uniqueness across all 83 entities
 - [ ] Branch slug uniqueness — `smilescape-rattanathibet` + `smilescape-srinakarin` across federation
-- [ ] Cross-federation collision check: `dental-implant`, `clear-aligner`, `all-on-x` (universal slugs — verify no other EYWA brand entity reuses them)
+- [ ] Cross-federation collision check: `dental-implant`, `clear-aligner`, `all-on-x` (universal slugs)
 - [ ] ICD-10 code deduplication: K06.3 appears on 3 entities — verify intentional (parent + subtypes)
-- [ ] M26.4 appears on 2 entities (clear-aligner + malocclusion) — verify intentional (condition + treatment share code)
-- [ ] brand_scope=['smile-scape'] entities: confirm 10 entities listed above are not in federation universal pool
-- [ ] `sausage-technique` listed under bone-regeneration-gbr cluster AND as Signature System — verify type field is `Signature System`, not `Technique` (as filed in entities.md)
-- [ ] Confirm `smilescape-dental-clinic` uses schema:additionalType = MedicalBusiness + MedicalClinic per Note in entities.md
+- [ ] M26.4 appears on 2 entities (clear-aligner + malocclusion) — verify intentional
+- [ ] brand_scope=['smile-scape'] entities: confirm 12 entities not in federation universal pool
+- [ ] Confirm `smilescape-dental-clinic` uses schema:additionalType = MedicalBusiness + MedicalClinic
+
+**Entity Extensions (Stage 1.5 step 3 — DR-024 binding):**
+
+- [ ] `seo_entity_condition` — populate 14 Condition rows (SNOMED CT, MeSH, prevalence_thailand[], severity_levels[], symptoms[], related_anatomy_fps[], treatment_drugs_fps[], treatment_procedures_fps[], affected_age_groups[])
+- [ ] `seo_entity_product` — populate 9 Product rows (Blue Diamond, Osstem, Straumann, TrioClear, Damon + materials)
+- [ ] `seo_entity_anatomy` — populate 6 Anatomy rows (FMA ID, UBERON ID, body_system='digestive/skeletal', parent_anatomy_fp hierarchy, affected_by_conditions_fps[])
+- [ ] `seo_entity_organization` — populate 3 Organization rows (1 clinic + 2 branches with Wikidata Q-numbers, sameAs cross-refs)
+
+**Local SEO Tables (Stage 1.5 step 3 — DR-025 binding):**
+
+- [ ] `seo_branches` — 2 rows from `branches.md` (~40 cols, operator data required: address/GPS/phone/GBP/wongnai/medical_license_no)
+- [ ] `seo_reviews` — empty initial; Flow E1 first run after `gbp_place_id` set
+- [ ] `seo_directory_listings` — pre-seed ~10 Tier 1 rows (2 branches × 5 directories) with `status='pending'`
+- [ ] `seo_gbp_posts` — empty initial; campaign calendar drafted in `gbp-posts.md` (Phase F)
 
 ---
 

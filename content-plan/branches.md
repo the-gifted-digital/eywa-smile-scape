@@ -1,62 +1,85 @@
 # SmileScape Dental Clinic — Branches Planning File
 
 > **Phase:** Stage 1 → Phase C (Local SEO)
-> **Schema:** Schema_Overview §3.2 — `seo_branches` table
-> **Date:** 2026-05-11
+> **Schema:** Schema_Overview v1.11 §3.2 — `seo_branches` table (~40 columns, enhanced per DR-025)
+> **Date:** 2026-05-12
 > **Branch count:** 2 | **Brand scope:** ['smile-scape']
-> **Bible reference:** Part 4.4 (Type B Branch Landing), Part 10.5 (Local SEO), Part 14.6 (Hospital format)
+> **Bible reference:** Part 4.4 (Type B Branch Landing), Part 10.5 (Local SEO), Part 14.6 (Hospital format), Part 17.6 GROUP E (n8n Flows E1-E4)
+> **DR reference:** DR-025 Locked 2026-05-12
 
 ---
 
-## Branch Master Table
+## Branch Master Table (Core Identity)
 
-> Schema per `seo_branches` (§3.2). Fields marked TBD pending operator data collection (Google Business Profile registration, address verification, GPS pinning).
+| # | Branch Slug | Branch Name | is_primary | Status | Brand Scope |
+|---|-------------|-------------|------------|--------|-------------|
+| 1 | smilescape-rattanathibet | SmileScape สาขารัตนาธิเบศร์ | true | active | ['smile-scape'] |
+| 2 | smilescape-srinakarin | SmileScape สาขาศรีนครินทร์ | false | active | ['smile-scape'] |
 
-| # | Branch Slug | Branch Name | Type | City | Address | Postal | Lat | Lng | Phone | Email | GBP Place ID | Transit | Sitemap Node | Brand Scope |
-|---|-------------|-------------|------|------|---------|--------|-----|-----|-------|-------|--------------|---------|--------------|-------------|
-| 1 | smilescape-rattanathibet | SmileScape สาขารัตนาธิเบศร์ | primary | นนทบุรี | TBD | TBD | TBD | TBD | TBD | TBD | TBD | MRT สีม่วง สถานีรัตนาธิเบศร์ | 8.2 | ['smile-scape'] |
-| 2 | smilescape-srinakarin | SmileScape สาขาศรีนครินทร์ | primary | กรุงเทพฯ | TBD | TBD | TBD | TBD | TBD | TBD | TBD | MRT สีเหลือง (สวนหลวง ร.9) | 8.3 | ['smile-scape'] |
+> `organization_entity_id` FK → `seo_entity_graph.id` populated at Stage 1.5 from `entities.md`:
+> - smilescape-rattanathibet → links to `smilescape-rattanathibet` Organization entity (#6 in brand-doctor-authority cluster)
+> - smilescape-srinakarin → links to `smilescape-srinakarin` Organization entity (#7)
 
 ---
 
-## Multilingual Branch Names (`canonical_names` jsonb)
+## NAP (Name / Address / Phone) — Canonical Source
+
+> Bible Part 10.5 NAP canonical rule: this table is the single source of truth. All directory listings (`seo_directory_listings`) audit against these values.
 
 ### smilescape-rattanathibet
 
-```json
-{
-  "th": "SmileScape สาขารัตนาธิเบศร์",
-  "en": "SmileScape Rattanathibet Branch"
-}
-```
-
-**Aliases:**
-- สาขานนทบุรี
-- SmileScape นนทบุรี
-- คลินิกรากฟันเทียมนนทบุรี
-- SmileScape MRT Purple Line
+| Field | Value | Status |
+|-------|-------|--------|
+| `business_name_legal` | TBD (จะใส่ชื่อจดทะเบียน DBD) | Operator action |
+| `business_name_brand` | SmileScape สาขารัตนาธิเบศร์ | ✅ Set |
+| `street_address` | TBD | Operator action |
+| `address` (free-form) | TBD | Operator action |
+| `district` (แขวง/ตำบล) | TBD | Operator action |
+| `city` (จังหวัด/อำเภอ) | นนทบุรี | ✅ Set |
+| `region` (ภาค) | นนทบุรี | ✅ Set |
+| `country_code` | TH | ✅ Set |
+| `postal_code` | TBD | Operator action |
+| `formatted_address` | TBD (auto-computed from Google geocoding) | Stage 1.5 |
+| `phone` | TBD (E.164 format: +66...) | Operator action |
+| `email` | TBD | Operator action |
+| `line_id` | TBD (LINE OA ID) | Operator action |
+| `website_url` | https://smilescapeclinic.com/รัตนาธิเบศร์ | ✅ Set |
 
 ### smilescape-srinakarin
 
-```json
-{
-  "th": "SmileScape สาขาศรีนครินทร์",
-  "en": "SmileScape Srinakarin Branch"
-}
-```
-
-**Aliases:**
-- สาขาศรีนครินทร์
-- SmileScape Bangkok
-- SmileScape สวนหลวง ร.9
-- คลินิกรากฟันเทียมศรีนครินทร์
-- SmileScape MRT Yellow Line
+| Field | Value | Status |
+|-------|-------|--------|
+| `business_name_legal` | TBD (จะใส่ชื่อจดทะเบียน DBD) | Operator action |
+| `business_name_brand` | SmileScape สาขาศรีนครินทร์ | ✅ Set |
+| `street_address` | TBD | Operator action |
+| `address` (free-form) | TBD | Operator action |
+| `district` (แขวง/ตำบล) | TBD (อาจเป็นสวนหลวง ร.9 area) | Operator action |
+| `city` | กรุงเทพมหานคร | ✅ Set |
+| `region` | กรุงเทพมหานคร | ✅ Set |
+| `country_code` | TH | ✅ Set |
+| `postal_code` | TBD | Operator action |
+| `formatted_address` | TBD | Stage 1.5 |
+| `phone` | TBD | Operator action |
+| `email` | TBD | Operator action |
+| `line_id` | TBD | Operator action |
+| `website_url` | https://smilescapeclinic.com/ศรีนครินทร์ | ✅ Set |
 
 ---
 
-## Opening Hours (`opening_hours` jsonb — OpeningHoursSpecification format)
+## Geo Coordinates
 
-> Same hours assumed for both branches pending operator confirmation. Update per-branch if hours differ.
+| Branch | Latitude | Longitude | Plus Code | Transit |
+|--------|----------|-----------|-----------|---------|
+| smilescape-rattanathibet | TBD | TBD | TBD | MRT สีม่วง สถานีรัตนาธิเบศร์ |
+| smilescape-srinakarin | TBD | TBD | TBD | MRT สีเหลือง (สวนหลวง ร.9) |
+
+> `geo_point` = PostGIS computed from lat/lng. `plus_code` from Google geocoding API.
+
+---
+
+## Opening Hours
+
+### `opening_hours` jsonb (OpeningHoursSpecification format)
 
 ```json
 {
@@ -64,63 +87,179 @@
   "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
   "opens": "TBD",
   "closes": "TBD",
-  "_note": "Operator to confirm. Dental clinic norm in Thailand: 09:00-20:00, possibly closed one weekday."
+  "_note": "Operator confirmation pending. TH dental clinic norm 09:00-20:00; many close 1 weekday."
+}
+```
+
+### `special_hours` jsonb (Schema.org specialOpeningHoursSpecification)
+
+Format: array of date-specific exceptions (closed days, holidays, extended hours)
+
+```json
+[
+  {
+    "@type": "OpeningHoursSpecification",
+    "validFrom": "TBD",
+    "validThrough": "TBD",
+    "opens": "TBD",
+    "closes": "TBD",
+    "_note": "e.g., Songkran closure, NYE special hours"
+  }
+]
+```
+
+> Operator to define annual holiday calendar at Stage 1.5.
+
+---
+
+## Services / Staff / Equipment at Branch
+
+### `services_offered_fps[]` (FK → `seo_entity_graph.fingerprint`)
+
+Both branches offer the universal SmileScape service catalog. Slugs reference `entities.md`:
+
+**Implant & Bone:**
+- dental-implant / single-tooth-implant / multiple-implants / implant-supported-bridge / overdenture
+- all-on-x / all-on-4 / all-on-6 / zygomatic-implant / full-arch-immediate-loading
+- guided-bone-regeneration / sausage-technique / bone-grafting / sinus-lift / ridge-augmentation / socket-preservation / vertical-bone-augmentation
+- soft-tissue-management / connective-tissue-graft
+
+**General + Cosmetic + Ortho + Perio:**
+- dental-veneer / porcelain-veneer / dental-crown / zirconia-crown / teeth-whitening / digital-smile-design / gum-contouring
+- clear-aligner / trioclear-aligner / damon-system
+- root-canal-treatment / tooth-extraction / wisdom-tooth-removal / dental-filling / removable-denture
+- periodontitis (treatment) / peri-implantitis (treatment) / gum-recession (treatment)
+
+**Surgical Procedures:**
+- immediate-implant / immediate-loading / flapless-surgery / guided-surgery
+
+### `specialties_at_branch[]`
+
+```json
+["general_dentistry", "implantology", "oral_surgery", "periodontics", "orthodontics", "prosthodontics", "cosmetic_dentistry"]
+```
+
+### `doctors_at_branch_fps[]` (FK → `seo_authors_reviewers.fingerprint`)
+
+| Branch | Doctors | Notes |
+|--------|---------|-------|
+| smilescape-rattanathibet | TBD (likely both founders + visiting specialists) | Operator action — confirm rotation |
+| smilescape-srinakarin | TBD (likely both founders + visiting specialists) | Operator action — confirm rotation |
+
+> Currently mapped doctors in `entities.md`: `dr-woraphat-jarangkul` (หมอแฮม). Co-Founder `ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)` pending entity creation (Stage 1.5).
+
+### `equipment_at_branch_fps[]` (FK → `seo_entity_graph.fingerprint` type=device)
+
+Both branches assumed equipped with:
+- cbct-3d-scan
+- intraoral-scanner
+- surgical-guide
+- cad-cam
+- ptfe-membrane (consumable for GBR)
+
+> Operator action: confirm equipment per-branch — some advanced equipment may only be at one branch.
+
+---
+
+## Google Business Profile
+
+| Field | smilescape-rattanathibet | smilescape-srinakarin | Status |
+|-------|--------------------------|-----------------------|--------|
+| `gbp_place_id` | TBD | TBD | Operator action — GBP registration |
+| `gbp_account_id` | TBD | TBD | Operator action |
+| `gbp_categories[]` | ["Dental Implants Periodontist", "Dental Clinic", "Cosmetic Dentist"] | (same) | Proposed default; operator to confirm |
+| `gbp_review_count` | 0 (initial) | 0 (initial) | Auto-synced via Flow E1 every 6h |
+| `gbp_avg_rating` | NULL | NULL | Auto-synced |
+| `gbp_last_synced_at` | NULL | NULL | Set by Flow E1 first run |
+
+---
+
+## Other Directories (Cross-platform listings)
+
+| Platform | smilescape-rattanathibet | smilescape-srinakarin | Notes |
+|----------|--------------------------|-----------------------|-------|
+| Apple Business Connect (`apple_maps_id`) | TBD | TBD | iOS users — Apple Maps |
+| Facebook Page (`facebook_page_url`) | TBD | TBD | TH market — high engagement |
+| Wongnai (`wongnai_url` + `wongnai_id`) | TBD | TBD | TH-critical for clinic reviews |
+
+> Full directory list → `directory-listings.md` for NAP audit tracking.
+
+---
+
+## Schema.org / LocalBusiness
+
+### `local_business_schema_type`
+
+Both branches → **`DentalClinic`** (preferred over generic MedicalClinic per Bible Part 14.6 — clinic-specific)
+
+CHECK constraint allows: `LocalBusiness` / `MedicalClinic` / `DentalClinic` / `Hospital` / `BeautySalon` / `HealthAndBeautyBusiness` / `MedicalBusiness` / `Physician`
+
+### Multilingual `canonical_names` jsonb
+
+**smilescape-rattanathibet:**
+```json
+{
+  "th": "SmileScape สาขารัตนาธิเบศร์",
+  "en": "SmileScape Rattanathibet Branch",
+  "_aliases": ["สาขานนทบุรี", "SmileScape นนทบุรี", "คลินิกรากฟันเทียมนนทบุรี"]
+}
+```
+
+**smilescape-srinakarin:**
+```json
+{
+  "th": "SmileScape สาขาศรีนครินทร์",
+  "en": "SmileScape Srinakarin Branch",
+  "_aliases": ["สาขาศรีนครินทร์", "SmileScape Bangkok", "SmileScape สวนหลวง ร.9", "คลินิกรากฟันเทียมศรีนครินทร์"]
 }
 ```
 
 ---
 
-## Services at Branch (`services_at_branch` text[])
+## Photos
 
-> Cross-reference to entity slugs in `entities.md`. All services assumed available at both branches unless flagged. Validate at operator review.
+| Field | smilescape-rattanathibet | smilescape-srinakarin |
+|-------|--------------------------|-----------------------|
+| `primary_photo_url` | TBD | TBD |
+| `exterior_photos[]` | TBD (≥3 recommended) | TBD |
+| `interior_photos[]` | TBD (≥10 — reception, treatment room, CBCT room, sterilization) | TBD |
 
-### Universal services (both branches)
-
-- dental-implant
-- single-tooth-implant
-- multiple-implants
-- all-on-x / all-on-4 / all-on-6
-- guided-bone-regeneration
-- bone-grafting
-- sinus-lift
-- sausage-technique
-- soft-tissue-management
-- clear-aligner / trioclear-aligner
-- damon-system
-- digital-smile-design
-- dental-veneer / porcelain-veneer
-- zirconia-crown
-- root-canal-treatment
-- tooth-extraction
-- wisdom-tooth-removal
-- dental-filling
-- periodontitis (treatment)
-- peri-implantitis (treatment)
-
-### Branch-specific (TBD)
-
-- Per-branch differentiation pending operator input (e.g., if certain advanced procedures only at one branch)
+> Used in: schema:LocalBusiness `image`, GBP profile photos, branch landing page hero.
 
 ---
 
-## Schema:LocalBusiness Markup Templates
+## Compliance / Legal
 
-### Template A — รัตนาธิเบศร์ branch
+| Field | smilescape-rattanathibet | smilescape-srinakarin |
+|-------|--------------------------|-----------------------|
+| `business_registration_no` (DBD) | TBD | TBD |
+| `medical_license_no` (กรมสนับสนุนบริการสุขภาพ) | TBD | TBD |
+| `opened_date` | TBD | TBD |
+| `closed_date` | NULL (active) | NULL (active) |
+
+---
+
+## Schema:LocalBusiness JSON-LD Templates
+
+### Template — รัตนาธิเบศร์
 
 ```jsonld
 {
   "@context": "https://schema.org",
-  "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
-  "@id": "https://smilescape.dental/รัตนาธิเบศร์#location",
+  "@type": "DentalClinic",
+  "@id": "https://smilescapeclinic.com/รัตนาธิเบศร์#location",
   "name": "SmileScape สาขารัตนาธิเบศร์",
   "alternateName": ["SmileScape Rattanathibet", "SmileScape นนทบุรี"],
+  "legalName": "TBD",
   "parentOrganization": {
-    "@id": "https://smilescape.dental/#organization"
+    "@type": "MedicalOrganization",
+    "@id": "https://smilescapeclinic.com/#organization",
+    "name": "SmileScape Dental Clinic"
   },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "TBD",
-    "addressLocality": "นนทบุรี",
+    "addressLocality": "TBD (แขวง)",
     "addressRegion": "นนทบุรี",
     "postalCode": "TBD",
     "addressCountry": "TH"
@@ -131,77 +270,48 @@
     "longitude": "TBD"
   },
   "telephone": "TBD",
-  "publicAccess": true,
-  "isAccessibleForFree": true,
+  "email": "TBD",
+  "url": "https://smilescapeclinic.com/รัตนาธิเบศร์",
+  "image": "TBD",
   "priceRange": "฿฿",
-  "medicalSpecialty": ["Dentistry", "Implantology", "Periodontics", "Orthodontics"],
-  "availableService": ["dental-implant", "all-on-x", "guided-bone-regeneration", "..."],
-  "openingHoursSpecification": { "$ref": "TBD" },
+  "medicalSpecialty": ["Dentistry", "Implantology", "Periodontics", "Orthodontics", "Prosthodontics", "OralSurgery"],
+  "availableService": "{see services_offered_fps[] above}",
+  "openingHoursSpecification": "{see opening_hours jsonb}",
   "publicTransportAccess": "MRT Purple Line — Rattanathibet Station"
 }
 ```
 
-### Template B — ศรีนครินทร์ branch
+### Template — ศรีนครินทร์
 
-```jsonld
-{
-  "@context": "https://schema.org",
-  "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
-  "@id": "https://smilescape.dental/ศรีนครินทร์#location",
-  "name": "SmileScape สาขาศรีนครินทร์",
-  "alternateName": ["SmileScape Srinakarin", "SmileScape สวนหลวง ร.9"],
-  "parentOrganization": {
-    "@id": "https://smilescape.dental/#organization"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "TBD",
-    "addressLocality": "กรุงเทพมหานคร",
-    "addressRegion": "กรุงเทพมหานคร",
-    "postalCode": "TBD",
-    "addressCountry": "TH"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "TBD",
-    "longitude": "TBD"
-  },
-  "telephone": "TBD",
-  "publicAccess": true,
-  "isAccessibleForFree": true,
-  "priceRange": "฿฿",
-  "medicalSpecialty": ["Dentistry", "Implantology", "Periodontics", "Orthodontics"],
-  "publicTransportAccess": "MRT Yellow Line"
-}
-```
+Same structure as above with `addressLocality` and `addressRegion` adjusted for Bangkok, `publicTransportAccess` = "MRT Yellow Line — Suan Luang Rama 9 area".
 
 ---
 
 ## Geo-Keyword Seed (Local SEO)
 
-> Geo modifiers used in sitemap section 8.2 + 8.3 + future T18 programmatic local pages. Volume enrichment pending DataForSEO at Stage 1.5.
+> Mapped to sitemap section 8.2 + 8.3 + future T18 programmatic local pages. Volume enrichment pending DataForSEO at Stage 1.5.
 
-### รัตนาธิเบศร์ branch — geo terms
+### รัตนาธิเบศร์ branch
 
 | Geo Term | Search Intent | Used In |
 |----------|---------------|---------|
-| รากฟันเทียมนนทบุรี | Commercial — direct treatment lookup | 8.2.2 + T18 candidates |
-| ทำฟันนนทบุรี | Navigational/Commercial — broad clinic lookup | 8.2.3 |
+| รากฟันเทียมนนทบุรี | Commercial — direct treatment lookup | 8.2.2 + T18 |
+| ทำฟันนนทบุรี | Navigational/Commercial | 8.2.3 |
 | จัดฟันนนทบุรี | Commercial — ortho lookup | 8.2.4 |
 | คลินิกทำฟันใกล้ MRT สีม่วง | Navigational — transit-based | 8.2.5 |
-| คลินิกทันตกรรมรัตนาธิเบศร์ | Navigational | T18 candidates |
-| ทันตแพทย์รัตนาธิเบศร์ | Navigational | T18 candidates |
+| คลินิกทันตกรรมรัตนาธิเบศร์ | Navigational | T18 |
+| ทันตแพทย์รัตนาธิเบศร์ | Navigational | T18 |
 
-### ศรีนครินทร์ branch — geo terms
+### ศรีนครินทร์ branch
 
 | Geo Term | Search Intent | Used In |
 |----------|---------------|---------|
-| รากฟันเทียมศรีนครินทร์ | Commercial — direct treatment lookup | 8.3.2 + T18 candidates |
+| รากฟันเทียมศรีนครินทร์ | Commercial — direct treatment lookup | 8.3.2 + T18 |
 | ทำฟันศรีนครินทร์ | Navigational/Commercial | 8.3.3 |
 | จัดฟันศรีนครินทร์ | Commercial — ortho lookup | 8.3.4 |
 | คลินิกทำฟันใกล้ MRT สีเหลือง | Navigational — transit-based | 8.3.5 |
-| คลินิกทันตกรรมศรีนครินทร์ | Navigational | T18 candidates |
-| รากฟันเทียมสวนหลวง ร.9 | Commercial — hyper-local | T18 candidates |
+| คลินิกทันตกรรมศรีนครินทร์ | Navigational | T18 |
+| รากฟันเทียมสวนหลวง ร.9 | Commercial — hyper-local | T18 |
 
 ---
 
@@ -222,10 +332,20 @@
 **Activation criteria (per DR-022 Layer 2):**
 - Min volume: 50 searches/month per query
 - KD: ≤ 40 (preference)
-- CPC: existing commercial signal
-- Uniqueness: each page must have ≥ 60% unique content (not boilerplate clone)
+- Uniqueness: each page must have ≥ 60% unique content
 
-**Status:** Not yet added to sitemap. Wait for keyword volume data → operator decision on which services to activate per branch.
+**Status:** Not yet added to sitemap. Wait for keyword volume data → operator decision.
+
+---
+
+## n8n Flow Integration (Bible Part 17.6 GROUP E)
+
+| Flow | Frequency | Updates |
+|------|-----------|---------|
+| **E1** GBP Reviews Sync | Every 6h | INSERTs new reviews → `seo_reviews`; UPDATEs `gbp_review_count` + `gbp_avg_rating` here |
+| **E2** GBP Posts Publish | On-demand | Publishes from `seo_gbp_posts` to GBP API |
+| **E3** NAP Audit | Weekly | Compares `seo_directory_listings` vs canonical NAP here; flags inconsistencies |
+| **E4** GBP Posts Metrics | Daily | Fetches views/clicks → `seo_gbp_posts` |
 
 ---
 
@@ -234,43 +354,57 @@
 Validation checks before flat-load to Supabase:
 
 - [ ] `branch_slug` uniqueness across federation — confirm `smilescape-rattanathibet` and `smilescape-srinakarin` not reused by other EYWA brands
-- [ ] `parent_notion_id` will be backfilled at Phase 2 (Two-Phase Sync) — Notion ID of `smilescape-dental-clinic` parent
-- [ ] GPS coordinates (lat/lng) must be valid before `geo_point` PostGIS computation
-- [ ] `gbp_place_id` requires Google Business Profile activation (operator action)
-- [ ] `services_at_branch[]` cross-reference: validate all listed slugs exist in `entities.md`
-- [ ] Opening hours format must match OpeningHoursSpecification schema (validated by Jsonb CHECK constraint)
-- [ ] Entity row in `entities.md` for each branch (`smilescape-rattanathibet`, `smilescape-srinakarin`) must have `Type=Organization`, `Schema.org=Dentist`
+- [ ] `is_primary=true` unique per brand_id (CHECK constraint) — `smilescape-rattanathibet` flagged primary
+- [ ] `status` value ∈ {'active','closed','temp_closed','pending_opening'}
+- [ ] `local_business_schema_type` ∈ allowed CHECK list — using `DentalClinic`
+- [ ] `organization_entity_id` FK valid — both branches link to entity rows in entities.md
+- [ ] `parent_notion_id` will be backfilled at Phase 2 Notion sync
+- [ ] GPS lat/lng valid before `geo_point` PostGIS computation
+- [ ] `gbp_place_id` requires GBP activation (operator action)
+- [ ] `services_offered_fps[]` cross-reference: all slugs exist in `entities.md`
+- [ ] `opening_hours` jsonb matches OpeningHoursSpecification schema (CHECK constraint)
 
 ---
 
 ## Operator Action Items
 
-Before Stage 1.5 DB load — operator must collect:
+**Per branch — must collect before Stage 1.5:**
 
-**Per branch:**
-- [ ] Full street address
-- [ ] Postal code
-- [ ] GPS latitude/longitude (Google Maps pin)
-- [ ] Primary phone number
-- [ ] Branch email (if differs from main)
-- [ ] Google Business Profile registration → obtain `gbp_place_id`
-- [ ] Opening hours (per day of week)
-- [ ] Branch photos for GBP + schema:image
+- [ ] Full street address + district + postal code
+- [ ] GPS latitude/longitude (Google Maps pin) → Plus Code auto-derived
+- [ ] Primary phone (E.164 format)
+- [ ] Branch email
+- [ ] LINE Official Account ID
+- [ ] Google Business Profile registration → obtain `gbp_place_id` + `gbp_account_id`
+- [ ] Opening hours per day of week
+- [ ] Special hours / holiday calendar (annual)
+- [ ] Branch photos: 1 primary + ≥3 exterior + ≥10 interior
+- [ ] Apple Business Connect registration → `apple_maps_id`
+- [ ] Facebook Page URL
+- [ ] Wongnai listing claim → URL + ID
+- [ ] DBD business registration number (`business_registration_no`)
+- [ ] Medical license number (`medical_license_no`)
+- [ ] Branch opening date (`opened_date`)
 
 **Cross-branch:**
-- [ ] Confirm service availability (any services only at one branch?)
-- [ ] Confirm parking/accessibility details
-- [ ] Confirm payment methods accepted
+
+- [ ] Confirm doctor rotation per branch (which days at รัตนาธิเบศร์ vs ศรีนครินทร์)
+- [ ] Confirm service availability (any advanced services only at one branch?)
+- [ ] Confirm equipment per branch (CBCT, intraoral scanner, CAD/CAM at both?)
+- [ ] Co-Founder entity creation (ทพญ. พิชชาภา ผุดผ่อง / Pitchapa Phudphong) — pending specialty/credentials
 
 ---
 
 ## Cross-References
 
 - Branch entity rows: `entities.md` — cluster `brand-doctor-authority`, rows #6 (รัตนาธิเบศร์), #7 (ศรีนครินทร์)
-- Branch relationships: `relationships.md` — section K (part_of), `smilescape-{branch} → part_of → smilescape-dental-clinic`
+- Branch relationships: `relationships.md` — section K (part_of), each branch → smilescape-dental-clinic
 - Branch landing pages: `sitemap.md` — sections 8.1 (Contact Hub), 8.2 (รัตนาธิเบศร์), 8.3 (ศรีนครินทร์)
 - Brand config branches array: `brand-config.json:132-143`
+- Reviews aggregation: `reviews.md` — multi-platform review collection per branch
+- Directory listings: `directory-listings.md` — NAP audit tracking per branch
+- GBP posts: `gbp-posts.md` — content calendar per branch
 
 ---
 
-*Phase C local SEO planning. Per Schema_Overview §3.2 + Bible Part 10.5. Feeds Stage 1.5 → `seo_brand_branches` table.*
+*Phase C local SEO planning. Per Schema v1.11 §3.2 + Bible Part 10.5 + DR-025. Feeds Stage 1.5 → `seo_branches` table (~40 cols).*
