@@ -31,60 +31,60 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | parent_of | Single Tooth Implant | N | — |
-| Dental Implant | parent_of | Multiple Implants | N | — |
-| Dental Implant | parent_of | Implant-Supported Bridge | N | — |
-| Dental Implant | parent_of | Overdenture | N | — |
-| Dental Implant | parent_of | All-on-X | N | Full-arch subset of implant treatment |
-| All-on-X | parent_of | All-on-4 | N | — |
-| All-on-X | parent_of | All-on-6 | N | — |
-| All-on-X | parent_of | Zygomatic Implant | N | Extreme bone-loss variant anchored in zygomatic bone |
+| dental-implant | parent_of | single-tooth-implant | No | — |
+| dental-implant | parent_of | multiple-implants | No | — |
+| dental-implant | parent_of | implant-supported-bridge | No | — |
+| dental-implant | parent_of | overdenture | No | — |
+| dental-implant | parent_of | all-on-x | No | Full-arch subset of implant treatment |
+| all-on-x | parent_of | all-on-4 | No | — |
+| all-on-x | parent_of | all-on-6 | No | — |
+| all-on-x | parent_of | zygomatic-implant | No | Extreme bone-loss variant anchored in zygomatic bone |
 
 ### B — Hierarchy: Implant Systems & Brands
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | parent_of | Blue Diamond Implant System | N | SmileScape-specific signature system — Korean origin |
-| Dental Implant | parent_of | Osstem Implant | N | — |
-| Dental Implant | parent_of | Straumann Implant | N | — |
-| Dental Implant | parent_of | Titanium Implant | N | Material-defined subtype |
-| Dental Implant | parent_of | Ceramic Implant | N | Metal-free subtype |
+| dental-implant | parent_of | blue-diamond-implant | No | SmileScape-specific signature system — Korean origin |
+| dental-implant | parent_of | osstem-implant | No | — |
+| dental-implant | parent_of | straumann-implant | No | — |
+| dental-implant | parent_of | titanium-implant | No | Material-defined subtype |
+| dental-implant | parent_of | ceramic-implant | No | Metal-free subtype |
 
 ### C — Hierarchy: Bone Regeneration
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Guided Bone Regeneration | parent_of | Sausage Technique | N | Specific horizontal/vertical protocol by Dr. Urban |
-| Guided Bone Regeneration | parent_of | Ridge Augmentation | N | — |
-| Guided Bone Regeneration | parent_of | Vertical Bone Augmentation | N | — |
-| Bone Grafting | parent_of | Sinus Lift | N | — |
-| Bone Grafting | parent_of | Socket Preservation | N | — |
+| guided-bone-regeneration | parent_of | sausage-technique | No | Specific horizontal/vertical protocol by Dr. Urban |
+| guided-bone-regeneration | parent_of | ridge-augmentation | No | — |
+| guided-bone-regeneration | parent_of | vertical-bone-augmentation | No | — |
+| bone-grafting | parent_of | sinus-lift | No | — |
+| bone-grafting | parent_of | socket-preservation | No | — |
 
 ### D — Hierarchy: Patient Conditions & Disease Progression
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Tooth Loss | parent_of | Edentulism | N | Severity escalation — partial to complete |
-| Tooth Loss | parent_of | Tooth Decay Leading to Extraction | N | Aetiological subtype |
-| Tooth Loss | parent_of | Traumatic Tooth Loss | N | Aetiological subtype |
-| Tooth Loss | parent_of | Removable Denture Dissatisfaction | N | Outcome state driving implant upgrade |
-| Alveolar Bone Loss | parent_of | Vertical Bone Deficiency | N | — |
-| Alveolar Bone Loss | parent_of | Horizontal Bone Deficiency | N | — |
-| Alveolar Bone Loss | parent_of | Maxillary Sinus Proximity | N | Upper-jaw manifestation |
-| Gingivitis | parent_of | Periodontitis | N | Disease progression — untreated gingivitis advances to perio |
+| tooth-loss | parent_of | edentulism | No | Severity escalation — partial to complete |
+| tooth-loss | parent_of | dental-caries-extraction | No | Aetiological subtype |
+| tooth-loss | parent_of | traumatic-tooth-loss | No | Aetiological subtype |
+| tooth-loss | parent_of | denture-dissatisfaction | No | Outcome state driving implant upgrade |
+| alveolar-bone-loss | parent_of | vertical-bone-deficiency | No | — |
+| alveolar-bone-loss | parent_of | horizontal-bone-deficiency | No | — |
+| alveolar-bone-loss | parent_of | maxillary-sinus-proximity | No | Upper-jaw manifestation |
+| gingivitis | parent_of | periodontitis | No | Disease progression — untreated gingivitis advances to perio |
 
 ### E — Hierarchy: Aesthetics, Restorative, Ortho
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Veneer | parent_of | Porcelain Veneer | N | — |
-| Dental Crown | parent_of | Zirconia Crown | N | — |
-| Soft Tissue Management | parent_of | Gum Contouring | N | — |
-| Soft Tissue Management | parent_of | Connective Tissue Graft | N | — |
-| Clear Aligner | parent_of | TrioClear Aligner System | N | Brand-specific system offered by SmileScape |
-| Peri-Implant Mucosa | parent_of | Keratinized Mucosa | N | — |
-| Tooth Extraction | parent_of | Wisdom Tooth Removal | N | — |
-| SmileScape Dental Clinic | parent_of | Lifetime Implant Warranty | N | Brand program |
+| dental-veneer | parent_of | porcelain-veneer | No | — |
+| dental-crown | parent_of | zirconia-crown | No | — |
+| soft-tissue-management | parent_of | gum-contouring | No | — |
+| soft-tissue-management | parent_of | connective-tissue-graft | No | — |
+| clear-aligner | parent_of | trioclear-aligner | No | Brand-specific system offered by SmileScape |
+| peri-implant-mucosa | parent_of | keratinized-mucosa | No | — |
+| tooth-extraction | parent_of | wisdom-tooth-removal | No | — |
+| smilescape-dental-clinic | parent_of | lifetime-implant-warranty | No | Brand program |
 
 ---
 
@@ -92,7 +92,7 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Peri-Implantitis | subtype_of | Periodontitis | N | Implant-specific variant — similar bacterial aetiology, different anatomical site |
+| peri-implantitis | subtype_of | periodontitis | No | Implant-specific variant — similar bacterial aetiology, different anatomical site |
 
 ---
 
@@ -100,21 +100,21 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | treats | Tooth Loss | N | Hero treatment for hero condition |
-| All-on-X | treats | Edentulism | N | Fixed full-arch solution |
-| All-on-X | treats | Removable Denture Dissatisfaction | N | Upgrade path from removable denture |
-| Overdenture | treats | Edentulism | N | More affordable implant-retained full-arch option |
-| Guided Bone Regeneration | treats | Alveolar Bone Loss | N | Gold standard for horizontal and vertical defects |
-| Sausage Technique | treats | Horizontal Bone Deficiency | N | Primary indication |
-| Sausage Technique | treats | Vertical Bone Deficiency | N | Urban protocol — 5.5mm mean gain (P2-C2) |
-| Bone Grafting | treats | Alveolar Bone Loss | N | Umbrella bone augmentation |
-| Sinus Lift | treats | Maxillary Sinus Proximity | N | Creates vertical bone depth for upper jaw implants |
-| Zygomatic Implant | treats | Alveolar Bone Loss | N | Extreme atrophy — bypasses maxillary alveolar bone |
-| Clear Aligner | treats | Malocclusion | N | — |
-| Damon Self-Ligating System | treats | Malocclusion | N | — |
-| Connective Tissue Graft | treats | Gum Recession | N | — |
-| Gum Contouring | treats | Gum Recession | N | Aesthetic correction of gum line |
-| Root Canal Treatment | treats | Tooth Decay Leading to Extraction | N | Prevents need for extraction when pulp is still viable |
+| dental-implant | treats | tooth-loss | No | Hero treatment for hero condition |
+| all-on-x | treats | edentulism | No | Fixed full-arch solution |
+| all-on-x | treats | denture-dissatisfaction | No | Upgrade path from removable denture |
+| overdenture | treats | edentulism | No | More affordable implant-retained full-arch option |
+| guided-bone-regeneration | treats | alveolar-bone-loss | No | Gold standard for horizontal and vertical defects |
+| sausage-technique | treats | horizontal-bone-deficiency | No | Primary indication |
+| sausage-technique | treats | vertical-bone-deficiency | No | Urban protocol — 5.5mm mean gain (P2-C2) |
+| bone-grafting | treats | alveolar-bone-loss | No | Umbrella bone augmentation |
+| sinus-lift | treats | maxillary-sinus-proximity | No | Creates vertical bone depth for upper jaw implants |
+| zygomatic-implant | treats | alveolar-bone-loss | No | Extreme atrophy — bypasses maxillary alveolar bone |
+| clear-aligner | treats | malocclusion | No | — |
+| damon-system | treats | malocclusion | No | — |
+| connective-tissue-graft | treats | gum-recession | No | — |
+| gum-contouring | treats | gum-recession | No | Aesthetic correction of gum line |
+| root-canal-treatment | treats | dental-caries-extraction | No | Prevents need for extraction when pulp is still viable |
 
 ---
 
@@ -122,9 +122,9 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Gum Recession | symptom_of | Periodontitis | N | Common sequela of untreated periodontal disease |
-| Alveolar Bone Loss | symptom_of | Periodontitis | N | Bone destruction is hallmark of periodontal pathology |
-| Tooth Loss | symptom_of | Periodontitis | N | End-stage periodontitis leads to tooth loss |
+| gum-recession | symptom_of | periodontitis | No | Common sequela of untreated periodontal disease |
+| alveolar-bone-loss | symptom_of | periodontitis | No | Bone destruction is hallmark of periodontal pathology |
+| tooth-loss | symptom_of | periodontitis | No | End-stage periodontitis leads to tooth loss |
 
 ---
 
@@ -132,21 +132,21 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | uses | Titanium | N | Standard biocompatible implant material |
-| Guided Implant Surgery | uses | Surgical Guide | N | Guide enables accurate implant positioning |
-| Flapless Implant Surgery | uses | Surgical Guide | N | Guide required for safe flapless approach |
-| Digital Implant Planning | uses | CBCT 3D Scan | N | CBCT volumetric data feeds planning software |
-| Digital Implant Planning | uses | Surgical Guide | N | Planning output generates printed surgical guide |
-| Guided Bone Regeneration | uses | PTFE Membrane | N | Non-resorbable barrier — gold standard for GBR |
-| Guided Bone Regeneration | uses | Bone Graft Substitute | N | Void-filling augmentation material |
-| Sausage Technique | uses | PTFE Membrane | N | Urban protocol specifies non-resorbable membrane |
-| Sausage Technique | uses | Bone Graft Substitute | N | — |
-| Bone Grafting | uses | PRF (Platelet-Rich Fibrin) | N | Autologous growth factor concentrate — accelerates healing |
-| Ceramic Implant | uses | Zirconia | N | Material-defining property |
-| Zirconia Crown | uses | Zirconia | N | — |
-| Digital Smile Design | uses | Intraoral Scanner | N | Digital impression feeds DSD workflow |
-| CAD/CAM Prosthetics | uses | Intraoral Scanner | N | — |
-| All-on-X | uses | Full-Arch Immediate Loading | N | Same-day teeth delivery defines All-on-X clinical protocol |
+| dental-implant | uses | titanium | No | Standard biocompatible implant material |
+| guided-surgery | uses | surgical-guide | No | Guide enables accurate implant positioning |
+| flapless-surgery | uses | surgical-guide | No | Guide required for safe flapless approach |
+| digital-implant-planning | uses | cbct-3d-scan | No | CBCT volumetric data feeds planning software |
+| digital-implant-planning | uses | surgical-guide | No | Planning output generates printed surgical guide |
+| guided-bone-regeneration | uses | ptfe-membrane | No | Non-resorbable barrier — gold standard for GBR |
+| guided-bone-regeneration | uses | bone-graft-substitute | No | Void-filling augmentation material |
+| sausage-technique | uses | ptfe-membrane | No | Urban protocol specifies non-resorbable membrane |
+| sausage-technique | uses | bone-graft-substitute | No | — |
+| bone-grafting | uses | prf-platelet-rich-fibrin | No | Autologous growth factor concentrate — accelerates healing |
+| ceramic-implant | uses | zirconia | No | Material-defining property |
+| zirconia-crown | uses | zirconia | No | — |
+| digital-smile-design | uses | intraoral-scanner | No | Digital impression feeds DSD workflow |
+| cad-cam | uses | intraoral-scanner | No | — |
+| all-on-x | uses | full-arch-immediate-loading | No | Same-day teeth delivery defines All-on-X clinical protocol |
 
 ---
 
@@ -154,13 +154,13 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | alternative_to | Removable Denture | Y | Gold standard fixed vs interim removable solution |
-| All-on-X | alternative_to | Overdenture | Y | Fixed full-arch vs removable implant-retained |
-| Root Canal Treatment | alternative_to | Tooth Extraction | Y | Save vs remove — treatment planning decision |
-| Ceramic Implant | alternative_to | Titanium Implant | Y | Metal-free vs standard titanium |
-| Clear Aligner | alternative_to | Damon Self-Ligating System | Y | Removable vs fixed orthodontics |
-| Porcelain Veneer | alternative_to | Dental Crown | Y | Minimal tooth prep vs full crown coverage |
-| Immediate Implant Placement | alternative_to | Socket Preservation | Y | Same-day implant vs staged bone preservation |
+| dental-implant | alternative_to | removable-denture | Yes | Gold standard fixed vs interim removable solution |
+| all-on-x | alternative_to | overdenture | Yes | Fixed full-arch vs removable implant-retained |
+| root-canal-treatment | alternative_to | tooth-extraction | Yes | Save vs remove — treatment planning decision |
+| ceramic-implant | alternative_to | titanium-implant | Yes | Metal-free vs standard titanium |
+| clear-aligner | alternative_to | damon-system | Yes | Removable vs fixed orthodontics |
+| porcelain-veneer | alternative_to | dental-crown | Yes | Minimal tooth prep vs full crown coverage |
+| immediate-implant | alternative_to | socket-preservation | Yes | Same-day implant vs staged bone preservation |
 
 ---
 
@@ -168,12 +168,12 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Alveolar Bone | part_of | Mandible | N | Tooth-bearing segment of lower jaw |
-| Alveolar Bone | part_of | Maxilla | N | Tooth-bearing segment of upper jaw |
-| Maxillary Sinus | part_of | Maxilla | N | Air space limiting implant depth in upper jaw |
-| Dental Implant Components | part_of | Dental Implant | N | 3-part system: fixture + abutment + crown |
-| SMILE DNA | part_of | SmileScape Dental Clinic | N | Brand values framework |
-| Family Standard | part_of | SmileScape Dental Clinic | N | Ethical operating philosophy |
+| alveolar-bone | part_of | mandible | No | Tooth-bearing segment of lower jaw |
+| alveolar-bone | part_of | maxilla | No | Tooth-bearing segment of upper jaw |
+| maxillary-sinus | part_of | maxilla | No | Air space limiting implant depth in upper jaw |
+| dental-implant-components | part_of | dental-implant | No | 3-part system: fixture + abutment + crown |
+| smile-dna | part_of | smilescape-dental-clinic | No | Brand values framework |
+| family-standard | part_of | smilescape-dental-clinic | No | Ethical operating philosophy |
 
 ---
 
@@ -181,11 +181,11 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | requires_assessment | CBCT 3D Scan | N | CBCT mandatory before implant planning |
-| All-on-X | requires_assessment | CBCT 3D Scan | N | — |
-| Sinus Lift | requires_assessment | Maxillary Sinus Proximity | N | Condition assessment determines sinus lift need |
-| Sausage Technique | requires_assessment | Horizontal Bone Deficiency | N | Bone volume assessment determines technique eligibility |
-| Orthodontic-Implant Sequencing | requires_assessment | Malocclusion | N | Orthodontic assessment required before sequencing plan |
+| dental-implant | requires_assessment | cbct-3d-scan | No | CBCT mandatory before implant planning |
+| all-on-x | requires_assessment | cbct-3d-scan | No | — |
+| sinus-lift | requires_assessment | maxillary-sinus-proximity | No | Condition assessment determines sinus lift need |
+| sausage-technique | requires_assessment | horizontal-bone-deficiency | No | Bone volume assessment determines technique eligibility |
+| ortho-implant-sequencing | requires_assessment | malocclusion | No | Orthodontic assessment required before sequencing plan |
 
 ---
 
@@ -193,8 +193,8 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dental Implant | evidenced_by | Osseointegration | N | Biological mechanism underpins 96.4% 10-yr survival data (P1-C1 Howe 2019) |
-| Sausage Technique | evidenced_by | Vertical Bone Augmentation | N | Urban VBA studies (P2-C2, P2-C3) form the protocol evidence base |
+| dental-implant | evidenced_by | osseointegration | No | Biological mechanism underpins 96.4% 10-yr survival data (P1-C1 Howe 2019) |
+| sausage-technique | evidenced_by | vertical-bone-augmentation | No | Urban VBA studies (P2-C2, P2-C3) form the protocol evidence base |
 
 > **Phase D note:** `evidenced_by` edges will expand significantly once citation entities are loaded into the graph. These two edges establish the pattern; P1-C1 through P5-C1 citations in `citation-pool-seed.md` become entity nodes at Phase D.
 
@@ -204,17 +204,17 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| Dr. Woraphat Jarangkul | related_to | Sausage Technique | Y | Trained directly by Dr. Urban (HU Berlin) |
-| Dr. Woraphat Jarangkul | related_to | Soft Tissue Management | Y | Trained by Dr. Ricardo Kern (ILAPEO, Brazil) |
-| Dr. Woraphat Jarangkul | related_to | SmileScape Dental Clinic | Y | Medical Director |
-| Lifetime Implant Warranty | related_to | Blue Diamond Implant System | Y | Warranty program covers Blue Diamond system |
-| Orthodontic-Implant Sequencing | related_to | Dental Implant | Y | Interdisciplinary combo — SmileScape differentiator |
-| Peri-Implantitis | related_to | Keratinized Mucosa | Y | Adequate KM band reduces peri-implantitis risk |
-| SMILE DNA | related_to | Family Standard | Y | Both encode brand philosophy — complementary frameworks |
-| Periodontitis | related_to | Alveolar Bone Loss | Y | Mutual causation — perio destroys bone; bone loss worsens perio |
-| Removable Denture Dissatisfaction | related_to | Removable Denture | Y | Dissatisfaction arises from denture limitations |
-| Digital Smile Design | related_to | Dental Veneer | Y | DSD commonly used in veneer treatment planning |
-| Blue Diamond Implant System | related_to | Osstem Implant | Y | Korean implant systems sharing regional evidence category |
+| dr-woraphat-jarangkul | related_to | sausage-technique | Yes | Trained directly by Dr. Urban (HU Berlin) |
+| dr-woraphat-jarangkul | related_to | soft-tissue-management | Yes | Trained by Dr. Ricardo Kern (ILAPEO, Brazil) |
+| dr-woraphat-jarangkul | related_to | smilescape-dental-clinic | Yes | Medical Director |
+| lifetime-implant-warranty | related_to | blue-diamond-implant | Yes | Warranty program covers Blue Diamond system |
+| ortho-implant-sequencing | related_to | dental-implant | Yes | Interdisciplinary combo — SmileScape differentiator |
+| peri-implantitis | related_to | keratinized-mucosa | Yes | Adequate KM band reduces peri-implantitis risk |
+| smile-dna | related_to | family-standard | Yes | Both encode brand philosophy — complementary frameworks |
+| periodontitis | related_to | alveolar-bone-loss | Yes | Mutual causation — perio destroys bone; bone loss worsens perio |
+| denture-dissatisfaction | related_to | removable-denture | Yes | Dissatisfaction arises from denture limitations |
+| digital-smile-design | related_to | dental-veneer | Yes | DSD commonly used in veneer treatment planning |
+| blue-diamond-implant | related_to | osstem-implant | Yes | Korean implant systems sharing regional evidence category |
 
 ---
 
@@ -224,16 +224,17 @@
 |--------|-------|--------|--------|
 | Total edges | 99 | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 71/73 | ≥ 70% | ✅ |
-| Bidirectional edges (Y) | 18 | — | ✅ |
+| Entities with ≥ 1 edge | 78/81 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 18 | — | ✅ |
 | Brand-scope=['smile-scape'] edges | 13 | — | ✅ |
-| Orphan entities (0 edges) | 2 | ≤ 5 | ✅ |
+| Orphan entities (0 edges) | 3 | ≤ 5 | ✅ |
 
 **Orphan entities (no edges — accepted):**
-- `Teeth Whitening` — standalone cosmetic treatment; no cross-entity dependency at Phase C
-- `Dental Filling` — basic restorative; no cross-entity dependency at Phase C
+- `teeth-whitening` — standalone cosmetic treatment; no cross-entity dependency at Phase C
+- `dental-filling` — basic restorative; no cross-entity dependency at Phase C
+- `immediate-loading` — covered conceptually under all-on-x → full-arch-immediate-loading; standalone variant orphaned at Phase C
 
-Both will gain edges in Phase D when content briefs are assigned.
+All three will gain edges in Phase D when content briefs are assigned.
 
 **Key semantic chains confirmed:**
 - Tooth Loss → Dental Implant → Blue Diamond Implant System → Lifetime Implant Warranty (conversion funnel)

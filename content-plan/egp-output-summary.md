@@ -12,8 +12,8 @@
 | File | Status | Description |
 |------|--------|-------------|
 | `clusters.md` | ✅ DONE | 15 clusters across 7 domains |
-| `entities.md` | ✅ DONE | 73 entities, 12-column schema |
-| `relationships.md` | ✅ DONE | 99 edges, 10 edge types |
+| `entities.md` | ✅ DONE | 81 entities, 12-column schema, types per Bible Appendix A.1 |
+| `relationships.md` | ✅ DONE | 99 edges, 10 edge types, slug-based |
 | `egp-output-summary.md` | ✅ DONE | This file |
 
 ---
@@ -28,29 +28,27 @@
 | D | Aesthetic & Cosmetic | 1 | 6 | ['*'] |
 | E | Orthodontics | 1 | 5 | ['*'] mixed |
 | F | Periodontics & Gum | 2 | 9 | ['*'] mixed |
-| G | Cross-Cutting | 4 | 22 | ['*'] + ['smile-scape'] |
-| **Total** | — | **15** | **73** | — |
+| G | Cross-Cutting | 4 | 20 | ['*'] + ['smile-scape'] |
+| **Total** | — | **15** | **81** | — |
 
 ---
 
-## Entity Type Distribution
+## Entity Type Distribution (Bible Appendix A.1 15-Type Master List)
 
 | Type | Count | % | Key Entities |
 |------|-------|---|---|
-| Treatment | 16 | 22% | dental-implant, all-on-x, all-on-4, all-on-6, overdenture |
-| Condition | 12 | 16% | tooth-loss, alveolar-bone-loss, periodontitis, peri-implantitis |
-| Technique | 10 | 14% | sausage-technique, guided-bone-regeneration, digital-implant-planning |
-| Technology | 7 | 10% | cbct-3d-scan, surgical-guide, intraoral-scanner, cad-cam |
-| Brand | 5 | 7% | osstem-implant, straumann-implant, trioclear-aligner, damon-system |
-| Material | 6 | 8% | titanium, zirconia, ptfe-membrane, prf-platelet-rich-fibrin |
-| Anatomical Structure | 5 | 7% | alveolar-bone, mandible, maxilla, maxillary-sinus |
-| Concept | 5 | 7% | osseointegration, ortho-implant-sequencing, smile-dna, family-standard |
-| Signature System | 4 | 5% | blue-diamond-implant, sausage-technique¹, soft-tissue-management, trioclear-aligner¹ |
-| Doctor | 1 | 1% | dr-woraphat-jarangkul |
-| Program | 2 | 3% | lifetime-implant-warranty |
-| **Total** | **73** | **100%** | — |
+| Treatment | 21 | 26% | dental-implant, all-on-x, all-on-4, overdenture, clear-aligner |
+| Procedure | 18 | 22% | guided-bone-regeneration, sausage-technique, digital-implant-planning, sinus-lift |
+| Condition | 14 | 17% | tooth-loss, alveolar-bone-loss, periodontitis, peri-implantitis, malocclusion |
+| Product | 9 | 11% | blue-diamond-implant, osstem-implant, straumann-implant, titanium, zirconia |
+| Concept | 6 | 7% | osseointegration, ortho-implant-sequencing, smile-dna, family-standard, lifetime-implant-warranty |
+| Anatomy | 6 | 7% | alveolar-bone, mandible, maxilla, maxillary-sinus, peri-implant-mucosa |
+| Device | 5 | 6% | cbct-3d-scan, surgical-guide, intraoral-scanner, cad-cam, ptfe-membrane |
+| Organization | 1 | 1% | smilescape-dental-clinic |
+| Person | 1 | 1% | dr-woraphat-jarangkul |
+| **Total** | **81** | **100%** | — |
 
-> ¹ Sausage Technique and TrioClear appear in both Technique/Brand and Signature System — classified by primary brand-scope role.
+> All types from the spec 15-type master list (`condition` / `symptom` / `procedure` / `treatment` / `device` / `concept` / `product` / `drug` / `ingredient` / `anatomy` / `specialty` / `lab_test` / `biomarker` / `person` / `organization`). Unused for SmileScape: Symptom, Drug, Ingredient, Specialty, Lab_test, Biomarker.
 
 ---
 
@@ -58,8 +56,8 @@
 
 | Scope | Entities | % | Notes |
 |-------|----------|---|-------|
-| ['*'] — Universal | 63 | 86% | Reusable across all EYWA dental brands |
-| ['smile-scape'] — Brand-specific | 10 | 14% | SmileScape-only: Blue Diamond, Sausage Technique, Soft Tissue Management, TrioClear, Damon, SmileScape Clinic, Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
+| ['*'] — Universal | 71 | 88% | Reusable across all EYWA dental brands |
+| ['smile-scape'] — Brand-specific | 10 | 12% | SmileScape-only: Blue Diamond, Sausage Technique, Soft Tissue Management, TrioClear, Damon, SmileScape Clinic, Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
 
 ---
 
@@ -67,7 +65,7 @@
 
 | Edge Type | Count | % |
 |-----------|-------|---|
-| parent_of | 33 | 33% |
+| parent_of | 34 | 34% |
 | treats | 15 | 15% |
 | uses | 15 | 15% |
 | related_to | 11 | 11% |
@@ -75,12 +73,13 @@
 | part_of | 6 | 6% |
 | requires_assessment | 5 | 5% |
 | symptom_of | 3 | 3% |
-| subtype_of | 1 | 1% |
 | evidenced_by | 2 | 2% |
+| subtype_of | 1 | 1% |
 | **Total** | **99** | **100%** |
 
 - Bidirectional edges: 18 (18%)
-- Entity coverage: 71/73 (97%) — 2 orphans accepted (Teeth Whitening, Dental Filling)
+- Entity coverage: 78/81 (96.3%) — 3 orphans accepted (teeth-whitening, dental-filling, immediate-loading)
+- All From/To columns use entity slug per §5.6 spec
 
 ---
 
@@ -141,7 +140,7 @@
 
 To run before flat-load to Supabase:
 
-- [ ] `eug_preflight_check()` — slug uniqueness across all 73 entities
+- [ ] `eug_preflight_check()` — slug uniqueness across all 81 entities
 - [ ] Cross-federation collision check: `dental-implant`, `clear-aligner`, `all-on-x` (universal slugs — verify no other EYWA brand entity reuses them)
 - [ ] ICD-10 code deduplication: K06.3 appears on 3 entities — verify intentional (parent + subtypes)
 - [ ] M26.4 appears on 2 entities (clear-aligner + malocclusion) — verify intentional (condition + treatment share code)
