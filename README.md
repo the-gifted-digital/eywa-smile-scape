@@ -89,9 +89,7 @@ eywa-smile-scape/
 
 ```yaml
 deal_status: CLOSED (2026-04-08)
-founding_partner_rate:
-  month_1: 69,000 THB
-  month_19_plus: 25,000 THB
+founding_partner_rate: confirmed
 month_1_start: 2026-04
 website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required)
 ```
