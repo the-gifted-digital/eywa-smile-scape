@@ -95,14 +95,14 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 2.2.3 | → ทพญ. แพรว — Co-Founder & [Specialty TBD] | L1 | B | mid | A | smilescape-dental-clinic |
+| 2.2.3 | → ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว) — Co-Founder & [Specialty TBD] | L1 | B | mid | A | smilescape-dental-clinic |
 - Education & Credentials — การศึกษาและวุฒิบัตร
 - Clinical Specialty & Approach — ความเชี่ยวชาญและแนวทางรักษา
 - บทบาทในคลินิก
 
-> **⚠️ TBD:** ต้องการข้อมูลหมอแพรว — ชื่อเต็ม, เฉพาะทาง, สถาบัน, credential, บทบาทในคลินิก
+> **⚠️ TBD:** ข้อมูลหมอแพรว (ทพญ. พิชชาภา ผุดผ่อง) — เฉพาะทาง, สถาบัน, credential, บทบาทในคลินิก
 
-> **⚠️ TBD:** ต้องการข้อมูลหมอแพรว — ชื่อเต็ม, เฉพาะทาง, สถาบัน, credential, บทบาทในคลินิก (เช่น Clinical Director? Patient Care Lead? Prosthodontics? Orthodontics?)
+> **⚠️ TBD:** ข้อมูลหมอแพรว (ทพญ. พิชชาภา ผุดผ่อง) — เฉพาะทาง, สถาบัน, credential, บทบาทในคลินิก (เช่น Clinical Director? Patient Care Lead? Prosthodontics? Orthodontics?)
 
 #### Specialist Teams
 

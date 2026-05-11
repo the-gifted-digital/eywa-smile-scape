@@ -74,7 +74,7 @@ eywa-smile-scape/
 | Name | Role | Credentials |
 |------|------|-------------|
 | **ทพ. วรภัทร จรางกุล (หมอแฮม)** | Medical Director & Lead Implantologist | เกียรตินิยม 1 มหิดล / วุฒิบัตรศัลยกรรมจุฬาฯ / Dual M.Sc. Implantology (TH+DE) / Global Masterclasses (Hungary, Brazil) |
-| **ทพญ. แพรว** | Co-Founder | Specialty TBD — pending operator info |
+| **ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)** | Co-Founder | Specialty TBD — pending operator info |
 
 ---
 

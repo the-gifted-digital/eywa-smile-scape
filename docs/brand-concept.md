@@ -175,12 +175,12 @@
 **Credentials:** ตามรายละเอียด §3 ด้านบน  
 **Personality:** Trusted Expert — เน้นรายละเอียด, ยึด evidence, family-warmth
 
-### 8.2 Co-Founder — ทพญ. แพรว
+### 8.2 Co-Founder — ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)
 **Title:** Co-Founder  
 **Specialty:** TBD (รอข้อมูลเพิ่มจากผู้ก่อตั้ง)  
 **Role:** Spousal partnership — ทำงานคู่กับหมอแฮม
 
-> ⚠️ **Pending operator action:** รายละเอียดของหมอแพรว (ชื่อเต็ม, เฉพาะทาง, สถาบันการศึกษา, บทบาทใน clinic) — จะ update เมื่อได้ข้อมูล
+> ⚠️ **Pending operator action:** specialty/credentials/institution/role ของหมอแพรว (ทพญ. พิชชาภา ผุดผ่อง / Pitchapa Phudphong) — จะ update เมื่อได้ข้อมูล
 
 ---
 
@@ -287,7 +287,7 @@ internal_linking_strategy:
 
 ```yaml
 1_doctor_praeo_details:
-  q: "ชื่อเต็ม / เฉพาะทาง / สถาบัน / บทบาทของ ทพญ. แพรว"
+  q: "เฉพาะทาง / สถาบัน / บทบาทของ ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)"
   needed_for: "T9 Author Profile + brand-config.json team_assignment"
 
 2_implant_brands_completeness:

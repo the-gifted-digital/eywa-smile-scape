@@ -156,10 +156,12 @@
       ]
     },
     "co_founder": {
-      "name_th": "ทพญ. แพรว",
+      "name_th": "ทพญ. พิชชาภา ผุดผ่อง",
+      "name_en": "Pitchapa Phudphong",
+      "nickname": "หมอแพรว",
       "title": "Co-Founder",
       "specialty": "TBD",
-      "_note": "Spousal partnership — รายละเอียดจะเติมเมื่อได้ข้อมูลเพิ่ม"
+      "_note": "Spousal partnership — specialty/credentials/role จะ update เมื่อได้ข้อมูลเพิ่ม"
     }
   },
 
