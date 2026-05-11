@@ -12,8 +12,9 @@
 | File | Status | Description |
 |------|--------|-------------|
 | `clusters.md` | ✅ DONE | 15 clusters across 7 domains |
-| `entities.md` | ✅ DONE | 81 entities, 12-column schema, types per Bible Appendix A.1 |
-| `relationships.md` | ✅ DONE | 99 edges, 10 edge types, slug-based |
+| `entities.md` | ✅ DONE | 83 entities, 12-column schema, types per Bible Appendix A.1 |
+| `relationships.md` | ✅ DONE | 101 edges, 10 edge types, slug-based |
+| `branches.md` | ✅ DONE | 2 branches per Schema_Overview §3.2 (Local SEO) |
 | `egp-output-summary.md` | ✅ DONE | This file |
 
 ---
@@ -28,8 +29,8 @@
 | D | Aesthetic & Cosmetic | 1 | 6 | ['*'] |
 | E | Orthodontics | 1 | 5 | ['*'] mixed |
 | F | Periodontics & Gum | 2 | 9 | ['*'] mixed |
-| G | Cross-Cutting | 4 | 20 | ['*'] + ['smile-scape'] |
-| **Total** | — | **15** | **81** | — |
+| G | Cross-Cutting | 4 | 22 | ['*'] + ['smile-scape'] |
+| **Total** | — | **15** | **83** | — |
 
 ---
 
@@ -44,9 +45,9 @@
 | Concept | 6 | 7% | osseointegration, ortho-implant-sequencing, smile-dna, family-standard, lifetime-implant-warranty |
 | Anatomy | 6 | 7% | alveolar-bone, mandible, maxilla, maxillary-sinus, peri-implant-mucosa |
 | Device | 5 | 6% | cbct-3d-scan, surgical-guide, intraoral-scanner, cad-cam, ptfe-membrane |
-| Organization | 1 | 1% | smilescape-dental-clinic |
+| Organization | 3 | 4% | smilescape-dental-clinic, smilescape-rattanathibet, smilescape-srinakarin |
 | Person | 1 | 1% | dr-woraphat-jarangkul |
-| **Total** | **81** | **100%** | — |
+| **Total** | **83** | **100%** | — |
 
 > All types from the spec 15-type master list (`condition` / `symptom` / `procedure` / `treatment` / `device` / `concept` / `product` / `drug` / `ingredient` / `anatomy` / `specialty` / `lab_test` / `biomarker` / `person` / `organization`). Unused for SmileScape: Symptom, Drug, Ingredient, Specialty, Lab_test, Biomarker.
 
@@ -56,8 +57,8 @@
 
 | Scope | Entities | % | Notes |
 |-------|----------|---|-------|
-| ['*'] — Universal | 71 | 88% | Reusable across all EYWA dental brands |
-| ['smile-scape'] — Brand-specific | 10 | 12% | SmileScape-only: Blue Diamond, Sausage Technique, Soft Tissue Management, TrioClear, Damon, SmileScape Clinic, Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
+| ['*'] — Universal | 71 | 86% | Reusable across all EYWA dental brands |
+| ['smile-scape'] — Brand-specific | 12 | 14% | SmileScape-only: Blue Diamond, Sausage Technique, Soft Tissue Management, TrioClear, Damon, SmileScape Clinic + 2 branches (รัตนาธิเบศร์, ศรีนครินทร์), Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
 
 ---
 
@@ -69,16 +70,16 @@
 | treats | 15 | 15% |
 | uses | 15 | 15% |
 | related_to | 11 | 11% |
+| part_of | 8 | 8% |
 | alternative_to | 7 | 7% |
-| part_of | 6 | 6% |
 | requires_assessment | 5 | 5% |
 | symptom_of | 3 | 3% |
 | evidenced_by | 2 | 2% |
 | subtype_of | 1 | 1% |
-| **Total** | **99** | **100%** |
+| **Total** | **101** | **100%** |
 
 - Bidirectional edges: 18 (18%)
-- Entity coverage: 78/81 (96.3%) — 3 orphans accepted (teeth-whitening, dental-filling, immediate-loading)
+- Entity coverage: 80/83 (96.4%) — 3 orphans accepted (teeth-whitening, dental-filling, immediate-loading)
 - All From/To columns use entity slug per §5.6 spec
 
 ---
@@ -125,6 +126,22 @@
 
 ---
 
+## Local SEO Summary (Branches)
+
+| Branch Slug | Display Name | City | Sitemap Hub | Transit | Schema.org | Data Status |
+|-------------|--------------|------|-------------|---------|------------|-------------|
+| smilescape-rattanathibet | SmileScape สาขารัตนาธิเบศร์ | นนทบุรี | 8.2 | MRT สีม่วง | Dentist + LocalBusiness | TBD (address/GPS/phone) |
+| smilescape-srinakarin | SmileScape สาขาศรีนครินทร์ | กรุงเทพฯ | 8.3 | MRT สีเหลือง | Dentist + LocalBusiness | TBD (address/GPS/phone) |
+
+**Branch coverage:**
+- 2 Organization-type entities + 2 `part_of` edges → smilescape-dental-clinic
+- 5 geo-keyword pages already in sitemap section 8.2 + 5 in section 8.3
+- T18 Programmatic Local matrix (5 hero services × 2 branches = 10 candidate pages) seeded in `branches.md`, awaiting DataForSEO volume validation
+
+> Full schema per `seo_brand_branches` (Schema_Overview §3.2) — see `branches.md` for address/GPS/phone collection and schema:LocalBusiness templates.
+
+---
+
 ## Signature System Summary (SmileScape Differentiators)
 
 | Signature System | Slug | Authority Source | Citation Anchor |
@@ -140,7 +157,8 @@
 
 To run before flat-load to Supabase:
 
-- [ ] `eug_preflight_check()` — slug uniqueness across all 81 entities
+- [ ] `eug_preflight_check()` — slug uniqueness across all 83 entities
+- [ ] Branch slug uniqueness — `smilescape-rattanathibet` + `smilescape-srinakarin` across federation
 - [ ] Cross-federation collision check: `dental-implant`, `clear-aligner`, `all-on-x` (universal slugs — verify no other EYWA brand entity reuses them)
 - [ ] ICD-10 code deduplication: K06.3 appears on 3 entities — verify intentional (parent + subtypes)
 - [ ] M26.4 appears on 2 entities (clear-aligner + malocclusion) — verify intentional (condition + treatment share code)

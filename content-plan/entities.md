@@ -19,9 +19,9 @@
 | Concept | 6 | Abstract clinical/brand concepts (incl. SMILE DNA, warranty) |
 | Anatomy | 6 | Bone, gum, sinus, jaw anatomical structures |
 | Device | 5 | CBCT, scanners, surgical guide, PTFE membrane |
-| Organization | 1 | SmileScape Dental Clinic |
+| Organization | 3 | SmileScape clinic + 2 branches (รัตนาธิเบศร์, ศรีนครินทร์) |
 | Person | 1 | Dr. Woraphat Jarangkul |
-| **Total** | **81** | |
+| **Total** | **83** | |
 
 ---
 
@@ -276,6 +276,8 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 3 | SMILE DNA | smile-dna | Concept | — | smilescape-dental-clinic | — | Growing | 2.1.3 | SMILE ค่านิยม, Sincere Mastery Integrity Lifelong-Learning Efficiency | ['smile-scape'] | Brand values framework: S-M-I-L-E |
 | 4 | Family Standard | family-standard | Concept | — | smilescape-dental-clinic | — | Growing | 2.1.4 | The Family Standard, ถ้าไม่กล้าทำให้พ่อแม่, family care philosophy | ['smile-scape'] | Brand ethical anchor: "We don't treat patients in ways we wouldn't treat our own parents" |
 | 5 | Lifetime Implant Warranty | lifetime-implant-warranty | Concept | — | smilescape-dental-clinic | — | Growing | 2.3.3 | รับประกันตลอดชีพ, lifetime warranty, implant guarantee | ['smile-scape'] | SmileScape's competitive differentiator vs LDC (10-yr) and SmileSeasons (TBD) |
+| 6 | SmileScape สาขารัตนาธิเบศร์ | smilescape-rattanathibet | Organization | Dentist | smilescape-dental-clinic | — | Growing | 8.2 | สาขารัตนาธิเบศร์, SmileScape Rattanathibet, SmileScape นนทบุรี, สาขานนทบุรี, MRT สีม่วง | ['smile-scape'] | Primary branch. Transit: MRT สีม่วง สถานีรัตนาธิเบศร์. Full address/GPS/phone TBD. See `branches.md`. schema:LocalBusiness + Dentist |
+| 7 | SmileScape สาขาศรีนครินทร์ | smilescape-srinakarin | Organization | Dentist | smilescape-dental-clinic | — | Growing | 8.3 | สาขาศรีนครินทร์, SmileScape Srinakarin, SmileScape สวนหลวง ร.9, MRT สีเหลือง | ['smile-scape'] | Primary branch. Transit: MRT สีเหลือง. Full address/GPS/phone TBD. See `branches.md`. schema:LocalBusiness + Dentist |
 
 ---
 

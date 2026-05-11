@@ -3,7 +3,7 @@
 > **Phase:** Stage 1 → Phase C (Entity Genesis)
 > **Schema:** §5.5 — 5 columns per edge
 > **Date:** 2026-05-11
-> **Edge count:** 99 | **Edge types used:** 10/10
+> **Edge count:** 101 | **Edge types used:** 10/10
 > **Vocabulary:** DR-012 locked (10-edge vocabulary)
 
 ---
@@ -174,6 +174,8 @@
 | dental-implant-components | part_of | dental-implant | No | 3-part system: fixture + abutment + crown |
 | smile-dna | part_of | smilescape-dental-clinic | No | Brand values framework |
 | family-standard | part_of | smilescape-dental-clinic | No | Ethical operating philosophy |
+| smilescape-rattanathibet | part_of | smilescape-dental-clinic | No | Physical branch — รัตนาธิเบศร์ (นนทบุรี) |
+| smilescape-srinakarin | part_of | smilescape-dental-clinic | No | Physical branch — ศรีนครินทร์ (กรุงเทพฯ) |
 
 ---
 
@@ -222,11 +224,11 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 99 | ≥ 50 | ✅ |
+| Total edges | 101 | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 78/81 | ≥ 70% | ✅ |
+| Entities with ≥ 1 edge | 80/83 | ≥ 70% | ✅ |
 | Bidirectional edges (Yes) | 18 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 13 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 15 | — | ✅ |
 | Orphan entities (0 edges) | 3 | ≤ 5 | ✅ |
 
 **Orphan entities (no edges — accepted):**

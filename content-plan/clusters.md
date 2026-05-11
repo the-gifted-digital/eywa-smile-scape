@@ -63,7 +63,7 @@
 | digital-technology-diagnostics | 3 | 4 | ✅ |
 | implant-materials | 3 | 3 | ✅ |
 | dental-anatomy | 3 | 2 | ✅ |
-| brand-doctor-authority | 5 | 0 | ✅ |
+| brand-doctor-authority | 5 | 2 | ✅ |
 
 ---
 
