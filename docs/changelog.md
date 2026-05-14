@@ -1,5 +1,15 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-12 PM] — Spec Stack Paired Batch Lock (v3.19 / v1.15 / v1.5 LOCKED / v1.13 / v1.13)
+
+**By:** EYWA Protocol paired batch lock — operator-approved early lock (99.99%-Google-aligned assessment)
+**Files updated:**
+- `brand-config.json` — `eywa_spec_snapshot` block bumped: Bible 3.15→3.19, Schema 1.11→1.15, Templates DRAFT v1.3→v1.5 LOCKED, Handover 1.9→1.13, DR 1.9→1.13. DR-013/014/019/020/021/022 moved from proposed→locked (prior opt-in DR-020/021/022 now formalized). DR-026 + DR-027 added as proposed.
+
+**Trigger:** Spec commits 1d347a4 (DR-013), e8c502a (DR-014), efd09cc (DR-019/020/021/022 paired batch).
+
+**Impact on SmileScape:** SmileScape was the Lean Phase B field test — DR-022 lock validates the pattern. Content_Templates LOCKED at v1.5 (T1-T22) formalizes the templates used in 414p sitemap. DR-021 internal linking schema now available for Stage 1.5 entry (12 page_master linking cols + seo_page_internal_links junction).
+
 ## [2026-05-10] — Repo Bootstrap
 
 Initialized eywa-smile-scape brand repo with full structure mirroring VTH BioDent layout.

@@ -265,27 +265,25 @@
 
   "eywa_spec_snapshot": {
     "_doc": "Per Handover §9.3 — pin spec versions at Stage entry, re-snapshot at each Stage gate. Brands implement Locked DRs as binding; Proposed DRs are preview/informational unless explicitly opted-in.",
-    "bible_version": "3.15",
-    "schema_version": "1.11",
-    "templates_version": "1.3-DRAFT",
-    "handover_version": "1.9",
-    "decision_records_version": "1.9",
+    "bible_version": "3.19",
+    "schema_version": "1.15",
+    "templates_version": "1.5 LOCKED",
+    "handover_version": "1.13",
+    "decision_records_version": "1.13",
     "drs_locked_at_snapshot": [
       "DR-001", "DR-002", "DR-003", "DR-004", "DR-005",
       "DR-006", "DR-007", "DR-008", "DR-009", "DR-010",
-      "DR-011", "DR-012", "DR-015", "DR-016", "DR-017", "DR-018",
-      "DR-024", "DR-025"
+      "DR-011", "DR-012", "DR-013", "DR-014", "DR-015",
+      "DR-016", "DR-017", "DR-018", "DR-019", "DR-020",
+      "DR-021", "DR-022", "DR-024", "DR-025"
     ],
-    "drs_proposed_at_snapshot": [
-      "DR-013", "DR-014", "DR-019", "DR-020", "DR-021", "DR-022"
-    ],
-    "drs_proposed_opted_in_early": [
-      "DR-020", "DR-021", "DR-022"
-    ],
-    "drs_proposed_opted_in_early_rationale": "Brand bootstrap 2026-05-10 uses Content_Templates v1.3 + HYBRID internal linking pattern from inception to avoid retrofit at Stage 1.5 migration. DR-022 adopted 2026-05-11 — SmileScape is the field test for Lean Phase B + Two-Layer Sitemap.",
-    "snapshot_taken_at": "2026-05-12",
-    "snapshot_taken_at_stage": "Stage 1 Phase E — schema catch-up (DR-024 + DR-025 adoption, 37-table parity)",
+    "drs_proposed_at_snapshot": ["DR-026", "DR-027"],
+    "drs_proposed_opted_in_early": [],
+    "drs_proposed_opted_in_early_rationale": "Prior opt-in (DR-020/021/022) now formalized via paired batch lock 2026-05-12 PM. SmileScape was the field test for Lean Phase B (DR-022) — locked outcome confirms approach.",
+    "snapshot_taken_at": "2026-05-12-PM",
+    "snapshot_taken_at_stage": "Stage 1 Phase E — paired batch lock spec catch-up (Bible v3.15 → v3.19, Schema v1.11 → v1.15, Templates DRAFT v1.3 → v1.5 LOCKED). 414p sitemap WIP unchanged.",
     "next_snapshot_due_at_stage": "Stage 1 Gate (sitemap approved + entity graph + KW research complete)",
-    "v1_11_adoption_notes": "Schema v1.11 entity extension tables (seo_entity_condition/product/anatomy/organization) populated at Stage 1.5 from entities.md (14 conditions, 9 products, 6 anatomy, 3 organizations). Local SEO subsystem expanded: branches.md per ~40-col seo_branches; reviews.md / directory-listings.md / gbp-posts.md created as Phase C skeletons — operator data + DFS refinement at Stage 1.5."
+    "v1_11_adoption_notes": "Schema v1.11 entity extension tables (seo_entity_condition/product/anatomy/organization) populated at Stage 1.5 from entities.md (14 conditions, 9 products, 6 anatomy, 3 organizations). Local SEO subsystem expanded: branches.md per ~40-col seo_branches; reviews.md / directory-listings.md / gbp-posts.md created as Phase C skeletons — operator data + DFS refinement at Stage 1.5.",
+    "v1_15_adoption_notes": "Schema v1.15 adds DR-021 internal linking: 12 page-level linking strategy columns on seo_website_page_master + seo_page_internal_links junction table with reciprocal-detection trigger. Stage 1.5 migrations 040/041/042 ship-ready. DR-013 12-edge vocabulary + typed edge_note + medical_reviewer_signoff fields. DR-014 concept subtype CHECK (framework/axis/general)."
   }
 }
