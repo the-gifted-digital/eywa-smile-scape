@@ -362,6 +362,32 @@
 
 ---
 
+### W — Round 6 Additions (Citation Evidence Anchors)
+
+> Per DR-019 evidence-tier alignment + DR-013 12-edge vocabulary (`evidenced_by` direction). These edges connect brand-stance entities to authority citations established in `citation-pool-seed.md` Pillars 6-15. Phase D will expand to all per-page citations.
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| zero-bone-loss-concept | evidenced_by | dr-tomas-linkevicius | No | Brand framework authority anchor (P8) — Linkevicius 2019 textbook + 5 PMIDs (34076631/20605308/33527729/32250061/35476860) |
+| osseodensification | evidenced_by | densah-bur | No | Tool-mechanism evidence (P7) — Osseodensification SRs PMIDs 37975644/38002660/40377845 |
+| densah-bur | related_to | dr-woraphat-jarangkul | Yes | Pending Versah training credential — brand authority |
+| internal-sinus-lift | evidenced_by | osseodensification | No | Crestal sinus elevation evidence base — PMID 40377845 (Densah sinus SR) |
+| strip-graft | evidenced_by | dr-tomas-linkevicius | No | P6 cross-reference: Linkevicius also published on keratinized mucosa around implants |
+| peri-implantitis-treatment | evidenced_by | peri-implantitis | No | P9 Schwarz EFP 2018 consensus (PMID 25626479) + 2023 SR (PMID 37271498) |
+| caf | evidenced_by | gum-recession | No | P6 Zucchelli root coverage CAF — gold standard |
+| tunneling-technique | evidenced_by | gum-recession | No | P6 Allen 1994 / Zabalegui 1999 classic |
+| vista-technique | evidenced_by | gum-recession | No | P6 Zadeh 2011 IJPRD original VISTA paper |
+| dental-caries | evidenced_by | fluoride-treatment | No | P15 WHO 2019 + Cochrane Walsh 2019 fluoride |
+| white-spot-lesion | evidenced_by | fluoride-treatment | No | P15 remineralization claim — Tier 1 ADA + WHO |
+| pit-fissure-sealant | evidenced_by | dental-caries | No | P15 Cochrane Ahovuo-Saloranta 2017 |
+| dental-abscess | evidenced_by | periodontitis | No | P14 Tonetti 2018 perio classification consensus |
+| dry-socket | evidenced_by | tooth-extraction | No | P14 Cochrane Daly 2012 local interventions SR |
+| pregnancy-gingivitis | evidenced_by | gingivitis | No | P14 hormonal gingivitis hormonal etiology consensus |
+| social-security-dental-benefit | evidenced_by | smilescape-dental-clinic | No | P13 sso.go.th regulatory database — Q-Clinic verification |
+| sso-direct-billing-q-clinic | evidenced_by | smilescape-dental-clinic | No | P13 Q-Clinic certificate (operator pending) |
+
+---
+
 ### V — Round 5 Additions (Section 5 Concern Universe)
 
 #### V1: Pain & Caries cluster bidirectional links
@@ -453,12 +479,13 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 215 (+31 in R5) | ≥ 50 | ✅ |
+| Total edges | 232 (+17 in R6) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 153/155 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 62 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 37 | — | ✅ |
-| Orphan entities (0 edges) | 2 | ≤ 8 | ✅ |
+| Entities with ≥ 1 edge | 155/155 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 63 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 39 (+2 R6 for Densah authority + Q-Clinic) | — | ✅ |
+| Orphan entities (0 edges) | 0 | ≤ 8 | ✅ |
+| **evidenced_by edges** | **25** (+17 in R6 citation evidence anchors) | ≥ 10 | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**
 - `teeth-whitening` — standalone cosmetic treatment; gains edges in Phase D

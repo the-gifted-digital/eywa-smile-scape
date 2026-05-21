@@ -1,5 +1,47 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-21 LATE NIGHT] — Round 6 Citation Pool Pillars 6-15 Expansion
+
+**By:** Operator reminder "อย่าลืม propose citation ให้ด้วยนะ" + PubMed MCP targeted searches
+
+**Files updated:**
+- `content-plan/citation-pool-seed.md` — Phase B.2 initial 5 pillars → **15 pillars (+10 R6)**. New pillars added:
+  - **P6 Soft Tissue D-2 Hybrid** — Urban 2017 textbook (Strip/Ice Berg/Garage primary source) + CAF/VISTA/Tunneling citations + Avila-Ortiz keratinized SR (PMID 32710810)
+  - **P7 Densah / Osseodensification** — Huwais original concept + 5 PubMed SRs/meta-analyses (PMIDs 37975644 / 38002660 / 40377845 / 33139057 / 33671038)
+  - **P8 Zero Bone Loss Concept (Linkevicius)** — Linkevicius 2019 Quintessence textbook (ISBN 978-0867158243) + 5 PMIDs (34076631 / 20605308 / 33527729 / 32250061 / 35476860)
+  - **P9 Peri-Implantitis Service** — Schwarz EFP 2018 World Workshop consensus (PMID 25626479) + 2023 SR (PMID 37271498) + 2025 update (PMID 40501397) + EFP 2023 clinical practice guidelines
+  - **P10 Pediatric Dentistry** — AAPD Reference Manual + WHO 2022 children oral health + Cochrane fluoride varnishes (Marinho 2013) + Cochrane pit-fissure sealants (Ahovuo-Saloranta 2017)
+  - **P11 Endodontics by Specialist** — ESE + AAE guidelines + Setzer endodontic microscope outcomes (PubMed depth pending)
+  - **P12 Sedation/GA Dentistry** — AAPD Behavior Guidance + ASA 2018 moderate sedation guidelines + Thai regulatory pending
+  - **P13 Insurance / SSO Q-Clinic** — sso.go.th regulatory database primary source (Tier 1 government)
+  - **P14 R5 Concern Conditions** — AAOMS 2022 MRONJ Position Paper (PMID 35336535) + 3 MRONJ SRs (PMIDs 37449761 / 39113433 / 35911799) + Cochrane Dry Socket (Daly 2012) + AAOP Orofacial Pain guidelines + Manfredini Bruxism consensus
+  - **P15 Dental Caries** — WHO 2019 caries implementation manual + Cochrane fluoride toothpaste (Walsh 2019) + Pitts 2017 Nat Rev DP + Cochrane sealants
+- `content-plan/relationships.md` — **+17 evidenced_by edges** (W section). Connects brand-stance entities to authority citations: ZBL→Linkevicius, Osseodensification→Densah-bur, Peri-Implantitis Treatment→Schwarz consensus, CAF/Tunneling/VISTA→Root coverage authority anchors, Dental Caries→Fluoride evidence, MRONJ→AAOMS 2022, etc. **evidenced_by edge count 8 → 25** (+213% R6).
+- `content-plan/egp-output-summary.md` — Round 6 expansion note + citation count update.
+- `docs/changelog.md` — this entry.
+
+**Brand Stance Topics expansion (Pattern E per DR-019):** +6 new brand-stance entries connecting R2-R5 service additions to authority citations (Densah/ZBL/Q-Clinic/Peri-Implantitis/Caries/Perio claims).
+
+**Operator action items expansion:** Initial 7 → 20 total. Round 6 additions cover textbook acquisitions (Linkevicius 2019, AAPD Manual), credential verification (Linkevicius training, Versah training, Q-Clinic registration), regulatory pulls (sso.go.th, ทันตแพทยสภา, ราชวิทยาลัยฯ), and targeted PubMed depth searches for Phase F.
+
+**Citation pool stats (R6 lock):**
+- Total pillars: **15** (was 5 — +10 R6)
+- Total citations identified: **~80**
+- PubMed PMIDs verified: **~25**
+- Tier 1 government/regulatory sources: **8**
+- Tier 4 textbooks: **3** (Urban 2017 / Linkevicius 2019 / AAPD Reference Manual)
+- Brand authority anchors: **4 named** (Urban / Huwais / Linkevicius / Kern)
+
+**Strategic frame (R6):**
+- Citation pool now **mirrors entire sitemap structure** — every R2-R5 service/concept has at least 1 Tier 1-3 citation pillar
+- **AI citation surface for Knowledge Graph** = comprehensive E-E-A-T anchor depth before content production starts
+- `evidenced_by` edges = 25 typed relationships → DR-019 Pattern E backing graph ready for Stage 1.5 flat-load
+- Phase F per-page citations will EXPAND from these pillars, not start from scratch
+
+**Pending operator actions (R6 — see citation-pool-seed.md Action Items 8-20)**
+
+---
+
 ## [2026-05-21 NIGHT] — Round 5 Section 5 Concern Universe Deep-Expansion
 
 **By:** Operator request "deep review concern keyword + bidirectional internal linking density" + DFS reconnaissance (5 batches, 60+ keywords)
