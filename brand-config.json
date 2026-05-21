@@ -84,6 +84,24 @@
       "authority_anchor": "Dr. Salah Huwais (Versah)",
       "_note": "Minimally invasive crestal sinus elevation + bone densification via counterclockwise bur action. Hero benefit: same-day primary stability + less invasive than lateral window.",
       "_operator_action_required": "ยืนยัน หมอแฮม Versah training / Huwais workshop credential — ใส่ใน Section 2.2.2 หมอแฮม credentials"
+    },
+    {
+      "name": "SmileScape Direct Print Clear Aligner (In-House Lab)",
+      "abbreviation": "SS Direct Print Aligner / In-House Aligner",
+      "url_slug": "direct-print-clear-aligner",
+      "type": "signature_technology",
+      "country_origin": "TH (in-house production)",
+      "authority_anchors": ["Graphy TC-85DAC FDA-cleared photopolymer", "PubMed evidence base 6 studies 2021-2025"],
+      "_differentiator": "FEWER ATTACHMENTS than thermoformed aligners (Invisalign/TrioClear) — built-in retention features printed directly into aligner",
+      "_capabilities": [
+        "In-house 3D direct-print production (no outsourced lab)",
+        "Same-day aligner manufacturing capability",
+        "Variable thickness per region (force zones thicker, comfort zones thinner)",
+        "Customizable mid-treatment refinements without lab delays",
+        "FDA-cleared photopolymer resin",
+        "Cost control through in-house production"
+      ],
+      "_operator_action_required": "ยืนยัน printer model (Asiga / SprintRay / Formlabs?) + photopolymer brand (Graphy TC-85DAC / Tera Harz TC-85?) + production volume + warranty terms + lab certification"
     }
   ],
 
@@ -339,7 +357,7 @@
   },
 
   "metadata": {
-    "config_version": "1.10",
+    "config_version": "1.11",
     "created_at": "2026-05-10",
     "last_updated_at": "2026-05-22",
     "_changelog_1_4": "Implant brands: Osstem out, Neodent in (Brazil, Straumann Group, value_premium). Signature offering #5 added: Internal Sinus Lift with Densah (Osseodensification, Salah Huwais authority). Soft tissue signature note expanded to include Urban techniques (Strip Graft / Ice Berg / Garage).",
@@ -348,7 +366,8 @@
     "_changelog_1_7": "Round 7: FAQ Canonical Source decision (SS-DR-009). Added faq_canonical_location='section_6.5' under content_strategy. Section 5.9 FAQ deprecated (overlap/duplication problem). Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 pages. All FAQ-needing pages link to 6.5.x canonical sub-pages.",
     "_changelog_1_8": "Round 8: Added 4 demographic specialties to specialty_focus (geriatric / pregnancy / medical-compromised / special-needs). Service-side gap fix — was previously only Pediatric had dedicated Section 3 service. Section 3.13 new with 4 sub-hubs (24 pages) + Section 2.2.11 Geriatric/Special-Care Team. DFS-validated: ทันตกรรมผู้สูงอายุ 70/mo TH LOW (6) — primary anchor.",
     "_changelog_1_9": "Round 9: Audit + corrections. (a) Periodontist + Endodontist specialists CONFIRMED on staff — 2.2.7 + 2.2.9 promoted Tier C→B. (b) 3.13.1.1 Home visit + 3.13.1.2 Bedridden REMOVED (clinic doesn't offer). (c) 3.12 SSO restructure: 3.12.1 + 3.12.4 consolidated into hub; 3.12.3 EXPANDED to sub-hub with 4 sub-pages — DFS goldmine ตรวจสิทธิประกันสังคม 2,400/mo + เอกสารประกันสังคม 720/mo. (d) 3.13.2 Pregnancy consolidated (thin-page risk — DFS sub-pages all <50/mo). Net -3 pages. Sitemap ~703.",
-    "_changelog_1_10": "Round 10: Team audit. (a) 2.2.10 Pediatric Dentist CONFIRMED on staff — Tier C→B. (b) 2.2.11 Geriatric/Special-Care Team page REMOVED — clinic does not have dedicated geriatric specialist (R8 was speculative). 3.13.1 Geriatric service still offered via general team + Periodontist + Endodontist. Net -1 page. Sitemap ~702."
+    "_changelog_1_10": "Round 10: Team audit. (a) 2.2.10 Pediatric Dentist CONFIRMED on staff — Tier C→B. (b) 2.2.11 Geriatric/Special-Care Team page REMOVED — clinic does not have dedicated geriatric specialist (R8 was speculative). 3.13.1 Geriatric service still offered via general team + Periodontist + Endodontist. Net -1 page. Sitemap ~702.",
+    "_changelog_1_11": "Round 11: ⭐ Direct Print In-House Clear Aligner = Signature Offering #6. Added per SS-DR-010 (locked). In-house 3D direct-print manufacturing using photopolymer resin (Graphy TC-85DAC or Tera Harz TC-85) — UNIQUE in TH value-premium market. Key differentiator: fewer attachments + same-day production + customizable thickness. PubMed evidence base 6 studies confirmed. Section 3.5.1 Clear Aligner promoted to Tier A sub-hub (~10 sub-pages). Section 4.6.0 In-House Aligner Lab Tech added. Pillar 16 citation added. Sitemap ~702→~722 pages (+20). Pending operator: printer model + resin brand + warranty."
   },
 
   "eywa_spec_snapshot": {

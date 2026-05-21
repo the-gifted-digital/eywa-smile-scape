@@ -12,16 +12,16 @@
 
 | Type | Count | Notes |
 |------|-------|-------|
-| Treatment | 38 | + 5 R8 (geriatric-dentistry / pregnancy-dental-care / medical-compromised-dentistry / bedridden-dentistry / special-needs-dentistry) |
+| Treatment | 39 | + 1 R11 (direct-print-clear-aligner Signature #6) |
 | Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
 | Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
-| Concept | 14 | + medical-clearance-protocol (R8) |
+| Concept | 16 | + in-house-aligner-lab + thermoformed-aligner (R11) |
 | Anatomy | 6 | (unchanged) |
-| Device | 13 | (unchanged R3) |
+| Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **161** | (was 155 at R5/R6/R7 — +6 in Round 8 demographic dentistry entities) |
+| **Total** | **167** | (was 161 at R8/R9/R10 — +6 in Round 11 Direct Print Aligner Signature #6) |
 
 ---
 
@@ -231,6 +231,12 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 5 | Orthodontic-Implant Sequencing | ortho-implant-sequencing | Concept | MedicalProcedure | malocclusion | — | Growing | 3.5.6 | จัดฟันก่อนรากฟันเทียม, ortho before implant, interdisciplinary planning | ['*'] | SmileScape differentiator — interdisciplinary specialty combo |
 | 6 | Orthognathic Surgery | orthognathic-surgery | Procedure | MedicalProcedure | malocclusion | — | Mature | 3.5.8 | ผ่าตัดขากรรไกร, จัดฟันร่วมผ่าตัด, jaw surgery, BSSO, Le Fort I, bimaxillary surgery | ['*'] | Combined ortho + surgical for skeletal Class II/III + facial asymmetry. SmileScape interdisciplinary service |
 | 7 | Passive Self-Ligating (PSL) | passive-self-ligating | Concept | MedicalDevice | damon-system | — | Growing | 3.5.3.1 | PSL, passive self-ligating braces, จัดฟัน PSL, Damon PSL | ['*'] | Brackets with sliding doors that don't bind archwire. Damon Q (metal) / Damon Clear (ceramic) |
+| 8 | Direct Print Clear Aligner | direct-print-clear-aligner | Treatment | MedicalProcedure | clear-aligner | M26.4 | Growing | 3.5.1.2 | Direct Print Aligner, 3D printed aligner, in-house aligner, photopolymer aligner | ['smile-scape'] | **Signature Offering #6 (R11)**. In-house 3D direct-print manufacturing. Subtype of clear-aligner. Authority: Graphy TC-85DAC + Tera Harz TC-85 FDA-cleared photopolymers. 6 PubMed citations 2021-2025. Key differentiator: fewer attachments vs thermoformed (Invisalign/TrioClear) |
+| 9 | In-House Aligner Lab | in-house-aligner-lab | Concept | — | smilescape-dental-clinic | — | Growing | 4.6.0 | คลินิกผลิตจัดฟันใสเอง, in-house aligner production | ['smile-scape'] | SmileScape's in-clinic aligner manufacturing capability. Same-day production. Customizable mid-treatment. R11 Signature anchor |
+| 10 | Photopolymer Resin TC-85 | photopolymer-resin-tc85 | Product | — | direct-print-clear-aligner | — | Growing | 4.6.0.2 | Graphy TC-85DAC, Tera Harz TC-85, photopolymer aligner resin, FDA-cleared aligner material | ['smile-scape'] | FDA-cleared photopolymer for direct-print aligner. Operator confirm which brand SmileScape uses (Graphy vs Tera Harz vs other). Citation: PMID 42076391 (Tera Harz TC-85 specific) |
+| 11 | Aligner Attachment | aligner-attachment | Device | MedicalDevice | clear-aligner | — | Mature | 3.5.1.5 | attachment, composite attachment, aligner button | ['*'] | Composite tooth-bonded buttons for thermoformed aligner retention. R11 Direct Print uses FEWER of these due to built-in features |
+| 12 | 3D Printer (Aligner) | 3d-printer-aligner | Device | MedicalDevice | in-house-aligner-lab | — | Growing | 4.6.0.1 | Asiga Pro4K, SprintRay Pro95, Formlabs Form 3B+, dental 3D printer | ['smile-scape'] | Photopolymer 3D printer for direct-print aligner. Specific model TBD operator confirm |
+| 13 | Thermoformed Aligner | thermoformed-aligner | Concept | MedicalProcedure | clear-aligner | — | Mature | 3.5.1.4 | thermoformed aligner, vacuum-formed aligner, traditional aligner, Invisalign-style aligner | ['*'] | Traditional aligner production: thermoform plastic over 3D-printed model. Used by Invisalign, TrioClear, ClearCorrect. Comparison anchor for Direct Print differentiation content |
 
 ---
 

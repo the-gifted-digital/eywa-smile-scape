@@ -457,6 +457,42 @@ Both layers grow `seo_citations` pool. Federation: citations marked `brand_scope
 
 ---
 
+## Pillar 16 — Direct Print Clear Aligner (Signature #6) ⭐
+
+**Goal:** 5-8 Tier 1-3 citations supporting Direct Print In-House Aligner — SmileScape Signature Offering #6 (R11)
+
+**Main claims to back:**
+1. Direct Print clear aligners produce comparable or better clinical outcomes vs thermoformed
+2. Photopolymer resin (TC-85DAC / Tera Harz TC-85) is FDA-cleared and biocompatible for prolonged intraoral use
+3. Direct Print allows fewer composite attachments due to built-in retention features
+4. Variable thickness per region (force zones thicker, comfort zones thinner) — impossible with thermoforming
+5. Shape memory effect of photopolymer = better aligner fit recovery
+6. Same-day in-house production enables mid-treatment refinement without lab delays
+
+**Citations:**
+
+| # | Tier | Topic | Authors / Source | Year | PMID | Schema Evidence | Covers Claim(s) |
+|---|------|-------|------------------|------|------|----------------|----------------|
+| 1 | 2 | Direct Print outcomes | Various — Direct 3D printed aligner | 2022 | PMID 36311049 | B (Clinical study) | 1 |
+| 2 | 2 | Material properties | Various — Photopolymer aligner materials | 2021 | PMID 33916462 | B (Material science) | 2 |
+| 3 | 2 | Clinical outcomes 2024 | Various — Recent Direct Print clinical | 2024 | PMID 39921085 | B (Clinical outcomes) | 1, 3 |
+| 4 | 2 | Direct Print vs Thermoformed | Various — Comparison study | 2024 | PMID 38337260 | A (Comparative study) | 3, 4, 5 |
+| 5 | 2 | 2025 Systematic Review | Various — Direct Print SR | 2025 | PMID 40123039 | A (Systematic review) | All |
+| 6 | 2 | Tera Harz TC-85 specific | Various — TC-85 material study | 2025 | PMID 42076391 | B (Material-specific) | 2 |
+| 7 | 3 | Manufacturer | Graphy Inc — TC-85DAC FDA clearance + clinical | current | graphy.com | C (Manufacturer) | 2 — FDA backing |
+| 8 | 3 | Manufacturer | Tera Harz / Versa Wax — TC-85 documentation | current | teraharz.com | C (Manufacturer) | 2 |
+| 9 | 5 | Brand | SmileScape Clinic internal | In-house Direct Print case audit | TBD | brand_scope=['smile-scape'] | All — brand Tier 5 |
+
+**Operator action:**
+- Confirm 3D printer model (Asiga / SprintRay / Formlabs)
+- Confirm photopolymer brand (Graphy TC-85DAC vs Tera Harz TC-85 vs other)
+- Confirm production volume + warranty terms
+- Pull manufacturer FDA clearance + clinical evidence from Graphy / Tera Harz site
+
+**Brand Stance Note:** Signature Offering #6 — "SmileScape ใช้ Direct Print เทคโนโลยีผลิตจัดฟันใสในคลินิก ลด attachment + เร็วกว่า" → Tier 2 PubMed SRs above + Tier 3 manufacturer + Tier 5 internal audit + (pending) operator equipment specs.
+
+---
+
 ## Brand Stance Topics (Pattern E backing per DR-019)
 
 For topics where SmileScape takes a position not directly stated in cited sources:

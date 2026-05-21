@@ -362,6 +362,30 @@
 
 ---
 
+### Y — Round 11 Additions (Direct Print Clear Aligner Signature #6)
+
+> SmileScape Direct Print in-house aligner = Signature Offering #6. Edges connect signature entity to clear-aligner hierarchy + comparison alternative-to thermoformed + uses tech/material + evidenced_by PubMed authority.
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| direct-print-clear-aligner | subtype_of | clear-aligner | No | Direct Print = clear-aligner subtype |
+| direct-print-clear-aligner | alternative_to | thermoformed-aligner | Yes | Direct Print vs Thermoformed — comparison content anchor |
+| direct-print-clear-aligner | alternative_to | trioclear-aligner | Yes | In-house Direct Print vs outsourced TrioClear |
+| direct-print-clear-aligner | uses | photopolymer-resin-tc85 | No | TC-85DAC / Tera Harz material |
+| direct-print-clear-aligner | uses | 3d-printer-aligner | No | Asiga / SprintRay / Formlabs printer |
+| direct-print-clear-aligner | related_to | in-house-aligner-lab | Yes | Lab capability ties to signature offering |
+| in-house-aligner-lab | related_to | smilescape-dental-clinic | Yes | Brand-specific manufacturing capability |
+| in-house-aligner-lab | uses | photopolymer-resin-tc85 | No | Material consumption in lab |
+| in-house-aligner-lab | uses | 3d-printer-aligner | No | Equipment in lab |
+| aligner-attachment | related_to | clear-aligner | Yes | Composite attachment used by thermoformed aligners |
+| aligner-attachment | alternative_to | direct-print-clear-aligner | No | Direct Print uses fewer attachments (built-in features replace) — competitive comparison |
+| direct-print-clear-aligner | treats | malocclusion | No | Service treats condition |
+| direct-print-clear-aligner | related_to | smilescape-dental-clinic | Yes | Signature offering brand anchor |
+| dr-woraphat-jarangkul | related_to | direct-print-clear-aligner | Yes | Medical Director oversees in-house lab (R11 — operator confirm role) |
+| direct-print-clear-aligner | evidenced_by | photopolymer-resin-tc85 | No | Material evidence + 6 PubMed studies (Pillar 16) |
+
+---
+
 ### X — Round 8 Additions (Demographic-Specific Dentistry Services)
 
 > Service-side demographic dentistry — Section 3.13. Bidirectional links connect service entities (3.13) ↔ concern entities (5.8 / 5.20 / 5.12) ↔ FAQ (6.5.3) for DR-021 reciprocal-detection density.
@@ -521,14 +545,14 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 249 (+17 in R8) | ≥ 50 | ✅ |
+| Total edges | 264 (+15 in R11) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 161/161 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 73 (+10 R8 demographic bidirectional) | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 39 | — | ✅ |
+| Entities with ≥ 1 edge | 167/167 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 81 (+8 R11 Direct Print bidirectional) | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 47 (+8 R11 Signature #6 brand integration) | — | ✅ |
 | Orphan entities (0 edges) | 0 | ≤ 8 | ✅ |
-| **evidenced_by edges** | **25** | ≥ 10 | ✅ |
-| **requires_assessment edges** | 7 (+2 R8 MRONJ/medical clearance) | — | ✅ |
+| **evidenced_by edges** | **26** (+1 R11 Direct Print material) | ≥ 10 | ✅ |
+| **requires_assessment edges** | 7 | — | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**
 - `teeth-whitening` — standalone cosmetic treatment; gains edges in Phase D

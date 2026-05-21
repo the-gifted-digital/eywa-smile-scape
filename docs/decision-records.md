@@ -214,12 +214,63 @@ Structure:
 
 ---
 
+## [SS-DR-010] — Direct Print In-House Clear Aligner as Signature Offering #6 (2026-05-22)
+
+**Status:** Locked (operator confirmed Round 11)
+**Companion to:** SS-DR-007 (Densah Signature #5) — distinguishes signature_technology vs signature_technique categorization
+
+**Context:**
+SmileScape has in-house clear aligner manufacturing using 3D direct-print technology (photopolymer resin — Graphy TC-85DAC or Tera Harz TC-85 — FDA-cleared, operator to confirm specific brand). This is UNIQUE in TH value-premium dental market (most clinics outsource to TrioClear / Invisalign / ClearCorrect thermoformed labs).
+
+PubMed evidence base (6 studies 2021-2025) confirms:
+- Direct Print outcomes comparable or better than thermoformed
+- Fewer composite attachments needed (built-in retention features)
+- Variable thickness per region
+- Same-day production capability
+
+**Decision:**
+**Direct Print In-House Aligner = Signature Offering #6** in `brand-config.json`. Type: `signature_technology` (distinct from signature_technique like Sausage/Soft Tissue, and signature_treatment like Blue Diamond/All-on-X).
+
+5 existing Signatures + 1 new = **6 Signature Offerings total:**
+1. Blue Diamond Implant System (signature_treatment, hero)
+2. Sausage Technique (signature_technique, Urban authority)
+3. All-on-X Immediate Loading (signature_treatment, ILAPEO)
+4. Soft Tissue Management (signature_technique, Kern + Urban)
+5. Internal Sinus Lift with Densah (signature_technique, Huwais authority) — SS-DR-007
+6. **Direct Print Clear Aligner (signature_technology, in-house manufacturing)** — SS-DR-010 (R11)
+
+**Implications:**
+- `brand-config.json` `signature_offerings[5]` entry (v1.11)
+- Entity `direct-print-clear-aligner` (Treatment, brand-scope=['smile-scape']) + 5 supporting entities (in-house-aligner-lab, photopolymer-resin-tc85, 3d-printer-aligner, aligner-attachment, thermoformed-aligner for comparison)
+- Sitemap Section 3.5.1 promoted to Tier A sub-hub with 10 sub-pages (Direct Print as 3.5.1.2 Signature)
+- Section 4.6.0 In-House Aligner Lab Tech sub-hub (6 pages) — equipment + workflow + QC
+- Section 6.2.5 Knowledge (+3 Direct Print insights)
+- Section 6.4.15 Pillar 16 Evidence Summary
+- 15 new edges (subtype/alternative/uses/evidenced_by chains)
+- Citation Pool Pillar 16 (8 citations + brand Tier 5)
+
+**Rationale:**
+- **Unique TH market positioning** — no other value-premium clinic offers in-house direct-print currently
+- **Real capability** (operator confirmed clinic has equipment + workflow)
+- **Strong evidence base** (6 PubMed studies + FDA-cleared materials)
+- **Premium positioning support** — fewer attachments + same-day = differentiated patient experience
+- **Cost control** — in-house vs outsourced TrioClear license fees
+- **Parallel to Densah Signature #5 pattern** — named-technology with manufacturer + authority + evidence
+
+**Pending operator (R11):**
+- Confirm 3D printer model (Asiga / SprintRay / Formlabs)
+- Confirm photopolymer brand (Graphy TC-85DAC / Tera Harz TC-85 / other)
+- Confirm production volume + warranty terms + lab certification
+- Confirm หมอแฮม role in in-house lab (Medical Director oversight)
+
+---
+
 ## Future Brand-Specific DRs (placeholders)
 
-- SS-DR-010: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
-- SS-DR-011: Multilingual launch decision (TH only initially → EN when?)
-- SS-DR-012: International medical tourism positioning (vs domestic-first focus)
-- SS-DR-013: Cross-brand link governance (DR-021 once locked)
+- SS-DR-011: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
+- SS-DR-012: Multilingual launch decision (TH only initially → EN when?)
+- SS-DR-013: International medical tourism positioning (vs domestic-first focus)
+- SS-DR-014: Cross-brand link governance (DR-021 once locked)
 
 ---
 

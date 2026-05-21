@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~702p Round 10 — Team audit (no geriatric team), pending client final feedback)
+│   └── sitemap.md                (~722p Round 11 — Clear Aligner Elevation + Direct Print Signature #6, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,10 +58,10 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 10 — 2026-05-22):**
-   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / 161 entities / 249 edges / 15 citation pillars)
-   - Phase E 🟡 in progress — sitemap ~702p (R10 team audit locked — Pediatric Dentist confirmed, Geriatric Team page removed)
-   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R11)
+4. **Stage status (Round 11 — 2026-05-22):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / 167 entities / 264 edges / 16 citation pillars)
+   - Phase E 🟡 in progress — sitemap ~722p (R11 Clear Aligner Elevation + Direct Print Signature #6 locked)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R12)
 
 ---
 
@@ -117,6 +117,11 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 12. ✅ R9 RESOLVED: Peri-Implantitis specialist credential — clinic Periodontist handles (was R3 pending)
 13. ✅ R10 RESOLVED: No dedicated Geriatric/Special-Care specialist — 2.2.11 page removed; service 3.13.1 delivered via general team (no pending)
 14. ✅ R9 RESOLVED: Home Visit + Bedridden Dentistry not offered — sitemap pages removed (no pending)
+15. **R11 NEW: Direct Print Aligner equipment + material** (Section 3.5.1.2 + 4.6.0):
+    - 3D printer model (Asiga / SprintRay / Formlabs?)
+    - Photopolymer brand (Graphy TC-85DAC / Tera Harz TC-85?)
+    - Production volume + warranty + lab cert
+    - หมอแฮม role in in-house aligner lab
 12. Branch addresses + GPS + phone + LINE OA + GBP Place IDs
 13. Verify Neodent series / 3Shape TRIOS model / Acteon CBCT model
 14. Gold crown supplier / alloy tier (R3)

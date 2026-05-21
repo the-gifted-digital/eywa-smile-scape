@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~702 (Round 10 team audit, 2026-05-22 — was 703 at R9; R10 -1 = removed 2.2.11 Geriatric Team) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~722 (Round 11 Clear Aligner Elevation + Direct Print Signature #6, 2026-05-22 — was 702 at R10; R11 +20) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -12,7 +12,8 @@
 > **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages
 > **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW
 > **Round 9 (2026-05-22):** Audit + Operator Confirmations — Periodontist + Endodontist specialists confirmed / Home Visit + Bedridden removed / 3.12.3 DFS expansion / pregnancy consolidation. Net -3 pages
-> **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric/Special-Care Team REMOVED (no dedicated specialist; service 3.13.1 still offered via general team). 2.2.10 Pediatric Dentist CONFIRMED Tier C→B. Net -1 page — see `docs/changelog.md`
+> **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric Team REMOVED, 2.2.10 Pediatric Dentist confirmed. Net -1 page
+> **Round 11 (2026-05-22):** ⭐ **Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)** — Section 3.5.1 promoted to Tier A sub-hub (10 sub-pages) / Section 4.6.0 In-House Aligner Lab Tech (6 pages) / Section 6.2.5 Knowledge (+3) / Section 6.4 Evidence (+1) / 5.10.9 cross-ref. PubMed evidence: 6 studies (Pillar 16). Differentiator: in-house 3D direct-print production = UNIQUE TH market positioning. Net +20 pages — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -34,13 +35,13 @@
 ## Pages per Section (Round 4)
 - **1. HOME:** 1 page
 - **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages (R10: -1 from 2.2.11 removal; R8 net effect cancelled)
-- **3. SERVICES:** ~253 pages (R9 -3: 3.12 consolidation -2 + 3.12.3 expansion +4 -1 net = +2; 3.13.1 -2 home/bedridden; 3.13.2 -3 pregnancy consolidation. R8 baseline 256 + R9 -3 = 253)
-- **4. TECHNOLOGY:** ~29 pages
+- **3. SERVICES:** ~262 pages (R11 +9: Section 3.5.1 expansion sub-hub for Direct Print Signature #6. R10 baseline 253 + R11 +9 = 262)
+- **4. TECHNOLOGY:** ~35 pages (R11 +6: 4.6.0 In-House Aligner Lab — Direct Print sub-hub)
 - **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
-- **6. KNOWLEDGE:** 150 pages (R7: +23 from 6.5 FAQ canonical restructure — 5 sub-hubs / 29 FAQ pages)
+- **6. KNOWLEDGE:** 154 pages (R11 +4: 6.2.5 +3 Direct Print knowledge + 6.4.15 Pillar 16 evidence)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R10:** ~702 pages (R9 baseline 703 + R10 -1: 2.2.11 Geriatric Team removed)
+- **TOTAL R11:** ~722 pages (R10 baseline 702 + R11 +20: Direct Print Signature #6 — 3.5.1 +9 / 4.6.0 +6 / 6.2.5 +3 / 6.4 +1 / 5.10 +1)
 
 ---
 
@@ -354,10 +355,19 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.5 | จัดฟัน — Orthodontics at SmileScape (hub) | L2 | B | mid | A | clear-aligner |
-| 3.5.1 | → จัดฟันใส — ถาดใสถอดได้ ไม่มีลวด | L2 | B | mid | A | clear-aligner |
-| | → → หลักการทำงาน / ใครเหมาะ / ข้อดี-ข้อจำกัด / ขั้นตอน | | — | — | — |
-| 3.5.2 | → จัดฟันใสแบบ Progressive — ถาดหลายระดับแรง เจ็บน้อย ติดปุ่มน้อย | L2 | C | mid | A | clear-aligner |
-| | → → หลักการ Soft→Hard / Divot Force vs Attachment / ทำไมเจ็บน้อยกว่า | | — | — | — |
+| 3.5.1 | → จัดฟันใส — Clear Aligner Hero ★ 🌟 (sub-hub R11 promoted) | L2 | **A** | mid | A | clear-aligner |
+| | → → R11 promoted to Tier A hub. SmileScape Direct Print = Signature #6 differentiation | | — | — | — |
+| 3.5.1.1 | → → จัดฟันใสคืออะไร — หลักการ + ข้อดี + ข้อจำกัด | L2 | B | top | A | clear-aligner |
+| 3.5.1.2 | → → 🌟 SmileScape Direct Print Aligner — In-House Lab ★ (Signature #6) | L2 | **A** | mid | A | direct-print-clear-aligner |
+| | → → → ผลิตในคลินิก / ใช้ attachment น้อย / same-day production / FDA-cleared photopolymer / 6 PubMed evidence | | — | — | — |
+| 3.5.1.3 | → → จัดฟันใส TrioClear (Progressive — 2nd option) — Soft→Hard force | L2 | C | mid | A | trioclear-aligner |
+| 3.5.1.4 | → → Direct Print vs Thermoformed (Invisalign/TrioClear) — Comparison | L2 | B | mid | D | thermoformed-aligner |
+| 3.5.1.5 | → → ทำไม Direct Print ใช้ attachment น้อยกว่า — Built-in features | L2 | B | mid | A | direct-print-clear-aligner |
+| 3.5.1.6 | → → Same-Day Aligner Capability — In-Clinic Production | L2 | B | mid | A | in-house-aligner-lab |
+| 3.5.1.7 | → → ใครเหมาะกับจัดฟันใส — Candidacy Assessment | L2 | C | top | A | clear-aligner |
+| 3.5.1.8 | → → ข้อจำกัด — เคสที่ไม่เหมาะกับ aligner | L2 | C | top | D | clear-aligner |
+| 3.5.1.9 | → → ราคาจัดฟันใส SmileScape — Direct Print value vs Invisalign / TrioClear | L2 | B | bottom | D | clear-aligner |
+| 3.5.1.10 | → → การดูแล Aligner — Cleaning + Storage + Replacement Schedule | L2 | D | mid | A | clear-aligner |
 | 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | damon-system |
 | | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape ใช้ PSL system | | — | — | — |
 | 3.5.3.1 | → → Passive Self-Ligating (PSL) — Damon Q / Damon Clear ★ 🌟 | L2 | C | mid | A | passive-self-ligating |
@@ -641,8 +651,15 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 4.6 | เทคโนโลยีจัดฟัน (hub) | L3 | C | mid | A | clear-aligner |
-| 4.6.1 | → TrioClear™ Progressive Aligner System — ระบบจัดฟันใสแบบ Progressive ★ | L3 | C | mid | A | trioclear-aligner |
+| 4.6 | เทคโนโลยีจัดฟัน (hub) | L3 | **B** | mid | A | clear-aligner |
+| 4.6.0 | → 🌟 SmileScape In-House Aligner Lab — Direct Print Production ★ (Signature #6) | L3 | **B** | mid | A | in-house-aligner-lab |
+| | → → R11 SIGNATURE: ผลิตจัดฟันใสในคลินิก / 3D direct print / fewer attachments / same-day capability | | — | — | — |
+| 4.6.0.1 | → → 3D Printer — Asiga / SprintRay / Formlabs (TBD operator) ★ | L3 | C | mid | A | 3d-printer-aligner |
+| 4.6.0.2 | → → Photopolymer Resin — Graphy TC-85DAC / Tera Harz TC-85 (TBD) ★ | L3 | C | mid | A | photopolymer-resin-tc85 |
+| 4.6.0.3 | → → Direct Print Workflow — Digital Scan → Plan → Print → Polish → Deliver | L3 | C | mid | A | direct-print-clear-aligner |
+| 4.6.0.4 | → → Quality Control + FDA-Cleared Material Certification | L3 | D | mid | A | photopolymer-resin-tc85 |
+| 4.6.0.5 | → → In-House Lab vs Outsourced Lab — Time + Cost + Quality Comparison | L3 | C | mid | D | in-house-aligner-lab |
+| 4.6.1 | → TrioClear™ Progressive Aligner System — ระบบจัดฟันใสแบบ Progressive ★ (2nd option) | L3 | C | mid | A | trioclear-aligner |
 | | → → TrioDim Force / Multi-layer material (Soft→Hard) / Robotic production / Minimal attachments | | — | — | — |
 | 4.6.2 | → Damon™ Self-Ligating Bracket System — ระบบ Bracket ล็อคตัวเอง ★ | L3 | C | mid | A | damon-system |
 | | → → Damon Q (metal) / Damon Clear (ceramic) / Passive self-ligation mechanism | | — | — | — |
@@ -817,6 +834,7 @@
 | 5.10.6 | → จัดฟันแบบไหนเหมาะกับฉัน — ใส / เหล็ก / เซรามิก | L4 | C | top | A | malocclusion |
 | 5.10.7 | → คางยื่น / คางหด — แก้ด้วยจัดฟันหรือผ่าตัด (→ link 3.5.8 Orthognathic) | L4 | C | top | A | orthognathic-surgery |
 | 5.10.8 | → หน้าเบี้ยว / Facial Asymmetry — แก้ได้ไหม | L4 | C | top | A | orthognathic-surgery |
+| 5.10.9 | → จัดฟันใส attachment น้อย — Direct Print Aligner ★ (R11 — → link 3.5.1.5) | L4 | C | top | A | direct-print-clear-aligner |
 
 ### 5.11 ปัญหาเหงือกเฉพาะทาง
 
@@ -1171,6 +1189,9 @@
 | 6.2.5.5 | → เปรียบเทียบยี่ห้อจัดฟันใส — TrioClear vs Invisalign vs อื่นๆ | L5 | C | top | D | trioclear-aligner |
 | 6.2.5.6 | → จัดฟันผู้ใหญ่ — สิ่งที่ต้องรู้ ใช้เวลานานแค่ไหน | L5 | D | top | A | clear-aligner |
 | 6.2.5.7 | → Retention & Relapse — ทำไมฟันถึงเรียงตัวกลับหลังจัดฟัน | L5 | D | top | A | clear-aligner |
+| 6.2.5.8 | → Direct Print Clear Aligner คืออะไร — เทคโนโลยีพิมพ์ 3D ตรง 🌟 (R11) | L5 | B | top | A | direct-print-clear-aligner |
+| 6.2.5.9 | → Photopolymer Resin TC-85 — Material properties + Safety (R11) | L5 | C | top | A | photopolymer-resin-tc85 |
+| 6.2.5.10 | → In-House Lab vs Outsourced Lab — Strategic difference (R11) | L5 | C | top | D | in-house-aligner-lab |
 
 #### 6.2.6 Tech Brand Insights (Round 2 NEW)
 
@@ -1221,6 +1242,7 @@
 | 6.4.12 | → Huwais 2017+: Osseodensification Evidence Base 🌟 | L5 | C | mid | A | osseodensification |
 | 6.4.13 | → Evidence Tier Framework — งานวิจัยระดับไหนเชื่อถือได้ | L5 | D | mid | A | dental-implant |
 | 6.4.14 | → Linkevicius 2009-2020: Zero Bone Loss Concept — Evidence Summary 🌟 (R3) | L5 | B | mid | A | zero-bone-loss-concept |
+| 6.4.15 | → Direct Print Clear Aligner — Evidence Summary 🌟 (R11 — 6 PubMed studies 2022-2025) | L5 | B | mid | A | direct-print-clear-aligner |
 
 ---
 

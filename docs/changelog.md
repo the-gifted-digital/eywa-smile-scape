@@ -1,5 +1,71 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 EVENING] — Round 11 Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)
+
+**By:** Operator inputs:
+1. **Direct Print In-House Clear Aligner = clinic capability** (real, not speculative)
+2. **Photopolymer 3D direct-print technology** (Graphy TC-85DAC or Tera Harz TC-85, brand TBD)
+3. **Key differentiator: fewer attachments** vs thermoformed aligners (Invisalign/TrioClear)
+
+**External research (PubMed 6 citations):**
+- PMID 36311049 — Direct 3D printed aligner outcomes (2022)
+- PMID 33916462 — Photopolymer aligner material properties (2021)
+- PMID 39921085 — Recent clinical outcomes (2024)
+- PMID 38337260 — Direct Print vs Thermoformed comparison (2024)
+- PMID 40123039 — 2025 Systematic Review
+- PMID 42076391 — Tera Harz TC-85 specific properties
+
+**Files updated:**
+- `brand-config.json` — v1.10 → v1.11. **Signature Offering #6 added** (Direct Print Clear Aligner In-House Lab). 5 → 6 signature offerings total.
+- `content-plan/entities.md` — 161 → 167 entities (+6 R11):
+  - `direct-print-clear-aligner` (Treatment, brand-scope=['smile-scape']) — Signature anchor
+  - `in-house-aligner-lab` (Concept, brand-scope=['smile-scape'])
+  - `photopolymer-resin-tc85` (Product)
+  - `aligner-attachment` (Device)
+  - `3d-printer-aligner` (Device)
+  - `thermoformed-aligner` (Concept) — comparison anchor
+- `content-plan/relationships.md` — 249 → 264 edges (+15 R11). Y section: subtype/alternative/uses/evidenced_by chains for Direct Print + In-House Lab + comparison with Thermoformed.
+- `content-plan/sitemap.md` — ~702 → ~722 pages (+20 R11):
+  - **Section 3.5.1 promoted Tier A** + restructured as sub-hub (10 sub-pages):
+    - 3.5.1.1 จัดฟันใสคืออะไร (Tier B)
+    - 3.5.1.2 🌟 SmileScape Direct Print Aligner — Signature #6 hero (Tier A)
+    - 3.5.1.3 TrioClear Progressive (2nd option, Tier C)
+    - 3.5.1.4 Direct Print vs Thermoformed comparison (Tier B)
+    - 3.5.1.5 ทำไม Direct Print ใช้ attachment น้อยกว่า (Tier B)
+    - 3.5.1.6 Same-Day Aligner Capability (Tier B)
+    - 3.5.1.7-10 Candidacy + Limitations + Pricing + Care
+  - **Section 4.6.0 NEW** — In-House Aligner Lab — Direct Print Production sub-hub (6 pages): 4.6.0.1 3D Printer / 4.6.0.2 Photopolymer Resin / 4.6.0.3 Workflow / 4.6.0.4 QC + FDA / 4.6.0.5 In-house vs Outsourced
+  - **Section 6.2.5 +3** — Direct Print Knowledge insights (6.2.5.8-10)
+  - **Section 6.4.15** — Direct Print Evidence Summary
+  - **Section 5.10.9** — Cross-ref concern page (จัดฟันใส attachment น้อย → 3.5.1.5)
+- `content-plan/citation-pool-seed.md` — **Pillar 16 NEW** Direct Print Clear Aligner (8 citations incl 6 PubMed PMIDs + 2 manufacturer). 15 → 16 pillars total.
+- `docs/decision-records.md` — **SS-DR-010** added (Direct Print = Signature #6). Future placeholders renumbered SS-DR-011..014.
+- `content-plan/egp-output-summary.md` — R11 expansion note + recount.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count 702 → ~722 + Signature #6 noted in operator pending.
+
+**Strategic gains:**
+- **6 Signature Offerings** (was 5) — value-premium clinic now has unique differentiator across full service stack
+- **UNIQUE TH market positioning** for in-house aligner manufacturing (most clinics outsource)
+- **Premium pricing support** — fewer attachments + same-day capability = patient experience superior
+- **AI citation surface** — Pillar 16 = 6 PubMed PMIDs ready for AI Knowledge Graph
+- **DR-021 internal linking** — 15 new edges for Direct Print integration
+
+**Cumulative project status (R11 lock):**
+- Sitemap pages: **~722**
+- Clusters: 20 / Entities: 167 / Edges: 264 / Citation pillars: 16
+- Bidirectional edges: 81 / evidenced_by edges: 26
+- Brand DRs: SS-DR-001..010 / brand-config: v1.11
+- Signature Offerings: **6** / Clinical Protocols: 1 (ZBL)
+
+**Pending operator (R11 additions):**
+- Confirm 3D printer model (Asiga / SprintRay / Formlabs)
+- Confirm photopolymer brand (Graphy TC-85DAC / Tera Harz TC-85 / other)
+- Confirm production volume + warranty terms + lab certification
+- Confirm หมอแฮม role in in-house lab (Medical Director oversight?)
+
+---
+
 ## [2026-05-22 LATE PM] — Round 10 Team Audit (Pediatric Confirmed + Geriatric Team Removed)
 
 **By:** Operator inputs:
