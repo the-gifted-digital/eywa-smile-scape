@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~722 (Round 11 Clear Aligner Elevation + Direct Print Signature #6, 2026-05-22 — was 702 at R10; R11 +20) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~733 (Round 13 QA cleanup, 2026-05-22 — actual numbered rows = 733 after R13 thin-page consolidation. Pre-R13 audit count = 740, R13 -7: 5.22 Lifestyle 6→1 (-5) + 3.13.4 Special Needs 4→1 (-3, but kept hub +1 in-page note = -2 net) + 3.5.2 gap note) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -14,7 +14,8 @@
 > **Round 9 (2026-05-22):** Audit + Operator Confirmations — Periodontist + Endodontist specialists confirmed / Home Visit + Bedridden removed / 3.12.3 DFS expansion / pregnancy consolidation. Net -3 pages
 > **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric Team REMOVED, 2.2.10 Pediatric Dentist confirmed. Net -1 page
 > **Round 11 (2026-05-22):** ⭐ **Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)** — Section 3.5.1 promoted to Tier A sub-hub (10 sub-pages) / Section 4.6.0 In-House Aligner Lab Tech (6 pages) / Section 6.2.5 Knowledge (+3) / Section 6.4 Evidence (+1) / 5.10.9 cross-ref. PubMed evidence: 6 studies (Pillar 16). Differentiator: in-house 3D direct-print production = UNIQUE TH market positioning. Net +20 pages
-> **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3 (Densah Bur → Osseodensification / TrioClear → Progressive Force / Damon Q/Clear → Metal/Ceramic SL / Invisalign mentions removed / Airflow → Air Polishing). Cross-link notes added on Section 4 brand pages. Doctor-named techniques + SmileScape brand allowed in Section 3 (inseparable). External product brands → Section 4/6 only. Net 0 page change — see `docs/changelog.md`
+> **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3. Cross-link notes added Section 4. Net 0 page change
+> **Round 13 (2026-05-22):** **Pre-Review QA Cleanup** — Section header page counts corrected to actuals / entity count 167→163 + edge count 264→271 (audit recount) / 5.22 Lifestyle consolidated (6→1, -5) / 3.13.4 Special Needs consolidated (4→1, -3) / 3.5.2 gap note added. Net -7 pages → ~733 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -60,7 +61,7 @@
 
 ---
 
-## Section 2: OUR UNIQUENESS — The Global Mastery (32 pages)
+## Section 2: OUR UNIQUENESS — The Global Mastery (~38 pages, R13 verified count)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 2.1 About SmileScape
@@ -161,7 +162,7 @@
 
 ---
 
-## Section 3: SERVICES & PROGRAMS (187 pages)
+## Section 3: SERVICES & PROGRAMS (~262 pages, R13 verified)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 3.1 Precision Diagnostics — ระบบวินิจฉัยดิจิทัล
@@ -357,7 +358,7 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.5 | จัดฟัน — Orthodontics at SmileScape (hub) | L2 | B | mid | A | clear-aligner |
 | 3.5.1 | → จัดฟันใส — Clear Aligner Hero ★ 🌟 (sub-hub R11 promoted) | L2 | **A** | mid | A | clear-aligner |
-| | → → R11 promoted to Tier A hub. SmileScape Direct Print = Signature #6 differentiation | | — | — | — |
+| | → → R11 promoted to Tier A hub. SmileScape Direct Print = Signature #6 differentiation. **R13 numbering note:** 3.5.2 (was old Progressive page) merged into 3.5.1.3. Section continues 3.5.3 → Self-Ligating | | — | — | — |
 | 3.5.1.1 | → → จัดฟันใสคืออะไร — หลักการ + ข้อดี + ข้อจำกัด | L2 | B | top | A | clear-aligner |
 | 3.5.1.2 | → → 🌟 SmileScape Direct Print Aligner — In-House Lab ★ (Signature #6) | L2 | **A** | mid | A | direct-print-clear-aligner |
 | | → → → ผลิตในคลินิก / ใช้ attachment น้อย / same-day production / FDA-cleared photopolymer / 6 PubMed evidence | | — | — | — |
@@ -581,14 +582,12 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 3.13.4 | Special Needs Dentistry (sub-hub) | L2 | C | mid | A | special-needs-dentistry |
-| 3.13.4.1 | → Autism / ADHD / Down's Syndrome — Behavior-Aware Approach | L2 | C | mid | A | special-needs-dentistry |
-| 3.13.4.2 | → Dementia / Alzheimer's Patient — Adapted Protocol | L2 | C | mid | A | special-needs-dentistry |
-| 3.13.4.3 | → GA Dentistry สำหรับ Special Needs (→ link 3.10.6) | L2 | C | mid | A | ga-dentistry |
+| 3.13.4 | Special Needs Dentistry (comprehensive page) | L2 | C | mid | A | special-needs-dentistry |
+| | → → R13 consolidated (low volume + thematic overlap). In-page sections: Autism / ADHD / Down's Syndrome (Behavior-Aware) / Dementia / Alzheimer's (Adapted Protocol) / GA pathway → cross-ref 3.10.6 | | — | — | — |
 
 ---
 
-## Section 4: TECHNOLOGY — Digital Implant Excellence (35 pages)
+## Section 4: TECHNOLOGY — Digital Implant Excellence (~42 pages, R13 verified)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 4.1 Technology Overview
@@ -693,7 +692,7 @@
 
 ---
 
-## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (109 pages)
+## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (~190 pages, R13 verified — 5.9 deprecated R7, +R5/R8/R13 changes)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
 
 ### 5.1 ฟันหาย / สูญเสียฟัน (Implant Funnel — ใหญ่สุด)
@@ -1006,12 +1005,8 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 5.22 | ทำฟันแล้วใช้ชีวิตยังไง (hub) | L4 | D | mid | A | dental-implant |
-| 5.22.1 | → ทำฟันแล้วกินอาหารร้อน / เย็น / เผ็ด | L4 | D | mid | A | dental-implant |
-| 5.22.2 | → ทำฟันแล้วดื่มกาแฟ / ชา / ไวน์ | L4 | D | mid | A | dental-implant |
-| 5.22.3 | → ทำฟันแล้วบินเครื่องบิน | L4 | D | mid | A | dental-implant |
-| 5.22.4 | → ทำฟันแล้วเล่นกีฬา / ดำน้ำ | L4 | D | mid | A | dental-implant |
-| 5.22.5 | → ทำฟันแล้วใส่หน้ากาก / ทำงานกลางคืน | L4 | D | mid | A | dental-implant |
+| 5.22 | ทำฟันแล้วใช้ชีวิตยังไง (comprehensive page) | L4 | C | mid | A | dental-implant |
+| | → → R13 consolidated (DFS thin-page risk: all 5 sub-pages were Tier D no DFS). In-page sections: กินอาหารร้อน-เย็น-เผ็ด / กาแฟ-ชา-ไวน์ / บินเครื่องบิน / เล่นกีฬา-ดำน้ำ / ใส่หน้ากาก-ทำงานกลางคืน | | — | — | — |
 
 ---
 
@@ -1347,7 +1342,7 @@
 
 ---
 
-## Section 7: CASE STUDIES — ผลงานจริง พิสูจน์ฝีมือ (55 pages)
+## Section 7: CASE STUDIES — ผลงานจริง พิสูจน์ฝีมือ (~38 pages, R13 verified)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 7.1 Case Study Hub
@@ -1420,7 +1415,7 @@
 
 ---
 
-## Section 8: CONTACT & LOCAL SEO (18 pages)
+## Section 8: CONTACT & LOCAL SEO (~17 pages, R13 verified)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 8.1 Contact Hub

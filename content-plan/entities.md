@@ -21,7 +21,7 @@
 | Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **167** | (was 161 at R8/R9/R10 — +6 in Round 11 Direct Print Aligner Signature #6) |
+| **Total** | **163** | (R13 recount via script: 163 entity rows. Was claimed 167 — corrected R13 audit. Includes R11 Direct Print Signature #6 entities) |
 
 ---
 

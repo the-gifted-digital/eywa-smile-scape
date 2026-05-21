@@ -545,9 +545,9 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 264 (+15 in R11) | ≥ 50 | ✅ |
+| Total edges | 271 (R13 recount — claimed 264, actual 271 verified via script) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 167/167 | ≥ 70% | ✅ |
+| Entities with ≥ 1 edge | 163/163 (R13 recount — claimed 167, actual 163) | ≥ 70% | ✅ |
 | Bidirectional edges (Yes) | 81 (+8 R11 Direct Print bidirectional) | — | ✅ |
 | Brand-scope=['smile-scape'] edges | 47 (+8 R11 Signature #6 brand integration) | — | ✅ |
 | Orphan entities (0 edges) | 0 | ≤ 8 | ✅ |

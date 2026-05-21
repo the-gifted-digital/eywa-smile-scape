@@ -1,5 +1,54 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 LATE NIGHT] — Round 13 Pre-Review QA Cleanup (Final Audit Before Operator Review)
+
+**By:** Final deep audit before operator deep-review — catch all inconsistencies / thin-page risks / numbering issues.
+
+**Critical Fixes:**
+1. **Section header page counts** were stale (R0 numbers — 32/187/35/109/55/18). Corrected to actuals via script recount: Section 2 ~38 / Section 3 ~262 / Section 4 ~42 / Section 5 ~190 / Section 7 ~38 / Section 8 ~17.
+2. **Entity count metadata** claimed 167, actual rows = 163 — corrected entities.md total.
+3. **Edge count metadata** claimed 264, actual rows = 271 — corrected relationships.md Health Check.
+4. **Total sitemap pages** claim ~722 → actual ~733 (after R13 -7 consolidation).
+
+**Thin-Page Consolidation (DR-016 risk):**
+- **5.22 Lifestyle:** 6 pages (1 hub + 5 sub-pages all Tier D, no DFS) → **1 comprehensive page** with in-page sections. Net -5.
+- **3.13.4 Special Needs:** 4 pages (1 hub + Autism/Dementia/GA-ref) → **1 comprehensive page** with in-page sections (low individual volume + thematic overlap). Net -3.
+
+**Numbering Notes:**
+- 3.5.2 gap note added (R11 merged old TrioClear page into 3.5.1.3 Progressive Force) — visual gap explained.
+- 3.12.x gap (R9 consolidation), 3.13.1.x gap (R9 deletion), 3.13.2.x gap (R9 consolidation) — already noted in respective hubs (R9 verified).
+
+**Files updated:**
+- `content-plan/sitemap.md` — Section header counts (6 lines fixed) + Top-of-file totals updated + 5.22/3.13.4 consolidated + 3.5.2 gap note + R13 changelog header.
+- `content-plan/entities.md` — Total claim 167→163 with audit note.
+- `content-plan/relationships.md` — Total claim 264→271 + entity count 167→163 with audit note.
+- `content-plan/egp-output-summary.md` — R12/R13 expansion notes added + final totals.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count update + R13 audit note.
+
+**Findings NOT requiring action (noted for future):**
+- Section 3 sub-section order (R-chronological vs topical) — renumbering = too disruptive
+- Section 5 sub-section order (R0 + R5 mixed) — renumbering = too disruptive
+- Section 4.6.0 placement before 4.6.1 — unusual but acceptable
+- ~155 Tier D deep sub-pages — most have strategic value (authority/citation/E-E-A-T); only 5.22+3.13.4 had clear thin-page risk
+
+**Final R13 lock metrics:**
+- Sitemap pages: **~733** (was claimed 722, audited count R13)
+- Clusters: 20
+- Entities: **163** (was claimed 167)
+- Edges: **271** (was claimed 264)
+- Bidirectional edges: 81
+- evidenced_by edges: 26
+- Citation pillars: 16
+- Signature Offerings: 6
+- Clinical Protocols: 1 (ZBL)
+- Brand DRs: SS-DR-001..010
+- brand-config: v1.11
+
+**Status:** ✅ **Ready for operator deep review**. All Phase E planning complete pending DataForSEO full keyword batch (R14) and operator data sync.
+
+---
+
 ## [2026-05-22 NIGHT] — Round 12 SS-DR-002 Compliance Cleanup (Brand-Name Audit)
 
 **By:** Operator-identified violations of SS-DR-002 (locked R0 2026-04-08) introduced in R2 (PSL/Damon) + R3 (Densah Bur) + R11 (Direct Print/Clear Aligner restructure with TrioClear/Invisalign mentions in Section 3).
