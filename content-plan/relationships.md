@@ -362,6 +362,48 @@
 
 ---
 
+### X — Round 8 Additions (Demographic-Specific Dentistry Services)
+
+> Service-side demographic dentistry — Section 3.13. Bidirectional links connect service entities (3.13) ↔ concern entities (5.8 / 5.20 / 5.12) ↔ FAQ (6.5.3) for DR-021 reciprocal-detection density.
+
+#### X1: Demographic Service hierarchy
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| geriatric-dentistry | parent_of | bedridden-dentistry | No | Sub-service for immobile patients |
+| medical-compromised-dentistry | uses | medical-clearance-protocol | No | Pre-op screening required |
+| special-needs-dentistry | related_to | ga-dentistry | Yes | Often paired with GA/sedation |
+
+#### X2: Service ↔ Concern bidirectional links
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| geriatric-dentistry | related_to | xerostomia | Yes | Senior + dry mouth comorbid |
+| geriatric-dentistry | related_to | root-caries | Yes | Senior caries risk |
+| geriatric-dentistry | related_to | removable-denture | Yes | Common senior prosthetic |
+| geriatric-dentistry | related_to | overdenture | Yes | Implant-retained option for senior |
+| pregnancy-dental-care | related_to | pregnancy-gingivitis | Yes | Service treats hormonal gingivitis |
+| pregnancy-dental-care | treats | pregnancy-gingivitis | No | Direct treatment relationship |
+| medical-compromised-dentistry | related_to | dental-implant | Yes | High-stakes risk assessment for implant patients |
+| medical-compromised-dentistry | related_to | conscious-sedation | Yes | Often required for comorbid patients |
+
+#### X3: MRONJ + Bisphosphonate critical risk link
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| medical-compromised-dentistry | requires_assessment | dental-implant | No | MRONJ + cardiac + diabetes screening before implant placement |
+| medical-clearance-protocol | requires_assessment | tooth-extraction | No | Pre-op for Bisphosphonate patients (MRONJ risk) |
+
+#### X4: Demographic service brand integration
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| geriatric-dentistry | related_to | smilescape-dental-clinic | Yes | Demographic service positioning |
+| special-needs-dentistry | related_to | family-standard | Yes | Brand ethics fit: care like family |
+| medical-compromised-dentistry | related_to | smilescape-dental-clinic | Yes | Premium clinic positioning |
+
+---
+
 ### W — Round 6 Additions (Citation Evidence Anchors)
 
 > Per DR-019 evidence-tier alignment + DR-013 12-edge vocabulary (`evidenced_by` direction). These edges connect brand-stance entities to authority citations established in `citation-pool-seed.md` Pillars 6-15. Phase D will expand to all per-page citations.
@@ -479,13 +521,14 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 232 (+17 in R6) | ≥ 50 | ✅ |
+| Total edges | 249 (+17 in R8) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 155/155 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 63 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 39 (+2 R6 for Densah authority + Q-Clinic) | — | ✅ |
+| Entities with ≥ 1 edge | 161/161 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 73 (+10 R8 demographic bidirectional) | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 39 | — | ✅ |
 | Orphan entities (0 edges) | 0 | ≤ 8 | ✅ |
-| **evidenced_by edges** | **25** (+17 in R6 citation evidence anchors) | ≥ 10 | ✅ |
+| **evidenced_by edges** | **25** | ≥ 10 | ✅ |
+| **requires_assessment edges** | 7 (+2 R8 MRONJ/medical clearance) | — | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**
 - `teeth-whitening` — standalone cosmetic treatment; gains edges in Phase D

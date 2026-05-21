@@ -1,5 +1,55 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22] — Round 8 Demographic-Specific Dentistry Services (Section 3.13 NEW)
+
+**By:** Operator question "เรามีพูดถึงทันตกรรมสำหรับคนเฉพาะกลุ่มไหม" + DFS reconnaissance
+
+**Gap identified:** Concern + FAQ coverage strong (Section 5.8 = 13 pages, 5.20 Pregnancy = 8 pages, 5.12 Kids = 6 pages, 6.5.3 FAQ Patient Group = 4 pages), but **Section 3 service layer only had Pediatric** (3.9) dedicated. No service-side landing for senior / pregnancy / diabetes / cardiac / special-needs patients.
+
+**Files updated:**
+- `brand-config.json` — v1.7 → v1.8. Added 4 specialties to `specialty_focus`: geriatric_dentistry, pregnancy_dental_care, medical_compromised_dentistry, special_needs_dentistry.
+- `content-plan/clusters.md` — 19 → 20 clusters. NEW cluster `demographic-dentistry` under Domain H Specialty Services.
+- `content-plan/entities.md` — 155 → 161 entities (+6 R8). New Treatment+Concept entities: `geriatric-dentistry`, `pregnancy-dental-care`, `medical-compromised-dentistry`, `bedridden-dentistry`, `medical-clearance-protocol` (Concept), `special-needs-dentistry`.
+- `content-plan/relationships.md` — 232 → 249 edges (+17 R8). X1-X4 sub-clusters: hierarchy, service↔concern bidirectional, MRONJ requires_assessment, brand integration. 10 bidirectional edges.
+- `content-plan/sitemap.md` — ~681p → ~706p (+25 R8).
+  - **Section 3.13 NEW** — ทันตกรรมสำหรับคนเฉพาะกลุ่ม (master hub + 4 sub-hubs):
+    - **3.13.1 ทันตกรรมผู้สูงอายุ / Geriatric** (6 pages): Home visit / Bedridden / Comorbidity / Overdenture senior / Implant senior / Xerostomia
+    - **3.13.2 ทันตกรรมหญิงตั้งครรภ์ / Pregnancy** (4 pages): Pre-pregnancy / Pregnancy gingivitis / Emergency protocol / Q2 safe window
+    - **3.13.3 Medical-Compromised** (8 pages): Diabetes / Cardiac / BP+anticoagulants / Cancer-radiation-chemo / Immunocompromised / Bisphosphonate-MRONJ / Liver-Kidney / Medical clearance protocol
+    - **3.13.4 Special Needs** (3 pages): Autism-ADHD-Down's / Dementia / GA dentistry crossref
+  - **Section 2.2.11 NEW** — Geriatric / Special-Care Dentistry Team page
+  - Section 5.8 hub primary entity updated to `medical-compromised-dentistry` + cross-ref to 3.13 service
+  - Section 5.20 hub cross-ref to 3.13.2 service
+- `content-plan/egp-output-summary.md` — R8 expansion note.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count 681 → ~706 + status update.
+
+**DFS findings (R8):**
+- ⭐ **ทันตกรรมผู้สูงอายุ** 70/mo TH LOW (6) — primary anchor, validates Geriatric service section
+- geriatric dentistry 30/mo TH LOW — English variant, professional-search
+- ทำฟันคนท้อง / ตั้งครรภ์ถอนฟัน 10/mo each TH LOW
+- เบาหวานทำฟัน / โรคหัวใจทำฟัน / ความดันทำฟัน — DFS NULL (gap, real demand unreported)
+
+**Strategic rationale:**
+- **Service-side demographic positioning** = premium implant clinic credibility for high-value demographics (senior implant market, comorbid patient implant market)
+- **Aging Thailand market** — service section gives SmileScape topical authority for geriatric dentistry
+- **Concern → Service funnel architecture** — Section 5.8/5.20 concerns now have clear service destination (3.13.x), not just FAQ
+- **DR-021 internal linking** — 10 new bidirectional edges (Service↔Concern) increases reciprocal-detection density
+- **MRONJ critical risk** — 3.13.3.6 + 3.13.3.8 medical clearance protocol creates safety-net pages for Bisphosphonate patients
+
+**Cumulative project status (R8 lock):**
+- Sitemap pages: **~706**
+- Clusters: 20 / Entities: 161 / Edges: 249 / Citation pillars: 15
+- Bidirectional edges: 73 (+10 R8)
+- evidenced_by edges: 25
+
+**Pending operator (R8 additions):**
+- Home visit dentistry — does SmileScape offer at-home senior care? (affects 3.13.1.1)
+- Bedridden patient capability (affects 3.13.1.2)
+- Geriatric/Special-Care team specialist names + credentials (affects 2.2.11)
+
+---
+
 ## [2026-05-22 EARLY] — Round 7 FAQ Canonical Source (SS-DR-009)
 
 **By:** Operator-identified overlap problem ("FAQ ใน section 5 กับ 6 มีความงง มีความทับซ้อนกัน") → consolidation to Section 6.5

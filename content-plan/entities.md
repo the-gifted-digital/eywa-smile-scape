@@ -12,16 +12,16 @@
 
 | Type | Count | Notes |
 |------|-------|-------|
-| Treatment | 33 | + gold-crown (R3) |
+| Treatment | 38 | + 5 R8 (geriatric-dentistry / pregnancy-dental-care / medical-compromised-dentistry / bedridden-dentistry / special-needs-dentistry) |
 | Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
 | Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
-| Concept | 13 | + 5 R4 insurance concepts (SSO benefit, Q-Clinic, UCS, CGA, private insurance) |
+| Concept | 14 | + medical-clearance-protocol (R8) |
 | Anatomy | 6 | (unchanged) |
 | Device | 13 | (unchanged R3) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **155** | (was 144 at R4 — +11 in Round 5 concern conditions) |
+| **Total** | **161** | (was 155 at R5/R6/R7 — +6 in Round 8 demographic dentistry entities) |
 
 ---
 
@@ -356,6 +356,23 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 2 | General Anesthesia Dentistry | ga-dentistry | Procedure | MedicalProcedure | — | — | Mature | 3.10.3 | ดมยาสลบทำฟัน, dental general anesthesia, GA dentistry, IV anesthesia | ['*'] | Full unconsciousness for complex/anxious patients. Requires anesthesiologist + monitoring |
 | 3 | IV Sedation | iv-sedation | Procedure | MedicalProcedure | conscious-sedation | — | Mature | 3.10.2 | intravenous sedation, moderate sedation, twilight sedation | ['*'] | Moderate sedation via IV — between conscious and GA |
 | 4 | Dental Anxiety / Phobia | dental-anxiety | Condition | MedicalCondition | — | F40.218 | Mature | 5.4 | กลัวหมอฟัน, dental phobia, odontophobia | ['*'] | Common reason for sedation dentistry referral |
+
+---
+
+## demographic-dentistry: Demographic-Specific Dentistry — ทันตกรรมสำหรับคนเฉพาะกลุ่ม
+
+**Brand Scope:** ['*']
+**Pillar Page:** 3.13
+**Domain:** H: Specialty Services
+
+| # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
+|---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
+| 1 | Geriatric Dentistry | geriatric-dentistry | Treatment | MedicalProcedure | — | — | Mature | 3.13.1 | ทันตกรรมผู้สูงอายุ, ทำฟันผู้สูงอายุ, senior dentistry | ['*'] | DFS 70/mo TH LOW (R8). Demographic-specific service section. Anchor for aging-Thailand strategic positioning |
+| 2 | Pregnancy Dental Care | pregnancy-dental-care | Treatment | MedicalProcedure | — | — | Mature | 3.13.2 | ทันตกรรมหญิงตั้งครรภ์, ทำฟันคนท้อง, prenatal dental | ['*'] | Service-side. Q2 trimester safest. Companion to 5.20 concern cluster + pregnancy-gingivitis condition entity |
+| 3 | Medical-Compromised Dentistry | medical-compromised-dentistry | Treatment | MedicalProcedure | — | — | Mature | 3.13.3 | ทันตกรรมผู้ป่วยโรคเรื้อรัง, special medical considerations dentistry | ['*'] | Service-side for chronic disease patients. Companion to 5.8 medical comorbidity concerns |
+| 4 | Bedridden Patient Dentistry | bedridden-dentistry | Treatment | MedicalProcedure | geriatric-dentistry | — | Growing | 3.13.1.2 | ทำฟันผู้ป่วยติดเตียง, home visit dentistry, ทำฟันที่บ้าน | ['*'] | Home visit service for immobile patients. Operator confirm if SmileScape provides |
+| 5 | Medical Clearance Protocol | medical-clearance-protocol | Concept | — | medical-compromised-dentistry | — | Mature | 3.13.3.8 | ใบรับรองแพทย์, pre-operative medical clearance | ['*'] | Pre-op screening for medical-compromised patients before invasive dental procedures |
+| 6 | Special Needs Dentistry | special-needs-dentistry | Treatment | MedicalProcedure | — | — | Growing | 3.13.4 | ทันตกรรมสำหรับผู้ป่วยพิเศษ, Autism dentistry, dementia dentistry, special care dentistry | ['*'] | Service for patients with special behavioral/cognitive needs. Often paired with sedation (3.10) |
 
 ---
 

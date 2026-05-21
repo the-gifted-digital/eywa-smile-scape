@@ -3,7 +3,7 @@
 > **Phase:** Stage 1 → Phase C (Entity Genesis) + R2/R3/R4 expansion (2026-05-21)
 > **Schema:** §5.4 — 6 columns
 > **Date:** 2026-05-11 (initial) / 2026-05-21 (R2 / R3 / R4 batches)
-> **Cluster count:** 19 | **Domain count:** 9
+> **Cluster count:** 20 | **Domain count:** 9
 
 ---
 
@@ -45,6 +45,7 @@
 | pediatric-dentistry | Pediatric Dentistry — ทันตกรรมเด็ก | H: Specialty Services | — | 3.9 | ['*'] |
 | endodontics-specialist | Endodontics by Specialist — รักษารากฟันโดยทันตแพทย์เฉพาะทาง | H: Specialty Services | — | 3.11 | ['*'] |
 | dental-anesthesia | Sedation & GA Dentistry — ดมยาสลบทำฟัน | H: Specialty Services | — | 3.10 | ['*'] |
+| demographic-dentistry | Demographic-Specific Dentistry (Geriatric / Pregnancy / Medical-Compromised / Special Needs) | H: Specialty Services | — | 3.13 | ['*'] |
 | insurance-coverage-th | Insurance Coverage TH — ประกันสังคม/บัตรทอง/ราชการ/เอกชน | I: Insurance & Access | — | 3.12 | ['*'] mixed |
 
 ---
@@ -73,6 +74,7 @@
 | pediatric-dentistry | 4 | 6 | ✅ |
 | endodontics-specialist | 4 | 4 | ✅ |
 | dental-anesthesia | 3 | 2 | ✅ |
+| demographic-dentistry | 4 | 6 | ✅ |
 | insurance-coverage-th | 4 | 4 | ✅ |
 
 ---

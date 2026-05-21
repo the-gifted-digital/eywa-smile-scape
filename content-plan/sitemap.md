@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~681 (Round 7 expansion, 2026-05-21 — was 414→525→544→569→664 through R1-R5; R6 citation expansion +0 pages; R7 FAQ restructure +17 net) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~706 (Round 8 expansion, 2026-05-22 — was 414→525→544→569→664→681 through R1-R7; R8 demographic dentistry +25) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -9,7 +9,8 @@
 > **Round 4 (2026-05-21):** Q-Clinic SSO cluster — 3.12 SSO Service Hub + 5.13 expansion + Branch SSO pages + 6.2.7 Insurance Insights + 6.5.5 FAQ. SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning
 > **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked
 > **Round 6 (2026-05-21):** Citation pool Pillars 6-15 expansion — +10 pillars + 17 evidenced_by edges (no page count change)
-> **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages. Single source for AI citation + DR-021 reciprocal-detection clarity — see `docs/changelog.md`
+> **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages
+> **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. Service-side gap fix (was only Pediatric had dedicated service). DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -30,14 +31,14 @@
 
 ## Pages per Section (Round 4)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages
-- **3. SERVICES:** ~232 pages (+6 R4 — Section 3.12 SSO Service Hub)
+- **2. OUR UNIQUENESS — The Global Mastery:** ~40 pages (+1 R8 — 2.2.11 Geriatric/Special-Care Team)
+- **3. SERVICES:** ~256 pages (R8 +24 — Section 3.13 Demographic Dentistry: Geriatric 6 / Pregnancy 4 / Medical-Compromised 8 / Special Needs 3 + hub)
 - **4. TECHNOLOGY:** ~29 pages
 - **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
 - **6. KNOWLEDGE:** 150 pages (R7: +23 from 6.5 FAQ canonical restructure — 5 sub-hubs / 29 FAQ pages)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R7:** ~681 pages (R5 baseline 664 + R7 net +17: -6 from 5.9 deletion + 23 from 6.5 expansion)
+- **TOTAL R8:** ~706 pages (R7 baseline 681 + R8 +25: Section 3.13 demographic dentistry +24 + 2.2.11 team +1)
 
 ---
 
@@ -125,6 +126,7 @@
 | 2.2.8 | → General Dentistry Team — ทีมทันตกรรมทั่วไป | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.9 | → Endodontist Team — ทีมทันตแพทย์เฉพาะทางรากฟัน | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.10 | → Pediatric Dentistry Team — ทีมทันตกรรมเด็ก | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.11 | → Geriatric / Special-Care Dentistry Team — ทีมดูแลผู้ป่วยเฉพาะกลุ่ม (R8) | L1 | C | mid | A | smilescape-dental-clinic |
 
 ### 2.3 Authority & Trust
 
@@ -517,6 +519,61 @@
 
 ---
 
+### 3.13 ทันตกรรมสำหรับคนเฉพาะกลุ่ม — Demographic-Specific Dentistry Services 🌟 (R8)
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — service-side demographic coverage. Concern pages (5.8/5.20/5.12) funnel here.
+> 📊 DFS-validated: ทันตกรรมผู้สูงอายุ 70/mo TH LOW (6) primary anchor.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.13 | ทันตกรรมสำหรับคนเฉพาะกลุ่ม 🌟 (hub) | L2 | B | mid | A | smilescape-dental-clinic |
+
+#### 3.13.1 ทันตกรรมผู้สูงอายุ / Geriatric Dentistry (sub-hub) ★
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.13.1 | ทันตกรรมผู้สูงอายุ — Geriatric Dentistry (sub-hub) ★ | L2 | B | mid | A | geriatric-dentistry |
+| 3.13.1.1 | → คลินิกทำฟันผู้สูงอายุที่บ้าน — Home Visit Dentistry (TBD operator) | L2 | C | mid | A | geriatric-dentistry |
+| 3.13.1.2 | → ผู้สูงอายุติดเตียง — Bedridden Patient Dentistry | L2 | C | mid | A | bedridden-dentistry |
+| 3.13.1.3 | → ทำฟันร่วมกับโรคประจำตัวผู้สูงอายุ — Comorbidity Management | L2 | C | mid | A | medical-compromised-dentistry |
+| 3.13.1.4 | → ฟันปลอม / Overdenture สำหรับผู้สูงอายุ (→ link 3.2.8.7) | L2 | C | mid | A | overdenture |
+| 3.13.1.5 | → Implant สำหรับผู้สูงอายุ — เคสซับซ้อน (→ link 3.2.10.2) | L2 | C | mid | A | dental-implant |
+| 3.13.1.6 | → ปากแห้ง + อาหารแข็งไม่ได้ (→ link 5.18) | L2 | C | mid | A | xerostomia |
+
+#### 3.13.2 ทันตกรรมหญิงตั้งครรภ์ / Pregnancy Dental Care (sub-hub)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.13.2 | ทันตกรรมหญิงตั้งครรภ์ (sub-hub) | L2 | C | mid | A | pregnancy-dental-care |
+| 3.13.2.1 | → ตรวจฟันก่อนวางแผนตั้งครรภ์ — Pre-Pregnancy Dental | L2 | C | top | A | pregnancy-dental-care |
+| 3.13.2.2 | → Pregnancy Gingivitis Treatment (→ link 5.20.4) | L2 | C | mid | A | pregnancy-gingivitis |
+| 3.13.2.3 | → ทำฟันฉุกเฉินตอนตั้งครรภ์ — Emergency-Only Protocol | L2 | C | mid | A | pregnancy-dental-care |
+| 3.13.2.4 | → ไตรมาส 2 = ช่วงปลอดภัย — Safe Treatment Window | L2 | C | mid | A | pregnancy-dental-care |
+
+#### 3.13.3 ทันตกรรมผู้ป่วยโรคเรื้อรัง / Medical-Compromised Patient Dentistry (sub-hub) ★
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.13.3 | ทันตกรรมผู้ป่วยโรคเรื้อรัง (sub-hub) ★ | L2 | B | mid | A | medical-compromised-dentistry |
+| 3.13.3.1 | → ผู้ป่วยเบาหวาน (Type 1/2) — HbA1c + ฝังราก eligibility | L2 | B | mid | A | medical-compromised-dentistry |
+| 3.13.3.2 | → ผู้ป่วยโรคหัวใจ — Endocarditis Prophylaxis Screening | L2 | C | mid | A | medical-compromised-dentistry |
+| 3.13.3.3 | → ผู้ป่วยความดัน + ยาละลายลิ่มเลือด — Hemostatic Protocol | L2 | C | mid | A | medical-compromised-dentistry |
+| 3.13.3.4 | → ผู้ป่วยมะเร็ง / รังสีรักษา / เคมีบำบัด (→ link 5.8.6 / 5.8.10) | L2 | C | mid | A | medical-compromised-dentistry |
+| 3.13.3.5 | → ผู้ป่วยภูมิคุ้มกันต่ำ / HIV (→ link 5.8.7) | L2 | C | mid | A | medical-compromised-dentistry |
+| 3.13.3.6 | → ผู้ป่วยใช้ Bisphosphonate / Denosumab — MRONJ Risk Assessment ⚠️ (→ link 5.8.9) | L2 | B | mid | A | medical-compromised-dentistry |
+| 3.13.3.7 | → ผู้ป่วยโรคไต / ตับ — Drug Dosing Considerations | L2 | D | mid | A | medical-compromised-dentistry |
+| 3.13.3.8 | → Pre-Operative Medical Clearance Protocol — ใบรับรองแพทย์ | L2 | C | mid | A | medical-clearance-protocol |
+
+#### 3.13.4 Special Needs Dentistry (sub-hub)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.13.4 | Special Needs Dentistry (sub-hub) | L2 | C | mid | A | special-needs-dentistry |
+| 3.13.4.1 | → Autism / ADHD / Down's Syndrome — Behavior-Aware Approach | L2 | C | mid | A | special-needs-dentistry |
+| 3.13.4.2 | → Dementia / Alzheimer's Patient — Adapted Protocol | L2 | C | mid | A | special-needs-dentistry |
+| 3.13.4.3 | → GA Dentistry สำหรับ Special Needs (→ link 3.10.6) | L2 | C | mid | A | ga-dentistry |
+
+---
+
 ## Section 4: TECHNOLOGY — Digital Implant Excellence (35 pages)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
@@ -724,7 +781,7 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 5.8 | ทำฟันสำหรับกลุ่มเฉพาะ (hub) | L4 | C | top | A | dental-implant |
+| 5.8 | ทำฟันสำหรับกลุ่มเฉพาะ (hub) — concern-side (→ service 3.13) | L4 | C | top | A | medical-compromised-dentistry |
 | 5.8.1 | → ทำฟันผู้สูงอายุ — สิ่งที่ต้องรู้ | L4 | C | top | A | dental-implant |
 | 5.8.2 | → ทำฟันผู้ป่วยเบาหวาน | L4 | C | top | A | dental-implant |
 | 5.8.3 | → ทำฟันหญิงตั้งครรภ์ | L4 | D | top | A | dental-implant |
@@ -900,7 +957,7 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 5.20 | ทำฟันตอนตั้งครรภ์ / หลังคลอด (hub) | L4 | C | top | A | pregnancy-gingivitis |
+| 5.20 | ทำฟันตอนตั้งครรภ์ / หลังคลอด (hub) — concern-side (→ service 3.13.2) | L4 | C | top | A | pregnancy-gingivitis |
 | 5.20.1 | → ตั้งครรภ์ทำฟันได้ไหม | L4 | C | top | A | pregnancy-gingivitis |
 | 5.20.2 | → ตั้งครรภ์ + เอกซเรย์ฟัน — ปลอดภัยไหม | L4 | C | top | A | cbct-3d-scan |
 | 5.20.3 | → ตั้งครรภ์ + ดมยาทำฟัน | L4 | C | top | A | conscious-sedation |
