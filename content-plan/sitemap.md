@@ -1,11 +1,12 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~544 (Round 3 expansion, 2026-05-21 — was 414→525 through R1+R2) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~569 (Round 4 expansion, 2026-05-21 — was 414→525→544 through R1+R2+R3) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
 > **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based)
-> **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition) — see `docs/changelog.md`
+> **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition)
+> **Round 4 (2026-05-21):** **Q-Clinic SSO cluster** — 3.12 SSO Service Hub + 5.13 expansion (10-page sub-hub) + Branch SSO pages (8.2.6 + 8.3.6) + 6.2.7 Insurance Insights + 6.5.5 FAQ. ⭐ SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -24,16 +25,16 @@
 - **L6 (Multimodal Protocols):** 1 page
 - **L7 (Evidence-Based Case Studies):** ~39 pages
 
-## Pages per Section (Round 3)
+## Pages per Section (Round 4)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages (+1 R3 — 2.1.6 ZBL framework)
-- **3. SERVICES:** ~226 pages (+16 R3 — 3.4.4.4 Gold Crown +2 / 3.6.1 ขูดหินปูน expand +5 / 3.7.7 Peri-Implantitis Service +10)
+- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages
+- **3. SERVICES:** ~232 pages (+6 R4 — Section 3.12 SSO Service Hub)
 - **4. TECHNOLOGY:** ~29 pages
-- **5. TREATMENT BY CONCERNS:** ~71 pages
-- **6. KNOWLEDGE:** 123 pages (+2 R3 — 6.2.4.13 gold compare + 6.4.14 Linkevicius/ZBL evidence)
+- **5. TREATMENT BY CONCERNS:** ~84 pages (+13 R4 — Section 5.13 SSO sub-hub expansion: 5.13.2.1-10 + 5.13.5/6/7)
+- **6. KNOWLEDGE:** 127 pages (+4 R4 — 6.2.7 Insurance Insights ×3 + 6.5.5 SSO FAQ)
 - **7. CASE STUDIES:** ~38 pages
-- **8. CONTACT & LOCAL SEO:** ~15 pages
-- **TOTAL R3:** ~544 pages (+19 from R2 baseline 525)
+- **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
+- **TOTAL R4:** ~569 pages (+25 from R3 baseline 544)
 
 ---
 
@@ -497,6 +498,22 @@
 
 ---
 
+### 3.12 บริการทำฟันด้วยสิทธิ์ประกันสังคม / สปสช 🌟
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — service-side / conversion bridge
+> ⭐ **Q-Clinic Confirmed (R4 2026-05-21)** — SmileScape เป็น Q-Clinic, direct-bill SSO, ผู้ป่วยไม่ต้องสำรองจ่าย
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.12 | ทำฟันด้วยสิทธิ์ประกันสังคม ที่ SmileScape 🌟 (hub) | L2 | B | mid | A | social-security-dental-benefit |
+| 3.12.1 | → บริการที่ครอบคลุมประกันสังคม — ขูดหินปูน / อุดฟัน / ถอนฟัน / ฟันคุด / ฟันปลอม | L2 | C | mid | A | social-security-dental-benefit |
+| 3.12.2 | → ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape Q-Clinic ★ 🌟 | L2 | **B** | bottom | A | sso-direct-billing-q-clinic |
+| | → → DFS hot intent / Q-Clinic positioning hero / Step-by-step direct billing flow | | — | — | — |
+| 3.12.3 | → เอกสารที่ต้องนำมา + ตรวจสิทธิ์ก่อนนัด — Checklist | L2 | C | bottom | A | social-security-dental-benefit |
+| 3.12.4 | → ตัวอย่างค่าใช้จ่ายจริง — ส่วนที่ประกันสังคมจ่าย vs คุณจ่ายเอง | L2 | C | bottom | D | social-security-dental-benefit |
+| 3.12.5 | → Upsell Pathway — ทำพื้นฐานด้วยประกัน + ต่อยอด Implant / Aesthetic | L2 | C | bottom | A | social-security-dental-benefit |
+
+---
+
 ## Section 4: TECHNOLOGY — Digital Implant Excellence (35 pages)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
@@ -753,11 +770,24 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 5.13 | ค่าใช้จ่ายและสิทธิ์การรักษา (hub) | L4 | C | bottom | A | dental-implant |
+| 5.13 | ค่าใช้จ่ายและสิทธิ์การรักษา (hub) | L4 | B | bottom | A | dental-implant |
 | 5.13.1 | → ราคาทำฟันแต่ละประเภท — ค่าใช้จ่ายโดยประมาณ | L4 | C | bottom | D | dental-implant |
-| 5.13.2 | → สิทธิ์ประกันสังคมทำฟัน — ใช้ได้อะไรบ้าง | L4 | D | bottom | A | dental-implant |
+| 5.13.2 | → สิทธิ์ประกันสังคมทำฟัน — Hub ครอบจักรวาล 🌟 (sub-hub) | L4 | B | mid | A | social-security-dental-benefit |
+| 5.13.2.1 | → → ประกันสังคม 900 บาท/ปี — ครอบคลุมอะไรบ้าง (DFS 110/mo) | L4 | C | top | A | social-security-dental-benefit |
+| 5.13.2.2 | → → ขูดหินปูน / อุดฟัน / ถอนฟัน ใช้ประกันสังคม (→ link 3.6.1.7) | L4 | C | mid | A | social-security-dental-benefit |
+| 5.13.2.3 | → → ฟันปลอมประกันสังคม — สิทธิ์ 1,500-4,400 บาท/5 ปี (DFS 30/mo commercial) | L4 | B | mid | A | social-security-dental-benefit |
+| 5.13.2.4 | → → ฟันคุดประกันสังคม — เบิกได้ไหม วงเงินเท่าไหร่ | L4 | C | mid | A | wisdom-tooth-removal |
+| 5.13.2.5 | → → ประกันสังคม vs บัตรทอง — ใช้พร้อมกันได้ไหม (DFS validated) | L4 | C | top | A | universal-coverage-th |
+| 5.13.2.6 | → → ลาออกจากงาน / ว่างงาน (ม.39) — สิทธิ์ทำฟันยังอยู่ไหม | L4 | C | mid | A | social-security-dental-benefit |
+| 5.13.2.7 | → → ม.33 vs ม.39 vs ม.40 — สิทธิ์ทำฟันต่างกันยังไง | L4 | C | top | A | social-security-dental-benefit |
+| 5.13.2.8 | → → ทำฟันให้บุตร / คู่สมรส ใช้สิทธิ์ประกันสังคมได้ไหม (DFS spousal Q) | L4 | C | mid | A | social-security-dental-benefit |
+| 5.13.2.9 | → → วิธีเบิกประกันสังคมทำฟัน — Online (SSO app) + Offline + เอกสาร | L4 | C | mid | A | social-security-dental-benefit |
+| 5.13.2.10 | → → คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (Q-Clinic) คืออะไร 🌟 (DFS hot) (→ link 3.12.2) | L4 | B | bottom | A | sso-direct-billing-q-clinic |
 | 5.13.3 | → ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร | L4 | C | bottom | A | dental-implant |
-| 5.13.4 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | dental-implant |
+| 5.13.4 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | private-dental-insurance-th |
+| 5.13.5 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
+| 5.13.6 | → ประกันชีวิต / ประกันสุขภาพเอกชน เบิกค่าทำฟันได้ไหม | L4 | C | bottom | A | private-dental-insurance-th |
+| 5.13.7 | → ค่าทำฟันลดหย่อนภาษีได้ไหม | L4 | D | bottom | D | dental-implant |
 
 ---
 
@@ -769,12 +799,12 @@
 | 6.x | Sub-section | Type | Pages |
 |-----|-------------|------|-------|
 | 6.1 | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 11 |
-| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 79 (+1 R3 gold crown compare) |
+| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 82 (+3 R4 insurance insights) |
 | 6.3 | Glossary | Definitions A-Z | 3 |
-| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 15 (+1 R3 Linkevicius/ZBL) |
-| 6.5 | FAQ Knowledge Hub | High-intent quick answers (vs Section 5.9 concern-FAQ) | 5 |
+| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 15 |
+| 6.5 | FAQ Knowledge Hub | High-intent quick answers (vs Section 5.9 concern-FAQ) | 6 (+1 R4 insurance FAQ) |
 | 6.6 | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
-| **Section 6 Total** | | | **123 (+2 R3)** |
+| **Section 6 Total** | | | **127 (+4 R4)** |
 
 ---
 
@@ -945,6 +975,14 @@
 | 6.2.6.2 | → 3Shape TRIOS คืออะไร — Digital impression มาตรฐานสากล | L5 | C | top | A | trios-intraoral-scanner |
 | 6.2.6.3 | → Cool Light Whitening คืออะไร — ทำไมไม่ทำให้ฟันร้อน | L5 | C | top | A | cool-light-whitening-unit |
 
+#### 6.2.7 Insurance & Coverage Insights (Round 4 NEW)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.2.7.1 | → ประกันสุขภาพและการครอบคลุมทันตกรรม — ภาพรวมระบบไทย | L5 | D | top | A | social-security-dental-benefit |
+| 6.2.7.2 | → คลินิกทำฟัน Q-Clinic คืออะไร — ทำไมไม่ต้องสำรองจ่าย | L5 | D | top | A | sso-direct-billing-q-clinic |
+| 6.2.7.3 | → ใบเสร็จที่ใช้เบิกได้ — ใบรับรองแพทย์ + รายละเอียดที่ต้องระบุ | L5 | D | mid | A | social-security-dental-benefit |
+
 ---
 
 ### 6.3 Glossary — พจนานุกรมศัพท์ทันตกรรม (was 6.7)
@@ -992,6 +1030,7 @@
 | 6.5.2 | → FAQ ความปลอดภัยและความเสี่ยง — implant / GA / สูงวัย | L5 | C | mid | A | dental-implant |
 | 6.5.3 | → FAQ ระยะเวลาและกระบวนการ — ฝังเร็วได้ไหม / โหลดทันที / รอกี่เดือน | L5 | C | mid | A | immediate-loading |
 | 6.5.4 | → FAQ การดูแลหลังรักษา — กิน นอน เดินทาง บินได้ไหม | L5 | C | mid | A | dental-implant |
+| 6.5.5 | → FAQ ประกันสังคมทำฟัน — 20+ คำถามรวบยอด (R4) | L5 | C | mid | A | social-security-dental-benefit |
 
 ---
 
@@ -1108,6 +1147,7 @@
 | 8.2.3 | → ทำฟันนนทบุรี — บริการทันตกรรมครบวงจร | L1 | D | bottom | D | smilescape-rattanathibet |
 | 8.2.4 | → จัดฟันนนทบุรี | L1 | D | bottom | D | smilescape-rattanathibet |
 | 8.2.5 | → คลินิกทำฟันใกล้ MRT สีม่วง | L1 | D | bottom | D | smilescape-rattanathibet |
+| 8.2.6 | → ทำฟันประกันสังคม สาขารัตนาธิเบศร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
 
 ### 8.3 สาขาศรีนครินทร์ (กรุงเทพฯ)
 
@@ -1119,6 +1159,7 @@
 | 8.3.3 | → ทำฟันศรีนครินทร์ — บริการทันตกรรมครบวงจร | L1 | D | bottom | D | smilescape-srinakarin |
 | 8.3.4 | → จัดฟันศรีนครินทร์ | L1 | D | bottom | D | smilescape-srinakarin |
 | 8.3.5 | → คลินิกทำฟันใกล้ MRT สีเหลือง | L1 | D | bottom | D | smilescape-srinakarin |
+| 8.3.6 | → ทำฟันประกันสังคม สาขาศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
 
 ---
 

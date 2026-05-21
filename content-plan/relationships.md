@@ -362,15 +362,35 @@
 
 ---
 
+### U — Round 4 Additions (Insurance Coverage TH)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| social-security-dental-benefit | parent_of | sso-direct-billing-q-clinic | No | Q-Clinic = SSO billing modality variant |
+| sso-direct-billing-q-clinic | related_to | smilescape-dental-clinic | Yes | SmileScape Q-Clinic status (R4 confirmed) — key conversion anchor |
+| sso-direct-billing-q-clinic | related_to | smilescape-rattanathibet | Yes | Branch-level direct billing capability |
+| sso-direct-billing-q-clinic | related_to | smilescape-srinakarin | Yes | Branch-level direct billing capability |
+| social-security-dental-benefit | related_to | dental-filling | Yes | Covered procedure |
+| social-security-dental-benefit | related_to | tooth-extraction | Yes | Covered procedure |
+| social-security-dental-benefit | related_to | wisdom-tooth-removal | Yes | Covered procedure (simple cases) |
+| social-security-dental-benefit | related_to | removable-denture | Yes | Separate cap 1,500-4,400 บาท/5 yr |
+| social-security-dental-benefit | alternative_to | universal-coverage-th | Yes | Mutually exclusive — patient chooses one |
+| social-security-dental-benefit | alternative_to | civil-servant-dental-benefit | Yes | Mutually exclusive by employment status |
+| social-security-dental-benefit | alternative_to | private-dental-insurance-th | Yes | Often stackable — SSO first, private reimburses excess |
+| social-security-dental-benefit | related_to | dental-implant | Yes | NOT covered — common upsell pathway from SSO patients |
+| social-security-dental-benefit | related_to | clear-aligner | Yes | NOT covered — orthodontic education |
+
+---
+
 ## Graph Health Check
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 171 (+20 in R3) | ≥ 50 | ✅ |
+| Total edges | 184 (+13 in R4) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 137/139 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 35 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 34 | — | ✅ |
+| Entities with ≥ 1 edge | 142/144 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 44 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 37 (+3 in R4 for Q-Clinic) | — | ✅ |
 | Orphan entities (0 edges) | 2 | ≤ 8 | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**

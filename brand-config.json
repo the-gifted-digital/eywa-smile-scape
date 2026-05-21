@@ -284,6 +284,45 @@
     "_doc": "Founding Partner Rate declining structure"
   },
 
+  "insurance_acceptance": {
+    "_doc": "Insurance scheme acceptance + billing modality. Round 4 lock 2026-05-21.",
+    "social_security_sso": {
+      "accepted": true,
+      "billing_modality": "q_clinic_direct_billing",
+      "patient_advance_payment_required": false,
+      "covered_procedures": [
+        "scaling_dental_cleaning",
+        "dental_filling",
+        "tooth_extraction",
+        "wisdom_tooth_removal_simple",
+        "removable_denture_partial",
+        "removable_denture_complete"
+      ],
+      "annual_cap_baht": 900,
+      "annual_cap_year_verified": "2026 — operator to confirm if 1,200 baht updated cap applies",
+      "denture_separate_cap_baht_per_5_years": {
+        "partial_1_3_teeth": 1500,
+        "partial_4_more_teeth": 1500,
+        "complete_one_jaw": 2400,
+        "complete_both_jaws": 4400
+      },
+      "applicable_articles": ["33", "39", "40"],
+      "_strategic_note": "Q-Clinic status = key conversion differentiator. Captures 'ไม่ต้องสำรองจ่าย' search intent. R4 cluster anchor."
+    },
+    "universal_coverage_30baht": {
+      "accepted": "TBD — operator to confirm",
+      "billing_modality": "TBD"
+    },
+    "civil_servant_cga": {
+      "accepted": "TBD — operator to confirm direct billing with กรมบัญชีกลาง",
+      "billing_modality": "TBD"
+    },
+    "private_health_insurance": {
+      "accepted": "TBD — operator to provide accepted insurer list (AIA / Cigna / Allianz / etc.)",
+      "billing_modality": "reimbursement_receipts_provided"
+    }
+  },
+
   "deployment": {
     "wordpress_version_required": "6.5+",
     "php_version_required": "8.2+",
@@ -294,11 +333,12 @@
   },
 
   "metadata": {
-    "config_version": "1.5",
+    "config_version": "1.6",
     "created_at": "2026-05-10",
     "last_updated_at": "2026-05-21",
     "_changelog_1_4": "Implant brands: Osstem out, Neodent in (Brazil, Straumann Group, value_premium). Signature offering #5 added: Internal Sinus Lift with Densah (Osseodensification, Salah Huwais authority). Soft tissue signature note expanded to include Urban techniques (Strip Graft / Ice Berg / Garage).",
-    "_changelog_1_5": "Round 3: Added clinical_protocols[0] Zero Bone Loss Concept (Tomas Linkevicius framework — separate from signature_offerings because ZBL is HOW we do implants, not a named technique). Added peri_implantitis_treatment / pediatric_dentistry / endodontics_specialist / sedation_dentistry to specialty_focus (reflects R2 service additions). Pending operator: Linkevicius training credential."
+    "_changelog_1_5": "Round 3: Added clinical_protocols[0] Zero Bone Loss Concept (Tomas Linkevicius framework — separate from signature_offerings because ZBL is HOW we do implants, not a named technique). Added peri_implantitis_treatment / pediatric_dentistry / endodontics_specialist / sedation_dentistry to specialty_focus (reflects R2 service additions). Pending operator: Linkevicius training credential.",
+    "_changelog_1_6": "Round 4: Added insurance_acceptance block — SSO Q-Clinic direct-billing confirmed (key conversion differentiator). DFS-informed ประกันสังคม cluster (~25 new pages: 3.12 SSO Service Hub + 5.13 expansion + branch SSO pages + 6.2.7 insurance insights). Pending operator: บัตรทอง / ราชการ direct billing acceptance + annual cap year confirmation (900 vs 1,200 บาท)."
   },
 
   "eywa_spec_snapshot": {

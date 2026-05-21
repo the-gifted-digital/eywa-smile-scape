@@ -16,12 +16,12 @@
 | Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
 | Condition | 16 | (unchanged R3) |
 | Product | 9 | (unchanged R3) |
-| Concept | 8 | + zero-bone-loss-concept (R3) |
+| Concept | 13 | + 5 R4 insurance concepts (SSO benefit, Q-Clinic, UCS, CGA, private insurance) |
 | Anatomy | 6 | (unchanged) |
 | Device | 13 | (unchanged R3) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **139** | (was 131 at R2 — +8 in Round 3) |
+| **Total** | **144** | (was 139 at R3 — +5 in Round 4 insurance concepts) |
 
 ---
 
@@ -343,6 +343,22 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 2 | General Anesthesia Dentistry | ga-dentistry | Procedure | MedicalProcedure | — | — | Mature | 3.10.3 | ดมยาสลบทำฟัน, dental general anesthesia, GA dentistry, IV anesthesia | ['*'] | Full unconsciousness for complex/anxious patients. Requires anesthesiologist + monitoring |
 | 3 | IV Sedation | iv-sedation | Procedure | MedicalProcedure | conscious-sedation | — | Mature | 3.10.2 | intravenous sedation, moderate sedation, twilight sedation | ['*'] | Moderate sedation via IV — between conscious and GA |
 | 4 | Dental Anxiety / Phobia | dental-anxiety | Condition | MedicalCondition | — | F40.218 | Mature | 5.4 | กลัวหมอฟัน, dental phobia, odontophobia | ['*'] | Common reason for sedation dentistry referral |
+
+---
+
+## insurance-coverage-th: Insurance Coverage Thailand — ประกันสังคม / บัตรทอง / ราชการ / เอกชน
+
+**Brand Scope:** ['*'] mixed (sso-direct-billing-q-clinic is ['smile-scape'])
+**Pillar Page:** 3.12
+**Domain:** I: Insurance & Access
+
+| # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
+|---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
+| 1 | Social Security Dental Benefit (TH) | social-security-dental-benefit | Concept | — | — | — | Mature | 5.13.2 | ประกันสังคมทำฟัน, สิทธิ์ประกันสังคมทำฟัน, SSO dental, ม.33 ทำฟัน | ['*'] | Thai SSO Article 33/39/40 dental benefit. Annual cap 900 baht (operator confirm if updated to 1,200). Covers scaling/filling/extraction/wisdom-tooth + separate denture cap 1,500-4,400 baht/5yr |
+| 2 | Q-Clinic Direct Billing (SSO) | sso-direct-billing-q-clinic | Concept | — | social-security-dental-benefit | — | Growing | 3.12.2 | ไม่ต้องสำรองจ่าย, Q-Clinic, SSO direct bill, ทำฟันไม่ต้องสำรองจ่าย | ['smile-scape'] | SmileScape Q-Clinic status (R4-confirmed). Direct billing model — patient pays only out-of-pocket excess. Key conversion differentiator |
+| 3 | Universal Coverage (บัตรทอง / 30 บาท) | universal-coverage-th | Concept | — | — | — | Mature | 5.13.2.5 | บัตรทอง, 30 บาท, สปสช, UCS, universal coverage | ['*'] | NHSO scheme — distinct from SSO. Often confused with SSO; comparison content valuable. Operator to confirm SmileScape acceptance |
+| 4 | Civil Servant Medical Benefit (CGA) | civil-servant-dental-benefit | Concept | — | — | — | Mature | 5.13.5 | ราชการเบิกค่าทำฟัน, ข้าราชการ ทำฟัน, กรมบัญชีกลาง, CGA | ['*'] | Comptroller General's Dept scheme for govt employees + family. Direct billing acceptance TBD |
+| 5 | Private Health Insurance (TH Dental) | private-dental-insurance-th | Concept | — | — | — | Mature | 5.13.6 | ประกันสุขภาพเอกชน ทำฟัน, AIA dental, Cigna dental | ['*'] | Private insurer dental rider — reimbursement model typically. Receipt + medical certificate required |
 
 ---
 

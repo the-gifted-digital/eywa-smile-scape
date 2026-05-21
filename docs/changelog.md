@@ -1,5 +1,43 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-21 EVE] — Round 4 Q-Clinic SSO Cluster (Insurance & Access)
+
+**By:** Operator-driven request "อยากให้มีเรื่องราวทุกมุมเกี่ยวกับประกันสังคม" + DFS reconnaissance
+**Files updated:**
+- `brand-config.json` — v1.5 → v1.6. Added `insurance_acceptance` block. **SSO Q-Clinic = TRUE (operator confirmed)** — direct billing, patient ไม่ต้องสำรองจ่าย. Annual cap 900 baht (operator to verify if 1,200 updated cap applies). Denture caps 1,500-4,400 baht/5yr by type. บัตรทอง / ราชการ acceptance TBD.
+- `content-plan/clusters.md` — 18 → 19 clusters / 8 → 9 domains. NEW Domain I: Insurance & Access. NEW cluster: `insurance-coverage-th`.
+- `content-plan/entities.md` — 139 → 144 entities (+5 R4). New Concept entities: `social-security-dental-benefit`, `sso-direct-billing-q-clinic` (brand-scope ['smile-scape'] = SmileScape's Q-Clinic differentiator), `universal-coverage-th` (บัตรทอง), `civil-servant-dental-benefit` (ราชการ/CGA), `private-dental-insurance-th`.
+- `content-plan/relationships.md` — 171 → 184 edges (+13 R4). U section: Q-Clinic → SmileScape brand + branches (smilescape-rattanathibet + smilescape-srinakarin), SSO covers scaling/filling/extraction/wisdom-tooth/denture, alternative_to bait + civil servant + private, related_to dental-implant (upsell pathway — NOT covered).
+- `content-plan/sitemap.md` — ~544p → ~569p (+25 R4). **Block R (3.12 SSO Service Hub):** +6 pages — hero positioning around Q-Clinic direct billing (3.12.2 Tier B). **Block S (5.13 expansion):** +13 pages — 10-page SSO sub-hub (900 บาท cap / scaling-filling-extraction / dentures / wisdom tooth / vs บัตรทอง / unemployment scenarios / ม.33-39-40 / family coverage / how-to-reimburse / Q-Clinic explainer) + ราชการ + private insurance + tax deduction. **Block T (Branch SSO 8.2.6 + 8.3.6):** +2 pages — local SSO landing for รัตนาธิเบศร์ + ศรีนครินทร์ branches. **Block U (Section 6 Insights):** +4 pages — 6.2.7 Insurance Insights ×3 (overview / Q-Clinic explainer / receipt requirements) + 6.5.5 SSO FAQ.
+- `content-plan/egp-output-summary.md` — Round 4 expansion note + recount.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count 544 → ~569 + pending operator: บัตรทอง/ราชการ acceptance + annual cap verification.
+
+**DFS reconnaissance findings (Round 4):**
+- ⭐ **คลินิก ทำฟัน ประกันสังคม [city]** — multi-city long-tail pattern (10-30/mo each in ลพบุรี/ลำปาง/ภูเก็ต/ดอนเมือง) → confirms branch-level SSO pages capture local intent
+- ⭐ **ทำฟัน ประกันสังคม ไม่ต้องสำรองจ่าย** — high-intent navigational keyword → critical Q-Clinic positioning differentiator
+- 📊 **ประกันสังคม 900** — 110/mo TH LOW competition (with declining trend May 2025 480 → Apr 2026 20 suggesting recent cap change awareness)
+- 📊 **ประกันสังคม ทำฟัน ปลอมได้ไหม** — 30/mo TH commercial intent → denture coverage page priority
+- 📊 **ประกันสังคม ทำฟัน 1200** — 10/mo transactional → cap year referenced in new cap or specific procedure cost
+- 📊 **มีประกันสังคม ใช้บัตรทอง ทำฟัน ได้ไหม** — 10-30/mo → cross-coverage education opportunity
+- 📊 **สามีข้าราชการ ภรรยาประกันสังคม ทำฟัน** — 10/mo → family/spousal coverage long-tail
+- 📊 **ว่างงาน เบิกค่าทำฟัน ประกันสังคม** — active intent → ม.39 unemployment scenarios
+
+**Strategic frame (Round 4):**
+- **Q-Clinic positioning** = key differentiator most clinics either don't advertise or don't qualify for. SmileScape captures booking signal directly.
+- Educational long-tail (5.13.2.1-10) builds topical authority + AI citation surface for "ประกันสังคมทำฟัน" Knowledge Graph
+- **Conversion bridge** — Section 3.12.5 explicit upsell pathway "ทำพื้นฐานด้วยประกัน + ต่อยอด Implant/Aesthetic" — turns SSO entrants into premium service candidates
+- Cross-coverage content (vs บัตรทอง / vs ราชการ / vs ประกันชีวิต) = unique angle, low competition
+
+**Pending operator actions (added Round 4):**
+- บัตรทอง / 30 บาท — SmileScape acceptance status + billing modality (affects 5.13.2.5 content)
+- ราชการ / CGA (กรมบัญชีกลาง) — direct billing capability (affects 5.13.5)
+- Private insurance — accepted insurer list (AIA / Cigna / Allianz / Muang Thai / etc.) (affects 5.13.6)
+- Annual SSO cap verification — 900 vs 1,200 บาท (2026 status — affects 5.13.2.1 main content)
+- Q-Clinic registration number (สำหรับ verify ที่หน้า website)
+
+---
+
 ## [2026-05-21 PM] — Round 3 DFS-Informed Expansion (Peri-Implantitis Service + Gold Crown + ZBL Framework + Scaling Goldmine)
 
 **By:** Operator-driven batch + DFS reconnaissance (4 batches, ~30 keywords TH locale)
