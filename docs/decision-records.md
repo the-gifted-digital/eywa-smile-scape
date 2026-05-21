@@ -49,6 +49,15 @@ specialty_tier: Ceramic Implant (metal-free, premium for sensitive patients/fron
 
 **Apply to:** Both Implant brands AND Orthodontics brands (TrioClear / Damon)
 
+**R12 Audit Note (2026-05-22):** Operator-identified violations introduced in R2 (PSL — Damon Q/Clear in 3.5.3.x) + R11 (Direct Print/Clear Aligner restructure — TrioClear/Invisalign mentions in 3.5.1.x) + R3 (Densah Bur in 3.2.9.4.2). 7 strict violations + 1 borderline (Airflow → Air Polishing). All fixed in R12. Cross-link notes added on Section 4 brand pages to make DR-002 funnel pattern explicit.
+
+**Compliance refinement (R12):**
+- ✅ **OK in Section 3:** Doctor-named techniques (Sausage / Strip Graft / Ice Berg / Garage / Osseodensification concept) — these ARE the technique name, inseparable from service
+- ✅ **OK in Section 3:** Our own brand (SmileScape Direct Print Aligner) — Signature offering with method-led naming
+- ❌ **Move to Section 4/6:** External product brands (TrioClear / Damon / Densah Bur / Invisalign / EMS Airflow) — service in Section 3 uses method-led naming (Progressive Force / Metal-Ceramic SL / Osseodensification / Air Polishing)
+
+**Process learning:** DR-002 compliance check should be standard part of sitemap-edit task template going forward.
+
 ---
 
 ## [SS-DR-003] — TrioClear ≠ Invisalign (Brand Disambiguation) (2026-04-08)

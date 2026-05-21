@@ -1,5 +1,57 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 NIGHT] — Round 12 SS-DR-002 Compliance Cleanup (Brand-Name Audit)
+
+**By:** Operator-identified violations of SS-DR-002 (locked R0 2026-04-08) introduced in R2 (PSL/Damon) + R3 (Densah Bur) + R11 (Direct Print/Clear Aligner restructure with TrioClear/Invisalign mentions in Section 3).
+
+**SS-DR-002 principle:**
+- Section 3 (Services) = method-led naming (no external product brands)
+- Section 4 (Technology) = brand names OK + tech specs
+- Section 6 (Knowledge) = ดัก brand search intent
+
+**Operator refinement (R12):** External product brands → Section 4/6 only. Doctor-named techniques (Sausage / Strip Graft / Ice Berg / Garage / Osseodensification concept) + SmileScape's own brand allowed in Section 3 — they're INSEPARABLE from the technique itself.
+
+**Files updated:**
+- `content-plan/sitemap.md` — 7 strict renames + 1 borderline:
+  - **3.2.9.4.2** Crestal Sinus Lift with **Densah Bur** → "Crestal Sinus Lift via **Osseodensification**" (method-led)
+  - **3.5.1.3** จัดฟันใส **TrioClear** (Progressive) → "จัดฟันใสแบบ **Progressive Force** — Multi-Layer Material"
+  - **3.5.1.4** Direct Print vs Thermoformed (**Invisalign/TrioClear**) → "Direct Print vs **Thermoformed Aligner** — Method Comparison"
+  - **3.5.1.9** ราคา SmileScape — Direct Print vs **Invisalign/TrioClear** → "ราคา SmileScape — **In-House Direct Print vs Outsourced Lab Tier**"
+  - **3.5.3.1** PSL — **Damon Q / Damon Clear** → "PSL — **Metal vs Ceramic Options**"
+  - **3.5.3.3** **Damon Q** (Metal PSL) → "**Metal Self-Ligating Bracket**"
+  - **3.5.3.4** **Damon Clear** (Ceramic PSL) → "**Ceramic Self-Ligating Bracket**"
+  - **3.6.1.2** **Airflow** / Air Polishing → "**Air Polishing** System" (borderline — EMS brand kept at 4.4.5)
+- Cross-link notes added on Section 4 brand pages (4.4.4 Densah / 4.4.5 EMS Airflow / 4.6.1 TrioClear / 4.6.2 Damon) — making DR-002 funnel pattern explicit: Brand-intent → Tech page → Service page link.
+- `docs/decision-records.md` — SS-DR-002 updated with R12 audit note + compliance refinement.
+- `docs/changelog.md` — this entry.
+
+**Patient flow after fix:**
+```
+Patient: "จัดฟันใส TrioClear ราคา"
+  → Lands on 6.2.5.1 "TrioClear คืออะไร" (brand-intent capture)
+  → cross-link → 4.6.1 TrioClear Progressive Aligner System (tech detail)
+  → cross-link → 3.5.1.3 "จัดฟันใสแบบ Progressive Force" (Service booking — method-led)
+  → CONVERSION
+```
+
+**Strategic gains:**
+- **DR-002 compliance restored** — brand positioning consistency
+- **Cleaner Section 3 service catalog** — sells methodology not brand inventory
+- **Brand intent funnel preserved** — Section 4 + 6 still capture brand searches
+- **Explicit cross-links** — DR-021 bidirectional linking now has clear Section 4/6 → Section 3 conversion paths
+
+**Process learning:** Added compliance-check note in SS-DR-002 — every sitemap-edit task should audit against DR-002 before commit.
+
+**Cumulative project status (R12 lock):**
+- Sitemap pages: ~722 (no count change — renames only)
+- Clusters: 20 / Entities: 167 / Edges: 264 / Citation pillars: 16
+- Brand DRs: SS-DR-001..010 / brand-config: v1.11
+- Signature Offerings: 6 / Clinical Protocols: 1
+
+**No new pending operator (R12 = structural compliance cleanup)**
+
+---
+
 ## [2026-05-22 EVENING] — Round 11 Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)
 
 **By:** Operator inputs:

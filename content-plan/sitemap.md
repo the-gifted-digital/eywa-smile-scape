@@ -13,7 +13,8 @@
 > **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW
 > **Round 9 (2026-05-22):** Audit + Operator Confirmations — Periodontist + Endodontist specialists confirmed / Home Visit + Bedridden removed / 3.12.3 DFS expansion / pregnancy consolidation. Net -3 pages
 > **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric Team REMOVED, 2.2.10 Pediatric Dentist confirmed. Net -1 page
-> **Round 11 (2026-05-22):** ⭐ **Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)** — Section 3.5.1 promoted to Tier A sub-hub (10 sub-pages) / Section 4.6.0 In-House Aligner Lab Tech (6 pages) / Section 6.2.5 Knowledge (+3) / Section 6.4 Evidence (+1) / 5.10.9 cross-ref. PubMed evidence: 6 studies (Pillar 16). Differentiator: in-house 3D direct-print production = UNIQUE TH market positioning. Net +20 pages — see `docs/changelog.md`
+> **Round 11 (2026-05-22):** ⭐ **Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)** — Section 3.5.1 promoted to Tier A sub-hub (10 sub-pages) / Section 4.6.0 In-House Aligner Lab Tech (6 pages) / Section 6.2.5 Knowledge (+3) / Section 6.4 Evidence (+1) / 5.10.9 cross-ref. PubMed evidence: 6 studies (Pillar 16). Differentiator: in-house 3D direct-print production = UNIQUE TH market positioning. Net +20 pages
+> **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3 (Densah Bur → Osseodensification / TrioClear → Progressive Force / Damon Q/Clear → Metal/Ceramic SL / Invisalign mentions removed / Airflow → Air Polishing). Cross-link notes added on Section 4 brand pages. Doctor-named techniques + SmileScape brand allowed in Section 3 (inseparable). External product brands → Section 4/6 only. Net 0 page change — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -232,8 +233,8 @@
 | 3.2.9.3 | → → Sausage Technique — เทคนิคปลูกกระดูกระดับโลก by Dr. Istvan Urban 🏆🌟 | L2 | B | mid | A | sausage-technique |
 | 3.2.9.4 | → → Sinus Lift — ยกพื้นไซนัสเพื่อเสริมกระดูก (hub) | L2 | B | mid | A | sinus-lift |
 | 3.2.9.4.1 | → → → Lateral Window Sinus Lift — เปิดแผลด้านข้าง | L2 | C | mid | A | lateral-window-sinus-lift |
-| 3.2.9.4.2 | → → → Crestal (Internal) Sinus Lift with Densah Bur — Osseodensification 🌟 ★ | L2 | B | mid | A | internal-sinus-lift |
-| | → → → → Minimally invasive / Bone density boost / Same-day primary stability / Salah Huwais authority | | — | — | — |
+| 3.2.9.4.2 | → → → Crestal (Internal) Sinus Lift via Osseodensification 🌟 ★ | L2 | B | mid | A | internal-sinus-lift |
+| | → → → → Minimally invasive / Bone density boost / Same-day primary stability / Salah Huwais authority (R12: DR-002 method-led — Densah Bur brand page at 4.4.4 + Knowledge 6.2.1.14) | | — | — | — |
 | 3.2.9.5 | → → Ridge Augmentation — เสริมสันกระดูก (hub) | L2 | C | mid | A | ridge-augmentation |
 | 3.2.9.5.1 | → → → Horizontal Ridge Augmentation — เสริมแนวกว้าง | L2 | C | mid | A | horizontal-bone-deficiency |
 | 3.2.9.5.2 | → → → Vertical Bone Augmentation with RPM Membrane 🌟 — เสริมแนวสูง | L2 | B | mid | A | vertical-bone-augmentation |
@@ -360,20 +361,20 @@
 | 3.5.1.1 | → → จัดฟันใสคืออะไร — หลักการ + ข้อดี + ข้อจำกัด | L2 | B | top | A | clear-aligner |
 | 3.5.1.2 | → → 🌟 SmileScape Direct Print Aligner — In-House Lab ★ (Signature #6) | L2 | **A** | mid | A | direct-print-clear-aligner |
 | | → → → ผลิตในคลินิก / ใช้ attachment น้อย / same-day production / FDA-cleared photopolymer / 6 PubMed evidence | | — | — | — |
-| 3.5.1.3 | → → จัดฟันใส TrioClear (Progressive — 2nd option) — Soft→Hard force | L2 | C | mid | A | trioclear-aligner |
-| 3.5.1.4 | → → Direct Print vs Thermoformed (Invisalign/TrioClear) — Comparison | L2 | B | mid | D | thermoformed-aligner |
+| 3.5.1.3 | → → จัดฟันใสแบบ Progressive Force — Multi-Layer Material (Soft→Hard) — 2nd option | L2 | C | mid | A | trioclear-aligner |
+| 3.5.1.4 | → → Direct Print vs Thermoformed Aligner — Method Comparison | L2 | B | mid | D | thermoformed-aligner |
 | 3.5.1.5 | → → ทำไม Direct Print ใช้ attachment น้อยกว่า — Built-in features | L2 | B | mid | A | direct-print-clear-aligner |
 | 3.5.1.6 | → → Same-Day Aligner Capability — In-Clinic Production | L2 | B | mid | A | in-house-aligner-lab |
 | 3.5.1.7 | → → ใครเหมาะกับจัดฟันใส — Candidacy Assessment | L2 | C | top | A | clear-aligner |
 | 3.5.1.8 | → → ข้อจำกัด — เคสที่ไม่เหมาะกับ aligner | L2 | C | top | D | clear-aligner |
-| 3.5.1.9 | → → ราคาจัดฟันใส SmileScape — Direct Print value vs Invisalign / TrioClear | L2 | B | bottom | D | clear-aligner |
+| 3.5.1.9 | → → ราคาจัดฟันใส SmileScape — In-House Direct Print vs Outsourced Lab Tier | L2 | B | bottom | D | clear-aligner |
 | 3.5.1.10 | → → การดูแล Aligner — Cleaning + Storage + Replacement Schedule | L2 | D | mid | A | clear-aligner |
 | 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | damon-system |
 | | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape ใช้ PSL system | | — | — | — |
-| 3.5.3.1 | → → Passive Self-Ligating (PSL) — Damon Q / Damon Clear ★ 🌟 | L2 | C | mid | A | passive-self-ligating |
+| 3.5.3.1 | → → Passive Self-Ligating (PSL) — Metal vs Ceramic Options ★ 🌟 | L2 | C | mid | A | passive-self-ligating |
 | 3.5.3.2 | → → Active vs Passive Self-Ligating — เปรียบเทียบ | L2 | D | mid | D | passive-self-ligating |
-| 3.5.3.3 | → → Damon Q (Metal PSL) — โครงเหล็ก ทนทาน | L2 | D | mid | A | damon-system |
-| 3.5.3.4 | → → Damon Clear (Ceramic PSL) — สวยงาม ไม่เห็นเหล็ก | L2 | D | mid | A | damon-system |
+| 3.5.3.3 | → → Metal Self-Ligating Bracket — โครงเหล็ก ทนทาน | L2 | D | mid | A | damon-system |
+| 3.5.3.4 | → → Ceramic Self-Ligating Bracket — สวยงาม ไม่เห็นเหล็ก | L2 | D | mid | A | damon-system |
 | 3.5.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | clear-aligner |
 | 3.5.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | clear-aligner |
 | 3.5.6 | → จัดฟันก่อนทำรากฟันเทียม — Ortho + Implant Sequencing 🌟 | L6 | C | mid | A | ortho-implant-sequencing |
@@ -398,8 +399,8 @@
 | 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) 🎯 | L2 | **B** | mid | A | dental-filling |
 | | → → **DFS-validated 12,100/mo TH LOW competition — traffic goldmine (R3)** | | — | — | — |
 | 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | C | mid | A | dental-filling |
-| 3.6.1.2 | → → ขูดหินปูนแบบ Airflow / Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
-| | → → → EMS Airflow / Guided Biofilm Therapy (GBT) / Patient-friendly | | — | — | — |
+| 3.6.1.2 | → → ขูดหินปูนแบบ Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
+| | → → → Air-Water-Powder system / Guided Biofilm Therapy (GBT) / Patient-friendly (R12: brand-specific EMS Airflow at 4.4.5) | | — | — | — |
 | 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก | L2 | C | mid | A | periodontitis |
 | 3.6.1.4 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ | L2 | C | bottom | D | dental-filling |
 | 3.6.1.5 | → → ขูดหินปูน เจ็บไหม — ความรู้สึกจริง + วิธีลดเจ็บ | L2 | C | top | A | dental-filling |
@@ -626,9 +627,9 @@
 | 4.4.2 | → PRF Centrifuge — ระบบผลิตเกล็ดเลือดเข้มข้น | L3 | D | mid | A | prf-platelet-rich-fibrin |
 | 4.4.3 | → Surgical Microscope / Loupes — กล้องขยายผ่าตัด | L3 | D | mid | A | surgical-guide |
 | 4.4.4 | → Densah Bur System — Osseodensification Tool ★ 🌟 | L3 | B | mid | A | densah-bur |
-| | → → Versah (USA) / CCW rotation / Non-subtractive bone densification / Minimally invasive sinus elevation / Authority: Dr. Salah Huwais | | — | — | — |
-| 4.4.5 | → Airflow Prophylaxis System — EMS Air Polishing ★ | L3 | C | mid | A | airflow-air-polishing |
-| | → → EMS Airflow Prophylaxis Master / Guided Biofilm Therapy (GBT) / Periodontal maintenance | | — | — | — |
+| | → → Versah (USA) / CCW rotation / Non-subtractive bone densification / Minimally invasive sinus elevation / Authority: Dr. Salah Huwais. **Service booking → 3.2.9.4.2 Osseodensification Sinus Lift** (R12 DR-002 link) | | — | — | — |
+| 4.4.5 | → EMS Airflow Prophylaxis System — Air Polishing Brand ★ | L3 | C | mid | A | airflow-air-polishing |
+| | → → EMS Airflow Prophylaxis Master / Guided Biofilm Therapy (GBT) / Periodontal maintenance. **Service booking → 3.6.1.2 Air Polishing** (R12 DR-002 link) | | — | — | — |
 
 ### 4.5 Implant System
 
@@ -660,9 +661,9 @@
 | 4.6.0.4 | → → Quality Control + FDA-Cleared Material Certification | L3 | D | mid | A | photopolymer-resin-tc85 |
 | 4.6.0.5 | → → In-House Lab vs Outsourced Lab — Time + Cost + Quality Comparison | L3 | C | mid | D | in-house-aligner-lab |
 | 4.6.1 | → TrioClear™ Progressive Aligner System — ระบบจัดฟันใสแบบ Progressive ★ (2nd option) | L3 | C | mid | A | trioclear-aligner |
-| | → → TrioDim Force / Multi-layer material (Soft→Hard) / Robotic production / Minimal attachments | | — | — | — |
+| | → → TrioDim Force / Multi-layer material (Soft→Hard) / Robotic production / Minimal attachments. **Service booking → 3.5.1.3 Progressive Force** (R12 DR-002 link) | | — | — | — |
 | 4.6.2 | → Damon™ Self-Ligating Bracket System — ระบบ Bracket ล็อคตัวเอง ★ | L3 | C | mid | A | damon-system |
-| | → → Damon Q (metal) / Damon Clear (ceramic) / Passive self-ligation mechanism | | — | — | — |
+| | → → Damon Q (metal) / Damon Clear (ceramic) / Passive self-ligation mechanism. **Service booking → 3.5.3.3 Metal SL / 3.5.3.4 Ceramic SL** (R12 DR-002 link) | | — | — | — |
 | 4.6.3 | → Digital Orthodontic Planning — วางแผนจัดฟันดิจิทัล | L3 | D | mid | A | clear-aligner |
 | | → → 3D scanning / Treatment simulation / ก่อน-หลังจำลอง | | — | — | — |
 
