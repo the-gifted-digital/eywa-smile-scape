@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~703 (Round 9 audit, 2026-05-22 — was 706 at R8; R9 net -3 = consolidations + DFS expand 3.12.3) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~702 (Round 10 team audit, 2026-05-22 — was 703 at R9; R10 -1 = removed 2.2.11 Geriatric Team) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -11,7 +11,8 @@
 > **Round 6 (2026-05-21):** Citation pool Pillars 6-15 expansion — +10 pillars + 17 evidenced_by edges (no page count change)
 > **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages
 > **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW
-> **Round 9 (2026-05-22):** ⭐ **Audit + Operator Confirmations** — (a) Periodontist + Endodontist specialists CONFIRMED on staff → 2.2.7 + 2.2.9 Tier C→B. (b) Home visit + Bedridden dentistry REMOVED (not offered). (c) 3.12.3 EXPANDED into sub-hub (DFS goldmine ตรวจสิทธิประกันสังคม 2,400/mo + เอกสารประกันสังคม 720/mo). (d) 3.12 + 3.13.2 consolidated (thin-page risk). Net -3 pages — see `docs/changelog.md`
+> **Round 9 (2026-05-22):** Audit + Operator Confirmations — Periodontist + Endodontist specialists confirmed / Home Visit + Bedridden removed / 3.12.3 DFS expansion / pregnancy consolidation. Net -3 pages
+> **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric/Special-Care Team REMOVED (no dedicated specialist; service 3.13.1 still offered via general team). 2.2.10 Pediatric Dentist CONFIRMED Tier C→B. Net -1 page — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -32,14 +33,14 @@
 
 ## Pages per Section (Round 4)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** ~40 pages (+1 R8 — 2.2.11 Geriatric/Special-Care Team)
+- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages (R10: -1 from 2.2.11 removal; R8 net effect cancelled)
 - **3. SERVICES:** ~253 pages (R9 -3: 3.12 consolidation -2 + 3.12.3 expansion +4 -1 net = +2; 3.13.1 -2 home/bedridden; 3.13.2 -3 pregnancy consolidation. R8 baseline 256 + R9 -3 = 253)
 - **4. TECHNOLOGY:** ~29 pages
 - **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
 - **6. KNOWLEDGE:** 150 pages (R7: +23 from 6.5 FAQ canonical restructure — 5 sub-hubs / 29 FAQ pages)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R9:** ~703 pages (R8 baseline 706 + R9 -3: audit + consolidations + DFS-driven 3.12.3 expansion)
+- **TOTAL R10:** ~702 pages (R9 baseline 703 + R10 -1: 2.2.11 Geriatric Team removed)
 
 ---
 
@@ -126,8 +127,8 @@
 | 2.2.7 | → Periodontics Team — ทีมรักษาโรคเหงือก (Periodontist specialist on staff ✓ R9 confirmed) | L1 | **B** | mid | A | smilescape-dental-clinic |
 | 2.2.8 | → General Dentistry Team — ทีมทันตกรรมทั่วไป | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.9 | → Endodontist Team — ทีมทันตแพทย์เฉพาะทางรากฟัน (Endodontist specialist on staff ✓ R9 confirmed) | L1 | **B** | mid | A | smilescape-dental-clinic |
-| 2.2.10 | → Pediatric Dentistry Team — ทีมทันตกรรมเด็ก | L1 | C | mid | A | smilescape-dental-clinic |
-| 2.2.11 | → Geriatric / Special-Care Dentistry Team — ทีมดูแลผู้ป่วยเฉพาะกลุ่ม (R8) | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.10 | → Pediatric Dentistry Team — ทีมทันตกรรมเด็ก (Pediatric Dentist on staff ✓ R10 confirmed) | L1 | **B** | mid | A | smilescape-dental-clinic |
+| | → → R10: 2.2.11 Geriatric/Special-Care Team page REMOVED — clinic does not have dedicated geriatric specialist. Service 3.13.1 Geriatric Dentistry still offered via general team + Periodontist + Endodontist | | — | — | — |
 
 ### 2.3 Authority & Trust
 
@@ -537,7 +538,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.13.1 | ทันตกรรมผู้สูงอายุ — Geriatric Dentistry (sub-hub) ★ | L2 | B | mid | A | geriatric-dentistry |
-| | → → R9 update: Home Visit + Bedridden Dentistry NOT offered — pages removed. Service scope = in-clinic geriatric care | | — | — | — |
+| | → → R9: Home Visit + Bedridden Dentistry NOT offered — pages removed. R10: No dedicated geriatric specialist team — service delivered via general team + Periodontist + Endodontist | | — | — | — |
 | 3.13.1.3 | → ทำฟันร่วมกับโรคประจำตัวผู้สูงอายุ — Comorbidity Management | L2 | C | mid | A | medical-compromised-dentistry |
 | 3.13.1.4 | → ฟันปลอม / Overdenture สำหรับผู้สูงอายุ (→ link 3.2.8.7) | L2 | C | mid | A | overdenture |
 | 3.13.1.5 | → Implant สำหรับผู้สูงอายุ — เคสซับซ้อน (→ link 3.2.10.2) | L2 | C | mid | A | dental-implant |

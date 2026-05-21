@@ -1,5 +1,34 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 LATE PM] — Round 10 Team Audit (Pediatric Confirmed + Geriatric Team Removed)
+
+**By:** Operator inputs:
+1. ✅ **Pediatric Dentist CONFIRMED on staff** (was 2.2.10 pending since R2)
+2. ❌ **No dedicated Geriatric/Special-Care specialist team** (R8 had speculatively added 2.2.11 — now removed)
+
+**Files updated:**
+- `brand-config.json` — v1.9 → v1.10. `_changelog_1_10` documents R10 team audit.
+- `content-plan/sitemap.md` — Net -1 page (~703 → ~702):
+  - **2.2.10 Pediatric Team** — Tier C→B + "Pediatric Dentist on staff ✓ R10 confirmed"
+  - **2.2.11 Geriatric/Special-Care Team REMOVED** (no dedicated specialist; R8 was speculative)
+  - **3.13.1 Geriatric Dentistry service hub** — keep service section, note delivery via general team + Periodontist + Endodontist (not a dedicated geriatric team)
+- `README.md` — page count 703 → ~702 + pending list cleanup (Pediatric Team + Geriatric Team resolved).
+- `docs/changelog.md` — this entry.
+
+**Strategic clarification:** Geriatric Dentistry (Section 3.13.1) is a **service offering** delivered via the existing clinical team (general dentists + Periodontist + Endodontist for senior-specific gum/endo issues) — not a dedicated specialty team. Service authenticity > org chart fiction. Same pattern as Section 3.10 Sedation/GA which is delivered via anesthesiologist + general team (no dedicated "sedation team" per se).
+
+**Cumulative project status (R10 lock):**
+- Sitemap pages: **~702**
+- Clusters: 20 / Entities: 161 / Edges: 249 / Citation pillars: 15
+- brand-config: v1.10
+
+**Pending operator (R10 cleanup):**
+- ✅ R10 RESOLVED: Pediatric Dentist confirmed (was #10)
+- ✅ R10 RESOLVED: No geriatric specialist team — service via general team (was R8 #13)
+- Remaining: หมอแฮม Versah + Linkevicius training certs / Doctor Praeo credentials / Branch addresses / Brand inventory verifications / SSO annual cap year / DataForSEO full batch (R11)
+
+---
+
 ## [2026-05-22 PM] — Round 9 Audit + Operator Confirmations (Specialists Confirmed + 3.12 Restructure + Thin-Page Cleanup)
 
 **By:** Operator confirmations + DFS-validated audit decisions
