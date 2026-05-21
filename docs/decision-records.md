@@ -162,12 +162,64 @@ ZBL joins SMILE DNA (values) + Family Standard (ethics) as the brand triad — e
 
 ---
 
+## [SS-DR-009] — FAQ Canonical Source Decision: Section 6.5 = Single Home (2026-05-21)
+
+**Status:** Locked (operator confirmed Round 7)
+**Companion to:** DR-021 internal linking schema + DR-019 evidence backing
+
+**Context:**
+Initial Section 6 restructure (Round 2) placed FAQ in **two locations** that caused overlap and confusion:
+- Section 5.9 — Concern-context FAQ (5 pages organized by service)
+- Section 6.5 — Knowledge-context FAQ (5 pages organized by topic)
+
+In practice, same Q&A could land in both places (e.g., "ฝังรากเทียมเจ็บไหม?" fits 5.9.1 Implant FAQ AND 6.5.2 Safety FAQ). This caused:
+1. Duplicate Q&A potential = split SEO weight
+2. AI citation surface fragmented = Knowledge Graph confusion
+3. DR-021 reciprocal-detection ambiguity (which FAQ to link to from service page?)
+4. Operator content writer confusion = inconsistent FAQ placement
+
+**Decision:**
+**Section 6.5 = Single Canonical FAQ Home.** Section 5.9 deprecated.
+
+Structure:
+```
+6.5     FAQ Knowledge Hub — Master (canonical) — 29 pages
+6.5.1   FAQ by Service (10 sub-pages) — Implant / All-on-X / Ortho / Veneer/Crown / Pediatric / Endo / Sedation / Peri-Implantitis / Bone Graft / Soft Tissue
+6.5.2   FAQ by Concern (6 sub-pages) — Safety/Risk / Timeline / After-care / Pain-Emergency / Aesthetics / Decision-making
+6.5.3   FAQ by Patient Group (4 sub-pages) — Senior / Pregnancy / Pediatric / Medical Comorbidities
+6.5.4   FAQ Cost & Insurance (5 sub-pages) — Price-Payment / Installment 0% / SSO / UCS-CGA-Private / Tax Deduction
+6.5.5   FAQ Quick Reference (2 sub-pages) — Top 10 + Voice Search Speakable
+```
+
+**Implications:**
+- `brand-config.json` `content_strategy.faq_canonical_location = "section_6.5"` (v1.7)
+- All Section 3 services + Section 5 concerns + Section 8 contact pages link to 6.5.x sub-pages for Q&A
+- Schema.org `FAQPage` markup on every 6.5.x leaf page
+- Section 6.5.5.2 Voice Search uses Schema.org `Speakable` extension
+- DR-021 internal linking pattern: every page that needs FAQ has exactly ONE 6.5.x target
+
+**Rationale:**
+- **AI citation surface unified** — Knowledge Graph has clear FAQ entity anchor
+- **DR-021 reciprocal-detection clean** — source page → 6.5.x → back to source (predictable pattern)
+- **Operator clarity** — Content team writes FAQ in ONE place
+- **No SEO weight split** — single canonical URL per Q&A type
+- **Voice Search ready** — dedicated Speakable layer at 6.5.5.2
+- **Funnel-aware** — Section 5 (Concerns) + Section 3 (Services) both funnel to canonical FAQ — clean architecture, not duplicate destinations
+
+**Pages affected:**
+- DELETE: 5.9 + 5.9.1-5.9.5 (6 pages)
+- EXPAND: 6.5 from 6 → 29 pages (+23)
+- Net: +17 pages
+- Link patterns updated across Sections 3, 5, 8
+
+---
+
 ## Future Brand-Specific DRs (placeholders)
 
-- SS-DR-009: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
-- SS-DR-010: Multilingual launch decision (TH only initially → EN when?)
-- SS-DR-011: International medical tourism positioning (vs domestic-first focus)
-- SS-DR-012: Cross-brand link governance (DR-021 once locked)
+- SS-DR-010: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
+- SS-DR-011: Multilingual launch decision (TH only initially → EN when?)
+- SS-DR-012: International medical tourism positioning (vs domestic-first focus)
+- SS-DR-013: Cross-brand link governance (DR-021 once locked)
 
 ---
 

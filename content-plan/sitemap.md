@@ -1,13 +1,15 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~664 (Round 5 expansion, 2026-05-21 — was 414→525→544→569 through R1-R4) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~681 (Round 7 expansion, 2026-05-21 — was 414→525→544→569→664 through R1-R5; R6 citation expansion +0 pages; R7 FAQ restructure +17 net) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
 > **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based)
 > **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition)
 > **Round 4 (2026-05-21):** Q-Clinic SSO cluster — 3.12 SSO Service Hub + 5.13 expansion + Branch SSO pages + 6.2.7 Insurance Insights + 6.5.5 FAQ. SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning
-> **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked — see `docs/changelog.md`
+> **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked
+> **Round 6 (2026-05-21):** Citation pool Pillars 6-15 expansion — +10 pillars + 17 evidenced_by edges (no page count change)
+> **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages. Single source for AI citation + DR-021 reciprocal-detection clarity — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -31,11 +33,11 @@
 - **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages
 - **3. SERVICES:** ~232 pages (+6 R4 — Section 3.12 SSO Service Hub)
 - **4. TECHNOLOGY:** ~29 pages
-- **5. TREATMENT BY CONCERNS:** ~179 pages (+95 R5 — Section 5 concern universe expansion: re-tier 7 + W1-2 expand (+14) + W11 medical (+7) + 5.14-5.22 new clusters (+74))
-- **6. KNOWLEDGE:** 127 pages (+4 R4 — 6.2.7 Insurance Insights ×3 + 6.5.5 SSO FAQ)
+- **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
+- **6. KNOWLEDGE:** 150 pages (R7: +23 from 6.5 FAQ canonical restructure — 5 sub-hubs / 29 FAQ pages)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R5:** ~664 pages (+95 from R4 baseline 569)
+- **TOTAL R7:** ~681 pages (R5 baseline 664 + R7 net +17: -6 from 5.9 deletion + 23 from 6.5 expansion)
 
 ---
 
@@ -736,16 +738,11 @@
 | 5.8.11 | → ผู้ป่วยตับ / ไต — Renal & Hepatic considerations (R5) | L4 | D | mid | A | dental-implant |
 | 5.8.12 | → ภูมิแพ้ตัวเอง (Lupus / Sjögren's / RA) (R5) | L4 | D | mid | A | xerostomia |
 
-### 5.9 FAQ — คำถามที่พบบ่อย
+### 5.9 [DEPRECATED — SS-DR-009] → moved to Section 6.5 FAQ Knowledge Hub
 
-| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
-|---|-----------|-------|------|-------|-----------|----------------|
-| 5.9 | FAQ — คำถามที่พบบ่อย (hub) | L4 | C | top | A | dental-implant |
-| 5.9.1 | → FAQ รากฟันเทียม (15+ คำถาม) | L4 | C | top | A | dental-implant |
-| 5.9.2 | → FAQ All-on-4 / All-on-6 (10+ คำถาม) | L4 | C | top | A | all-on-6 |
-| 5.9.3 | → FAQ จัดฟัน | L4 | D | top | A | dental-implant |
-| 5.9.4 | → FAQ วีเนียร์และครอบฟัน | L4 | D | top | A | dental-veneer |
-| 5.9.5 | → FAQ ทั่วไป (นัดหมาย, ผ่อน, ประกัน) | L4 | D | bottom | A | dental-implant |
+> ⚠️ **Section 5.9 FAQ deprecated per SS-DR-009 (Round 7 2026-05-21).** All FAQ Q&A consolidated to **Section 6.5 FAQ Knowledge Hub** (canonical home). Pages in 5.9.1-5.9.5 migrated to 6.5.1.x (service-organized FAQ). See `docs/decision-records.md` SS-DR-009 for rationale.
+>
+> **Internal linking pattern (DR-021):** Section 5 concern pages → link directly to 6.5.x canonical FAQ sub-pages (no longer route via 5.9).
 
 ### 5.10 ปัญหาการเรียงตัวของฟัน — จัดฟันแก้ได้
 
@@ -947,12 +944,12 @@
 | 6.x | Sub-section | Type | Pages |
 |-----|-------------|------|-------|
 | 6.1 | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 11 |
-| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 82 (+3 R4 insurance insights) |
+| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 82 |
 | 6.3 | Glossary | Definitions A-Z | 3 |
 | 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 15 |
-| 6.5 | FAQ Knowledge Hub | High-intent quick answers (vs Section 5.9 concern-FAQ) | 6 (+1 R4 insurance FAQ) |
+| **6.5** | **FAQ Knowledge Hub — Canonical (R7 SS-DR-009)** | **Single canonical FAQ home — Service / Concern / Patient Group / Cost-Insurance / Quick Reference sub-hubs** | **29 (was 6 at R6 — +23 R7)** |
 | 6.6 | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
-| **Section 6 Total** | | | **127 (+4 R4)** |
+| **Section 6 Total** | | | **150 (was 127 — +23 R7)** |
 
 ---
 
@@ -1167,18 +1164,84 @@
 
 ---
 
-### 6.5 FAQ Knowledge Hub 🆕
+### 6.5 FAQ Knowledge Hub — Master Canonical FAQ Source 🌟 (R7 Restructure SS-DR-009)
 
-> Topic-FAQ (high-intent answers). Distinct from Section 5.9 concern-FAQ (top-funnel). Cross-topic depth.
+> ⭐ **R7 Restructure (2026-05-21):** Section 6.5 is the **single canonical FAQ home** for entire site (per SS-DR-009). Section 5.9 deprecated. All FAQ-needing pages (Section 3 services + Section 5 concerns + Section 8 contact) link to 6.5.x sub-pages.
+>
+> **Schema.org:** `FAQPage` markup on every 6.5.x leaf page. 6.5.5.2 adds `Speakable` extension for Voice Search.
+>
+> **Internal linking (DR-021):** Each Q&A appears in exactly ONE 6.5.x sub-page → predictable reciprocal-detection.
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.5 | FAQ Knowledge Hub (hub) | L5 | C | mid | A | dental-implant |
-| 6.5.1 | → FAQ ราคาและการชำระเงิน — ผ่อน 0% ประกัน สิทธิ์ | L5 | C | mid | D | dental-implant |
-| 6.5.2 | → FAQ ความปลอดภัยและความเสี่ยง — implant / GA / สูงวัย | L5 | C | mid | A | dental-implant |
-| 6.5.3 | → FAQ ระยะเวลาและกระบวนการ — ฝังเร็วได้ไหม / โหลดทันที / รอกี่เดือน | L5 | C | mid | A | immediate-loading |
-| 6.5.4 | → FAQ การดูแลหลังรักษา — กิน นอน เดินทาง บินได้ไหม | L5 | C | mid | A | dental-implant |
-| 6.5.5 | → FAQ ประกันสังคมทำฟัน — 20+ คำถามรวบยอด (R4) | L5 | C | mid | A | social-security-dental-benefit |
+| 6.5 | FAQ Knowledge Hub — Master (canonical) 🌟 | L5 | **A** | mid | A | dental-implant |
+
+#### 6.5.1 FAQ by Service (sub-hub)
+
+> Service-anchored Q&A. Linked from Section 3 service pages.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5.1 | FAQ by Service (sub-hub) | L5 | B | mid | A | dental-implant |
+| 6.5.1.1 | → FAQ รากฟันเทียม (20+ คำถาม) — ← link from 3.2 | L5 | B | mid | A | dental-implant |
+| 6.5.1.2 | → FAQ All-on-4 / All-on-6 (15+) — ← link from 3.3 | L5 | B | mid | A | all-on-6 |
+| 6.5.1.3 | → FAQ จัดฟัน (15+) — ← link from 3.5 | L5 | C | mid | A | clear-aligner |
+| 6.5.1.4 | → FAQ วีเนียร์และครอบฟัน — ← link from 3.4 | L5 | C | mid | A | dental-veneer |
+| 6.5.1.5 | → FAQ ทันตกรรมเด็ก — ← link from 3.9 | L5 | C | mid | A | pediatric-dentistry |
+| 6.5.1.6 | → FAQ Endodontics / รักษารากฟัน — ← link from 3.11 | L5 | C | mid | A | root-canal-treatment |
+| 6.5.1.7 | → FAQ Sedation / ดมยาสลบทำฟัน — ← link from 3.10 | L5 | C | mid | A | ga-dentistry |
+| 6.5.1.8 | → FAQ Peri-Implantitis — ← link from 3.7.7 | L5 | C | mid | A | peri-implantitis-treatment |
+| 6.5.1.9 | → FAQ Bone Graft / Sausage / Densah — ← link from 3.2.9 | L5 | C | mid | A | guided-bone-regeneration |
+| 6.5.1.10 | → FAQ Soft Tissue Surgery — ← link from 3.2.9.7 | L5 | C | mid | A | soft-tissue-management |
+
+#### 6.5.2 FAQ by Concern (sub-hub)
+
+> Topic-anchored Q&A. Linked from Section 5 concern pages.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5.2 | FAQ by Concern (sub-hub) | L5 | B | mid | A | dental-implant |
+| 6.5.2.1 | → FAQ ความปลอดภัยและความเสี่ยง — implant / GA / สูงวัย | L5 | B | mid | A | dental-implant |
+| 6.5.2.2 | → FAQ ระยะเวลาและกระบวนการ — ฝังเร็วได้ไหม / โหลดทันที / รอกี่เดือน | L5 | C | mid | A | immediate-loading |
+| 6.5.2.3 | → FAQ การดูแลหลังรักษา — กิน นอน เดินทาง บินได้ไหม (→ link 5.19) | L5 | C | mid | A | dental-implant |
+| 6.5.2.4 | → FAQ ปวดและฉุกเฉิน (→ link 5.14) | L5 | C | mid | A | dental-caries |
+| 6.5.2.5 | → FAQ ความสวยงาม ก่อน-หลัง (→ link 5.5 / 5.16) | L5 | C | mid | A | digital-smile-design |
+| 6.5.2.6 | → FAQ ตัดสินใจเลือกรักษา (→ link 5.21) | L5 | C | mid | D | smilescape-dental-clinic |
+
+#### 6.5.3 FAQ by Patient Group (sub-hub)
+
+> Demographic-anchored Q&A. Linked from Section 5.8 + 5.20 concern pages.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5.3 | FAQ by Patient Group (sub-hub) | L5 | C | mid | A | dental-implant |
+| 6.5.3.1 | → FAQ ผู้สูงอายุ (→ link 5.8.1) | L5 | C | mid | A | dental-implant |
+| 6.5.3.2 | → FAQ ตั้งครรภ์ / หลังคลอด (→ link 5.20) | L5 | C | mid | A | pregnancy-gingivitis |
+| 6.5.3.3 | → FAQ เด็ก (→ link 5.12 + 3.9) | L5 | C | mid | A | pediatric-dentistry |
+| 6.5.3.4 | → FAQ โรคประจำตัว (เบาหวาน / โรคหัวใจ / มะเร็ง / ภูมิคุ้มกัน) (→ link 5.8) | L5 | C | mid | A | dental-implant |
+
+#### 6.5.4 FAQ Cost & Insurance (sub-hub)
+
+> Financial Q&A. Linked from Section 3.12 SSO + 5.13 + 8 branch pages.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5.4 | FAQ Cost & Insurance (sub-hub) | L5 | B | mid | A | dental-implant |
+| 6.5.4.1 | → FAQ ราคาและการชำระเงิน — ผ่อน 0% ประกัน สิทธิ์ | L5 | B | mid | D | dental-implant |
+| 6.5.4.2 | → FAQ ผ่อน 0% (เงื่อนไข + แอป + สินเชื่อ) | L5 | C | bottom | D | dental-implant |
+| 6.5.4.3 | → FAQ ประกันสังคมทำฟัน — 20+ คำถามรวบยอด (R4 keep here) | L5 | B | mid | A | social-security-dental-benefit |
+| 6.5.4.4 | → FAQ บัตรทอง / ราชการ / ประกันชีวิตเอกชน | L5 | C | bottom | A | universal-coverage-th |
+| 6.5.4.5 | → FAQ ลดหย่อนภาษีค่าทำฟัน | L5 | D | bottom | D | dental-implant |
+
+#### 6.5.5 FAQ Quick Reference (Voice Search & Speakable Schema)
+
+> Top-10 + Voice Search optimized layer.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5.5 | FAQ Quick Reference (sub-hub) | L5 | B | top | A | dental-implant |
+| 6.5.5.1 | → คำถามที่ถูกถามบ่อยที่สุด — Top 10 อันดับ ★ | L5 | B | top | A | dental-implant |
+| 6.5.5.2 | → FAQ ฉบับย่อ — Voice Search Optimized (Schema.org Speakable) | L5 | C | top | A | dental-implant |
 
 ---
 

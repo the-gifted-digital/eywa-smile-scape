@@ -256,7 +256,9 @@
     "translation_strategy": "ai_draft_human_review",
     "editorial_review_required": true,
     "minimum_evidence_tier_for_publication": 4,
-    "family_standard_principle": "ถ้าเคสนี้เราไม่กล้าทำให้พ่อแม่ตัวเอง เราจะไม่ทำคนไข้เด็ดขาด"
+    "family_standard_principle": "ถ้าเคสนี้เราไม่กล้าทำให้พ่อแม่ตัวเอง เราจะไม่ทำคนไข้เด็ดขาด",
+    "faq_canonical_location": "section_6.5",
+    "_faq_canonical_note": "Round 7 decision (SS-DR-009): Section 6.5 FAQ Knowledge Hub = single canonical FAQ home. Section 5.9 deprecated. All FAQ-needing pages (Section 3 services + Section 5 concerns) link to 6.5.x sub-pages. Rationale: AI citation surface unified, DR-021 reciprocal-detection clean, operator content production clarity."
   },
 
   "team_assignment": {
@@ -333,12 +335,13 @@
   },
 
   "metadata": {
-    "config_version": "1.6",
+    "config_version": "1.7",
     "created_at": "2026-05-10",
     "last_updated_at": "2026-05-21",
     "_changelog_1_4": "Implant brands: Osstem out, Neodent in (Brazil, Straumann Group, value_premium). Signature offering #5 added: Internal Sinus Lift with Densah (Osseodensification, Salah Huwais authority). Soft tissue signature note expanded to include Urban techniques (Strip Graft / Ice Berg / Garage).",
     "_changelog_1_5": "Round 3: Added clinical_protocols[0] Zero Bone Loss Concept (Tomas Linkevicius framework — separate from signature_offerings because ZBL is HOW we do implants, not a named technique). Added peri_implantitis_treatment / pediatric_dentistry / endodontics_specialist / sedation_dentistry to specialty_focus (reflects R2 service additions). Pending operator: Linkevicius training credential.",
-    "_changelog_1_6": "Round 4: Added insurance_acceptance block — SSO Q-Clinic direct-billing confirmed (key conversion differentiator). DFS-informed ประกันสังคม cluster (~25 new pages: 3.12 SSO Service Hub + 5.13 expansion + branch SSO pages + 6.2.7 insurance insights). Pending operator: บัตรทอง / ราชการ direct billing acceptance + annual cap year confirmation (900 vs 1,200 บาท)."
+    "_changelog_1_6": "Round 4: Added insurance_acceptance block — SSO Q-Clinic direct-billing confirmed (key conversion differentiator). DFS-informed ประกันสังคม cluster (~25 new pages: 3.12 SSO Service Hub + 5.13 expansion + branch SSO pages + 6.2.7 insurance insights). Pending operator: บัตรทอง / ราชการ direct billing acceptance + annual cap year confirmation (900 vs 1,200 บาท).",
+    "_changelog_1_7": "Round 7: FAQ Canonical Source decision (SS-DR-009). Added faq_canonical_location='section_6.5' under content_strategy. Section 5.9 FAQ deprecated (overlap/duplication problem). Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 pages. All FAQ-needing pages link to 6.5.x canonical sub-pages."
   },
 
   "eywa_spec_snapshot": {

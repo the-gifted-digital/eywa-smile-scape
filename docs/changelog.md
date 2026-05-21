@@ -1,5 +1,54 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 EARLY] — Round 7 FAQ Canonical Source (SS-DR-009)
+
+**By:** Operator-identified overlap problem ("FAQ ใน section 5 กับ 6 มีความงง มีความทับซ้อนกัน") → consolidation to Section 6.5
+
+**Problem analyzed:**
+- Section 5.9 FAQ (concern-context, 5 pages) + Section 6.5 FAQ (knowledge-context, 5 pages) = duplicate Q&A potential
+- 5+ concrete overlap scenarios identified (ฝังรากเจ็บไหม / ผ่อน 0% / ประกันสังคม / etc.)
+- Internal linking ambiguity for DR-021 reciprocal-detection
+- AI citation surface fragmented = Knowledge Graph confusion
+
+**Files updated:**
+- `brand-config.json` — v1.6 → v1.7. Added `content_strategy.faq_canonical_location = "section_6.5"` flag + `_faq_canonical_note` explanatory comment.
+- `docs/decision-records.md` — **Added SS-DR-009 FAQ Canonical Source Decision**. Locks Section 6.5 as single canonical FAQ home. Section 5.9 deprecated. Rationale: AI citation unified, DR-021 linking clean, operator clarity.
+- `content-plan/sitemap.md`:
+  - **DELETED Section 5.9** (6 pages: 1 hub + 5 sub) — replaced with deprecation notice + cross-reference to 6.5
+  - **EXPANDED Section 6.5** from 6 → 29 pages (1 master hub + 5 sub-hubs):
+    - **6.5.1 FAQ by Service** (10 pages): รากเทียม / All-on-X / จัดฟัน / วีเนียร์-ครอบ / เด็ก / Endo / Sedation / Peri-Implantitis / Bone Graft / Soft Tissue
+    - **6.5.2 FAQ by Concern** (6 pages): Safety / Timeline / After-care / Pain-Emergency / Aesthetics / Decision
+    - **6.5.3 FAQ by Patient Group** (4 pages): Senior / Pregnancy / Pediatric / Medical Comorbidities
+    - **6.5.4 FAQ Cost & Insurance** (5 pages): Price / Installment / SSO / UCS-CGA-Private / Tax
+    - **6.5.5 FAQ Quick Reference** (2 pages): Top 10 + Voice Search (Speakable schema)
+  - Updated Section 6 master structure table: 127 → 150 pages
+  - Updated sitemap header: ~664 → ~681 pages (net +17 = -6 deletion + 23 expansion)
+- `content-plan/egp-output-summary.md` — R7 expansion note added.
+- `docs/changelog.md` — this entry.
+
+**Internal linking pattern updates (DR-021):**
+- Section 3 services (10) → 6.5.1.x service FAQ canonicals
+- Section 5 concerns (multiple clusters) → 6.5.2.x topic FAQ canonicals
+- Section 5.8/5.20 patient groups → 6.5.3.x demographic FAQ canonicals
+- Section 3.12 + 5.13 cost/insurance → 6.5.4.x financial FAQ canonicals
+- Voice Search optimization → 6.5.5.2 Speakable
+
+**Strategic gains:**
+- **Single source of truth** — no duplicate Q&A across pages
+- **AI citation surface unified** — Knowledge Graph has 1 FAQ entity anchor
+- **DR-021 reciprocal-detection clean** — every page → exactly ONE 6.5.x target
+- **Schema.org FAQPage** consistent on every 6.5.x leaf
+- **Speakable extension** for Voice Search at 6.5.5.2
+- **Operator clarity** — content team writes FAQ in ONE structured place
+
+**Cumulative project status (R7 lock):**
+- Sitemap pages: **~681**
+- Clusters: 19 / Entities: 155 / Edges: 232 / Citation pillars: 15
+
+**No new pending operator actions (R7 = structural restructure, no operator data dependencies)**
+
+---
+
 ## [2026-05-21 LATE NIGHT] — Round 6 Citation Pool Pillars 6-15 Expansion
 
 **By:** Operator reminder "อย่าลืม propose citation ให้ด้วยนะ" + PubMed MCP targeted searches

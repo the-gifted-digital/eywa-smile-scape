@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~664p Round 5 — Section 5 concern universe expanded, pending client final feedback)
+│   └── sitemap.md                (~681p Round 7 — FAQ canonical restructure SS-DR-009, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,10 +58,10 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 5 — 2026-05-21):**
-   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (19 clusters / 155 entities / 215 edges)
-   - Phase E 🟡 in progress — sitemap ~664p (Round 5 Section 5 concern universe expansion locked, awaiting final client review)
-   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R6)
+4. **Stage status (Round 7 — 2026-05-21):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (19 clusters / 155 entities / 232 edges / 15 citation pillars)
+   - Phase E 🟡 in progress — sitemap ~681p (R7 FAQ canonical restructure SS-DR-009 locked, awaiting final client review)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R8)
 
 ---
 
