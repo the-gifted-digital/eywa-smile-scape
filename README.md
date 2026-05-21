@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~706p Round 8 — Section 3.13 Demographic Dentistry added, pending client final feedback)
+│   └── sitemap.md                (~703p Round 9 — Audit + 3.12.3 DFS goldmine expansion, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,10 +58,10 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 8 — 2026-05-22):**
+4. **Stage status (Round 9 — 2026-05-22):**
    - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / 161 entities / 249 edges / 15 citation pillars)
-   - Phase E 🟡 in progress — sitemap ~706p (R8 Demographic Dentistry Section 3.13 locked, awaiting final client review)
-   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R9)
+   - Phase E 🟡 in progress — sitemap ~703p (R9 audit + 3.12.3 DFS goldmine expansion locked, awaiting final client review)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R10)
 
 ---
 
@@ -112,10 +112,11 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 7. **Annual SSO cap verification** — 900 vs 1,200 บาท (2026 status — affects 5.13.2.1)
 8. **Q-Clinic registration number** for website verification badge
 9. Doctor Praeo (หมอแพรว) full credentials
-10. Pediatric Team + Endodontist Team specialist names + credentials
-11. **Geriatric / Special-Care Team specialist names + credentials** (R8 — for Section 2.2.11)
-12. **Home visit dentistry capability** (R8 — affects 3.13.1.1) + **Bedridden patient dentistry** (R8 — affects 3.13.1.2)
-13. Peri-Implantitis specialist credential (R3)
+10. Pediatric Team specialist names + credentials (Section 2.2.10)
+11. ✅ R9 RESOLVED: Periodontist + Endodontist specialists CONFIRMED on staff (was 2.2.7 + 2.2.9 pending)
+12. ✅ R9 RESOLVED: Peri-Implantitis specialist credential — clinic Periodontist handles (was R3 pending)
+13. Geriatric / Special-Care Team specialist names + credentials (R8 — for Section 2.2.11)
+14. ✅ R9 RESOLVED: Home Visit + Bedridden Dentistry not offered — sitemap pages removed (no pending)
 12. Branch addresses + GPS + phone + LINE OA + GBP Place IDs
 13. Verify Neodent series / 3Shape TRIOS model / Acteon CBCT model
 14. Gold crown supplier / alloy tier (R3)

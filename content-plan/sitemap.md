@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~706 (Round 8 expansion, 2026-05-22 — was 414→525→544→569→664→681 through R1-R7; R8 demographic dentistry +25) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~703 (Round 9 audit, 2026-05-22 — was 706 at R8; R9 net -3 = consolidations + DFS expand 3.12.3) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -10,7 +10,8 @@
 > **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked
 > **Round 6 (2026-05-21):** Citation pool Pillars 6-15 expansion — +10 pillars + 17 evidenced_by edges (no page count change)
 > **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages
-> **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. Service-side gap fix (was only Pediatric had dedicated service). DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW — see `docs/changelog.md`
+> **Round 8 (2026-05-22):** ⭐ **Demographic-Specific Dentistry Services** — NEW Section 3.13 (24 pages: Geriatric / Pregnancy / Medical-Compromised / Special Needs sub-hubs) + 2.2.11 Geriatric Team. DFS anchor: ทันตกรรมผู้สูงอายุ 70/mo TH LOW
+> **Round 9 (2026-05-22):** ⭐ **Audit + Operator Confirmations** — (a) Periodontist + Endodontist specialists CONFIRMED on staff → 2.2.7 + 2.2.9 Tier C→B. (b) Home visit + Bedridden dentistry REMOVED (not offered). (c) 3.12.3 EXPANDED into sub-hub (DFS goldmine ตรวจสิทธิประกันสังคม 2,400/mo + เอกสารประกันสังคม 720/mo). (d) 3.12 + 3.13.2 consolidated (thin-page risk). Net -3 pages — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -32,13 +33,13 @@
 ## Pages per Section (Round 4)
 - **1. HOME:** 1 page
 - **2. OUR UNIQUENESS — The Global Mastery:** ~40 pages (+1 R8 — 2.2.11 Geriatric/Special-Care Team)
-- **3. SERVICES:** ~256 pages (R8 +24 — Section 3.13 Demographic Dentistry: Geriatric 6 / Pregnancy 4 / Medical-Compromised 8 / Special Needs 3 + hub)
+- **3. SERVICES:** ~253 pages (R9 -3: 3.12 consolidation -2 + 3.12.3 expansion +4 -1 net = +2; 3.13.1 -2 home/bedridden; 3.13.2 -3 pregnancy consolidation. R8 baseline 256 + R9 -3 = 253)
 - **4. TECHNOLOGY:** ~29 pages
 - **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
 - **6. KNOWLEDGE:** 150 pages (R7: +23 from 6.5 FAQ canonical restructure — 5 sub-hubs / 29 FAQ pages)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R8:** ~706 pages (R7 baseline 681 + R8 +25: Section 3.13 demographic dentistry +24 + 2.2.11 team +1)
+- **TOTAL R9:** ~703 pages (R8 baseline 706 + R9 -3: audit + consolidations + DFS-driven 3.12.3 expansion)
 
 ---
 
@@ -122,9 +123,9 @@
 | 2.2.4 | → Oral & Maxillofacial Surgery Team — ทีมศัลยกรรมช่องปาก | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.5 | → Prosthodontics Team — ทีมทันตกรรมประดิษฐ์ | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.6 | → Orthodontics Team — ทีมจัดฟัน | L1 | C | mid | A | smilescape-dental-clinic |
-| 2.2.7 | → Periodontics Team — ทีมรักษาโรคเหงือก | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.7 | → Periodontics Team — ทีมรักษาโรคเหงือก (Periodontist specialist on staff ✓ R9 confirmed) | L1 | **B** | mid | A | smilescape-dental-clinic |
 | 2.2.8 | → General Dentistry Team — ทีมทันตกรรมทั่วไป | L1 | C | mid | A | smilescape-dental-clinic |
-| 2.2.9 | → Endodontist Team — ทีมทันตแพทย์เฉพาะทางรากฟัน | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.9 | → Endodontist Team — ทีมทันตแพทย์เฉพาะทางรากฟัน (Endodontist specialist on staff ✓ R9 confirmed) | L1 | **B** | mid | A | smilescape-dental-clinic |
 | 2.2.10 | → Pediatric Dentistry Team — ทีมทันตกรรมเด็ก | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.11 | → Geriatric / Special-Care Dentistry Team — ทีมดูแลผู้ป่วยเฉพาะกลุ่ม (R8) | L1 | C | mid | A | smilescape-dental-clinic |
 
@@ -510,11 +511,15 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.12 | ทำฟันด้วยสิทธิ์ประกันสังคม ที่ SmileScape 🌟 (hub) | L2 | B | mid | A | social-security-dental-benefit |
-| 3.12.1 | → บริการที่ครอบคลุมประกันสังคม — ขูดหินปูน / อุดฟัน / ถอนฟัน / ฟันคุด / ฟันปลอม | L2 | C | mid | A | social-security-dental-benefit |
+| | → → R9 hub-consolidated: บริการที่ครอบคลุม + ตัวอย่างค่าใช้จ่าย (in-page sections) | | — | — | — |
 | 3.12.2 | → ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape Q-Clinic ★ 🌟 | L2 | **B** | bottom | A | sso-direct-billing-q-clinic |
 | | → → DFS hot intent / Q-Clinic positioning hero / Step-by-step direct billing flow | | — | — | — |
-| 3.12.3 | → เอกสารที่ต้องนำมา + ตรวจสิทธิ์ก่อนนัด — Checklist | L2 | C | bottom | A | social-security-dental-benefit |
-| 3.12.4 | → ตัวอย่างค่าใช้จ่ายจริง — ส่วนที่ประกันสังคมจ่าย vs คุณจ่ายเอง | L2 | C | bottom | D | social-security-dental-benefit |
+| 3.12.3 | → ตรวจสิทธิ์ + เอกสารใช้สิทธิประกันสังคม (sub-hub) 🌟 ★ | L2 | **B** | mid | A | social-security-dental-benefit |
+| | → → R9 DFS goldmine: ตรวจสิทธิประกันสังคม 2,400/mo TH LOW + เอกสารประกันสังคม 720/mo TH LOW = 3,120/mo combined | | — | — | — |
+| 3.12.3.1 | → → วิธีตรวจสิทธิประกันสังคม Online — sso.go.th + แอป SSO Connect (R9 DFS 2,400/mo) | L2 | B | mid | A | social-security-dental-benefit |
+| 3.12.3.2 | → → เอกสารที่ต้องเตรียม — Checklist + ID card / payslip / claim form (R9 DFS 720/mo) | L2 | C | mid | A | social-security-dental-benefit |
+| 3.12.3.3 | → → ใช้สิทธิ์ครั้งแรก ที่ SmileScape — Step-by-step | L2 | C | bottom | A | sso-direct-billing-q-clinic |
+| 3.12.3.4 | → → ตรวจสิทธิ์ ม.39 / ม.40 — Article-specific guidance | L2 | C | mid | A | social-security-dental-benefit |
 | 3.12.5 | → Upsell Pathway — ทำพื้นฐานด้วยประกัน + ต่อยอด Implant / Aesthetic | L2 | C | bottom | A | social-security-dental-benefit |
 
 ---
@@ -532,8 +537,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.13.1 | ทันตกรรมผู้สูงอายุ — Geriatric Dentistry (sub-hub) ★ | L2 | B | mid | A | geriatric-dentistry |
-| 3.13.1.1 | → คลินิกทำฟันผู้สูงอายุที่บ้าน — Home Visit Dentistry (TBD operator) | L2 | C | mid | A | geriatric-dentistry |
-| 3.13.1.2 | → ผู้สูงอายุติดเตียง — Bedridden Patient Dentistry | L2 | C | mid | A | bedridden-dentistry |
+| | → → R9 update: Home Visit + Bedridden Dentistry NOT offered — pages removed. Service scope = in-clinic geriatric care | | — | — | — |
 | 3.13.1.3 | → ทำฟันร่วมกับโรคประจำตัวผู้สูงอายุ — Comorbidity Management | L2 | C | mid | A | medical-compromised-dentistry |
 | 3.13.1.4 | → ฟันปลอม / Overdenture สำหรับผู้สูงอายุ (→ link 3.2.8.7) | L2 | C | mid | A | overdenture |
 | 3.13.1.5 | → Implant สำหรับผู้สูงอายุ — เคสซับซ้อน (→ link 3.2.10.2) | L2 | C | mid | A | dental-implant |
@@ -543,11 +547,9 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 3.13.2 | ทันตกรรมหญิงตั้งครรภ์ (sub-hub) | L2 | C | mid | A | pregnancy-dental-care |
-| 3.13.2.1 | → ตรวจฟันก่อนวางแผนตั้งครรภ์ — Pre-Pregnancy Dental | L2 | C | top | A | pregnancy-dental-care |
-| 3.13.2.2 | → Pregnancy Gingivitis Treatment (→ link 5.20.4) | L2 | C | mid | A | pregnancy-gingivitis |
-| 3.13.2.3 | → ทำฟันฉุกเฉินตอนตั้งครรภ์ — Emergency-Only Protocol | L2 | C | mid | A | pregnancy-dental-care |
-| 3.13.2.4 | → ไตรมาส 2 = ช่วงปลอดภัย — Safe Treatment Window | L2 | C | mid | A | pregnancy-dental-care |
+| 3.13.2 | ทันตกรรมหญิงตั้งครรภ์ (comprehensive page) | L2 | C | mid | A | pregnancy-dental-care |
+| | → → R9 consolidated (DFS thin-page risk: pregnancy sub-page volumes <50/mo each). In-page sections: Pre-pregnancy dental / Emergency protocol / Q2 safe window / Breastfeeding considerations | | — | — | — |
+| 3.13.2.2 | → Pregnancy Gingivitis Treatment 🌟 (kept standalone — clinical condition + entity match + EFP evidence base) (→ link 5.20.4) | L2 | C | mid | A | pregnancy-gingivitis |
 
 #### 3.13.3 ทันตกรรมผู้ป่วยโรคเรื้อรัง / Medical-Compromised Patient Dentistry (sub-hub) ★
 

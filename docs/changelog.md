@@ -1,5 +1,56 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 PM] — Round 9 Audit + Operator Confirmations (Specialists Confirmed + 3.12 Restructure + Thin-Page Cleanup)
+
+**By:** Operator confirmations + DFS-validated audit decisions
+
+**Operator inputs:**
+1. ✅ **Periodontist + Endodontist specialists CONFIRMED on staff** (was R3 TBD)
+2. ❌ **Home visit dentistry NOT offered**
+3. ❌ **Bedridden patient dentistry NOT offered**
+4. ❓ **3.12.1-4 consolidation question** + 3.13.2.1-4 thin-page risk question
+
+**DFS findings (R9):**
+- 🔥 **ตรวจสิทธิประกันสังคม 2,400/mo TH LOW** — R4 GOLDMINE missed → 3.12.3 EXPANDED
+- 🔥 **เอกสารประกันสังคม 720/mo TH LOW** — combined 3,120/mo SSO check goldmine
+- Pregnancy sub-pages: pregnancy gingivitis 20/mo / ตั้งครรภ์เหงือกบวม 10/mo / others NULL → thin-page confirmed
+
+**Files updated:**
+- `brand-config.json` — v1.8 → v1.9. `_changelog_1_9` documents audit decisions.
+- `content-plan/sitemap.md` — Net -3 pages (~706 → ~703):
+  - **2.2.7 Periodontics Team** — Tier C→B + "Periodontist specialist on staff ✓ R9 confirmed"
+  - **2.2.9 Endodontist Team** — Tier C→B + "Endodontist specialist on staff ✓ R9 confirmed"
+  - **3.12 SSO restructure:**
+    - 3.12.1 consolidated → hub in-page section
+    - 3.12.4 consolidated → hub in-page section
+    - **3.12.3 EXPANDED to sub-hub with 4 sub-pages** — DFS goldmine 3,120/mo: 3.12.3.1 Online check (sso.go.th + SSO Connect app) / 3.12.3.2 Documents checklist / 3.12.3.3 First-time use at SmileScape / 3.12.3.4 Article 39/40 guidance
+    - 3.12.2 + 3.12.5 unchanged
+  - **3.13.1.1 Home Visit + 3.13.1.2 Bedridden DELETED** — replaced with R9 update note in hub
+  - **3.13.2 Pregnancy CONSOLIDATED** — comprehensive single page with in-page sections (Pre-pregnancy / Emergency / Q2 window / Breastfeeding). 3.13.2.2 Pregnancy Gingivitis kept standalone (clinical condition + entity + EFP evidence)
+- `content-plan/entities.md` — `bedridden-dentistry` entity kept but Primary Page cleared (federation reuse, not SmileScape-offered)
+- `content-plan/egp-output-summary.md` — R9 audit note.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count 706 → ~703 + pending operator items cleanup (Periodontist + Endodontist + Peri-Implantitis specialist credentials moved from "pending" to "confirmed" / Home visit + Bedridden capability removed from pending — clinic doesn't offer).
+
+**Strategic gains:**
+- **3,120/mo SSO check goldmine** unlocked at 3.12.3 sub-hub
+- **Service authenticity** — sitemap reflects actual capabilities (no false advertising)
+- **DR-016 thin-page risk mitigated** — pregnancy sub-pages consolidated to comprehensive single page (better E-E-A-T)
+- **Specialist credibility** — Periodontist + Endodontist confirmed = 3.7.7 + 3.11 + 5.6.3 (gum) + 5.14 (acute pain) all have authority anchor
+
+**Cumulative project status (R9 lock):**
+- Sitemap pages: **~703**
+- Clusters: 20 / Entities: 161 / Edges: 249 / Citation pillars: 15
+- Bidirectional edges: 73 / evidenced_by edges: 25
+- Brand DRs: SS-DR-001..009 / brand-config: v1.9
+
+**Pending operator (R9 cleanup):**
+- ✅ Removed: Periodontist + Endodontist + Peri-Implantitis specialist credentials (confirmed on staff)
+- ✅ Removed: Home Visit + Bedridden capability questions (clinic doesn't offer)
+- Remaining: Geriatric Team specialist names + credentials, หมอแฮม Versah + Linkevicius training certs, Doctor Praeo credentials, brand inventory verifications, DataForSEO full batch.
+
+---
+
 ## [2026-05-22] — Round 8 Demographic-Specific Dentistry Services (Section 3.13 NEW)
 
 **By:** Operator question "เรามีพูดถึงทันตกรรมสำหรับคนเฉพาะกลุ่มไหม" + DFS reconnaissance
