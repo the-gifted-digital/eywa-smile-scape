@@ -4,7 +4,7 @@
 
 **Brand ID:** smile-scape
 **Vertical:** Dental (MID-VALUE Implant-First)
-**EYWA Protocol:** v3.14 / Schema v1.10 / Content_Templates v1.3 (DRAFT)
+**EYWA Protocol:** v3.19 / Schema v1.15 / Content_Templates v1.5 LOCKED / Handover v1.13 / DR v1.13
 **Engagement:** DEAL CLOSED 2026-04-08 — Founding Partner Rate
 
 ---
@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (414p WIP — pending client feedback)
+│   └── sitemap.md                (~525p Round 2 — was 414, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -57,6 +57,11 @@ eywa-smile-scape/
 3. **Reference EYWA Spec:**
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
+
+4. **Stage status (Round 2 — 2026-05-21):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (18 clusters / 131 entities / 151 edges)
+   - Phase E 🟡 in progress — sitemap ~525p (Round 2 expansion locked, awaiting final client review)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO KW research)
 
 ---
 
@@ -96,15 +101,20 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 
 ---
 
-## ⏭ Pending Actions (operator)
+## ⏭ Pending Actions (operator — Round 2)
 
-1. Client feedback on 414p sitemap
-2. Doctor Praeo full credentials
-3. Branch addresses + contact details
-4. Implant brand inventory completeness check
-5. Technology inventory check
+1. Final client review of ~525p sitemap (Round 2 expansion locked 2026-05-21)
+2. **Dr. Woraphat Versah training / Huwais workshop credential** (for Densah Signature #5 anchor → Section 2.2.2 หมอแฮม + brand-config.json signature_offerings[4])
+3. Doctor Praeo (หมอแพรว) full credentials
+4. Pediatric Team + Endodontist Team specialist names + credentials (for Section 2.2.9 + 2.2.10)
+5. Branch addresses + GPS + phone + LINE OA + GBP Place IDs (per branches.md)
+6. Verify Neodent series in inventory (GM / Drive / Easy Cone)
+7. Verify 3Shape TRIOS model (TRIOS 5 / TRIOS 4 / TRIOS Move)
+8. Verify Acteon CBCT model (X-Mind Trium / X-Mind Prime)
+9. Implant brand inventory completeness check (Blue Diamond + Neodent + Straumann + Ceramic — Osstem confirmed removed)
+10. DataForSEO keyword research data (Stage 1 Gate dependency)
 
-See `docs/brand-concept.md` §14 for full open questions list.
+See `docs/brand-concept.md` §14 for full open questions list. See `docs/changelog.md` for Round 2 detail.
 
 ---
 

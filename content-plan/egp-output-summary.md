@@ -1,11 +1,11 @@
 # SmileScape Dental Clinic — EGP Output Summary (Planning File)
 
-> **Phase:** Stage 1 → Phase C (Entity Genesis) — COMPLETE
-> **Date:** 2026-05-12
-> **Bible ref:** v3.15 Part 2.6 — Entity Genesis Protocol (EGP)
-> **Schema ref:** v1.11 (37 tables — DR-024 ext + DR-025 Local SEO restored)
-> **Handover ref:** v1.9 §7.4 — Phase C Deliverables
-> **DR snapshot:** Locked DR-001..018 + DR-024 + DR-025 / Proposed DR-013/014/019/020/021/022
+> **Phase:** Stage 1 → Phase C (Entity Genesis) — COMPLETE + Round 2 expansion 2026-05-21
+> **Date:** 2026-05-12 (initial) / 2026-05-21 (Round 2)
+> **Bible ref:** v3.19 Part 2.6 — Entity Genesis Protocol (EGP)
+> **Schema ref:** v1.15 (37 tables — DR-024 ext + DR-025 Local SEO restored)
+> **Handover ref:** v1.13 §7.4 — Phase C Deliverables
+> **DR snapshot:** Locked DR-001..025 / Proposed DR-026, DR-027 / Brand-specific SS-DR-001..007
 
 ---
 
@@ -13,80 +13,83 @@
 
 | File | Status | Description |
 |------|--------|-------------|
-| `clusters.md` | ✅ DONE | 15 clusters across 7 domains |
-| `entities.md` | ✅ DONE | 83 entities, 12-column schema, types per Bible Appendix A.1 |
-| `relationships.md` | ✅ DONE | 101 edges, 10 edge types, slug-based |
-| `branches.md` | ✅ DONE | 2 branches per Schema v1.11 §3.2 — `seo_branches` ~40 cols (DR-025) |
-| `reviews.md` | ✅ SKELETON | Per Schema v1.11 §3.5 — `seo_reviews` (Flow E1 ingest at Stage 1.5) |
-| `directory-listings.md` | ✅ SKELETON | Per Schema v1.11 §3.6 — `seo_directory_listings` (~50/branch, Flow E3 audit) |
-| `gbp-posts.md` | ✅ SKELETON | Per Schema v1.11 §3.7 — `seo_gbp_posts` (~40 posts/yr seed, Flow E2/E4) |
+| `clusters.md` | ✅ DONE (R2 expanded) | 18 clusters across 8 domains (+3 specialty clusters in R2: pediatric / endo / anesthesia) |
+| `entities.md` | ✅ DONE (R2 expanded) | 131 entities, 12-column schema, types per Bible Appendix A.1 (+48 in R2) |
+| `relationships.md` | ✅ DONE (R2 expanded) | 151 edges, 10 edge types, slug-based (+50 in R2) |
+| `branches.md` | ✅ DONE | 2 branches per Schema v1.15 §3.2 — `seo_branches` ~40 cols (DR-025) |
+| `reviews.md` | ✅ SKELETON | Per Schema v1.15 §3.5 — `seo_reviews` (Flow E1 ingest at Stage 1.5) |
+| `directory-listings.md` | ✅ SKELETON | Per Schema v1.15 §3.6 — `seo_directory_listings` (~50/branch, Flow E3 audit) |
+| `gbp-posts.md` | ✅ SKELETON | Per Schema v1.15 §3.7 — `seo_gbp_posts` (~40 posts/yr seed, Flow E2/E4) |
 | `egp-output-summary.md` | ✅ DONE | This file |
 
 > **Stage 1.5 entity extension binding (DR-024):** Condition entities (14) → `seo_entity_condition` (ICD-10 already in entities.md, SNOMED/MeSH/prevalence_thailand populated at flat-load). Product (9) → `seo_entity_product`. Anatomy (6) → `seo_entity_anatomy` (FMA/UBERON IDs added at flat-load). Organization (3) → `seo_entity_organization`. No Phase C schema change required.
 
 ---
 
-## Domain Coverage
+## Domain Coverage (Round 2)
 
 | Domain ID | Domain Name | Clusters | Entities | Brand Scope |
 |-----------|-------------|----------|----------|-------------|
-| A | Dental Implant | 4 | 24 | ['*'] |
-| B | Bone Regeneration | 2 | 11 | ['*'] mixed |
+| A | Dental Implant | 4 | 24 | ['*'] (Neodent replaced Osstem in R2) |
+| B | Bone Regeneration | 2 | 16 | ['*'] mixed (+5 in R2: densah-bur, osseodensification, internal-sinus-lift, lateral-window-sinus-lift, rpm-membrane) |
 | C | Full-Arch Rehabilitation | 1 | 6 | ['*'] |
 | D | Aesthetic & Cosmetic | 1 | 6 | ['*'] |
-| E | Orthodontics | 1 | 5 | ['*'] mixed |
-| F | Periodontics & Gum | 2 | 9 | ['*'] mixed |
-| G | Cross-Cutting | 4 | 22 | ['*'] + ['smile-scape'] |
-| **Total** | — | **15** | **83** | — |
+| E | Orthodontics | 1 | 7 | ['*'] mixed (+2 in R2: orthognathic-surgery, passive-self-ligating) |
+| F | Periodontics & Gum | 2 | 18 | ['*'] mixed (+9 in R2: strip-graft, ice-berg, garage, vipct, caf, tunneling, vista, tcaf, black-triangle) |
+| G | Cross-Cutting | 4 | 26 | ['*'] + ['smile-scape'] (+4 in R2: acteon-cbct, trios, airflow, cool-light-unit) |
+| H | Specialty Services | 3 | 21 | ['*'] (NEW in R2: pediatric-dentistry 10 + endodontics-specialist 7 + dental-anesthesia 4) |
+| **Total** | — | **18** | **131** (was 83) | — |
+
+**Plus +3 entities into general-restorative cluster:** torus-removal, alveoloplasty, tuberectomy (R2)
 
 ---
 
-## Entity Type Distribution (Bible Appendix A.1 15-Type Master List)
+## Entity Type Distribution (Round 2 — Bible Appendix A.1 15-Type Master List)
 
 | Type | Count | % | Key Entities |
 |------|-------|---|---|
-| Treatment | 21 | 26% | dental-implant, all-on-x, all-on-4, overdenture, clear-aligner |
-| Procedure | 18 | 22% | guided-bone-regeneration, sausage-technique, digital-implant-planning, sinus-lift |
-| Condition | 14 | 17% | tooth-loss, alveolar-bone-loss, periodontitis, peri-implantitis, malocclusion |
-| Product | 9 | 11% | blue-diamond-implant, osstem-implant, straumann-implant, titanium, zirconia |
-| Concept | 6 | 7% | osseointegration, ortho-implant-sequencing, smile-dna, family-standard, lifetime-implant-warranty |
-| Anatomy | 6 | 7% | alveolar-bone, mandible, maxilla, maxillary-sinus, peri-implant-mucosa |
-| Device | 5 | 6% | cbct-3d-scan, surgical-guide, intraoral-scanner, cad-cam, ptfe-membrane |
-| Organization | 3 | 4% | smilescape-dental-clinic, smilescape-rattanathibet, smilescape-srinakarin |
+| Treatment | 32 | 24% | dental-implant, all-on-x, clear-aligner, pediatric-dentistry, pediatric-crown, fluoride-treatment, internal-bleaching |
+| Procedure | 44 | 34% | sausage-technique, osseodensification, internal-sinus-lift, strip-graft, ice-berg, garage, caf, tunneling, vista, tcaf, vipct, orthognathic-surgery, apicoectomy, conscious-sedation, ga-dentistry, torus-removal, alveoloplasty |
+| Condition | 16 | 12% | tooth-loss, alveolar-bone-loss, periodontitis, peri-implantitis, malocclusion, black-triangle, cracked-tooth, dental-anxiety |
+| Product | 9 | 7% | blue-diamond-implant, neodent-implant (was osstem), straumann-implant, titanium, zirconia, trioclear, damon-system, bone-graft-substitute |
+| Concept | 7 | 5% | osseointegration, ortho-implant-sequencing, smile-dna, family-standard, lifetime-implant-warranty, passive-self-ligating, behavior-management |
+| Anatomy | 6 | 5% | alveolar-bone, mandible, maxilla, maxillary-sinus, peri-implant-mucosa, keratinized-mucosa |
+| Device | 13 | 10% | cbct-3d-scan, acteon-cbct, intraoral-scanner, trios-intraoral-scanner, surgical-guide, cad-cam, ptfe-membrane, rpm-membrane, densah-bur, airflow-air-polishing, cool-light-whitening-unit, endodontic-microscope, space-maintainer, habit-appliance, rotary-endodontic-system |
+| Organization | 3 | 2% | smilescape-dental-clinic, smilescape-rattanathibet, smilescape-srinakarin |
 | Person | 1 | 1% | dr-woraphat-jarangkul |
-| **Total** | **83** | **100%** | — |
+| **Total** | **131** | **100%** | — |
 
 > All types from the spec 15-type master list (`condition` / `symptom` / `procedure` / `treatment` / `device` / `concept` / `product` / `drug` / `ingredient` / `anatomy` / `specialty` / `lab_test` / `biomarker` / `person` / `organization`). Unused for SmileScape: Symptom, Drug, Ingredient, Specialty, Lab_test, Biomarker.
 
 ---
 
-## Brand Scope Split
+## Brand Scope Split (Round 2)
 
 | Scope | Entities | % | Notes |
 |-------|----------|---|-------|
-| ['*'] — Universal | 71 | 86% | Reusable across all EYWA dental brands |
-| ['smile-scape'] — Brand-specific | 12 | 14% | SmileScape-only: Blue Diamond, Sausage Technique, Soft Tissue Management, TrioClear, Damon, SmileScape Clinic + 2 branches (รัตนาธิเบศร์, ศรีนครินทร์), Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
+| ['*'] — Universal | 110 | 84% | Reusable across all EYWA dental brands (incl. R2: pediatric / endo / anesthesia + classic soft tissue techniques + general procedures) |
+| ['smile-scape'] — Brand-specific | 21 | 16% | SmileScape-only: Blue Diamond, Neodent (R2), Sausage Technique, Strip Graft / Ice Berg / Garage (R2 Urban signatures), Densah Bur / Osseodensification / Internal Sinus Lift (R2 Huwais signature), Soft Tissue Management, TrioClear, Damon, Acteon CBCT (R2), 3Shape TRIOS (R2), Cool Light Whitening (R2), SmileScape Clinic + 2 branches, Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
 
 ---
 
-## Relationship Coverage
+## Relationship Coverage (Round 2)
 
 | Edge Type | Count | % |
 |-----------|-------|---|
-| parent_of | 34 | 34% |
-| treats | 15 | 15% |
-| uses | 15 | 15% |
-| related_to | 11 | 11% |
-| part_of | 8 | 8% |
-| alternative_to | 7 | 7% |
-| requires_assessment | 5 | 5% |
-| symptom_of | 3 | 3% |
-| evidenced_by | 2 | 2% |
-| subtype_of | 1 | 1% |
-| **Total** | **101** | **100%** |
+| parent_of | 48 | 32% |
+| treats | 28 | 19% |
+| uses | 26 | 17% |
+| related_to | 23 | 15% |
+| part_of | 10 | 7% |
+| alternative_to | 7 | 5% |
+| requires_assessment | 5 | 3% |
+| subtype_of | 5 | 3% |
+| evidenced_by | 8 | 5% |
+| symptom_of | 3 | 2% |
+| **Total** | **151** (+50 in R2) | **100%** |
 
-- Bidirectional edges: 18 (18%)
-- Entity coverage: 80/83 (96.4%) — 3 orphans accepted (teeth-whitening, dental-filling, immediate-loading)
+- Bidirectional edges: 28 (19%)
+- Entity coverage: 125/131 (95.4%) — 6 orphans accepted (teeth-whitening, dental-filling, immediate-loading, behavior-management, torus-removal, alveoloplasty, tuberectomy — phase D wiring)
 - All From/To columns use entity slug per §5.6 spec
 
 ---
@@ -149,13 +152,14 @@
 
 ---
 
-## Signature System Summary (SmileScape Differentiators)
+## Signature System Summary (SmileScape Differentiators — Round 2)
 
 | Signature System | Slug | Authority Source | Citation Anchor |
 |-----------------|------|-----------------|-----------------|
 | Blue Diamond Implant System | blue-diamond-implant | Korean implant manufacturer | P1-C1 (category evidence) |
-| Sausage Technique | sausage-technique | Dr. Urban — HU Berlin | P2-C2, P2-C3 (Urban 2009, 2016) |
-| Soft Tissue Management | soft-tissue-management | Dr. Kern — ILAPEO Brazil | P5-C1 (Benic 2014) |
+| Sausage Technique | sausage-technique | Dr. Istvan Urban — HU Berlin | P2-C2, P2-C3 (Urban 2009, 2016) |
+| Soft Tissue Management (Urban + Kern) | soft-tissue-management | Dr. Kern (Brazil) + Dr. Urban (Hungary) | P5-C1 (Benic 2014) + Urban masterclass — Strip Graft / Ice Berg / Garage |
+| **Internal Sinus Lift with Densah Bur (Osseodensification)** 🆕 | internal-sinus-lift-densah | Dr. Salah Huwais (Versah USA) | Huwais 2017+ (Osseodensification evidence base — P-Huwais entry) |
 | Lifetime Implant Warranty | lifetime-implant-warranty | SmileScape internal policy | — |
 
 ---
@@ -208,3 +212,5 @@ To run before flat-load to Supabase:
 ---
 
 *Phase C complete. 4 files delivered. Ready for Stage 1.5 EUG preflight → Supabase flat-load. Per Handover §7.4 + Bible Part 2.6.*
+
+*Round 2 expansion (2026-05-21) — +3 clusters / +48 entities / +50 edges. SmileScape now has 5 signature offerings (added Densah/Osseodensification). Sitemap ~525 pages (was 414). Awaiting operator confirmation on Dr. Woraphat Versah training credential before locking Section 2.2.2 Densah authority anchor.*

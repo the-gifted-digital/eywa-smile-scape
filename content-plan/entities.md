@@ -1,8 +1,8 @@
 # SmileScape Dental Clinic — Entity Graph (Planning File)
 
-> **Phase:** Stage 1 → Phase C (Entity Genesis)
+> **Phase:** Stage 1 → Phase C (Entity Genesis) + Round 2 expansion (2026-05-21)
 > **Schema:** §5.3 — 12 columns per entity
-> **Date:** 2026-05-11
+> **Date:** 2026-05-11 (initial) / 2026-05-21 (Round 2 — Pediatric/Endo/Anesthesia + Densah + Soft Tissue D-2 Hybrid)
 > **EUG Note:** Slugs normalized to kebab-case. `eug_preflight_check()` to run at Stage 1.5 flat-load.
 > **Citation linking:** Anchoring citations referenced as `P{pillar}-C{#}` matching `citation-pool-seed.md`.
 
@@ -12,16 +12,16 @@
 
 | Type | Count | Notes |
 |------|-------|-------|
-| Treatment | 21 | Long-term/behavioral therapies + restorative work |
-| Procedure | 18 | One-time clinical procedures (incl. signature techniques) |
-| Condition | 14 | Patient-facing diseases + bone deficiency states |
-| Product | 9 | Implant systems, aligner brands, biomaterials |
-| Concept | 6 | Abstract clinical/brand concepts (incl. SMILE DNA, warranty) |
+| Treatment | 32 | Long-term/behavioral therapies + restorative + pediatric + cosmetic + anti-recession |
+| Procedure | 44 | One-time clinical procedures (incl. Urban signature techniques + endo + sedation) |
+| Condition | 16 | Patient-facing diseases + bone deficiency + black-triangle + cracked tooth + dental anxiety |
+| Product | 9 | Implant systems (Blue Diamond / Neodent / Straumann / Ceramic), aligners, biomaterials |
+| Concept | 7 | Abstract clinical/brand concepts (incl. SMILE DNA, warranty, behavior management) |
 | Anatomy | 6 | Bone, gum, sinus, jaw anatomical structures |
-| Device | 5 | CBCT, scanners, surgical guide, PTFE membrane |
+| Device | 13 | CBCT (Acteon) / IOS (3Shape TRIOS) / Surgical Guide / PTFE / RPM / Densah / Airflow / Cool Light / Endo Microscope / Space Maintainer |
 | Organization | 3 | SmileScape clinic + 2 branches (รัตนาธิเบศร์, ศรีนครินทร์) |
 | Person | 1 | Dr. Woraphat Jarangkul |
-| **Total** | **83** | |
+| **Total** | **131** | (was 83 at initial Phase C — +48 in Round 2 expansion) |
 
 ---
 
@@ -62,7 +62,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
 | 1 | Blue Diamond Implant System | blue-diamond-implant | Product | MedicalDevice | dental-implant | — | Growing | 4.5.1 | Blue Diamond, Korean implant, ระบบรากเทียม Blue Diamond | ['smile-scape'] | SmileScape hero implant. Korea origin. Lifetime warranty. Starting 29,900 THB. Citation: P1-C1 (survival data supports Korean implant category) |
-| 2 | Osstem Implant | osstem-implant | Product | MedicalDevice | dental-implant | — | Mature | 4.5.2 | Osstem, TS III, SS II, Osstem TS | ['*'] | Market leader in Asia. Established evidence base. |
+| 2 | Neodent Implant | neodent-implant | Product | MedicalDevice | dental-implant | — | Mature | 4.5.2 | Neodent, Grand Morse, GM, Neodent GM, Brazilian implant, Straumann Group | ['smile-scape'] | Brazil-origin, Straumann Group subsidiary. GM (Grand Morse) connection. Value-premium tier. Backed by Straumann research pipeline. |
 | 3 | Straumann Implant | straumann-implant | Product | MedicalDevice | dental-implant | — | Mature | 4.5.3 | Straumann SLActive, BLT, BLX, Swiss implant | ['*'] | Premium Swiss brand. Extensive clinical evidence. Citation: P1-C3 (Pjetursson 2012) |
 | 4 | Ceramic Implant | ceramic-implant | Treatment | MedicalDevice | dental-implant | — | Emerging | 4.5.4 | Zirconia implant, รากฟันเทียมเซรามิก, metal-free implant, ceramic root | ['*'] | Metal-free option for allergic patients + anterior aesthetics |
 | 5 | Titanium Implant | titanium-implant | Treatment | MedicalDevice | dental-implant | — | Mature | 3.2.8.10 | ไทเทเนียม, titanium root, standard implant | ['*'] | Standard implant material — 30+ year track record |
@@ -83,7 +83,12 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 4 | Sinus Lift | sinus-lift | Procedure | MedicalProcedure | bone-grafting | — | Mature | 3.2.9.4 | ยกพื้นไซนัส, sinus augmentation, maxillary sinus lift | ['*'] | Upper jaw — insufficient vertical bone below sinus floor |
 | 5 | Ridge Augmentation | ridge-augmentation | Procedure | MedicalProcedure | guided-bone-regeneration | — | Mature | 3.2.9.5 | เสริมสันกระดูก, alveolar ridge augmentation | ['*'] | Horizontal + vertical ridge reconstruction |
 | 6 | Socket Preservation | socket-preservation | Procedure | MedicalProcedure | bone-grafting | — | Mature | 3.2.9.6 | รักษาเบ้ากระดูก, alveolar socket preservation, ridge preservation | ['*'] | Placed at time of extraction to prevent bone resorption |
-| 7 | Vertical Bone Augmentation | vertical-bone-augmentation | Procedure | MedicalProcedure | guided-bone-regeneration | — | Mature | 3.2.9.2 | การเสริมกระดูกในแนวตั้ง, vertical ridge augmentation, VRA | ['*'] | For severe vertical bone deficiency. Urban's specialty. Citation: P2-C2 (Urban 2009 — 5.5mm mean gain) |
+| 7 | Vertical Bone Augmentation | vertical-bone-augmentation | Procedure | MedicalProcedure | guided-bone-regeneration | — | Mature | 3.2.9.5.2 | การเสริมกระดูกในแนวตั้ง, vertical ridge augmentation, VRA, VBA + RPM | ['*'] | For severe vertical bone deficiency. Urban's specialty. Citation: P2-C2 (Urban 2009 — 5.5mm mean gain). Uses RPM Membrane for Vertical reconstruction |
+| 8 | RPM Membrane | rpm-membrane | Device | MedicalDevice | guided-bone-regeneration | — | Growing | 3.2.9.5.2 | Reinforced Permanent Membrane, titanium-reinforced membrane, RPM | ['*'] | Used in vertical bone graft. Non-resorbable + titanium frame for space maintenance |
+| 9 | Densah Bur System | densah-bur | Device | MedicalDevice | — | — | Growing | 4.4.4 | Densah, Versah bur, osseodensification bur, Huwais bur | ['smile-scape'] | SmileScape signature device (Signature Offering #5). Versah-manufactured. CCW rotation = bone densification (non-subtractive). Authority: Dr. Salah Huwais |
+| 10 | Osseodensification | osseodensification | Procedure | MedicalProcedure | — | — | Growing | 4.4.4 | Osseodensification, densah technique, bone densification | ['smile-scape'] | Authority: Salah Huwais (Versah). Non-subtractive bone preparation — increases primary stability + enables minimally invasive sinus elevation |
+| 11 | Internal Sinus Lift (Crestal) | internal-sinus-lift | Procedure | MedicalProcedure | sinus-lift | — | Growing | 3.2.9.4.2 | crestal sinus lift, transcrestal sinus lift, internal sinus elevation, Summer's technique evolved | ['smile-scape'] | Minimally invasive sinus floor elevation via crestal approach. Used with Densah Bur for densification. Signature Offering #5 anchor |
+| 12 | Lateral Window Sinus Lift | lateral-window-sinus-lift | Procedure | MedicalProcedure | sinus-lift | — | Mature | 3.2.9.4.1 | lateral approach sinus lift, Caldwell-Luc sinus lift | ['*'] | Traditional sinus elevation via lateral wall access. For larger augmentation needs (>5mm) |
 
 ---
 
@@ -165,6 +170,15 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 3 | Connective Tissue Graft | connective-tissue-graft | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7 | ปลูกถ่ายเนื้อเยื่อ, CTG, subepithelial connective tissue graft | ['*'] | Gum recession correction around implants |
 | 4 | Peri-Implant Mucosa | peri-implant-mucosa | Anatomy | AnatomicalStructure | — | — | Mature | 3.2.9.7 | เนื้อเยื่อรอบรากเทียม, peri-implant tissue | ['*'] | Soft tissue surrounding implant — key aesthetic determinant |
 | 5 | Keratinized Mucosa | keratinized-mucosa | Anatomy | AnatomicalStructure | peri-implant-mucosa | — | Mature | 3.7.5 | เนื้อเยื่อแข็ง, keratinized gingiva, attached gingiva | ['*'] | Adequate band required for long-term peri-implant health |
+| 6 | Strip Graft | strip-graft | Procedure | MedicalProcedure | soft-tissue-management | — | Growing | 3.2.9.7.1.3 | Urban strip graft, modified strip graft | ['smile-scape'] | Dr. Istvan Urban signature technique for keratinized tissue augmentation. Studied directly by Dr. Woraphat |
+| 7 | Ice Berg / Ice Cube Technique | ice-berg-technique | Procedure | MedicalProcedure | soft-tissue-management | — | Growing | 3.2.9.7.2.1 | Ice Berg technique, Ice Cube technique, Urban thickness graft | ['smile-scape'] | Dr. Istvan Urban signature for gingival thickness augmentation. Biomaterial-shaped technique |
+| 8 | Garage Technique | garage-technique | Procedure | MedicalProcedure | soft-tissue-management | — | Growing | 3.2.9.7.2.2 | Urban garage technique, papilla preservation graft | ['smile-scape'] | Dr. Istvan Urban signature — papilla preservation in implant zones |
+| 9 | VIPCT — Vascularized Interpositional Periosteal CT | vipct | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7.2.3 | VIPCT, vascularized graft, periosteal CT graft, Sclar graft | ['*'] | Vascularized interpositional periosteal connective tissue graft. Popularized by Sclar/Zucchelli |
+| 10 | Coronally Advanced Flap (CAF) | caf | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7.3.1 | CAF, coronally advanced flap, Zucchelli technique | ['*'] | Gold standard root coverage. 40+ years literature |
+| 11 | Tunneling Technique | tunneling-technique | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7.3.2 | tunneling, tunnel approach, Allen tunnel, Zabalegui tunnel | ['*'] | Minimally invasive root coverage. Allen 1994 / Zabalegui 1999 |
+| 12 | VISTA Technique | vista-technique | Procedure | MedicalProcedure | soft-tissue-management | — | Growing | 3.2.9.7.3.3 | VISTA, Vestibular Incision Subperiosteal Tunnel Access, Zadeh VISTA | ['*'] | Zadeh 2011 named technique — minimal incision multiple root coverage |
+| 13 | Tunneled CAF (TCAF) | tcaf | Procedure | MedicalProcedure | soft-tissue-management | — | Growing | 3.2.9.7.3.4 | TCAF, tunneled coronally advanced flap, hybrid CAF | ['*'] | Hybrid technique combining tunneling + CAF — for advanced root coverage |
+| 14 | Black Triangle | black-triangle | Condition | MedicalCondition | — | — | Mature | 5.11.5 | ช่องว่างระหว่างเหงือก, gingival embrasure, open interdental space | ['*'] | Triangular gap between teeth due to papilla loss. Aesthetic concern requiring soft tissue intervention |
 
 ---
 
@@ -196,6 +210,8 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 3 | Damon Self-Ligating System | damon-system | Product | MedicalDevice | — | — | Mature | 4.6.2 | Damon, Damon Q, Damon Clear, self-ligating braces, จัดฟัน Damon | ['smile-scape'] | Passive self-ligation — lower friction, fewer adjustments |
 | 4 | Malocclusion | malocclusion | Condition | MedicalCondition | — | M26.4 | Mature | 3.5 | ฟันเรียงไม่ตรง, crowded teeth, misaligned teeth, jaw mismatch | ['*'] | Primary indication for orthodontic treatment |
 | 5 | Orthodontic-Implant Sequencing | ortho-implant-sequencing | Concept | MedicalProcedure | malocclusion | — | Growing | 3.5.6 | จัดฟันก่อนรากฟันเทียม, ortho before implant, interdisciplinary planning | ['*'] | SmileScape differentiator — interdisciplinary specialty combo |
+| 6 | Orthognathic Surgery | orthognathic-surgery | Procedure | MedicalProcedure | malocclusion | — | Mature | 3.5.8 | ผ่าตัดขากรรไกร, จัดฟันร่วมผ่าตัด, jaw surgery, BSSO, Le Fort I, bimaxillary surgery | ['*'] | Combined ortho + surgical for skeletal Class II/III + facial asymmetry. SmileScape interdisciplinary service |
+| 7 | Passive Self-Ligating (PSL) | passive-self-ligating | Concept | MedicalDevice | damon-system | — | Growing | 3.5.3.1 | PSL, passive self-ligating braces, จัดฟัน PSL, Damon PSL | ['*'] | Brackets with sliding doors that don't bind archwire. Damon Q (metal) / Damon Clear (ceramic) |
 
 ---
 
@@ -212,6 +228,9 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 3 | Wisdom Tooth Removal | wisdom-tooth-removal | Procedure | MedicalProcedure | tooth-extraction | K01.1 | Mature | 3.6.4 | ผ่าฟันคุด, impacted wisdom tooth removal, third molar extraction | ['*'] | |
 | 4 | Dental Filling | dental-filling | Treatment | MedicalProcedure | — | K02.9 | Mature | 3.6.2 | อุดฟัน, composite filling, tooth filling | ['*'] | |
 | 5 | Removable Denture | removable-denture | Treatment | MedicalDevice | — | — | Mature | 3.6.6 | ฟันปลอมถอดได้, complete denture, partial denture | ['*'] | Often starting point before All-on-X conversion |
+| 6 | Torus Removal | torus-removal | Procedure | MedicalProcedure | — | — | Mature | 3.8.6 | ตัดปุ่มกระดูก, torus mandibularis removal, torus palatinus removal, exostosis removal | ['*'] | Surgical removal of bony exostosis (mandibular/palatal torus). Often pre-prosthetic |
+| 7 | Alveoloplasty | alveoloplasty | Procedure | MedicalProcedure | — | — | Mature | 3.8.6.4 | ปรับสันกระดูก, alveolar ridge recontouring, ridge reduction | ['*'] | Reshaping alveolar bone for prosthesis or implant fit |
+| 8 | Maxillary Tuberosity Reduction | tuberectomy | Procedure | MedicalProcedure | alveoloplasty | — | Mature | 3.8.6.3 | ปรับปุ่มกระดูกหลังฟันบน, maxillary tuberosity surgery | ['*'] | Reducing posterior maxillary bony prominence — pre-prosthetic or pre-implant |
 
 ---
 
@@ -228,6 +247,10 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 3 | Surgical Guide | surgical-guide | Device | MedicalDevice | digital-implant-planning | — | Growing | 4.3.2 | เทมเพลตนำทางผ่าตัด, implant guide, stent | ['*'] | 3D-printed guide for precise implant positioning during surgery |
 | 4 | Intraoral Scanner | intraoral-scanner | Device | MedicalDevice | — | — | Mature | 4.2.2 | เครื่องสแกนในปาก, digital impression, IOS | ['*'] | Replaces traditional impression material |
 | 5 | CAD/CAM Prosthetics | cad-cam | Device | MedicalDevice | — | — | Mature | 4.7.1 | CAD CAM, computer-aided design crown, ผลิตครอบฟันดิจิทัล | ['*'] | Computer-designed and milled crowns/prosthetics |
+| 6 | Acteon CBCT | acteon-cbct | Device | MedicalDevice | cbct-3d-scan | — | Mature | 4.2.1 | Acteon X-Mind Trium, Acteon CBCT, X-Mind Trium 3D | ['smile-scape'] | SmileScape CBCT brand — Acteon (France). X-Mind Trium series. Low-dose protocol. 3D + Pano + Ceph all-in-one |
+| 7 | 3Shape TRIOS Intraoral Scanner | trios-intraoral-scanner | Device | MedicalDevice | intraoral-scanner | — | Mature | 4.2.2 | 3Shape TRIOS, TRIOS 5, TRIOS scanner, 3Shape IOS | ['smile-scape'] | SmileScape IOS brand — 3Shape (Denmark). TRIOS 5 wireless. Realcolor. <50μm accuracy. Chairside CAD/CAM workflow |
+| 8 | Airflow Air Polishing System | airflow-air-polishing | Device | MedicalDevice | — | — | Growing | 4.4.5 | Airflow, EMS Airflow, air polishing, ขูดหินปูน Airflow, GBT | ['*'] | Air-water-powder system for biofilm and stain removal. Patient-friendly alternative to ultrasonic |
+| 9 | Cool Light Whitening Unit | cool-light-whitening-unit | Device | MedicalDevice | — | — | Growing | 4.9.1 | Cool Light, cool light whitening, LED whitening lamp | ['smile-scape'] | In-office whitening with cool-light activation. No heat → reduces sensitivity. SmileScape signature whitening method |
 
 ---
 
@@ -263,6 +286,60 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 ---
 
+## pediatric-dentistry: Pediatric Dentistry — ทันตกรรมเด็ก
+
+**Brand Scope:** ['*']
+**Pillar Page:** 3.9
+**Domain:** H: Specialty Services
+
+| # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
+|---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
+| 1 | Pediatric Dentistry | pediatric-dentistry | Treatment | MedicalProcedure | — | — | Mature | 3.9 | ทันตกรรมเด็ก, kids dentistry, pediatric dental care | ['*'] | Specialty branch — covers all dental care for children 0-12 |
+| 2 | Pediatric Pulpotomy | pediatric-pulpotomy | Procedure | MedicalProcedure | pediatric-dentistry | K04.0 | Mature | 3.9.6 | รักษารากฟันน้ำนม, pulpotomy, pulpectomy, baby tooth pulp | ['*'] | Pulp therapy for primary teeth — vital pulp therapy or pulpectomy |
+| 3 | Pediatric Crown | pediatric-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.9.7 | ครอบฟันเด็ก, stainless steel crown, SSC, zirconia pediatric crown | ['*'] | SS or zirconia crown for primary molars after pulp therapy or extensive caries |
+| 4 | Fluoride Treatment | fluoride-treatment | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.9.4 | เคลือบฟลูออไรด์, fluoride varnish, topical fluoride | ['*'] | Caries prevention — varnish, gel, or rinse application |
+| 5 | Pit & Fissure Sealant | pit-fissure-sealant | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.9.5 | เคลือบหลุมร่องฟัน, dental sealant, occlusal sealant | ['*'] | Resin coating on permanent molars to prevent occlusal caries |
+| 6 | Space Maintainer | space-maintainer | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.9.8 | เครื่องมือกันฟันล้ม, space maintainer, band & loop, lingual arch | ['*'] | Maintains arch length after premature primary tooth loss |
+| 7 | Behavior Management (Pediatric) | behavior-management | Concept | — | pediatric-dentistry | — | Mature | 3.9.11 | จัดการพฤติกรรมเด็ก, tell-show-do, behavior guidance | ['*'] | Communication/behavioral techniques for treating fearful pediatric patients |
+| 8 | Early Orthodontic Intervention | early-orthodontic-intervention | Treatment | MedicalProcedure | pediatric-dentistry | M26.4 | Growing | 3.9.12 | จัดฟันเด็ก, interceptive ortho, Phase I orthodontics, ortho intervention | ['*'] | Phase I orthodontics — corrects developing malocclusion in mixed dentition |
+| 9 | Habit Appliance | habit-appliance | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.9.10 | เครื่องมือแก้นิสัย, thumb sucking appliance, tongue crib | ['*'] | Appliance to break harmful oral habits (thumb sucking, tongue thrust) |
+| 10 | Pediatric Extraction | pediatric-extraction | Procedure | MedicalProcedure | tooth-extraction | K08.409 | Mature | 3.9.9 | ถอนฟันน้ำนม, primary tooth extraction, baby tooth removal | ['*'] | Extraction of primary teeth — timing and technique differ from permanent |
+
+---
+
+## endodontics-specialist: Endodontics by Specialist — รักษารากฟันโดยทันตแพทย์เฉพาะทาง
+
+**Brand Scope:** ['*']
+**Pillar Page:** 3.11
+**Domain:** H: Specialty Services
+
+| # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
+|---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
+| 1 | Endodontic Microscope | endodontic-microscope | Device | MedicalDevice | — | — | Growing | 3.11.4 | dental operating microscope, DOM, endodontic OM | ['*'] | High-magnification microscope for endodontic precision. Standard-of-care for specialists |
+| 2 | Root Canal Retreatment | root-canal-retreatment | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.11.2 | รักษารากฟันซ้ำ, endo retreatment, root canal redo | ['*'] | Treatment of previously root-canaled tooth that failed |
+| 3 | Apicoectomy | apicoectomy | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.11.3 | ผ่าตัดปลายราก, root-end surgery, apical surgery, surgical endodontics | ['*'] | Surgical removal of root apex + retrograde filling — last-resort to save tooth |
+| 4 | Internal Bleaching | internal-bleaching | Treatment | MedicalProcedure | root-canal-treatment | — | Mature | 3.11.6 | ฟอกฟันตายภายใน, intracoronal bleaching, walking bleach, non-vital bleaching | ['*'] | Bleaching from inside non-vital tooth — for darkened endo-treated teeth |
+| 5 | Cracked Tooth | cracked-tooth | Condition | MedicalCondition | — | S02.5XXA | Mature | 3.11.7 | ฟันร้าว, cracked tooth syndrome, vertical root fracture | ['*'] | Diagnosis challenge — endo specialist tools required to confirm |
+| 6 | Pulp Regeneration | pulp-regeneration | Procedure | MedicalProcedure | root-canal-treatment | — | Emerging | 3.11.8 | regenerative endodontics, REP, revascularization, apexogenesis | ['*'] | Newer technique for immature permanent teeth — promotes pulp tissue regrowth |
+| 7 | Rotary Endodontic System | rotary-endodontic-system | Device | MedicalDevice | — | — | Mature | 3.11.5 | rotary file, reciprocating endo, NiTi rotary | ['*'] | Mechanized files for canal preparation — faster + more consistent than hand instrumentation |
+
+---
+
+## dental-anesthesia: Sedation & GA Dentistry — ดมยาสลบทำฟัน
+
+**Brand Scope:** ['*']
+**Pillar Page:** 3.10
+**Domain:** H: Specialty Services
+
+| # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
+|---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
+| 1 | Conscious Sedation | conscious-sedation | Procedure | MedicalProcedure | — | — | Mature | 3.10.1 | sedation dentistry, minimal sedation, oral sedation, nitrous oxide | ['*'] | Mild sedation — patient awake but relaxed. Nitrous oxide / oral sedation routes |
+| 2 | General Anesthesia Dentistry | ga-dentistry | Procedure | MedicalProcedure | — | — | Mature | 3.10.3 | ดมยาสลบทำฟัน, dental general anesthesia, GA dentistry, IV anesthesia | ['*'] | Full unconsciousness for complex/anxious patients. Requires anesthesiologist + monitoring |
+| 3 | IV Sedation | iv-sedation | Procedure | MedicalProcedure | conscious-sedation | — | Mature | 3.10.2 | intravenous sedation, moderate sedation, twilight sedation | ['*'] | Moderate sedation via IV — between conscious and GA |
+| 4 | Dental Anxiety / Phobia | dental-anxiety | Condition | MedicalCondition | — | F40.218 | Mature | 5.4 | กลัวหมอฟัน, dental phobia, odontophobia | ['*'] | Common reason for sedation dentistry referral |
+
+---
+
 ## brand-doctor-authority: Brand, Doctor & Authority Entities
 
 **Brand Scope:** ['smile-scape']
@@ -285,9 +362,15 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 Key alias collision risks to check before DB load:
 - `clear-aligner` may collide with any other dental brand in federation using same slug → verify `brand_scope=['*']` is correct
-- `dental-implant` is category-level entity → check not duplicate of more specific entities- `all-on-x` — multiple names used across brands; verify slug normalization
+- `dental-implant` is category-level entity → check not duplicate of more specific entities
+- `all-on-x` — multiple names used across brands; verify slug normalization
 - `smilescape-dental-clinic` — brand-specific, scope=['smile-scape'] → low collision risk
+- `neodent-implant` (new) — brand-scope=['smile-scape'] per SS-DR-001 Round 2; verify NOT already universal
+- `densah-bur` + `osseodensification` + `internal-sinus-lift` (new) — brand-scope=['smile-scape'] tied to Signature Offering #5
+- Urban signature techniques `strip-graft` / `ice-berg-technique` / `garage-technique` — brand-scope=['smile-scape']; cross-check potential federation collision with future EYWA dental brands
+- New Specialty cluster slugs (`pediatric-dentistry`, `endodontics-specialist`, `dental-anesthesia`) — verify cluster-name vs entity-name disambiguation (cluster slug ≠ entity slug)
 
 ---
 
 *Phase C output — Entity Genesis. Per Handover §5.3 + Bible Part 2.6. EUG preflight at Stage 1.5.*
+*Round 2 expansion (2026-05-21) — +48 entities for Pediatric/Endo/Anesthesia services + Densah signature + Soft Tissue D-2 Hybrid + Tech rebrand (Acteon/3Shape/Airflow/Cool Light).*

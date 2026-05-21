@@ -1,9 +1,9 @@
 # SmileScape Dental Clinic — Topic Clusters (Planning File)
 
-> **Phase:** Stage 1 → Phase C (Entity Genesis)
+> **Phase:** Stage 1 → Phase C (Entity Genesis) + Round 2 expansion (2026-05-21)
 > **Schema:** §5.4 — 6 columns
-> **Date:** 2026-05-11
-> **Cluster count:** 15 | **Domain count:** 7
+> **Date:** 2026-05-11 (initial) / 2026-05-21 (Round 2 expansion)
+> **Cluster count:** 18 | **Domain count:** 8
 
 ---
 
@@ -18,6 +18,7 @@
 | E | Orthodontics | Supporting | 1 |
 | F | Periodontics & Gum | Supporting + Perio-Implant | 2 |
 | G | Cross-Cutting (Anatomy, Tech, Materials, Authority) | Infrastructure | 4 |
+| H | Specialty Services (Pediatric / Endo / Anesthesia) | Specialty Supporting | 3 |
 
 ---
 
@@ -40,6 +41,9 @@
 | implant-materials | Implant Materials & Biomaterials | G: Cross-Cutting | — | 4.5 | ['*'] |
 | dental-anatomy | Dental Anatomy & Physiology | G: Cross-Cutting | — | — | ['*'] |
 | brand-doctor-authority | Brand, Doctor & Authority Entities | G: Cross-Cutting | — | 2.1 | ['smile-scape'] |
+| pediatric-dentistry | Pediatric Dentistry — ทันตกรรมเด็ก | H: Specialty Services | — | 3.9 | ['*'] |
+| endodontics-specialist | Endodontics by Specialist — รักษารากฟันโดยทันตแพทย์เฉพาะทาง | H: Specialty Services | — | 3.11 | ['*'] |
+| dental-anesthesia | Sedation & GA Dentistry — ดมยาสลบทำฟัน | H: Specialty Services | — | 3.10 | ['*'] |
 
 ---
 
@@ -64,6 +68,9 @@
 | implant-materials | 3 | 3 | ✅ |
 | dental-anatomy | 3 | 2 | ✅ |
 | brand-doctor-authority | 5 | 2 | ✅ |
+| pediatric-dentistry | 4 | 6 | ✅ |
+| endodontics-specialist | 4 | 4 | ✅ |
+| dental-anesthesia | 3 | 2 | ✅ |
 
 ---
 

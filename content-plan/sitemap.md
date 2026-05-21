@@ -1,36 +1,38 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 414 | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~525 (Round 2 expansion, 2026-05-21 — was 414 at Round 1) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
+> **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based) — see `docs/changelog.md`
 
-## Tier Distribution
-- **Tier A:** 10 pages (2.6%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
-- **Tier B:** 44 pages (11.3%) — target: 12-18% ⚠️
-- **Tier C:** 222 pages (56.8%) — target: 45-55%
-- **Tier D:** 115 pages (29.4%) — target: 25-30%
+## Tier Distribution (approximate — recompute at end of Phase E)
+- **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
+- **Tier B:** ~60 pages (11.4%) — target: 12-18% ⚠️
+- **Tier C:** ~290 pages (55.2%) — target: 45-55%
+- **Tier D:** ~163 pages (31.0%) — target: 25-30%
 
 > **หมายเหตุ:** Tier distribution จะปรับในขั้นตอน keyword research — เมื่อรู้ search volume จริง จะ promote หน้าที่มี high search volume จาก D→C หรือ C→B ตามความเหมาะสม
 
-## Layer Distribution
-- **L1 (Brand & Team Authority):** 48 pages
-- **L2 (Clinical Care Models):** 135 pages
-- **L3 (Precision Technology):** 25 pages
-- **L4 (Intent-Based Concerns):** 63 pages
-- **L5 (Clinical Knowledge Hub):** 80 pages
+## Layer Distribution (Round 2)
+- **L1 (Brand & Team Authority):** ~50 pages (+2 from Endo + Pediatric teams)
+- **L2 (Clinical Care Models):** ~208 pages (+73 from Round 2 service expansion)
+- **L3 (Precision Technology):** ~29 pages (+4 new tech units: Densah / Airflow / Cool Light + 4.9 hub)
+- **L4 (Intent-Based Concerns):** ~71 pages (+8: tooth-loss urgency + jaw asymmetry + 5 gum concerns)
+- **L5 (Clinical Knowledge Hub):** ~121 pages (+41 from Section 6 restructure — 6.4 Evidence / 6.5 FAQ / 6.6 Case-based + tech brand insights)
 - **L6 (Multimodal Protocols):** 1 page
-- **L7 (Evidence-Based Case Studies):** 39 pages
+- **L7 (Evidence-Based Case Studies):** ~39 pages
 
-## Pages per Section
+## Pages per Section (Round 2)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** 36 pages
-- **3. SERVICES:** 137 pages
-- **4. TECHNOLOGY:** 25 pages
-- **5. TREATMENT BY CONCERNS:** 63 pages
-- **6. KNOWLEDGE:** 80 pages
-- **7. CASE STUDIES:** 38 pages
-- **8. CONTACT & LOCAL SEO:** 15 pages
+- **2. OUR UNIQUENESS — The Global Mastery:** ~38 pages (+2 specialty teams)
+- **3. SERVICES:** ~210 pages (+73 — 3.9 Pediatric / 3.10 Sedation / 3.11 Endo + soft tissue + sinus + ortho-surgery + torus + scaling/whitening expansions)
+- **4. TECHNOLOGY:** ~29 pages (+4 — Densah / Airflow / Cool Light + 4.9 Cosmetic Tech hub)
+- **5. TREATMENT BY CONCERNS:** ~71 pages (+8 concern hooks → gum/jaw funnel)
+- **6. KNOWLEDGE:** 121 pages (restructured: 6.1 Pillar / 6.2 Insights / 6.3 Glossary / 6.4 Evidence / 6.5 FAQ / 6.6 Case-based)
+- **7. CASE STUDIES:** ~38 pages
+- **8. CONTACT & LOCAL SEO:** ~15 pages
+- **TOTAL:** ~525 pages
 
 ---
 
@@ -113,6 +115,8 @@
 | 2.2.6 | → Orthodontics Team — ทีมจัดฟัน | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.7 | → Periodontics Team — ทีมรักษาโรคเหงือก | L1 | C | mid | A | smilescape-dental-clinic |
 | 2.2.8 | → General Dentistry Team — ทีมทันตกรรมทั่วไป | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.9 | → Endodontist Team — ทีมทันตแพทย์เฉพาะทางรากฟัน | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.2.10 | → Pediatric Dentistry Team — ทีมทันตกรรมเด็ก | L1 | C | mid | A | smilescape-dental-clinic |
 
 ### 2.3 Authority & Trust
 
@@ -213,12 +217,33 @@
 | | → → → Autogenous / Allograft-Xenograft / Block Bone Graft / PRF-Growth Factor | | — | — | — |
 | 3.2.9.2 | → → GBR — Guided Bone Regeneration 🌟 | L2 | B | mid | A | guided-bone-regeneration |
 | 3.2.9.3 | → → Sausage Technique — เทคนิคปลูกกระดูกระดับโลก by Dr. Istvan Urban 🏆🌟 | L2 | B | mid | A | sausage-technique |
-| 3.2.9.4 | → → Sinus Lift — ยกพื้นไซนัสเพื่อเสริมกระดูก | L2 | B | mid | A | sinus-lift |
-| | → → → Lateral Window / Crestal Approach | | — | — | — |
-| 3.2.9.5 | → → Ridge Augmentation — เสริมสันกระดูก | L2 | C | mid | A | ridge-augmentation |
+| 3.2.9.4 | → → Sinus Lift — ยกพื้นไซนัสเพื่อเสริมกระดูก (hub) | L2 | B | mid | A | sinus-lift |
+| 3.2.9.4.1 | → → → Lateral Window Sinus Lift — เปิดแผลด้านข้าง | L2 | C | mid | A | lateral-window-sinus-lift |
+| 3.2.9.4.2 | → → → Crestal (Internal) Sinus Lift with Densah Bur — Osseodensification 🌟 ★ | L2 | B | mid | A | internal-sinus-lift |
+| | → → → → Minimally invasive / Bone density boost / Same-day primary stability / Salah Huwais authority | | — | — | — |
+| 3.2.9.5 | → → Ridge Augmentation — เสริมสันกระดูก (hub) | L2 | C | mid | A | ridge-augmentation |
+| 3.2.9.5.1 | → → → Horizontal Ridge Augmentation — เสริมแนวกว้าง | L2 | C | mid | A | horizontal-bone-deficiency |
+| 3.2.9.5.2 | → → → Vertical Bone Augmentation with RPM Membrane 🌟 — เสริมแนวสูง | L2 | B | mid | A | vertical-bone-augmentation |
+| | → → → → RPM (Reinforced Permanent Membrane) / Urban vertical protocol / Severe defect indication | | — | — | — |
 | 3.2.9.6 | → → Socket Preservation — รักษาเบ้ากระดูกหลังถอนฟัน | L2 | C | mid | A | socket-preservation |
-| 3.2.9.7 | → → Soft Tissue Management — ศัลยกรรมเหงือกเพื่อความสวยงาม 🏆 | L2 | B | mid | A | soft-tissue-management |
-| | → → → Connective Tissue Graft / Free Gingival Graft / Peri-Implant Contouring | | — | — | — |
+| 3.2.9.7 | → → Soft Tissue Management — ศัลยกรรมเหงือกระดับโลก 🏆🌟 (master hub) | L2 | B | mid | A | soft-tissue-management |
+| | → → → Kern + Urban authority / Pink aesthetic protocol / D-2 Hybrid coverage | | — | — | — |
+| 3.2.9.7.1 | → → → Increase Keratinized Tissue — เพิ่มเหงือกแข็ง (sub-hub) | L2 | C | mid | A | keratinized-mucosa |
+| | → → → → APF + FGG / APF + CTG in-page sections / Indication: gingival recession + thin biotype | | — | — | — |
+| 3.2.9.7.1.1 | → → → → APF + Free Gingival Graft (FGG) — เพิ่มเหงือกแข็งคลาสสิก | L2 | D | mid | A | soft-tissue-management |
+| 3.2.9.7.1.2 | → → → → APF + Connective Tissue Graft (CTG) — แบบเก็บสีกลมกลืน | L2 | D | mid | A | connective-tissue-graft |
+| 3.2.9.7.1.3 | → → → → Strip Graft — Dr. Istvan Urban 🏆 | L2 | C | mid | A | strip-graft |
+| 3.2.9.7.2 | → → → Increase Gingival Thickness — เพิ่มความหนาเหงือก (sub-hub) | L2 | C | mid | A | peri-implant-mucosa |
+| | → → → → CTG basics / Roll Flap in-page / Indication: thin biotype + implant zone | | — | — | — |
+| 3.2.9.7.2.1 | → → → → Ice Berg / Ice Cube Technique — Dr. Istvan Urban 🏆 | L2 | C | mid | A | ice-berg-technique |
+| 3.2.9.7.2.2 | → → → → Garage Technique — Dr. Istvan Urban 🏆 (Papilla Preservation) | L2 | C | mid | A | garage-technique |
+| 3.2.9.7.2.3 | → → → → VIPCT — Vascularized Interpositional Periosteal CT Graft | L2 | D | mid | A | vipct |
+| 3.2.9.7.3 | → → → Root Coverage — ปิดเหงือกร่น (sub-hub) | L2 | C | mid | A | gum-recession |
+| | → → → → Cairo classification / gum recession overview | | — | — | — |
+| 3.2.9.7.3.1 | → → → → Coronally Advanced Flap (CAF) — Gold Standard Root Coverage | L2 | C | mid | A | caf |
+| 3.2.9.7.3.2 | → → → → Tunneling Technique — Minimally Invasive | L2 | C | mid | A | tunneling-technique |
+| 3.2.9.7.3.3 | → → → → VISTA Technique — Multiple Recession Coverage | L2 | C | mid | A | vista-technique |
+| 3.2.9.7.3.4 | → → → → Tunneled CAF (TCAF) — Hybrid Approach | L2 | D | mid | A | tcaf |
 
 #### เคสซับซ้อน — Complex Cases
 
@@ -299,7 +324,11 @@
 | 3.4.4.3 | → → Implant Crown — ครอบฟันบนรากเทียม | L2 | D | mid | A | dental-crown |
 | 3.4.5 | → Dental Bridge — สะพานฟัน | L2 | C | mid | A | dental-crown |
 | 3.4.6 | → Inlay / Onlay — ชิ้นงานเซรามิกเฉพาะจุด | L2 | D | mid | A | dental-crown |
-| 3.4.7 | → Teeth Whitening — ฟอกสีฟัน | L2 | C | mid | A | teeth-whitening |
+| 3.4.7 | → Teeth Whitening — ฟอกสีฟัน (hub) | L2 | C | mid | A | teeth-whitening |
+| 3.4.7.1 | → → Cool Light Whitening — ฟอกฟันในคลินิกที่ SmileScape ★ 🌟 | L2 | C | mid | A | cool-light-whitening-unit |
+| | → → → ไม่ทำให้ฟันร้อน / ลด sensitivity / 1-2 ชั่วโมงเสร็จ / ขาวขึ้นทันที | | — | — | — |
+| 3.4.7.2 | → → Home Bleaching — ฟอกที่บ้านด้วยถาดฟอก | L2 | D | mid | A | teeth-whitening |
+| 3.4.7.3 | → → Walking Bleach — ฟอกฟันตายภายในเฉพาะซี่ (→ link 3.11.6 Internal Bleaching) | L2 | D | mid | A | internal-bleaching |
 | 3.4.8 | → Gum Contouring — ตกแต่งเหงือก (Gummy Smile) | L2 | C | mid | A | gum-contouring |
 | 3.4.9 | → Smile Makeover — แปลงโฉมรอยยิ้มครบวงจร | L2 | C | mid | A | digital-smile-design |
 | 3.4.10 | → ราคาทันตกรรมเพื่อความสวยงาม SmileScape | L2 | C | bottom | D | digital-smile-design |
@@ -315,12 +344,25 @@
 | | → → หลักการทำงาน / ใครเหมาะ / ข้อดี-ข้อจำกัด / ขั้นตอน | | — | — | — |
 | 3.5.2 | → จัดฟันใสแบบ Progressive — ถาดหลายระดับแรง เจ็บน้อย ติดปุ่มน้อย | L2 | C | mid | A | clear-aligner |
 | | → → หลักการ Soft→Hard / Divot Force vs Attachment / ทำไมเจ็บน้อยกว่า | | — | — | — |
-| 3.5.3 | → จัดฟันแบบ Self-Ligating — ระบบล็อคตัวเอง แรงเบา นัดน้อย | L2 | C | mid | A | damon-system |
-| | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / Metal vs Ceramic self-ligating | | — | — | — |
+| 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | damon-system |
+| | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape ใช้ PSL system | | — | — | — |
+| 3.5.3.1 | → → Passive Self-Ligating (PSL) — Damon Q / Damon Clear ★ 🌟 | L2 | C | mid | A | passive-self-ligating |
+| 3.5.3.2 | → → Active vs Passive Self-Ligating — เปรียบเทียบ | L2 | D | mid | D | passive-self-ligating |
+| 3.5.3.3 | → → Damon Q (Metal PSL) — โครงเหล็ก ทนทาน | L2 | D | mid | A | damon-system |
+| 3.5.3.4 | → → Damon Clear (Ceramic PSL) — สวยงาม ไม่เห็นเหล็ก | L2 | D | mid | A | damon-system |
 | 3.5.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | clear-aligner |
 | 3.5.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | clear-aligner |
 | 3.5.6 | → จัดฟันก่อนทำรากฟันเทียม — Ortho + Implant Sequencing 🌟 | L6 | C | mid | A | ortho-implant-sequencing |
 | 3.5.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | clear-aligner |
+| 3.5.8 | → จัดฟันร่วมผ่าตัดเลื่อนขากรรไกร — Orthognathic Surgery + Ortho 🌟 (hub) | L2 | B | mid | A | orthognathic-surgery |
+| 3.5.8.1 | → → ใครเหมาะ — Class III / Class II Severe / Skeletal Asymmetry | L2 | C | mid | D | orthognathic-surgery |
+| 3.5.8.2 | → → ขั้นตอน — Pre-surgical Ortho → Surgery → Post-surgical Ortho | L2 | C | mid | A | orthognathic-surgery |
+| 3.5.8.3 | → → BSSO / IVRO — ผ่าตัดเลื่อนขากรรไกรล่าง | L2 | C | mid | A | orthognathic-surgery |
+| 3.5.8.4 | → → Le Fort I — ผ่าตัดขากรรไกรบน | L2 | C | mid | A | orthognathic-surgery |
+| 3.5.8.5 | → → Bimaxillary (Two-jaw) Surgery | L2 | C | mid | A | orthognathic-surgery |
+| 3.5.8.6 | → → Genioplasty — เสริม/ลดคาง | L2 | D | mid | A | orthognathic-surgery |
+| 3.5.8.7 | → → Surgery-First Approach | L2 | D | mid | A | orthognathic-surgery |
+| 3.5.8.8 | → → ระยะเวลา & ค่าใช้จ่าย | L2 | D | bottom | D | orthognathic-surgery |
 
 ---
 
@@ -329,13 +371,17 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.6 | ทันตกรรมทั่วไป — General Dentistry (hub) | L2 | C | mid | A | dental-implant |
-| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning | L2 | C | mid | A | dental-filling |
+| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) | L2 | C | mid | A | dental-filling |
+| 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | D | mid | A | dental-filling |
+| 3.6.1.2 | → → ขูดหินปูนแบบ Airflow / Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
+| | → → → EMS Airflow / Guided Biofilm Therapy (GBT) / Patient-friendly | | — | — | — |
+| 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก | L2 | C | mid | A | periodontitis |
 | 3.6.2 | → อุดฟัน — Dental Filling | L2 | C | mid | A | dental-filling |
 | 3.6.3 | → ถอนฟัน — Tooth Extraction | L2 | C | mid | A | tooth-extraction |
 | 3.6.4 | → ผ่าฟันคุด — Wisdom Tooth Removal | L2 | C | mid | A | wisdom-tooth-removal |
 | 3.6.4.1 | → → ฟันคุดฝัง — Impacted Wisdom Tooth | L2 | D | mid | A | wisdom-tooth-removal |
 | 3.6.4.2 | → → การฟื้นตัวหลังผ่าฟันคุด | L2 | D | mid | A | wisdom-tooth-removal |
-| 3.6.5 | → รักษารากฟัน — Root Canal Treatment | L2 | C | mid | A | root-canal-treatment |
+| 3.6.5 | → รักษารากฟัน — Root Canal Treatment (→ ดูรายละเอียดที่ Section 3.11 Endodontics) | L2 | C | mid | A | root-canal-treatment |
 | 3.6.6 | → ฟันปลอม — Dentures (Removable) | L2 | C | mid | A | removable-denture |
 
 ---
@@ -364,6 +410,67 @@
 | 3.8.3 | → ผ่าตัดซีสต์ — Cyst Removal | L2 | D | mid | A | tooth-extraction |
 | 3.8.4 | → Frenectomy — ตัดเนื้อเยื่อยึดลิ้น/ริมฝีปาก | L2 | D | mid | A | tooth-extraction |
 | 3.8.5 | → การเตรียมช่องปากก่อนใส่รากเทียม — Pre-Implant Surgery 🌟 | L2 | C | mid | A | dental-implant |
+| 3.8.6 | → ตัดปุ่มกระดูก / ปรับสันกระดูก (Torus Removal / Alveoloplasty) (hub) | L2 | C | mid | A | torus-removal |
+| 3.8.6.1 | → → Mandibular Torus Removal — ปุ่มกระดูกใต้ลิ้น (Lingual Torus) | L2 | D | mid | A | torus-removal |
+| 3.8.6.2 | → → Palatal Torus Removal — ปุ่มกระดูกเพดานปาก | L2 | D | mid | A | torus-removal |
+| 3.8.6.3 | → → Maxillary Tuberosity Reduction — ปรับปุ่มกระดูกหลังฟันบน | L2 | D | mid | A | tuberectomy |
+| 3.8.6.4 | → → Alveoloplasty — ปรับสันกระดูกเตรียมฟันปลอม / รากเทียม | L2 | D | mid | A | alveoloplasty |
+
+---
+
+### 3.9 Pediatric Dentistry — ทันตกรรมเด็ก 🌟
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — specialty service section
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.9 | ทันตกรรมเด็ก — Kids Dentistry by SmileScape 🌟 (hub) | L2 | B | mid | A | pediatric-dentistry |
+| 3.9.1 | → First Dental Visit — ครั้งแรกของลูก (1 ขวบ / ฟันซี่แรก) | L2 | C | top | A | pediatric-dentistry |
+| 3.9.2 | → ตรวจฟันเด็ก & ขูดหินปูนเด็ก — Pediatric Checkup & Cleaning | L2 | C | mid | A | pediatric-dentistry |
+| 3.9.3 | → อุดฟันน้ำนม — ฟันน้ำนมผุ (Primary Tooth Filling) | L2 | C | mid | A | dental-filling |
+| 3.9.4 | → เคลือบฟลูออไรด์ — Fluoride Treatment | L2 | C | mid | A | fluoride-treatment |
+| 3.9.5 | → เคลือบหลุมร่องฟัน — Pit & Fissure Sealant | L2 | C | mid | A | pit-fissure-sealant |
+| 3.9.6 | → รักษารากฟันน้ำนม — Pulpotomy / Pulpectomy | L2 | C | mid | A | pediatric-pulpotomy |
+| 3.9.7 | → ครอบฟันเด็ก — Stainless Steel Crown / Zirconia Crown | L2 | C | mid | A | pediatric-crown |
+| 3.9.8 | → เครื่องมือกันฟันล้ม — Space Maintainer | L2 | C | mid | A | space-maintainer |
+| 3.9.9 | → ถอนฟันน้ำนม — Primary Tooth Extraction | L2 | D | mid | A | pediatric-extraction |
+| 3.9.10 | → Habit Appliance — แก้ดูดนิ้ว / อมจุก / กัดริมฝีปาก | L2 | D | mid | A | habit-appliance |
+| 3.9.11 | → จัดการพฤติกรรมเด็กกลัวหมอ — Behavior Management | L2 | C | mid | A | behavior-management |
+| 3.9.12 | → Early Orthodontic Intervention — จัดฟันเด็กระยะแรก | L2 | C | mid | A | early-orthodontic-intervention |
+| 3.9.13 | → ดมยาสลบทำฟันเด็ก (→ link 3.10.6) | L2 | C | mid | A | ga-dentistry |
+
+---
+
+### 3.10 Sedation & GA Dentistry — บริการดมยาสลบทำฟัน 🌟
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — specialty capability section
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.10 | บริการดมยาสลบทำฟัน — Sedation & GA Dentistry 🌟 (hub) | L2 | B | mid | A | ga-dentistry |
+| 3.10.1 | → Conscious Sedation — Nitrous Oxide (แก๊สหัวเราะ) / Oral Sedation | L2 | C | mid | A | conscious-sedation |
+| 3.10.2 | → IV Sedation — Moderate Sedation | L2 | C | mid | A | iv-sedation |
+| 3.10.3 | → General Anesthesia — ดมยาสลบทำฟันโดยวิสัญญีแพทย์ | L2 | C | mid | A | ga-dentistry |
+| 3.10.4 | → ใครเหมาะกับการดมยาสลบทำฟัน — Special Needs / Severe Anxiety / Complex Case | L2 | C | mid | A | dental-anxiety |
+| 3.10.5 | → ขั้นตอนและความปลอดภัย — Anesthesiologist on-site | L2 | C | mid | A | ga-dentistry |
+| 3.10.6 | → ดมยาสลบทำฟันเด็ก — Pediatric GA | L2 | C | mid | A | ga-dentistry |
+| 3.10.7 | → ดมยาสลบสำหรับฝังรากฟันเทียม / All-on-X | L2 | C | mid | A | ga-dentistry |
+
+---
+
+### 3.11 Endodontics by Specialist — รักษารากฟันโดยทันตแพทย์เฉพาะทาง 🌟
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — specialty service section
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.11 | รักษารากฟันโดยทันตแพทย์เฉพาะทาง 🌟 (hub) | L2 | B | mid | A | root-canal-treatment |
+| 3.11.1 | → รักษาคลองรากฟัน — Root Canal Treatment | L2 | B | mid | A | root-canal-treatment |
+| 3.11.2 | → รักษาคลองรากฟันซ้ำ — Endodontic Retreatment | L2 | C | mid | A | root-canal-retreatment |
+| 3.11.3 | → ผ่าตัดปลายราก — Apicoectomy / Surgical Endodontics | L2 | C | mid | A | apicoectomy |
+| 3.11.4 | → รักษารากฟันด้วยกล้องจุลทรรศน์ — Endodontic Microscope ★ | L2 | C | mid | A | endodontic-microscope |
+| 3.11.5 | → เครื่องมือ Rotary / Reciprocating Endodontics | L2 | D | mid | A | rotary-endodontic-system |
+| 3.11.6 | → ฟอกฟันตายภายใน — Internal Bleaching | L2 | C | mid | A | internal-bleaching |
+| 3.11.7 | → ฟันร้าว / รากฟันแตก — Cracked Tooth / Vertical Root Fracture | L2 | C | mid | A | cracked-tooth |
+| 3.11.8 | → Pulp Regeneration / Apexogenesis (เด็ก) (→ link 3.9.6) | L2 | D | mid | A | pulp-regeneration |
+| 3.11.9 | → รักษารากฟัน vs ถอน + รากเทียม — เปรียบเทียบทางเลือก | L2 | C | bottom | D | root-canal-treatment |
 
 ---
 
@@ -381,8 +488,10 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 4.2 | เทคโนโลยีวินิจฉัย (hub) | L3 | C | mid | A | cbct-3d-scan |
-| 4.2.1 | → CBCT Scanner — เครื่องเอกซเรย์ 3 มิติ | L3 | C | mid | A | cbct-3d-scan |
-| 4.2.2 | → Intraoral Scanner — เครื่องสแกนดิจิทัลในปาก | L3 | C | mid | A | intraoral-scanner |
+| 4.2.1 | → Acteon CBCT — เครื่องเอกซเรย์ 3 มิติจากฝรั่งเศส ★ | L3 | C | mid | A | acteon-cbct |
+| | → → X-Mind Trium series / Low-dose protocol / FOV options / 3D + Pano + Ceph all-in-one / ISO/CE marked | | — | — | — |
+| 4.2.2 | → 3Shape TRIOS Intraoral Scanner — สแกนเนอร์จากเดนมาร์ก ★ | L3 | C | mid | A | trios-intraoral-scanner |
+| | → → TRIOS 5 wireless / Realcolor / <50μm accuracy / chairside CAD/CAM workflow / Ortho-ready | | — | — | — |
 | 4.2.3 | → Digital Impression — พิมพ์ฟันดิจิทัล vs แบบเดิม | L3 | D | mid | D | intraoral-scanner |
 
 ### 4.3 Implant Planning Technology
@@ -403,6 +512,10 @@
 | 4.4.1 | → Piezoelectric Surgery — ตัดกระดูกแม่นยำ ★ | L3 | C | mid | A | surgical-guide |
 | 4.4.2 | → PRF Centrifuge — ระบบผลิตเกล็ดเลือดเข้มข้น | L3 | D | mid | A | prf-platelet-rich-fibrin |
 | 4.4.3 | → Surgical Microscope / Loupes — กล้องขยายผ่าตัด | L3 | D | mid | A | surgical-guide |
+| 4.4.4 | → Densah Bur System — Osseodensification Tool ★ 🌟 | L3 | B | mid | A | densah-bur |
+| | → → Versah (USA) / CCW rotation / Non-subtractive bone densification / Minimally invasive sinus elevation / Authority: Dr. Salah Huwais | | — | — | — |
+| 4.4.5 | → Airflow Prophylaxis System — EMS Air Polishing ★ | L3 | C | mid | A | airflow-air-polishing |
+| | → → EMS Airflow Prophylaxis Master / Guided Biofilm Therapy (GBT) / Periodontal maintenance | | — | — | — |
 
 ### 4.5 Implant System
 
@@ -411,8 +524,8 @@
 | 4.5 | ระบบรากฟันเทียม SmileScape (hub) | L3 | B | mid | A | dental-implant |
 | 4.5.1 | → Blue Diamond Implant System — ระบบรากเทียมจากเกาหลี ★ | L3 | C | mid | A | blue-diamond-implant |
 | | → → จุดเด่น / วัสดุ / Surface treatment / ราคาคุ้มค่า | | — | — | — |
-| 4.5.2 | → Osstem Implant System — ระบบรากเทียมจากเกาหลี ★ | L3 | C | mid | A | osstem-implant |
-| | → → TS/SS series / Market share อันดับ 1 เอเชีย / จุดเด่น | | — | — | — |
+| 4.5.2 | → Neodent Implant System — ระบบรากเทียมจากบราซิล (Straumann Group) ★ | L3 | C | mid | A | neodent-implant |
+| | → → GM (Grand Morse) connection / Straumann Group subsidiary / Value-premium tier / Brazilian R&D + Swiss backing | | — | — | — |
 | 4.5.3 | → Straumann Implant System — ระบบรากเทียมจากสวิตเซอร์แลนด์ ★ | L3 | C | mid | A | straumann-implant |
 | | → → SLActive surface / Roxolid material / BLT/BLX / Premium tier | | — | — | — |
 | 4.5.4 | → Ceramic (Zirconia) Implant System — ระบบรากเทียมเซรามิกไร้โลหะ ★ | L3 | C | mid | A | titanium-implant |
@@ -449,6 +562,14 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 4.8 | มาตรฐานการฆ่าเชื้อและความปลอดภัย | L3 | D | mid | A | smilescape-dental-clinic |
 
+### 4.9 Cosmetic Technology
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 4.9 | เทคโนโลยีทันตกรรมเพื่อความสวยงาม (hub) | L3 | D | mid | A | digital-smile-design |
+| 4.9.1 | → Cool Light Whitening Unit — เครื่องฟอกสีฟันด้วยแสง LED เย็น ★ 🌟 | L3 | C | mid | A | cool-light-whitening-unit |
+| | → → ไม่ทำให้ฟันร้อน / ลด post-op sensitivity / In-office activation 1-2 ชั่วโมง | | — | — | — |
+
 ---
 
 ## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (109 pages)
@@ -466,6 +587,8 @@
 | 5.1.5 | → ฟันหักจากอุบัติเหตุ — แก้ไขได้อย่างไร | L4 | C | top | A | traumatic-tooth-loss |
 | 5.1.6 | → ฟันผุจนต้องถอน — ขั้นตอนต่อไปคืออะไร | L4 | C | top | A | dental-caries-extraction |
 | 5.1.7 | → สูญเสียฟันจากโรคเหงือก — ป้องกันและแก้ไข | L4 | C | top | A | tooth-loss |
+| 5.1.8 | → เสียฟัน 1 ซี่ทำไมต้องรีบ — Bone Resorption + Domino Effect ⚠️🌟 | L4 | B | top | A | tooth-loss |
+| | → → 25% bone loss ใน 1 ปีแรก / 40-60% ใน 3 ปี / ฟันข้างเคียงล้ม + ฟันบนยื่นลง / TMJ implications / why "wait & see" = costly later | | — | — | — |
 
 ### 5.2 กระดูกไม่พอ / กระดูกละลาย
 
@@ -573,6 +696,8 @@
 | 5.10.4 | → ฟันสบลึก / ฟันสบไขว้ (Deep Bite / Crossbite) | L4 | D | top | A | malocclusion |
 | 5.10.5 | → จัดฟันตอนอายุเยอะ ได้ไหม — ไม่มีคำว่าสาย | L4 | C | top | A | malocclusion |
 | 5.10.6 | → จัดฟันแบบไหนเหมาะกับฉัน — ใส / เหล็ก / เซรามิก | L4 | C | top | A | malocclusion |
+| 5.10.7 | → คางยื่น / คางหด — แก้ด้วยจัดฟันหรือผ่าตัด (→ link 3.5.8 Orthognathic) | L4 | C | top | A | orthognathic-surgery |
+| 5.10.8 | → หน้าเบี้ยว / Facial Asymmetry — แก้ได้ไหม | L4 | C | top | A | orthognathic-surgery |
 
 ### 5.11 ปัญหาเหงือกเฉพาะทาง
 
@@ -583,6 +708,11 @@
 | 5.11.2 | → เหงือกดำ / เหงือกคล้ำ — แก้ไขอย่างไร | L4 | D | top | A | periodontitis |
 | 5.11.3 | → โรคปริทันต์ขั้นรุนแรง — ฟันจะหลุดไหม | L4 | C | top | A | periodontitis |
 | 5.11.4 | → เหงือกร่นรอบรากฟันเทียม — สาเหตุและวิธีแก้ 🌟 | L4 | C | top | A | gum-recession |
+| 5.11.5 | → ช่องว่างระหว่างเหงือก (Black Triangle) — แก้ได้อย่างไร (→ link 3.2.9.7) | L4 | C | top | A | black-triangle |
+| 5.11.6 | → เหงือกบาง / เหงือกอ่อน — เปลี่ยนให้แข็งแรง (→ link 3.2.9.7.1 Keratinized Tissue) | L4 | C | top | A | keratinized-mucosa |
+| 5.11.7 | → เหงือกบาง มองเห็นสีรากฟัน / โครงรากเทียมโผล่ (→ link 3.2.9.7.2 Thickness) | L4 | C | top | A | peri-implant-mucosa |
+| 5.11.8 | → เหงือกไม่เท่ากัน / สูงต่ำไม่สมมาตร (Gingival Asymmetry) (→ link 3.2.9.7 + 3.4.8) | L4 | C | top | A | gum-contouring |
+| 5.11.9 | → หลังถอนฟันเหงือกยุบลง — Soft Tissue Loss (→ link 3.2.9.7 + 3.2.9.6 Socket Preservation) | L4 | C | top | A | soft-tissue-management |
 
 ### 5.12 ปัญหาฟันเด็ก
 
@@ -608,165 +738,254 @@
 
 ---
 
-## Section 6: KNOWLEDGE — Implant Authority Hub
+## Section 6: KNOWLEDGE — Implant Authority Hub (Round 2 Restructure)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
+>
+> **Master Structure (Round 2 — 2026-05-21):** Section 6 restructured into 6 top-level sub-sections per operator decision. Existing Clinical Insights content preserved, renumbered under 6.2.
 
-### 6.1 Clinical Guide Series — คู่มือสุขภาพฟัน (ระดับลึก)
+| 6.x | Sub-section | Type | Pages |
+|-----|-------------|------|-------|
+| 6.1 | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 11 |
+| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 78 |
+| 6.3 | Glossary | Definitions A-Z | 3 |
+| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 14 |
+| 6.5 | FAQ Knowledge Hub | High-intent quick answers (vs Section 5.9 concern-FAQ) | 5 |
+| 6.6 | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
+| **Section 6 Total** | | | **121** |
+
+---
+
+### 6.1 Clinical Guides — Pillar Medical Pages
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 6.1 | คู่มือสุขภาพฟัน SmileScape (hub) | L5 | B | top | A | dental-implant |
 | 6.1.1 | → คู่มือรากฟันเทียมฉบับสมบูรณ์ 🌟 | L5 | A | top | A | dental-implant |
 | 6.1.2 | → คู่มือ All-on-4 / All-on-6 ฉบับสมบูรณ์ 🌟 | L5 | A | top | A | all-on-6 |
-| 6.1.3 | → คู่มือการปลูกกระดูกสำหรับรากฟันเทียม | L5 | B | top | A | dental-implant |
+| 6.1.3 | → คู่มือการปลูกกระดูกสำหรับรากฟันเทียม | L5 | B | top | A | guided-bone-regeneration |
 | 6.1.4 | → คู่มือวีเนียร์ฉบับสมบูรณ์ | L5 | C | top | A | dental-veneer |
-| 6.1.5 | → คู่มือจัดฟันฉบับสมบูรณ์ | L5 | C | top | A | dental-implant |
-| 6.1.6 | → คู่มือโรคเหงือกฉบับสมบูรณ์ | L5 | C | top | A | dental-implant |
+| 6.1.5 | → คู่มือจัดฟันฉบับสมบูรณ์ | L5 | C | top | A | clear-aligner |
+| 6.1.6 | → คู่มือโรคเหงือกฉบับสมบูรณ์ | L5 | C | top | A | periodontitis |
 | 6.1.7 | → คู่มือรักษารากฟัน (Root Canal) | L5 | C | top | A | root-canal-treatment |
 | 6.1.8 | → คู่มือครอบฟันฉบับสมบูรณ์ | L5 | C | top | A | dental-crown |
 | 6.1.9 | → คู่มือฟันปลอมและฟันเทียมถอดได้ | L5 | C | top | A | removable-denture |
 | 6.1.10 | → คู่มือฟอกสีฟัน | L5 | D | top | A | teeth-whitening |
 | 6.1.11 | → คู่มือผ่าฟันคุด | L5 | D | top | A | wisdom-tooth-removal |
 
-### 6.2 Implant Knowledge Deep-Dive (Mega Sub-section)
+---
+
+### 6.2 Clinical Insights — Long-tail Articles (SEO)
+> Long-tail Q&A articles. Each maps to a Section 5 concern + links back to Center/Pathway/Service.
+> 5 topic-clusters preserved from initial Phase E build + Round 2 Tech Brand Insights, renumbered under 6.2.
+
+#### 6.2.1 Implant Knowledge Cluster (was top-level 6.2)
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.2 | Implant Knowledge Hub — ทุกเรื่องที่ต้องรู้เกี่ยวกับรากฟันเทียม (hub) | L5 | B | top | A | dental-implant |
+| 6.2.1 | Implant Knowledge Hub — ทุกเรื่องที่ต้องรู้เกี่ยวกับรากฟันเทียม (sub-hub) | L5 | B | top | A | dental-implant |
 
-#### Implant Basics
-
-| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
-|---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.1 | → รากฟันเทียมทำจากอะไร — วัสดุและโครงสร้าง | L5 | C | top | A | dental-implant |
-| 6.2.2 | → Osseointegration คืออะไร — กระดูกยึดรากฟันเทียมได้อย่างไร | L5 | C | top | A | osseointegration |
-| 6.2.3 | → ส่วนประกอบของรากฟันเทียม — Fixture, Abutment, Crown | L5 | C | top | A | dental-implant |
-| 6.2.4 | → ประวัติรากฟันเทียม — จาก Brånemark สู่ยุคดิจิทัล | L5 | D | top | A | dental-implant |
-| 6.2.5 | → อัตราความสำเร็จของรากฟันเทียม — สถิติและงานวิจัย | L5 | C | top | A | dental-implant |
-
-#### Implant Types & Brands
+##### Implant Basics
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.6 | → เปรียบเทียบแบรนด์รากฟันเทียม — Straumann vs Nobel vs Osstem vs Blue Diamond | L5 | C | top | D | blue-diamond-implant |
-| 6.2.7 | → รากฟันเทียมเกาหลี — คุณภาพและความคุ้มค่า | L5 | C | top | A | dental-implant |
-| 6.2.8 | → รากฟันเทียมสวิส / ยุโรป — พรีเมียมแตกต่างอย่างไร | L5 | D | top | A | dental-implant |
-| 6.2.9 | → One-piece vs Two-piece Implant — ข้อดีข้อเสีย | L5 | D | top | D | dental-implant |
-| 6.2.10 | → Mini Implant vs Standard Implant — ใช้เมื่อไหร่ | L5 | D | top | D | dental-implant |
+| 6.2.1.1 | → รากฟันเทียมทำจากอะไร — วัสดุและโครงสร้าง | L5 | C | top | A | dental-implant |
+| 6.2.1.2 | → Osseointegration คืออะไร — กระดูกยึดรากฟันเทียมได้อย่างไร | L5 | C | top | A | osseointegration |
+| 6.2.1.3 | → ส่วนประกอบของรากฟันเทียม — Fixture, Abutment, Crown | L5 | C | top | A | dental-implant |
+| 6.2.1.4 | → ประวัติรากฟันเทียม — จาก Brånemark สู่ยุคดิจิทัล | L5 | D | top | A | dental-implant |
+| 6.2.1.5 | → อัตราความสำเร็จของรากฟันเทียม — สถิติและงานวิจัย | L5 | C | top | A | dental-implant |
 
-#### Advanced Techniques
-
-| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
-|---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.11 | → Guided Bone Regeneration (GBR) คืออะไร — หลักการและขั้นตอน | L5 | C | top | A | guided-bone-regeneration |
-| 6.2.12 | → Sausage Technique — เทคนิคปลูกกระดูกระดับโลกของ Dr. Urban 🏆 | L5 | B | top | A | sausage-technique |
-| 6.2.13 | → Sinus Lift คืออะไร — ทำไมต้องยกพื้นไซนัส | L5 | C | top | A | sinus-lift |
-| 6.2.14 | → Immediate Implant คืออะไร — ถอนแล้วฝังทันที | L5 | C | top | A | immediate-implant |
-| 6.2.15 | → Immediate Loading คืออะไร — ใส่ฟันได้ทันทีหลังฝังราก | L5 | C | top | A | immediate-loading |
-| 6.2.16 | → Socket Preservation คืออะไร — ทำไมต้องรักษาเบ้ากระดูก | L5 | D | top | A | socket-preservation |
-| 6.2.17 | → PRF ในงานรากฟันเทียม — เร่งการหายด้วยเลือดตัวเอง | L5 | D | top | A | prf-platelet-rich-fibrin |
-| 6.2.18 | → Piezoelectric Surgery ในงานรากเทียม | L5 | D | top | A | dental-implant |
-| 6.2.19 | → Soft Tissue Management — ทำไมเหงือกสวยสำคัญ 🏆 | L5 | C | top | A | soft-tissue-management |
-
-#### Implant Problems & Solutions
+##### Implant Types & Brands
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.20 | → รากฟันเทียมล้มเหลว — สาเหตุ อาการ วิธีแก้ | L5 | C | top | A | dental-implant |
-| 6.2.21 | → Peri-Implantitis คืออะไร — การติดเชื้อรอบรากเทียม | L5 | C | top | A | peri-implantitis |
-| 6.2.22 | → รากฟันเทียมหลุด — ทำไมถึงเกิดขึ้น | L5 | D | top | A | dental-implant |
-| 6.2.23 | → ครอบฟันบนรากเทียมแตก/หลุด — แก้ไขอย่างไร | L5 | D | top | A | dental-crown |
-| 6.2.24 | → เส้นประสาทเสียหลังฝังราก — เกิดขึ้นได้ไหม | L5 | D | top | A | dental-implant |
-| 6.2.25 | → รากฟันเทียมกับไซนัสอักเสบ | L5 | D | top | A | dental-implant |
+| 6.2.1.6 | → เปรียบเทียบแบรนด์รากฟันเทียม — Blue Diamond vs Straumann vs Neodent vs Ceramic | L5 | C | top | D | blue-diamond-implant |
+| 6.2.1.7 | → รากฟันเทียมเกาหลี (Blue Diamond) — คุณภาพและความคุ้มค่า | L5 | C | top | A | blue-diamond-implant |
+| 6.2.1.8 | → รากฟันเทียมสวิส / ยุโรป — พรีเมียมแตกต่างอย่างไร | L5 | D | top | A | straumann-implant |
+| 6.2.1.9 | → One-piece vs Two-piece Implant — ข้อดีข้อเสีย | L5 | D | top | D | dental-implant |
+| 6.2.1.10 | → Mini Implant vs Standard Implant — ใช้เมื่อไหร่ | L5 | D | top | D | dental-implant |
 
-#### Implant Lifestyle
-
-| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
-|---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.26 | → รากฟันเทียมกับการกินอาหาร — กินอะไรได้บ้าง | L5 | C | top | A | dental-implant |
-| 6.2.27 | → รากฟันเทียมกับการออกกำลังกาย | L5 | D | top | A | dental-implant |
-| 6.2.28 | → รากฟันเทียมกับการเดินทาง — บินได้ไหม | L5 | D | top | A | dental-implant |
-| 6.2.29 | → รากฟันเทียมกับการสูบบุหรี่ | L5 | D | top | A | dental-implant |
-| 6.2.30 | → ดูแลรากฟันเทียมอย่างไรให้อยู่นาน 20+ ปี | L5 | C | top | A | dental-implant |
-
-#### Implant Brands & Materials (ดัก brand search intent)
+##### Advanced Techniques
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.2.31 | → Straumann คืออะไร — ทำไมถึงเป็นรากฟันเทียมระดับพรีเมียม | L5 | C | top | A | straumann-implant |
-| 6.2.32 | → Osstem คืออะไร — รากฟันเทียมเกาหลีที่นิยมที่สุดในเอเชีย | L5 | C | top | A | osstem-implant |
-| 6.2.33 | → รากฟันเทียมเซรามิกคืออะไร — ข้อดีข้อเสีย ราคา | L5 | C | bottom | A | ceramic-implant |
-| 6.2.34 | → รากฟันเทียมเซรามิก vs ไทเทเนียม — เลือกแบบไหนดี | L5 | C | top | D | ceramic-implant |
+| 6.2.1.11 | → Guided Bone Regeneration (GBR) คืออะไร — หลักการและขั้นตอน | L5 | C | top | A | guided-bone-regeneration |
+| 6.2.1.12 | → Sausage Technique — เทคนิคปลูกกระดูกระดับโลกของ Dr. Urban 🏆 | L5 | B | top | A | sausage-technique |
+| 6.2.1.13 | → Sinus Lift คืออะไร — Internal vs Lateral Window | L5 | C | top | A | sinus-lift |
+| 6.2.1.14 | → Densah Bur / Osseodensification — เทคโนโลยีเพิ่ม bone density 🌟 | L5 | B | top | A | osseodensification |
+| 6.2.1.15 | → Immediate Implant คืออะไร — ถอนแล้วฝังทันที | L5 | C | top | A | immediate-implant |
+| 6.2.1.16 | → Immediate Loading คืออะไร — ใส่ฟันได้ทันทีหลังฝังราก | L5 | C | top | A | immediate-loading |
+| 6.2.1.17 | → Immediate Load vs Conventional Load — Timeline เปรียบเทียบ ⏱️ | L5 | C | top | D | immediate-loading |
+| 6.2.1.18 | → Socket Preservation คืออะไร — ทำไมต้องรักษาเบ้ากระดูก | L5 | D | top | A | socket-preservation |
+| 6.2.1.19 | → PRF ในงานรากฟันเทียม — เร่งการหายด้วยเลือดตัวเอง | L5 | D | top | A | prf-platelet-rich-fibrin |
+| 6.2.1.20 | → Piezoelectric Surgery ในงานรากเทียม | L5 | D | top | A | dental-implant |
+| 6.2.1.21 | → Soft Tissue Management — ทำไมเหงือกสวยสำคัญ 🏆 | L5 | C | top | A | soft-tissue-management |
 
-### 6.3 All-on-X Knowledge
-
-| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
-|---|-----------|-------|------|-------|-----------|----------------|
-| 6.3 | All-on-X Knowledge Hub (hub) | L5 | B | top | A | all-on-x |
-| 6.3.1 | → All-on-4 คืออะไร — หลักการและข้อดี | L5 | C | top | A | all-on-4 |
-| 6.3.2 | → All-on-6 คืออะไร — เมื่อไหร่ต้องใช้ 6 ราก | L5 | C | top | A | all-on-6 |
-| 6.3.3 | → ข้อดีข้อเสียของ All-on-4 — ข้อมูลตรงไปตรงมา | L5 | C | top | A | all-on-4 |
-| 6.3.4 | → All-on-4 บนล่าง vs บนบน — แตกต่างอย่างไร | L5 | D | top | D | all-on-4 |
-| 6.3.5 | → Tilted Implant คืออะไร — ทำไม All-on-4 ถึงเอียงราก | L5 | D | top | A | all-on-4 |
-| 6.3.6 | → วัสดุฟัน All-on-X — Zirconia, Acrylic, PMMA, Hybrid | L5 | C | top | A | all-on-x |
-| 6.3.7 | → ชีวิตหลัง All-on-4 — คนไข้บอกว่าเป็นยังไง | L5 | C | top | A | all-on-4 |
-| 6.3.8 | → ค่าใช้จ่าย All-on-4 ในไทย — เปรียบเทียบราคา | L5 | C | bottom | D | all-on-4 |
-| 6.3.9 | → All-on-4 ล้มเหลว — เกิดขึ้นได้ไหม | L5 | D | top | A | all-on-4 |
-| 6.3.10 | → All-on-4 กับผู้ป่วยเบาหวาน | L5 | D | top | A | all-on-4 |
-| 6.3.11 | → All-on-4 กับผู้สูงอายุ | L5 | D | top | A | all-on-4 |
-| 6.3.12 | → All-on-4 vs ฟันปลอม — เปรียบเทียบชัดเจน | L5 | C | top | D | all-on-4 |
-
-### 6.4 Bone Regeneration Knowledge
+##### Implant Problems & Solutions
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.4 | ปลูกกระดูก Knowledge Hub (hub) | L5 | C | top | A | malocclusion |
-| 6.4.1 | → ปลูกกระดูกฟันคืออะไร — ทำไมต้องทำ | L5 | C | top | A | malocclusion |
-| 6.4.2 | → ประเภทวัสดุปลูกกระดูก — Auto, Allo, Xeno, Synthetic | L5 | D | top | A | malocclusion |
-| 6.4.3 | → ปลูกกระดูกเจ็บไหม — ประสบการณ์จริง | L5 | D | top | A | malocclusion |
-| 6.4.4 | → ระยะเวลาหายหลังปลูกกระดูก | L5 | D | top | A | malocclusion |
-| 6.4.5 | → ปลูกกระดูกล้มเหลว — สาเหตุและวิธีแก้ | L5 | D | top | A | malocclusion |
-| 6.4.6 | → ราคาปลูกกระดูกฟันในไทย | L5 | D | bottom | D | malocclusion |
-| 6.4.7 | → Membrane คืออะไร — เยื่อกั้นกระดูก | L5 | D | top | A | guided-bone-regeneration |
+| 6.2.1.22 | → รากฟันเทียมล้มเหลว — สาเหตุ อาการ วิธีแก้ | L5 | C | top | A | dental-implant |
+| 6.2.1.23 | → Peri-Implantitis คืออะไร — การติดเชื้อรอบรากเทียม | L5 | C | top | A | peri-implantitis |
+| 6.2.1.24 | → รากฟันเทียมหลุด — ทำไมถึงเกิดขึ้น | L5 | D | top | A | dental-implant |
+| 6.2.1.25 | → ครอบฟันบนรากเทียมแตก/หลุด — แก้ไขอย่างไร | L5 | D | top | A | dental-crown |
+| 6.2.1.26 | → เส้นประสาทเสียหลังฝังราก — เกิดขึ้นได้ไหม | L5 | D | top | A | dental-implant |
+| 6.2.1.27 | → รากฟันเทียมกับไซนัสอักเสบ | L5 | D | top | A | dental-implant |
 
-### 6.5 General Dental Knowledge
+##### Implant Lifestyle
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.5 | ความรู้ทันตกรรมทั่วไป (hub) | L5 | C | top | A | dental-implant |
-| 6.5.1 | → โรคเหงือก — สาเหตุ อาการ การรักษา | L5 | C | top | A | dental-implant |
-| 6.5.2 | → ฟันผุ — ทำไมถึงผุ วิธีป้องกัน | L5 | C | top | A | dental-implant |
-| 6.5.3 | → การดูแลสุขภาพช่องปาก — แปรงฟัน ไหมขัดฟัน น้ำยาบ้วนปาก | L5 | D | top | A | dental-implant |
-| 6.5.4 | → อาหารกับสุขภาพฟัน — กินอย่างไรให้ฟันดี | L5 | D | top | A | dental-implant |
-| 6.5.5 | → ฟันคุดคืออะไร — ต้องผ่าทุกคนไหม | L5 | D | top | A | wisdom-tooth-removal |
-| 6.5.6 | → รักษารากฟันคืออะไร — ทำไมต้องทำ | L5 | D | top | A | root-canal-treatment |
-| 6.5.7 | → ครอบฟันคืออะไร — เมื่อไหร่ต้องครอบ | L5 | D | top | A | dental-crown |
-| 6.5.8 | → วีเนียร์คืออะไร — ข้อดีข้อเสีย | L5 | C | top | A | dental-veneer |
-| 6.5.9 | → จัดฟัน — ข้อดีข้อเสียที่ต้องรู้ | L5 | C | top | A | dental-implant |
-| 6.5.10 | → ฟันปลอม — ประเภทและการดูแล | L5 | D | top | A | removable-denture |
-| 6.5.11 | → ตรวจฟันประจำปี — ทำไมสำคัญ | L5 | D | top | A | dental-implant |
-| 6.5.12 | → ฟอกสีฟัน — วิธีไหนดีที่สุด | L5 | D | top | A | teeth-whitening |
+| 6.2.1.28 | → รากฟันเทียมกับการกินอาหาร — กินอะไรได้บ้าง | L5 | C | top | A | dental-implant |
+| 6.2.1.29 | → รากฟันเทียมกับการออกกำลังกาย | L5 | D | top | A | dental-implant |
+| 6.2.1.30 | → รากฟันเทียมกับการเดินทาง — บินได้ไหม | L5 | D | top | A | dental-implant |
+| 6.2.1.31 | → รากฟันเทียมกับการสูบบุหรี่ | L5 | D | top | A | dental-implant |
+| 6.2.1.32 | → ดูแลรากฟันเทียมอย่างไรให้อยู่นาน 20+ ปี | L5 | C | top | A | dental-implant |
 
-### 6.6 Orthodontic Knowledge — ความรู้จัดฟัน (ดัก brand search intent)
+##### Implant Brands & Materials (ดัก brand search intent)
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.6 | ความรู้เรื่องจัดฟัน (hub) | L5 | C | top | A | clear-aligner |
-| 6.6.1 | → TrioClear คืออะไร — จัดฟันใสแบบ Progressive ต่างจากยี่ห้ออื่นยังไง | L5 | C | top | A | trioclear-aligner |
-| 6.6.2 | → Invisalign คืออะไร — ข้อดีข้อเสีย ราคา เหมาะกับใคร | L5 | C | bottom | A | clear-aligner |
-| 6.6.3 | → Damon System คืออะไร — Self-Ligating ต่างจากเหล็กธรรมดายังไง | L5 | C | top | A | damon-system |
-| 6.6.4 | → จัดฟันใส vs จัดฟันเหล็ก — เปรียบเทียบตรงไปตรงมา | L5 | C | top | D | clear-aligner |
-| 6.6.5 | → เปรียบเทียบยี่ห้อจัดฟันใส — TrioClear vs Invisalign vs อื่นๆ | L5 | C | top | D | trioclear-aligner |
-| 6.6.6 | → จัดฟันผู้ใหญ่ — สิ่งที่ต้องรู้ ใช้เวลานานแค่ไหน | L5 | D | top | A | clear-aligner |
-| 6.6.7 | → Retention & Relapse — ทำไมฟันถึงเรียงตัวกลับหลังจัดฟัน | L5 | D | top | A | clear-aligner |
+| 6.2.1.33 | → Straumann คืออะไร — ทำไมถึงเป็นรากฟันเทียมระดับพรีเมียม | L5 | C | top | A | straumann-implant |
+| 6.2.1.34 | → Neodent คืออะไร — รากบราซิลในเครือ Straumann | L5 | C | top | A | neodent-implant |
+| 6.2.1.35 | → Neodent vs Straumann — ทำไมรากบราซิลถึงเป็นพี่น้องกับสวิส | L5 | C | top | D | neodent-implant |
+| 6.2.1.36 | → รากฟันเทียมเซรามิกคืออะไร — ข้อดีข้อเสีย ราคา | L5 | C | bottom | A | ceramic-implant |
+| 6.2.1.37 | → รากฟันเทียมเซรามิก vs ไทเทเนียม — เลือกแบบไหนดี | L5 | C | top | D | ceramic-implant |
 
-### 6.7 Dental Glossary
+#### 6.2.2 All-on-X Insights (was top-level 6.3)
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 6.7 | พจนานุกรมศัพท์ทันตกรรม A-Z (hub) | L5 | D | top | D | dental-implant |
-| 6.7.1 | → ศัพท์รากฟันเทียม A-Z | L5 | D | top | D | dental-implant |
-| 6.7.2 | → ศัพท์ทันตกรรมทั่วไป A-Z | L5 | D | top | D | dental-implant |
+| 6.2.2 | All-on-X Knowledge Hub (sub-hub) | L5 | B | top | A | all-on-x |
+| 6.2.2.1 | → All-on-4 คืออะไร — หลักการและข้อดี | L5 | C | top | A | all-on-4 |
+| 6.2.2.2 | → All-on-6 คืออะไร — เมื่อไหร่ต้องใช้ 6 ราก | L5 | C | top | A | all-on-6 |
+| 6.2.2.3 | → ข้อดีข้อเสียของ All-on-4 — ข้อมูลตรงไปตรงมา | L5 | C | top | A | all-on-4 |
+| 6.2.2.4 | → All-on-4 บนล่าง vs บนบน — แตกต่างอย่างไร | L5 | D | top | D | all-on-4 |
+| 6.2.2.5 | → Tilted Implant คืออะไร — ทำไม All-on-4 ถึงเอียงราก | L5 | D | top | A | all-on-4 |
+| 6.2.2.6 | → วัสดุฟัน All-on-X — Zirconia, Acrylic, PMMA, Hybrid | L5 | C | top | A | all-on-x |
+| 6.2.2.7 | → ชีวิตหลัง All-on-4 — คนไข้บอกว่าเป็นยังไง | L5 | C | top | A | all-on-4 |
+| 6.2.2.8 | → ค่าใช้จ่าย All-on-4 ในไทย — เปรียบเทียบราคา | L5 | C | bottom | D | all-on-4 |
+| 6.2.2.9 | → All-on-4 ล้มเหลว — เกิดขึ้นได้ไหม | L5 | D | top | A | all-on-4 |
+| 6.2.2.10 | → All-on-4 กับผู้ป่วยเบาหวาน | L5 | D | top | A | all-on-4 |
+| 6.2.2.11 | → All-on-4 กับผู้สูงอายุ | L5 | D | top | A | all-on-4 |
+| 6.2.2.12 | → All-on-4 vs ฟันปลอม — เปรียบเทียบชัดเจน | L5 | C | top | D | all-on-4 |
+
+#### 6.2.3 Bone Regeneration Insights (was top-level 6.4)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.2.3 | ปลูกกระดูก Knowledge Hub (sub-hub) | L5 | C | top | A | guided-bone-regeneration |
+| 6.2.3.1 | → ปลูกกระดูกฟันคืออะไร — ทำไมต้องทำ | L5 | C | top | A | bone-grafting |
+| 6.2.3.2 | → ประเภทวัสดุปลูกกระดูก — Auto, Allo, Xeno, Synthetic | L5 | D | top | A | bone-graft-substitute |
+| 6.2.3.3 | → ปลูกกระดูกเจ็บไหม — ประสบการณ์จริง | L5 | D | top | A | bone-grafting |
+| 6.2.3.4 | → ระยะเวลาหายหลังปลูกกระดูก | L5 | D | top | A | bone-grafting |
+| 6.2.3.5 | → ปลูกกระดูกล้มเหลว — สาเหตุและวิธีแก้ | L5 | D | top | A | bone-grafting |
+| 6.2.3.6 | → ราคาปลูกกระดูกฟันในไทย | L5 | D | bottom | D | bone-grafting |
+| 6.2.3.7 | → Membrane คืออะไร — PTFE / RPM / Resorbable | L5 | D | top | A | ptfe-membrane |
+
+#### 6.2.4 General Dental Insights (was top-level 6.5)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.2.4 | ความรู้ทันตกรรมทั่วไป (sub-hub) | L5 | C | top | A | dental-implant |
+| 6.2.4.1 | → โรคเหงือก — สาเหตุ อาการ การรักษา | L5 | C | top | A | periodontitis |
+| 6.2.4.2 | → ฟันผุ — ทำไมถึงผุ วิธีป้องกัน | L5 | C | top | A | dental-filling |
+| 6.2.4.3 | → การดูแลสุขภาพช่องปาก — แปรงฟัน ไหมขัดฟัน น้ำยาบ้วนปาก | L5 | D | top | A | dental-implant |
+| 6.2.4.4 | → อาหารกับสุขภาพฟัน — กินอย่างไรให้ฟันดี | L5 | D | top | A | dental-implant |
+| 6.2.4.5 | → ฟันคุดคืออะไร — ต้องผ่าทุกคนไหม | L5 | D | top | A | wisdom-tooth-removal |
+| 6.2.4.6 | → รักษารากฟันคืออะไร — ทำไมต้องทำ | L5 | D | top | A | root-canal-treatment |
+| 6.2.4.7 | → ครอบฟันคืออะไร — เมื่อไหร่ต้องครอบ | L5 | D | top | A | dental-crown |
+| 6.2.4.8 | → วีเนียร์คืออะไร — ข้อดีข้อเสีย | L5 | C | top | A | dental-veneer |
+| 6.2.4.9 | → จัดฟัน — ข้อดีข้อเสียที่ต้องรู้ | L5 | C | top | A | clear-aligner |
+| 6.2.4.10 | → ฟันปลอม — ประเภทและการดูแล | L5 | D | top | A | removable-denture |
+| 6.2.4.11 | → ตรวจฟันประจำปี — ทำไมสำคัญ | L5 | D | top | A | dental-implant |
+| 6.2.4.12 | → ฟอกสีฟัน — Cool Light vs Home Bleaching | L5 | D | top | A | cool-light-whitening-unit |
+
+#### 6.2.5 Orthodontic Insights (was top-level 6.6, ดัก brand search intent)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.2.5 | ความรู้เรื่องจัดฟัน (sub-hub) | L5 | C | top | A | clear-aligner |
+| 6.2.5.1 | → TrioClear คืออะไร — จัดฟันใสแบบ Progressive ต่างจากยี่ห้ออื่นยังไง | L5 | C | top | A | trioclear-aligner |
+| 6.2.5.2 | → Invisalign คืออะไร — ข้อดีข้อเสีย ราคา เหมาะกับใคร | L5 | C | bottom | A | clear-aligner |
+| 6.2.5.3 | → Damon System / PSL คืออะไร — Passive Self-Ligating ต่างจากเหล็กธรรมดายังไง | L5 | C | top | A | passive-self-ligating |
+| 6.2.5.4 | → จัดฟันใส vs จัดฟันเหล็ก — เปรียบเทียบตรงไปตรงมา | L5 | C | top | D | clear-aligner |
+| 6.2.5.5 | → เปรียบเทียบยี่ห้อจัดฟันใส — TrioClear vs Invisalign vs อื่นๆ | L5 | C | top | D | trioclear-aligner |
+| 6.2.5.6 | → จัดฟันผู้ใหญ่ — สิ่งที่ต้องรู้ ใช้เวลานานแค่ไหน | L5 | D | top | A | clear-aligner |
+| 6.2.5.7 | → Retention & Relapse — ทำไมฟันถึงเรียงตัวกลับหลังจัดฟัน | L5 | D | top | A | clear-aligner |
+
+#### 6.2.6 Tech Brand Insights (Round 2 NEW)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.2.6.1 | → Acteon CBCT คืออะไร — Low-dose 3D imaging | L5 | C | top | A | acteon-cbct |
+| 6.2.6.2 | → 3Shape TRIOS คืออะไร — Digital impression มาตรฐานสากล | L5 | C | top | A | trios-intraoral-scanner |
+| 6.2.6.3 | → Cool Light Whitening คืออะไร — ทำไมไม่ทำให้ฟันร้อน | L5 | C | top | A | cool-light-whitening-unit |
+
+---
+
+### 6.3 Glossary — พจนานุกรมศัพท์ทันตกรรม (was 6.7)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.3 | พจนานุกรมศัพท์ทันตกรรม A-Z (hub) | L5 | D | top | D | dental-implant |
+| 6.3.1 | → ศัพท์รากฟันเทียม A-Z | L5 | D | top | D | dental-implant |
+| 6.3.2 | → ศัพท์ทันตกรรมทั่วไป A-Z | L5 | D | top | D | dental-implant |
+
+---
+
+### 6.4 Clinical Evidence & Research Summaries 🆕
+
+> Evidence summary pages anchoring SmileScape clinical claims. Each = a summary of citation pool entry (P1-C1...P5-C1) or technique authority reference. Referenced from Service/Tech pages for E-E-A-T transparency.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.4 | Clinical Evidence Hub — งานวิจัยและหลักฐาน (hub) | L5 | B | mid | A | dental-implant |
+| 6.4.1 | → Howe 2019: Implant Survival 96.4% (10-yr) — Evidence Summary | L5 | C | mid | A | osseointegration |
+| 6.4.2 | → Pjetursson 2012: SLActive Surface Performance | L5 | C | mid | A | straumann-implant |
+| 6.4.3 | → Buser/Urban 2023: 35-yr GBR Review | L5 | C | mid | A | guided-bone-regeneration |
+| 6.4.4 | → Urban 2009: Vertical Bone Augmentation Outcomes | L5 | C | mid | A | vertical-bone-augmentation |
+| 6.4.5 | → Urban 2016: Sausage Technique Long-term Results | L5 | C | mid | A | sausage-technique |
+| 6.4.6 | → Milinkovic 2014: Bone Grafting Materials Comparison | L5 | C | mid | A | bone-grafting |
+| 6.4.7 | → Abdunabi 2019: All-on-X Outcomes Systematic Review | L5 | C | mid | A | all-on-x |
+| 6.4.8 | → Tsigarida 2021: All-on-X Survival Meta-analysis | L5 | C | mid | A | all-on-x |
+| 6.4.9 | → Cheng 2020: Immediate Loading Protocol | L5 | C | mid | A | immediate-loading |
+| 6.4.10 | → Alhamwi 2024: Clear Aligner Efficacy | L5 | C | mid | A | clear-aligner |
+| 6.4.11 | → Benic 2014: Soft Tissue Management Outcomes | L5 | C | mid | A | soft-tissue-management |
+| 6.4.12 | → Huwais 2017+: Osseodensification Evidence Base 🌟 | L5 | C | mid | A | osseodensification |
+| 6.4.13 | → Evidence Tier Framework — งานวิจัยระดับไหนเชื่อถือได้ | L5 | D | mid | A | dental-implant |
+
+---
+
+### 6.5 FAQ Knowledge Hub 🆕
+
+> Topic-FAQ (high-intent answers). Distinct from Section 5.9 concern-FAQ (top-funnel). Cross-topic depth.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.5 | FAQ Knowledge Hub (hub) | L5 | C | mid | A | dental-implant |
+| 6.5.1 | → FAQ ราคาและการชำระเงิน — ผ่อน 0% ประกัน สิทธิ์ | L5 | C | mid | D | dental-implant |
+| 6.5.2 | → FAQ ความปลอดภัยและความเสี่ยง — implant / GA / สูงวัย | L5 | C | mid | A | dental-implant |
+| 6.5.3 | → FAQ ระยะเวลาและกระบวนการ — ฝังเร็วได้ไหม / โหลดทันที / รอกี่เดือน | L5 | C | mid | A | immediate-loading |
+| 6.5.4 | → FAQ การดูแลหลังรักษา — กิน นอน เดินทาง บินได้ไหม | L5 | C | mid | A | dental-implant |
+
+---
+
+### 6.6 Case-based Learning 🆕
+
+> Clinical reasoning education. How a SmileScape doctor approaches decision-making. Distinct from Section 7 (patient before/after stories) — Section 6.6 is E-E-A-T/authority play.
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 6.6 | Case-based Learning Hub — เรียนรู้ผ่านการวิเคราะห์เคสจริง (hub) | L5 | C | mid | A | dental-implant |
+| 6.6.1 | → Decision Tree: All-on-4 vs All-on-6 vs Overdenture | L5 | C | mid | D | all-on-x |
+| 6.6.2 | → Decision Tree: Implant Brand Selection — เมื่อไหร่ใช้แบรนด์ไหน | L5 | C | mid | D | dental-implant |
+| 6.6.3 | → Decision Tree: Bone Grafting Approach — Sausage vs Vertical+RPM vs Sinus Lift | L5 | C | mid | A | guided-bone-regeneration |
+| 6.6.4 | → Decision Tree: Soft Tissue Approach — Keratinized vs Thickness vs Root Coverage | L5 | C | mid | A | soft-tissue-management |
+| 6.6.5 | → Clinical Reasoning: Class III Severe + Bone Loss — Ortho-First or Surgery-First | L5 | C | mid | A | orthognathic-surgery |
+| 6.6.6 | → Clinical Reasoning: Pediatric Pulp — Pulpotomy vs Extraction + Space Maintainer | L5 | C | mid | A | pediatric-pulpotomy |
+| 6.6.7 | → Clinical Reasoning: Endo vs Implant — Save Tooth or Replace | L5 | C | mid | A | root-canal-treatment |
+| 6.6.8 | → Clinical Reasoning: Diabetic + Implant — Risk Assessment Framework | L5 | C | mid | A | dental-implant |
+| 6.6.9 | → Clinical Reasoning: Peri-Implantitis Salvage — Conservative vs Surgical | L5 | C | mid | A | peri-implantitis |
 
 ---
 
@@ -892,30 +1111,3 @@
 - **Total Section 3:** 137 pages
 
 > **Implant (3.2+3.3) = 83 pages = 60.6% ของ Section 3** — สะท้อน "ตัวจริงด้านรากฟันเทียม" อย่างชัดเจน
-= 83 pages = 60.6% ของ Section 3** — สะท้อน "ตัวจริงด้านรากฟันเทียม" อย่างชัดเจน
-3.1 Diagnostics:** 9 pages (6.6%)
-- **3.2 Implant Mastery:** 71 pages (51.8%)
-- **3.3 All-on-X:** 12 pages (8.8%)
-- **3.4 Cosmetic:** 14 pages (10.2%)
-- **3.5 Orthodontics:** 9 pages (6.6%)
-- **3.6 General:** 9 pages (6.6%)
-- **3.7 Periodontics:** 7 pages (5.1%)
-- **3.8 Oral Surgery:** 6 pages (4.4%)
-- **Total Section 3:** 137 pages
-
-> **Implant (3.2+3.3) = 83 pages = 60.6% ของ Section 3** — สะท้อน "ตัวจริงด้านรากฟันเทียม" อย่างชัดเจน
-= 83 pages = 60.6% ของ Section 3** — สะท้อน "ตัวจริงด้านรากฟันเทียม" อย่างชัดเจน
-��น
-ากฟันเทียม" อย่างชัดเจน
-��น
- อย่างชัดเจน
-��น
-�
-�
-�
-�
-�
-�
-�
-�
-�

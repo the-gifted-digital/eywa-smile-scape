@@ -45,7 +45,7 @@
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
 | dental-implant | parent_of | blue-diamond-implant | No | SmileScape-specific signature system — Korean origin |
-| dental-implant | parent_of | osstem-implant | No | — |
+| dental-implant | parent_of | neodent-implant | No | Brazil — Straumann Group subsidiary, GM connection |
 | dental-implant | parent_of | straumann-implant | No | — |
 | dental-implant | parent_of | titanium-implant | No | Material-defined subtype |
 | dental-implant | parent_of | ceramic-implant | No | Metal-free subtype |
@@ -202,6 +202,19 @@
 
 ---
 
+### M2 — Evidenced-by (Round 2 additions)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| osseodensification | evidenced_by | densah-bur | No | Densah Bur is the physical instrument enabling Osseodensification mechanism (Huwais authority) |
+| internal-sinus-lift | evidenced_by | osseodensification | No | Crestal sinus elevation via densification — minimally invasive evidence base |
+| vertical-bone-augmentation | evidenced_by | rpm-membrane | No | RPM Membrane enables space maintenance in vertical reconstruction |
+| strip-graft | evidenced_by | soft-tissue-management | No | Urban-attested keratinized tissue technique |
+| ice-berg-technique | evidenced_by | soft-tissue-management | No | Urban-attested gingival thickness technique |
+| garage-technique | evidenced_by | soft-tissue-management | No | Urban-attested papilla preservation technique |
+
+---
+
 ### N — Related-to
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
@@ -216,7 +229,97 @@
 | periodontitis | related_to | alveolar-bone-loss | Yes | Mutual causation — perio destroys bone; bone loss worsens perio |
 | denture-dissatisfaction | related_to | removable-denture | Yes | Dissatisfaction arises from denture limitations |
 | digital-smile-design | related_to | dental-veneer | Yes | DSD commonly used in veneer treatment planning |
-| blue-diamond-implant | related_to | osstem-implant | Yes | Korean implant systems sharing regional evidence category |
+| blue-diamond-implant | related_to | neodent-implant | Yes | Value-premium implant systems — Asia/LATAM dental tourism evidence category |
+| neodent-implant | related_to | straumann-implant | Yes | Neodent is Straumann Group subsidiary — research pipeline + GM Connection shared |
+| dr-woraphat-jarangkul | related_to | osseodensification | Yes | Versah training / Huwais workshop (pending operator confirmation) |
+| dr-woraphat-jarangkul | related_to | strip-graft | Yes | Trained directly by Dr. Urban — Strip Graft technique |
+| dr-woraphat-jarangkul | related_to | ice-berg-technique | Yes | Trained directly by Dr. Urban — Ice Berg/Cube technique |
+| dr-woraphat-jarangkul | related_to | garage-technique | Yes | Trained directly by Dr. Urban — Garage technique |
+| densah-bur | related_to | smilescape-dental-clinic | Yes | Signature Offering #5 anchor — SmileScape brand-specific tool |
+| black-triangle | related_to | gum-recession | Yes | Both are recession-related aesthetic concerns — link Section 5.11 concerns |
+| pediatric-dentistry | related_to | early-orthodontic-intervention | Yes | Pediatric → interceptive ortho commonly co-managed |
+| endodontics-specialist | related_to | apicoectomy | Yes | Surgical endo specialty subset |
+| dental-anxiety | related_to | conscious-sedation | Yes | Anxiety = primary indication for sedation referral |
+| dental-anxiety | related_to | ga-dentistry | Yes | Severe phobia → GA dentistry pathway |
+
+---
+
+### O — Hierarchy: New Specialty Clusters (Round 2)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| pediatric-dentistry | parent_of | pediatric-pulpotomy | No | — |
+| pediatric-dentistry | parent_of | pediatric-crown | No | — |
+| pediatric-dentistry | parent_of | fluoride-treatment | No | — |
+| pediatric-dentistry | parent_of | pit-fissure-sealant | No | — |
+| pediatric-dentistry | parent_of | space-maintainer | No | — |
+| pediatric-dentistry | parent_of | habit-appliance | No | — |
+| pediatric-dentistry | parent_of | early-orthodontic-intervention | No | — |
+| pediatric-dentistry | parent_of | pediatric-extraction | No | — |
+| tooth-extraction | parent_of | pediatric-extraction | No | Pediatric variant — primary teeth |
+| root-canal-treatment | parent_of | root-canal-retreatment | No | — |
+| root-canal-treatment | parent_of | apicoectomy | No | Surgical endo subset |
+| root-canal-treatment | parent_of | internal-bleaching | No | Post-endo cosmetic |
+| root-canal-treatment | parent_of | pulp-regeneration | No | Emerging endo subset |
+| conscious-sedation | parent_of | iv-sedation | No | Moderate variant |
+
+---
+
+### P — Uses (Technique → Device/Material)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| osseodensification | uses | densah-bur | No | — |
+| internal-sinus-lift | uses | densah-bur | No | Crestal approach with bone densification |
+| vertical-bone-augmentation | uses | rpm-membrane | No | Space maintenance |
+| sausage-technique | uses | ptfe-membrane | No | Original Urban protocol uses PTFE membrane |
+| guided-bone-regeneration | uses | rpm-membrane | No | Vertical GBR uses RPM (alongside PTFE) |
+| apicoectomy | uses | endodontic-microscope | No | Standard-of-care: microscope-assisted apical surgery |
+| root-canal-treatment | uses | rotary-endodontic-system | No | Modern endo uses rotary files |
+| root-canal-treatment | uses | endodontic-microscope | No | Specialist-tier endo treatment |
+| ga-dentistry | uses | iv-sedation | No | GA pathway often begins with IV induction |
+| airflow-air-polishing | uses | dental-filling | No | Air polishing used pre-restoration (cleaning) |
+| cool-light-whitening-unit | uses | teeth-whitening | No | Device used in in-office whitening procedure |
+
+---
+
+### Q — Treats (Round 2)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| orthognathic-surgery | treats | malocclusion | No | Skeletal Class II/III + asymmetry |
+| pediatric-pulpotomy | treats | dental-caries-extraction | No | Saves primary tooth from extraction (parent edge) |
+| apicoectomy | treats | peri-implantitis | No | Edge: peri-apical lesion treatment (loosely related to peri-implantitis pathology — clinical bridge) |
+| root-canal-retreatment | treats | cracked-tooth | No | Sometimes; when crack involves canal |
+| internal-bleaching | treats | cracked-tooth | No | Post-trauma discoloration |
+| caf | treats | gum-recession | No | Gold standard root coverage |
+| tunneling-technique | treats | gum-recession | No | — |
+| vista-technique | treats | gum-recession | No | Multiple-tooth recession |
+| tcaf | treats | gum-recession | No | Hybrid root coverage |
+| strip-graft | treats | gum-recession | No | Keratinized augmentation + indirect root coverage |
+| vipct | treats | black-triangle | No | Papilla regeneration approach |
+| conscious-sedation | treats | dental-anxiety | No | Mild anxiety pathway |
+| ga-dentistry | treats | dental-anxiety | No | Severe phobia pathway |
+
+---
+
+### R — Subtype-of (Round 2)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| internal-sinus-lift | subtype_of | sinus-lift | No | Crestal/transalveolar approach variant |
+| lateral-window-sinus-lift | subtype_of | sinus-lift | No | Traditional lateral approach |
+| neodent-implant | subtype_of | straumann-implant | No | Subsidiary brand within Straumann Group |
+| passive-self-ligating | subtype_of | damon-system | No | PSL is the design class of Damon brackets |
+
+---
+
+### S — Part-of (Round 2)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| acteon-cbct | part_of | cbct-3d-scan | No | Brand instance of CBCT category |
+| trios-intraoral-scanner | part_of | intraoral-scanner | No | Brand instance of IOS category |
 
 ---
 
@@ -224,26 +327,33 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 101 | ≥ 50 | ✅ |
+| Total edges | 151 | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 80/83 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 18 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 15 | — | ✅ |
-| Orphan entities (0 edges) | 3 | ≤ 5 | ✅ |
+| Entities with ≥ 1 edge | 125/131 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 28 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 26 | — | ✅ |
+| Orphan entities (0 edges) | 6 | ≤ 8 | ✅ |
 
-**Orphan entities (no edges — accepted):**
-- `teeth-whitening` — standalone cosmetic treatment; no cross-entity dependency at Phase C
-- `dental-filling` — basic restorative; no cross-entity dependency at Phase C
+**Orphan entities (no edges — accepted at Phase C):**
+- `teeth-whitening` — standalone cosmetic treatment; gains edges in Phase D
+- `dental-filling` — basic restorative; gains edges in Phase D
 - `immediate-loading` — covered conceptually under all-on-x → full-arch-immediate-loading; standalone variant orphaned at Phase C
+- `behavior-management` (Round 2) — conceptual entity for pediatric — gains edges when pediatric content briefs land in Phase D
+- `torus-removal`, `alveoloplasty`, `tuberectomy` (Round 2) — oral surgery additions — gain edges in Phase D
 
-All three will gain edges in Phase D when content briefs are assigned.
+All will gain edges in Phase D when content briefs are assigned.
 
-**Key semantic chains confirmed:**
+**Key semantic chains confirmed (incl. Round 2 additions):**
 - Tooth Loss → Dental Implant → Blue Diamond Implant System → Lifetime Implant Warranty (conversion funnel)
 - Horizontal Bone Deficiency → Sausage Technique → Dr. Woraphat Jarangkul (authority chain)
-- CBCT 3D Scan → Digital Implant Planning → Surgical Guide → Guided Implant Surgery (tech stack)
+- CBCT 3D Scan → Acteon CBCT → Digital Implant Planning → Surgical Guide → Guided Implant Surgery (tech stack)
 - Gingivitis → Periodontitis → Alveolar Bone Loss → Guided Bone Regeneration (perio→bone→treatment chain)
+- **NEW:** Osseodensification → Densah Bur + Internal Sinus Lift → Signature Offering #5 (Huwais authority chain)
+- **NEW:** Soft Tissue Management → Strip Graft / Ice Berg / Garage → Dr. Woraphat (Urban authority chain — D-2 Hybrid)
+- **NEW:** Gum Recession → CAF / Tunneling / VISTA / TCAF → Soft Tissue Service (root coverage clinical pathway)
+- **NEW:** Dental Anxiety → Conscious Sedation / GA Dentistry (anxiety-to-care pathway)
 
 ---
 
 *Phase C output — Relationship wiring. Per Handover §5.5 + Bible Part 2.6. Feeds Stage 1.5 EUG preflight → Supabase edge table.*
+*Round 2 expansion (2026-05-21) — +50 edges for Densah/Soft Tissue D-2 Hybrid/Pediatric/Endo/Anesthesia clusters. Edge type vocabulary still 10/10 (no new edge types).*

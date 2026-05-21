@@ -6,28 +6,31 @@
 
 ---
 
-## [SS-DR-001] — Implant Brand Strategy: Blue Diamond as Hero (2026-04-08)
+## [SS-DR-001] — Implant Brand Strategy: Blue Diamond as Hero (2026-04-08 / Updated 2026-05-21)
 
-**Status:** Locked (operator confirmed)
+**Status:** Locked (operator confirmed) — Updated Round 2 (Osstem out, Neodent in)
 **Bible Reference:** Brand-specific (no universal DR conflict)
 
 **Context:**
 SmileScape needs to position implant offering across price tiers without confusing patients or undermining premium options.
 
-**Decision:**
-3-tier implant brand offering with Blue Diamond as hero:
+**Decision (Round 2):**
+4-tier implant brand offering with Blue Diamond as hero — **Osstem removed, Neodent added (2026-05-21)**:
 
 ```yaml
 hero_tier: Blue Diamond (Korea, value-premium, lifetime warranty, 29,900 THB starting)
+value_premium_tier: Neodent (Brazil, Straumann Group subsidiary, GM Connection)  # NEW R2
 premium_tier: Straumann (Switzerland, top-tier reputation)
 specialty_tier: Ceramic Implant (metal-free, premium for sensitive patients/front teeth)
-value_tier: Osstem/Dentium (Korea, entry-level clear option)
+# REMOVED R2: Osstem/Dentium — clinic does not use
 ```
 
-**Rationale:**
+**Rationale (Round 2 update):**
 - Blue Diamond = best value-quality ratio in Thai market
+- Neodent = strategic addition giving Straumann-Group evidence-backing at value-premium price (clinic uses, not Osstem)
 - Lifetime warranty + 0% installment = strong promo hook
 - Multi-tier maintains optionality without diluting hero message
+- Removing Osstem reflects actual clinic inventory + sharpens the 4-brand offering
 
 ---
 
@@ -40,9 +43,9 @@ value_tier: Osstem/Dentium (Korea, entry-level clear option)
 - **Section 3 (Services):** ไม่เอ่ยยี่ห้อ — นำด้วยวิธีการ (patient-language)
   - Example: "การฝังรากเทียม" not "Blue Diamond Implant"
 - **Section 4 (Technology):** ยี่ห้อ OK — tech specs + comparison
-  - Example: "Blue Diamond / Osstem / Straumann / Ceramic"
+  - Example: "Blue Diamond / Neodent / Straumann / Ceramic"  *(Round 2: Osstem → Neodent)*
 - **Section 6 (Knowledge):** ดัก brand search intent
-  - Example: "Blue Diamond คืออะไร?", "เปรียบเทียบ Blue Diamond vs Osstem"
+  - Example: "Blue Diamond คืออะไร?", "เปรียบเทียบ Blue Diamond vs Neodent"  *(Round 2)*
 
 **Apply to:** Both Implant brands AND Orthodontics brands (TrioClear / Damon)
 
@@ -102,12 +105,38 @@ Ceramic Implant gets dedicated Tier B page positioning as **premium differentiat
 
 ---
 
+## [SS-DR-007] — Densah/Osseodensification as Signature Offering #5 (2026-05-21)
+
+**Status:** Locked (operator confirmed)
+**Companion to:** SS-DR-001 (Implant Brand Strategy) / Bible v3.19 Signature Offerings framework
+
+**Context:**
+Round 2 sitemap expansion identified Internal Sinus Lift with Densah Bur (Osseodensification by Salah Huwais) as a genuine SmileScape capability — clinic uses Densah burs for minimally invasive crestal sinus elevation + bone density boost. This is a named-authority technique with global reputation (Versah training pipeline), parallel in strategic value to Sausage Technique (Urban) and Soft Tissue Management (Kern + Urban).
+
+**Decision:**
+Promote Internal Sinus Lift with Densah Bur to **Signature Offering #5** in `brand-config.json`. Authority anchor: Dr. Salah Huwais (Versah, USA).
+
+**Implications:**
+- `brand-config.json` `signature_offerings[4]` entry added with `_operator_action_required` flag for Dr. Woraphat Versah training credential
+- Entity `densah-bur` (Device) + `osseodensification` (Procedure) + `internal-sinus-lift` (Procedure) — all `brand_scope=['smile-scape']`
+- Sitemap 3.2.9.4.2 (sub-page of Sinus Lift) + Tech section 4.4.4 (Densah Bur System) = anchored URLs
+- Knowledge: Section 6.2.1.14 (Implant Insights) + Section 6.4.12 (Evidence Summary: Huwais 2017+) = E-E-A-T support
+- Pending operator data: Dr. Woraphat Versah training certificate / Huwais workshop attendance — required to write Section 2.2.2 หมอแฮม credentials with this anchor
+
+**Rationale:**
+- Real capability (clinic uses, not aspirational)
+- Authority anchor available — Salah Huwais peer-reviewed evidence base since 2017
+- Minimally invasive positioning supports patient-comfort narrative (Family Standard brand value)
+- Parallel pattern to Sausage Technique = 5 named signature techniques is the right portfolio depth for "Global Mastery" claim
+
+---
+
 ## Future Brand-Specific DRs (placeholders)
 
-- SS-DR-007: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
-- SS-DR-008: Multilingual launch decision (TH only initially → EN when?)
-- SS-DR-009: International medical tourism positioning (vs domestic-first focus)
-- SS-DR-010: Cross-brand link governance (DR-021 once locked)
+- SS-DR-008: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
+- SS-DR-009: Multilingual launch decision (TH only initially → EN when?)
+- SS-DR-010: International medical tourism positioning (vs domestic-first focus)
+- SS-DR-011: Cross-brand link governance (DR-021 once locked)
 
 ---
 
