@@ -14,14 +14,14 @@
 |------|-------|-------|
 | Treatment | 33 | + gold-crown (R3) |
 | Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
-| Condition | 16 | (unchanged R3) |
+| Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
 | Concept | 13 | + 5 R4 insurance concepts (SSO benefit, Q-Clinic, UCS, CGA, private insurance) |
 | Anatomy | 6 | (unchanged) |
 | Device | 13 | (unchanged R3) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **144** | (was 139 at R3 — +5 in Round 4 insurance concepts) |
+| **Total** | **155** | (was 144 at R4 — +11 in Round 5 concern conditions) |
 
 ---
 
@@ -137,6 +137,19 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 2 | Vertical Bone Deficiency | vertical-bone-deficiency | Condition | MedicalCondition | alveolar-bone-loss | K06.3 | Mature | 5.2.2 | กระดูกในแนวตั้งไม่พอ, vertical bone loss | ['*'] | Sausage Technique primary indication |
 | 3 | Horizontal Bone Deficiency | horizontal-bone-deficiency | Condition | MedicalCondition | alveolar-bone-loss | K06.3 | Mature | 5.2.1 | กระดูกในแนวนอนไม่พอ, narrow ridge, thin ridge | ['*'] | GBR + Sausage Technique indication |
 | 4 | Maxillary Sinus Proximity | maxillary-sinus-proximity | Condition | MedicalCondition | alveolar-bone-loss | — | Mature | 5.2.1 | ไซนัสอยู่ใกล้, insufficient upper jaw bone | ['*'] | Upper jaw posterior bone loss → Sinus Lift indication |
+| 5 | Dental Caries | dental-caries | Condition | MedicalCondition | — | K02.9 | Mature | 5.6.2 | ฟันผุ, tooth decay, cavity | ['*'] | DFS 22,200/mo TH LOW (R5 traffic goldmine). Re-tier hub to Tier A. Parent condition for white-spot-lesion / root-caries |
+| 6 | White Spot Lesion | white-spot-lesion | Condition | MedicalCondition | dental-caries | K02.51 | Mature | 5.6.2.1 | จุดขาวฟัน, early caries, incipient lesion | ['*'] | Reversible early caries — Fluoride treatment can remineralize |
+| 7 | Root Caries | root-caries | Condition | MedicalCondition | dental-caries | K02.2 | Mature | 5.6.2.6 | ฟันผุที่รากฟัน, gingival caries | ['*'] | Senior patient concern — Xerostomia + Gum recession exposes root |
+| 8 | Dental Abscess | dental-abscess | Condition | MedicalCondition | — | K04.6 | Mature | 5.6.3.2 | ฝีเหงือก, ฟันบวม, periodontal abscess, periapical abscess | ['*'] | DFS เหงือกบวม 22,200/mo TH + เลือดออกตามไรฟัน 6,600/mo combined ~28.8k/mo LOW (R5 goldmine) |
+| 9 | Bruxism | bruxism | Condition | MedicalCondition | — | F45.8 | Mature | 5.15.1 | นอนกัดฟัน, ขบฟัน, sleep bruxism, awake bruxism | ['*'] | Common cause of tooth wear + TMJ pain. Treatment: night guard / splint / Botox |
+| 10 | TMJ Disorder | tmj-disorder | Condition | MedicalCondition | — | M26.62 | Mature | 5.15 | ข้อต่อขากรรไกร, TMD, jaw joint disorder, TMJ pain | ['*'] | Multifactorial — bruxism + malocclusion + stress + trauma |
+| 11 | Halitosis | halitosis | Condition | MedicalCondition | — | R19.6 | Mature | 5.17 | กลิ่นปาก, bad breath, น้ำลายเหม็น | ['*'] | DFS 590/mo TH MEDIUM (R5). Multifactorial — perio + tongue + xerostomia + systemic |
+| 12 | Xerostomia (Dry Mouth) | xerostomia | Condition | MedicalCondition | — | K11.7 | Mature | 5.18 | ปากแห้ง, น้ำลายน้อย, dry mouth | ['*'] | DFS 1,900/mo TH LOW (R5). Causes: meds (200+ implicated), Sjögren's, radiation, aging |
+| 13 | Tooth Fracture | tooth-fracture | Condition | MedicalCondition | — | S02.5XXA | Mature | 5.16 | ฟันแตก, ฟันบิ่น, ฟันสึก, tooth fracture, dental trauma | ['*'] | DFS combined ~6.6k/mo TH LOW (R5). Includes Attrition / Abfraction / Erosion / Fracture / Cracked Tooth |
+| 14 | Dry Socket (Alveolar Osteitis) | dry-socket | Condition | MedicalCondition | tooth-extraction | M27.3 | Mature | 5.19.4 | ภาวะแทรกซ้อนหลังถอนฟัน, alveolar osteitis, fibrinolytic alveolitis | ['*'] | Post-extraction complication — blood clot loss, exposed bone. Severe pain 2-5 days post-op |
+| 15 | Pregnancy Gingivitis | pregnancy-gingivitis | Condition | MedicalCondition | gingivitis | K05.10 | Mature | 5.20.4 | เหงือกบวมตอนตั้งครรภ์, hormonal gingivitis | ['*'] | Hormonal-induced gum inflammation. Common 60-75% pregnancies. Treatment in Q2 trimester safest |
+
+---
 
 ---
 

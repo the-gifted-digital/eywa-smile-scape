@@ -1,5 +1,60 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-21 NIGHT] — Round 5 Section 5 Concern Universe Deep-Expansion
+
+**By:** Operator request "deep review concern keyword + bidirectional internal linking density" + DFS reconnaissance (5 batches, 60+ keywords)
+
+**Strategic rationale:** DR-021 `seo_page_internal_links` junction table with reciprocal-detection trigger requires both endpoints **at planning time**. Bidirectional linking density argument: adding concern pages later breaks established link graph; comprehensive coverage at planning time = maximum link density.
+
+**Files updated:**
+- `content-plan/sitemap.md` — ~569p → ~664p (+95 R5)
+  - **Block V (Re-tier 7 pages):** 5.6.2 ฟันผุ C→A (DFS 22.2k/mo) / 5.6.3 เหงือกบวม C→A (DFS 28.8k combined) / 5.11.1 เหงือกร่น C→A (DFS 9.9k) / 5.6.5 ฟันร้าว D→B / 5.6.6 กลิ่นปาก D→B / 5.6.7 ฟันโยก D→B / 5.5.6 ฟันสึก D→C
+  - **Block W1 (5.6.2 ฟันผุ expansion):** +6 pages (white spot / pulpitis / asymptomatic / prevention / interproximal / root caries)
+  - **Block W2 (5.6.3 เหงือกบวม expansion):** +8 pages (perio signs / abscess / acute / BoP / silent / orthodontic / peri-implant / chronic)
+  - **Block W3 (5.14 NEW Acute Pain & Emergency):** +9 pages
+  - **Block W4 (5.15 NEW TMJ / Bruxism):** +8 pages
+  - **Block W5 (5.16 NEW Wear/Trauma):** +8 pages (incl ฟันแตก 3.6k goldmine)
+  - **Block W6 (5.17 NEW Halitosis):** +9 pages
+  - **Block W7 (5.18 NEW Xerostomia):** +7 pages
+  - **Block W8 (5.19 NEW Post-Op & Recovery):** +11 pages
+  - **Block W9 (5.20 NEW Pregnancy):** +8 pages
+  - **Block W10 (5.21 NEW Choose Dentist/Clinic):** +8 pages
+  - **Block W11 (5.8 Medical Comorbidities expansion):** +7 pages (cancer / immunocompromised / joint replacement / Bisphosphonate MRONJ ⚠️ / radiation / liver-kidney / autoimmune)
+  - **Block W12 (5.22 NEW Lifestyle):** +6 pages
+- `content-plan/entities.md` — 144 → 155 entities (+11 R5 Condition entities). New: dental-caries (Condition), white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis. Re-tiered Implant brand entities' Primary Page references aligned.
+- `content-plan/relationships.md` — 184 → 215 edges (+31 R5). V1-V7 sub-clusters of bidirectional reciprocal links: pain/caries cluster (7) / periodontal-gum (5) / TMJ-bruxism (4) / wear-trauma (3) / post-op (2) / halitosis multi-cause (4) / xerostomia cross-refs (3) + parent_of hierarchies. **18 of 31 = bidirectional** = high reciprocal density supporting DR-021 trigger.
+- `content-plan/egp-output-summary.md` — Round 5 expansion note + recount.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count 569 → ~664.
+
+**DFS goldmine findings (Round 5 — 5 batches, 60+ keywords TH locale):**
+- 🔥 **เหงือกบวม** 22,200/mo TH LOW (7) — previously single D-tier page, now Tier A hub + 8 sub-pages
+- 🔥 **ฟันผุ** 22,200/mo TH LOW (3) — previously single D-tier page, now Tier A hub + 6 sub-pages
+- 🔥 **เหงือกร่น** 9,900/mo TH LOW (21) — re-tiered C→A
+- 🔥 **เลือดออกตามไรฟัน** 6,600/mo TH LOW (2)
+- 🔥 **ฟันแตก** 3,600/mo TH LOW (6)
+- **เด็กฟันผุ** 3,600/mo TH LOW (17)
+- **ฟันเหลือง** 2,400/mo TH MEDIUM (53)
+- **ปากแห้ง** 1,900/mo TH LOW (10)
+- **ฟันโยก** 1,300/mo TH LOW (9)
+- **ฟันบิ่น** 1,000/mo TH LOW (1)
+- **ฟันสึก** 1,000/mo TH LOW
+- **กลิ่นปาก** 590/mo TH MEDIUM (59)
+- **น้ำลายเหม็น** 590/mo TH MEDIUM (51)
+- **Combined goldmine: ~73,000/mo TH mostly LOW competition** = current Section 5 underpaged by ~10x volume coverage
+
+**Strategic frame (Round 5):**
+- **Section 5 = Pain-led intent** (broader/higher volume than Section 3 brand-led intent) — re-tier reflects actual demand reality
+- **Bidirectional linking density** = DR-021 reciprocal-detection trigger has rich graph from day 1, not retrofitted
+- **Concern → Service funnel architecture** preserved: each new concern hub links to relevant Section 3 services
+- AI citation surface for "ปวดฟัน X" / "เหงือกบวม Y" / etc. queries — high E-E-A-T anchor density
+
+**No new pending operator actions (Round 5 = DFS-driven, no operator data dependencies)**
+
+**Next phase:** Round 6 = DFS Full Batch (Stage 1 Gate prerequisite) — full sitemap volume validation + final Tier optimization
+
+---
+
 ## [2026-05-21 EVE] — Round 4 Q-Clinic SSO Cluster (Insurance & Access)
 
 **By:** Operator-driven request "อยากให้มีเรื่องราวทุกมุมเกี่ยวกับประกันสังคม" + DFS reconnaissance

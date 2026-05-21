@@ -362,6 +362,73 @@
 
 ---
 
+### V — Round 5 Additions (Section 5 Concern Universe)
+
+#### V1: Pain & Caries cluster bidirectional links
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| dental-caries | parent_of | white-spot-lesion | No | Reversible early stage |
+| dental-caries | parent_of | root-caries | No | Senior subtype |
+| dental-caries | symptom_of | dental-abscess | No | Untreated decay progresses to abscess |
+| dental-caries | related_to | dental-filling | Yes | Treatment relationship |
+| dental-caries | related_to | root-canal-treatment | Yes | Deep caries → endo |
+| dental-caries | related_to | xerostomia | Yes | Dry mouth = caries risk multiplier |
+| root-caries | related_to | gum-recession | Yes | Exposed root + decay |
+
+#### V2: Periodontal/Gum bidirectional links
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| dental-abscess | symptom_of | periodontitis | No | Acute manifestation |
+| dental-abscess | symptom_of | dental-caries | No | Pulpal origin variant |
+| dental-abscess | related_to | gingivitis | Yes | Acute gingival swelling |
+| pregnancy-gingivitis | subtype_of | gingivitis | No | Hormonal variant |
+| pregnancy-gingivitis | related_to | conscious-sedation | Yes | Q2 trimester safety considerations |
+
+#### V3: TMJ/Bruxism cluster
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| bruxism | related_to | tmj-disorder | Yes | Bidirectional causation |
+| bruxism | related_to | tooth-fracture | Yes | Wear → fracture |
+| tmj-disorder | related_to | malocclusion | Yes | Bite imbalance contribution |
+| bruxism | treats | tooth-fracture | No | Indirectly via prevention |
+
+#### V4: Wear/Trauma cluster
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| tooth-fracture | parent_of | cracked-tooth | No | Cracked = fracture subtype |
+| tooth-fracture | related_to | dental-crown | Yes | Crown protection treatment |
+| tooth-fracture | related_to | porcelain-veneer | Yes | Aesthetic restoration |
+
+#### V5: Post-Op/Complications
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| dry-socket | symptom_of | tooth-extraction | No | Post-extraction complication |
+| dry-socket | related_to | wisdom-tooth-removal | Yes | Most common after wisdom tooth |
+
+#### V6: Halitosis cluster (multi-cause)
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| halitosis | symptom_of | periodontitis | No | Perio = #1 cause |
+| halitosis | symptom_of | dental-caries | No | Deep caries gas |
+| halitosis | symptom_of | xerostomia | No | Low saliva → bacterial overgrowth |
+| halitosis | related_to | airflow-air-polishing | Yes | Tongue/biofilm removal treatment |
+
+#### V7: Xerostomia cross-references
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| xerostomia | related_to | dental-caries | Yes | Risk multiplier |
+| xerostomia | related_to | halitosis | Yes | Bacterial overgrowth |
+| xerostomia | related_to | pediatric-dentistry | Yes | Mouth-breathing kids |
+
+---
+
 ### U — Round 4 Additions (Insurance Coverage TH)
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
@@ -386,11 +453,11 @@
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 184 (+13 in R4) | ≥ 50 | ✅ |
+| Total edges | 215 (+31 in R5) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 142/144 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 44 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 37 (+3 in R4 for Q-Clinic) | — | ✅ |
+| Entities with ≥ 1 edge | 153/155 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 62 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 37 | — | ✅ |
 | Orphan entities (0 edges) | 2 | ≤ 8 | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**

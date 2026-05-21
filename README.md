@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~569p Round 4 — Q-Clinic SSO cluster added, pending client final feedback)
+│   └── sitemap.md                (~664p Round 5 — Section 5 concern universe expanded, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,10 +58,10 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 4 — 2026-05-21):**
-   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (19 clusters / 144 entities / 184 edges)
-   - Phase E 🟡 in progress — sitemap ~569p (Round 4 Q-Clinic SSO cluster locked, awaiting final client review)
-   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch)
+4. **Stage status (Round 5 — 2026-05-21):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (19 clusters / 155 entities / 215 edges)
+   - Phase E 🟡 in progress — sitemap ~664p (Round 5 Section 5 concern universe expansion locked, awaiting final client review)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch — R6)
 
 ---
 

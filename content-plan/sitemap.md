@@ -1,12 +1,13 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~569 (Round 4 expansion, 2026-05-21 — was 414→525→544 through R1+R2+R3) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~664 (Round 5 expansion, 2026-05-21 — was 414→525→544→569 through R1-R4) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
 > **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based)
 > **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition)
-> **Round 4 (2026-05-21):** **Q-Clinic SSO cluster** — 3.12 SSO Service Hub + 5.13 expansion (10-page sub-hub) + Branch SSO pages (8.2.6 + 8.3.6) + 6.2.7 Insurance Insights + 6.5.5 FAQ. ⭐ SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning — see `docs/changelog.md`
+> **Round 4 (2026-05-21):** Q-Clinic SSO cluster — 3.12 SSO Service Hub + 5.13 expansion + Branch SSO pages + 6.2.7 Insurance Insights + 6.5.5 FAQ. SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning
+> **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -30,11 +31,11 @@
 - **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages
 - **3. SERVICES:** ~232 pages (+6 R4 — Section 3.12 SSO Service Hub)
 - **4. TECHNOLOGY:** ~29 pages
-- **5. TREATMENT BY CONCERNS:** ~84 pages (+13 R4 — Section 5.13 SSO sub-hub expansion: 5.13.2.1-10 + 5.13.5/6/7)
+- **5. TREATMENT BY CONCERNS:** ~179 pages (+95 R5 — Section 5 concern universe expansion: re-tier 7 + W1-2 expand (+14) + W11 medical (+7) + 5.14-5.22 new clusters (+74))
 - **6. KNOWLEDGE:** 127 pages (+4 R4 — 6.2.7 Insurance Insights ×3 + 6.5.5 SSO FAQ)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R4:** ~569 pages (+25 from R3 baseline 544)
+- **TOTAL R5:** ~664 pages (+95 from R4 baseline 569)
 
 ---
 
@@ -672,7 +673,7 @@
 | 5.5.3 | → ฟันบิ่น / ฟันแตก — ซ่อมแซมให้สวยเหมือนเดิม | L4 | C | top | A | digital-smile-design |
 | 5.5.4 | → ฟันซ้อน ฟันเก — จัดฟันหรือทำวีเนียร์ | L4 | C | top | A | dental-veneer |
 | 5.5.5 | → ยิ้มเห็นเหงือก (Gummy Smile) — แก้ไขอย่างไร | L4 | C | top | A | gum-contouring |
-| 5.5.6 | → ฟันสึก ฟันสั้น — วิธีเสริมฟันให้สวย | L4 | D | top | A | digital-smile-design |
+| 5.5.6 | → ฟันสึก ฟันสั้น — วิธีเสริมฟันให้สวย (→ ดูเพิ่ม 5.16 ฟันสึก/แตก) | L4 | C | top | A | digital-smile-design |
 
 ### 5.6 ปัญหาฟันที่พบบ่อย
 
@@ -680,12 +681,26 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.6 | ปัญหาฟันที่พบบ่อย (hub) | L4 | C | top | A | dental-implant |
 | 5.6.1 | → ปวดฟัน — สาเหตุและวิธีรักษา | L4 | C | top | A | dental-implant |
-| 5.6.2 | → ฟันผุ — ป้องกันและรักษา | L4 | C | top | A | dental-implant |
-| 5.6.3 | → เหงือกบวม เลือดออก — สัญญาณโรคเหงือก | L4 | C | top | A | dental-implant |
+| 5.6.2 | → ฟันผุ — ป้องกันและรักษา (hub) 🌟 (DFS 22,200/mo LOW) | L4 | **A** | top | A | dental-caries |
+| 5.6.2.1 | → → ฟันผุระยะแรก / White Spot Lesion — รักษาได้ไม่ต้องอุด | L4 | C | top | A | white-spot-lesion |
+| 5.6.2.2 | → → ฟันผุลึกถึงเนื้อในฟัน — Pulpitis (→ link 3.11) | L4 | C | top | A | dental-caries |
+| 5.6.2.3 | → → ฟันผุไม่ปวดอันตรายไหม — Asymptomatic Caries | L4 | C | top | A | dental-caries |
+| 5.6.2.4 | → → ป้องกันฟันผุ — Fluoride + Sealant + Diet (→ 3.9.4 + 3.9.5) | L4 | C | top | A | fluoride-treatment |
+| 5.6.2.5 | → → ฟันผุข้างฟัน (Interproximal Caries) — ใช้ไหมขัดฟันป้องกัน | L4 | C | top | A | dental-caries |
+| 5.6.2.6 | → → ฟันผุที่รากฟัน (Root Caries) — common ผู้สูงอายุ | L4 | C | top | A | root-caries |
+| 5.6.3 | → เหงือกบวม + เลือดออกตามไรฟัน (hub) 🌟 (DFS 28,800/mo combined LOW) | L4 | **A** | top | A | dental-abscess |
+| 5.6.3.1 | → → สัญญาณโรคเหงือกที่ต้องพบหมอ (→ link 3.7) | L4 | C | top | A | gingivitis |
+| 5.6.3.2 | → → เหงือกบวม + มีหนอง (Periodontal/Periapical Abscess) | L4 | C | top | A | dental-abscess |
+| 5.6.3.3 | → → เหงือกบวม + ปวด (Acute Periodontitis) | L4 | C | top | A | periodontitis |
+| 5.6.3.4 | → → เลือดออกขณะแปรงฟัน (Bleeding on Probing) | L4 | C | top | A | gingivitis |
+| 5.6.3.5 | → → เลือดออกตามไรฟันโดยไม่ปวด — Silent Periodontitis | L4 | C | top | A | periodontitis |
+| 5.6.3.6 | → → เหงือกบวมระหว่างจัดฟัน | L4 | C | top | A | gingivitis |
+| 5.6.3.7 | → → เหงือกบวมรอบรากเทียม (→ link 3.7.7 Peri-Implantitis) | L4 | C | top | A | peri-implantitis |
+| 5.6.3.8 | → → ทำไมเหงือกบวมแล้วไม่หาย / เรื้อรัง | L4 | C | mid | A | periodontitis |
 | 5.6.4 | → ฟันคุด — ต้องผ่าหรือเปล่า | L4 | C | top | A | wisdom-tooth-removal |
-| 5.6.5 | → ฟันร้าว — อาการและการรักษา | L4 | D | top | A | dental-implant |
-| 5.6.6 | → กลิ่นปาก — สาเหตุและวิธีแก้ | L4 | D | top | A | dental-implant |
-| 5.6.7 | → ฟันคลอน — อาการและทางเลือก | L4 | D | top | A | dental-implant |
+| 5.6.5 | → ฟันร้าว — อาการและการรักษา (→ 5.16 + 3.11.7) | L4 | **B** | top | A | cracked-tooth |
+| 5.6.6 | → กลิ่นปาก — สาเหตุและวิธีแก้ (→ 5.17 deep-dive) | L4 | **B** | top | A | halitosis |
+| 5.6.7 | → ฟันคลอน / ฟันโยก (DFS 1,300/mo) (→ 5.16) | L4 | **B** | top | A | periodontitis |
 
 ### 5.7 ข้อกังวลเรื่องรากฟันเทียม
 
@@ -713,6 +728,13 @@
 | 5.8.3 | → ทำฟันหญิงตั้งครรภ์ | L4 | D | top | A | dental-implant |
 | 5.8.4 | → ทำฟันผู้ป่วยโรคหัวใจ | L4 | D | top | A | dental-implant |
 | 5.8.5 | → ทำฟันผู้ป่วยที่กินยาละลายลิ่มเลือด | L4 | D | top | A | dental-implant |
+| 5.8.6 | → ผู้ป่วยมะเร็ง + ทำฟัน — ก่อน/ระหว่าง/หลังเคมีบำบัด (R5) | L4 | C | mid | A | dental-implant |
+| 5.8.7 | → ผู้ป่วยภูมิคุ้มกันต่ำ — Immunocompromised Dentistry (R5) | L4 | C | mid | A | dental-implant |
+| 5.8.8 | → ผ่าตัดเปลี่ยนข้อเข่า / สะโพก — Antibiotic Prophylaxis (R5) | L4 | C | mid | A | dental-implant |
+| 5.8.9 | → ผู้ป่วยกินยา Bisphosphonate (Osteoporosis) — MRONJ Risk ⚠️ (R5) | L4 | C | mid | A | dental-implant |
+| 5.8.10 | → ผู้ป่วยรับรังสีรักษา (Head & Neck Radiation) — ORN Risk (R5) | L4 | D | mid | A | dental-implant |
+| 5.8.11 | → ผู้ป่วยตับ / ไต — Renal & Hepatic considerations (R5) | L4 | D | mid | A | dental-implant |
+| 5.8.12 | → ภูมิแพ้ตัวเอง (Lupus / Sjögren's / RA) (R5) | L4 | D | mid | A | xerostomia |
 
 ### 5.9 FAQ — คำถามที่พบบ่อย
 
@@ -744,7 +766,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.11 | ปัญหาเหงือก — สัญญาณที่ไม่ควรมองข้าม (hub) | L4 | C | top | A | periodontitis |
-| 5.11.1 | → เหงือกร่น — สาเหตุและการรักษา | L4 | C | top | A | gum-recession |
+| 5.11.1 | → เหงือกร่น — สาเหตุและการรักษา 🌟 (DFS 9,900/mo LOW) (→ link 3.2.9.7.3 Root Coverage) | L4 | **A** | top | A | gum-recession |
 | 5.11.2 | → เหงือกดำ / เหงือกคล้ำ — แก้ไขอย่างไร | L4 | D | top | A | periodontitis |
 | 5.11.3 | → โรคปริทันต์ขั้นรุนแรง — ฟันจะหลุดไหม | L4 | C | top | A | periodontitis |
 | 5.11.4 | → เหงือกร่นรอบรากฟันเทียม — สาเหตุและวิธีแก้ 🌟 | L4 | C | top | A | gum-recession |
@@ -788,6 +810,132 @@
 | 5.13.5 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
 | 5.13.6 | → ประกันชีวิต / ประกันสุขภาพเอกชน เบิกค่าทำฟันได้ไหม | L4 | C | bottom | A | private-dental-insurance-th |
 | 5.13.7 | → ค่าทำฟันลดหย่อนภาษีได้ไหม | L4 | D | bottom | D | dental-implant |
+
+
+### 5.14 ปวดฟัน + ฉุกเฉิน — Acute Pain & Emergency 🌟
+> 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — R5 DFS-informed expansion
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.14 | ปวดฟัน + ฉุกเฉิน (hub) | L4 | B | top | A | dental-caries |
+| 5.14.1 | → ปวดฟันรุนแรงตอนกลางคืน — Emergency | L4 | C | top | A | dental-caries |
+| 5.14.2 | → ปวดฟันร้าวขมับ / ร้าวหู | L4 | C | top | A | dental-caries |
+| 5.14.3 | → ปวดฟันเป็นๆ หายๆ (Reversible vs Irreversible Pulpitis) | L4 | C | top | A | dental-caries |
+| 5.14.4 | → ปวดฟันแม้ไม่ผุ — สาเหตุที่ไม่คาดคิด | L4 | C | top | A | dental-caries |
+| 5.14.5 | → ฟันยังอยู่ แต่ปวดมาก (Acute Pulpitis) — รักษารากด่วน | L4 | C | top | A | root-canal-treatment |
+| 5.14.6 | → เด็กปวดฟันคืนนี้ — Pediatric Emergency (→ link 3.9) | L4 | C | top | A | pediatric-dentistry |
+| 5.14.7 | → ปวดหลังถอนฟัน — Dry Socket (→ link 5.19.4) | L4 | C | top | A | dry-socket |
+| 5.14.8 | → ปวดฟันคุดที่จะขึ้น (Pericoronitis) | L4 | C | top | A | wisdom-tooth-removal |
+
+### 5.15 ขากรรไกร / TMJ / นอนกัดฟัน 🌟
+> 📊 **DR-022 Layer 2: VOLUME-DRIVEN**
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.15 | ขากรรไกร / TMJ / นอนกัดฟัน (hub) | L4 | B | top | A | tmj-disorder |
+| 5.15.1 | → นอนกัดฟัน Bruxism — สาเหตุ + แก้ไข | L4 | C | top | A | bruxism |
+| 5.15.2 | → ขากรรไกรค้าง / Locked Jaw | L4 | C | top | A | tmj-disorder |
+| 5.15.3 | → ขากรรไกรมีเสียงคลิ๊ก / Clicking | L4 | C | top | A | tmj-disorder |
+| 5.15.4 | → ปวดกราม / Jaw Pain | L4 | C | top | A | tmj-disorder |
+| 5.15.5 | → ฟันสึกจากการกัดฟัน (→ link 5.16) | L4 | C | top | A | bruxism |
+| 5.15.6 | → Night Guard / Occlusal Splint | L4 | C | mid | A | bruxism |
+| 5.15.7 | → Botox สำหรับ TMJ / Masseter (clinical only) | L4 | D | mid | D | tmj-disorder |
+
+### 5.16 ฟันสึก / แตก / บิ่น / ร้าว — Trauma & Wear 🌟
+> 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — R5 DFS-informed (ฟันแตก 3.6k + ฟันสึก 1k + ฟันบิ่น 1k + ฟันโยก 1.3k LOW)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.16 | ฟันสึก / แตก / บิ่น / ร้าว (hub) | L4 | B | top | A | tooth-fracture |
+| 5.16.1 | → ฟันสึก — Attrition / Abfraction / Erosion (DFS 1,000/mo) | L4 | B | top | A | tooth-fracture |
+| 5.16.2 | → ฟันบิ่น — ทำยังไงดี (DFS 1,000/mo) | L4 | B | top | A | tooth-fracture |
+| 5.16.3 | → ฟันแตก — Vertical Root Fracture (DFS 3,600/mo) | L4 | B | top | A | cracked-tooth |
+| 5.16.4 | → ฟันร้าว — Cracked Tooth Syndrome (→ link 3.11.7) | L4 | B | top | A | cracked-tooth |
+| 5.16.5 | → ฟันสึกจากกรด — น้ำส้ม / กาแฟ / น้ำอัดลม (Erosion) | L4 | C | top | A | tooth-fracture |
+| 5.16.6 | → ฟันสึกจากการแปรงฟันแรง (Abfraction) | L4 | C | top | A | tooth-fracture |
+| 5.16.7 | → ฟันสึกจากนอนกัดฟัน (→ link 5.15) | L4 | C | top | A | bruxism |
+
+### 5.17 กลิ่นปาก / Halitosis 🌟
+> 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — R5 DFS-informed (กลิ่นปาก 590/mo MEDIUM)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.17 | กลิ่นปาก / Halitosis (hub) | L4 | B | top | A | halitosis |
+| 5.17.1 | → กลิ่นปาก — สาเหตุและประเภท | L4 | C | top | A | halitosis |
+| 5.17.2 | → กลิ่นปากตอนเช้า — Morning Breath | L4 | C | top | A | halitosis |
+| 5.17.3 | → ทำไมแปรงฟันแล้วยังมีกลิ่นปาก | L4 | C | top | A | halitosis |
+| 5.17.4 | → ลิ้นเป็นฝ้าขาว → กลิ่นปาก (Tongue Coating) | L4 | C | top | A | halitosis |
+| 5.17.5 | → กลิ่นปากจากเหงือกอักเสบ (→ link 5.6.3) | L4 | C | top | A | gingivitis |
+| 5.17.6 | → กลิ่นปากจากรากฟันอักเสบ (→ link 3.11) | L4 | C | top | A | root-canal-treatment |
+| 5.17.7 | → กลิ่นปากระหว่างจัดฟัน | L4 | C | top | A | clear-aligner |
+| 5.17.8 | → น้ำลายเหม็น vs กลิ่นปาก (DFS 590/mo MEDIUM) | L4 | C | top | A | halitosis |
+
+### 5.18 ปากแห้ง / Xerostomia 🌟
+> 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — R5 DFS-informed (ปากแห้ง 1,900/mo LOW)
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.18 | ปากแห้ง / Dry Mouth (hub) | L4 | C | top | A | xerostomia |
+| 5.18.1 | → ปากแห้ง — สาเหตุครบทุกแบบ | L4 | C | top | A | xerostomia |
+| 5.18.2 | → ปากแห้งจากยา (เบาหวาน / ความดัน / ภูมิแพ้) | L4 | C | top | A | xerostomia |
+| 5.18.3 | → ปากแห้งจากหายใจทางปาก | L4 | C | top | A | xerostomia |
+| 5.18.4 | → ปากแห้ง + ฟันผุง่าย — Caries Risk | L4 | C | top | A | xerostomia |
+| 5.18.5 | → Sjögren's Syndrome — Autoimmune Dry Mouth (→ link 5.8.12) | L4 | D | top | A | xerostomia |
+| 5.18.6 | → Aging + ปากแห้ง (→ link 5.8.1 senior care) | L4 | D | top | A | xerostomia |
+
+### 5.19 หลังถอน / ผ่าตัด / ทำหัตถการ — Post-Op & Recovery 🌟
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.19 | หลังถอน / ผ่าตัด / ทำหัตถการ (hub) | L4 | B | mid | A | tooth-extraction |
+| 5.19.1 | → หลังถอนฟันต้องทำยังไง | L4 | C | mid | A | tooth-extraction |
+| 5.19.2 | → หลังถอนฟันปวด — เมื่อไหร่ผิดปกติ | L4 | C | mid | A | tooth-extraction |
+| 5.19.3 | → หลังถอนฟันเลือดออกไม่หยุด — When to come back | L4 | C | mid | A | tooth-extraction |
+| 5.19.4 | → Dry Socket — ภาวะแทรกซ้อนหลังถอน (DFS conversion intent) | L4 | C | mid | A | dry-socket |
+| 5.19.5 | → หลังผ่าฟันคุดต้องทำยังไง | L4 | C | mid | A | wisdom-tooth-removal |
+| 5.19.6 | → หลังฝังรากเทียมต้องทำยังไง (→ link 3.2.12) | L4 | C | mid | A | dental-implant |
+| 5.19.7 | → หลังจัดฟันต้องทำยังไง | L4 | C | mid | A | clear-aligner |
+| 5.19.8 | → หลังผ่าตัดเหงือก (→ link 3.2.9.7) | L4 | C | mid | A | soft-tissue-management |
+| 5.19.9 | → กินอะไรหลังทำฟัน | L4 | D | mid | A | tooth-extraction |
+| 5.19.10 | → ยาที่ใช้หลังทำฟัน + ยาแก้ปวด | L4 | D | mid | A | tooth-extraction |
+
+### 5.20 ทำฟันตอนตั้งครรภ์ / หลังคลอด 🌟
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.20 | ทำฟันตอนตั้งครรภ์ / หลังคลอด (hub) | L4 | C | top | A | pregnancy-gingivitis |
+| 5.20.1 | → ตั้งครรภ์ทำฟันได้ไหม | L4 | C | top | A | pregnancy-gingivitis |
+| 5.20.2 | → ตั้งครรภ์ + เอกซเรย์ฟัน — ปลอดภัยไหม | L4 | C | top | A | cbct-3d-scan |
+| 5.20.3 | → ตั้งครรภ์ + ดมยาทำฟัน | L4 | C | top | A | conscious-sedation |
+| 5.20.4 | → ตั้งครรภ์ + เหงือกบวม (Pregnancy Gingivitis) (→ link 5.6.3) | L4 | C | top | A | pregnancy-gingivitis |
+| 5.20.5 | → หลังคลอดทำฟันได้เมื่อไหร่ | L4 | C | top | A | dental-caries |
+| 5.20.6 | → ให้นมบุตร + ทำฟัน (Breastfeeding-safe) | L4 | C | top | A | dental-caries |
+| 5.20.7 | → ไตรมาสที่เหมาะกับการทำฟัน (Q2 = safest) | L4 | C | top | A | pregnancy-gingivitis |
+
+### 5.21 เลือกหมอฟัน / เลือกคลินิกที่ดี 🌟
+> 🔝 **Top-funnel decision-maker content** — high authority potential
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.21 | เลือกหมอฟัน / เลือกคลินิก (hub) | L4 | B | top | A | smilescape-dental-clinic |
+| 5.21.1 | → เลือกหมอฟันยังไงให้ได้ผู้เชี่ยวชาญจริง | L4 | C | top | A | smilescape-dental-clinic |
+| 5.21.2 | → ดูยังไงว่าคลินิกได้มาตรฐาน | L4 | C | top | A | smilescape-dental-clinic |
+| 5.21.3 | → ทันตแพทย์ทั่วไป vs ทันตแพทย์เฉพาะทาง | L4 | C | top | D | dr-woraphat-jarangkul |
+| 5.21.4 | → คลินิก vs โรงพยาบาล ทำฟัน | L4 | C | top | D | smilescape-dental-clinic |
+| 5.21.5 | → ดูยังไงว่าหมอฟันเก่งเรื่องราก (→ link 2.2.2) | L4 | C | top | D | dr-woraphat-jarangkul |
+| 5.21.6 | → เปลี่ยนหมอฟัน — ย้ายเคสไปคลินิกใหม่ได้ไหม | L4 | C | top | A | smilescape-dental-clinic |
+| 5.21.7 | → ราคาคุ้มค่า vs ราคาถูกที่สุด | L4 | C | top | D | smilescape-dental-clinic |
+
+### 5.22 ทำฟันแล้วใช้ชีวิตยังไง — Lifestyle Impact
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 5.22 | ทำฟันแล้วใช้ชีวิตยังไง (hub) | L4 | D | mid | A | dental-implant |
+| 5.22.1 | → ทำฟันแล้วกินอาหารร้อน / เย็น / เผ็ด | L4 | D | mid | A | dental-implant |
+| 5.22.2 | → ทำฟันแล้วดื่มกาแฟ / ชา / ไวน์ | L4 | D | mid | A | dental-implant |
+| 5.22.3 | → ทำฟันแล้วบินเครื่องบิน | L4 | D | mid | A | dental-implant |
+| 5.22.4 | → ทำฟันแล้วเล่นกีฬา / ดำน้ำ | L4 | D | mid | A | dental-implant |
+| 5.22.5 | → ทำฟันแล้วใส่หน้ากาก / ทำงานกลางคืน | L4 | D | mid | A | dental-implant |
 
 ---
 
