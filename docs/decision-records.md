@@ -131,12 +131,43 @@ Promote Internal Sinus Lift with Densah Bur to **Signature Offering #5** in `bra
 
 ---
 
+## [SS-DR-008] — Zero Bone Loss Concept as Brand Clinical Framework (2026-05-21)
+
+**Status:** Locked (operator confirmed via Round 3 trade-off — chose Brand Framework over Signature Offering)
+**Companion to:** SS-DR-007 (Densah Signature #5) — distinguishes Framework vs Technique categorization
+
+**Context:**
+Round 3 sitemap expansion identified Tomas Linkevicius's "Zero Bone Loss Concept" (Quintessence 2019 textbook + 2009+ research) as a clinical framework that SmileScape adopts. DFS validation: direct keyword volume very low (zero bone loss concept 20/mo TH, linkevicius 10/mo) — not a traffic target but a strong E-E-A-T authority anchor.
+
+**Decision:**
+Treat ZBL as **clinical_protocols[0]** in `brand-config.json` — separate from `signature_offerings`. Rationale:
+
+- **Signature Offering** = named procedure/technique we perform (Sausage, Densah, Soft Tissue protocols, Blue Diamond)
+- **Clinical Protocol** = philosophy/approach that informs HOW we perform implants (ZBL)
+
+ZBL joins SMILE DNA (values) + Family Standard (ethics) as the brand triad — each is a framework, not a technique.
+
+**Implications:**
+- `brand-config.json` `clinical_protocols[0]` entry with core_principles array + `_operator_action_required` flag for หมอแฮม Linkevicius training credential
+- Entity `zero-bone-loss-concept` (Concept, brand-scope=['smile-scape']) + `dr-tomas-linkevicius` (Person, brand-scope=['*'] — external authority)
+- Sitemap page 2.1.6 "Our Protocol: Zero Bone Loss by Tomas Linkevicius" (Tier B brand authority page)
+- Section 6.4.14 Linkevicius 2009-2020 Evidence Summary
+- 9 cross-cluster edges woven: ZBL related_to dental-implant / lifetime-warranty / smile-dna / family-standard / keratinized-mucosa / peri-implantitis (prevention) + evidenced_by dr-tomas-linkevicius + dr-woraphat-jarangkul related_to ZBL + linkevicius
+- Pending operator: หมอแฮม Linkevicius training certificate / textbook ownership confirmation — required to write 2.1.6 + Section 2.2.2 credentials
+
+**Rationale (vs Signature Offering #6 alternative):**
+- ZBL is not a procedure SmileScape "does" — it's a way SmileScape "thinks"
+- Dilution risk: adding ZBL to signature_offerings would dilute the meaning of "signature technique" (which currently = named procedures with attendable masterclasses)
+- Better categorization: framework triad position (alongside SMILE DNA + Family Standard) gives ZBL its proper weight without misclassifying
+
+---
+
 ## Future Brand-Specific DRs (placeholders)
 
-- SS-DR-008: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
-- SS-DR-009: Multilingual launch decision (TH only initially → EN when?)
-- SS-DR-010: International medical tourism positioning (vs domestic-first focus)
-- SS-DR-011: Cross-brand link governance (DR-021 once locked)
+- SS-DR-009: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
+- SS-DR-010: Multilingual launch decision (TH only initially → EN when?)
+- SS-DR-011: International medical tourism positioning (vs domestic-first focus)
+- SS-DR-012: Cross-brand link governance (DR-021 once locked)
 
 ---
 

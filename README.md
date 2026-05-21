@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~525p Round 2 — was 414, pending client final feedback)
+│   └── sitemap.md                (~544p Round 3 — DFS-informed, pending client final feedback)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,10 +58,10 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 2 — 2026-05-21):**
-   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (18 clusters / 131 entities / 151 edges)
-   - Phase E 🟡 in progress — sitemap ~525p (Round 2 expansion locked, awaiting final client review)
-   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO KW research)
+4. **Stage status (Round 3 — 2026-05-21):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (18 clusters / 139 entities / 171 edges)
+   - Phase E 🟡 in progress — sitemap ~544p (Round 3 DFS-informed batch locked, awaiting final client review)
+   - Stage 1 Gate ❌ pending (sitemap final approval + DataForSEO full keyword research batch)
 
 ---
 
@@ -101,20 +101,22 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 
 ---
 
-## ⏭ Pending Actions (operator — Round 2)
+## ⏭ Pending Actions (operator — Round 3)
 
-1. Final client review of ~525p sitemap (Round 2 expansion locked 2026-05-21)
-2. **Dr. Woraphat Versah training / Huwais workshop credential** (for Densah Signature #5 anchor → Section 2.2.2 หมอแฮม + brand-config.json signature_offerings[4])
-3. Doctor Praeo (หมอแพรว) full credentials
-4. Pediatric Team + Endodontist Team specialist names + credentials (for Section 2.2.9 + 2.2.10)
-5. Branch addresses + GPS + phone + LINE OA + GBP Place IDs (per branches.md)
-6. Verify Neodent series in inventory (GM / Drive / Easy Cone)
-7. Verify 3Shape TRIOS model (TRIOS 5 / TRIOS 4 / TRIOS Move)
-8. Verify Acteon CBCT model (X-Mind Trium / X-Mind Prime)
-9. Implant brand inventory completeness check (Blue Diamond + Neodent + Straumann + Ceramic — Osstem confirmed removed)
-10. DataForSEO keyword research data (Stage 1 Gate dependency)
+1. Final client review of ~544p sitemap (Round 3 DFS-informed batch locked 2026-05-21)
+2. **Dr. Woraphat Versah training / Huwais workshop credential** (for Densah Signature #5 → Section 2.2.2 + brand-config signature_offerings[4])
+3. **Dr. Woraphat Linkevicius training / Zero Bone Loss textbook ownership** (R3 — for ZBL Brand Framework → Section 2.1.6 + brand-config clinical_protocols[0])
+4. Doctor Praeo (หมอแพรว) full credentials
+5. Pediatric Team + Endodontist Team specialist names + credentials (for Section 2.2.9 + 2.2.10)
+6. Peri-Implantitis specialist credential — if Periodontist on team (R3)
+7. Branch addresses + GPS + phone + LINE OA + GBP Place IDs (per branches.md)
+8. Verify Neodent series in inventory (GM / Drive / Easy Cone)
+9. Verify 3Shape TRIOS model (TRIOS 5 / TRIOS 4 / TRIOS Move)
+10. Verify Acteon CBCT model (X-Mind Trium / X-Mind Prime)
+11. Gold crown supplier / lab confirmation — alloy tier (Noble / High-Noble / PFM gold-ceramic) (R3)
+12. DataForSEO **full** keyword research batch (Stage 1 Gate dependency — R3 fired targeted reconnaissance only)
 
-See `docs/brand-concept.md` §14 for full open questions list. See `docs/changelog.md` for Round 2 detail.
+See `docs/brand-concept.md` §14 for full open questions list. See `docs/changelog.md` for Round 2 + Round 3 detail.
 
 ---
 

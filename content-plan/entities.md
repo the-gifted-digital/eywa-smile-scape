@@ -12,16 +12,16 @@
 
 | Type | Count | Notes |
 |------|-------|-------|
-| Treatment | 32 | Long-term/behavioral therapies + restorative + pediatric + cosmetic + anti-recession |
-| Procedure | 44 | One-time clinical procedures (incl. Urban signature techniques + endo + sedation) |
-| Condition | 16 | Patient-facing diseases + bone deficiency + black-triangle + cracked tooth + dental anxiety |
-| Product | 9 | Implant systems (Blue Diamond / Neodent / Straumann / Ceramic), aligners, biomaterials |
-| Concept | 7 | Abstract clinical/brand concepts (incl. SMILE DNA, warranty, behavior management) |
-| Anatomy | 6 | Bone, gum, sinus, jaw anatomical structures |
-| Device | 13 | CBCT (Acteon) / IOS (3Shape TRIOS) / Surgical Guide / PTFE / RPM / Densah / Airflow / Cool Light / Endo Microscope / Space Maintainer |
-| Organization | 3 | SmileScape clinic + 2 branches (รัตนาธิเบศร์, ศรีนครินทร์) |
-| Person | 1 | Dr. Woraphat Jarangkul |
-| **Total** | **131** | (was 83 at initial Phase C — +48 in Round 2 expansion) |
+| Treatment | 33 | + gold-crown (R3) |
+| Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
+| Condition | 16 | (unchanged R3) |
+| Product | 9 | (unchanged R3) |
+| Concept | 8 | + zero-bone-loss-concept (R3) |
+| Anatomy | 6 | (unchanged) |
+| Device | 13 | (unchanged R3) |
+| Organization | 3 | (unchanged) |
+| Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
+| **Total** | **139** | (was 131 at R2 — +8 in Round 3) |
 
 ---
 
@@ -154,6 +154,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 4 | Teeth Whitening | teeth-whitening | Treatment | MedicalProcedure | — | — | Mature | 3.4.7 | ฟอกสีฟัน, tooth bleaching, ฟันขาว | ['*'] | |
 | 5 | Dental Crown | dental-crown | Treatment | MedicalDevice | — | — | Mature | 3.4.4 | ครอบฟัน, tooth cap, crown | ['*'] | |
 | 6 | Zirconia Crown | zirconia-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.4.4.1 | ครอบฟันเซอร์โคเนีย, zirconia cap | ['*'] | All-ceramic crown — high aesthetic + strength |
+| 7 | Gold Crown | gold-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.4.4.4 | ครอบฟันทอง, ครอบฟันทองคำ, gold crown, ครอบฟันโลหะมีค่า, ทองครอบฟัน | ['*'] | Premium metal-ceramic / full-cast gold crown. Long lifespan, biocompatibility, posterior teeth preference. Traditional Asian luxury anchor. DFS volume: gold crown 320/mo TH LOW competition (R3-validated) |
 
 ---
 
@@ -193,7 +194,12 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 1 | Gingivitis | gingivitis | Condition | MedicalCondition | — | K05.10 | Mature | 3.7.1 | เหงือกอักเสบ, gum inflammation, bleeding gums | ['*'] | Early gum disease — reversible |
 | 2 | Periodontitis | periodontitis | Condition | MedicalCondition | gingivitis | K05.30 | Mature | 3.7.2 | โรคปริทันต์, periodontal disease, gum disease, โรคเหงือก | ['*'] | Major cause of tooth loss. Must treat before implant. |
 | 3 | Gum Recession | gum-recession | Condition | MedicalCondition | periodontitis | K06.010 | Mature | 3.7.4 | เหงือกร่น, receding gums | ['*'] | Exposes root, affects aesthetics, complicates implant |
-| 4 | Peri-Implantitis | peri-implantitis | Condition | MedicalCondition | periodontitis | M27.62 | Mature | 3.2.10.9 | การติดเชื้อรอบรากเทียม, implant infection, peri-implant disease | ['*'] | Implant-site infection — major threat to implant longevity. PP-14 |
+| 4 | Peri-Implantitis | peri-implantitis | Condition | MedicalCondition | periodontitis | M27.62 | Mature | 3.7.7 | การติดเชื้อรอบรากเทียม, implant infection, peri-implant disease | ['*'] | Implant-site infection — major threat to implant longevity. PP-14. DFS: peri-implantitis 140/mo TH LOW competition (R3-validated → dedicated service hub 3.7.7) |
+| 5 | Peri-Implantitis Treatment | peri-implantitis-treatment | Procedure | MedicalProcedure | peri-implantitis | M27.62 | Growing | 3.7.7 | รักษา peri-implantitis, peri-implantitis surgery, peri-implant infection treatment | ['*'] | Multi-modality service: non-surgical decontamination + surgical access + regenerative/resective + implantoplasty + laser. Salvage vs explantation decision tree. Dedicated service R3 |
+| 6 | Implantoplasty | implantoplasty | Procedure | MedicalProcedure | peri-implantitis-treatment | — | Growing | 3.7.7.6 | implantoplasty, implant surface modification, รากเทียมปรับผิว | ['*'] | Mechanical smoothing of exposed implant threads — reduces biofilm retention |
+| 7 | Regenerative Peri-Implantitis Surgery | regenerative-peri-implantitis-surgery | Procedure | MedicalProcedure | peri-implantitis-treatment | — | Growing | 3.7.7.4 | regenerative peri-implant surgery, peri-implant bone graft, GBR rescue | ['*'] | Bone grafting around failing implant to restore bone support |
+| 8 | Resective Peri-Implantitis Surgery | resective-peri-implantitis-surgery | Procedure | MedicalProcedure | peri-implantitis-treatment | — | Mature | 3.7.7.5 | resective peri-implant surgery, apically positioned flap | ['*'] | Bone reshaping + apical repositioning — for advanced defects where regeneration not predictable |
+| 9 | Dental Laser Therapy | dental-laser-therapy | Procedure | MedicalProcedure | — | — | Growing | 3.7.7.7 | dental laser, Er:YAG laser, diode laser, photobiomodulation | ['*'] | Adjunctive therapy in periodontics + peri-implantitis. Decontamination + healing acceleration |
 
 ---
 
@@ -355,6 +361,8 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 5 | Lifetime Implant Warranty | lifetime-implant-warranty | Concept | — | smilescape-dental-clinic | — | Growing | 2.3.3 | รับประกันตลอดชีพ, lifetime warranty, implant guarantee | ['smile-scape'] | SmileScape's competitive differentiator vs LDC (10-yr) and SmileSeasons (TBD) |
 | 6 | SmileScape สาขารัตนาธิเบศร์ | smilescape-rattanathibet | Organization | Dentist | smilescape-dental-clinic | — | Growing | 8.2 | สาขารัตนาธิเบศร์, SmileScape Rattanathibet, SmileScape นนทบุรี, สาขานนทบุรี, MRT สีม่วง | ['smile-scape'] | Primary branch. Transit: MRT สีม่วง สถานีรัตนาธิเบศร์. Full address/GPS/phone TBD. See `branches.md`. schema:LocalBusiness + Dentist |
 | 7 | SmileScape สาขาศรีนครินทร์ | smilescape-srinakarin | Organization | Dentist | smilescape-dental-clinic | — | Growing | 8.3 | สาขาศรีนครินทร์, SmileScape Srinakarin, SmileScape สวนหลวง ร.9, MRT สีเหลือง | ['smile-scape'] | Primary branch. Transit: MRT สีเหลือง. Full address/GPS/phone TBD. See `branches.md`. schema:LocalBusiness + Dentist |
+| 8 | Zero Bone Loss Concept | zero-bone-loss-concept | Concept | — | smilescape-dental-clinic | — | Growing | 2.1.6 | Zero Bone Loss, ZBL Protocol, Linkevicius Protocol, ZBL Concept | ['smile-scape'] | Brand clinical framework (R3). Authority: Dr. Tomas Linkevicius (Lithuania, 2009+ research, 2019 Quintessence textbook). Pairs with SMILE DNA + Family Standard as brand triad. Subcrestal placement / platform switching / tissue-level abutment / cement-screw retention / KM ≥2mm / maintenance protocol. Pending operator: หมอแฮม Linkevicius training credential. DFS volume: zero bone loss concept 20/mo (E-E-A-T anchor, not traffic target) |
+| 9 | Dr. Tomas Linkevicius | dr-tomas-linkevicius | Person | Physician | — | — | Mature | — | Tomas Linkevicius, Linkevicius, Linkevichus, Vilnius Implant | ['*'] | External authority anchor — Lithuanian implant specialist, author "Zero Bone Loss Concept" (Quintessence 2019). Referenced for E-E-A-T in implant content. DFS: linkevicius 10/mo TH |
 
 ---
 

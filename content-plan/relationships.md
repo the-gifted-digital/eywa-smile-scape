@@ -323,16 +323,55 @@
 
 ---
 
+### T — Round 3 Additions (ZBL + Peri-Implantitis Service + Gold Crown)
+
+#### T1: ZBL Brand Framework edges
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| zero-bone-loss-concept | evidenced_by | dr-tomas-linkevicius | No | Authority anchor — Linkevicius 2009+ research + 2019 Quintessence textbook |
+| zero-bone-loss-concept | related_to | dental-implant | Yes | ZBL = how SmileScape does implants (philosophy/protocol) |
+| zero-bone-loss-concept | related_to | lifetime-implant-warranty | Yes | Zero bone loss = warranty validity foundation |
+| zero-bone-loss-concept | related_to | keratinized-mucosa | Yes | ZBL requires ≥2mm keratinized tissue around implant |
+| zero-bone-loss-concept | related_to | smile-dna | Yes | Brand triad: SMILE DNA (values) + Family Standard (ethics) + ZBL (clinical protocol) |
+| zero-bone-loss-concept | related_to | family-standard | Yes | Brand triad complement |
+| dr-woraphat-jarangkul | related_to | zero-bone-loss-concept | Yes | Practitioner of ZBL protocol (pending Linkevicius training credential confirm) |
+| dr-woraphat-jarangkul | related_to | dr-tomas-linkevicius | Yes | External authority/mentor reference (pending operator confirmation) |
+| airflow-air-polishing | uses | zero-bone-loss-concept | No | GBT + Airflow = ZBL maintenance protocol component |
+
+#### T2: Peri-Implantitis Service edges
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| peri-implantitis-treatment | treats | peri-implantitis | No | Service entity treats condition entity |
+| peri-implantitis-treatment | parent_of | implantoplasty | No | — |
+| peri-implantitis-treatment | parent_of | regenerative-peri-implantitis-surgery | No | — |
+| peri-implantitis-treatment | parent_of | resective-peri-implantitis-surgery | No | — |
+| peri-implantitis-treatment | uses | dental-laser-therapy | No | Laser-assisted decontamination |
+| regenerative-peri-implantitis-surgery | uses | guided-bone-regeneration | No | GBR principles applied to peri-implant defects |
+| regenerative-peri-implantitis-surgery | uses | rpm-membrane | No | Space maintenance for peri-implant defects |
+| peri-implantitis | symptom_of | periodontitis | No | Shared pathophysiology — bacterial biofilm |
+| zero-bone-loss-concept | related_to | peri-implantitis | Yes | ZBL prevents peri-implantitis via maintenance protocol |
+
+#### T3: Gold Crown edges
+
+| From Entity | Edge Type | To Entity | Bidirectional | Notes |
+|-------------|-----------|-----------|:---:|-------|
+| gold-crown | subtype_of | dental-crown | No | Material variant of dental crown |
+| gold-crown | alternative_to | zirconia-crown | Yes | Premium crown material decision tree |
+
+---
+
 ## Graph Health Check
 
 | Metric | Value | Target | Status |
 |--------|-------|--------|--------|
-| Total edges | 151 | ≥ 50 | ✅ |
+| Total edges | 171 (+20 in R3) | ≥ 50 | ✅ |
 | Edge types used | 10/10 | 10/10 | ✅ |
-| Entities with ≥ 1 edge | 125/131 | ≥ 70% | ✅ |
-| Bidirectional edges (Yes) | 28 | — | ✅ |
-| Brand-scope=['smile-scape'] edges | 26 | — | ✅ |
-| Orphan entities (0 edges) | 6 | ≤ 8 | ✅ |
+| Entities with ≥ 1 edge | 137/139 | ≥ 70% | ✅ |
+| Bidirectional edges (Yes) | 35 | — | ✅ |
+| Brand-scope=['smile-scape'] edges | 34 | — | ✅ |
+| Orphan entities (0 edges) | 2 | ≤ 8 | ✅ |
 
 **Orphan entities (no edges — accepted at Phase C):**
 - `teeth-whitening` — standalone cosmetic treatment; gains edges in Phase D

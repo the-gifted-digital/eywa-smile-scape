@@ -93,7 +93,31 @@
     "all_on_x",
     "smile_design",
     "orthodontics_clear_aligner",
-    "general_restorative_dentistry"
+    "general_restorative_dentistry",
+    "peri_implantitis_treatment",
+    "pediatric_dentistry",
+    "endodontics_specialist",
+    "sedation_dentistry"
+  ],
+
+  "clinical_protocols": [
+    {
+      "name": "Zero Bone Loss Concept",
+      "abbreviation": "ZBL",
+      "url_slug": "zero-bone-loss-protocol",
+      "type": "clinical_framework",
+      "authority_anchor": "Dr. Tomas Linkevicius (Lithuania) — 2009+ research + 2019 textbook",
+      "_doc": "Brand clinical protocol framework — how we approach implant placement to achieve zero crestal bone loss. NOT a signature offering technique (those are named procedures); ZBL is the philosophy/protocol that informs HOW we do implants. Pairs with SMILE DNA (values) and Family Standard (ethics) as brand triad.",
+      "core_principles": [
+        "Subcrestal implant placement (1-3mm below crest)",
+        "Platform switching",
+        "Tissue-level abutment selection",
+        "Cement-screw retention hybrid",
+        "Adequate keratinized tissue (≥2mm)",
+        "Maintenance protocol — Airflow + GBT periodontal care"
+      ],
+      "_operator_action_required": "ยืนยัน หมอแฮม Linkevicius training credential / textbook ownership (Zero Bone Loss Concept, Quintessence 2019) — ใส่ใน Section 2.2.2 หมอแฮม credentials + brand 2.1.6 ZBL anchor"
+    }
   ],
 
   "implant_brands_offered": [
@@ -270,10 +294,11 @@
   },
 
   "metadata": {
-    "config_version": "1.4",
+    "config_version": "1.5",
     "created_at": "2026-05-10",
     "last_updated_at": "2026-05-21",
-    "_changelog_1_4": "Implant brands: Osstem out, Neodent in (Brazil, Straumann Group, value_premium). Signature offering #5 added: Internal Sinus Lift with Densah (Osseodensification, Salah Huwais authority). Soft tissue signature note expanded to include Urban techniques (Strip Graft / Ice Berg / Garage)."
+    "_changelog_1_4": "Implant brands: Osstem out, Neodent in (Brazil, Straumann Group, value_premium). Signature offering #5 added: Internal Sinus Lift with Densah (Osseodensification, Salah Huwais authority). Soft tissue signature note expanded to include Urban techniques (Strip Graft / Ice Berg / Garage).",
+    "_changelog_1_5": "Round 3: Added clinical_protocols[0] Zero Bone Loss Concept (Tomas Linkevicius framework — separate from signature_offerings because ZBL is HOW we do implants, not a named technique). Added peri_implantitis_treatment / pediatric_dentistry / endodontics_specialist / sedation_dentistry to specialty_focus (reflects R2 service additions). Pending operator: Linkevicius training credential."
   },
 
   "eywa_spec_snapshot": {

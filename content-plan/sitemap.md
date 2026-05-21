@@ -1,10 +1,11 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~525 (Round 2 expansion, 2026-05-21 — was 414 at Round 1) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~544 (Round 3 expansion, 2026-05-21 — was 414→525 through R1+R2) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
-> **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based) — see `docs/changelog.md`
+> **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based)
+> **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition) — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -23,16 +24,16 @@
 - **L6 (Multimodal Protocols):** 1 page
 - **L7 (Evidence-Based Case Studies):** ~39 pages
 
-## Pages per Section (Round 2)
+## Pages per Section (Round 3)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** ~38 pages (+2 specialty teams)
-- **3. SERVICES:** ~210 pages (+73 — 3.9 Pediatric / 3.10 Sedation / 3.11 Endo + soft tissue + sinus + ortho-surgery + torus + scaling/whitening expansions)
-- **4. TECHNOLOGY:** ~29 pages (+4 — Densah / Airflow / Cool Light + 4.9 Cosmetic Tech hub)
-- **5. TREATMENT BY CONCERNS:** ~71 pages (+8 concern hooks → gum/jaw funnel)
-- **6. KNOWLEDGE:** 121 pages (restructured: 6.1 Pillar / 6.2 Insights / 6.3 Glossary / 6.4 Evidence / 6.5 FAQ / 6.6 Case-based)
+- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages (+1 R3 — 2.1.6 ZBL framework)
+- **3. SERVICES:** ~226 pages (+16 R3 — 3.4.4.4 Gold Crown +2 / 3.6.1 ขูดหินปูน expand +5 / 3.7.7 Peri-Implantitis Service +10)
+- **4. TECHNOLOGY:** ~29 pages
+- **5. TREATMENT BY CONCERNS:** ~71 pages
+- **6. KNOWLEDGE:** 123 pages (+2 R3 — 6.2.4.13 gold compare + 6.4.14 Linkevicius/ZBL evidence)
 - **7. CASE STUDIES:** ~38 pages
 - **8. CONTACT & LOCAL SEO:** ~15 pages
-- **TOTAL:** ~525 pages
+- **TOTAL R3:** ~544 pages (+19 from R2 baseline 525)
 
 ---
 
@@ -63,6 +64,9 @@
 | 2.1.3 | → SMILE DNA — ค่านิยมหลัก 5 ประการ 🌟 | L1 | B | mid | A | smile-dna |
 | 2.1.4 | → The Family Standard — "ถ้าไม่กล้าทำให้พ่อแม่ เราจะไม่ทำคนไข้" 🌟 | L1 | B | mid | A | family-standard |
 | 2.1.5 | → Our Approach: Implant-First, Digital 100% | L1 | B | mid | A | smilescape-dental-clinic |
+| 2.1.6 | → Our Protocol: Zero Bone Loss by Tomas Linkevicius 🌟 | L1 | B | mid | A | zero-bone-loss-concept |
+| | → → ZBL Brand Framework / Subcrestal placement / Platform switching / Tissue-level abutment / KM ≥2mm / Maintenance protocol | | — | — | — |
+| | → → Brand Triad: SMILE DNA (values) + Family Standard (ethics) + Zero Bone Loss (clinical protocol) | | — | — | — |
 
 ### 2.2 Clinical Team — ทีมทันตแพทย์เฉพาะทาง
 
@@ -258,7 +262,7 @@
 | 3.2.10.6 | → → รากฟันเทียมหลังสูญเสียฟันมานาน (Bone Atrophy) | L2 | C | mid | A | alveolar-bone-loss |
 | 3.2.10.7 | → → รากฟันเทียมกรณีอุบัติเหตุ — Trauma Reconstruction | L2 | C | mid | A | traumatic-tooth-loss |
 | 3.2.10.8 | → → แก้ไขรากฟันเทียมที่ล้มเหลว — Implant Salvage & Revision | L2 | C | mid | A | dental-implant |
-| 3.2.10.9 | → → Peri-Implantitis Treatment — รักษาการติดเชื้อรอบรากเทียม | L2 | C | mid | A | peri-implantitis |
+| 3.2.10.9 | → → Peri-Implantitis Treatment — รักษาการติดเชื้อรอบรากเทียม (→ ดูรายละเอียดที่ 3.7.7 Peri-Implantitis Service) | L2 | C | mid | A | peri-implantitis |
 | 3.2.10.10 | → → รากฟันเทียมผู้ป่วยที่เคยฉายรังสี | L2 | D | mid | A | dental-implant |
 | 3.2.10.11 | → → รากฟันเทียมผู้ป่วยสูบบุหรี่ | L2 | D | mid | A | dental-implant |
 
@@ -322,6 +326,8 @@
 | 3.4.4.1 | → → Zirconia Crown — ครอบฟันเซอร์โคเนีย | L2 | D | mid | A | zirconia-crown |
 | 3.4.4.2 | → → E-Max Crown — ครอบฟันอีแมกซ์ | L2 | D | mid | A | dental-crown |
 | 3.4.4.3 | → → Implant Crown — ครอบฟันบนรากเทียม | L2 | D | mid | A | dental-crown |
+| 3.4.4.4 | → → Gold Crown — ครอบฟันทองคำ ★ | L2 | C | mid | A | gold-crown |
+| | → → → Long lifespan / Biocompatibility / Posterior teeth preference / Traditional Asian luxury anchor / DFS-validated 320/mo TH | | — | — | — |
 | 3.4.5 | → Dental Bridge — สะพานฟัน | L2 | C | mid | A | dental-crown |
 | 3.4.6 | → Inlay / Onlay — ชิ้นงานเซรามิกเฉพาะจุด | L2 | D | mid | A | dental-crown |
 | 3.4.7 | → Teeth Whitening — ฟอกสีฟัน (hub) | L2 | C | mid | A | teeth-whitening |
@@ -371,11 +377,17 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.6 | ทันตกรรมทั่วไป — General Dentistry (hub) | L2 | C | mid | A | dental-implant |
-| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) | L2 | C | mid | A | dental-filling |
-| 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | D | mid | A | dental-filling |
+| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) 🎯 | L2 | **B** | mid | A | dental-filling |
+| | → → **DFS-validated 12,100/mo TH LOW competition — traffic goldmine (R3)** | | — | — | — |
+| 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | C | mid | A | dental-filling |
 | 3.6.1.2 | → → ขูดหินปูนแบบ Airflow / Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
 | | → → → EMS Airflow / Guided Biofilm Therapy (GBT) / Patient-friendly | | — | — | — |
 | 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก | L2 | C | mid | A | periodontitis |
+| 3.6.1.4 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ | L2 | C | bottom | D | dental-filling |
+| 3.6.1.5 | → → ขูดหินปูน เจ็บไหม — ความรู้สึกจริง + วิธีลดเจ็บ | L2 | C | top | A | dental-filling |
+| 3.6.1.6 | → → ขูดหินปูนบ่อยแค่ไหน — Schedule ที่แนะนำ | L2 | C | mid | A | dental-filling |
+| 3.6.1.7 | → → ขูดหินปูนใช้สิทธิประกันสังคม / สปสช | L2 | C | bottom | D | dental-filling |
+| 3.6.1.8 | → → ขูดหินปูนหลังจัดฟัน / หลังฝังรากเทียม | L2 | C | mid | A | dental-filling |
 | 3.6.2 | → อุดฟัน — Dental Filling | L2 | C | mid | A | dental-filling |
 | 3.6.3 | → ถอนฟัน — Tooth Extraction | L2 | C | mid | A | tooth-extraction |
 | 3.6.4 | → ผ่าฟันคุด — Wisdom Tooth Removal | L2 | C | mid | A | wisdom-tooth-removal |
@@ -397,6 +409,17 @@
 | 3.7.4 | → เหงือกร่น — Gum Recession Treatment | L2 | C | mid | A | gum-recession |
 | 3.7.5 | → ความเชื่อมโยงโรคเหงือกกับรากฟันเทียม — Perio-Implant Connection 🌟 | L2 | C | mid | A | dental-implant |
 | 3.7.6 | → ราคารักษาโรคเหงือก SmileScape | L2 | D | bottom | D | periodontitis |
+| 3.7.7 | → Peri-Implantitis Service — รักษาการติดเชื้อรอบรากเทียม 🌟 (hub) | L2 | B | mid | A | peri-implantitis-treatment |
+| | → → DFS-validated 140/mo TH LOW competition (R3 dedicated service hub) | | — | — | — |
+| 3.7.7.1 | → → การวินิจฉัย Peri-Implantitis — Probing / BoP / X-ray / CBCT | L2 | C | mid | A | peri-implantitis |
+| 3.7.7.2 | → → Non-Surgical Treatment — Mechanical Decontamination | L2 | C | mid | A | peri-implantitis-treatment |
+| 3.7.7.3 | → → Surgical Access Treatment — Flap Surgery + Decontamination | L2 | C | mid | A | peri-implantitis-treatment |
+| 3.7.7.4 | → → Regenerative Surgery — เสริมกระดูกรอบรากเทียมที่เสียหาย ★ | L2 | C | mid | A | regenerative-peri-implantitis-surgery |
+| 3.7.7.5 | → → Resective Surgery — Apically-Positioned Flap | L2 | D | mid | A | resective-peri-implantitis-surgery |
+| 3.7.7.6 | → → Implantoplasty — ปรับผิวรากเทียม | L2 | D | mid | A | implantoplasty |
+| 3.7.7.7 | → → Laser-Assisted Treatment — Er:YAG / Diode | L2 | D | mid | A | dental-laser-therapy |
+| 3.7.7.8 | → → Implant Salvage vs Explantation — Decision Tree | L2 | C | mid | D | peri-implantitis-treatment |
+| 3.7.7.9 | → → Post-Treatment Maintenance Protocol → link 3.6.1 GBT/Airflow | L2 | C | mid | A | peri-implantitis-treatment |
 
 ---
 
@@ -746,12 +769,12 @@
 | 6.x | Sub-section | Type | Pages |
 |-----|-------------|------|-------|
 | 6.1 | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 11 |
-| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 78 |
+| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 79 (+1 R3 gold crown compare) |
 | 6.3 | Glossary | Definitions A-Z | 3 |
-| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 14 |
+| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 15 (+1 R3 Linkevicius/ZBL) |
 | 6.5 | FAQ Knowledge Hub | High-intent quick answers (vs Section 5.9 concern-FAQ) | 5 |
 | 6.6 | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
-| **Section 6 Total** | | | **121** |
+| **Section 6 Total** | | | **123 (+2 R3)** |
 
 ---
 
@@ -899,6 +922,7 @@
 | 6.2.4.10 | → ฟันปลอม — ประเภทและการดูแล | L5 | D | top | A | removable-denture |
 | 6.2.4.11 | → ตรวจฟันประจำปี — ทำไมสำคัญ | L5 | D | top | A | dental-implant |
 | 6.2.4.12 | → ฟอกสีฟัน — Cool Light vs Home Bleaching | L5 | D | top | A | cool-light-whitening-unit |
+| 6.2.4.13 | → ครอบฟันทองคำ vs Zirconia — เลือกแบบไหนดี (R3) | L5 | C | mid | D | gold-crown |
 
 #### 6.2.5 Orthodontic Insights (was top-level 6.6, ดัก brand search intent)
 
@@ -953,6 +977,7 @@
 | 6.4.11 | → Benic 2014: Soft Tissue Management Outcomes | L5 | C | mid | A | soft-tissue-management |
 | 6.4.12 | → Huwais 2017+: Osseodensification Evidence Base 🌟 | L5 | C | mid | A | osseodensification |
 | 6.4.13 | → Evidence Tier Framework — งานวิจัยระดับไหนเชื่อถือได้ | L5 | D | mid | A | dental-implant |
+| 6.4.14 | → Linkevicius 2009-2020: Zero Bone Loss Concept — Evidence Summary 🌟 (R3) | L5 | B | mid | A | zero-bone-loss-concept |
 
 ---
 

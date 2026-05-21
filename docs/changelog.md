@@ -1,5 +1,40 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-21 PM] — Round 3 DFS-Informed Expansion (Peri-Implantitis Service + Gold Crown + ZBL Framework + Scaling Goldmine)
+
+**By:** Operator-driven batch + DFS reconnaissance (4 batches, ~30 keywords TH locale)
+**Files updated:**
+- `brand-config.json` — v1.4 → v1.5. Added `clinical_protocols[0]` Zero Bone Loss Concept (Tomas Linkevicius framework — separate from signature_offerings per SS-DR-008). Extended `specialty_focus` with peri_implantitis_treatment, pediatric_dentistry, endodontics_specialist, sedation_dentistry (reflects R2 service additions).
+- `content-plan/entities.md` — 131 → 139 entities (+8 R3). New: zero-bone-loss-concept (Concept, brand-scope smile-scape), dr-tomas-linkevicius (Person, external authority), gold-crown (Treatment — DFS 320/mo TH validated), peri-implantitis-treatment (Procedure), implantoplasty (Procedure), regenerative-peri-implantitis-surgery (Procedure), resective-peri-implantitis-surgery (Procedure), dental-laser-therapy (Procedure).
+- `content-plan/relationships.md` — 151 → 171 edges (+20 R3). T1: ZBL Brand Framework edges (9) — evidenced_by Linkevicius, related_to dental-implant/warranty/SMILE-DNA/Family-Standard/keratinized-mucosa, dr-woraphat→ZBL+Linkevicius. T2: Peri-Implantitis Service edges (9). T3: Gold Crown edges (2).
+- `content-plan/sitemap.md` — ~525p → ~544p (+19 R3). **Block N (Peri-Implantitis Service 3.7.7):** +10p hub + 9 sub-pages (Diagnosis / Non-surgical / Surgical / Regenerative / Resective / Implantoplasty / Laser / Decision tree / Maintenance) — DFS-validated 140/mo TH. **Block O (Gold Crown 3.4.4.4):** +2p (service page + 6.2.4.13 comparison) — DFS-validated 320/mo TH LOW competition. **Block P (Zero Bone Loss Framework):** +2p (2.1.6 brand framework page + 6.4.14 Linkevicius evidence summary) — DFS confirms low direct volume (20/mo), used as E-E-A-T anchor not traffic target. **Block Q (ขูดหินปูน cluster expansion 3.6.1):** +5p long-tail pages — DFS-discovered 12,100/mo TH LOW competition (R3 traffic goldmine). Plus header counts updated + Section 6 master structure recalc.
+- `content-plan/egp-output-summary.md` — Round 3 expansion note + updated final tally (18 clusters / 139 entities / 171 edges / 5 signature offerings + 1 clinical protocol).
+- `docs/decision-records.md` — Added **SS-DR-008** Zero Bone Loss Concept as Brand Clinical Framework (vs Signature Offering — operator decision). Rationale: ZBL = philosophy/approach, not a named procedure/technique like Sausage/Densah/Soft Tissue.
+- `README.md` — page count 525 → ~544. Added pending operator: หมอแฮม Linkevicius training credential.
+- `docs/changelog.md` — this entry.
+
+**DFS reconnaissance findings (Round 3):**
+- ✅ **peri-implantitis** 140/mo TH LOW competition → justifies dedicated service hub
+- ✅ **gold crown** 320/mo TH LOW (CPC 6.75) → validates dedicated page (English term dominates; Thai variants returned no DFS data)
+- ✅ **zero bone loss concept** 20/mo TH MEDIUM → confirms E-E-A-T anchor not traffic target
+- ✅ **acteon** 90/mo TH LOW (CPC 1.88) → R2 brand-anchor approach validated
+- 🎯 **ขูดหินปูน** 12,100/mo TH LOW (CPC 0.43) → MAJOR cluster opportunity discovered → Block Q added (5 long-tail pages)
+- 📊 **ฟอกสีฟัน** 3,600/mo TH HIGH (89) → R2 Cool Light positioning validated as competitive niche
+- 📊 **airflow** 1,600/mo TH LOW → ambiguous keyword (multi-meaning), R2 placement holds
+- ⚠️ Many Thai service phrases returned NULL data (likely <50/mo OR DFS gap) — does not necessarily mean zero demand
+
+**Strategic frame (Round 3):**
+- ZBL chose Brand Framework over Signature Offering #6 — preserves meaning of "signature technique" (named procedures). ZBL joins SMILE DNA + Family Standard as brand triad.
+- ขูดหินปูน goldmine discovery shows DFS-informed planning value before Phase next full DFS batch.
+- Authority anchors (Urban / Huwais / Linkevicius / Kern) all in place — SmileScape "Global Mastery" claim now has 4 referenceable masters supporting Dr. Woraphat's credentials.
+
+**Pending operator actions (added Round 3):**
+- หมอแฮม Linkevicius training credential / Zero Bone Loss textbook ownership (for Section 2.2.2 + brand-config clinical_protocols[0] anchor)
+- Peri-Implantitis specialist credential (if Periodontist on team)
+- Gold crown supplier / lab confirmation (which gold alloy: noble/high-noble/PFM)
+
+---
+
 ## [2026-05-21] — Round 2 Sitemap Expansion + Section 6 Restructure + Densah Signature
 
 **By:** Operator-driven batch (10-point feedback + technique deep-dive + Section 6 restructure)
