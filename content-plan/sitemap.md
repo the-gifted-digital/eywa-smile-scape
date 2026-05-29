@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~733 (Round 13 QA cleanup, 2026-05-22 — actual numbered rows = 733 after R13 thin-page consolidation. Pre-R13 audit count = 740, R13 -7: 5.22 Lifestyle 6→1 (-5) + 3.13.4 Special Needs 4→1 (-3, but kept hub +1 in-page note = -2 net) + 3.5.2 gap note) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~728 (Round 14 — Section 2.4 consolidation, 2026-05-22) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -15,7 +15,8 @@
 > **Round 10 (2026-05-22):** Team audit — 2.2.11 Geriatric Team REMOVED, 2.2.10 Pediatric Dentist confirmed. Net -1 page
 > **Round 11 (2026-05-22):** ⭐ **Clear Aligner Elevation + Direct Print Signature #6 (SS-DR-010)** — Section 3.5.1 promoted to Tier A sub-hub (10 sub-pages) / Section 4.6.0 In-House Aligner Lab Tech (6 pages) / Section 6.2.5 Knowledge (+3) / Section 6.4 Evidence (+1) / 5.10.9 cross-ref. PubMed evidence: 6 studies (Pillar 16). Differentiator: in-house 3D direct-print production = UNIQUE TH market positioning. Net +20 pages
 > **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3. Cross-link notes added Section 4. Net 0 page change
-> **Round 13 (2026-05-22):** **Pre-Review QA Cleanup** — Section header page counts corrected to actuals / entity count 167→163 + edge count 264→271 (audit recount) / 5.22 Lifestyle consolidated (6→1, -5) / 3.13.4 Special Needs consolidated (4→1, -3) / 3.5.2 gap note added. Net -7 pages → ~733 — see `docs/changelog.md`
+> **Round 13 (2026-05-22):** **Pre-Review QA Cleanup** — Section header page counts corrected to actuals / entity count 167→163 + edge count 264→271 (audit recount) / 5.22 Lifestyle consolidated (6→1, -5) / 3.13.4 Special Needs consolidated (4→1, -3) / 3.5.2 gap note added. Net -7 pages → ~733
+> **Round 14 (2026-05-22):** **Section 2.4 Consolidation** — Patient Journey consolidated (5 pages → 1 comprehensive). Removed duplication: 0% financing in 4 places → canonical 5.13.3 (Tier B promoted) + FAQ 6.5.4.2. Free Consultation in 2 places → canonical 8.1.1 (Tier B promoted). 6.5.4.1 vs 6.5.4.2 scope clarified. Net -4 pages → ~728 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -61,7 +62,7 @@
 
 ---
 
-## Section 2: OUR UNIQUENESS — The Global Mastery (~38 pages, R13 verified count)
+## Section 2: OUR UNIQUENESS — The Global Mastery (~34 pages, R14 — 2.4 consolidated -4)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 2.1 About SmileScape
@@ -148,11 +149,12 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 2.4 | Your First Visit — เริ่มต้นเส้นทางรอยยิ้มใหม่ (hub) | L1 | B | bottom | A | smilescape-dental-clinic |
-| 2.4.1 | → What to Expect — สิ่งที่จะเกิดขึ้นในวันแรก | L1 | C | bottom | A | smilescape-dental-clinic |
-| 2.4.2 | → 5-Step Treatment Process — ขั้นตอนการรักษา 5 ขั้นตอน | L1 | C | bottom | A | smilescape-dental-clinic |
-| 2.4.3 | → Free Consultation & 3D X-ray — ปรึกษาฟรี | L1 | C | bottom | A | smilescape-dental-clinic |
-| 2.4.4 | → Payment Plans & 0% Financing — ผ่อน 0% ไม่ต้องใช้บัตรเครดิต | L1 | C | bottom | A | smilescape-dental-clinic |
+| 2.4 | Your First Visit — เริ่มต้นเส้นทางรอยยิ้มใหม่ (comprehensive page) | L1 | B | bottom | A | smilescape-dental-clinic |
+| | → → R14 consolidated (5 pages → 1, removed duplication). In-page sections: | | — | — | — |
+| | → → § What to Expect — สิ่งที่จะเกิดขึ้นในวันแรก | | — | — | — |
+| | → → § 5-Step Treatment Process — ขั้นตอนการรักษา (→ implant-specific 3.2.5 Digital 100%) | | — | — | — |
+| | → → § Free Consultation & 3D X-ray — ปรึกษาฟรี (→ booking action 8.1.1 จองนัด) | | — | — | — |
+| | → → § Payment Plans 0% — ผ่อน 0% ไม่ต้องใช้บัตรเครดิต (→ canonical detail 5.13.3 / FAQ 6.5.4.2) | | — | — | — |
 
 ### 2.5 Clinic Tour
 
@@ -880,7 +882,7 @@
 | 5.13.2.8 | → → ทำฟันให้บุตร / คู่สมรส ใช้สิทธิ์ประกันสังคมได้ไหม (DFS spousal Q) | L4 | C | mid | A | social-security-dental-benefit |
 | 5.13.2.9 | → → วิธีเบิกประกันสังคมทำฟัน — Online (SSO app) + Offline + เอกสาร | L4 | C | mid | A | social-security-dental-benefit |
 | 5.13.2.10 | → → คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (Q-Clinic) คืออะไร 🌟 (DFS hot) (→ link 3.12.2) | L4 | B | bottom | A | sso-direct-billing-q-clinic |
-| 5.13.3 | → ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร | L4 | C | bottom | A | dental-implant |
+| 5.13.3 | → ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร (R14 CANONICAL detail page for 0% — Section 2.4 + 6.5.4.2 cross-link here) | L4 | **B** | bottom | A | dental-implant |
 | 5.13.4 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | private-dental-insurance-th |
 | 5.13.5 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
 | 5.13.6 | → ประกันชีวิต / ประกันสุขภาพเอกชน เบิกค่าทำฟันได้ไหม | L4 | C | bottom | A | private-dental-insurance-th |
@@ -1305,8 +1307,8 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 6.5.4 | FAQ Cost & Insurance (sub-hub) | L5 | B | mid | A | dental-implant |
-| 6.5.4.1 | → FAQ ราคาและการชำระเงิน — ผ่อน 0% ประกัน สิทธิ์ | L5 | B | mid | D | dental-implant |
-| 6.5.4.2 | → FAQ ผ่อน 0% (เงื่อนไข + แอป + สินเชื่อ) | L5 | C | bottom | D | dental-implant |
+| 6.5.4.1 | → FAQ ราคาและการชำระเงิน — ภาพรวมตัวเลือก (R14 scope: broad pricing options, NOT 0% details) | L5 | B | mid | D | dental-implant |
+| 6.5.4.2 | → FAQ ผ่อน 0% (เงื่อนไข + แอป + สินเชื่อ) — R14 scope: 0%-specific deep details | L5 | C | bottom | D | dental-implant |
 | 6.5.4.3 | → FAQ ประกันสังคมทำฟัน — 20+ คำถามรวบยอด (R4 keep here) | L5 | B | mid | A | social-security-dental-benefit |
 | 6.5.4.4 | → FAQ บัตรทอง / ราชการ / ประกันชีวิตเอกชน | L5 | C | bottom | A | universal-coverage-th |
 | 6.5.4.5 | → FAQ ลดหย่อนภาษีค่าทำฟัน | L5 | D | bottom | D | dental-implant |
@@ -1423,7 +1425,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 8.1 | ติดต่อ SmileScape — นัดหมายฟรี (hub) | L1 | B | bottom | A | smilescape-dental-clinic |
-| 8.1.1 | → จองนัดปรึกษาฟรี — Book Free Consultation (CTA) | L1 | C | bottom | A | smilescape-dental-clinic |
+| 8.1.1 | → จองนัดปรึกษาฟรี — Book Free Consultation (R14 CANONICAL booking action — Section 2.4 cross-links here) | L1 | **B** | bottom | A | smilescape-dental-clinic |
 | 8.1.2 | → Line @Smile_Scape — แชทปรึกษา | L1 | D | bottom | A | smilescape-dental-clinic |
 
 ### 8.2 สาขารัตนาธิเบศร์ (นนทบุรี)

@@ -1,5 +1,43 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-22 LATE NIGHT 2] — Round 14 Section 2.4 Consolidation + Canonical Cross-Links
+
+**By:** Operator review caught duplication in Section 2.4 (5 pages) overlapping with 5.13.3 + 6.5.4.x + 8.1.1.
+
+**Duplication identified:**
+- 0% Financing: 4 places (2.4.4 + 5.13.3 + 6.5.4.1 + 6.5.4.2)
+- Free Consultation: 2 places (2.4.3 + 8.1.1)
+
+**Changes:**
+- **2.4 consolidated** — 5 pages (1 hub + 4 sub) → 1 comprehensive Patient Journey page. In-page sections:
+  - What to Expect — สิ่งที่จะเกิดขึ้นในวันแรก
+  - 5-Step Treatment Process (→ link 3.2.5 implant Digital 100%)
+  - Free Consultation & 3D X-ray ปรึกษาฟรี (→ link 8.1.1 booking action)
+  - Payment Plans 0% (→ link 5.13.3 canonical / 6.5.4.2 FAQ)
+- **5.13.3 promoted Tier C→B** = canonical detail page for "0% financing"
+- **8.1.1 promoted Tier C→B** = canonical booking action
+- **6.5.4.1 vs 6.5.4.2 scope clarified:** 6.5.4.1 = broad pricing overview / 6.5.4.2 = 0%-specific deep details
+
+**Files updated:**
+- `content-plan/sitemap.md` — Section 2.4 consolidated + canonical cross-link notes on 5.13.3 / 8.1.1 / 6.5.4.1 / 6.5.4.2. Section 2 header count updated. Top-of-file totals updated.
+- `docs/changelog.md` — this entry.
+
+**Net -4 pages** → Sitemap **~728**
+
+**Strategic gains:**
+- No more 0% financing duplication (was 4 places → canonical 5.13.3 + FAQ 6.5.4.2)
+- No more consultation duplication (was 2 → canonical 8.1.1)
+- "Your First Visit" page works better as comprehensive journey (storytelling flow)
+- DR-021 internal linking pattern clearer (Patient Journey 2.4 → canonical pages)
+
+**Final R14 metrics:**
+- Sitemap pages: **~728**
+- Clusters: 20 / Entities: 163 / Edges: 271 / Citation pillars: 16
+- Signature Offerings: 6 / Clinical Protocols: 1
+- Brand DRs: SS-DR-001..010 / brand-config: v1.11
+
+---
+
 ## [2026-05-22 LATE NIGHT] — Round 13 Pre-Review QA Cleanup (Final Audit Before Operator Review)
 
 **By:** Final deep audit before operator deep-review — catch all inconsistencies / thin-page risks / numbering issues.
