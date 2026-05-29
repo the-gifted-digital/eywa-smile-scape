@@ -1,5 +1,34 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-05-30] — Round 15 Section 8.1 Contact Hub Consolidation
+
+**By:** Continuation of the pre-review consolidation pass (R13/R14 thin-page pattern) — Section 8.1 Contact Hub carried thin duplicate sub-pages overlapping the single contact/booking intent.
+
+**Thin-page / duplication identified:**
+- 8.1.1 Book Free Consultation + 8.1.2 Line @Smile_Scape were thin sub-pages under the 8.1 Contact hub. Booking + contact intent is best served as ONE comprehensive page (mirrors R14 Section 2.4 "Your First Visit" comprehensive-page pattern).
+
+**Changes:**
+- **8.1 consolidated** — 3 pages (1 hub + 8.1.1 + 8.1.2) → 1 comprehensive "ติดต่อ SmileScape — นัดหมายฟรี" page. In-page sections:
+  - จองนัดปรึกษาฟรี — Book Free Consultation form (+ 3D X-ray info)
+  - Line @Smile_Scape — แชทปรึกษา (QR + LINE OA link)
+  - Phone + Email + Hours (NAP for branches at 8.2 / 8.3)
+- **8.1 = canonical booking + contact action** (was 8.1.1 at R14). Section 2.4 cross-link updated 8.1.1 → 8.1.
+
+**Files updated:**
+- `content-plan/sitemap.md` — 8.1 consolidated (table rows) + Section 8 header count (~17→~15) + Pages-per-Section line + Top-of-file Total Pages (~728→~726) + R15 round note + Section 2.4 cross-link 8.1.1→8.1.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count (~728→~726) + stage note bumped to R15.
+
+**Net -2 pages** → Sitemap **~726**
+
+**Final R15 metrics:**
+- Sitemap pages: **~726**
+- Clusters: 20 / Entities: 163 / Edges: 271 / Citation pillars: 16
+- Signature Offerings: 6 / Clinical Protocols: 1
+- Brand DRs: SS-DR-001..010 / brand-config: v1.11
+
+---
+
 ## [2026-05-22 LATE NIGHT 2] — Round 14 Section 2.4 Consolidation + Canonical Cross-Links
 
 **By:** Operator review caught duplication in Section 2.4 (5 pages) overlapping with 5.13.3 + 6.5.4.x + 8.1.1.

@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~728 (Round 14 — Section 2.4 consolidation, 2026-05-22) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** ~726 (Round 15 — Section 8.1 Contact Hub consolidation, 2026-05-30) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -17,6 +17,7 @@
 > **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3. Cross-link notes added Section 4. Net 0 page change
 > **Round 13 (2026-05-22):** **Pre-Review QA Cleanup** — Section header page counts corrected to actuals / entity count 167→163 + edge count 264→271 (audit recount) / 5.22 Lifestyle consolidated (6→1, -5) / 3.13.4 Special Needs consolidated (4→1, -3) / 3.5.2 gap note added. Net -7 pages → ~733
 > **Round 14 (2026-05-22):** **Section 2.4 Consolidation** — Patient Journey consolidated (5 pages → 1 comprehensive). Removed duplication: 0% financing in 4 places → canonical 5.13.3 (Tier B promoted) + FAQ 6.5.4.2. Free Consultation in 2 places → canonical 8.1.1 (Tier B promoted). 6.5.4.1 vs 6.5.4.2 scope clarified. Net -4 pages → ~728 — see `docs/changelog.md`
+> **Round 15 (2026-05-30):** **Section 8.1 Contact Hub Consolidation** — 8.1.1 (Book Free Consultation) + 8.1.2 (Line @Smile_Scape) merged into single comprehensive 8.1 page (in-page sections: Booking form + 3D X-ray / Line OA QR / Phone-Email-Hours NAP). 8.1 becomes canonical booking + contact action (was 8.1.1 at R14); Section 2.4 cross-link updated 8.1.1 → 8.1. Net -2 pages → ~726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -43,7 +44,7 @@
 - **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
 - **6. KNOWLEDGE:** 154 pages (R11 +4: 6.2.5 +3 Direct Print knowledge + 6.4.15 Pillar 16 evidence)
 - **7. CASE STUDIES:** ~38 pages
-- **8. CONTACT & LOCAL SEO:** ~17 pages (+2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
+- **8. CONTACT & LOCAL SEO:** ~15 pages (R15: -2 from 8.1 Contact Hub consolidation. +2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
 - **TOTAL R11:** ~722 pages (R10 baseline 702 + R11 +20: Direct Print Signature #6 — 3.5.1 +9 / 4.6.0 +6 / 6.2.5 +3 / 6.4 +1 / 5.10 +1)
 
 ---
@@ -153,7 +154,7 @@
 | | → → R14 consolidated (5 pages → 1, removed duplication). In-page sections: | | — | — | — |
 | | → → § What to Expect — สิ่งที่จะเกิดขึ้นในวันแรก | | — | — | — |
 | | → → § 5-Step Treatment Process — ขั้นตอนการรักษา (→ implant-specific 3.2.5 Digital 100%) | | — | — | — |
-| | → → § Free Consultation & 3D X-ray — ปรึกษาฟรี (→ booking action 8.1.1 จองนัด) | | — | — | — |
+| | → → § Free Consultation & 3D X-ray — ปรึกษาฟรี (→ booking action 8.1 จองนัด) | | — | — | — |
 | | → → § Payment Plans 0% — ผ่อน 0% ไม่ต้องใช้บัตรเครดิต (→ canonical detail 5.13.3 / FAQ 6.5.4.2) | | — | — | — |
 
 ### 2.5 Clinic Tour
@@ -1417,16 +1418,18 @@
 
 ---
 
-## Section 8: CONTACT & LOCAL SEO (~17 pages, R13 verified)
+## Section 8: CONTACT & LOCAL SEO (~15 pages, R15 — 8.1 consolidated -2)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 8.1 Contact Hub
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 8.1 | ติดต่อ SmileScape — นัดหมายฟรี (hub) | L1 | B | bottom | A | smilescape-dental-clinic |
-| 8.1.1 | → จองนัดปรึกษาฟรี — Book Free Consultation (R14 CANONICAL booking action — Section 2.4 cross-links here) | L1 | **B** | bottom | A | smilescape-dental-clinic |
-| 8.1.2 | → Line @Smile_Scape — แชทปรึกษา | L1 | D | bottom | A | smilescape-dental-clinic |
+| 8.1 | ติดต่อ SmileScape — นัดหมายฟรี (comprehensive page) 🌟 (R15 CANONICAL booking + contact action) | L1 | **B** | bottom | A | smilescape-dental-clinic |
+| | → → R15 consolidated (8.1.1 + 8.1.2 merged → in-page sections). In-page sections: | | — | — | — |
+| | → → § จองนัดปรึกษาฟรี — Book Free Consultation form (+ 3D X-ray info) — Section 2.4 cross-links here | | — | — | — |
+| | → → § Line @Smile_Scape — แชทปรึกษา (QR + LINE OA link) | | — | — | — |
+| | → → § Phone + Email + Hours (NAP for branches at 8.2 / 8.3) | | — | — | — |
 
 ### 8.2 สาขารัตนาธิเบศร์ (นนทบุรี)
 

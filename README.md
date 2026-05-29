@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~728p Round 14 — Section 2.4 consolidated, ready for operator deep review)
+│   └── sitemap.md                (~726p Round 15 — Section 8.1 consolidated, ready for operator deep review)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,9 +58,9 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 13 — 2026-05-22):**
+4. **Stage status (Round 15 — 2026-05-30):**
    - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **163 entities** / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
-   - Phase E ✅ **Planning locked R14** — sitemap **~728 pages** ready for operator deep review
+   - Phase E ✅ **Planning locked R15** — sitemap **~726 pages** ready for operator deep review
    - Stage 1 Gate ❌ pending (operator review approval + DataForSEO full keyword research batch — R14)
 
 ---
