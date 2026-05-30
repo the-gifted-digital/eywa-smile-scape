@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SmileScape — 03-approach</title><style>
+:root{
+  --bg:#F5FAFE; --bg2:#EBF3FA; --bg3:#E0ECF5; --text:#1a1a1a; --text2:#4a5568; --text3:#8a9aaa;
+  --border:#c8daea; --blue:#1153A1; --blue-light:#dce8f5; --blue-dark:#0a3d7a;
+  --green:#0f7b6c; --green-bg:#dbeddb; --gold:#c99500; --gold-bg:#faf0d8;
+  --red:#d94444; --red-bg:#fce4e4; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,'Sukhumvit Set','Thonburi',Arial,sans-serif;
+     color:var(--text);line-height:1.6;font-size:13px;-webkit-font-smoothing:antialiased;background:#fff}
+
+@page{ size:A4; margin:16mm 15mm 16mm; }
+@page cover{ size:A4; margin:0; }
+
+a{color:var(--blue);text-decoration:none}
+code{background:var(--bg2);padding:.5px 4px;border-radius:3px;font-size:.86em;color:var(--blue-dark);
+     font-family:ui-monospace,Menlo,monospace}
+.divider{height:1px;background:var(--border);margin:14px 0}
+
+/* section = flows across pages, starts on a fresh page */
+.section{ break-before:page; }
+.section:first-of-type{ break-before:auto; }
+
+h1{font-size:24px;font-weight:800;color:var(--blue-dark);line-height:1.25;margin:0 0 6px}
+h2,h3.md{font-size:16px;font-weight:700;color:var(--blue);margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--border);break-after:avoid}
+h3,h4.md{font-size:13.5px;font-weight:700;color:var(--text);margin:14px 0 5px;break-after:avoid}
+h5.md,h6.md{font-size:12px;font-weight:700;color:var(--text2);margin:10px 0 4px;break-after:avoid}
+p{color:var(--text2);margin:0 0 9px;line-height:1.7}
+ul{margin:6px 0 9px 18px} li{margin:3px 0;color:var(--text2);line-height:1.6}
+strong{color:var(--text)}
+
+.section-number{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.page-title-bar{background:linear-gradient(135deg,var(--blue-light),#e8f2fc);padding:15px 22px;border-radius:4px;
+   margin-bottom:18px;border-left:4px solid var(--blue);break-after:avoid;break-inside:avoid}
+.page-title-bar h1{margin:0;font-size:21px}
+.page-title-bar p{margin:3px 0 0;font-size:12px;color:var(--text3)}
+.lead{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.lead strong{color:var(--blue-dark)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:9px 0 14px;font-size:12px}
+table.mid{font-size:10.5px} table.wide{font-size:9px}
+thead{display:table-header-group}
+th{background:var(--bg2);padding:6px 11px;text-align:left;font-weight:700;font-size:10px;color:var(--text2);
+   border:1px solid var(--border);letter-spacing:.3px;text-transform:uppercase;vertical-align:bottom}
+table.wide th{padding:4px 6px}
+td{padding:6px 11px;border:1px solid var(--border);vertical-align:top;background:var(--white);word-break:break-word}
+table.mid td{padding:4px 8px} table.wide td{padding:3px 6px}
+tbody tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:#FAFCFE}
+table.wide td:first-child,table.wide th:first-child{width:20px;text-align:center;color:var(--text3)}
+
+/* callout */
+.callout{display:flex;gap:11px;padding:13px 15px;border-radius:4px;margin:13px 0;font-size:12.5px;line-height:1.65;color:var(--text);break-inside:avoid}
+.callout .icon{font-size:17px;flex-shrink:0;margin-top:1px}
+.c-blue{background:var(--blue-light)} .c-green{background:var(--green-bg)}
+.c-gold{background:var(--gold-bg)} .c-red{background:var(--red-bg)}
+
+/* cards + grids */
+.card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:13px;break-inside:avoid}
+.card-accent{border-left:4px solid var(--blue)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+/* stat boxes */
+.stat-box{text-align:center;padding:13px 9px;background:var(--white);border:1px solid var(--border);border-radius:6px;break-inside:avoid}
+.stat-box .num{font-size:25px;font-weight:800;color:var(--blue);line-height:1.05}
+.stat-box .label{font-size:9.5px;color:var(--text3);margin-top:4px;line-height:1.3}
+.statrow{margin:6px 0 16px}
+
+/* bar chart */
+.bars{margin:8px 0 14px}
+.bar{display:flex;align-items:center;gap:9px;margin:5px 0;font-size:11.5px;break-inside:avoid}
+.bar .lab{width:210px;flex:none;color:var(--text)}
+.bar .track{flex:1;background:var(--bg2);border-radius:5px;height:14px;overflow:hidden}
+.bar .fill{height:100%;border-radius:5px;background:var(--blue)}
+.bar .val{width:96px;flex:none;text-align:right;color:var(--text3);font-size:10.5px}
+
+/* keyword chips */
+.kwgrid{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0 13px}
+.kw{display:inline-block;background:var(--bg2);color:var(--blue-dark);border:1px solid var(--border);
+    border-radius:14px;padding:2px 9px;font-size:9.5px;white-space:nowrap}
+
+/* timeline */
+.timeline-item{display:flex;gap:14px;margin-bottom:14px;position:relative;break-inside:avoid}
+.timeline-dot{width:10px;height:10px;background:var(--blue);border-radius:50%;margin-top:5px;flex-shrink:0;position:relative}
+.timeline-dot::after{content:'';position:absolute;top:10px;left:4px;width:2px;height:calc(100% + 4px);background:var(--border)}
+.timeline-item:last-child .timeline-dot::after{display:none}
+.timeline-phase{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+.timeline-title{font-size:12.5px;font-weight:700;margin:2px 0 3px}
+.timeline-desc{font-size:11px;color:var(--text2);line-height:1.55}
+
+.note{font-size:10px;color:var(--text3);margin-top:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--text3);margin:2px 0 10px}
+.legend b{color:var(--blue-dark)}
+.pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+      padding:2px 8px;border-radius:10px;background:var(--green-bg);color:var(--green)}
+
+/* sitemap section blocks */
+.smsec{break-inside:avoid-page;margin:14px 0 10px}
+.smsec h3.md{margin-top:14px}
+
+/* ===== COVER ===== */
+.cover{page:cover;height:297mm;background:linear-gradient(160deg,#0a3d7a 0%,#1153A1 42%,#7BA4DD 100%);
+  color:#fff;display:flex;flex-direction:column;justify-content:center;padding:80px 64px;position:relative;
+  overflow:hidden;break-after:page}
+.cover::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cover::after{content:'';position:absolute;bottom:-150px;left:-150px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover .conf{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:64px}
+.cover .logo{height:78px;opacity:.9;filter:brightness(0) invert(1);margin-bottom:40px}
+.cover .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:14px}
+.cover .title{font-size:40px;font-weight:800;line-height:1.18;margin-bottom:14px}
+.cover .subtitle{font-size:16px;font-weight:400;color:rgba(255,255,255,.7);max-width:560px;line-height:1.65;margin-bottom:18px}
+.cover .cdiv{width:48px;height:2px;background:rgba(255,255,255,.25);margin:22px 0}
+.cover .meta{font-size:12.5px;color:rgba(255,255,255,.55);line-height:2.1}
+.cover .meta strong{color:rgba(255,255,255,.8);font-weight:600}
+.cover .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.cover .statline .n{font-size:26px;font-weight:800;color:#fff}
+.cover .statline .l{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* TOC */
+.toc .row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border)}
+.toc .row .l{font-weight:600;color:var(--text)} .toc .row .no{font-weight:800;color:var(--blue);margin-right:12px}
+.toc .row .d{font-size:11.5px;color:var(--text3);text-align:right;max-width:54%}
+footer.end{margin-top:18px;border-top:2px solid var(--blue);padding-top:12px;color:var(--text3);font-size:10.5px;line-height:1.6}
+footer.end b{color:var(--blue-dark)}
+
+/* ---- page-break safety: never strand a heading or label above its table ---- */
+h2,h3.md,h4.md,h5.md,h6.md{break-after:avoid-page;break-inside:avoid}
+.page-title-bar{break-after:avoid-page}
+p:has(+ table){break-after:avoid-page}
+p:has(+ .kwgrid){break-after:avoid-page}
+ul:has(+ table){break-after:avoid-page}
+/* continuous entity table */
+.entity-all td:nth-child(2){font-weight:600;color:var(--text)}
+.entity-all th:first-child,.entity-all td:first-child{width:30px;white-space:nowrap;text-align:center}
+.entity-all th:nth-child(5),.entity-all td:nth-child(5){width:54px}
+.entity-all th:nth-child(6),.entity-all td:nth-child(6){width:44px}
+/* cover logo badge (original colours on white — crisp, no filter) */
+.cover .logobadge{display:inline-block;background:#fff;border-radius:14px;padding:16px 24px;margin-bottom:36px;box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.cover .logobadge img{height:42px;display:block}
+</style></head><body><section class="section"><div class="section-number">Section 02</div><div class="page-title-bar"><h1>Our Approach</h1><p>Why this is built differently from typical SEO</p></div>
+<p class="lead">We don't do keyword-first SEO. We build a <strong>semantic, evidence-first content system</strong> — structured so that Google, Bing and AI assistants understand SmileScape's expertise at the deepest possible level. It is the same principle used by the world's leading medical institutions, adapted for the Thai dental market through our proprietary content methodology.</p>
+
+<div class="callout c-gold"><div class="icon">&#9888;&#65039;</div><div><strong>Why medical SEO is different.</strong> Dental and health content falls under Google's strictest quality category — <strong>YMYL (Your Money or Your Life)</strong>. Every page is held to a far higher standard of accuracy, authority and trust than any other industry. Our architecture is built around that reality: real doctors, real evidence, real outcomes.</div></div>
+
+<h2>A six-layer system of understanding</h2>
+<p>Each layer gives search engines a different dimension of understanding about SmileScape:</p>
+<table>
+<thead><tr><th style="width:26px">#</th><th style="width:165px">Layer</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><strong>1</strong></td><td><strong>Schema Markup</strong></td><td>Describes every page to search engines in machine-readable medical language (12+ medical schema types)</td></tr>
+<tr><td><strong>2</strong></td><td><strong>Entity Graph</strong></td><td>Maps how 163 medical concepts connect across 20 topic clusters</td></tr>
+<tr><td><strong>3</strong></td><td><strong>Medical Codes</strong></td><td>Links content to ICD-10 international diagnostic standards</td></tr>
+<tr><td><strong>4</strong></td><td><strong>Knowledge Graph</strong></td><td>Connects entities to Google's Knowledge Graph via schema.org &amp; authoritative IDs</td></tr>
+<tr><td><strong>5</strong></td><td><strong>Evidence &amp; Citations</strong></td><td>Every clinical page cites PubMed, WHO, ADA or peer-reviewed sources</td></tr>
+<tr><td><strong>6</strong></td><td><strong>E-E-A-T Signals</strong></td><td>Doctor attribution, credentials and review dates — the strongest trust signals for YMYL</td></tr>
+</tbody></table>
+
+<h2>How the pieces fit together</h2>
+<div class="g2">
+  <div class="card"><h3 style="margin-top:0">The build sequence</h3><ul style="font-size:11.5px"><li><strong>Knowledge Graph</strong> — define every concept (Section 03)</li><li><strong>Clusters</strong> — group concepts into authority territories (04)</li><li><strong>Evidence</strong> — back every claim with research (05)</li><li><strong>Keywords</strong> — map real search demand (06)</li><li><strong>Sitemap</strong> — architect every page (07)</li><li><strong>Relationships</strong> — wire it into one intelligent network (08)</li></ul></div>
+  <div class="card" style="border:2px solid var(--blue);background:linear-gradient(135deg,#f8fbff,#f0f6fd)">
+    <h3 style="margin-top:0;color:var(--blue)">Example — the "Full-Arch Implant" cluster</h3>
+    <p style="font-size:11px;line-height:1.9;margin:0">
+    <strong style="color:var(--blue)">Conditions:</strong> Edentulism, Bone Atrophy, Ridge Resorption<br>
+    <strong style="color:var(--blue)">Procedures:</strong> All-on-4 / All-on-6, Immediate Loading, GBR<br>
+    <strong style="color:var(--blue)">Materials:</strong> Titanium, Zirconia, Bone Graft<br>
+    <strong style="color:var(--blue)">Technology:</strong> CBCT, Guided Surgery, Digital Planning<br>
+    <strong style="color:var(--blue)">Anatomy:</strong> Maxilla, Mandible, Alveolar Bone<br>
+    <strong style="color:var(--blue)">People:</strong> Dr. Worapat, Prosthodontics Team</p>
+    <p style="font-size:10.5px;color:var(--text3);margin:9px 0 0;border-top:1px solid var(--border);padding-top:7px">One cluster connects 18+ entities across 6 categories — telling Google: "SmileScape has deep, interconnected authority in full-arch implant rehabilitation."</p>
+  </div>
+</div></section></body></html>

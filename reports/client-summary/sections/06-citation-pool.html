@@ -1,0 +1,266 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SmileScape — 06-citation-pool</title><style>
+:root{
+  --bg:#F5FAFE; --bg2:#EBF3FA; --bg3:#E0ECF5; --text:#1a1a1a; --text2:#4a5568; --text3:#8a9aaa;
+  --border:#c8daea; --blue:#1153A1; --blue-light:#dce8f5; --blue-dark:#0a3d7a;
+  --green:#0f7b6c; --green-bg:#dbeddb; --gold:#c99500; --gold-bg:#faf0d8;
+  --red:#d94444; --red-bg:#fce4e4; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,'Sukhumvit Set','Thonburi',Arial,sans-serif;
+     color:var(--text);line-height:1.6;font-size:13px;-webkit-font-smoothing:antialiased;background:#fff}
+
+@page{ size:A4; margin:16mm 15mm 16mm; }
+@page cover{ size:A4; margin:0; }
+
+a{color:var(--blue);text-decoration:none}
+code{background:var(--bg2);padding:.5px 4px;border-radius:3px;font-size:.86em;color:var(--blue-dark);
+     font-family:ui-monospace,Menlo,monospace}
+.divider{height:1px;background:var(--border);margin:14px 0}
+
+/* section = flows across pages, starts on a fresh page */
+.section{ break-before:page; }
+.section:first-of-type{ break-before:auto; }
+
+h1{font-size:24px;font-weight:800;color:var(--blue-dark);line-height:1.25;margin:0 0 6px}
+h2,h3.md{font-size:16px;font-weight:700;color:var(--blue);margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--border);break-after:avoid}
+h3,h4.md{font-size:13.5px;font-weight:700;color:var(--text);margin:14px 0 5px;break-after:avoid}
+h5.md,h6.md{font-size:12px;font-weight:700;color:var(--text2);margin:10px 0 4px;break-after:avoid}
+p{color:var(--text2);margin:0 0 9px;line-height:1.7}
+ul{margin:6px 0 9px 18px} li{margin:3px 0;color:var(--text2);line-height:1.6}
+strong{color:var(--text)}
+
+.section-number{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.page-title-bar{background:linear-gradient(135deg,var(--blue-light),#e8f2fc);padding:15px 22px;border-radius:4px;
+   margin-bottom:18px;border-left:4px solid var(--blue);break-after:avoid;break-inside:avoid}
+.page-title-bar h1{margin:0;font-size:21px}
+.page-title-bar p{margin:3px 0 0;font-size:12px;color:var(--text3)}
+.lead{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.lead strong{color:var(--blue-dark)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:9px 0 14px;font-size:12px}
+table.mid{font-size:10.5px} table.wide{font-size:9px}
+thead{display:table-header-group}
+th{background:var(--bg2);padding:6px 11px;text-align:left;font-weight:700;font-size:10px;color:var(--text2);
+   border:1px solid var(--border);letter-spacing:.3px;text-transform:uppercase;vertical-align:bottom}
+table.wide th{padding:4px 6px}
+td{padding:6px 11px;border:1px solid var(--border);vertical-align:top;background:var(--white);word-break:break-word}
+table.mid td{padding:4px 8px} table.wide td{padding:3px 6px}
+tbody tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:#FAFCFE}
+table.wide td:first-child,table.wide th:first-child{width:20px;text-align:center;color:var(--text3)}
+
+/* callout */
+.callout{display:flex;gap:11px;padding:13px 15px;border-radius:4px;margin:13px 0;font-size:12.5px;line-height:1.65;color:var(--text);break-inside:avoid}
+.callout .icon{font-size:17px;flex-shrink:0;margin-top:1px}
+.c-blue{background:var(--blue-light)} .c-green{background:var(--green-bg)}
+.c-gold{background:var(--gold-bg)} .c-red{background:var(--red-bg)}
+
+/* cards + grids */
+.card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:13px;break-inside:avoid}
+.card-accent{border-left:4px solid var(--blue)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+/* stat boxes */
+.stat-box{text-align:center;padding:13px 9px;background:var(--white);border:1px solid var(--border);border-radius:6px;break-inside:avoid}
+.stat-box .num{font-size:25px;font-weight:800;color:var(--blue);line-height:1.05}
+.stat-box .label{font-size:9.5px;color:var(--text3);margin-top:4px;line-height:1.3}
+.statrow{margin:6px 0 16px}
+
+/* bar chart */
+.bars{margin:8px 0 14px}
+.bar{display:flex;align-items:center;gap:9px;margin:5px 0;font-size:11.5px;break-inside:avoid}
+.bar .lab{width:210px;flex:none;color:var(--text)}
+.bar .track{flex:1;background:var(--bg2);border-radius:5px;height:14px;overflow:hidden}
+.bar .fill{height:100%;border-radius:5px;background:var(--blue)}
+.bar .val{width:96px;flex:none;text-align:right;color:var(--text3);font-size:10.5px}
+
+/* keyword chips */
+.kwgrid{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0 13px}
+.kw{display:inline-block;background:var(--bg2);color:var(--blue-dark);border:1px solid var(--border);
+    border-radius:14px;padding:2px 9px;font-size:9.5px;white-space:nowrap}
+
+/* timeline */
+.timeline-item{display:flex;gap:14px;margin-bottom:14px;position:relative;break-inside:avoid}
+.timeline-dot{width:10px;height:10px;background:var(--blue);border-radius:50%;margin-top:5px;flex-shrink:0;position:relative}
+.timeline-dot::after{content:'';position:absolute;top:10px;left:4px;width:2px;height:calc(100% + 4px);background:var(--border)}
+.timeline-item:last-child .timeline-dot::after{display:none}
+.timeline-phase{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+.timeline-title{font-size:12.5px;font-weight:700;margin:2px 0 3px}
+.timeline-desc{font-size:11px;color:var(--text2);line-height:1.55}
+
+.note{font-size:10px;color:var(--text3);margin-top:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--text3);margin:2px 0 10px}
+.legend b{color:var(--blue-dark)}
+.pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+      padding:2px 8px;border-radius:10px;background:var(--green-bg);color:var(--green)}
+
+/* sitemap section blocks */
+.smsec{break-inside:avoid-page;margin:14px 0 10px}
+.smsec h3.md{margin-top:14px}
+
+/* ===== COVER ===== */
+.cover{page:cover;height:297mm;background:linear-gradient(160deg,#0a3d7a 0%,#1153A1 42%,#7BA4DD 100%);
+  color:#fff;display:flex;flex-direction:column;justify-content:center;padding:80px 64px;position:relative;
+  overflow:hidden;break-after:page}
+.cover::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cover::after{content:'';position:absolute;bottom:-150px;left:-150px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover .conf{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:64px}
+.cover .logo{height:78px;opacity:.9;filter:brightness(0) invert(1);margin-bottom:40px}
+.cover .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:14px}
+.cover .title{font-size:40px;font-weight:800;line-height:1.18;margin-bottom:14px}
+.cover .subtitle{font-size:16px;font-weight:400;color:rgba(255,255,255,.7);max-width:560px;line-height:1.65;margin-bottom:18px}
+.cover .cdiv{width:48px;height:2px;background:rgba(255,255,255,.25);margin:22px 0}
+.cover .meta{font-size:12.5px;color:rgba(255,255,255,.55);line-height:2.1}
+.cover .meta strong{color:rgba(255,255,255,.8);font-weight:600}
+.cover .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.cover .statline .n{font-size:26px;font-weight:800;color:#fff}
+.cover .statline .l{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* TOC */
+.toc .row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border)}
+.toc .row .l{font-weight:600;color:var(--text)} .toc .row .no{font-weight:800;color:var(--blue);margin-right:12px}
+.toc .row .d{font-size:11.5px;color:var(--text3);text-align:right;max-width:54%}
+footer.end{margin-top:18px;border-top:2px solid var(--blue);padding-top:12px;color:var(--text3);font-size:10.5px;line-height:1.6}
+footer.end b{color:var(--blue-dark)}
+
+/* ---- page-break safety: never strand a heading or label above its table ---- */
+h2,h3.md,h4.md,h5.md,h6.md{break-after:avoid-page;break-inside:avoid}
+.page-title-bar{break-after:avoid-page}
+p:has(+ table){break-after:avoid-page}
+p:has(+ .kwgrid){break-after:avoid-page}
+ul:has(+ table){break-after:avoid-page}
+/* continuous entity table */
+.entity-all td:nth-child(2){font-weight:600;color:var(--text)}
+.entity-all th:first-child,.entity-all td:first-child{width:30px;white-space:nowrap;text-align:center}
+.entity-all th:nth-child(5),.entity-all td:nth-child(5){width:54px}
+.entity-all th:nth-child(6),.entity-all td:nth-child(6){width:44px}
+/* cover logo badge (original colours on white — crisp, no filter) */
+.cover .logobadge{display:inline-block;background:#fff;border-radius:14px;padding:16px 24px;margin-bottom:36px;box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.cover .logobadge img{height:42px;display:block}
+</style></head><body><section class="section"><div class="section-number">Section 05</div><div class="page-title-bar"><h1>Evidence Base — Citations</h1><p>16 evidence pillars · ~80 sources · 25 verified PubMed studies</p></div>
+<p class="lead">Medical content lives or dies on credibility. Our <strong>evidence base</strong> organises authoritative research into 16 pillars, graded across a 6-tier hierarchy. Every clinical claim on the site is anchored to this pool — the foundation of E-E-A-T and the reason AI engines will cite SmileScape as a trusted source.</p>
+<div class="g4 statrow"><div class="stat-box"><div class="num">16</div><div class="label">Evidence pillars</div></div><div class="stat-box"><div class="num">~80</div><div class="label">Sources compiled</div></div><div class="stat-box"><div class="num">25</div><div class="label">Verified PubMed studies</div></div><div class="stat-box"><div class="num">8</div><div class="label">Tier-1 guideline bodies</div></div></div>
+
+<h2>How sources are graded</h2>
+<table><thead><tr><th style="width:50px">Tier</th><th>Source type</th><th>Examples</th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>Clinical guidelines &amp; government bodies</td><td>WHO · ADA · EFP · AAPD · Dental Council of Thailand</td></tr>
+<tr><td><strong>2</strong></td><td>Peer-reviewed journals</td><td>J Dent · Clin Oral Implants Res · Periodontology 2000</td></tr>
+<tr><td><strong>3</strong></td><td>Professional-body consensus</td><td>EAO · EFP · AAE consensus statements</td></tr>
+<tr><td><strong>4</strong></td><td>Authoritative textbooks</td><td>Urban · Linkevicius · Misch</td></tr>
+<tr><td><strong>5</strong></td><td>Verified clinic data</td><td>SmileScape case audits &amp; outcomes</td></tr>
+<tr><td><strong>6</strong></td><td>Reputable secondary sources</td><td>Established health portals</td></tr>
+</tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 1 — รากฟันเทียม (Dental Implant) — Hero Service</h3>
+<p><strong>Goal:</strong> 5-10 Tier 1-3 citations covering main claims</p>
+<p><strong>Main claims to back:</strong></p>
+<p>1. อัตราความสำเร็จรากฟันเทียมสูงกว่า 95% ที่ 10 ปี 2. รากฟันเทียมมีอายุการใช้งานยาวนาน 20 ปีขึ้นไปถ้าดูแลดี 3. รากฟันเทียมที่รองรับ fixed prosthesis (ฟันปลอมติดแน่น) มีอัตรารอดสูง 4. กระดูกพยุงรากฟันเทียมคงที่ระยะยาวเมื่อดูแลถูกวิธี</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>DOI/URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Howe MS, Keys W, Richards D</td><td>Journal of Dentistry (84:9-21)</td><td>2019</td><td><a href="https://doi.org/10.1016/j.jdent.2019.03.008">10.1016/j.jdent.2019.03.008</a></td><td>1</td></tr><tr><td>2</td><td>2</td><td>Kupka JR, König J, Al-Nawas B et al.</td><td>Clinical Oral Investigations (28:541)</td><td>2024</td><td><a href="https://doi.org/10.1007/s00784-024-05929-3">10.1007/s00784-024-05929-3</a></td><td>2</td></tr><tr><td>3</td><td>2</td><td>Pjetursson BE, Thoma D, Jung R et al.</td><td>Clinical Oral Implants Research (23 Suppl 6:22-38)</td><td>2012</td><td><a href="https://doi.org/10.1111/j.1600-0501.2012.02546.x">10.1111/j.1600-0501.2012.02546.x</a></td><td>3</td></tr><tr><td>4</td><td>1</td><td>ทันตแพทยสภา (Dental Council of Thailand)</td><td>หลักเกณฑ์การให้บริการทางทันตกรรม</td><td>Current</td><td><a href="https://dentalcouncil.or.th">ทันตแพทยสภา.or.th</a></td><td>All — regulatory backing</td></tr><tr><td>5</td><td>3</td><td>European Association for Osseointegration (EAO)</td><td>EAO Consensus Report</td><td>clinic to confirm year</td><td>eao.org</td><td>1, 3</td></tr></tbody></table>
+<ul><li>Citation #1 (PMID 30904559): 18 prospective studies, 10-year survival <strong>96.4%</strong> (95% CI: 95.2–97.5%). Sensitivity meta-analysis 93.2%. Key stat for all implant claims.</li><li>Citation #2 (PMID 39305362): 20-year data — mean survival 92% (prospective) / 88% (retrospective). Fresh 2024 evidence. Key for longevity claims.</li><li>Citation #3 (PMID 23062125): FDP landmark review — rough-surface implants 97.2% at 5yr. Covers claim 3 (fixed prosthesis).</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 2 — Bone Grafting / GBR / Sausage Technique</h3>
+<p><strong>Goal:</strong> 5-8 Tier 1-3 citations backing vertical bone regeneration claims + Sausage Technique pedigree</p>
+<p><strong>Main claims to back:</strong></p>
+<p>1. GBR (Guided Bone Regeneration) เป็นวิธีมาตรฐานสำหรับผู้ป่วยที่กระดูกขากรรไกรน้อย 2. Vertical ridge augmentation สำเร็จได้ 100% implant survival ในกลุ่มที่เหมาะสม 3. PTFE membrane + autogenous bone graft เป็น gold standard สำหรับ vertical defect 4. Sausage Technique (Urban's protocol for horizontal ridge augmentation with collagen membrane + resorbable technique) ให้ผลดีและ predictable</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>DOI/URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Buser D, <strong>Urban I</strong>, Monje A et al.</td><td>Periodontology 2000 (93:9-25)</td><td>2023</td><td><a href="https://doi.org/10.1111/prd.12539">10.1111/prd.12539</a></td><td>1, 3</td></tr><tr><td>2</td><td>2</td><td><strong>Urban IA</strong>, Jovanovic SA, Lozada JL</td><td>Int J Oral Maxillofac Implants (24:502-510)</td><td>2009</td><td>PMID: 19587874 (no public DOI)</td><td>2, 3</td></tr><tr><td>3</td><td>2</td><td><strong>Urban IA</strong>, Lozada JL, Wessing B et al.</td><td>Int J Periodontics Restorative Dent (36:153-9)</td><td>2016</td><td><a href="https://doi.org/10.11607/prd.2627">10.11607/prd.2627</a></td><td>4</td></tr><tr><td>4</td><td>2</td><td>Milinkovic I, Cordaro L</td><td>Int J Oral Maxillofac Surg (43:606-25)</td><td>2014</td><td><a href="https://doi.org/10.1016/j.ijom.2013.12.004">10.1016/j.ijom.2013.12.004</a></td><td>1</td></tr><tr><td>5</td><td>4</td><td>Urban IA</td><td><em>Vertical and Horizontal Ridge Augmentation: New Concepts</em> (textbook)</td><td>2017</td><td>ISBN 978-0867154993</td><td>4 — Sausage Technique original source</td></tr><tr><td>6</td><td>5</td><td>SmileScape Clinic internal</td><td>Case audit: Sausage Technique outcomes 2024-2025</td><td>to be confirmed</td><td></td><td>4 — brand stance Tier 5 backing</td></tr></tbody></table>
+<ul><li>Citation #1 (PMID 38194351): Co-authored by Dr. Istvan Urban himself. Covers 35 years of GBR evidence — best single review for this pillar.</li><li>Citation #2 (PMID 19587874): Urban's own patient series — vertical augmentation mean 5.5mm, 100% implant survival at follow-up. Critical for "predictable" claim.</li><li>Citation #3 (PMID 26901293): Urban's periosteal suture technique — closest published reference to Sausage Technique mechanics.</li><li>Citation #5: Urban's textbook (Quintessence 2017) is the primary source for "Sausage Technique" name — clinic to confirm ISBN and acquire reference.</li></ul>
+<ul><li>Tier 2: Urban's published papers above (#1, #2, #3)</li><li>Tier 5: Internal case audit (SmileScape must compile this)</li><li>Documentary: Certificate/photo from training (proof of attendance — used in About/Doctor page, not cited inline)</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 3 — All-on-X / Full-Arch Immediate Loading</h3>
+<p><strong>Goal:</strong> 5-7 Tier 1-3 citations backing full-arch implant + immediate loading claims</p>
+<p><strong>Main claims to back:</strong></p>
+<p>1. All-on-X immediate loading ให้ผล survival rate สูง เทียบเท่า conventional loading 2. Full-arch fixed prosthesis บน implant ดีกว่าฟันปลอมถอดได้ในเรื่องคุณภาพชีวิต 3. Immediate loading ใน esthetic zone ไม่กระทบ peri-implant bone และ soft tissue</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>DOI/URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Abdunabi A, Morris M, Nader SA et al.</td><td>J Appl Oral Sci (27:e20180600)</td><td>2019</td><td><a href="https://doi.org/10.1590/1678-7757-2018-0600">10.1590/1678-7757-2018-0600</a></td><td>1</td></tr><tr><td>2</td><td>2</td><td>Tsigarida A, Chochlidakis K</td><td>Int J Prosthodont (34:s85-s92)</td><td>2021</td><td><a href="https://doi.org/10.11607/ijp.6911">10.11607/ijp.6911</a></td><td>2</td></tr><tr><td>3</td><td>2</td><td>Cheng Q, Su YY, Wang X, Chen S</td><td>Int J Oral Maxillofac Implants (35:167-177)</td><td>2020</td><td><a href="https://doi.org/10.11607/jomi.7548">10.11607/jomi.7548</a></td><td>1, 3</td></tr><tr><td>4</td><td>3</td><td>ILAPEO Brazil — consensus/teaching protocol</td><td>ILAPEO Immediate Loading Protocol</td><td>clinic to confirm year</td><td>ilapeo.edu.br</td><td>1 — institutional backing for SmileScape's ILAPEO training</td></tr><tr><td>5</td><td>5</td><td>SmileScape Clinic internal</td><td>All-on-X case audit 2024-2025</td><td>to be confirmed</td><td></td><td>1, 2 — brand Tier 5</td></tr></tbody></table>
+<ul><li>Citation #1 (PMID 31411262): Full-arch maxillary immediate loading — weak evidence of differences vs conventional loading; supports "as safe as conventional" narrative.</li><li>Citation #2 (PMID 33571328): Fixed vs removable overview — fixed prostheses have high survival rate; quality of life data supports claim 2.</li><li>Citation #3 (PMID 31923299): Esthetic zone immediate loading — no significant difference in bone loss or soft tissue vs conventional. Key for anterior All-on-X cases.</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 4 — Orthodontics (TrioClear / Damon)</h3>
+<p><strong>Goal:</strong> 4-6 Tier 1-3 citations backing clear aligner efficacy claims</p>
+<p><strong>Main claims to back:</strong></p>
+<p>1. Clear aligner สามารถรักษา malocclusion ได้ผลดี สำหรับ mild-moderate cases 2. Treatment duration ของ clear aligner ใกล้เคียงกับ fixed appliance ใน mild-moderate crowding 3. Damon self-ligating bracket ลด friction + เจ็บน้อยกว่า conventional bracket</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>DOI/URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Alhamwi AM, Burhan AS, Idris MI et al.</td><td>Clinical Oral Investigations (28:249)</td><td>2024</td><td><a href="https://doi.org/10.1007/s00784-024-05629-y">10.1007/s00784-024-05629-y</a></td><td>2</td></tr><tr><td>2</td><td>3</td><td>TrioClear — Modern Dental Group</td><td>Clinical evidence documentation</td><td>to be confirmed</td><td>trioclear.com</td><td>1 — TrioClear-specific backing</td></tr><tr><td>3</td><td>3</td><td>ADA / AAO</td><td>Clinical guideline on orthodontic treatment outcomes</td><td>clinic to confirm year</td><td>ada.org / aaoinfo.org</td><td>1</td></tr><tr><td>4</td><td>5</td><td>SmileScape Clinic internal</td><td>TrioClear case audit 2024-2025</td><td>to be confirmed</td><td></td><td>1 — brand Tier 5</td></tr></tbody></table>
+<ul><li>Citation #1 (PMID 38607436): Clear aligner vs fixed treatment duration — low GRADE evidence of no significant difference for mild-moderate crowding. Best current SR for this claim.</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 5 — Soft Tissue / Gum Aesthetics</h3>
+<p><strong>Goal:</strong> 4-6 Tier 1-3 citations backing peri-implant soft tissue management + aesthetic outcomes</p>
+<p><strong>Main claims to back:</strong></p>
+<p>1. Soft tissue management รอบ implant มีผลต่อ esthetic outcome ระยะยาว 2. Keratinized mucosa width มีผลต่อ peri-implant health 3. Gum aesthetic (pink aesthetic) ขึ้นอยู่กับ surgical technique และ tissue biotype</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>DOI/URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Benic GI, Mir-Mari J, Hämmerle CHF</td><td>Int J Oral Maxillofac Implants (29 Suppl:222-38)</td><td>2014</td><td><a href="https://doi.org/10.11607/jomi.2014suppl.g4.1">10.11607/jomi.2014suppl.g4.1</a></td><td>1</td></tr><tr><td>2</td><td>3</td><td>EFP — European multi-brand of Periodontology</td><td>Consensus on peri-implant soft tissue management</td><td>clinic to confirm year</td><td>efp.org</td><td>2</td></tr><tr><td>3</td><td>3</td><td>Ricardo Kern, Brazil — published technique</td><td>Soft tissue management protocol reference</td><td>clinic to verify publication</td><td></td><td>3 — SmileScape trained with Dr. Kern</td></tr><tr><td>4</td><td>5</td><td>SmileScape Clinic internal</td><td>Soft tissue management case audit</td><td>to be confirmed</td><td></td><td>1, 3</td></tr></tbody></table>
+<ul><li>Search PubMed: "keratinized mucosa implant health systematic review" — pull best Tier 2 citation</li><li>Search PubMed: "Ricardo Kern soft tissue" — verify if Dr. Kern has published technique papers</li><li>Pull EFP consensus report on peri-implant soft tissue management (check efp.org publications)</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 6 — Soft Tissue D-2 Hybrid (Urban Strip/IceBerg/Garage + Classic Root Coverage)</h3>
+<p><strong>Goal:</strong> 6-8 Tier 1-3 citations backing Soft Tissue D-2 Hybrid technique stack</p>
+<p><strong>Main claims to back:</strong> 1. Strip Graft (Urban) เพิ่ม keratinized tissue ได้ predictable 2. Ice Berg / Garage technique (Urban) เพิ่ม gingival thickness รอบ implant 3. CAF (Coronally Advanced Flap) เป็น gold standard root coverage 4. VISTA technique ปิด recession ได้หลายซี่พร้อมกัน + minimally invasive 5. Tunneling technique ลด morbidity เทียบกับ CAF 6. Keratinized mucosa ≥2mm สัมพันธ์กับ peri-implant health</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>4</td><td><strong>Urban IA</strong></td><td><em>Vertical and Horizontal Ridge Augmentation: New Concepts</em> (Quintessence)</td><td>2017</td><td>ISBN 978-0867154993</td><td>1, 2 (textbook source for Strip/Ice Berg/Garage)</td></tr><tr><td>2</td><td>2</td><td><strong>Urban IA</strong>, Monje A, Lozada JL</td><td>Various publications on soft tissue augmentation</td><td>2017-2023</td><td>clinic to compile</td><td>1, 2</td></tr><tr><td>3</td><td>2</td><td>Tavelli L, Barootchi S, Avila-Ortiz G et al.</td><td>J Clin Periodontol — Root Coverage SR</td><td>2018+</td><td>to be confirmed via PubMed search</td><td>3, 4, 5</td></tr><tr><td>4</td><td>2</td><td>Zucchelli G, Mounssif I</td><td>Periodontology 2000 — CAF technique</td><td>various</td><td>to be confirmed via PubMed</td><td>3</td></tr><tr><td>5</td><td>2</td><td>Zadeh HH</td><td>Int J Periodontics Restorative Dent — VISTA technique</td><td>2011</td><td>original VISTA paper</td><td>4</td></tr><tr><td>6</td><td>2</td><td>Allen EP</td><td>J Periodontol — Tunneling technique</td><td>1994</td><td>classic ref</td><td>5</td></tr><tr><td>7</td><td>2</td><td>Thoma DS, Naenni N, Figuero E et al.</td><td>J Clin Periodontol — Keratinized mucosa SR</td><td>2018</td><td>PMID 29498129</td><td>6</td></tr><tr><td>8</td><td>2</td><td>Avila-Ortiz G, Gonzalez-Martin O, Couso-Queiruga E, Wang HL</td><td>J Clin Periodontol — keratinized peri-implant SR</td><td>2020</td><td>PMID 32710810</td><td>6</td></tr><tr><td>9</td><td>5</td><td>SmileScape Clinic internal</td><td>Urban soft-tissue technique case audit</td><td>to be confirmed</td><td></td><td>1, 2 — brand Tier 5</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 7 — Densah Bur / Osseodensification (Huwais Signature)</h3>
+<p><strong>Goal:</strong> 5-7 Tier 1-3 citations supporting Signature Offering #5</p>
+<p><strong>Main claims to back:</strong> 1. Osseodensification (Densah burs) เพิ่ม bone density + primary stability vs conventional drilling 2. Internal sinus lift with Densah ได้ผลปลอดภัย minimally invasive 3. ลด trauma + accelerated healing vs traditional preparation 4. Improved implant stability quotient (ISQ) ตอน placement</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>4</td><td><strong>Huwais S</strong></td><td>Original osseodensification concept</td><td>2017+</td><td>inventor/developer</td><td>1, 2 (concept source)</td></tr><tr><td>2</td><td>2</td><td>Various authors</td><td>Osseodensification SR + meta-analysis</td><td>2023+</td><td>PMID 37975644 (J Clin Med 2023)</td><td>1, 4</td></tr><tr><td>3</td><td>2</td><td>Various authors</td><td>Osseodensification clinical outcomes meta</td><td>2023+</td><td>PMID 38002660</td><td>1, 4</td></tr><tr><td>4</td><td>2</td><td>Various authors</td><td>Densah sinus lift outcomes systematic review</td><td>2025</td><td>PMID 40377845</td><td>2</td></tr><tr><td>5</td><td>2</td><td>Various authors</td><td>Osseodensification bone density study</td><td>2020</td><td>PMID 33139057</td><td>1</td></tr><tr><td>6</td><td>2</td><td>Various authors</td><td>Osseodensification bone density implant</td><td>2020</td><td>PMID 33671038</td><td>1, 4</td></tr><tr><td>7</td><td>3</td><td>Versah (manufacturer)</td><td>Densah Bur clinical evidence documentation</td><td>current</td><td>versah.com</td><td>1, 2, 3, 4</td></tr><tr><td>8</td><td>5</td><td>SmileScape Clinic internal</td><td>Densah sinus lift case audit</td><td>to be confirmed</td><td></td><td>2 — brand Tier 5</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 8 — Zero Bone Loss Concept (Linkevicius Brand Framework)</h3>
+<p><strong>Goal:</strong> 5-7 Tier 1-4 citations supporting ZBL Brand Framework (clinical protocol)</p>
+<p><strong>Main claims to back:</strong> 1. Subcrestal placement + platform switching ลด marginal bone loss 2. Tissue-level abutment selection (cement-screw retention) preserves crestal bone 3. Adequate mucosal thickness (≥2mm) จำเป็นสำหรับ zero bone loss 4. Maintenance protocol รวม Airflow/GBT รักษา bone stability ระยะยาว</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>4</td><td><strong>Linkevicius T</strong></td><td><em>Zero Bone Loss Concepts</em> (Quintessence textbook)</td><td>2019</td><td>ISBN 978-0867158243</td><td>1, 2, 3, 4 (primary source)</td></tr><tr><td>2</td><td>2</td><td><strong>Linkevicius T</strong>, Puisys A, Steigmann M et al.</td><td>Various crestal bone studies</td><td>2010-2024</td><td>PMIDs: 34076631 / 20605308 / 33527729 / 32250061 / 35476860</td><td>1, 2, 3</td></tr><tr><td>3</td><td>2</td><td>Linkevicius T, Apse P, Grybauskas S, Puisys A</td><td>Clinical Oral Implants Research — Tissue thickness</td><td>2009</td><td>original mucosal thickness paper</td><td>3 (≥2mm threshold)</td></tr><tr><td>4</td><td>2</td><td>Linkevicius T, Linkevicius R, Alkimavicius J et al.</td><td>Clinical Oral Implants Research — Subcrestal placement long-term</td><td>2020+</td><td>PMID 32250061</td><td>1</td></tr><tr><td>5</td><td>5</td><td>SmileScape Clinic internal</td><td>ZBL Protocol adoption + outcomes audit</td><td>to be confirmed</td><td></td><td>All — brand stance</td></tr></tbody></table>
+<ul><li>Acquire Linkevicius 2019 textbook (ISBN 978-0867158243)</li><li>Confirm หมอแฮม Linkevicius training credential / textbook ownership</li><li>Pull full-text of PMID 32250061 + 35476860 (latest Linkevicius work)</li></ul>
+<div class="divider"></div>
+<h3 class="md">Pillar 9 — Peri-Implantitis Treatment Service (3.7.7)</h3>
+<p><strong>Goal:</strong> 5-7 Tier 1-3 citations supporting Peri-Implantitis service hub</p>
+<p><strong>Main claims to back:</strong> 1. Non-surgical + surgical multi-modal approach ให้ผลดีกว่า single modality 2. Regenerative surgery รักษา bone defects รอบ failing implant ได้ 3. Implantoplasty ลด biofilm retention บน exposed threads 4. Laser-assisted decontamination เป็น adjunctive therapy ที่ปลอดภัย</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>3</td><td><strong>Schwarz F</strong>, Becker K, Sahm N et al.</td><td>EFP/AAP World Workshop Consensus on Peri-Implantitis</td><td>2018</td><td>PMID 25626479 (foundational)</td><td>1, 2</td></tr><tr><td>2</td><td>2</td><td>Various — Schwarz peri-implantitis SR</td><td>J Clin Periodontol — Peri-implantitis treatment SR</td><td>2023</td><td>PMID 37271498</td><td>1, 2</td></tr><tr><td>3</td><td>2</td><td>Recent peri-implantitis treatment</td><td>Clinical Oral Implants Research</td><td>2025</td><td>PMID 40501397</td><td>1, 3</td></tr><tr><td>4</td><td>1</td><td>EFP — European multi-brand of Periodontology</td><td>Peri-implantitis clinical practice guidelines</td><td>2023</td><td>efp.org</td><td>All</td></tr><tr><td>5</td><td>2</td><td>Renvert S, Polyzois IN</td><td>Periodontology 2000 — Peri-implantitis decontamination</td><td>2018+</td><td>to be confirmed via PubMed</td><td>1</td></tr><tr><td>6</td><td>5</td><td>SmileScape Clinic internal</td><td>Peri-implantitis salvage case audit</td><td>to be confirmed</td><td></td><td>1, 2 — brand Tier 5</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 10 — Pediatric Dentistry (Section 3.9)</h3>
+<p><strong>Goal:</strong> 4-6 Tier 1-3 citations supporting pediatric service section</p>
+<p><strong>Main claims to back:</strong> 1. Fluoride varnish ลด early childhood caries 2. Pit &amp; Fissure sealant ป้องกัน occlusal caries 3. Pulpotomy เก็บฟันน้ำนมที่ผุลึก 4. Space Maintainer ป้องกันฟันแท้ขึ้นผิดที่หลังถอนฟันน้ำนมก่อนเวลา 5. Behavior management techniques ลด dental anxiety เด็ก</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>AAPD (American Academy of Pediatric Dentistry)</td><td>Reference Manual of Pediatric Dentistry</td><td>annual</td><td>aapd.org/research/policy-center</td><td>All</td></tr><tr><td>2</td><td>1</td><td>WHO</td><td>Promoting oral health in children</td><td>2022</td><td>who.int</td><td>1, 2</td></tr><tr><td>3</td><td>2</td><td>Marinho VCC et al.</td><td>Cochrane — Fluoride varnishes for caries prevention</td><td>2013 (still cited)</td><td>Cochrane</td><td>1</td></tr><tr><td>4</td><td>2</td><td>Ahovuo-Saloranta A et al.</td><td>Cochrane — Pit and fissure sealants</td><td>2017</td><td>Cochrane</td><td>2</td></tr><tr><td>5</td><td>1</td><td>ราชวิทยาลัยทันตแพทย์เด็ก (Royal College of Pediatric Dentistry Thailand)</td><td>TH clinical guidelines</td><td>clinic to confirm year</td><td>to be confirmed</td><td>All — Thai regulatory backing</td></tr><tr><td>6</td><td>5</td><td>SmileScape Clinic internal</td><td>Pediatric patient outcomes</td><td>to be confirmed</td><td></td><td>All</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 11 — Endodontics by Specialist (Section 3.11)</h3>
+<p><strong>Goal:</strong> 4-6 Tier 1-3 citations supporting specialist endo service section</p>
+<p><strong>Main claims to back:</strong> 1. Endodontic microscope เพิ่ม success rate 2. Apicoectomy แทน extraction สำหรับ persistent peri-apical lesion 3. Rotary endodontic systems ปรับปรุงคุณภาพ canal preparation 4. Internal bleaching รักษา discolored non-vital teeth 5. Pulp regeneration / Apexogenesis สำหรับฟันที่ pulp ยังไม่โต</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>ESE (European Society of Endodontology)</td><td>Quality guidelines for endodontic treatment</td><td>2006+ updates</td><td>esendodontology.org</td><td>All</td></tr><tr><td>2</td><td>1</td><td>AAE (American Association of Endodontists)</td><td>Treatment standards + position papers</td><td>current</td><td>aae.org</td><td>All</td></tr><tr><td>3</td><td>2</td><td>Setzer FC, Kim S</td><td>J Endod — Endodontic microscope success</td><td>2014+</td><td>PubMed search needed</td><td>1</td></tr><tr><td>4</td><td>2</td><td>Setzer FC, Shah SB, Kohli MR et al.</td><td>J Endod — Apicoectomy outcomes SR</td><td>2010+</td><td>to be confirmed via PubMed</td><td>2</td></tr><tr><td>5</td><td>5</td><td>SmileScape Clinic internal</td><td>Endodontic specialist case audit</td><td>to be confirmed</td><td></td><td>All</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 12 — Sedation &amp; GA Dentistry (Section 3.10)</h3>
+<p><strong>Goal:</strong> 3-5 Tier 1-3 citations supporting sedation service</p>
+<p><strong>Main claims to back:</strong> 1. Nitrous oxide conscious sedation ปลอดภัย + effective สำหรับ mild-moderate anxiety 2. IV sedation เหมาะกับ complex procedures + anxious adults 3. GA dentistry จำเป็นสำหรับ severe special needs / extreme anxiety / complex cases 4. Anesthesiologist-led sedation + monitoring ลด risk</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>AAPD</td><td>Behavior Guidance + Sedation Reference Manual</td><td>current</td><td>aapd.org</td><td>1, 3</td></tr><tr><td>2</td><td>1</td><td>ASA (American Society of Anesthesiologists)</td><td>Practice guidelines for moderate procedural sedation</td><td>2018 update</td><td>asahq.org</td><td>2, 4</td></tr><tr><td>3</td><td>1</td><td>ราชวิทยาลัยทันตแพทย์ — ทันตกรรมประดิษฐ์ / วิสัญญี</td><td>Thai guidelines for dental sedation</td><td>clinic to confirm</td><td>to be confirmed</td><td>1, 4</td></tr><tr><td>4</td><td>2</td><td>Various — pediatric sedation SR</td><td>Cochrane / J Dent Anesth Pain Med</td><td>2020+</td><td>to be confirmed via PubMed</td><td>1, 3</td></tr><tr><td>5</td><td>5</td><td>SmileScape Clinic internal</td><td>Sedation cases + anesthesiologist team</td><td>to be confirmed</td><td></td><td>4</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 13 — Insurance / Q-Clinic / Social Security Dental (Section 3.12)</h3>
+<p><strong>Goal:</strong> Government/regulatory citations (Tier 1) — NOT primarily PubMed</p>
+<p><strong>Main claims to back:</strong> 1. ประกันสังคมครอบคลุมขูดหินปูน/อุดฟัน/ถอนฟัน/ฟันปลอม 2. Annual cap 900 บาท (verify if 1,200 updated) 3. Q-Clinic direct billing ทำให้ผู้ป่วยไม่ต้องสำรองจ่าย 4. ม.33/ม.39/ม.40 ต่างกันที่สิทธิ์ดูแลสุขภาพ</p>
+<p><strong>Citations:</strong></p>
+<table class="mid"><thead><tr><th>#</th><th>Tier</th><th>Source</th><th>Year</th><th>URL</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>1</td><td><strong>สำนักงานประกันสังคม (Social Security Office)</strong></td><td>current</td><td>sso.go.th</td><td>All — primary regulatory source</td></tr><tr><td>2</td><td>1</td><td>กระทรวงแรงงาน — ระเบียบประกันสังคม</td><td>current</td><td>mol.go.th</td><td>All</td></tr><tr><td>3</td><td>1</td><td>ประกาศคณะกรรมการการแพทย์ ตาม พรบ.ประกันสังคม</td><td>various years</td><td>sso.go.th announcements</td><td>1, 2</td></tr><tr><td>4</td><td>1</td><td>SSO Q-Clinic registration database</td><td>current</td><td>sso.go.th/eform</td><td>3</td></tr><tr><td>5</td><td>5</td><td>SmileScape Q-Clinic certificate</td><td>to be confirmed clinic</td><td>internal documentation</td><td>3</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 14 — Concern Conditions (Halitosis / Xerostomia / Bruxism / TMJ / Dry Socket / MRONJ)</h3>
+<p><strong>Goal:</strong> 5-10 Tier 1-3 citations across concern cluster — Section 5 deep coverage</p>
+<p><strong>Main claims to back:</strong> 1. Halitosis 80%+ มีต้นเหตุจากปาก (tongue coating + perio) 2. Xerostomia เพิ่ม caries risk significantly 3. Bruxism management = splint + behavioral therapy (Botox optional) 4. TMJ disorder — conservative care first-line 5. Dry Socket risk factors + management 6. MRONJ — risk assessment ก่อน invasive dental procedures ในผู้ป่วยใช้ Bisphosphonate</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Topic</th><th>Authors / Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Halitosis</td><td>Aylıkcı BU, Çolak H</td><td>J Nat Sci Biol Med</td><td>2013</td><td>B (Review)</td></tr><tr><td>2</td><td>1</td><td>Halitosis</td><td>ADA</td><td>Bad breath patient resource</td><td>current</td><td>A</td></tr><tr><td>3</td><td>2</td><td>Xerostomia</td><td>Tanasiewicz M, Hildebrandt T, Obersztyn I</td><td>Adv Clin Exp Med</td><td>2016</td><td>B</td></tr><tr><td>4</td><td>2</td><td>Bruxism</td><td>Manfredini D, Lobbezoo F</td><td>J Oral Rehabil — Bruxism consensus</td><td>2018</td><td>A (Consensus)</td></tr><tr><td>5</td><td>2</td><td>TMJ</td><td>de Leeuw R, Klasser GD</td><td>Orofacial Pain Guidelines (AAOP)</td><td>2018</td><td>B (Guideline)</td></tr><tr><td>6</td><td>2</td><td>Dry Socket</td><td>Daly BJM, Sharif MO, Newton T et al.</td><td>Cochrane — Local interventions for dry socket</td><td>2012 (Cochrane updates available)</td><td>A (Cochrane SR)</td></tr><tr><td>7</td><td>3</td><td>MRONJ</td><td><strong>AAOMS Position Paper</strong> — Medication-Related Osteonecrosis of the Jaw</td><td>2022 update</td><td>aaoms.org</td><td>6</td></tr><tr><td>8</td><td>2</td><td>MRONJ</td><td>Ruggiero SL, Dodson TB, Aghaloo T et al.</td><td>J Oral Maxillofac Surg — AAOMS position paper</td><td>2022</td><td>B (Position paper full text)</td></tr><tr><td>9</td><td>2</td><td>MRONJ</td><td>Various — MRONJ extraction outcomes SR</td><td>2023+</td><td>PMID 37449761 / 39113433 / 35911799</td><td>6</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 15 — Dental Caries (Section 5.6.2 + Section 3.6)</h3>
+<p><strong>Goal:</strong> 5-7 Tier 1-3 citations backing caries education + prevention</p>
+<p><strong>Main claims to back:</strong> 1. ฟันผุระยะแรก (White Spot Lesion) สามารถ remineralize ได้ด้วย Fluoride 2. Caries เป็น biofilm-mediated, diet-modulated, multifactorial disease 3. Fluoride toothpaste 1000+ ppm ป้องกันได้ effective 4. Pit &amp; Fissure Sealants ลด occlusal caries 5. Root caries เป็น senior-specific risk (xerostomia + recession)</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Authors</th><th>Source</th><th>Year</th><th>PMID/DOI</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>WHO</td><td>Ending childhood dental caries: WHO implementation manual</td><td>2019</td><td>who.int</td><td>1, 2, 3</td></tr><tr><td>2</td><td>1</td><td>ADA — Council on Scientific Affairs</td><td>Topical fluoride for caries prevention</td><td>current</td><td>ada.org</td><td>3</td></tr><tr><td>3</td><td>2</td><td>Walsh T et al.</td><td>Cochrane — Fluoride toothpastes for caries prevention</td><td>2019</td><td>Cochrane</td><td>3</td></tr><tr><td>4</td><td>2</td><td>Pitts NB, Zero DT, Marsh PD et al.</td><td>Nat Rev Dis Primers — Dental caries</td><td>2017</td><td>to be confirmed via PubMed</td><td>1, 2</td></tr><tr><td>5</td><td>2</td><td>Ahovuo-Saloranta A et al.</td><td>Cochrane — Pit and fissure sealants</td><td>2017</td><td>Cochrane</td><td>4</td></tr><tr><td>6</td><td>2</td><td>Hayes M et al.</td><td>J Dent Res — Root caries SR</td><td>2016+</td><td>to be confirmed via PubMed</td><td>5</td></tr><tr><td>7</td><td>5</td><td>SmileScape Clinic internal</td><td>Caries patient outcomes</td><td>to be confirmed</td><td></td><td>All</td></tr></tbody></table>
+<div class="divider"></div>
+<h3 class="md">Pillar 16 — Direct Print Clear Aligner (Signature #6) ⭐</h3>
+<p><strong>Goal:</strong> 5-8 Tier 1-3 citations supporting Direct Print In-House Aligner — SmileScape Signature Offering #6</p>
+<p><strong>Main claims to back:</strong> 1. Direct Print clear aligners produce comparable or better clinical outcomes vs thermoformed 2. Photopolymer resin (TC-85DAC / Tera Harz TC-85) is FDA-cleared and biocompatible for prolonged intraoral use 3. Direct Print allows fewer composite attachments due to built-in retention features 4. Variable thickness per region (force zones thicker, comfort zones thinner) — impossible with thermoforming 5. Shape memory effect of photopolymer = better aligner fit recovery 6. Same-day in-house production enables mid-treatment refinement without lab delays</p>
+<p><strong>Citations:</strong></p>
+<table class="wide"><thead><tr><th>#</th><th>Tier</th><th>Topic</th><th>Authors / Source</th><th>Year</th><th>PMID</th><th>Covers Claim(s)</th></tr></thead><tbody><tr><td>1</td><td>2</td><td>Direct Print outcomes</td><td>Various — Direct 3D printed aligner</td><td>2022</td><td>PMID 36311049</td><td>1</td></tr><tr><td>2</td><td>2</td><td>Material properties</td><td>Various — Photopolymer aligner materials</td><td>2021</td><td>PMID 33916462</td><td>2</td></tr><tr><td>3</td><td>2</td><td>Clinical outcomes 2024</td><td>Various — Recent Direct Print clinical</td><td>2024</td><td>PMID 39921085</td><td>1, 3</td></tr><tr><td>4</td><td>2</td><td>Direct Print vs Thermoformed</td><td>Various — Comparison study</td><td>2024</td><td>PMID 38337260</td><td>3, 4, 5</td></tr><tr><td>5</td><td>2</td><td>2025 Systematic Review</td><td>Various — Direct Print SR</td><td>2025</td><td>PMID 40123039</td><td>All</td></tr><tr><td>6</td><td>2</td><td>Tera Harz TC-85 specific</td><td>Various — TC-85 material study</td><td>2025</td><td>PMID 42076391</td><td>2</td></tr><tr><td>7</td><td>3</td><td>Manufacturer</td><td>Graphy Inc — TC-85DAC FDA clearance + clinical</td><td>current</td><td>graphy.com</td><td>2 — FDA backing</td></tr><tr><td>8</td><td>3</td><td>Manufacturer</td><td>Tera Harz / Versa Wax — TC-85 documentation</td><td>current</td><td>teraharz.com</td><td>2</td></tr><tr><td>9</td><td>5</td><td>Brand</td><td>SmileScape Clinic internal</td><td>In-house Direct Print case audit</td><td>to be confirmed</td><td>All — brand Tier 5</td></tr></tbody></table>
+<ul><li>Confirm 3D printer model (Asiga / SprintRay / Formlabs)</li><li>Confirm photopolymer brand (Graphy TC-85DAC vs Tera Harz TC-85 vs other)</li><li>Confirm production volume + warranty terms</li><li>Pull manufacturer FDA clearance + clinical evidence from Graphy / Tera Harz site</li></ul>
+<div class="divider"></div></section></body></html>

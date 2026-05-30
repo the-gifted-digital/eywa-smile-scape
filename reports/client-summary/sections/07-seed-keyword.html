@@ -1,0 +1,258 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SmileScape — 07-seed-keyword</title><style>
+:root{
+  --bg:#F5FAFE; --bg2:#EBF3FA; --bg3:#E0ECF5; --text:#1a1a1a; --text2:#4a5568; --text3:#8a9aaa;
+  --border:#c8daea; --blue:#1153A1; --blue-light:#dce8f5; --blue-dark:#0a3d7a;
+  --green:#0f7b6c; --green-bg:#dbeddb; --gold:#c99500; --gold-bg:#faf0d8;
+  --red:#d94444; --red-bg:#fce4e4; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,'Sukhumvit Set','Thonburi',Arial,sans-serif;
+     color:var(--text);line-height:1.6;font-size:13px;-webkit-font-smoothing:antialiased;background:#fff}
+
+@page{ size:A4; margin:16mm 15mm 16mm; }
+@page cover{ size:A4; margin:0; }
+
+a{color:var(--blue);text-decoration:none}
+code{background:var(--bg2);padding:.5px 4px;border-radius:3px;font-size:.86em;color:var(--blue-dark);
+     font-family:ui-monospace,Menlo,monospace}
+.divider{height:1px;background:var(--border);margin:14px 0}
+
+/* section = flows across pages, starts on a fresh page */
+.section{ break-before:page; }
+.section:first-of-type{ break-before:auto; }
+
+h1{font-size:24px;font-weight:800;color:var(--blue-dark);line-height:1.25;margin:0 0 6px}
+h2,h3.md{font-size:16px;font-weight:700;color:var(--blue);margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--border);break-after:avoid}
+h3,h4.md{font-size:13.5px;font-weight:700;color:var(--text);margin:14px 0 5px;break-after:avoid}
+h5.md,h6.md{font-size:12px;font-weight:700;color:var(--text2);margin:10px 0 4px;break-after:avoid}
+p{color:var(--text2);margin:0 0 9px;line-height:1.7}
+ul{margin:6px 0 9px 18px} li{margin:3px 0;color:var(--text2);line-height:1.6}
+strong{color:var(--text)}
+
+.section-number{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.page-title-bar{background:linear-gradient(135deg,var(--blue-light),#e8f2fc);padding:15px 22px;border-radius:4px;
+   margin-bottom:18px;border-left:4px solid var(--blue);break-after:avoid;break-inside:avoid}
+.page-title-bar h1{margin:0;font-size:21px}
+.page-title-bar p{margin:3px 0 0;font-size:12px;color:var(--text3)}
+.lead{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.lead strong{color:var(--blue-dark)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:9px 0 14px;font-size:12px}
+table.mid{font-size:10.5px} table.wide{font-size:9px}
+thead{display:table-header-group}
+th{background:var(--bg2);padding:6px 11px;text-align:left;font-weight:700;font-size:10px;color:var(--text2);
+   border:1px solid var(--border);letter-spacing:.3px;text-transform:uppercase;vertical-align:bottom}
+table.wide th{padding:4px 6px}
+td{padding:6px 11px;border:1px solid var(--border);vertical-align:top;background:var(--white);word-break:break-word}
+table.mid td{padding:4px 8px} table.wide td{padding:3px 6px}
+tbody tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:#FAFCFE}
+table.wide td:first-child,table.wide th:first-child{width:20px;text-align:center;color:var(--text3)}
+
+/* callout */
+.callout{display:flex;gap:11px;padding:13px 15px;border-radius:4px;margin:13px 0;font-size:12.5px;line-height:1.65;color:var(--text);break-inside:avoid}
+.callout .icon{font-size:17px;flex-shrink:0;margin-top:1px}
+.c-blue{background:var(--blue-light)} .c-green{background:var(--green-bg)}
+.c-gold{background:var(--gold-bg)} .c-red{background:var(--red-bg)}
+
+/* cards + grids */
+.card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:13px;break-inside:avoid}
+.card-accent{border-left:4px solid var(--blue)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+/* stat boxes */
+.stat-box{text-align:center;padding:13px 9px;background:var(--white);border:1px solid var(--border);border-radius:6px;break-inside:avoid}
+.stat-box .num{font-size:25px;font-weight:800;color:var(--blue);line-height:1.05}
+.stat-box .label{font-size:9.5px;color:var(--text3);margin-top:4px;line-height:1.3}
+.statrow{margin:6px 0 16px}
+
+/* bar chart */
+.bars{margin:8px 0 14px}
+.bar{display:flex;align-items:center;gap:9px;margin:5px 0;font-size:11.5px;break-inside:avoid}
+.bar .lab{width:210px;flex:none;color:var(--text)}
+.bar .track{flex:1;background:var(--bg2);border-radius:5px;height:14px;overflow:hidden}
+.bar .fill{height:100%;border-radius:5px;background:var(--blue)}
+.bar .val{width:96px;flex:none;text-align:right;color:var(--text3);font-size:10.5px}
+
+/* keyword chips */
+.kwgrid{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0 13px}
+.kw{display:inline-block;background:var(--bg2);color:var(--blue-dark);border:1px solid var(--border);
+    border-radius:14px;padding:2px 9px;font-size:9.5px;white-space:nowrap}
+
+/* timeline */
+.timeline-item{display:flex;gap:14px;margin-bottom:14px;position:relative;break-inside:avoid}
+.timeline-dot{width:10px;height:10px;background:var(--blue);border-radius:50%;margin-top:5px;flex-shrink:0;position:relative}
+.timeline-dot::after{content:'';position:absolute;top:10px;left:4px;width:2px;height:calc(100% + 4px);background:var(--border)}
+.timeline-item:last-child .timeline-dot::after{display:none}
+.timeline-phase{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+.timeline-title{font-size:12.5px;font-weight:700;margin:2px 0 3px}
+.timeline-desc{font-size:11px;color:var(--text2);line-height:1.55}
+
+.note{font-size:10px;color:var(--text3);margin-top:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--text3);margin:2px 0 10px}
+.legend b{color:var(--blue-dark)}
+.pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+      padding:2px 8px;border-radius:10px;background:var(--green-bg);color:var(--green)}
+
+/* sitemap section blocks */
+.smsec{break-inside:avoid-page;margin:14px 0 10px}
+.smsec h3.md{margin-top:14px}
+
+/* ===== COVER ===== */
+.cover{page:cover;height:297mm;background:linear-gradient(160deg,#0a3d7a 0%,#1153A1 42%,#7BA4DD 100%);
+  color:#fff;display:flex;flex-direction:column;justify-content:center;padding:80px 64px;position:relative;
+  overflow:hidden;break-after:page}
+.cover::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cover::after{content:'';position:absolute;bottom:-150px;left:-150px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover .conf{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:64px}
+.cover .logo{height:78px;opacity:.9;filter:brightness(0) invert(1);margin-bottom:40px}
+.cover .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:14px}
+.cover .title{font-size:40px;font-weight:800;line-height:1.18;margin-bottom:14px}
+.cover .subtitle{font-size:16px;font-weight:400;color:rgba(255,255,255,.7);max-width:560px;line-height:1.65;margin-bottom:18px}
+.cover .cdiv{width:48px;height:2px;background:rgba(255,255,255,.25);margin:22px 0}
+.cover .meta{font-size:12.5px;color:rgba(255,255,255,.55);line-height:2.1}
+.cover .meta strong{color:rgba(255,255,255,.8);font-weight:600}
+.cover .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.cover .statline .n{font-size:26px;font-weight:800;color:#fff}
+.cover .statline .l{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* TOC */
+.toc .row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border)}
+.toc .row .l{font-weight:600;color:var(--text)} .toc .row .no{font-weight:800;color:var(--blue);margin-right:12px}
+.toc .row .d{font-size:11.5px;color:var(--text3);text-align:right;max-width:54%}
+footer.end{margin-top:18px;border-top:2px solid var(--blue);padding-top:12px;color:var(--text3);font-size:10.5px;line-height:1.6}
+footer.end b{color:var(--blue-dark)}
+
+/* ---- page-break safety: never strand a heading or label above its table ---- */
+h2,h3.md,h4.md,h5.md,h6.md{break-after:avoid-page;break-inside:avoid}
+.page-title-bar{break-after:avoid-page}
+p:has(+ table){break-after:avoid-page}
+p:has(+ .kwgrid){break-after:avoid-page}
+ul:has(+ table){break-after:avoid-page}
+/* continuous entity table */
+.entity-all td:nth-child(2){font-weight:600;color:var(--text)}
+.entity-all th:first-child,.entity-all td:first-child{width:30px;white-space:nowrap;text-align:center}
+.entity-all th:nth-child(5),.entity-all td:nth-child(5){width:54px}
+.entity-all th:nth-child(6),.entity-all td:nth-child(6){width:44px}
+/* cover logo badge (original colours on white — crisp, no filter) */
+.cover .logobadge{display:inline-block;background:#fff;border-radius:14px;padding:16px 24px;margin-bottom:36px;box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.cover .logobadge img{height:42px;display:block}
+</style></head><body><section class="section"><div class="section-number">Section 06</div><div class="page-title-bar"><h1>Keyword Universe</h1><p>~680 researched keywords across 16 clusters</p></div>
+<p class="lead">Our keyword research maps real Thai &amp; English search demand — organised by topic and by intent (informational, commercial, transactional). Early demand analysis surfaced several <strong>high-volume, low-competition opportunities</strong> the clinic is uniquely positioned to own.</p>
+<div class="g4 statrow"><div class="stat-box"><div class="num">~680</div><div class="label">Keywords researched</div></div><div class="stat-box"><div class="num">16</div><div class="label">Keyword clusters</div></div><div class="stat-box"><div class="num">16</div><div class="label">Geo modifiers</div></div><div class="stat-box"><div class="num">4</div><div class="label">Search-intent types</div></div></div>
+<h2>High-opportunity demand (early findings)</h2>
+<div class="bars"><div class="bar"><div class="lab">Gum swelling (เหงือกบวม)</div><div class="track"><div class="fill" style="width:100%;background:var(--gold)"></div></div><div class="val">22,200/mo</div></div><div class="bar"><div class="lab">Tooth decay (ฟันผุ)</div><div class="track"><div class="fill" style="width:100%;background:var(--gold)"></div></div><div class="val">22,200/mo</div></div><div class="bar"><div class="lab">Scaling / cleaning (ขูดหินปูน)</div><div class="track"><div class="fill" style="width:55%;background:var(--gold)"></div></div><div class="val">12,100/mo</div></div><div class="bar"><div class="lab">Gum recession (เหงือกร่น)</div><div class="track"><div class="fill" style="width:45%;background:var(--blue)"></div></div><div class="val">9,900/mo</div></div><div class="bar"><div class="lab">Bleeding gums (เลือดออกตามไรฟัน)</div><div class="track"><div class="fill" style="width:30%;background:var(--blue)"></div></div><div class="val">6,600/mo</div></div><div class="bar"><div class="lab">Social-security eligibility check</div><div class="track"><div class="fill" style="width:11%;background:var(--green)"></div></div><div class="val">2,400/mo</div></div><div class="bar"><div class="lab">Yellow teeth (ฟันเหลือง)</div><div class="track"><div class="fill" style="width:11%;background:var(--green)"></div></div><div class="val">2,400/mo</div></div></div>
+<p class="note">Full keyword lists by cluster follow. Search volume, difficulty and CPC are validated continuously as the site is indexed.</p>
+<div class="divider"></div>
+<h3 class="md">Cluster Index</h3>
+<table class=""><thead><tr><th>#</th><th>Cluster</th><th>Sitemap Anchor</th><th>KW Count</th></tr></thead><tbody><tr><td>1</td><td>Hero — Dental Implant (รากฟันเทียม)</td><td>S3.2 + S5.1 + S6.2</td><td>~140</td></tr><tr><td>2</td><td>All-on-X / Full Arch</td><td>S3.3 + S6.3</td><td>~40</td></tr><tr><td>3</td><td>Bone Grafting / Sinus Lift</td><td>S3.2.4-6 + S5.2 + S6.4</td><td>~50</td></tr><tr><td>4</td><td>Soft Tissue / Gum Aesthetics</td><td>S3.2.10 + S5.11</td><td>~25</td></tr><tr><td>5</td><td>Implant Brand Intent</td><td>S4.5 + S6.2</td><td>~60</td></tr><tr><td>6</td><td>Orthodontics — Clear Aligner</td><td>S3.5 + S5.10 + S6.6</td><td>~50</td></tr><tr><td>7</td><td>Orthodontics — Braces</td><td>S3.5 + S5.10</td><td>~25</td></tr><tr><td>8</td><td>Cosmetic / Smile Design</td><td>S3.4 + S5.5</td><td>~40</td></tr><tr><td>9</td><td>General Dentistry</td><td>S3.6 + S5.6</td><td>~50</td></tr><tr><td>10</td><td>Periodontal</td><td>S3.7 + S5.11 + S6.2</td><td>~30</td></tr><tr><td>11</td><td>Pediatric (กุมารทันตกรรม)</td><td>S5.12</td><td>~20</td></tr><tr><td>12</td><td>Cost / Insurance / สิทธิ์</td><td>S5.13</td><td>~30</td></tr><tr><td>13</td><td>Fear / Patient Concerns</td><td>S5.4 + S5.7</td><td>~25</td></tr><tr><td>14</td><td>Brand &amp; Local SEO</td><td>S1 Homepage + S2 Uniqueness + S7/S8 Branches</td><td>~40</td></tr><tr><td>15</td><td>Technology / Digital</td><td>S4</td><td>~30</td></tr><tr><td>16</td><td>Geo Modifiers (apply to all)</td><td></td><td>~25</td></tr></tbody></table>
+<p><strong>Total: ~680 seed keywords</strong> — volume/difficulty data deferred to</p>
+<div class="divider"></div>
+<h3 class="md">Cluster 1 — Hero: Dental Implant (รากฟันเทียม)</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.2 (Implant Mastery 60% of S3) + Section 5.1 (Implant Funnel) + Section 6.2 (Implant Knowledge) <strong>Layer:</strong> core for S3.2 pages (always-on) / demand-driven for S5.1 + S6.2 additions (demand-driven gap fill) <strong>Intent dominant:</strong> C/T (commercial + transactional) for S3; I (informational) for S5/S6</p>
+<h4 class="md">1A. Generic Service KW (Informational + Commercial)</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม</span><span class="kw">รากฟันเทียม ราคา</span><span class="kw">รากฟันเทียม ราคาถูก</span><span class="kw">รากฟันเทียม ราคา 2026</span><span class="kw">รากฟันเทียม ดีไหม</span><span class="kw">รากฟันเทียม คืออะไร</span><span class="kw">รากฟันเทียม ขั้นตอน</span><span class="kw">รากฟันเทียม กี่วัน</span><span class="kw">รากฟันเทียม กี่เดือน</span><span class="kw">รากฟันเทียม เจ็บไหม</span><span class="kw">รากฟันเทียม อันตรายไหม</span><span class="kw">รากฟันเทียม อยู่ได้กี่ปี</span><span class="kw">รากฟันเทียม รับประกัน</span><span class="kw">รากฟันเทียม ผ่อน</span><span class="kw">รากฟันเทียม ผ่อน 0</span><span class="kw">รากฟันเทียม ผ่อน 0 ไม่ใช้บัตร</span><span class="kw">รากฟันเทียม โปรโมชั่น</span><span class="kw">รากฟันเทียม โปร 29900</span><span class="kw">รากฟันเทียม ฟรี consult</span><span class="kw">รากฟันเทียม ที่ไหนดี</span><span class="kw">รากฟันเทียม คลินิก</span><span class="kw">รากฟันเทียม คลินิกที่ไหนดี</span><span class="kw">ราคารากฟันเทียม 1 ซี่</span><span class="kw">ราคารากเทียมทั้งปาก</span><span class="kw">ปลูกรากฟัน</span><span class="kw">ปลูกรากฟันเทียม</span><span class="kw">ฟันรากเทียม</span><span class="kw">รากเทียมทันตกรรม</span><span class="kw">ทำรากฟันเทียม</span><span class="kw">ทำรากเทียม</span><span class="kw">ทำรากฟันเทียม ที่ไหนดี</span></div>
+<h4 class="md">1B. Single Tooth Implant (specific intent)</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม 1 ซี่</span><span class="kw">รากฟันเทียม ฟันหน้า</span><span class="kw">รากฟันเทียม ฟันหลัง</span><span class="kw">รากฟันเทียม ฟันกราม</span><span class="kw">รากฟันเทียมฟันหน้า ราคา</span><span class="kw">ใส่รากฟันเทียม 1 ซี่</span><span class="kw">รากเทียมซี่เดียว</span><span class="kw">single tooth implant</span></div>
+<h4 class="md">1C. Multiple / Bridge</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม หลายซี่</span><span class="kw">รากฟันเทียม 2 ซี่ 3 ซี่</span><span class="kw">ทำรากฟันเทียม หลายซี่</span><span class="kw">implant bridge</span><span class="kw">สะพานฟันบนรากเทียม</span><span class="kw">implant supported bridge</span></div>
+<h4 class="md">1D. Process / Procedure</h4>
+<div class="kwgrid"><span class="kw">ผ่าตัดรากฟันเทียม</span><span class="kw">ผ่ารากฟันเทียม</span><span class="kw">ขั้นตอนการฝังรากฟันเทียม</span><span class="kw">การฝังรากฟันเทียม</span><span class="kw">ฝังรากฟันเทียม</span><span class="kw">รากเทียม ขั้นตอน</span><span class="kw">รากฟันเทียม ผ่าตัด</span><span class="kw">ฝังรากเทียม กี่วันใส่ฟัน</span><span class="kw">osseointegration คืออะไร</span><span class="kw">รากเทียมยึดกับกระดูก กี่เดือน</span><span class="kw">รากเทียม immediate load</span><span class="kw">ใส่ฟันชั่วคราวบนรากเทียม</span></div>
+<h4 class="md">1E. Recovery / Aftercare</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม ดูแลอย่างไร</span><span class="kw">ดูแลรากฟันเทียม</span><span class="kw">รากฟันเทียม หลังผ่าตัด</span><span class="kw">รากฟันเทียม กินอะไรได้</span><span class="kw">รากฟันเทียม กินอะไรไม่ได้</span><span class="kw">รากฟันเทียม บวมกี่วัน</span><span class="kw">รากฟันเทียม ห้ามทำอะไร</span><span class="kw">รากฟันเทียม สูบบุหรี่</span><span class="kw">รากฟันเทียม กี่วันถึงปกติ</span><span class="kw">ทำรากฟันเทียม ทำงานต่อได้ไหม</span></div>
+<h4 class="md">1F. Failure / Complications (Section 5.7)</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม หลุด</span><span class="kw">รากฟันเทียม โยก</span><span class="kw">รากฟันเทียม ติดเชื้อ</span><span class="kw">รากฟันเทียม อักเสบ</span><span class="kw">รากเทียมเหงือกอักเสบ</span><span class="kw">peri-implantitis</span><span class="kw">รากฟันเทียม peri-implantitis</span><span class="kw">รากฟันเทียม ปัญหา</span><span class="kw">รากฟันเทียม fail</span><span class="kw">รากฟันเทียม ไม่ติด</span><span class="kw">รากฟันเทียม ใช้งานไม่ได้</span><span class="kw">รากเทียมหลุดทำอย่างไร</span><span class="kw">แก้ไขรากเทียมที่ล้มเหลว</span><span class="kw">implant failure คืออะไร</span></div>
+<h4 class="md">1G. Comparison / Alternative</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม vs สะพานฟัน</span><span class="kw">รากฟันเทียม กับ ฟันปลอม</span><span class="kw">รากฟันเทียม กับ สะพานฟัน อันไหนดี</span><span class="kw">รากฟันเทียม ฟันปลอม ต่างกัน</span><span class="kw">รากฟันเทียม vs ครอบฟัน</span><span class="kw">ทำรากฟัน หรือ สะพานฟัน</span><span class="kw">ฟันปลอมแบบไหนดี</span><span class="kw">ฟันปลอมติดแน่น vs ถอดได้</span></div>
+<h4 class="md">1H. Eligibility / Special Cases</h4>
+<div class="kwgrid"><span class="kw">รากฟันเทียม คนสูงอายุ</span><span class="kw">รากฟันเทียม คนแก่ 70 ปี</span><span class="kw">รากฟันเทียม เบาหวาน</span><span class="kw">รากฟันเทียม ความดัน</span><span class="kw">รากฟันเทียม กระดูกพรุน</span><span class="kw">รากฟันเทียม คนอายุน้อย</span><span class="kw">รากฟันเทียม ตั้งครรภ์</span><span class="kw">รากฟันเทียม ทำได้ไหม [condition]</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 2 — All-on-X / Full Arch Restoration</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.3 + Section 6.3 <strong>Layer:</strong> core for S3.3 pages / demand-driven for S6.3 knowledge additions</p>
+<div class="kwgrid"><span class="kw">all on 4</span><span class="kw">all on 4 คืออะไร</span><span class="kw">all on 4 ราคา</span><span class="kw">all on 4 ดีไหม</span><span class="kw">all on 4 vs all on 6</span><span class="kw">all on 6</span><span class="kw">all on x</span><span class="kw">all on x ราคา</span><span class="kw">รากฟันเทียม all on 4</span><span class="kw">รากฟันเทียมทั้งปาก</span><span class="kw">รากฟันเทียม ทั้งปาก ราคา</span><span class="kw">รากฟันเทียม ทั้งปาก กี่ตัว</span><span class="kw">ฟันปลอมติดแน่นทั้งปาก</span><span class="kw">ฟันปลอมบนรากเทียม</span><span class="kw">overdenture รากเทียม</span><span class="kw">รากเทียมรองรับฟันปลอม</span><span class="kw">implant supported denture</span><span class="kw">ทำฟันทั้งปาก ราคา</span><span class="kw">ทำฟันทั้งปาก รากเทียม</span><span class="kw">all on 4 immediate load</span><span class="kw">all on 4 ขั้นตอน</span><span class="kw">all on 4 หลังผ่าตัด</span><span class="kw">all on 4 ดูแล</span><span class="kw">all on 4 อยู่ได้กี่ปี</span><span class="kw">all on 4 ผ่อน</span><span class="kw">zygomatic implant</span><span class="kw">รากเทียม zygomatic</span><span class="kw">ฟันบนรากเทียม</span><span class="kw">ผ่ารากเทียมทั้งปาก กี่วัน</span><span class="kw">all on 4 ใส่ฟันทันที</span><span class="kw">ฟันใหม่ในวันเดียว</span><span class="kw">teeth in a day</span><span class="kw">same day implant</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 3 — Bone Grafting / Sinus Lift</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.2.4-6 + Section 5.2 + Section 6.4 <strong>Layer:</strong> core for S3.2.4-6 pages / demand-driven for S5.2 + S6.4</p>
+<h4 class="md">3A. Bone Graft</h4>
+<div class="kwgrid"><span class="kw">ปลูกกระดูก</span><span class="kw">ปลูกกระดูกฟัน</span><span class="kw">ปลูกกระดูกเพื่อรากเทียม</span><span class="kw">ปลูกกระดูก ราคา</span><span class="kw">ปลูกกระดูก เจ็บไหม</span><span class="kw">ปลูกกระดูก กี่เดือน</span><span class="kw">bone graft คืออะไร</span><span class="kw">bone graft รากฟันเทียม</span><span class="kw">bone graft ราคา</span><span class="kw">gbr คืออะไร</span><span class="kw">guided bone regeneration</span><span class="kw">sausage technique [BRAND-LIKE]</span><span class="kw">sausage technique คืออะไร</span><span class="kw">urban technique [BRAND-LIKE]</span><span class="kw">รากเทียมกระดูกไม่พอ</span><span class="kw">กระดูกขากรรไกรไม่พอ</span><span class="kw">กระดูกฟันละลาย</span><span class="kw">กระดูกหายแล้วทำรากเทียม</span><span class="kw">รากฟันเทียม กระดูกบาง</span></div>
+<h4 class="md">3B. Sinus Lift</h4>
+<div class="kwgrid"><span class="kw">ยกไซนัส</span><span class="kw">ยกพื้นไซนัส</span><span class="kw">sinus lift คืออะไร</span><span class="kw">sinus lift ราคา</span><span class="kw">sinus lift เจ็บไหม</span><span class="kw">sinus lift กี่วันหาย</span><span class="kw">ยกไซนัส รากฟันเทียม</span><span class="kw">รากฟันเทียม ฟันบน ยกไซนัส</span><span class="kw">รากฟันเทียม ฟันกรามบน</span><span class="kw">internal sinus lift</span><span class="kw">external sinus lift</span><span class="kw">direct sinus lift</span><span class="kw">indirect sinus lift</span></div>
+<h4 class="md">3C. PRF / Biologics</h4>
+<div class="kwgrid"><span class="kw">prf คืออะไร</span><span class="kw">platelet rich fibrin</span><span class="kw">prf รากฟันเทียม</span><span class="kw">prf ปลูกกระดูก</span><span class="kw">i-prf</span><span class="kw">a-prf</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 4 — Soft Tissue / Gum Aesthetics</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.2.10 + Section 5.11 <strong>Layer:</strong> core for S3.2.10 pages / demand-driven for S5.11 additions</p>
+<div class="kwgrid"><span class="kw">ปลูกเหงือก</span><span class="kw">ปลูกเหงือก ราคา</span><span class="kw">gum graft</span><span class="kw">soft tissue graft</span><span class="kw">ปลูกเหงือกรอบรากเทียม</span><span class="kw">เหงือกร่น</span><span class="kw">เหงือกร่น แก้</span><span class="kw">เหงือกร่น รักษา</span><span class="kw">gingival recession</span><span class="kw">free gingival graft</span><span class="kw">fgg</span><span class="kw">connective tissue graft</span><span class="kw">ctg</span><span class="kw">รากเทียม เหงือกสวย</span><span class="kw">รากเทียม เหงือกร่น</span><span class="kw">รากเทียม ฟันหน้า เหงือกสวย</span><span class="kw">gum aesthetic implant</span><span class="kw">ปั้นเหงือก</span><span class="kw">แต่งเหงือก</span><span class="kw">gummy smile รักษา</span><span class="kw">ยิ้มเห็นเหงือก แก้</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 5 — Implant Brand Intent (Section 4 + Section 6 only — per )</h3>
+<p><strong>Sitemap Anchor:</strong> Section 4.5 (specs in tech) + Section 6.2 (knowledge / comparison) <strong>Layer:</strong> core for S4.5 pages / demand-driven for S6.2 knowledge <strong>⚠️ Brand names appear ONLY in S4 + S6 clusters — NEVER in Section 3 services pages </strong></p>
+<h4 class="md">5A. Blue Diamond (Hero)</h4>
+<div class="kwgrid"><span class="kw">blue diamond implant</span><span class="kw">blue diamond รากฟันเทียม</span><span class="kw">blue diamond คืออะไร</span><span class="kw">blue diamond ดีไหม</span><span class="kw">blue diamond ราคา</span><span class="kw">blue diamond รับประกัน</span><span class="kw">blue diamond korea</span><span class="kw">blue diamond vs straumann</span><span class="kw">blue diamond vs osstem</span><span class="kw">blue diamond รีวิว</span><span class="kw">รากเทียม blue diamond</span><span class="kw">รากเทียมเกาหลี blue diamond</span></div>
+<h4 class="md">5B. Straumann (Premium)</h4>
+<div class="kwgrid"><span class="kw">straumann</span><span class="kw">straumann implant</span><span class="kw">straumann รากฟันเทียม</span><span class="kw">straumann ราคา</span><span class="kw">straumann ดีไหม</span><span class="kw">straumann vs nobel biocare</span><span class="kw">straumann กับ blue diamond</span><span class="kw">straumann วาริสซิตี้</span><span class="kw">straumann SLActive</span><span class="kw">รากเทียม straumann</span><span class="kw">รากเทียมสวิส straumann</span></div>
+<h4 class="md">5C. Osstem / Dentium (Value)</h4>
+<div class="kwgrid"><span class="kw">osstem</span><span class="kw">osstem implant</span><span class="kw">osstem ราคา</span><span class="kw">osstem ดีไหม</span><span class="kw">osstem korea</span><span class="kw">osstem vs blue diamond</span><span class="kw">รากเทียม osstem</span><span class="kw">dentium implant</span><span class="kw">dentium ราคา</span><span class="kw">รากเทียม dentium</span></div>
+<h4 class="md">5D. Ceramic Implant (Premium Differentiator)</h4>
+<div class="kwgrid"><span class="kw">ceramic implant</span><span class="kw">รากฟันเทียมเซรามิก</span><span class="kw">รากเทียมเซรามิก</span><span class="kw">รากเทียมไม่ใช่โลหะ</span><span class="kw">รากเทียม metal free</span><span class="kw">รากเทียมเซรามิก ราคา</span><span class="kw">รากเทียมเซรามิก ดีไหม</span><span class="kw">รากเทียมเซรามิก vs ไทเทเนียม</span><span class="kw">zirconia implant</span><span class="kw">รากเทียม zirconia</span><span class="kw">รากเทียมขาว</span><span class="kw">รากฟันเทียมขาว</span><span class="kw">แพ้โลหะ ทำรากเทียม</span><span class="kw">รากเทียมฟันหน้า เซรามิก</span></div>
+<h4 class="md">5E. Generic Comparison</h4>
+<div class="kwgrid"><span class="kw">รากเทียมเกาหลี vs สวิส</span><span class="kw">รากเทียมยี่ห้อไหนดี</span><span class="kw">เปรียบเทียบรากเทียม</span><span class="kw">รากเทียม brand</span><span class="kw">รากเทียม ดีที่สุด</span><span class="kw">รากเทียม korea ดีไหม</span><span class="kw">รากเทียมยุโรป</span><span class="kw">รากเทียม titanium vs ceramic</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 6 — Orthodontics: Clear Aligner</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.5 (วิธีการ — จัดฟันใส) + Section 5.10 + Section 6.6 (brand intent) <strong>Layer:</strong> core for S3.5 pages / demand-driven for S5.10 + S6.6 additions</p>
+<h4 class="md">6A. Generic Aligner Intent</h4>
+<div class="kwgrid"><span class="kw">จัดฟันใส</span><span class="kw">จัดฟันใส ราคา</span><span class="kw">จัดฟันใส ดีไหม</span><span class="kw">จัดฟันใส vs เหล็ก</span><span class="kw">จัดฟันใส กี่เดือน</span><span class="kw">จัดฟันใส เจ็บไหม</span><span class="kw">จัดฟันใสที่ไหนดี</span><span class="kw">จัดฟันใส ผ่อน</span><span class="kw">จัดฟันแบบใส</span><span class="kw">จัดฟันแบบโปร่งใส</span><span class="kw">clear aligner คืออะไร</span><span class="kw">ใส่จัดฟันแบบใส</span><span class="kw">จัดฟันโดยไม่ต้องติดเหล็ก</span></div>
+<h4 class="md">6B. TrioClear ( — premium aligner, NOT Invisalign)</h4>
+<div class="kwgrid"><span class="kw">trioclear [BRAND]</span><span class="kw">trioclear คืออะไร</span><span class="kw">trioclear ดีไหม</span><span class="kw">trioclear ราคา</span><span class="kw">trioclear vs invisalign</span><span class="kw">trioclear vs zenyum</span><span class="kw">trioclear progressive</span><span class="kw">trioclear hk</span><span class="kw">modern dental trioclear</span><span class="kw">จัดฟัน trioclear</span><span class="kw">จัดฟันใส trioclear</span><span class="kw">trioclear รีวิว</span></div>
+<h4 class="md">6C. Invisalign (brand intent — Section 6 only)</h4>
+<div class="kwgrid"><span class="kw">invisalign</span><span class="kw">invisalign คืออะไร</span><span class="kw">invisalign ราคา</span><span class="kw">invisalign ดีไหม</span><span class="kw">invisalign กับ trioclear</span><span class="kw">invisalign กี่เดือน</span><span class="kw">invisalign vs braces</span><span class="kw">invisalign full</span><span class="kw">invisalign express</span><span class="kw">invisalign express ราคา</span><span class="kw">จัดฟัน invisalign</span></div>
+<h4 class="md">6D. Other Aligner Brands</h4>
+<div class="kwgrid"><span class="kw">zenyum</span><span class="kw">zenyum ราคา</span><span class="kw">zenyum vs invisalign</span><span class="kw">zenyum ดีไหม</span><span class="kw">spark aligner</span><span class="kw">clearcorrect</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 7 — Orthodontics: Braces</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.5 + Section 5.10 <strong>Layer:</strong> core for S3.5 pages / demand-driven for S5.10 additions</p>
+<div class="kwgrid"><span class="kw">จัดฟัน</span><span class="kw">จัดฟันเหล็ก</span><span class="kw">จัดฟันเหล็ก ราคา</span><span class="kw">จัดฟันเหล็ก กี่เดือน</span><span class="kw">จัดฟันเหล็ก vs ใส</span><span class="kw">จัดฟัน damon [BRAND]</span><span class="kw">damon system</span><span class="kw">damon braces</span><span class="kw">self ligating braces</span><span class="kw">จัดฟัน self-ligating</span><span class="kw">จัดฟัน self ligating ดีไหม</span><span class="kw">จัดฟันด้านใน</span><span class="kw">จัดฟันด้านใน ราคา</span><span class="kw">lingual braces</span><span class="kw">จัดฟันใส่ยาง</span><span class="kw">จัดฟันยางสี</span><span class="kw">จัดฟันเด็ก</span><span class="kw">จัดฟันผู้ใหญ่</span><span class="kw">จัดฟัน อายุเท่าไหร่</span><span class="kw">จัดฟันบางส่วน</span><span class="kw">ค่าจัดฟัน</span><span class="kw">ค่าจัดฟันเหล็ก</span><span class="kw">ผ่อนจัดฟัน</span><span class="kw">จัดฟันที่ไหนดี</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 8 — Cosmetic Dentistry / Smile Design</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.4 + Section 5.5 <strong>Layer:</strong> core for S3.4 pages / demand-driven for S5.5 additions</p>
+<div class="kwgrid"><span class="kw">วีเนียร์</span><span class="kw">วีเนียร์ ราคา</span><span class="kw">วีเนียร์ ดีไหม</span><span class="kw">วีเนียร์ กี่ซี่</span><span class="kw">วีเนียร์ ติดทน</span><span class="kw">วีเนียร์เซรามิก</span><span class="kw">วีเนียร์คอมโพสิต</span><span class="kw">ceramic veneer</span><span class="kw">composite veneer</span><span class="kw">emax veneer</span><span class="kw">veneer ราคา</span><span class="kw">veneer ปะหน้าฟัน</span><span class="kw">ปะหน้าฟัน</span><span class="kw">ปิดช่องว่างฟัน</span><span class="kw">ฟันห่าง แก้</span><span class="kw">ฟันบิ่น แก้</span><span class="kw">ฟอกฟันขาว</span><span class="kw">ฟอกฟันขาว ราคา</span><span class="kw">ฟอกฟันขาว ที่ไหนดี</span><span class="kw">zoom whitening</span><span class="kw">laser teeth whitening</span><span class="kw">home bleaching</span><span class="kw">fast bleaching</span><span class="kw">ออกแบบรอยยิ้ม</span><span class="kw">smile design</span><span class="kw">smile makeover</span><span class="kw">digital smile design</span><span class="kw">dsd</span><span class="kw">crown ครอบฟัน</span><span class="kw">ครอบฟัน ราคา</span><span class="kw">ครอบฟัน เซรามิก</span><span class="kw">ครอบฟัน zirconia</span><span class="kw">ครอบฟันสวยๆ</span><span class="kw">hollywood smile</span><span class="kw">ทำฟันสวย</span><span class="kw">ฟันสวย รอยยิ้มสวย</span><span class="kw">ยิ้มสวย ฟันเรียง</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 9 — General Dentistry</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.6 + Section 5.6 <strong>Layer:</strong> core for S3.6 pages / demand-driven for S5.6 additions</p>
+<div class="kwgrid"><span class="kw">ขูดหินปูน</span><span class="kw">ขูดหินปูน ราคา</span><span class="kw">ขูดหินปูน กี่ปีครั้ง</span><span class="kw">ขูดหินปูน เจ็บไหม</span><span class="kw">อุดฟัน</span><span class="kw">อุดฟัน ราคา</span><span class="kw">อุดฟัน สี</span><span class="kw">อุดฟัน composite</span><span class="kw">อุดฟันเซรามิก</span><span class="kw">inlay onlay</span><span class="kw">ถอนฟัน</span><span class="kw">ถอนฟัน ราคา</span><span class="kw">ถอนฟัน เจ็บไหม</span><span class="kw">ถอนฟันคุด</span><span class="kw">ถอนฟันคุด ราคา</span><span class="kw">ผ่าฟันคุด</span><span class="kw">ผ่าฟันคุด ราคา</span><span class="kw">ผ่าฟันคุด เจ็บไหม</span><span class="kw">ผ่าฟันคุด พักกี่วัน</span><span class="kw">ฟันคุด</span><span class="kw">ฟันคุดต้องผ่าไหม</span><span class="kw">ฟันคุดเอกซเรย์</span><span class="kw">รักษารากฟัน</span><span class="kw">รักษารากฟัน ราคา</span><span class="kw">รักษารากฟัน เจ็บไหม</span><span class="kw">รักษารากฟัน กี่ครั้ง</span><span class="kw">root canal คืออะไร</span><span class="kw">root canal ราคา</span><span class="kw">endodontics</span><span class="kw">ครอบฟันหลังรักษาราก</span><span class="kw">รากฟันอักเสบ</span><span class="kw">หนองที่รากฟัน</span><span class="kw">ตรวจฟัน</span><span class="kw">ตรวจฟัน ฟรี</span><span class="kw">ตรวจฟันประจำปี</span><span class="kw">เคลือบฟลูออไรด์</span><span class="kw">เคลือบหลุมร่องฟัน</span><span class="kw">sealant ฟัน</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 10 — Periodontal</h3>
+<p><strong>Sitemap Anchor:</strong> Section 3.7 + Section 5.11 + Section 6.2 <strong>Layer:</strong> core for S3.7 pages / demand-driven for S5.11 + S6.2 additions</p>
+<div class="kwgrid"><span class="kw">โรคเหงือก</span><span class="kw">โรคเหงือก รักษา</span><span class="kw">โรคเหงือกอักเสบ</span><span class="kw">periodontitis</span><span class="kw">gingivitis</span><span class="kw">รักษาโรคเหงือก</span><span class="kw">รักษาโรคเหงือก ราคา</span><span class="kw">รำมะนาด</span><span class="kw">ปริทันต์</span><span class="kw">ปริทันต์ รักษา</span><span class="kw">ขูดหินปูนใต้เหงือก</span><span class="kw">scaling root planing</span><span class="kw">deep cleaning ฟัน</span><span class="kw">flap surgery</span><span class="kw">periodontal surgery</span><span class="kw">ผ่าตัดเหงือก</span><span class="kw">ปลูกกระดูกรักษาปริทันต์</span><span class="kw">รากฟันเทียม โรคเหงือก</span><span class="kw">peri-implantitis รักษา</span><span class="kw">peri implantitis คืออะไร</span><span class="kw">รากเทียม เหงือกอักเสบ</span><span class="kw">ดูแลเหงือกรอบรากเทียม</span><span class="kw">เหงือกบวม รากเทียม</span><span class="kw">mucositis รากเทียม</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 11 — Pediatric Dentistry</h3>
+<p><strong>Sitemap Anchor:</strong> Section 5.12 <strong>Layer:</strong> demand-driven only (demand-driven additions — SmileScape is Implant-First, pediatric is supporting)</p>
+<div class="kwgrid"><span class="kw">ทันตกรรมเด็ก</span><span class="kw">หมอฟันเด็ก</span><span class="kw">ทันตแพทย์เด็ก</span><span class="kw">ฟันเด็ก</span><span class="kw">ฟันน้ำนม</span><span class="kw">ฟันน้ำนมผุ</span><span class="kw">ฟันแท้ขึ้น</span><span class="kw">ตรวจฟันเด็ก</span><span class="kw">อุดฟันเด็ก</span><span class="kw">ถอนฟันน้ำนม</span><span class="kw">เคลือบฟลูออไรด์เด็ก</span><span class="kw">เคลือบหลุมร่องฟันเด็ก</span><span class="kw">จัดฟันเด็ก</span><span class="kw">จัดฟันเด็ก กี่ขวบ</span><span class="kw">ฟันเด็กผุ</span><span class="kw">ดูแลฟันเด็ก</span><span class="kw">ลูกฟันผุ ทำอย่างไร</span><span class="kw">ฟันลูกห่าง</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 12 — Cost / Insurance / Payment</h3>
+<p><strong>Sitemap Anchor:</strong> Section 5.13 <strong>Layer:</strong> demand-driven only (concern + knowledge layer)</p>
+<div class="kwgrid"><span class="kw">ค่าทำฟัน</span><span class="kw">ค่ารากฟันเทียม</span><span class="kw">ราคาทำฟัน</span><span class="kw">ราคาทำฟันถูก</span><span class="kw">ผ่อน 0 ทำฟัน</span><span class="kw">ผ่อนทำฟัน ไม่ใช้บัตร</span><span class="kw">ผ่อนรากฟันเทียม</span><span class="kw">ผ่อนจัดฟัน</span><span class="kw">ประกันสังคม ทำฟัน</span><span class="kw">ประกันสังคม ขูดหินปูน</span><span class="kw">ประกันสังคม อุดฟัน</span><span class="kw">ประกันสังคม ถอนฟัน</span><span class="kw">ประกันสังคม รากฟันเทียม</span><span class="kw">สิทธิประกันสังคม ทันตกรรม</span><span class="kw">ใช้ประกันสังคม ทำฟัน ที่ไหน</span><span class="kw">ทำฟัน 900 ประกันสังคม</span><span class="kw">ทำฟัน 900 ที่ไหน</span><span class="kw">ทำฟันใช้สิทธิ์ได้ที่ไหน</span><span class="kw">สิทธิ์ทันตกรรม ประกันสังคม</span><span class="kw">ประกันสุขภาพ ทำฟัน</span><span class="kw">ทำฟันใช้ประกัน</span><span class="kw">ค่ารักษาฟัน ลดหย่อนภาษี</span><span class="kw">ภาษี ทำฟัน</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 13 — Fear / Patient Concerns</h3>
+<p><strong>Sitemap Anchor:</strong> Section 5.4 + Section 5.7 <strong>Layer:</strong> demand-driven only (concern layer)</p>
+<div class="kwgrid"><span class="kw">กลัวทำฟัน</span><span class="kw">กลัวหมอฟัน</span><span class="kw">phobia ทันตแพทย์</span><span class="kw">dental phobia</span><span class="kw">กลัวเข็ม ทำฟัน</span><span class="kw">กลัวผ่าตัด รากฟันเทียม</span><span class="kw">ทำฟัน ไม่เจ็บ</span><span class="kw">รากฟันเทียม วางยา</span><span class="kw">รากฟันเทียม ดมยา</span><span class="kw">ทำฟันเด็กกลัว</span><span class="kw">หาหมอฟันใจดี</span><span class="kw">หมอฟันใจดี</span><span class="kw">ทำฟันสบายๆ</span><span class="kw">ทำฟันไม่กลัว</span><span class="kw">ฉีดยาชา ทันตกรรม</span><span class="kw">ฉีดยาชา ปวด</span><span class="kw">ทำฟัน หลับสบาย</span><span class="kw">รากฟันเทียม สลบ</span><span class="kw">สอบถามก่อนทำ รากเทียม</span><span class="kw">ขอ second opinion ทันตกรรม</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 14 — Brand &amp; Local SEO</h3>
+<p><strong>Sitemap Anchor:</strong> S1 Homepage + S2 Uniqueness + S7/S8 Branch pages <strong>Layer:</strong> core (always-on — brand pages always exist)</p>
+<h4 class="md">14A. Brand search</h4>
+<div class="kwgrid"><span class="kw">smilescape</span><span class="kw">smilescape clinic</span><span class="kw">smile scape</span><span class="kw">smilescape dental</span><span class="kw">smilescape รัตนาธิเบศร์</span><span class="kw">smilescape ศรีนครินทร์</span><span class="kw">smilescape โปรโมชั่น</span><span class="kw">smilescape รากฟันเทียม</span><span class="kw">smilescape pantip</span><span class="kw">smilescape รีวิว</span><span class="kw">สไมล์สเคป</span><span class="kw">สไมล์สเคป คลินิก</span><span class="kw">คลินิกสไมล์สเคป</span><span class="kw">หมอแฮม smilescape</span><span class="kw">ทพ. วรภัทร จรางกุล</span><span class="kw">หมอแฮม รากฟันเทียม</span><span class="kw">รากฟันเทียม by smilescape</span></div>
+<h4 class="md">14B. Local search — รัตนาธิเบศร์ / นนทบุรี</h4>
+<div class="kwgrid"><span class="kw">ทำฟัน รัตนาธิเบศร์</span><span class="kw">รากฟันเทียม รัตนาธิเบศร์</span><span class="kw">รากฟันเทียม นนทบุรี</span><span class="kw">รากเทียม นนทบุรี</span><span class="kw">จัดฟัน รัตนาธิเบศร์</span><span class="kw">จัดฟัน นนทบุรี</span><span class="kw">คลินิกทันตกรรม รัตนาธิเบศร์</span><span class="kw">คลินิกทันตกรรม นนทบุรี</span><span class="kw">หมอฟัน รัตนาธิเบศร์</span><span class="kw">ทำฟัน mrt สีม่วง</span><span class="kw">รากเทียม mrt รัตนาธิเบศร์</span></div>
+<h4 class="md">14C. Local search — ศรีนครินทร์ / กรุงเทพ</h4>
+<div class="kwgrid"><span class="kw">ทำฟัน ศรีนครินทร์</span><span class="kw">รากฟันเทียม ศรีนครินทร์</span><span class="kw">รากฟันเทียม mrt สีเหลือง</span><span class="kw">จัดฟัน ศรีนครินทร์</span><span class="kw">คลินิกทันตกรรม ศรีนครินทร์</span><span class="kw">หมอฟัน ศรีนครินทร์</span><span class="kw">ทำฟัน mrt สีเหลือง</span><span class="kw">ทำฟัน บางกะปิ</span><span class="kw">ทำฟัน หัวหมาก</span><span class="kw">รากเทียม กรุงเทพ ตะวันออก</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 15 — Technology / Digital</h3>
+<p><strong>Sitemap Anchor:</strong> Section 4 <strong>Layer:</strong> core (always-on — tech pages exist because brand uses the tech)</p>
+<div class="kwgrid"><span class="kw">ct scan ฟัน</span><span class="kw">ct scan ทันตกรรม</span><span class="kw">3d x-ray ฟัน</span><span class="kw">cone beam ct</span><span class="kw">cbct</span><span class="kw">intraoral scanner</span><span class="kw">digital impression</span><span class="kw">แสกนฟัน</span><span class="kw">ฟิลม์ดิจิทัล ทันตกรรม</span><span class="kw">ทำฟันดิจิทัล</span><span class="kw">digital dentistry</span><span class="kw">cad cam dental</span><span class="kw">cad cam ครอบฟัน</span><span class="kw">zirconia mill</span><span class="kw">guided implant surgery</span><span class="kw">surgical guide รากเทียม</span><span class="kw">piezoelectric surgery</span><span class="kw">piezo รากเทียม</span><span class="kw">laser dental</span><span class="kw">soft tissue laser</span><span class="kw">diode laser ทันตกรรม</span><span class="kw">ระบบฆ่าเชื้อ ทันตกรรม</span><span class="kw">sterilization คลินิก</span><span class="kw">autoclave ทันตกรรม</span><span class="kw">class b autoclave</span></div>
+<div class="divider"></div>
+<h3 class="md">Cluster 16 — Geo Modifiers (apply to all service KWs as variants)</h3>
+<p><strong>Layer:</strong> Applies to both core and demand-driven — add as variants to all primary KW heads</p>
+<div class="divider"></div></section></body></html>

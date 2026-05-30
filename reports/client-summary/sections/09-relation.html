@@ -1,0 +1,265 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SmileScape — 09-relation</title><style>
+:root{
+  --bg:#F5FAFE; --bg2:#EBF3FA; --bg3:#E0ECF5; --text:#1a1a1a; --text2:#4a5568; --text3:#8a9aaa;
+  --border:#c8daea; --blue:#1153A1; --blue-light:#dce8f5; --blue-dark:#0a3d7a;
+  --green:#0f7b6c; --green-bg:#dbeddb; --gold:#c99500; --gold-bg:#faf0d8;
+  --red:#d94444; --red-bg:#fce4e4; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,'Sukhumvit Set','Thonburi',Arial,sans-serif;
+     color:var(--text);line-height:1.6;font-size:13px;-webkit-font-smoothing:antialiased;background:#fff}
+
+@page{ size:A4; margin:16mm 15mm 16mm; }
+@page cover{ size:A4; margin:0; }
+
+a{color:var(--blue);text-decoration:none}
+code{background:var(--bg2);padding:.5px 4px;border-radius:3px;font-size:.86em;color:var(--blue-dark);
+     font-family:ui-monospace,Menlo,monospace}
+.divider{height:1px;background:var(--border);margin:14px 0}
+
+/* section = flows across pages, starts on a fresh page */
+.section{ break-before:page; }
+.section:first-of-type{ break-before:auto; }
+
+h1{font-size:24px;font-weight:800;color:var(--blue-dark);line-height:1.25;margin:0 0 6px}
+h2,h3.md{font-size:16px;font-weight:700;color:var(--blue);margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--border);break-after:avoid}
+h3,h4.md{font-size:13.5px;font-weight:700;color:var(--text);margin:14px 0 5px;break-after:avoid}
+h5.md,h6.md{font-size:12px;font-weight:700;color:var(--text2);margin:10px 0 4px;break-after:avoid}
+p{color:var(--text2);margin:0 0 9px;line-height:1.7}
+ul{margin:6px 0 9px 18px} li{margin:3px 0;color:var(--text2);line-height:1.6}
+strong{color:var(--text)}
+
+.section-number{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.page-title-bar{background:linear-gradient(135deg,var(--blue-light),#e8f2fc);padding:15px 22px;border-radius:4px;
+   margin-bottom:18px;border-left:4px solid var(--blue);break-after:avoid;break-inside:avoid}
+.page-title-bar h1{margin:0;font-size:21px}
+.page-title-bar p{margin:3px 0 0;font-size:12px;color:var(--text3)}
+.lead{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.lead strong{color:var(--blue-dark)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;margin:9px 0 14px;font-size:12px}
+table.mid{font-size:10.5px} table.wide{font-size:9px}
+thead{display:table-header-group}
+th{background:var(--bg2);padding:6px 11px;text-align:left;font-weight:700;font-size:10px;color:var(--text2);
+   border:1px solid var(--border);letter-spacing:.3px;text-transform:uppercase;vertical-align:bottom}
+table.wide th{padding:4px 6px}
+td{padding:6px 11px;border:1px solid var(--border);vertical-align:top;background:var(--white);word-break:break-word}
+table.mid td{padding:4px 8px} table.wide td{padding:3px 6px}
+tbody tr{break-inside:avoid}
+tbody tr:nth-child(even) td{background:#FAFCFE}
+table.wide td:first-child,table.wide th:first-child{width:20px;text-align:center;color:var(--text3)}
+
+/* callout */
+.callout{display:flex;gap:11px;padding:13px 15px;border-radius:4px;margin:13px 0;font-size:12.5px;line-height:1.65;color:var(--text);break-inside:avoid}
+.callout .icon{font-size:17px;flex-shrink:0;margin-top:1px}
+.c-blue{background:var(--blue-light)} .c-green{background:var(--green-bg)}
+.c-gold{background:var(--gold-bg)} .c-red{background:var(--red-bg)}
+
+/* cards + grids */
+.card{background:var(--white);border:1px solid var(--border);border-radius:6px;padding:13px;break-inside:avoid}
+.card-accent{border-left:4px solid var(--blue)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+
+/* stat boxes */
+.stat-box{text-align:center;padding:13px 9px;background:var(--white);border:1px solid var(--border);border-radius:6px;break-inside:avoid}
+.stat-box .num{font-size:25px;font-weight:800;color:var(--blue);line-height:1.05}
+.stat-box .label{font-size:9.5px;color:var(--text3);margin-top:4px;line-height:1.3}
+.statrow{margin:6px 0 16px}
+
+/* bar chart */
+.bars{margin:8px 0 14px}
+.bar{display:flex;align-items:center;gap:9px;margin:5px 0;font-size:11.5px;break-inside:avoid}
+.bar .lab{width:210px;flex:none;color:var(--text)}
+.bar .track{flex:1;background:var(--bg2);border-radius:5px;height:14px;overflow:hidden}
+.bar .fill{height:100%;border-radius:5px;background:var(--blue)}
+.bar .val{width:96px;flex:none;text-align:right;color:var(--text3);font-size:10.5px}
+
+/* keyword chips */
+.kwgrid{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0 13px}
+.kw{display:inline-block;background:var(--bg2);color:var(--blue-dark);border:1px solid var(--border);
+    border-radius:14px;padding:2px 9px;font-size:9.5px;white-space:nowrap}
+
+/* timeline */
+.timeline-item{display:flex;gap:14px;margin-bottom:14px;position:relative;break-inside:avoid}
+.timeline-dot{width:10px;height:10px;background:var(--blue);border-radius:50%;margin-top:5px;flex-shrink:0;position:relative}
+.timeline-dot::after{content:'';position:absolute;top:10px;left:4px;width:2px;height:calc(100% + 4px);background:var(--border)}
+.timeline-item:last-child .timeline-dot::after{display:none}
+.timeline-phase{font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue)}
+.timeline-title{font-size:12.5px;font-weight:700;margin:2px 0 3px}
+.timeline-desc{font-size:11px;color:var(--text2);line-height:1.55}
+
+.note{font-size:10px;color:var(--text3);margin-top:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--text3);margin:2px 0 10px}
+.legend b{color:var(--blue-dark)}
+.pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+      padding:2px 8px;border-radius:10px;background:var(--green-bg);color:var(--green)}
+
+/* sitemap section blocks */
+.smsec{break-inside:avoid-page;margin:14px 0 10px}
+.smsec h3.md{margin-top:14px}
+
+/* ===== COVER ===== */
+.cover{page:cover;height:297mm;background:linear-gradient(160deg,#0a3d7a 0%,#1153A1 42%,#7BA4DD 100%);
+  color:#fff;display:flex;flex-direction:column;justify-content:center;padding:80px 64px;position:relative;
+  overflow:hidden;break-after:page}
+.cover::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04)}
+.cover::after{content:'';position:absolute;bottom:-150px;left:-150px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover .conf{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:64px}
+.cover .logo{height:78px;opacity:.9;filter:brightness(0) invert(1);margin-bottom:40px}
+.cover .label{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:14px}
+.cover .title{font-size:40px;font-weight:800;line-height:1.18;margin-bottom:14px}
+.cover .subtitle{font-size:16px;font-weight:400;color:rgba(255,255,255,.7);max-width:560px;line-height:1.65;margin-bottom:18px}
+.cover .cdiv{width:48px;height:2px;background:rgba(255,255,255,.25);margin:22px 0}
+.cover .meta{font-size:12.5px;color:rgba(255,255,255,.55);line-height:2.1}
+.cover .meta strong{color:rgba(255,255,255,.8);font-weight:600}
+.cover .statline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;border-top:1px solid rgba(255,255,255,.18);padding-top:20px}
+.cover .statline .n{font-size:26px;font-weight:800;color:#fff}
+.cover .statline .l{font-size:9.5px;color:rgba(255,255,255,.6);margin-top:2px}
+
+/* TOC */
+.toc .row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--border)}
+.toc .row .l{font-weight:600;color:var(--text)} .toc .row .no{font-weight:800;color:var(--blue);margin-right:12px}
+.toc .row .d{font-size:11.5px;color:var(--text3);text-align:right;max-width:54%}
+footer.end{margin-top:18px;border-top:2px solid var(--blue);padding-top:12px;color:var(--text3);font-size:10.5px;line-height:1.6}
+footer.end b{color:var(--blue-dark)}
+
+/* ---- page-break safety: never strand a heading or label above its table ---- */
+h2,h3.md,h4.md,h5.md,h6.md{break-after:avoid-page;break-inside:avoid}
+.page-title-bar{break-after:avoid-page}
+p:has(+ table){break-after:avoid-page}
+p:has(+ .kwgrid){break-after:avoid-page}
+ul:has(+ table){break-after:avoid-page}
+/* continuous entity table */
+.entity-all td:nth-child(2){font-weight:600;color:var(--text)}
+.entity-all th:first-child,.entity-all td:first-child{width:30px;white-space:nowrap;text-align:center}
+.entity-all th:nth-child(5),.entity-all td:nth-child(5){width:54px}
+.entity-all th:nth-child(6),.entity-all td:nth-child(6){width:44px}
+/* cover logo badge (original colours on white — crisp, no filter) */
+.cover .logobadge{display:inline-block;background:#fff;border-radius:14px;padding:16px 24px;margin-bottom:36px;box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.cover .logobadge img{height:42px;display:block}
+</style></head><body><section class="section"><div class="section-number">Section 08</div><div class="page-title-bar"><h1>Entity Relationships</h1><p>271 connections wiring the knowledge graph into one network</p></div>
+<p class="lead">Relationships are the wiring between entities — they tell search engines <em>how</em> concepts relate: a treatment <em>treats</em> a condition, a technique <em>uses</em> a device, a claim is <em>evidenced by</em> research. This network is what powers meaningful internal linking and lets AI understand SmileScape's clinical context as a connected whole.</p>
+<div class="g4 statrow"><div class="stat-box"><div class="num">271</div><div class="label">Relationships</div></div><div class="stat-box"><div class="num">10</div><div class="label">Relationship types</div></div><div class="stat-box"><div class="num">81</div><div class="label">Two-way links</div></div><div class="stat-box"><div class="num">26</div><div class="label">Evidence links</div></div></div>
+
+<h2>The relationship vocabulary</h2>
+<table class="mid"><thead><tr><th style="width:150px">Type</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>parent_of</code></td><td>Taxonomic parent to child</td></tr>
+<tr><td><code>subtype_of</code></td><td>Clinical specialization / variant</td></tr>
+<tr><td><code>treats</code></td><td>A treatment addresses a condition</td></tr>
+<tr><td><code>symptom_of</code></td><td>A sign or sequela of a disease</td></tr>
+<tr><td><code>uses</code></td><td>A technique employs a device or material</td></tr>
+<tr><td><code>alternative_to</code></td><td>Competing or equivalent clinical option</td></tr>
+<tr><td><code>part_of</code></td><td>Anatomical / structural component</td></tr>
+<tr><td><code>requires_assessment</code></td><td>Clinical work needs a diagnostic step</td></tr>
+<tr><td><code>evidenced_by</code></td><td>A claim is backed by research evidence</td></tr>
+<tr><td><code>related_to</code></td><td>Non-hierarchical association</td></tr>
+</tbody></table>
+<p class="note">The full relationship map follows, grouped by clinical theme.</p>
+<div class="divider"></div>
+<h3 class="md">Relationships</h3>
+<h4 class="md">A — Hierarchy: Dental Implant Core</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>parent_of</td><td>single-tooth-implant</td><td></td></tr><tr><td>dental-implant</td><td>parent_of</td><td>multiple-implants</td><td></td></tr><tr><td>dental-implant</td><td>parent_of</td><td>implant-supported-bridge</td><td></td></tr><tr><td>dental-implant</td><td>parent_of</td><td>overdenture</td><td></td></tr><tr><td>dental-implant</td><td>parent_of</td><td>all-on-x</td><td>Full-arch subset of implant treatment</td></tr><tr><td>all-on-x</td><td>parent_of</td><td>all-on-4</td><td></td></tr><tr><td>all-on-x</td><td>parent_of</td><td>all-on-6</td><td></td></tr><tr><td>all-on-x</td><td>parent_of</td><td>zygomatic-implant</td><td>Extreme bone-loss variant anchored in zygomatic bone</td></tr></tbody></table>
+<h4 class="md">B — Hierarchy: Implant Systems &amp; Brands</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>parent_of</td><td>blue-diamond-implant</td><td>SmileScape-specific signature system — Korean origin</td></tr><tr><td>dental-implant</td><td>parent_of</td><td>neodent-implant</td><td>Brazil — Straumann Group subsidiary, GM connection</td></tr><tr><td>dental-implant</td><td>parent_of</td><td>straumann-implant</td><td></td></tr><tr><td>dental-implant</td><td>parent_of</td><td>titanium-implant</td><td>Material-defined subtype</td></tr><tr><td>dental-implant</td><td>parent_of</td><td>ceramic-implant</td><td>Metal-free subtype</td></tr></tbody></table>
+<h4 class="md">C — Hierarchy: Bone Regeneration</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>guided-bone-regeneration</td><td>parent_of</td><td>sausage-technique</td><td>Specific horizontal/vertical protocol by Dr. Urban</td></tr><tr><td>guided-bone-regeneration</td><td>parent_of</td><td>ridge-augmentation</td><td></td></tr><tr><td>guided-bone-regeneration</td><td>parent_of</td><td>vertical-bone-augmentation</td><td></td></tr><tr><td>bone-grafting</td><td>parent_of</td><td>sinus-lift</td><td></td></tr><tr><td>bone-grafting</td><td>parent_of</td><td>socket-preservation</td><td></td></tr></tbody></table>
+<h4 class="md">D — Hierarchy: Patient Conditions &amp; Disease Progression</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>tooth-loss</td><td>parent_of</td><td>edentulism</td><td>Severity escalation — partial to complete</td></tr><tr><td>tooth-loss</td><td>parent_of</td><td>dental-caries-extraction</td><td>Aetiological subtype</td></tr><tr><td>tooth-loss</td><td>parent_of</td><td>traumatic-tooth-loss</td><td>Aetiological subtype</td></tr><tr><td>tooth-loss</td><td>parent_of</td><td>denture-dissatisfaction</td><td>Outcome state driving implant upgrade</td></tr><tr><td>alveolar-bone-loss</td><td>parent_of</td><td>vertical-bone-deficiency</td><td></td></tr><tr><td>alveolar-bone-loss</td><td>parent_of</td><td>horizontal-bone-deficiency</td><td></td></tr><tr><td>alveolar-bone-loss</td><td>parent_of</td><td>maxillary-sinus-proximity</td><td>Upper-jaw manifestation</td></tr><tr><td>gingivitis</td><td>parent_of</td><td>periodontitis</td><td>Disease progression — untreated gingivitis advances to perio</td></tr></tbody></table>
+<h4 class="md">E — Hierarchy: Aesthetics, Restorative, Ortho</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-veneer</td><td>parent_of</td><td>porcelain-veneer</td><td></td></tr><tr><td>dental-crown</td><td>parent_of</td><td>zirconia-crown</td><td></td></tr><tr><td>soft-tissue-management</td><td>parent_of</td><td>gum-contouring</td><td></td></tr><tr><td>soft-tissue-management</td><td>parent_of</td><td>connective-tissue-graft</td><td></td></tr><tr><td>clear-aligner</td><td>parent_of</td><td>trioclear-aligner</td><td>Brand-specific system offered by SmileScape</td></tr><tr><td>peri-implant-mucosa</td><td>parent_of</td><td>keratinized-mucosa</td><td></td></tr><tr><td>tooth-extraction</td><td>parent_of</td><td>wisdom-tooth-removal</td><td></td></tr><tr><td>smilescape-dental-clinic</td><td>parent_of</td><td>lifetime-implant-warranty</td><td>Brand program</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">F — Subtype Specialization</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>peri-implantitis</td><td>subtype_of</td><td>periodontitis</td><td>Implant-specific variant — similar bacterial aetiology, different anatomical site</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">G — Treats</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>treats</td><td>tooth-loss</td><td>Hero treatment for hero condition</td></tr><tr><td>all-on-x</td><td>treats</td><td>edentulism</td><td>Fixed full-arch solution</td></tr><tr><td>all-on-x</td><td>treats</td><td>denture-dissatisfaction</td><td>Upgrade path from removable denture</td></tr><tr><td>overdenture</td><td>treats</td><td>edentulism</td><td>More affordable implant-retained full-arch option</td></tr><tr><td>guided-bone-regeneration</td><td>treats</td><td>alveolar-bone-loss</td><td>Gold standard for horizontal and vertical defects</td></tr><tr><td>sausage-technique</td><td>treats</td><td>horizontal-bone-deficiency</td><td>Primary indication</td></tr><tr><td>sausage-technique</td><td>treats</td><td>vertical-bone-deficiency</td><td>Urban protocol — 5.5mm mean gain</td></tr><tr><td>bone-grafting</td><td>treats</td><td>alveolar-bone-loss</td><td>Umbrella bone augmentation</td></tr><tr><td>sinus-lift</td><td>treats</td><td>maxillary-sinus-proximity</td><td>Creates vertical bone depth for upper jaw implants</td></tr><tr><td>zygomatic-implant</td><td>treats</td><td>alveolar-bone-loss</td><td>Extreme atrophy — bypasses maxillary alveolar bone</td></tr><tr><td>clear-aligner</td><td>treats</td><td>malocclusion</td><td></td></tr><tr><td>damon-system</td><td>treats</td><td>malocclusion</td><td></td></tr><tr><td>connective-tissue-graft</td><td>treats</td><td>gum-recession</td><td></td></tr><tr><td>gum-contouring</td><td>treats</td><td>gum-recession</td><td>Aesthetic correction of gum line</td></tr><tr><td>root-canal-treatment</td><td>treats</td><td>dental-caries-extraction</td><td>Prevents need for extraction when pulp is still viable</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">H — Symptom-of / Sequela</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>gum-recession</td><td>symptom_of</td><td>periodontitis</td><td>Common sequela of untreated periodontal disease</td></tr><tr><td>alveolar-bone-loss</td><td>symptom_of</td><td>periodontitis</td><td>Bone destruction is hallmark of periodontal pathology</td></tr><tr><td>tooth-loss</td><td>symptom_of</td><td>periodontitis</td><td>End-stage periodontitis leads to tooth loss</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">I — Uses</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>uses</td><td>titanium</td><td>Standard biocompatible implant material</td></tr><tr><td>guided-surgery</td><td>uses</td><td>surgical-guide</td><td>Guide enables accurate implant positioning</td></tr><tr><td>flapless-surgery</td><td>uses</td><td>surgical-guide</td><td>Guide required for safe flapless approach</td></tr><tr><td>digital-implant-planning</td><td>uses</td><td>cbct-3d-scan</td><td>CBCT volumetric data feeds planning software</td></tr><tr><td>digital-implant-planning</td><td>uses</td><td>surgical-guide</td><td>Planning output generates printed surgical guide</td></tr><tr><td>guided-bone-regeneration</td><td>uses</td><td>ptfe-membrane</td><td>Non-resorbable barrier — gold standard for GBR</td></tr><tr><td>guided-bone-regeneration</td><td>uses</td><td>bone-graft-substitute</td><td>Void-filling augmentation material</td></tr><tr><td>sausage-technique</td><td>uses</td><td>ptfe-membrane</td><td>Urban protocol specifies non-resorbable membrane</td></tr><tr><td>sausage-technique</td><td>uses</td><td>bone-graft-substitute</td><td></td></tr><tr><td>bone-grafting</td><td>uses</td><td>prf-platelet-rich-fibrin</td><td>Autologous growth factor concentrate — accelerates healing</td></tr><tr><td>ceramic-implant</td><td>uses</td><td>zirconia</td><td>Material-defining property</td></tr><tr><td>zirconia-crown</td><td>uses</td><td>zirconia</td><td></td></tr><tr><td>digital-smile-design</td><td>uses</td><td>intraoral-scanner</td><td>Digital impression feeds DSD workflow</td></tr><tr><td>cad-cam</td><td>uses</td><td>intraoral-scanner</td><td></td></tr><tr><td>all-on-x</td><td>uses</td><td>full-arch-immediate-loading</td><td>Same-day teeth delivery defines All-on-X clinical protocol</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">J — Alternative-to</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>alternative_to</td><td>removable-denture</td><td>Gold standard fixed vs interim removable solution</td></tr><tr><td>all-on-x</td><td>alternative_to</td><td>overdenture</td><td>Fixed full-arch vs removable implant-retained</td></tr><tr><td>root-canal-treatment</td><td>alternative_to</td><td>tooth-extraction</td><td>Save vs remove — treatment planning decision</td></tr><tr><td>ceramic-implant</td><td>alternative_to</td><td>titanium-implant</td><td>Metal-free vs standard titanium</td></tr><tr><td>clear-aligner</td><td>alternative_to</td><td>damon-system</td><td>Removable vs fixed orthodontics</td></tr><tr><td>porcelain-veneer</td><td>alternative_to</td><td>dental-crown</td><td>Minimal tooth prep vs full crown coverage</td></tr><tr><td>immediate-implant</td><td>alternative_to</td><td>socket-preservation</td><td>Same-day implant vs staged bone preservation</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">K — Part-of</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>alveolar-bone</td><td>part_of</td><td>mandible</td><td>Tooth-bearing segment of lower jaw</td></tr><tr><td>alveolar-bone</td><td>part_of</td><td>maxilla</td><td>Tooth-bearing segment of upper jaw</td></tr><tr><td>maxillary-sinus</td><td>part_of</td><td>maxilla</td><td>Air space limiting implant depth in upper jaw</td></tr><tr><td>dental-implant-components</td><td>part_of</td><td>dental-implant</td><td>3-part system: fixture + abutment + crown</td></tr><tr><td>smile-dna</td><td>part_of</td><td>smilescape-dental-clinic</td><td>Brand values framework</td></tr><tr><td>family-standard</td><td>part_of</td><td>smilescape-dental-clinic</td><td>Ethical operating philosophy</td></tr><tr><td>smilescape-rattanathibet</td><td>part_of</td><td>smilescape-dental-clinic</td><td>Physical branch — รัตนาธิเบศร์ (นนทบุรี)</td></tr><tr><td>smilescape-srinakarin</td><td>part_of</td><td>smilescape-dental-clinic</td><td>Physical branch — ศรีนครินทร์ (กรุงเทพฯ)</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">L — Requires Assessment</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>requires_assessment</td><td>cbct-3d-scan</td><td>CBCT mandatory before implant planning</td></tr><tr><td>all-on-x</td><td>requires_assessment</td><td>cbct-3d-scan</td><td></td></tr><tr><td>sinus-lift</td><td>requires_assessment</td><td>maxillary-sinus-proximity</td><td>Condition assessment determines sinus lift need</td></tr><tr><td>sausage-technique</td><td>requires_assessment</td><td>horizontal-bone-deficiency</td><td>Bone volume assessment determines technique eligibility</td></tr><tr><td>ortho-implant-sequencing</td><td>requires_assessment</td><td>malocclusion</td><td>Orthodontic assessment required before sequencing plan</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">M — Evidenced-by</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-implant</td><td>evidenced_by</td><td>osseointegration</td><td>Biological mechanism underpins 96.4% 10-yr survival data ( Howe 2019)</td></tr><tr><td>sausage-technique</td><td>evidenced_by</td><td>vertical-bone-augmentation</td><td>Urban VBA studies form the protocol evidence base</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">M2 — Evidenced-by ( additions)</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>osseodensification</td><td>evidenced_by</td><td>densah-bur</td><td>Densah Bur is the physical instrument enabling Osseodensification mechanism (Huwais authority)</td></tr><tr><td>internal-sinus-lift</td><td>evidenced_by</td><td>osseodensification</td><td>Crestal sinus elevation via densification — minimally invasive evidence base</td></tr><tr><td>vertical-bone-augmentation</td><td>evidenced_by</td><td>rpm-membrane</td><td>RPM Membrane enables space maintenance in vertical reconstruction</td></tr><tr><td>strip-graft</td><td>evidenced_by</td><td>soft-tissue-management</td><td>Urban-attested keratinized tissue technique</td></tr><tr><td>ice-berg-technique</td><td>evidenced_by</td><td>soft-tissue-management</td><td>Urban-attested gingival thickness technique</td></tr><tr><td>garage-technique</td><td>evidenced_by</td><td>soft-tissue-management</td><td>Urban-attested papilla preservation technique</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">N — Related-to</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>sausage-technique</td><td>Trained directly by Dr. Urban (HU Berlin)</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>soft-tissue-management</td><td>Trained by Dr. Ricardo Kern (ILAPEO, Brazil)</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Medical Director</td></tr><tr><td>lifetime-implant-warranty</td><td>related_to</td><td>blue-diamond-implant</td><td>Warranty program covers Blue Diamond system</td></tr><tr><td>ortho-implant-sequencing</td><td>related_to</td><td>dental-implant</td><td>Interdisciplinary combo — SmileScape differentiator</td></tr><tr><td>peri-implantitis</td><td>related_to</td><td>keratinized-mucosa</td><td>Adequate KM band reduces peri-implantitis risk</td></tr><tr><td>smile-dna</td><td>related_to</td><td>family-standard</td><td>Both encode brand philosophy — complementary frameworks</td></tr><tr><td>periodontitis</td><td>related_to</td><td>alveolar-bone-loss</td><td>Mutual causation — perio destroys bone; bone loss worsens perio</td></tr><tr><td>denture-dissatisfaction</td><td>related_to</td><td>removable-denture</td><td>Dissatisfaction arises from denture limitations</td></tr><tr><td>digital-smile-design</td><td>related_to</td><td>dental-veneer</td><td>DSD commonly used in veneer treatment planning</td></tr><tr><td>blue-diamond-implant</td><td>related_to</td><td>neodent-implant</td><td>Value-premium implant systems — Asia/LATAM dental tourism evidence category</td></tr><tr><td>neodent-implant</td><td>related_to</td><td>straumann-implant</td><td>Neodent is Straumann Group subsidiary — research pipeline + GM Connection shared</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>osseodensification</td><td>Versah training / Huwais workshop (pending clinic confirmation)</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>strip-graft</td><td>Trained directly by Dr. Urban — Strip Graft technique</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>ice-berg-technique</td><td>Trained directly by Dr. Urban — Ice Berg/Cube technique</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>garage-technique</td><td>Trained directly by Dr. Urban — Garage technique</td></tr><tr><td>densah-bur</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Signature Offering #5 anchor — SmileScape brand-specific tool</td></tr><tr><td>black-triangle</td><td>related_to</td><td>gum-recession</td><td>Both are recession-related aesthetic concerns — link Section 5.11 concerns</td></tr><tr><td>pediatric-dentistry</td><td>related_to</td><td>early-orthodontic-intervention</td><td>Pediatric → interceptive ortho commonly co-managed</td></tr><tr><td>endodontics-specialist</td><td>related_to</td><td>apicoectomy</td><td>Surgical endo specialty subset</td></tr><tr><td>dental-anxiety</td><td>related_to</td><td>conscious-sedation</td><td>Anxiety = primary indication for sedation referral</td></tr><tr><td>dental-anxiety</td><td>related_to</td><td>ga-dentistry</td><td>Severe phobia → GA dentistry pathway</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">O — Hierarchy: New Specialty Clusters</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>pediatric-dentistry</td><td>parent_of</td><td>pediatric-pulpotomy</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>pediatric-crown</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>fluoride-treatment</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>pit-fissure-sealant</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>space-maintainer</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>habit-appliance</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>early-orthodontic-intervention</td><td></td></tr><tr><td>pediatric-dentistry</td><td>parent_of</td><td>pediatric-extraction</td><td></td></tr><tr><td>tooth-extraction</td><td>parent_of</td><td>pediatric-extraction</td><td>Pediatric variant — primary teeth</td></tr><tr><td>root-canal-treatment</td><td>parent_of</td><td>root-canal-retreatment</td><td></td></tr><tr><td>root-canal-treatment</td><td>parent_of</td><td>apicoectomy</td><td>Surgical endo subset</td></tr><tr><td>root-canal-treatment</td><td>parent_of</td><td>internal-bleaching</td><td>Post-endo cosmetic</td></tr><tr><td>root-canal-treatment</td><td>parent_of</td><td>pulp-regeneration</td><td>Emerging endo subset</td></tr><tr><td>conscious-sedation</td><td>parent_of</td><td>iv-sedation</td><td>Moderate variant</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">P — Uses (Technique → Device/Material)</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>osseodensification</td><td>uses</td><td>densah-bur</td><td></td></tr><tr><td>internal-sinus-lift</td><td>uses</td><td>densah-bur</td><td>Crestal approach with bone densification</td></tr><tr><td>vertical-bone-augmentation</td><td>uses</td><td>rpm-membrane</td><td>Space maintenance</td></tr><tr><td>sausage-technique</td><td>uses</td><td>ptfe-membrane</td><td>Original Urban protocol uses PTFE membrane</td></tr><tr><td>guided-bone-regeneration</td><td>uses</td><td>rpm-membrane</td><td>Vertical GBR uses RPM (alongside PTFE)</td></tr><tr><td>apicoectomy</td><td>uses</td><td>endodontic-microscope</td><td>Standard-of-care: microscope-assisted apical surgery</td></tr><tr><td>root-canal-treatment</td><td>uses</td><td>rotary-endodontic-system</td><td>Modern endo uses rotary files</td></tr><tr><td>root-canal-treatment</td><td>uses</td><td>endodontic-microscope</td><td>Specialist-tier endo treatment</td></tr><tr><td>ga-dentistry</td><td>uses</td><td>iv-sedation</td><td>GA pathway often begins with IV induction</td></tr><tr><td>airflow-air-polishing</td><td>uses</td><td>dental-filling</td><td>Air polishing used pre-restoration (cleaning)</td></tr><tr><td>cool-light-whitening-unit</td><td>uses</td><td>teeth-whitening</td><td>Device used in in-office whitening procedure</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">Q — Treats</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>orthognathic-surgery</td><td>treats</td><td>malocclusion</td><td>Skeletal Class II/III + asymmetry</td></tr><tr><td>pediatric-pulpotomy</td><td>treats</td><td>dental-caries-extraction</td><td>Saves primary tooth from extraction (parent edge)</td></tr><tr><td>apicoectomy</td><td>treats</td><td>peri-implantitis</td><td>Edge: peri-apical lesion treatment (loosely related to peri-implantitis pathology — clinical bridge)</td></tr><tr><td>root-canal-retreatment</td><td>treats</td><td>cracked-tooth</td><td>Sometimes; when crack involves canal</td></tr><tr><td>internal-bleaching</td><td>treats</td><td>cracked-tooth</td><td>Post-trauma discoloration</td></tr><tr><td>caf</td><td>treats</td><td>gum-recession</td><td>Gold standard root coverage</td></tr><tr><td>tunneling-technique</td><td>treats</td><td>gum-recession</td><td></td></tr><tr><td>vista-technique</td><td>treats</td><td>gum-recession</td><td>Multiple-tooth recession</td></tr><tr><td>tcaf</td><td>treats</td><td>gum-recession</td><td>Hybrid root coverage</td></tr><tr><td>strip-graft</td><td>treats</td><td>gum-recession</td><td>Keratinized augmentation + indirect root coverage</td></tr><tr><td>vipct</td><td>treats</td><td>black-triangle</td><td>Papilla regeneration approach</td></tr><tr><td>conscious-sedation</td><td>treats</td><td>dental-anxiety</td><td>Mild anxiety pathway</td></tr><tr><td>ga-dentistry</td><td>treats</td><td>dental-anxiety</td><td>Severe phobia pathway</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">R — Subtype-of</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>internal-sinus-lift</td><td>subtype_of</td><td>sinus-lift</td><td>Crestal/transalveolar approach variant</td></tr><tr><td>lateral-window-sinus-lift</td><td>subtype_of</td><td>sinus-lift</td><td>Traditional lateral approach</td></tr><tr><td>neodent-implant</td><td>subtype_of</td><td>straumann-implant</td><td>Subsidiary brand within Straumann Group</td></tr><tr><td>passive-self-ligating</td><td>subtype_of</td><td>damon-system</td><td>PSL is the design class of Damon brackets</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">S — Part-of</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>acteon-cbct</td><td>part_of</td><td>cbct-3d-scan</td><td>Brand instance of CBCT category</td></tr><tr><td>trios-intraoral-scanner</td><td>part_of</td><td>intraoral-scanner</td><td>Brand instance of IOS category</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">T — Additions (ZBL + Peri-Implantitis Service + Gold Crown)</h4>
+<h5 class="md">T1: ZBL Brand Framework edges</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>zero-bone-loss-concept</td><td>evidenced_by</td><td>dr-tomas-linkevicius</td><td>Authority anchor — Linkevicius 2009+ research + 2019 Quintessence textbook</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>dental-implant</td><td>ZBL = how SmileScape does implants (philosophy/protocol)</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>lifetime-implant-warranty</td><td>Zero bone loss = warranty validity foundation</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>keratinized-mucosa</td><td>ZBL requires ≥2mm keratinized tissue around implant</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>smile-dna</td><td>Brand triad: SMILE DNA (values) + Family Standard (ethics) + ZBL (clinical protocol)</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>family-standard</td><td>Brand triad complement</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>zero-bone-loss-concept</td><td>Practitioner of ZBL protocol (pending Linkevicius training credential confirm)</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>dr-tomas-linkevicius</td><td>External authority/mentor reference (pending clinic confirmation)</td></tr><tr><td>airflow-air-polishing</td><td>uses</td><td>zero-bone-loss-concept</td><td>GBT + Airflow = ZBL maintenance protocol component</td></tr></tbody></table>
+<h5 class="md">T2: Peri-Implantitis Service edges</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>peri-implantitis-treatment</td><td>treats</td><td>peri-implantitis</td><td>Service entity treats condition entity</td></tr><tr><td>peri-implantitis-treatment</td><td>parent_of</td><td>implantoplasty</td><td></td></tr><tr><td>peri-implantitis-treatment</td><td>parent_of</td><td>regenerative-peri-implantitis-surgery</td><td></td></tr><tr><td>peri-implantitis-treatment</td><td>parent_of</td><td>resective-peri-implantitis-surgery</td><td></td></tr><tr><td>peri-implantitis-treatment</td><td>uses</td><td>dental-laser-therapy</td><td>Laser-assisted decontamination</td></tr><tr><td>regenerative-peri-implantitis-surgery</td><td>uses</td><td>guided-bone-regeneration</td><td>GBR principles applied to peri-implant defects</td></tr><tr><td>regenerative-peri-implantitis-surgery</td><td>uses</td><td>rpm-membrane</td><td>Space maintenance for peri-implant defects</td></tr><tr><td>peri-implantitis</td><td>symptom_of</td><td>periodontitis</td><td>Shared pathophysiology — bacterial biofilm</td></tr><tr><td>zero-bone-loss-concept</td><td>related_to</td><td>peri-implantitis</td><td>ZBL prevents peri-implantitis via maintenance protocol</td></tr></tbody></table>
+<h5 class="md">T3: Gold Crown edges</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>gold-crown</td><td>subtype_of</td><td>dental-crown</td><td>Material variant of dental crown</td></tr><tr><td>gold-crown</td><td>alternative_to</td><td>zirconia-crown</td><td>Premium crown material decision tree</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">Y — Additions (Direct Print Clear Aligner Signature #6)</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>direct-print-clear-aligner</td><td>subtype_of</td><td>clear-aligner</td><td>Direct Print = clear-aligner subtype</td></tr><tr><td>direct-print-clear-aligner</td><td>alternative_to</td><td>thermoformed-aligner</td><td>Direct Print vs Thermoformed — comparison content anchor</td></tr><tr><td>direct-print-clear-aligner</td><td>alternative_to</td><td>trioclear-aligner</td><td>In-house Direct Print vs outsourced TrioClear</td></tr><tr><td>direct-print-clear-aligner</td><td>uses</td><td>photopolymer-resin-tc85</td><td>TC-85DAC / Tera Harz material</td></tr><tr><td>direct-print-clear-aligner</td><td>uses</td><td>3d-printer-aligner</td><td>Asiga / SprintRay / Formlabs printer</td></tr><tr><td>direct-print-clear-aligner</td><td>related_to</td><td>in-house-aligner-lab</td><td>Lab capability ties to signature offering</td></tr><tr><td>in-house-aligner-lab</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Brand-specific manufacturing capability</td></tr><tr><td>in-house-aligner-lab</td><td>uses</td><td>photopolymer-resin-tc85</td><td>Material consumption in lab</td></tr><tr><td>in-house-aligner-lab</td><td>uses</td><td>3d-printer-aligner</td><td>Equipment in lab</td></tr><tr><td>aligner-attachment</td><td>related_to</td><td>clear-aligner</td><td>Composite attachment used by thermoformed aligners</td></tr><tr><td>aligner-attachment</td><td>alternative_to</td><td>direct-print-clear-aligner</td><td>Direct Print uses fewer attachments (built-in features replace) — competitive comparison</td></tr><tr><td>direct-print-clear-aligner</td><td>treats</td><td>malocclusion</td><td>Service treats condition</td></tr><tr><td>direct-print-clear-aligner</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Signature offering brand anchor</td></tr><tr><td>dr-woraphat-jarangkul</td><td>related_to</td><td>direct-print-clear-aligner</td><td>Medical Director oversees in-house lab</td></tr><tr><td>direct-print-clear-aligner</td><td>evidenced_by</td><td>photopolymer-resin-tc85</td><td>Material evidence + 6 PubMed studies (Pillar 16)</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">X — Additions (Demographic-Specific Dentistry Services)</h4>
+<h5 class="md">X1: Demographic Service hierarchy</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>geriatric-dentistry</td><td>parent_of</td><td>bedridden-dentistry</td><td>Sub-service for immobile patients</td></tr><tr><td>medical-compromised-dentistry</td><td>uses</td><td>medical-clearance-protocol</td><td>Pre-op screening required</td></tr><tr><td>special-needs-dentistry</td><td>related_to</td><td>ga-dentistry</td><td>Often paired with GA/sedation</td></tr></tbody></table>
+<h5 class="md">X2: Service ↔ Concern bidirectional links</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>geriatric-dentistry</td><td>related_to</td><td>xerostomia</td><td>Senior + dry mouth comorbid</td></tr><tr><td>geriatric-dentistry</td><td>related_to</td><td>root-caries</td><td>Senior caries risk</td></tr><tr><td>geriatric-dentistry</td><td>related_to</td><td>removable-denture</td><td>Common senior prosthetic</td></tr><tr><td>geriatric-dentistry</td><td>related_to</td><td>overdenture</td><td>Implant-retained option for senior</td></tr><tr><td>pregnancy-dental-care</td><td>related_to</td><td>pregnancy-gingivitis</td><td>Service treats hormonal gingivitis</td></tr><tr><td>pregnancy-dental-care</td><td>treats</td><td>pregnancy-gingivitis</td><td>Direct treatment relationship</td></tr><tr><td>medical-compromised-dentistry</td><td>related_to</td><td>dental-implant</td><td>High-stakes risk assessment for implant patients</td></tr><tr><td>medical-compromised-dentistry</td><td>related_to</td><td>conscious-sedation</td><td>Often required for comorbid patients</td></tr></tbody></table>
+<h5 class="md">X3: MRONJ + Bisphosphonate critical risk link</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>medical-compromised-dentistry</td><td>requires_assessment</td><td>dental-implant</td><td>MRONJ + cardiac + diabetes screening before implant placement</td></tr><tr><td>medical-clearance-protocol</td><td>requires_assessment</td><td>tooth-extraction</td><td>Pre-op for Bisphosphonate patients (MRONJ risk)</td></tr></tbody></table>
+<h5 class="md">X4: Demographic service brand integration</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>geriatric-dentistry</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Demographic service positioning</td></tr><tr><td>special-needs-dentistry</td><td>related_to</td><td>family-standard</td><td>Brand ethics fit: care like family</td></tr><tr><td>medical-compromised-dentistry</td><td>related_to</td><td>smilescape-dental-clinic</td><td>Premium clinic positioning</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">W — Additions (Citation Evidence Anchors)</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>zero-bone-loss-concept</td><td>evidenced_by</td><td>dr-tomas-linkevicius</td><td>Brand framework authority anchor (P8) — Linkevicius 2019 textbook + 5 PMIDs (34076631/20605308/33527729/32250061/35476860)</td></tr><tr><td>osseodensification</td><td>evidenced_by</td><td>densah-bur</td><td>Tool-mechanism evidence (P7) — Osseodensification SRs PMIDs 37975644/38002660/40377845</td></tr><tr><td>densah-bur</td><td>related_to</td><td>dr-woraphat-jarangkul</td><td>Pending Versah training credential — brand authority</td></tr><tr><td>internal-sinus-lift</td><td>evidenced_by</td><td>osseodensification</td><td>Crestal sinus elevation evidence base — PMID 40377845 (Densah sinus SR)</td></tr><tr><td>strip-graft</td><td>evidenced_by</td><td>dr-tomas-linkevicius</td><td>P6 cross-reference: Linkevicius also published on keratinized mucosa around implants</td></tr><tr><td>peri-implantitis-treatment</td><td>evidenced_by</td><td>peri-implantitis</td><td>P9 Schwarz EFP 2018 consensus (PMID 25626479) + 2023 SR (PMID 37271498)</td></tr><tr><td>caf</td><td>evidenced_by</td><td>gum-recession</td><td>P6 Zucchelli root coverage CAF — gold standard</td></tr><tr><td>tunneling-technique</td><td>evidenced_by</td><td>gum-recession</td><td>P6 Allen 1994 / Zabalegui 1999 classic</td></tr><tr><td>vista-technique</td><td>evidenced_by</td><td>gum-recession</td><td>P6 Zadeh 2011 IJPRD original VISTA paper</td></tr><tr><td>dental-caries</td><td>evidenced_by</td><td>fluoride-treatment</td><td>P15 WHO 2019 + Cochrane Walsh 2019 fluoride</td></tr><tr><td>white-spot-lesion</td><td>evidenced_by</td><td>fluoride-treatment</td><td>P15 remineralization claim — Tier 1 ADA + WHO</td></tr><tr><td>pit-fissure-sealant</td><td>evidenced_by</td><td>dental-caries</td><td>P15 Cochrane Ahovuo-Saloranta 2017</td></tr><tr><td>dental-abscess</td><td>evidenced_by</td><td>periodontitis</td><td>P14 Tonetti 2018 perio classification consensus</td></tr><tr><td>dry-socket</td><td>evidenced_by</td><td>tooth-extraction</td><td>P14 Cochrane Daly 2012 local interventions SR</td></tr><tr><td>pregnancy-gingivitis</td><td>evidenced_by</td><td>gingivitis</td><td>P14 hormonal gingivitis hormonal etiology consensus</td></tr><tr><td>social-security-dental-benefit</td><td>evidenced_by</td><td>smilescape-dental-clinic</td><td>P13 sso.go.th regulatory database — Q-Clinic verification</td></tr><tr><td>sso-direct-billing-q-clinic</td><td>evidenced_by</td><td>smilescape-dental-clinic</td><td>P13 Q-Clinic certificate (clinic pending)</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">V — Additions (Section 5 Concern Universe)</h4>
+<h5 class="md">V1: Pain &amp; Caries cluster bidirectional links</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-caries</td><td>parent_of</td><td>white-spot-lesion</td><td>Reversible early stage</td></tr><tr><td>dental-caries</td><td>parent_of</td><td>root-caries</td><td>Senior subtype</td></tr><tr><td>dental-caries</td><td>symptom_of</td><td>dental-abscess</td><td>Untreated decay progresses to abscess</td></tr><tr><td>dental-caries</td><td>related_to</td><td>dental-filling</td><td>Treatment relationship</td></tr><tr><td>dental-caries</td><td>related_to</td><td>root-canal-treatment</td><td>Deep caries → endo</td></tr><tr><td>dental-caries</td><td>related_to</td><td>xerostomia</td><td>Dry mouth = caries risk multiplier</td></tr><tr><td>root-caries</td><td>related_to</td><td>gum-recession</td><td>Exposed root + decay</td></tr></tbody></table>
+<h5 class="md">V2: Periodontal/Gum bidirectional links</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dental-abscess</td><td>symptom_of</td><td>periodontitis</td><td>Acute manifestation</td></tr><tr><td>dental-abscess</td><td>symptom_of</td><td>dental-caries</td><td>Pulpal origin variant</td></tr><tr><td>dental-abscess</td><td>related_to</td><td>gingivitis</td><td>Acute gingival swelling</td></tr><tr><td>pregnancy-gingivitis</td><td>subtype_of</td><td>gingivitis</td><td>Hormonal variant</td></tr><tr><td>pregnancy-gingivitis</td><td>related_to</td><td>conscious-sedation</td><td>Q2 trimester safety considerations</td></tr></tbody></table>
+<h5 class="md">V3: TMJ/Bruxism cluster</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>bruxism</td><td>related_to</td><td>tmj-disorder</td><td>Bidirectional causation</td></tr><tr><td>bruxism</td><td>related_to</td><td>tooth-fracture</td><td>Wear → fracture</td></tr><tr><td>tmj-disorder</td><td>related_to</td><td>malocclusion</td><td>Bite imbalance contribution</td></tr><tr><td>bruxism</td><td>treats</td><td>tooth-fracture</td><td>Indirectly via prevention</td></tr></tbody></table>
+<h5 class="md">V4: Wear/Trauma cluster</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>tooth-fracture</td><td>parent_of</td><td>cracked-tooth</td><td>Cracked = fracture subtype</td></tr><tr><td>tooth-fracture</td><td>related_to</td><td>dental-crown</td><td>Crown protection treatment</td></tr><tr><td>tooth-fracture</td><td>related_to</td><td>porcelain-veneer</td><td>Aesthetic restoration</td></tr></tbody></table>
+<h5 class="md">V5: Post-Op/Complications</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>dry-socket</td><td>symptom_of</td><td>tooth-extraction</td><td>Post-extraction complication</td></tr><tr><td>dry-socket</td><td>related_to</td><td>wisdom-tooth-removal</td><td>Most common after wisdom tooth</td></tr></tbody></table>
+<h5 class="md">V6: Halitosis cluster (multi-cause)</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>halitosis</td><td>symptom_of</td><td>periodontitis</td><td>Perio = #1 cause</td></tr><tr><td>halitosis</td><td>symptom_of</td><td>dental-caries</td><td>Deep caries gas</td></tr><tr><td>halitosis</td><td>symptom_of</td><td>xerostomia</td><td>Low saliva → bacterial overgrowth</td></tr><tr><td>halitosis</td><td>related_to</td><td>airflow-air-polishing</td><td>Tongue/biofilm removal treatment</td></tr></tbody></table>
+<h5 class="md">V7: Xerostomia cross-references</h5>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>xerostomia</td><td>related_to</td><td>dental-caries</td><td>Risk multiplier</td></tr><tr><td>xerostomia</td><td>related_to</td><td>halitosis</td><td>Bacterial overgrowth</td></tr><tr><td>xerostomia</td><td>related_to</td><td>pediatric-dentistry</td><td>Mouth-breathing kids</td></tr></tbody></table>
+<div class="divider"></div>
+<h4 class="md">U — Additions (Insurance Coverage TH)</h4>
+<table class=""><thead><tr><th>From Entity</th><th>Edge Type</th><th>To Entity</th><th>Notes</th></tr></thead><tbody><tr><td>social-security-dental-benefit</td><td>parent_of</td><td>sso-direct-billing-q-clinic</td><td>Q-Clinic = SSO billing modality variant</td></tr><tr><td>sso-direct-billing-q-clinic</td><td>related_to</td><td>smilescape-dental-clinic</td><td>SmileScape Q-Clinic status — key conversion anchor</td></tr><tr><td>sso-direct-billing-q-clinic</td><td>related_to</td><td>smilescape-rattanathibet</td><td>Branch-level direct billing capability</td></tr><tr><td>sso-direct-billing-q-clinic</td><td>related_to</td><td>smilescape-srinakarin</td><td>Branch-level direct billing capability</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>dental-filling</td><td>Covered procedure</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>tooth-extraction</td><td>Covered procedure</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>wisdom-tooth-removal</td><td>Covered procedure (simple cases)</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>removable-denture</td><td>Separate cap 1,500-4,400 บาท/5 yr</td></tr><tr><td>social-security-dental-benefit</td><td>alternative_to</td><td>universal-coverage-th</td><td>Mutually exclusive — patient chooses one</td></tr><tr><td>social-security-dental-benefit</td><td>alternative_to</td><td>civil-servant-dental-benefit</td><td>Mutually exclusive by employment status</td></tr><tr><td>social-security-dental-benefit</td><td>alternative_to</td><td>private-dental-insurance-th</td><td>Often stackable — SSO first, private reimburses excess</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>dental-implant</td><td>NOT covered — common upsell pathway from SSO patients</td></tr><tr><td>social-security-dental-benefit</td><td>related_to</td><td>clear-aligner</td><td>NOT covered — orthodontic education</td></tr></tbody></table>
+<div class="divider"></div>
+<footer class="end"><b>SmileScape Dental Clinic — Content &amp; SEO Master Plan</b><br>
+Prepared by The Gifted · 30 May 2026 · Confidential. Figures reflect the current architecture and are refined as content is produced and live search data is validated.</footer>
+</section></body></html>
