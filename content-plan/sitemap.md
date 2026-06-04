@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 728 (Round 23 — Section 4 Technology review: entity fix + tech↔service DR-002 links, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 728 (Round 24 — Section 5 Concerns review: entity catch-all fix (concern↔service alignment), 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -25,6 +25,7 @@
 > **Round 21 (2026-06-05):** **DFS-driven (Veneer + All-on-X)** — ยิง DataForSEO resolve flags: 🆕 **Veneer sub-hub 3.4.2** (DFS veneer 2,400/mo + composite 590/mo LOW → +porcelain/composite/ราคา/vs-crown, +3) / **3.3.4+3.3.5 jaw รวม** (DFS ไม่มี jaw-specific demand, −1) / **3.2.8.3 demote A→B** (intent: all-on-4 info, commercial อยู่ 3.3) / +cross-links 3.3.5→3.14.4, 3.3.6→3.13.1. Net +2 → 728 — see `docs/changelog.md`
 > **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). ปิด numbering gap + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber, historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
 > **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.3.1. Page-neutral 728 — see `docs/changelog.md`
+> **Round 24 (2026-06-05):** **Section 5 Concerns review (193)** — section สุขภาพดี (cross-links renumber ถูกหมด, ไม่มี broken, 5.14-5.22 entity เยี่ยม). แก้ entity `dental-implant` catch-all ที่ใช้เกิน + ไม่ตรง service: 5.8.1-.11 → medical-compromised/geriatric/pregnancy (align 3.13) / 5.12.1/.2/.3/.4/.6 → dental-caries/pediatric-dentistry (align 3.11, เลิกแท็ก implant บนหน้าฟันเด็ก) / 5.4.4 → dental-anxiety / 5.6.1 → dental-caries. Page-neutral 728 — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -722,7 +723,7 @@
 
 ---
 
-## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (193 pages — recount 2026-06-05; 5.9 deprecated R7)
+## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (193 pages — recount 2026-06-05; 5.9 deprecated R7; R24 entity catch-all fix)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
 
 ### 5.1 ฟันหาย / สูญเสียฟัน (Implant Funnel — ใหญ่สุด)
@@ -770,7 +771,7 @@
 | 5.4.1 | → กลัวฝังรากฟันเทียม — เจ็บไหม? | L4 | C | top | A | dental-implant |
 | 5.4.2 | → ฝังรากฟันเทียม เจ็บแค่ไหน จริงๆ | L4 | C | top | A | dental-implant |
 | 5.4.3 | → เทคนิคลดความเจ็บปวดที่ SmileScape | L4 | D | top | A | dental-implant |
-| 5.4.4 | → กลัวหมอฟัน (Dental Phobia) — วิธีเอาชนะความกลัว | L4 | D | top | A | dental-implant |
+| 5.4.4 | → กลัวหมอฟัน (Dental Phobia) — วิธีเอาชนะความกลัว | L4 | D | top | A | dental-anxiety |
 
 ### 5.5 ฟันไม่สวย / อยากยิ้มสวย
 
@@ -789,7 +790,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.6 | ปัญหาฟันที่พบบ่อย (hub) | L4 | C | top | A | dental-implant |
-| 5.6.1 | → ปวดฟัน — สาเหตุและวิธีรักษา | L4 | C | top | A | dental-implant |
+| 5.6.1 | → ปวดฟัน — สาเหตุและวิธีรักษา | L4 | C | top | A | dental-caries |
 | 5.6.2 | → ฟันผุ — ป้องกันและรักษา (hub) 🌟 (DFS 22,200/mo LOW) | L4 | **A** | top | A | dental-caries |
 | 5.6.2.1 | → → ฟันผุระยะแรก / White Spot Lesion — รักษาได้ไม่ต้องอุด | L4 | C | top | A | white-spot-lesion |
 | 5.6.2.2 | → → ฟันผุลึกถึงเนื้อในฟัน — Pulpitis (→ link 3.6) | L4 | C | top | A | dental-caries |
@@ -832,17 +833,17 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.8 | ทำฟันสำหรับกลุ่มเฉพาะ (hub) — concern-side (→ service 3.13) | L4 | C | top | A | medical-compromised-dentistry |
-| 5.8.1 | → ทำฟันผู้สูงอายุ — สิ่งที่ต้องรู้ | L4 | C | top | A | dental-implant |
-| 5.8.2 | → ทำฟันผู้ป่วยเบาหวาน | L4 | C | top | A | dental-implant |
-| 5.8.3 | → ทำฟันหญิงตั้งครรภ์ | L4 | D | top | A | dental-implant |
-| 5.8.4 | → ทำฟันผู้ป่วยโรคหัวใจ | L4 | D | top | A | dental-implant |
-| 5.8.5 | → ทำฟันผู้ป่วยที่กินยาละลายลิ่มเลือด | L4 | D | top | A | dental-implant |
-| 5.8.6 | → ผู้ป่วยมะเร็ง + ทำฟัน — ก่อน/ระหว่าง/หลังเคมีบำบัด (R5) | L4 | C | mid | A | dental-implant |
-| 5.8.7 | → ผู้ป่วยภูมิคุ้มกันต่ำ — Immunocompromised Dentistry (R5) | L4 | C | mid | A | dental-implant |
-| 5.8.8 | → ผ่าตัดเปลี่ยนข้อเข่า / สะโพก — Antibiotic Prophylaxis (R5) | L4 | C | mid | A | dental-implant |
-| 5.8.9 | → ผู้ป่วยกินยา Bisphosphonate (Osteoporosis) — MRONJ Risk ⚠️ (R5) | L4 | C | mid | A | dental-implant |
-| 5.8.10 | → ผู้ป่วยรับรังสีรักษา (Head & Neck Radiation) — ORN Risk (R5) | L4 | D | mid | A | dental-implant |
-| 5.8.11 | → ผู้ป่วยตับ / ไต — Renal & Hepatic considerations (R5) | L4 | D | mid | A | dental-implant |
+| 5.8.1 | → ทำฟันผู้สูงอายุ — สิ่งที่ต้องรู้ | L4 | C | top | A | geriatric-dentistry |
+| 5.8.2 | → ทำฟันผู้ป่วยเบาหวาน | L4 | C | top | A | medical-compromised-dentistry |
+| 5.8.3 | → ทำฟันหญิงตั้งครรภ์ | L4 | D | top | A | pregnancy-dental-care |
+| 5.8.4 | → ทำฟันผู้ป่วยโรคหัวใจ | L4 | D | top | A | medical-compromised-dentistry |
+| 5.8.5 | → ทำฟันผู้ป่วยที่กินยาละลายลิ่มเลือด | L4 | D | top | A | medical-compromised-dentistry |
+| 5.8.6 | → ผู้ป่วยมะเร็ง + ทำฟัน — ก่อน/ระหว่าง/หลังเคมีบำบัด (R5) | L4 | C | mid | A | medical-compromised-dentistry |
+| 5.8.7 | → ผู้ป่วยภูมิคุ้มกันต่ำ — Immunocompromised Dentistry (R5) | L4 | C | mid | A | medical-compromised-dentistry |
+| 5.8.8 | → ผ่าตัดเปลี่ยนข้อเข่า / สะโพก — Antibiotic Prophylaxis (R5) | L4 | C | mid | A | medical-compromised-dentistry |
+| 5.8.9 | → ผู้ป่วยกินยา Bisphosphonate (Osteoporosis) — MRONJ Risk ⚠️ (R5) | L4 | C | mid | A | medical-compromised-dentistry |
+| 5.8.10 | → ผู้ป่วยรับรังสีรักษา (Head & Neck Radiation) — ORN Risk (R5) | L4 | D | mid | A | medical-compromised-dentistry |
+| 5.8.11 | → ผู้ป่วยตับ / ไต — Renal & Hepatic considerations (R5) | L4 | D | mid | A | medical-compromised-dentistry |
 | 5.8.12 | → ภูมิแพ้ตัวเอง (Lupus / Sjögren's / RA) (R5) | L4 | D | mid | A | xerostomia |
 
 ### 5.9 [DEPRECATED — SS-DR-009] → moved to Section 6.5 FAQ Knowledge Hub
@@ -886,12 +887,12 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.12 | ปัญหาฟันเด็ก — พ่อแม่ต้องรู้ (hub) | L4 | C | top | A | family-standard |
-| 5.12.1 | → ฟันน้ำนมผุ — ต้องอุดหรือปล่อย | L4 | C | top | A | dental-implant |
-| 5.12.2 | → ฟันแท้ซ้อนฟันน้ำนม — ต้องถอนไหม | L4 | C | top | A | dental-implant |
-| 5.12.3 | → ฟันเด็กขึ้นช้า / ไม่ขึ้น — เมื่อไหร่ต้องพบหมอ | L4 | D | top | A | malocclusion |
-| 5.12.4 | → เด็กกลัวหมอฟัน — วิธีเตรียมลูกก่อนพาไปทำฟัน | L4 | D | top | A | malocclusion |
+| 5.12.1 | → ฟันน้ำนมผุ — ต้องอุดหรือปล่อย | L4 | C | top | A | dental-caries |
+| 5.12.2 | → ฟันแท้ซ้อนฟันน้ำนม — ต้องถอนไหม | L4 | C | top | A | pediatric-dentistry |
+| 5.12.3 | → ฟันเด็กขึ้นช้า / ไม่ขึ้น — เมื่อไหร่ต้องพบหมอ | L4 | D | top | A | pediatric-dentistry |
+| 5.12.4 | → เด็กกลัวหมอฟัน — วิธีเตรียมลูกก่อนพาไปทำฟัน | L4 | D | top | A | pediatric-dentistry |
 | 5.12.5 | → ฟันเด็กซ้อน เรียงตัวไม่ดี — ควรจัดฟันตอนไหน | L4 | C | top | A | malocclusion |
-| 5.12.6 | → นิสัยดูดนิ้ว / อมจุกนม — ส่งผลต่อฟันอย่างไร | L4 | D | top | A | dental-implant |
+| 5.12.6 | → นิสัยดูดนิ้ว / อมจุกนม — ส่งผลต่อฟันอย่างไร | L4 | D | top | A | pediatric-dentistry |
 
 ### 5.13 ค่าใช้จ่ายและสิทธิ์การรักษา
 

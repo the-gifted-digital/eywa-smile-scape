@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (728p Round 23 — Section 3 + Section 4 reviewed; tech↔service DR-002 links complete)
+│   └── sitemap.md                (728p Round 24 — Section 3+4+5 reviewed; concern↔service entity alignment)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,11 +58,11 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 23 — 2026-06-05):**
+4. **Stage status (Round 24 — 2026-06-05):**
    - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **166 entities** / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
-   - Phase E 🔄 **Operator deep review R23** — sitemap **728 pages** / **Section 3 (14 cat) ✅ + Section 4 Tech ✅ reviewed**
+   - Phase E 🔄 **Operator deep review R24** — sitemap **728 pages** / **Section 3 (14 cat) ✅ + Section 4 Tech ✅ + Section 5 Concerns (193) ✅ reviewed**
    - Section 3 order: Diag → Implant hero → core (General/Restorative/Endo/Perio/Surgery) → aesthetic (Cosmetic/Ortho) → population (Pediatric/Sedation/Demo) → access (SSO)
-   - **Next:** Section 5 Concerns (193) / Section 6 Knowledge (169) / Section 7 Case (38) / Section 8 Contact (15)
+   - **Next:** Section 6 Knowledge (169) / Section 7 Case (38) / Section 8 Contact (15)
    - **Flagged:** Section 6 has overview-table reusing 6.x IDs (count quirk, review at S6) / per-page DFS volume validation (Stage 1 Gate)
    - Stage 1 Gate ❌ pending (operator review approval + DataForSEO full keyword research batch — R14)
 

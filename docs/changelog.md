@@ -1,5 +1,25 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 24 Section 5 Concerns Review (entity catch-all fix, concern↔service alignment)
+
+**By:** Operator deep review of Section 5 Concerns (193 pages, biggest section), with focus on consistency with the reordered Section 3 services.
+
+**Verdict:** Section 5 healthy — 22 DFS-informed concern subsections, all cross-links to Section 3 resolved correctly after the R22 reorder (no broken links), strong entity hygiene in the R5 expansion clusters (5.14-5.22: dental-caries / tmj-disorder / bruxism / halitosis / xerostomia / dry-socket / pregnancy-gingivitis). One systematic issue found.
+
+**Issue: `dental-implant` catch-all over-applied** to concern pages that aren't implant-related and don't match the service they funnel to:
+- **5.8 Medical-Compromised cluster (5.8.1-5.8.11):** all tagged `dental-implant` despite hub = `medical-compromised-dentistry` and funneling to service 3.13. Re-tagged: 5.8.1 → `geriatric-dentistry` / 5.8.3 → `pregnancy-dental-care` / 5.8.2, 5.8.4-5.8.11 → `medical-compromised-dentistry`
+- **5.12 Pediatric cluster:** 5.12.1 ฟันน้ำนมผุ `dental-implant`→`dental-caries`; 5.12.2/.3/.4/.6 → `pediatric-dentistry` (was dental-implant/malocclusion); aligns with service 3.11 Pediatric (5.12.5 crowding kept `malocclusion`)
+- 5.4.4 กลัวหมอฟัน (Dental Phobia): `dental-implant` → `dental-anxiety`
+- 5.6.1 ปวดฟัน: `dental-implant` → `dental-caries`
+
+All target entities already existed (no new entities). The legitimate implant-funnel clusters (5.1 tooth-loss, 5.7 implant concerns) correctly keep `dental-implant`.
+
+**Files:** `sitemap.md` (entity re-tags + header + R24 note) / `changelog.md` / `README.md`
+
+**Net 0 pages** → Sitemap **728** / Entities **166** (unchanged). Section 5 review complete.
+
+---
+
 ## [2026-06-05] — Round 23 Section 4 Technology Review (entity fix + tech↔service consistency)
 
 **By:** Operator deep review of Section 4 Technology (44 pages), with a second-pass focus on consistency with the (just-reordered) Section 3 services.
