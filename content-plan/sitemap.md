@@ -23,7 +23,7 @@
 > **Round 18 (2026-06-05):** **Restorative & Prosthetic Reorganization (operator-driven)** — General Dentistry มี รักษาราก/ฟันปลอม แหลมออก + ครอบ/สะพาน/inlay filed ผิดใต้ Cosmetic. แก้: 🆕 **§3.14 ทันตกรรมบูรณะและประดิษฐ์** (รวม ครอบฟัน+subs/สะพาน/inlay จาก 3.4 + ฟันปลอม จาก 3.6) / 3.6 General slim เหลือ ขูด-อุด-ถอน-ฟันคุด (รักษาราก stub → 3.11) / 3.4 Cosmetic = aesthetic-only (เว้นเลข 3.4.4-.6) / fold dental-scaling entity #164 (ขูดหินปูน goldmine เลิกขโมย entity อุดฟัน). Page-neutral 726 — see `docs/changelog.md`
 > **Round 19 (2026-06-05):** **3.4 Cosmetic finish** — ปิด gap 3.4.4-.6 ที่เหลือจาก R18 (renumber Whitening 3.4.7→3.4.4 + subs / Gum 3.4.8→3.4.5 / Makeover 3.4.9→3.4.6 / ราคา 3.4.10→3.4.7) + แก้ Cool Light entity device→method (`cool-light-whitening-unit`→`teeth-whitening`, device อยู่ Tech 4.9.1) + repoint 5.11.8→3.4.5. Veneer expansion flagged รอ keyword. Page-neutral 726 — see `docs/changelog.md`
 > **Round 21 (2026-06-05):** **DFS-driven (Veneer + All-on-X)** — ยิง DataForSEO resolve flags: 🆕 **Veneer sub-hub 3.4.2** (DFS veneer 2,400/mo + composite 590/mo LOW → +porcelain/composite/ราคา/vs-crown, +3) / **3.3.4+3.3.5 jaw รวม** (DFS ไม่มี jaw-specific demand, −1) / **3.2.8.3 demote A→B** (intent: all-on-4 info, commercial อยู่ 3.3) / +cross-links 3.3.5→3.14.4, 3.3.6→3.13.1. Net +2 → 728 — see `docs/changelog.md`
-> **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่ให้ logical: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). Restorative ออกจากท้ายมา core. ปิด numbering gap (3.9.3 whitening / 3.14 SSO / 3.13.1) + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber ~150 ref (sitemap+entities), historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
+> **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). ปิด numbering gap + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber, historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -152,8 +152,8 @@
 | 2.3.1 | → Doctor Credentials & Certifications — วุฒิบัตรและใบรับรอง | L1 | D | mid | A | smilescape-dental-clinic |
 | 2.3.2 | → International Training & Affiliations — เครือข่ายสากล | L1 | D | mid | A | smilescape-dental-clinic |
 | 2.3.3 | → Treatment Warranty & Lifetime Guarantee — การรับประกันตลอดชีพ 🌟 | L1 | C | bottom | A | lifetime-implant-warranty |
-| 2.3.9 | → Media Features & Press | L1 | D | mid | A | smilescape-dental-clinic |
-| 2.3.10 | → Patient Reviews & Testimonials | L1 | C | mid | A | smilescape-dental-clinic |
+| 2.3.4 | → Media Features & Press | L1 | D | mid | A | smilescape-dental-clinic |
+| 2.3.5 | → Patient Reviews & Testimonials | L1 | C | mid | A | smilescape-dental-clinic |
 
 ### 2.4 Your First Visit & Patient Journey
 
@@ -641,7 +641,7 @@
 | 4.3.1 | → 3D Implant Planning Software — ซอฟต์แวร์วางแผน 3 มิติ | L3 | C | mid | A | digital-implant-planning |
 | 4.3.2 | → Surgical Guide — เทมเพลตนำทางผ่าตัด ★ | L3 | C | mid | A | surgical-guide |
 | 4.3.3 | → Virtual Implant Placement — จำลองตำแหน่งรากก่อนผ่าจริง | L3 | C | mid | A | digital-implant-planning |
-| 4.3.9 | → Prosthetic-Driven Planning — วางแผนจากปลายทาง (ฟันถาวร) | L3 | C | mid | A | digital-implant-planning |
+| 4.3.4 | → Prosthetic-Driven Planning — วางแผนจากปลายทาง (ฟันถาวร) | L3 | C | mid | A | digital-implant-planning |
 
 ### 4.4 Surgical Technology
 
@@ -758,8 +758,8 @@
 | 5.3.1 | → ฟันปลอมทั้งปากหลวม — เปลี่ยนเป็น All-on-4 | L4 | C | top | A | all-on-4 |
 | 5.3.2 | → ฟันปลอมเจ็บเหงือก — สาเหตุและวิธีแก้ | L4 | C | top | A | removable-denture |
 | 5.3.3 | → ฟันปลอมกินอาหารไม่ได้ — Overdenture ช่วยได้ | L4 | C | top | A | overdenture |
-| 5.3.9 | → ฟันปลอมทำให้หน้าเปลี่ยน — วิธีคืนรูปหน้า | L4 | C | top | A | removable-denture |
-| 5.3.10 | → เปรียบเทียบฟันปลอมกับรากเทียม — ข้อแตกต่าง | L4 | C | top | D | removable-denture |
+| 5.3.4 | → ฟันปลอมทำให้หน้าเปลี่ยน — วิธีคืนรูปหน้า | L4 | C | top | A | removable-denture |
+| 5.3.5 | → เปรียบเทียบฟันปลอมกับรากเทียม — ข้อแตกต่าง | L4 | C | top | D | removable-denture |
 
 ### 5.4 กลัวทำฟัน / กลัวผ่าตัด
 
@@ -800,9 +800,9 @@
 | 5.6.3.1 | → → สัญญาณโรคเหงือกที่ต้องพบหมอ (→ link 3.7) | L4 | C | top | A | gingivitis |
 | 5.6.3.2 | → → เหงือกบวม + มีหนอง (Periodontal/Periapical Abscess) | L4 | C | top | A | dental-abscess |
 | 5.6.3.3 | → → เหงือกบวม + ปวด (Acute Periodontitis) | L4 | C | top | A | periodontitis |
-| 5.6.3.9 | → → เลือดออกขณะแปรงฟัน (Bleeding on Probing) | L4 | C | top | A | gingivitis |
-| 5.6.3.10 | → → เลือดออกตามไรฟันโดยไม่ปวด — Silent Periodontitis | L4 | C | top | A | periodontitis |
-| 5.6.3.4 | → → เหงือกบวมระหว่างจัดฟัน | L4 | C | top | A | gingivitis |
+| 5.6.3.4 | → → เลือดออกขณะแปรงฟัน (Bleeding on Probing) | L4 | C | top | A | gingivitis |
+| 5.6.3.5 | → → เลือดออกตามไรฟันโดยไม่ปวด — Silent Periodontitis | L4 | C | top | A | periodontitis |
+| 5.6.3.6 | → → เหงือกบวมระหว่างจัดฟัน | L4 | C | top | A | gingivitis |
 | 5.6.3.7 | → → เหงือกบวมรอบรากเทียม (→ link 3.7.7 Peri-Implantitis) | L4 | C | top | A | peri-implantitis |
 | 5.6.3.8 | → → ทำไมเหงือกบวมแล้วไม่หาย / เรื้อรัง | L4 | C | mid | A | periodontitis |
 | 5.6.4 | → ฟันคุด — ต้องผ่าหรือเปล่า | L4 | C | top | A | wisdom-tooth-removal |
@@ -910,9 +910,9 @@
 | 5.13.2.9 | → → วิธีเบิกประกันสังคมทำฟัน — Online (SSO app) + Offline + เอกสาร | L4 | C | mid | A | social-security-dental-benefit |
 | 5.13.2.10 | → → คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (Q-Clinic) คืออะไร 🌟 (DFS hot) (→ link 3.14.1) | L4 | B | bottom | A | sso-direct-billing-q-clinic |
 | 5.13.3 | → ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร (R14 CANONICAL detail page for 0% — Section 2.4 + 6.5.4.2 cross-link here) | L4 | **B** | bottom | A | dental-implant |
-| 5.13.9 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | private-dental-insurance-th |
-| 5.13.10 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
-| 5.13.4 | → ประกันชีวิต / ประกันสุขภาพเอกชน เบิกค่าทำฟันได้ไหม | L4 | C | bottom | A | private-dental-insurance-th |
+| 5.13.4 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | private-dental-insurance-th |
+| 5.13.5 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
+| 5.13.6 | → ประกันชีวิต / ประกันสุขภาพเอกชน เบิกค่าทำฟันได้ไหม | L4 | C | bottom | A | private-dental-insurance-th |
 | 5.13.7 | → ค่าทำฟันลดหย่อนภาษีได้ไหม | L4 | D | bottom | D | dental-implant |
 
 
@@ -1178,9 +1178,9 @@
 | 6.2.3.1 | → ปลูกกระดูกฟันคืออะไร — ทำไมต้องทำ | L5 | C | top | A | bone-grafting |
 | 6.2.3.2 | → ประเภทวัสดุปลูกกระดูก — Auto, Allo, Xeno, Synthetic | L5 | D | top | A | bone-graft-substitute |
 | 6.2.3.3 | → ปลูกกระดูกเจ็บไหม — ประสบการณ์จริง | L5 | D | top | A | bone-grafting |
-| 6.2.3.9 | → ระยะเวลาหายหลังปลูกกระดูก | L5 | D | top | A | bone-grafting |
-| 6.2.3.10 | → ปลูกกระดูกล้มเหลว — สาเหตุและวิธีแก้ | L5 | D | top | A | bone-grafting |
-| 6.2.3.4 | → ราคาปลูกกระดูกฟันในไทย | L5 | D | bottom | D | bone-grafting |
+| 6.2.3.4 | → ระยะเวลาหายหลังปลูกกระดูก | L5 | D | top | A | bone-grafting |
+| 6.2.3.5 | → ปลูกกระดูกล้มเหลว — สาเหตุและวิธีแก้ | L5 | D | top | A | bone-grafting |
+| 6.2.3.6 | → ราคาปลูกกระดูกฟันในไทย | L5 | D | bottom | D | bone-grafting |
 | 6.2.3.7 | → Membrane คืออะไร — PTFE / RPM / Resorbable | L5 | D | top | A | ptfe-membrane |
 
 #### 6.2.4 General Dental Insights (was top-level 6.5)
@@ -1325,7 +1325,7 @@
 | 6.5.3.1 | → FAQ ผู้สูงอายุ (→ link 5.8.1) | L5 | C | mid | A | dental-implant |
 | 6.5.3.2 | → FAQ ตั้งครรภ์ / หลังคลอด (→ link 5.20) | L5 | C | mid | A | pregnancy-gingivitis |
 | 6.5.3.3 | → FAQ เด็ก (→ link 5.12 + 3.11) | L5 | C | mid | A | pediatric-dentistry |
-| 6.5.3.9 | → FAQ โรคประจำตัว (เบาหวาน / โรคหัวใจ / มะเร็ง / ภูมิคุ้มกัน) (→ link 5.8) | L5 | C | mid | A | dental-implant |
+| 6.5.3.4 | → FAQ โรคประจำตัว (เบาหวาน / โรคหัวใจ / มะเร็ง / ภูมิคุ้มกัน) (→ link 5.8) | L5 | C | mid | A | dental-implant |
 
 #### 6.5.4 FAQ Cost & Insurance (sub-hub)
 
@@ -1406,9 +1406,9 @@
 | 7.3.1 | → Case: All-on-4 บน — จากฟันปลอมสู่ฟันถาวร | L7 | C | bottom | A | all-on-4 |
 | 7.3.2 | → Case: All-on-4 ล่าง — กลับมากินทุกอย่างได้ | L7 | C | bottom | A | all-on-4 |
 | 7.3.3 | → Case: All-on-4 ทั้งปาก — เปลี่ยนชีวิตใหม่ | L7 | C | bottom | A | all-on-4 |
-| 7.3.9 | → Case: All-on-6 + Bone Graft — เคสซับซ้อน | L7 | C | bottom | A | all-on-6 |
-| 7.3.10 | → Case: All-on-X + Zygomatic — เคสกระดูกบนไม่พอมาก | L7 | D | bottom | A | zygomatic-implant |
-| 7.3.4 | → Case: เปลี่ยนจากฟันปลอมทั้งปากเป็น All-on-4 | L7 | C | bottom | A | all-on-4 |
+| 7.3.4 | → Case: All-on-6 + Bone Graft — เคสซับซ้อน | L7 | C | bottom | A | all-on-6 |
+| 7.3.5 | → Case: All-on-X + Zygomatic — เคสกระดูกบนไม่พอมาก | L7 | D | bottom | A | zygomatic-implant |
+| 7.3.6 | → Case: เปลี่ยนจากฟันปลอมทั้งปากเป็น All-on-4 | L7 | C | bottom | A | all-on-4 |
 | 7.3.7 | → Case: All-on-4 ผู้สูงอายุ 65+ | L7 | C | bottom | A | all-on-4 |
 
 ### 7.4 Overdenture Case Studies
@@ -1477,9 +1477,9 @@
 | 8.3.1 | → แผนที่และการเดินทาง — ใกล้ MRT สีเหลือง สวนหลวง ร.9 | L1 | D | bottom | D | smilescape-srinakarin |
 | 8.3.2 | → รากฟันเทียมศรีนครินทร์ — ทำไมต้อง SmileScape | L1 | C | bottom | D | smilescape-srinakarin |
 | 8.3.3 | → ทำฟันศรีนครินทร์ — บริการทันตกรรมครบวงจร | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.9 | → จัดฟันศรีนครินทร์ | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.10 | → คลินิกทำฟันใกล้ MRT สีเหลือง | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.4 | → ทำฟันประกันสังคม สาขาศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
+| 8.3.4 | → จัดฟันศรีนครินทร์ | L1 | D | bottom | D | smilescape-srinakarin |
+| 8.3.5 | → คลินิกทำฟันใกล้ MRT สีเหลือง | L1 | D | bottom | D | smilescape-srinakarin |
+| 8.3.6 | → ทำฟันประกันสังคม สาขาศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
 
 ---
 
