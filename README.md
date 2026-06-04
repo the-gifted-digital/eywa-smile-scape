@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (722p Round 25 — Section 3-6 reviewed; count quirk fixed (728→722 real))
+│   └── sitemap.md                (722p Round 26 — ✅ FULL deep review complete, all 8 sections)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,12 +58,12 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 25 — 2026-06-05):**
+4. **Stage status (Round 26 — 2026-06-05): ✅ FULL SITEMAP DEEP REVIEW COMPLETE**
    - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **166 entities** / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
-   - Phase E 🔄 **Operator deep review R25** — sitemap **722 pages** (corrected from 728 — overview phantom rows) / **Section 3+4+5+6 reviewed ✅**
-   - Section 3 order: Diag → Implant hero → core (General/Restorative/Endo/Perio/Surgery) → aesthetic (Cosmetic/Ortho) → population (Pediatric/Sedation/Demo) → access (SSO)
-   - **Next:** Section 7 Case Studies (38) / Section 8 Contact & Local SEO (15) — nearly done
-   - **Flagged (deferred):** Knowledge-layer entity catch-all (6.2.4/6.3/6.5.4) / per-page DFS volume validation (Stage 1 Gate)
+   - Phase E ✅ **Operator deep review R16-R26 done** — sitemap **722 pages** (corrected from 728) / **all 8 sections reviewed**
+   - Section 3 reordered to logical 14-category sequence; §3.5 Restorative created; entity catch-all cleaned; DR-002 service↔tech links complete
+   - **Next phase:** Stage 1 Gate — full DataForSEO keyword batch + tier recompute; then Phase F content briefing
+   - **Operator TBDs:** Invisalign provider tier / orthognathic partner facility / 3D printer+resin models / Dr. Praeo credentials
    - Stage 1 Gate ❌ pending (operator review approval + DataForSEO full keyword research batch — R14)
 
 ---

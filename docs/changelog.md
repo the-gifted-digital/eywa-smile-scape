@@ -1,5 +1,38 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 26 Section 7+8 Review — FULL SITEMAP REVIEW COMPLETE (all 8 sections) 🎉
+
+**By:** Operator deep review of the final two sections (7 Case Studies, 8 Contact & Local SEO), completing the full sitemap deep review (R16-R26, all 8 sections).
+
+**Section 7 — Case Studies (38, L7):** well-structured (Implant 7.2 / All-on-X 7.3 / Overdenture 7.4 / Cosmetic-Ortho 7.5 / Patient Stories 7.6). Cross-link 7.5.3 → 3.10.1.3 correct. One entity error:
+- **7.2.8 "Case: Implant + Soft Tissue Graft — เคสปลูกเหงือก": `malocclusion` → `soft-tissue-management`** (gum graft ≠ malocclusion; aligns with service 3.2.9.7)
+
+**Section 8 — Contact & Local SEO (15, L1):** clean. Branch landing clusters (8.2 รัตนาธิเบศร์ / 8.3 ศรีนครินทร์) are properly parallel; branch entities (`smilescape-rattanathibet` / `smilescape-srinakarin`) + SSO Q-Clinic (8.2.6/8.3.6) correct. No fixes needed.
+
+**Net 0 pages** → Sitemap **722** / Entities **166**.
+
+---
+
+### 🏁 Full sitemap deep-review summary (R16–R26)
+
+| Section | Pages | Status |
+|---|---|---|
+| 1 Home | 1 | ✅ |
+| 2 Our Uniqueness | 26 | ✅ |
+| 3 Services (14 categories, reordered) | 242 | ✅ R16-R22 |
+| 4 Technology | 44 | ✅ R23 |
+| 5 Concerns | 193 | ✅ R24 |
+| 6 Knowledge | 163 | ✅ R25 |
+| 7 Case Studies | 38 | ✅ R26 |
+| 8 Contact & Local SEO | 15 | ✅ R26 |
+| **Total** | **722** | **all reviewed** |
+
+**Key outcomes:** count reconciled (was claimed ~726/728, true = 722) · Section 3 reordered to logical 14-category sequence · §3.14→§3.5 Restorative created · entity catch-all cleaned across 3.5/3.6/3.8/4.5/5.8/5.12/7.2 · 4 new entities (dental-scaling, frenectomy, oral-pathology + crown/denture remap) → 166 · DR-002 service↔tech links completed · DFS-validated veneer sub-hub + All-on-4 decisions · Direct Print sprawl resolved.
+
+**Deferred to next phase:** full DataForSEO keyword batch (Stage 1 Gate) · Knowledge-layer entity precision pass · operator TBDs (Invisalign provider tier, orthognathic partner facility, 3D printer/resin models, Dr. Praeo credentials).
+
+---
+
 ## [2026-06-05] — Round 25 Section 6 Knowledge Review (count quirk fix + Direct Print dup yank)
 
 **By:** Operator deep review of Section 6 Knowledge (169 pages), resolving two items flagged in earlier rounds (the 6.x overview-table count quirk + the R16 Direct Print sprawl).

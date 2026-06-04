@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 722 (Round 25 — Section 6 Knowledge review: count quirk fix (−5 phantom) + Direct Print dup yank (−1), 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 722 (Round 26 — Section 7+8 review: 7.2.8 entity fix; **FULL SITEMAP REVIEW COMPLETE (all 8 sections)**, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -27,6 +27,7 @@
 > **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.3.1. Page-neutral 728 — see `docs/changelog.md`
 > **Round 24 (2026-06-05):** **Section 5 Concerns review (193)** — section สุขภาพดี (cross-links renumber ถูกหมด, ไม่มี broken, 5.14-5.22 entity เยี่ยม). แก้ entity `dental-implant` catch-all ที่ใช้เกิน + ไม่ตรง service: 5.8.1-.11 → medical-compromised/geriatric/pregnancy (align 3.13) / 5.12.1/.2/.3/.4/.6 → dental-caries/pediatric-dentistry (align 3.11, เลิกแท็ก implant บนหน้าฟันเด็ก) / 5.4.4 → dental-anxiety / 5.6.1 → dental-caries. Page-neutral 728 — see `docs/changelog.md`
 > **Round 25 (2026-06-05):** **Section 6 Knowledge review (169→163)** — section well-built (FAQ hub canonical SS-DR-009, Evidence+PubMed, cross-links renumber ถูกหมด). แก้ 2 flag: (1) **count quirk** — overview table นับเป็น page ปลอม 5 แถว → ทำ bold เลข + recount จริง 164 (header 169 เกินจริง); (2) **Direct Print sprawl** — yank 6.2.5.10 (ซ้ำ Tech 4.6.0.5) + cross-link 6.2.5.8/.9→tech. **Total 728→722** (−5 phantom correction −1 yank). Flag: Knowledge-layer dental-implant catch-all (6.2.4/6.3/6.5.4) minor-deferred — see `docs/changelog.md`
+> **Round 26 (2026-06-05):** **Section 7+8 review — FULL SITEMAP REVIEW COMPLETE (all 8 sections)** 🎉 — Section 7 Case (38) + 8 Contact/Local (15) สะอาด. แก้ entity เดียว: 7.2.8 Soft Tissue Graft case `malocclusion`→`soft-tissue-management`. Section 8 branch pages parallel + entity ถูก. Page-neutral 722 — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -1376,7 +1377,7 @@
 
 ---
 
-## Section 7: CASE STUDIES — ผลงานจริง พิสูจน์ฝีมือ (~38 pages, R13 verified)
+## Section 7: CASE STUDIES — ผลงานจริง พิสูจน์ฝีมือ (38 pages — R26 reviewed; 7.2.8 entity fix)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 7.1 Case Study Hub
@@ -1397,7 +1398,7 @@
 | 7.2.5 | → Case: Implant + Bone Graft — เคสกระดูกไม่พอ | L7 | C | bottom | A | alveolar-bone-loss |
 | 7.2.6 | → Case: Implant + Sinus Lift — เคสยกพื้นไซนัส | L7 | C | bottom | A | sinus-lift |
 | 7.2.7 | → Case: Implant + Sausage Technique — เคสปลูกกระดูกขั้นสูง 🏆 | L7 | C | bottom | A | sausage-technique |
-| 7.2.8 | → Case: Implant + Soft Tissue Graft — เคสปลูกเหงือก 🏆 | L7 | C | bottom | A | malocclusion |
+| 7.2.8 | → Case: Implant + Soft Tissue Graft — เคสปลูกเหงือก 🏆 | L7 | C | bottom | A | soft-tissue-management |
 | 7.2.9 | → Case: Implant Revision — แก้ไขรากเทียมที่ล้มเหลว | L7 | D | bottom | A | dental-implant |
 | 7.2.10 | → Case: Implant ผู้สูงอายุ 70+ | L7 | C | bottom | A | dental-implant |
 | 7.2.11 | → Case: Implant ผู้ป่วยเบาหวาน | L7 | D | bottom | A | dental-implant |
@@ -1449,7 +1450,7 @@
 
 ---
 
-## Section 8: CONTACT & LOCAL SEO (~15 pages, R15 — 8.1 consolidated -2)
+## Section 8: CONTACT & LOCAL SEO (15 pages — R26 reviewed clean; R15 8.1 consolidated)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 8.1 Contact Hub
