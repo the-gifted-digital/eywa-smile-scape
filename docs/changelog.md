@@ -1,5 +1,84 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 17 Section 3.5 Remainder: Entity Cleanup + Self-Ligating Fold + Orthognathic Delivery Model
+
+**By:** Operator review of Section 3.5 remainder (3.5.3 Self-Ligating → 3.5.8 Orthognathic), continuing the Section 3.5 deep review from R16.
+
+**Issues identified:**
+- Entity brand-leak: 3.5.3 hub + 3.5.3.3/.4 used `damon-system` (Damon = Ormco brand) on service pages — should be method-led (brand lives in Tech 4.6.3). Same SS-DR-002 issue fixed for aligners in R16.
+- Entity error: 3.5.4 (จัดฟันเหล็ก / metal braces), 3.5.5 (adults), 3.5.7 (price-all-types) used `clear-aligner` — wrong / catch-all misuse (`clear-aligner` appeared 31× in file).
+- Thin/overlap: 3.5.3.3 Metal SL + 3.5.3.4 Ceramic SL (Tier D) overlap 3.5.3.1 "PSL — Metal vs Ceramic Options".
+
+**Operator confirmations:**
+- Self-Ligating: clinic offers **both PSL + ASL** → hub name "PSL & ASL" retained; 3.5.3.2 Active-vs-Passive = real 2-option comparison.
+- Orthognathic surgery: clinic **refers out** (does not perform in-house OR). Operator wants strong/comprehensive presentation. Resolution: keep all 9 pages but encode **"SmileScape-managed program"** delivery model (clinic owns pre/post-surgical ortho + planning + coordination; surgery via affiliated OMFS @ partner hospital). **Compliance guardrail flagged for Phase F copy** — do NOT claim in-house OR (พ.ร.บ.สถานพยาบาล / สบส. medical-ad rules + Google YMYL/E-E-A-T).
+
+**Changes:**
+- 3.5.3 hub entity `damon-system` → `passive-self-ligating`; hub note "ใช้ PSL system" → "PSL + ASL"
+- **3.5.3.3 + 3.5.3.4 folded** into 3.5.3.1 (metal/ceramic = in-page sections) → -2 pages
+- Damon Tech 4.6.3 backlink "Service booking → 3.5.3.3/.4" → **3.5.3.1**
+- 3.5.4 / 3.5.5 / 3.5.7 entity `clear-aligner` → `orthodontic-intervention`
+- 3.5.8 hub renamed "...Orthognathic Surgery + Ortho" → "**Orthognathic Surgery Program**" + delivery-model/compliance note row (9 pages retained)
+
+**Files updated:**
+- `content-plan/sitemap.md` — 3.5.3 fold + entity fixes, 3.5.8 hub note, Damon backlink, Total Pages (728→726), Section 3 header (242→240), Pages-per-Section, Section 3 Internal Ratio (base 240), R17 round note.
+- `docs/changelog.md` — this entry.
+- `README.md` — page count → 726 + stage R17 + orthognathic partner-facility open item.
+
+**Net -2 pages** → Sitemap **726**
+
+---
+
+## [2026-06-05] — Round 16 Clear Aligner (3.5.1) Restructure + Invisalign Service/Tech Parity
+
+**By:** Operator sitemap review of Section 3.5. 3.5.1 Clear Aligner sub-hub carried thin direct-print proof-point pages + a hidden near-duplicate of Tech 4.6.0; Invisalign was present in Knowledge/Case but missing Service + Tech layers (asymmetric vs TrioClear).
+
+**Issues identified:**
+- 3.5.1.2 "Direct Print Aligner — In-House Lab (Signature #6)" ≈ near-duplicate of Tech 4.6.0 (same title/entity) → cannibalization
+- 3.5.1.5 "attachment น้อย" ≈ near-duplicate of Concern 5.10.9 (same entity, mutual link)
+- 3.5.1.5/.6 already exist as bullets inside 4.6.0 → thin
+- 3.5.1.7 candidacy + 3.5.1.8 limitations overlap (+ overlap with 3.5.1.1)
+- Invisalign asymmetry: Service ❌ / Tech ❌ / Knowledge ✅ (6.2.5.2, 6.2.5.5) / Case ✅ (7.5.3)
+
+**Decision (operator):** keep service pages method-led / no brand names (SS-DR-002). Brand keywords (TrioClear, Invisalign) live in Tech 4.6.x + Knowledge 6.2.5 and link back to the Section 3 service page.
+
+**Changes — Services 3.5.1 (11 → 7 rows):**
+- 3.5.1.1 renamed "จัดฟันใสคืออะไร" → **"SmileScape In-House Clear Aligner"** (commercial face of Signature #6; direct-print as benefit in prose; generic "คืออะไร/หลักการ/ข้อดี" folded into 3.5.1 hub)
+- direct-print-ตรงๆ pages removed from Services (old .2 deep tech / .5 attachment / .6 same-day) → consolidated into Tech 4.6.0
+- old .4 "Direct Print vs Thermoformed" → moved to Tech **4.6.0.6**
+- old .7 + .8 merged → 3.5.1.4 "ใครเหมาะ/ไม่เหมาะ + ข้อจำกัด"
+- renumber: old .3 Progressive → 3.5.1.2 / old .9 ราคา → 3.5.1.5 / old .10 การดูแล → 3.5.1.6
+- **NEW 3.5.1.3 "จัดฟันใส Thermoformed — Conventional Clear Aligner" (3rd option)** — method-led, no brand (mirrors TrioClear/Progressive pattern; entity `thermoformed-aligner`)
+
+**Changes — Technology 4.6 (10 → 12 rows):**
+- +4.6.0.6 Direct Print vs Thermoformed (moved from old 3.5.1.4)
+- +**4.6.2 Invisalign™ / SmartTrack System** (brand keyword placement; → service 3.5.1.3) — parallel to 4.6.1 TrioClear
+- renumber: Damon 4.6.2 → 4.6.3 / Digital Ortho Planning 4.6.3 → 4.6.4
+
+**Cross-link / ripple:**
+- 4.6.1 TrioClear "Service booking → 3.5.1.3" → **3.5.1.2**
+- 4.6.0 "Service → 3.5.1.1 In-House Clear Aligner" (new DR-002 link)
+- 5.10.9 "→ link 3.5.1.5" → **3.5.1.1 In-House / 4.6.0**
+- 6.2.5.2 Invisalign + 7.5.3 Case → wired "→ service 3.5.1.3"
+
+**Files updated:**
+- `content-plan/sitemap.md` — 3.5.1 + 4.6 blocks, ripple links, Total Pages (730→728), Section 3 header (246→242) + Section 4 header (42→44), Pages-per-Section, Section 3 Internal Ratio (base 242), R16 round note.
+- `docs/changelog.md` — this entry.
+
+**Flagged (defer to Section 6 review):**
+- 6.2.5.10 "In-House vs Outsourced" ≈ duplicate of Tech 4.6.0.5 — candidate to yank (-1)
+- Entity: 4.6.2 Invisalign uses generic `thermoformed-aligner` (no brand entity registered). Promote to `invisalign-aligner` if brand-entity parity with TrioClear (`trioclear-aligner`) is desired.
+
+**Net -4 services + 2 tech = -2 pages** → Sitemap **728**
+
+**Final R16 metrics:**
+- Sitemap pages: **728**
+- Clusters: 20 / Citation pillars: 16
+- Signature Offerings: 6 (Direct Print signature commercial face = 3.5.1.1)
+- Brand DRs: SS-DR-001..010 / DR-022 / SS-DR-002 (brand-vs-tech split applied to aligner cluster)
+
+---
+
 ## [2026-05-30] — Round 15 Section 8.1 Contact Hub Consolidation
 
 **By:** Continuation of the pre-review consolidation pass (R13/R14 thin-page pattern) — Section 8.1 Contact Hub carried thin duplicate sub-pages overlapping the single contact/booking intent.

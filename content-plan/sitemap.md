@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** ~726 (Round 15 — Section 8.1 Contact Hub consolidation, 2026-05-30) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 726 (Round 17 — Section 3.5 remainder: entity cleanup + Self-Ligating fold + Orthognathic delivery model, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -17,7 +17,9 @@
 > **Round 12 (2026-05-22):** **SS-DR-002 Compliance Audit** — Renamed 7 strict violations + 1 borderline in Section 3. Cross-link notes added Section 4. Net 0 page change
 > **Round 13 (2026-05-22):** **Pre-Review QA Cleanup** — Section header page counts corrected to actuals / entity count 167→163 + edge count 264→271 (audit recount) / 5.22 Lifestyle consolidated (6→1, -5) / 3.13.4 Special Needs consolidated (4→1, -3) / 3.5.2 gap note added. Net -7 pages → ~733
 > **Round 14 (2026-05-22):** **Section 2.4 Consolidation** — Patient Journey consolidated (5 pages → 1 comprehensive). Removed duplication: 0% financing in 4 places → canonical 5.13.3 (Tier B promoted) + FAQ 6.5.4.2. Free Consultation in 2 places → canonical 8.1.1 (Tier B promoted). 6.5.4.1 vs 6.5.4.2 scope clarified. Net -4 pages → ~728 — see `docs/changelog.md`
-> **Round 15 (2026-05-30):** **Section 8.1 Contact Hub Consolidation** — 8.1.1 (Book Free Consultation) + 8.1.2 (Line @Smile_Scape) merged into single comprehensive 8.1 page (in-page sections: Booking form + 3D X-ray / Line OA QR / Phone-Email-Hours NAP). 8.1 becomes canonical booking + contact action (was 8.1.1 at R14); Section 2.4 cross-link updated 8.1.1 → 8.1. Net -2 pages → ~726 — see `docs/changelog.md`
+> **Round 15 (2026-05-30):** **Section 8.1 Contact Hub Consolidation** — 8.1.1 (Book Free Consultation) + 8.1.2 (Line @Smile_Scape) merged into single comprehensive 8.1 page (in-page sections: Booking form + 3D X-ray / Line OA QR / Phone-Email-Hours NAP). 8.1 becomes canonical booking + contact action (was 8.1.1 at R14); Section 2.4 cross-link updated 8.1.1 → 8.1. Net -2 pages → ~726 (count audit 2026-06-05: actual 730) — see `docs/changelog.md`
+> **Round 16 (2026-06-05):** **Clear Aligner (3.5.1) Restructure + Invisalign Service/Tech Parity** — 3.5.1 ยุบ direct-print proof-point + แก้ near-duplicate กับ Tech 4.6.0 (SS-DR-002 brand/tech split) / 3.5.1.1 = "SmileScape In-House Clear Aligner" (Signature commercial face) / NEW 3.5.1.3 Thermoformed (method-led) + 4.6.2 Invisalign (brand keyword → ลิงก์กลับ service) mirror TrioClear pattern / old 3.5.1.4 → Tech 4.6.0.6 / Damon+Digital renumber 4.6.3-4. Net -2 pages → 728 — see `docs/changelog.md`
+> **Round 17 (2026-06-05):** **Section 3.5 Remainder — Entity Cleanup + Self-Ligating Fold + Orthognathic Delivery Model** — แก้ entity brand-leak/ผิด 4 จุด (3.5.3 hub damon-system→passive-self-ligating / 3.5.4-.5-.7 clear-aligner→orthodontic-intervention) / ยุบ 3.5.3.3+.4 metal-ceramic → in-page ของ 3.5.3.1 (−2) / 3.5.3 PSL+ASL confirmed / 3.5.8 Orthognathic = "SmileScape-managed program" (ผ่าตัดผ่าน partner — compliance guardrail, เก็บครบ 9 หน้า). Net -2 pages → 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -36,16 +38,18 @@
 - **L6 (Multimodal Protocols):** 1 page
 - **L7 (Evidence-Based Case Studies):** ~39 pages
 
-## Pages per Section (Round 4)
+## Pages per Section (count audit 2026-06-05 — actual numbered URL rows)
 - **1. HOME:** 1 page
-- **2. OUR UNIQUENESS — The Global Mastery:** ~39 pages (R10: -1 from 2.2.11 removal; R8 net effect cancelled)
-- **3. SERVICES:** ~262 pages (R11 +9: Section 3.5.1 expansion sub-hub for Direct Print Signature #6. R10 baseline 253 + R11 +9 = 262)
-- **4. TECHNOLOGY:** ~35 pages (R11 +6: 4.6.0 In-House Aligner Lab — Direct Print sub-hub)
-- **5. TREATMENT BY CONCERNS:** ~173 pages (R7: -6 from deprecated 5.9 FAQ → moved to 6.5. Was 179 at R5)
-- **6. KNOWLEDGE:** 154 pages (R11 +4: 6.2.5 +3 Direct Print knowledge + 6.4.15 Pillar 16 evidence)
-- **7. CASE STUDIES:** ~38 pages
-- **8. CONTACT & LOCAL SEO:** ~15 pages (R15: -2 from 8.1 Contact Hub consolidation. +2 R4 — Branch SSO pages 8.2.6 + 8.3.6)
-- **TOTAL R11:** ~722 pages (R10 baseline 702 + R11 +20: Direct Print Signature #6 — 3.5.1 +9 / 4.6.0 +6 / 6.2.5 +3 / 6.4 +1 / 5.10 +1)
+- **2. OUR UNIQUENESS — The Global Mastery:** 26 pages
+- **3. SERVICES:** 240 pages
+- **4. TECHNOLOGY:** 44 pages
+- **5. TREATMENT BY CONCERNS:** 193 pages
+- **6. KNOWLEDGE:** 169 pages
+- **7. CASE STUDIES:** 38 pages
+- **8. CONTACT & LOCAL SEO:** 15 pages
+- **TOTAL:** 726 pages
+
+> **หมายเหตุ:** round-by-round deltas (R1–R15) ดูที่ `docs/changelog.md` — บล็อกนี้คือยอดนับจริง ณ 2026-06-05
 
 ---
 
@@ -63,7 +67,7 @@
 
 ---
 
-## Section 2: OUR UNIQUENESS — The Global Mastery (~34 pages, R14 — 2.4 consolidated -4)
+## Section 2: OUR UNIQUENESS — The Global Mastery (26 pages — recount 2026-06-05; R14 2.4 consolidated)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 2.1 About SmileScape
@@ -165,7 +169,7 @@
 
 ---
 
-## Section 3: SERVICES & PROGRAMS (~262 pages, R13 verified)
+## Section 3: SERVICES & PROGRAMS (240 pages — recount 2026-06-05; R16 3.5.1 + R17 3.5 remainder)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 3.1 Precision Diagnostics — ระบบวินิจฉัยดิจิทัล
@@ -360,30 +364,28 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.5 | จัดฟัน — Orthodontics at SmileScape (hub) | L2 | B | mid | A | clear-aligner |
-| 3.5.1 | → จัดฟันใส — Clear Aligner Hero ★ 🌟 (sub-hub R11 promoted) | L2 | **A** | mid | A | clear-aligner |
-| | → → R11 promoted to Tier A hub. SmileScape Direct Print = Signature #6 differentiation. **R13 numbering note:** 3.5.2 (was old Progressive page) merged into 3.5.1.3. Section continues 3.5.3 → Self-Ligating | | — | — | — |
-| 3.5.1.1 | → → จัดฟันใสคืออะไร — หลักการ + ข้อดี + ข้อจำกัด | L2 | B | top | A | clear-aligner |
-| 3.5.1.2 | → → 🌟 SmileScape Direct Print Aligner — In-House Lab ★ (Signature #6) | L2 | **A** | mid | A | direct-print-clear-aligner |
-| | → → → ผลิตในคลินิก / ใช้ attachment น้อย / same-day production / FDA-cleared photopolymer / 6 PubMed evidence | | — | — | — |
-| 3.5.1.3 | → → จัดฟันใสแบบ Progressive Force — Multi-Layer Material (Soft→Hard) — 2nd option | L2 | C | mid | A | trioclear-aligner |
-| 3.5.1.4 | → → Direct Print vs Thermoformed Aligner — Method Comparison | L2 | B | mid | D | thermoformed-aligner |
-| 3.5.1.5 | → → ทำไม Direct Print ใช้ attachment น้อยกว่า — Built-in features | L2 | B | mid | A | direct-print-clear-aligner |
-| 3.5.1.6 | → → Same-Day Aligner Capability — In-Clinic Production | L2 | B | mid | A | in-house-aligner-lab |
-| 3.5.1.7 | → → ใครเหมาะกับจัดฟันใส — Candidacy Assessment | L2 | C | top | A | clear-aligner |
-| 3.5.1.8 | → → ข้อจำกัด — เคสที่ไม่เหมาะกับ aligner | L2 | C | top | D | clear-aligner |
-| 3.5.1.9 | → → ราคาจัดฟันใส SmileScape — In-House Direct Print vs Outsourced Lab Tier | L2 | B | bottom | D | clear-aligner |
-| 3.5.1.10 | → → การดูแล Aligner — Cleaning + Storage + Replacement Schedule | L2 | D | mid | A | clear-aligner |
-| 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | damon-system |
-| | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape ใช้ PSL system | | — | — | — |
-| 3.5.3.1 | → → Passive Self-Ligating (PSL) — Metal vs Ceramic Options ★ 🌟 | L2 | C | mid | A | passive-self-ligating |
-| 3.5.3.2 | → → Active vs Passive Self-Ligating — เปรียบเทียบ | L2 | D | mid | D | passive-self-ligating |
-| 3.5.3.3 | → → Metal Self-Ligating Bracket — โครงเหล็ก ทนทาน | L2 | D | mid | A | damon-system |
-| 3.5.3.4 | → → Ceramic Self-Ligating Bracket — สวยงาม ไม่เห็นเหล็ก | L2 | D | mid | A | damon-system |
-| 3.5.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | clear-aligner |
-| 3.5.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | clear-aligner |
+| 3.5.1 | → จัดฟันใส — Clear Aligner Hero ★ 🌟 (sub-hub) | L2 | **A** | mid | A | clear-aligner |
+| | → → Tier A hub — carries head-term "จัดฟันใส" + overview "คืออะไร/หลักการ/ข้อดี" (generic info ยุบเข้า hub R16). 3 ตัวเลือก: Direct Print (signature) / Progressive / Thermoformed. Section ต่อที่ 3.5.3 (3.5.2 merged R13) | | — | — | — |
+| | → → **R16 cleanup:** direct-print ตรงๆ ย้ายไป Tech 4.6.0 (SS-DR-002). brand keyword (TrioClear/Invisalign) อยู่ Tech 4.6.x + Knowledge 6.2.5 → ลิงก์กลับ service ที่นี่ | | — | — | — |
+| 3.5.1.1 | → → SmileScape In-House Clear Aligner 🌟 (Signature #6 — commercial face) | L2 | **B** | mid | A | direct-print-clear-aligner |
+| | → → direct-print เป็น benefit ในเนื้อหา (ผลิตในคลินิก / attachment น้อย / same-day) → tech deep-dive ที่ 4.6.0 | | — | — | — |
+| 3.5.1.2 | → → จัดฟันใสแบบ Progressive Force — Multi-Layer Material (Soft→Hard) — 2nd option | L2 | C | mid | A | trioclear-aligner |
+| | → → brand: TrioClear @ Tech 4.6.1 (ลิงก์กลับหน้านี้) | | — | — | — |
+| 3.5.1.3 | → → จัดฟันใส Thermoformed — Conventional Clear Aligner — 3rd option (R16) | L2 | C | mid | A | thermoformed-aligner |
+| | → → brand: Invisalign @ Tech 4.6.2 + Knowledge 6.2.5.2 + Case 7.5.3 (ทั้งหมดลิงก์กลับหน้านี้) | | — | — | — |
+| 3.5.1.4 | → → ใครเหมาะ / ไม่เหมาะกับจัดฟันใส + ข้อจำกัด (R16: รวม candidacy + limitations) | L2 | C | top | A | clear-aligner |
+| 3.5.1.5 | → → ราคาจัดฟันใส SmileScape — In-House Direct Print vs Outsourced Lab Tier | L2 | B | bottom | D | clear-aligner |
+| 3.5.1.6 | → → การดูแล Aligner — Cleaning + Storage + Replacement Schedule | L2 | D | mid | A | clear-aligner |
+| 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | passive-self-ligating |
+| | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape มีทั้ง PSL + ASL (R17 confirmed). brand: Damon @ Tech 4.6.3 (ลิงก์กลับหน้านี้) | | — | — | — |
+| 3.5.3.1 | → → Passive Self-Ligating (PSL) — Metal vs Ceramic Options ★ 🌟 (R17: metal/ceramic detail = in-page sections) | L2 | C | mid | A | passive-self-ligating |
+| 3.5.3.2 | → → Active vs Passive Self-Ligating — เปรียบเทียบ (2 ตัวเลือกจริงที่คลินิกมี) | L2 | D | mid | D | passive-self-ligating |
+| 3.5.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | orthodontic-intervention |
+| 3.5.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | orthodontic-intervention |
 | 3.5.6 | → จัดฟันก่อนทำรากฟันเทียม — Ortho + Implant Sequencing 🌟 | L6 | C | mid | A | ortho-implant-sequencing |
-| 3.5.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | clear-aligner |
-| 3.5.8 | → จัดฟันร่วมผ่าตัดเลื่อนขากรรไกร — Orthognathic Surgery + Ortho 🌟 (hub) | L2 | B | mid | A | orthognathic-surgery |
+| 3.5.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | orthodontic-intervention |
+| 3.5.8 | → จัดฟันร่วมผ่าตัดเลื่อนขากรรไกร — Orthognathic Surgery Program 🌟 (hub) | L2 | B | mid | A | orthognathic-surgery |
+| | → → **R17 delivery model:** SmileScape-managed program — คลินิกเป็นเจ้าของ pre/post-surgical ortho + digital planning + coordination ครบวงจร / การผ่าตัดทำโดย affiliated OMFS @ partner hospital. **⚠️ Phase F compliance guardrail:** นำเสนอเป็น "โปรแกรมที่ SmileScape ดูแลครบวงจร" — ห้าม claim ผ่าใน OR ตัวเอง (พ.ร.บ.สถานพยาบาล + สบส. + Google YMYL/E-E-A-T) | | — | — | — |
 | 3.5.8.1 | → → ใครเหมาะ — Class III / Class II Severe / Skeletal Asymmetry | L2 | C | mid | D | orthognathic-surgery |
 | 3.5.8.2 | → → ขั้นตอน — Pre-surgical Ortho → Surgery → Post-surgical Ortho | L2 | C | mid | A | orthognathic-surgery |
 | 3.5.8.3 | → → BSSO / IVRO — ผ่าตัดเลื่อนขากรรไกรล่าง | L2 | C | mid | A | orthognathic-surgery |
@@ -590,7 +592,7 @@
 
 ---
 
-## Section 4: TECHNOLOGY — Digital Implant Excellence (~42 pages, R13 verified)
+## Section 4: TECHNOLOGY — Digital Implant Excellence (44 pages — recount 2026-06-05; R16 +4.6.0.6 +4.6.2 Invisalign)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 4.1 Technology Overview
@@ -656,17 +658,20 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 4.6 | เทคโนโลยีจัดฟัน (hub) | L3 | **B** | mid | A | clear-aligner |
 | 4.6.0 | → 🌟 SmileScape In-House Aligner Lab — Direct Print Production ★ (Signature #6) | L3 | **B** | mid | A | in-house-aligner-lab |
-| | → → R11 SIGNATURE: ผลิตจัดฟันใสในคลินิก / 3D direct print / fewer attachments / same-day capability | | — | — | — |
+| | → → R11 SIGNATURE: ผลิตจัดฟันใสในคลินิก / 3D direct print / fewer attachments / same-day capability. **Service → 3.5.1.1 In-House Clear Aligner** (DR-002 link) | | — | — | — |
 | 4.6.0.1 | → → 3D Printer — Asiga / SprintRay / Formlabs (TBD operator) ★ | L3 | C | mid | A | 3d-printer-aligner |
 | 4.6.0.2 | → → Photopolymer Resin — Graphy TC-85DAC / Tera Harz TC-85 (TBD) ★ | L3 | C | mid | A | photopolymer-resin-tc85 |
-| 4.6.0.3 | → → Direct Print Workflow — Digital Scan → Plan → Print → Polish → Deliver | L3 | C | mid | A | direct-print-clear-aligner |
+| 4.6.0.3 | → → Direct Print Workflow — Digital Scan → Plan → Print → Polish → Deliver (incl. fewer-attachments + same-day — R16 folded จาก 3.5.1.5/.6) | L3 | C | mid | A | direct-print-clear-aligner |
 | 4.6.0.4 | → → Quality Control + FDA-Cleared Material Certification | L3 | D | mid | A | photopolymer-resin-tc85 |
 | 4.6.0.5 | → → In-House Lab vs Outsourced Lab — Time + Cost + Quality Comparison | L3 | C | mid | D | in-house-aligner-lab |
+| 4.6.0.6 | → → Direct Print vs Thermoformed Aligner — Method Comparison (R16 ย้ายจาก 3.5.1.4) | L3 | B | mid | D | thermoformed-aligner |
 | 4.6.1 | → TrioClear™ Progressive Aligner System — ระบบจัดฟันใสแบบ Progressive ★ (2nd option) | L3 | C | mid | A | trioclear-aligner |
-| | → → TrioDim Force / Multi-layer material (Soft→Hard) / Robotic production / Minimal attachments. **Service booking → 3.5.1.3 Progressive Force** (R12 DR-002 link) | | — | — | — |
-| 4.6.2 | → Damon™ Self-Ligating Bracket System — ระบบ Bracket ล็อคตัวเอง ★ | L3 | C | mid | A | damon-system |
-| | → → Damon Q (metal) / Damon Clear (ceramic) / Passive self-ligation mechanism. **Service booking → 3.5.3.3 Metal SL / 3.5.3.4 Ceramic SL** (R12 DR-002 link) | | — | — | — |
-| 4.6.3 | → Digital Orthodontic Planning — วางแผนจัดฟันดิจิทัล | L3 | D | mid | A | clear-aligner |
+| | → → TrioDim Force / Multi-layer material (Soft→Hard) / Robotic production / Minimal attachments. **Service booking → 3.5.1.2 Progressive Force** (R12 DR-002 link) | | — | — | — |
+| 4.6.2 | → Invisalign™ / SmartTrack System — ระบบจัดฟันใส Thermoformed ระดับโลก ★ (3rd option, R16) | L3 | C | mid | A | thermoformed-aligner |
+| | → → SmartTrack material / ClinCheck digital planning / SmartForce attachments / iTero scan / global track record. **Service booking → 3.5.1.3 Thermoformed Conventional** (DR-002 link). brand keyword placement (service ใช้ชื่อ method-led) | | — | — | — |
+| 4.6.3 | → Damon™ Self-Ligating Bracket System — ระบบ Bracket ล็อคตัวเอง ★ | L3 | C | mid | A | damon-system |
+| | → → Damon Q (metal) / Damon Clear (ceramic) / Passive self-ligation mechanism. **Service booking → 3.5.3.1 PSL (Metal/Ceramic options)** (R12 DR-002 link; R17 repoint จาก .3/.4) | | — | — | — |
+| 4.6.4 | → Digital Orthodontic Planning — วางแผนจัดฟันดิจิทัล | L3 | D | mid | A | clear-aligner |
 | | → → 3D scanning / Treatment simulation / ก่อน-หลังจำลอง | | — | — | — |
 
 ### 4.7 Prosthetic Technology
@@ -695,7 +700,7 @@
 
 ---
 
-## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (~190 pages, R13 verified — 5.9 deprecated R7, +R5/R8/R13 changes)
+## Section 5: TREATMENT BY CONCERNS — แก้ปัญหาที่คุณกังวล (193 pages — recount 2026-06-05; 5.9 deprecated R7)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
 
 ### 5.1 ฟันหาย / สูญเสียฟัน (Implant Funnel — ใหญ่สุด)
@@ -837,7 +842,7 @@
 | 5.10.6 | → จัดฟันแบบไหนเหมาะกับฉัน — ใส / เหล็ก / เซรามิก | L4 | C | top | A | malocclusion |
 | 5.10.7 | → คางยื่น / คางหด — แก้ด้วยจัดฟันหรือผ่าตัด (→ link 3.5.8 Orthognathic) | L4 | C | top | A | orthognathic-surgery |
 | 5.10.8 | → หน้าเบี้ยว / Facial Asymmetry — แก้ได้ไหม | L4 | C | top | A | orthognathic-surgery |
-| 5.10.9 | → จัดฟันใส attachment น้อย — Direct Print Aligner ★ (R11 — → link 3.5.1.5) | L4 | C | top | A | direct-print-clear-aligner |
+| 5.10.9 | → จัดฟันใส attachment น้อย — Direct Print Aligner ★ (R16 — → link 3.5.1.1 In-House / tech 4.6.0) | L4 | C | top | A | direct-print-clear-aligner |
 
 ### 5.11 ปัญหาเหงือกเฉพาะทาง
 
@@ -1013,7 +1018,7 @@
 
 ---
 
-## Section 6: KNOWLEDGE — Implant Authority Hub (Round 2 Restructure)
+## Section 6: KNOWLEDGE — Implant Authority Hub (169 pages — recount 2026-06-05; Round 2 Restructure)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
 >
 > **Master Structure (Round 2 — 2026-05-21):** Section 6 restructured into 6 top-level sub-sections per operator decision. Existing Clinical Insights content preserved, renumbered under 6.2.
@@ -1182,7 +1187,7 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 6.2.5 | ความรู้เรื่องจัดฟัน (sub-hub) | L5 | C | top | A | clear-aligner |
 | 6.2.5.1 | → TrioClear คืออะไร — จัดฟันใสแบบ Progressive ต่างจากยี่ห้ออื่นยังไง | L5 | C | top | A | trioclear-aligner |
-| 6.2.5.2 | → Invisalign คืออะไร — ข้อดีข้อเสีย ราคา เหมาะกับใคร | L5 | C | bottom | A | clear-aligner |
+| 6.2.5.2 | → Invisalign คืออะไร — ข้อดีข้อเสีย ราคา เหมาะกับใคร (R16 → service 3.5.1.3 Thermoformed) | L5 | C | bottom | A | clear-aligner |
 | 6.2.5.3 | → Damon System / PSL คืออะไร — Passive Self-Ligating ต่างจากเหล็กธรรมดายังไง | L5 | C | top | A | passive-self-ligating |
 | 6.2.5.4 | → จัดฟันใส vs จัดฟันเหล็ก — เปรียบเทียบตรงไปตรงมา | L5 | C | top | D | clear-aligner |
 | 6.2.5.5 | → เปรียบเทียบยี่ห้อจัดฟันใส — TrioClear vs Invisalign vs อื่นๆ | L5 | C | top | D | trioclear-aligner |
@@ -1401,7 +1406,7 @@
 | 7.5 | ผลงานทันตกรรมเพื่อความสวยงาม (hub) | L7 | D | bottom | A | digital-smile-design |
 | 7.5.1 | → Case: Porcelain Veneer — ยิ้มใหม่ 10 ซี่ | L7 | D | bottom | A | porcelain-veneer |
 | 7.5.2 | → Case: Smile Makeover — Veneer + Whitening | L7 | D | bottom | A | dental-veneer |
-| 7.5.3 | → Case: จัดฟันใส Invisalign | L7 | D | bottom | A | clear-aligner |
+| 7.5.3 | → Case: จัดฟันใส Invisalign (R16 → service 3.5.1.3) | L7 | D | bottom | A | clear-aligner |
 | 7.5.4 | → Case: จัดฟันเหล็ก — ก่อนและหลัง | L7 | D | bottom | A | digital-smile-design |
 | 7.5.5 | → Case: Crown & Bridge — ครอบฟันสวยเหมือนธรรมชาติ | L7 | D | bottom | A | dental-crown |
 
@@ -1459,15 +1464,20 @@
 
 ## Summary Statistics
 
-### Section 3 Internal Ratio
-- **3.1 Diagnostics:** 9 pages (6.6%)
-- **3.2 Implant Mastery:** 71 pages (51.8%)
-- **3.3 All-on-X:** 12 pages (8.8%)
-- **3.4 Cosmetic:** 14 pages (10.2%)
-- **3.5 Orthodontics:** 9 pages (6.6%)
-- **3.6 General:** 9 pages (6.6%)
-- **3.7 Periodontics:** 7 pages (5.1%)
-- **3.8 Oral Surgery:** 6 pages (4.4%)
-- **Total Section 3:** 137 pages
+### Section 3 Internal Ratio (count audit 2026-06-05 — base 240 pages, R17)
+- **3.1 Diagnostics:** 9 pages (3.8%)
+- **3.2 Implant Mastery:** 74 pages (30.8%)
+- **3.3 All-on-X:** 12 pages (5.0%)
+- **3.4 Cosmetic:** 18 pages (7.5%)
+- **3.5 Orthodontics:** 24 pages (10.0%) — R16: 3.5.1 11→7 / R17: 3.5.3 7→5
+- **3.6 General:** 17 pages (7.1%)
+- **3.7 Periodontics:** 17 pages (7.1%)
+- **3.8 Oral Surgery:** 11 pages (4.6%)
+- **3.9 Pediatric:** 14 pages (5.8%)
+- **3.10 Sedation:** 8 pages (3.3%)
+- **3.11 Endodontics:** 10 pages (4.2%)
+- **3.12 SSO / Q-Clinic:** 8 pages (3.3%)
+- **3.13 Demographic-Specific:** 18 pages (7.5%)
+- **Total Section 3:** 240 pages
 
-> **Implant (3.2+3.3) = 83 pages = 60.6% ของ Section 3** — สะท้อน "ตัวจริงด้านรากฟันเทียม" อย่างชัดเจน
+> **Implant focus (3.2+3.3) = 86 pages = 35.8% ของ Section 3** — 3.2 รากฟันเทียมเป็น subsection ใหญ่สุดของไซต์ (30.8%) สะท้อน positioning "ตัวจริงด้านรากฟันเทียม"

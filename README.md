@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (~726p Round 15 — Section 8.1 consolidated, ready for operator deep review)
+│   └── sitemap.md                (726p Round 17 — Section 3.5 remainder cleanup, deep review in progress)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,9 +58,9 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 15 — 2026-05-30):**
+4. **Stage status (Round 17 — 2026-06-05):**
    - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **163 entities** / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
-   - Phase E ✅ **Planning locked R15** — sitemap **~726 pages** ready for operator deep review
+   - Phase E 🔄 **Operator deep review R17 in progress** — sitemap **726 pages** (Section 3.5 Orthodontics fully reviewed)
    - Stage 1 Gate ❌ pending (operator review approval + DataForSEO full keyword research batch — R14)
 
 ---
@@ -117,11 +117,13 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 12. ✅ R9 RESOLVED: Peri-Implantitis specialist credential — clinic Periodontist handles (was R3 pending)
 13. ✅ R10 RESOLVED: No dedicated Geriatric/Special-Care specialist — 2.2.11 page removed; service 3.13.1 delivered via general team (no pending)
 14. ✅ R9 RESOLVED: Home Visit + Bedridden Dentistry not offered — sitemap pages removed (no pending)
-15. **R11 NEW: Direct Print Aligner equipment + material** (Section 3.5.1.2 + 4.6.0):
+15. **R11 NEW: Direct Print Aligner equipment + material** (Section 4.6.0 — Tech; R16 moved from 3.5.1):
     - 3D printer model (Asiga / SprintRay / Formlabs?)
     - Photopolymer brand (Graphy TC-85DAC / Tera Harz TC-85?)
     - Production volume + warranty + lab cert
     - หมอแฮม role in in-house aligner lab
+    - **R16 NEW: Invisalign provider tier** (Bronze→Diamond?) + TrioClear lab partner — for Tech 4.6.1 / 4.6.2 brand pages
+    - **R17 NEW: Orthognathic partner facility** — affiliated OMFS + partner hospital name/agreement (3.5.8 = managed program, surgery referred out; needed for Phase F compliant copy)
 12. Branch addresses + GPS + phone + LINE OA + GBP Place IDs
 13. Verify Neodent series / 3Shape TRIOS model / Acteon CBCT model
 14. Gold crown supplier / alloy tier (R3)
