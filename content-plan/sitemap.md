@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 728 (Round 22 — Section 3 category reorder + numbering gap-close + 3.8 entity fix, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 728 (Round 23 — Section 4 Technology review: entity fix + tech↔service DR-002 links, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -24,6 +24,7 @@
 > **Round 19 (2026-06-05):** **3.4 Cosmetic finish** — ปิด gap 3.4.4-.6 ที่เหลือจาก R18 (renumber Whitening 3.4.7→3.4.4 + subs / Gum 3.4.8→3.4.5 / Makeover 3.4.9→3.4.6 / ราคา 3.4.10→3.4.7) + แก้ Cool Light entity device→method (`cool-light-whitening-unit`→`teeth-whitening`, device อยู่ Tech 4.9.1) + repoint 5.11.8→3.4.5. Veneer expansion flagged รอ keyword. Page-neutral 726 — see `docs/changelog.md`
 > **Round 21 (2026-06-05):** **DFS-driven (Veneer + All-on-X)** — ยิง DataForSEO resolve flags: 🆕 **Veneer sub-hub 3.4.2** (DFS veneer 2,400/mo + composite 590/mo LOW → +porcelain/composite/ราคา/vs-crown, +3) / **3.3.4+3.3.5 jaw รวม** (DFS ไม่มี jaw-specific demand, −1) / **3.2.8.3 demote A→B** (intent: all-on-4 info, commercial อยู่ 3.3) / +cross-links 3.3.5→3.14.4, 3.3.6→3.13.1. Net +2 → 728 — see `docs/changelog.md`
 > **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). ปิด numbering gap + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber, historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
+> **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.4.1. Page-neutral 728 — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -613,7 +614,7 @@
 
 ---
 
-## Section 4: TECHNOLOGY — Digital Implant Excellence (44 pages — recount 2026-06-05; R16 +4.6.0.6 +4.6.2 Invisalign)
+## Section 4: TECHNOLOGY — Digital Implant Excellence (44 pages — recount 2026-06-05; R23 entity fix + tech→service DR-002 links)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 4.1 Technology Overview
@@ -626,7 +627,7 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 4.2 | เทคโนโลยีวินิจฉัย (hub) | L3 | C | mid | A | cbct-3d-scan |
+| 4.2 | เทคโนโลยีวินิจฉัย (hub) — Service → 3.1 Precision Diagnostics | L3 | C | mid | A | cbct-3d-scan |
 | 4.2.1 | → Acteon CBCT — เครื่องเอกซเรย์ 3 มิติจากฝรั่งเศส ★ | L3 | C | mid | A | acteon-cbct |
 | | → → X-Mind Trium series / Low-dose protocol / FOV options / 3D + Pano + Ceph all-in-one / ISO/CE marked | | — | — | — |
 | 4.2.2 | → 3Shape TRIOS Intraoral Scanner — สแกนเนอร์จากเดนมาร์ก ★ | L3 | C | mid | A | trios-intraoral-scanner |
@@ -637,7 +638,7 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 4.3 | เทคโนโลยีวางแผนรากฟันเทียม (hub) | L3 | B | mid | A | dental-implant |
+| 4.3 | เทคโนโลยีวางแผนรากฟันเทียม (hub) — Service → 3.1.4 Digital Planning / 3.2.5 ขั้นตอน | L3 | B | mid | A | dental-implant |
 | 4.3.1 | → 3D Implant Planning Software — ซอฟต์แวร์วางแผน 3 มิติ | L3 | C | mid | A | digital-implant-planning |
 | 4.3.2 | → Surgical Guide — เทมเพลตนำทางผ่าตัด ★ | L3 | C | mid | A | surgical-guide |
 | 4.3.3 | → Virtual Implant Placement — จำลองตำแหน่งรากก่อนผ่าจริง | L3 | C | mid | A | digital-implant-planning |
@@ -660,18 +661,18 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 4.5 | ระบบรากฟันเทียม SmileScape (hub) | L3 | B | mid | A | dental-implant |
+| 4.5 | ระบบรากฟันเทียม SmileScape (hub) — Service → 3.2.11.6 เปรียบเทียบแบรนด์ | L3 | B | mid | A | dental-implant |
 | 4.5.1 | → Blue Diamond Implant System — ระบบรากเทียมจากเกาหลี ★ | L3 | C | mid | A | blue-diamond-implant |
 | | → → จุดเด่น / วัสดุ / Surface treatment / ราคาคุ้มค่า | | — | — | — |
 | 4.5.2 | → Neodent Implant System — ระบบรากเทียมจากบราซิล (Straumann Group) ★ | L3 | C | mid | A | neodent-implant |
 | | → → GM (Grand Morse) connection / Straumann Group subsidiary / Value-premium tier / Brazilian R&D + Swiss backing | | — | — | — |
 | 4.5.3 | → Straumann Implant System — ระบบรากเทียมจากสวิตเซอร์แลนด์ ★ | L3 | C | mid | A | straumann-implant |
 | | → → SLActive surface / Roxolid material / BLT/BLX / Premium tier | | — | — | — |
-| 4.5.4 | → Ceramic (Zirconia) Implant System — ระบบรากเทียมเซรามิกไร้โลหะ ★ | L3 | C | mid | A | titanium-implant |
+| 4.5.4 | → Ceramic (Zirconia) Implant System — ระบบรากเทียมเซรามิกไร้โลหะ ★ (R23 entity fix → service 3.2.8.11) | L3 | C | mid | A | ceramic-implant |
 | | → → วัสดุ Zirconia / Metal-free design / One-piece vs Two-piece | | — | — | — |
 | 4.5.5 | → วัสดุไทเทเนียม — ทำไมถึงเข้ากับร่างกาย | L3 | D | mid | A | titanium-implant |
 | 4.5.6 | → Surface Treatment Technology — เทคโนโลยีพื้นผิวรากเทียม | L3 | D | mid | A | titanium-implant |
-| 4.5.7 | → Connection Types — ระบบเชื่อมต่อครอบฟัน (Internal vs External) | L3 | D | mid | D | dental-crown |
+| 4.5.7 | → Connection Types — ระบบเชื่อมต่อรากฟันเทียม-Abutment (Internal vs External) | L3 | D | mid | D | dental-implant |
 
 ### 4.6 Orthodontic Technology — เทคโนโลยีจัดฟัน
 
@@ -699,10 +700,10 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 4.7 | เทคโนโลยีครอบฟันและชิ้นงานบนรากเทียม (hub) | L3 | C | mid | A | dental-crown |
+| 4.7 | เทคโนโลยีครอบฟันและชิ้นงานบนรากเทียม (hub) — Service → 3.5 Restorative & Prosthetic (R23 DR-002, deferred from R18) | L3 | C | mid | A | dental-crown |
 | 4.7.1 | → CAD/CAM — ออกแบบและผลิตครอบฟันดิจิทัล | L3 | C | mid | A | cad-cam |
 | 4.7.2 | → Zirconia Framework — โครงสร้างเซอร์โคเนีย | L3 | D | mid | A | cad-cam |
-| 4.7.3 | → Hybrid Prosthesis — ชิ้นงานไฮบริดสำหรับ All-on-X | L3 | D | mid | A | all-on-x |
+| 4.7.3 | → Hybrid Prosthesis — ชิ้นงานไฮบริดสำหรับ All-on-X (→ service 3.3 All-on-X) | L3 | D | mid | A | all-on-x |
 | 4.7.4 | → Titanium Milled Bar — คานไทเทเนียมมิลล์ | L3 | D | mid | A | cad-cam |
 
 ### 4.8 Sterilization & Safety
@@ -716,7 +717,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 4.9 | เทคโนโลยีทันตกรรมเพื่อความสวยงาม (hub) | L3 | D | mid | A | digital-smile-design |
-| 4.9.1 | → Cool Light Whitening Unit — เครื่องฟอกสีฟันด้วยแสง LED เย็น ★ 🌟 | L3 | C | mid | A | cool-light-whitening-unit |
+| 4.9.1 | → Cool Light Whitening Unit — เครื่องฟอกสีฟันด้วยแสง LED เย็น ★ 🌟 (Service → 3.9.4.1 Cool Light Whitening) | L3 | C | mid | A | cool-light-whitening-unit |
 | | → → ไม่ทำให้ฟันร้อน / ลด post-op sensitivity / In-office activation 1-2 ชั่วโมง | | — | — | — |
 
 ---

@@ -1,5 +1,30 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 23 Section 4 Technology Review (entity fix + tech↔service consistency)
+
+**By:** Operator deep review of Section 4 Technology (44 pages), with a second-pass focus on consistency with the (just-reordered) Section 3 services.
+
+**Verdict:** Section 4 well-structured; brand/device pages (Densah 4.4.4, Airflow 4.4.5, aligner cluster 4.6) already follow the DR-002 service↔tech pattern and their cross-links resolved correctly to the new Section 3 numbers after the R22 reorder. Two entity errors + incomplete tech→service back-links found.
+
+**Entity fixes:**
+- **4.5.4 Ceramic (Zirconia) Implant System:** `titanium-implant` → `ceramic-implant` (was mis-tagged as titanium; now aligns with service 3.2.8.11 รากฟันเทียมเซรามิก)
+- **4.5.7 Connection Types:** `dental-crown` → `dental-implant` (about implant-abutment connection, not crown)
+- (left as-is: 4.4.1 Piezoelectric / 4.4.3 Microscope use `surgical-guide` as the surgical-tech umbrella — acceptable, noted)
+
+**Consistency fix — completed DR-002 tech→service back-links** (these clusters had service→tech but were missing the reverse):
+- 4.2 Diagnostic Tech → 3.1 Precision Diagnostics
+- 4.3 Implant Planning → 3.1.4 / 3.2.5
+- 4.5 Implant Systems → 3.2.11.6 เปรียบเทียบแบรนด์
+- **4.7 Prosthetic Tech → 3.5 Restorative & Prosthetic** (the DR-002 link explicitly deferred in R18, now that §3.5 exists)
+- 4.7.3 Hybrid Prosthesis → 3.3 All-on-X
+- 4.9.1 Cool Light Whitening Unit → 3.9.4.1 Cool Light Whitening (service)
+
+**Files:** `sitemap.md` (Section 4 entities + cross-links + header + R23 note) / `changelog.md` / `README.md`
+
+**Net 0 pages** → Sitemap **728** / Entities **166** (unchanged). Section 4 review complete.
+
+---
+
 ## [2026-06-05] — Round 22 Section 3 Category Reorder + Numbering Cleanup + 3.8 Entity Fix
 
 **By:** Operator review — Section 3 top-level category ORDER was not logical (Restorative §3.14 stranded at the end after Demographic; Endodontics among access sections) + several internal numbering gaps from prior consolidations.
