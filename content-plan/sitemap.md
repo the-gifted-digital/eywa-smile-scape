@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 728 (Round 24 — Section 5 Concerns review: entity catch-all fix (concern↔service alignment), 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 722 (Round 25 — Section 6 Knowledge review: count quirk fix (−5 phantom) + Direct Print dup yank (−1), 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -26,6 +26,7 @@
 > **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). ปิด numbering gap + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber, historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
 > **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.3.1. Page-neutral 728 — see `docs/changelog.md`
 > **Round 24 (2026-06-05):** **Section 5 Concerns review (193)** — section สุขภาพดี (cross-links renumber ถูกหมด, ไม่มี broken, 5.14-5.22 entity เยี่ยม). แก้ entity `dental-implant` catch-all ที่ใช้เกิน + ไม่ตรง service: 5.8.1-.11 → medical-compromised/geriatric/pregnancy (align 3.13) / 5.12.1/.2/.3/.4/.6 → dental-caries/pediatric-dentistry (align 3.11, เลิกแท็ก implant บนหน้าฟันเด็ก) / 5.4.4 → dental-anxiety / 5.6.1 → dental-caries. Page-neutral 728 — see `docs/changelog.md`
+> **Round 25 (2026-06-05):** **Section 6 Knowledge review (169→163)** — section well-built (FAQ hub canonical SS-DR-009, Evidence+PubMed, cross-links renumber ถูกหมด). แก้ 2 flag: (1) **count quirk** — overview table นับเป็น page ปลอม 5 แถว → ทำ bold เลข + recount จริง 164 (header 169 เกินจริง); (2) **Direct Print sprawl** — yank 6.2.5.10 (ซ้ำ Tech 4.6.0.5) + cross-link 6.2.5.8/.9→tech. **Total 728→722** (−5 phantom correction −1 yank). Flag: Knowledge-layer dental-implant catch-all (6.2.4/6.3/6.5.4) minor-deferred — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -51,10 +52,10 @@
 - **3. SERVICES:** 242 pages
 - **4. TECHNOLOGY:** 44 pages
 - **5. TREATMENT BY CONCERNS:** 193 pages
-- **6. KNOWLEDGE:** 169 pages
+- **6. KNOWLEDGE:** 163 pages
 - **7. CASE STUDIES:** 38 pages
 - **8. CONTACT & LOCAL SEO:** 15 pages
-- **TOTAL:** 728 pages
+- **TOTAL:** 722 pages
 
 > **หมายเหตุ:** round-by-round deltas (R1–R15) ดูที่ `docs/changelog.md` — บล็อกนี้คือยอดนับจริง ณ 2026-06-05
 
@@ -1041,20 +1042,22 @@
 
 ---
 
-## Section 6: KNOWLEDGE — Implant Authority Hub (169 pages — recount 2026-06-05; Round 2 Restructure)
+## Section 6: KNOWLEDGE — Implant Authority Hub (163 pages — R25 recount: −5 overview phantom, −1 yank 6.2.5.10)
 > 📊 **DR-022 Layer 2: VOLUME-DRIVEN** — pages added/adjusted via Phase E.refine gap analysis post-DFS
 >
 > **Master Structure (Round 2 — 2026-05-21):** Section 6 restructured into 6 top-level sub-sections per operator decision. Existing Clinical Insights content preserved, renumbered under 6.2.
 
+> **R25 note:** เลข sub-section ในตารางนี้ทำ **bold** เพื่อไม่ให้ถูกนับเป็น page row (เดิม overview นับซ้ำ +5 → header เกินเป็น 169)
+
 | 6.x | Sub-section | Type | Pages |
 |-----|-------------|------|-------|
-| 6.1 | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 11 |
-| 6.2 | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 82 |
-| 6.3 | Glossary | Definitions A-Z | 3 |
-| 6.4 | Clinical Evidence & Research Summaries | Evidence anchors (Tier 3-4) | 15 |
-| **6.5** | **FAQ Knowledge Hub — Canonical (R7 SS-DR-009)** | **Single canonical FAQ home — Service / Concern / Patient Group / Cost-Insurance / Quick Reference sub-hubs** | **29 (was 6 at R6 — +23 R7)** |
-| 6.6 | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
-| **Section 6 Total** | | | **150 (was 127 — +23 R7)** |
+| **6.1** | Clinical Guides (Pillar Medical Pages) | Pillar (deep guides, Tier A/B) | 12 |
+| **6.2** | Clinical Insights — Long-tail Articles | SEO long-tail Q&A — maps to Section 5 + links Center/Pathway | 89 |
+| **6.3** | Glossary | Definitions A-Z | 3 |
+| **6.4** | Clinical Evidence & Research Summaries | Evidence anchors | 16 |
+| **6.5** | FAQ Knowledge Hub — Canonical (R7 SS-DR-009) | Single canonical FAQ home — Service / Concern / Patient Group / Cost-Insurance / Quick Reference | 33 |
+| **6.6** | Case-based Learning | Clinical reasoning education (vs Section 7 patient stories) | 10 |
+| **Section 6 Total** | | | **163 (R25 recount — was inflated 169 by 5 overview phantom rows; −1 yank 6.2.5.10)** |
 
 ---
 
@@ -1216,9 +1219,9 @@
 | 6.2.5.5 | → เปรียบเทียบยี่ห้อจัดฟันใส — TrioClear vs Invisalign vs อื่นๆ | L5 | C | top | D | trioclear-aligner |
 | 6.2.5.6 | → จัดฟันผู้ใหญ่ — สิ่งที่ต้องรู้ ใช้เวลานานแค่ไหน | L5 | D | top | A | clear-aligner |
 | 6.2.5.7 | → Retention & Relapse — ทำไมฟันถึงเรียงตัวกลับหลังจัดฟัน | L5 | D | top | A | clear-aligner |
-| 6.2.5.8 | → Direct Print Clear Aligner คืออะไร — เทคโนโลยีพิมพ์ 3D ตรง 🌟 (R11) | L5 | B | top | A | direct-print-clear-aligner |
-| 6.2.5.9 | → Photopolymer Resin TC-85 — Material properties + Safety (R11) | L5 | C | top | A | photopolymer-resin-tc85 |
-| 6.2.5.10 | → In-House Lab vs Outsourced Lab — Strategic difference (R11) | L5 | C | top | D | in-house-aligner-lab |
+| 6.2.5.8 | → Direct Print Clear Aligner คืออะไร — เทคโนโลยีพิมพ์ 3D ตรง 🌟 (R11 — educational; → tech 4.6.0) | L5 | B | top | A | direct-print-clear-aligner |
+| 6.2.5.9 | → Photopolymer Resin TC-85 — Material properties + Safety (R11 — → tech 4.6.0.2) | L5 | C | top | A | photopolymer-resin-tc85 |
+| | → → R25: "In-House Lab vs Outsourced" (เดิม 6.2.5.10) ยุบ — ซ้ำ Tech 4.6.0.5 (same title+entity); ใช้ 4.6.0.5 canonical | | — | — | — |
 
 #### 6.2.6 Tech Brand Insights (Round 2 NEW)
 

@@ -1,5 +1,29 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 25 Section 6 Knowledge Review (count quirk fix + Direct Print dup yank)
+
+**By:** Operator deep review of Section 6 Knowledge (169 pages), resolving two items flagged in earlier rounds (the 6.x overview-table count quirk + the R16 Direct Print sprawl).
+
+**Verdict:** Section 6 well-built — FAQ Knowledge Hub (6.5) is the single canonical FAQ source (SS-DR-009), Clinical Evidence (6.4) anchors PubMed citations for E-E-A-T, all cross-links to services resolved correctly after the R22 reorder (no broken links).
+
+**1. Count quirk fixed (−5 phantom):**
+- The Section 6 overview/summary table (top of section) listed sub-sections as `| 6.1 | ... | 11 |` rows that matched the page-row counter → 5 phantom "pages" (6.1/6.2/6.3/6.4/6.6) inflated the count. The header read 169 but real content = 164.
+- Fix: bolded the number cells (`| **6.1** |`) so they no longer count; updated the overview's per-sub counts + Total to actuals (6.1=12, 6.2=89, 6.3=3, 6.4=16, 6.5=33, 6.6=10).
+
+**2. Direct Print sprawl (R16 flag) resolved (−1):**
+- **Yanked 6.2.5.10** "In-House Lab vs Outsourced — Strategic difference" (L5 Knowledge) — near-duplicate of Tech **4.6.0.5** (same title + entity `in-house-aligner-lab`); 4.6.0.5 is canonical. Replaced with a breadcrumb note.
+- Kept 6.2.5.8 (Direct Print educational) + 6.2.5.9 (resin) but added cross-links → Tech 4.6.0 / 4.6.0.2 (distinct educational intent).
+
+**Count:** Total **728 → 722** (−5 phantom correction, −1 yank). Section 6 **169 → 163**. Entities 166 (unchanged).
+
+**Flagged (minor, deferred — Knowledge layer, low funnel-impact):** `dental-implant` catch-all on some non-implant Knowledge pages (6.2.4 General Insights hub + .3/.4/.11, 6.3 Glossary, 6.5.4 Cost/Insurance hub). Educational layer → entity precision matters less than service/concern; revisit if doing a full entity-graph pass.
+
+**Files:** `sitemap.md` (overview table, 6.2.5 yank/cross-links, headers, counts, R25 note) / `changelog.md` / `README.md`
+
+**Net -6 pages** → Sitemap **722** / Entities **166**. Section 6 review complete.
+
+---
+
 ## [2026-06-05] — Round 24 Section 5 Concerns Review (entity catch-all fix, concern↔service alignment)
 
 **By:** Operator deep review of Section 5 Concerns (193 pages, biggest section), with focus on consistency with the reordered Section 3 services.
