@@ -13,7 +13,7 @@
 | Type | Count | Notes |
 |------|-------|-------|
 | Treatment | 39 | + 1 R11 (direct-print-clear-aligner Signature #6) |
-| Procedure | 50 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) + dental-scaling (R18) |
+| Procedure | 52 | + dental-scaling (R18) + frenectomy + oral-pathology (R22) + peri-implantitis-treatment et al. (R3) |
 | Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
 | Concept | 16 | + in-house-aligner-lab + thermoformed-aligner (R11) |
@@ -21,7 +21,7 @@
 | Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **164** | (R18: +dental-scaling = 164. R13 recount via script: 163 entity rows. Includes R11 Direct Print Signature #6 entities) |
+| **Total** | **166** | (R22: +frenectomy +oral-pathology = 166. R18: +dental-scaling = 164. R13 recount: 163 rows) |
 
 ---
 
@@ -161,13 +161,13 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Digital Smile Design | digital-smile-design | Procedure | MedicalProcedure | — | — | Growing | 3.4.1 | DSD, ออกแบบรอยยิ้มดิจิทัล, smile design, digital smile | ['*'] | Digital pre-visualization of smile outcome before treatment |
-| 2 | Dental Veneer | dental-veneer | Treatment | MedicalProcedure | — | — | Mature | 3.4.2 | วีเนียร์, porcelain veneer, veneer ฟัน, composite veneer | ['*'] | Thin ceramic shell over tooth surface |
-| 3 | Porcelain Veneer | porcelain-veneer | Treatment | MedicalProcedure | dental-veneer | — | Mature | 3.4.2.1 | วีเนียร์พอร์ซเลน, ceramic veneer | ['*'] | Premium — longer lasting than composite. R21: 3.4.2→3.4.2.1 (veneer sub-hub; parent dental-veneer = 3.4.2 hub, DFS veneer 2,400/mo) |
-| 4 | Teeth Whitening | teeth-whitening | Treatment | MedicalProcedure | — | — | Mature | 3.4.4 | ฟอกสีฟัน, tooth bleaching, ฟันขาว | ['*'] | R19: renumber 3.4.7→3.4.4. Anchors whitening cluster (Cool Light/Home/Walking Bleach). Device cool-light-whitening-unit @ Tech 4.9.1 |
-| 5 | Dental Crown | dental-crown | Treatment | MedicalDevice | — | — | Mature | 3.14.1 | ครอบฟัน, tooth cap, crown | ['*'] | R18: moved 3.4.4→3.14.1 (Restorative section). Also anchors bridge 3.14.2 + inlay/onlay 3.14.3 |
-| 6 | Zirconia Crown | zirconia-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.14.1.1 | ครอบฟันเซอร์โคเนีย, zirconia cap | ['*'] | All-ceramic crown — high aesthetic + strength. R18: 3.4.4.1→3.14.1.1 |
-| 7 | Gold Crown | gold-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.14.1.4 | ครอบฟันทอง, ครอบฟันทองคำ, gold crown, ครอบฟันโลหะมีค่า, ทองครอบฟัน | ['*'] | Premium metal-ceramic / full-cast gold crown. Long lifespan, biocompatibility, posterior teeth preference. Traditional Asian luxury anchor. DFS volume: gold crown 320/mo TH LOW competition (R3-validated). R18: 3.4.4.4→3.14.1.4 |
+| 1 | Digital Smile Design | digital-smile-design | Procedure | MedicalProcedure | — | — | Growing | 3.9.1 | DSD, ออกแบบรอยยิ้มดิจิทัล, smile design, digital smile | ['*'] | Digital pre-visualization of smile outcome before treatment |
+| 2 | Dental Veneer | dental-veneer | Treatment | MedicalProcedure | — | — | Mature | 3.9.2 | วีเนียร์, porcelain veneer, veneer ฟัน, composite veneer | ['*'] | Thin ceramic shell over tooth surface |
+| 3 | Porcelain Veneer | porcelain-veneer | Treatment | MedicalProcedure | dental-veneer | — | Mature | 3.9.2.1 | วีเนียร์พอร์ซเลน, ceramic veneer | ['*'] | Premium — longer lasting than composite. R21: 3.4.2→3.4.2.1 (veneer sub-hub; parent dental-veneer = 3.4.2 hub, DFS veneer 2,400/mo) |
+| 4 | Teeth Whitening | teeth-whitening | Treatment | MedicalProcedure | — | — | Mature | 3.9.3 | ฟอกสีฟัน, tooth bleaching, ฟันขาว | ['*'] | R19: renumber 3.4.7→3.4.4. Anchors whitening cluster (Cool Light/Home/Walking Bleach). Device cool-light-whitening-unit @ Tech 4.9.1 |
+| 5 | Dental Crown | dental-crown | Treatment | MedicalDevice | — | — | Mature | 3.5.1 | ครอบฟัน, tooth cap, crown | ['*'] | R18: moved 3.4.4→3.14.1 (Restorative section). Also anchors bridge 3.14.2 + inlay/onlay 3.14.3 |
+| 6 | Zirconia Crown | zirconia-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.5.1.1 | ครอบฟันเซอร์โคเนีย, zirconia cap | ['*'] | All-ceramic crown — high aesthetic + strength. R18: 3.4.4.1→3.14.1.1 |
+| 7 | Gold Crown | gold-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.5.1.4 | ครอบฟันทอง, ครอบฟันทองคำ, gold crown, ครอบฟันโลหะมีค่า, ทองครอบฟัน | ['*'] | Premium metal-ceramic / full-cast gold crown. Long lifespan, biocompatibility, posterior teeth preference. Traditional Asian luxury anchor. DFS volume: gold crown 320/mo TH LOW competition (R3-validated). R18: 3.4.4.4→3.14.1.4 |
 
 ---
 
@@ -180,7 +180,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
 | 1 | Soft Tissue Management | soft-tissue-management | Procedure | MedicalProcedure | — | — | Growing | 3.2.9.7 | การจัดการเนื้อเยื่ออ่อน, gum management, soft tissue surgery, perio aesthetics | ['smile-scape'] | Studied with Dr. Ricardo Kern (Brazil). Pink aesthetic protocol. Citation: P5-C1 (Benic 2014) |
-| 2 | Gum Contouring | gum-contouring | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.4.5 | ตกแต่งเหงือก, gummy smile correction, gingivoplasty | ['*'] | Reshaping gum line for aesthetic purposes. R19: renumber 3.4.8→3.4.5 |
+| 2 | Gum Contouring | gum-contouring | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.9.4 | ตกแต่งเหงือก, gummy smile correction, gingivoplasty | ['*'] | Reshaping gum line for aesthetic purposes. R19: renumber 3.4.8→3.4.5 |
 | 3 | Connective Tissue Graft | connective-tissue-graft | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7 | ปลูกถ่ายเนื้อเยื่อ, CTG, subepithelial connective tissue graft | ['*'] | Gum recession correction around implants |
 | 4 | Peri-Implant Mucosa | peri-implant-mucosa | Anatomy | AnatomicalStructure | — | — | Mature | 3.2.9.7 | เนื้อเยื่อรอบรากเทียม, peri-implant tissue | ['*'] | Soft tissue surrounding implant — key aesthetic determinant |
 | 5 | Keratinized Mucosa | keratinized-mucosa | Anatomy | AnatomicalStructure | peri-implant-mucosa | — | Mature | 3.7.5 | เนื้อเยื่อแข็ง, keratinized gingiva, attached gingiva | ['*'] | Adequate band required for long-term peri-implant health |
@@ -224,19 +224,19 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Clear Aligner | clear-aligner | Treatment | MedicalProcedure | — | M26.4 | Mature | 3.5.1 | จัดฟันใส, invisible braces, aligner, transparent aligner | ['*'] | Removable clear aligner system. Citation: P4-C1 (Alhamwi 2024) |
+| 1 | Clear Aligner | clear-aligner | Treatment | MedicalProcedure | — | M26.4 | Mature | 3.10.1 | จัดฟันใส, invisible braces, aligner, transparent aligner | ['*'] | Removable clear aligner system. Citation: P4-C1 (Alhamwi 2024) |
 | 2 | TrioClear Aligner System | trioclear-aligner | Product | MedicalDevice | clear-aligner | — | Growing | 4.6.1 | TrioClear, TrioClear Progressive, จัดฟันใส TrioClear | ['smile-scape'] | Modern Dental (HK). Progressive force design. NOT Invisalign. |
 | 3 | Damon Self-Ligating System | damon-system | Product | MedicalDevice | — | — | Mature | 4.6.2 | Damon, Damon Q, Damon Clear, self-ligating braces, จัดฟัน Damon | ['smile-scape'] | Passive self-ligation — lower friction, fewer adjustments |
-| 4 | Malocclusion | malocclusion | Condition | MedicalCondition | — | M26.4 | Mature | 3.5 | ฟันเรียงไม่ตรง, crowded teeth, misaligned teeth, jaw mismatch | ['*'] | Primary indication for orthodontic treatment |
-| 5 | Orthodontic-Implant Sequencing | ortho-implant-sequencing | Concept | MedicalProcedure | malocclusion | — | Growing | 3.5.6 | จัดฟันก่อนรากฟันเทียม, ortho before implant, interdisciplinary planning | ['*'] | SmileScape differentiator — interdisciplinary specialty combo |
-| 6 | Orthognathic Surgery | orthognathic-surgery | Procedure | MedicalProcedure | malocclusion | — | Mature | 3.5.8 | ผ่าตัดขากรรไกร, จัดฟันร่วมผ่าตัด, jaw surgery, BSSO, Le Fort I, bimaxillary surgery | ['*'] | Combined ortho + surgical for skeletal Class II/III + facial asymmetry. SmileScape interdisciplinary service |
-| 7 | Passive Self-Ligating (PSL) | passive-self-ligating | Concept | MedicalDevice | damon-system | — | Growing | 3.5.3.1 | PSL, passive self-ligating braces, จัดฟัน PSL, Damon PSL | ['*'] | Brackets with sliding doors that don't bind archwire. Damon Q (metal) / Damon Clear (ceramic) |
-| 8 | Direct Print Clear Aligner | direct-print-clear-aligner | Treatment | MedicalProcedure | clear-aligner | M26.4 | Growing | 3.5.1.2 | Direct Print Aligner, 3D printed aligner, in-house aligner, photopolymer aligner | ['smile-scape'] | **Signature Offering #6 (R11)**. In-house 3D direct-print manufacturing. Subtype of clear-aligner. Authority: Graphy TC-85DAC + Tera Harz TC-85 FDA-cleared photopolymers. 6 PubMed citations 2021-2025. Key differentiator: fewer attachments vs thermoformed (Invisalign/TrioClear) |
+| 4 | Malocclusion | malocclusion | Condition | MedicalCondition | — | M26.4 | Mature | 3.10 | ฟันเรียงไม่ตรง, crowded teeth, misaligned teeth, jaw mismatch | ['*'] | Primary indication for orthodontic treatment |
+| 5 | Orthodontic-Implant Sequencing | ortho-implant-sequencing | Concept | MedicalProcedure | malocclusion | — | Growing | 3.10.6 | จัดฟันก่อนรากฟันเทียม, ortho before implant, interdisciplinary planning | ['*'] | SmileScape differentiator — interdisciplinary specialty combo |
+| 6 | Orthognathic Surgery | orthognathic-surgery | Procedure | MedicalProcedure | malocclusion | — | Mature | 3.10.8 | ผ่าตัดขากรรไกร, จัดฟันร่วมผ่าตัด, jaw surgery, BSSO, Le Fort I, bimaxillary surgery | ['*'] | Combined ortho + surgical for skeletal Class II/III + facial asymmetry. SmileScape interdisciplinary service |
+| 7 | Passive Self-Ligating (PSL) | passive-self-ligating | Concept | MedicalDevice | damon-system | — | Growing | 3.10.3.1 | PSL, passive self-ligating braces, จัดฟัน PSL, Damon PSL | ['*'] | Brackets with sliding doors that don't bind archwire. Damon Q (metal) / Damon Clear (ceramic) |
+| 8 | Direct Print Clear Aligner | direct-print-clear-aligner | Treatment | MedicalProcedure | clear-aligner | M26.4 | Growing | 3.10.1.2 | Direct Print Aligner, 3D printed aligner, in-house aligner, photopolymer aligner | ['smile-scape'] | **Signature Offering #6 (R11)**. In-house 3D direct-print manufacturing. Subtype of clear-aligner. Authority: Graphy TC-85DAC + Tera Harz TC-85 FDA-cleared photopolymers. 6 PubMed citations 2021-2025. Key differentiator: fewer attachments vs thermoformed (Invisalign/TrioClear) |
 | 9 | In-House Aligner Lab | in-house-aligner-lab | Concept | — | smilescape-dental-clinic | — | Growing | 4.6.0 | คลินิกผลิตจัดฟันใสเอง, in-house aligner production | ['smile-scape'] | SmileScape's in-clinic aligner manufacturing capability. Same-day production. Customizable mid-treatment. R11 Signature anchor |
 | 10 | Photopolymer Resin TC-85 | photopolymer-resin-tc85 | Product | — | direct-print-clear-aligner | — | Growing | 4.6.0.2 | Graphy TC-85DAC, Tera Harz TC-85, photopolymer aligner resin, FDA-cleared aligner material | ['smile-scape'] | FDA-cleared photopolymer for direct-print aligner. Operator confirm which brand SmileScape uses (Graphy vs Tera Harz vs other). Citation: PMID 42076391 (Tera Harz TC-85 specific) |
-| 11 | Aligner Attachment | aligner-attachment | Device | MedicalDevice | clear-aligner | — | Mature | 3.5.1.5 | attachment, composite attachment, aligner button | ['*'] | Composite tooth-bonded buttons for thermoformed aligner retention. R11 Direct Print uses FEWER of these due to built-in features |
+| 11 | Aligner Attachment | aligner-attachment | Device | MedicalDevice | clear-aligner | — | Mature | 3.10.1.5 | attachment, composite attachment, aligner button | ['*'] | Composite tooth-bonded buttons for thermoformed aligner retention. R11 Direct Print uses FEWER of these due to built-in features |
 | 12 | 3D Printer (Aligner) | 3d-printer-aligner | Device | MedicalDevice | in-house-aligner-lab | — | Growing | 4.6.0.1 | Asiga Pro4K, SprintRay Pro95, Formlabs Form 3B+, dental 3D printer | ['smile-scape'] | Photopolymer 3D printer for direct-print aligner. Specific model TBD operator confirm |
-| 13 | Thermoformed Aligner | thermoformed-aligner | Concept | MedicalProcedure | clear-aligner | — | Mature | 3.5.1.4 | thermoformed aligner, vacuum-formed aligner, traditional aligner, Invisalign-style aligner | ['*'] | Traditional aligner production: thermoform plastic over 3D-printed model. Used by Invisalign, TrioClear, ClearCorrect. Comparison anchor for Direct Print differentiation content |
+| 13 | Thermoformed Aligner | thermoformed-aligner | Concept | MedicalProcedure | clear-aligner | — | Mature | 3.10.1.4 | thermoformed aligner, vacuum-formed aligner, traditional aligner, Invisalign-style aligner | ['*'] | Traditional aligner production: thermoform plastic over 3D-printed model. Used by Invisalign, TrioClear, ClearCorrect. Comparison anchor for Direct Print differentiation content |
 
 ---
 
@@ -248,15 +248,17 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Root Canal Treatment | root-canal-treatment | Treatment | MedicalProcedure | — | K04.0 | Mature | 3.11 | รักษารากฟัน, endodontic treatment, RCT | ['*'] | Alternative to extraction when tooth can be saved. R18: 3.6.5 stub removed → canonical home Section 3.11 Endodontics |
-| 2 | Tooth Extraction | tooth-extraction | Procedure | MedicalProcedure | — | K08.409 | Mature | 3.6.3 | ถอนฟัน, tooth removal | ['*'] | Often precedes implant placement |
-| 3 | Wisdom Tooth Removal | wisdom-tooth-removal | Procedure | MedicalProcedure | tooth-extraction | K01.1 | Mature | 3.6.4 | ผ่าฟันคุด, impacted wisdom tooth removal, third molar extraction | ['*'] | |
-| 4 | Dental Filling | dental-filling | Treatment | MedicalProcedure | — | K02.9 | Mature | 3.6.2 | อุดฟัน, composite filling, tooth filling | ['*'] | |
-| 5 | Removable Denture | removable-denture | Treatment | MedicalDevice | — | — | Mature | 3.14.4 | ฟันปลอมถอดได้, complete denture, partial denture | ['*'] | Often starting point before All-on-X conversion. R18: moved 3.6.6→3.14.4 (Restorative & Prosthetic) |
+| 1 | Root Canal Treatment | root-canal-treatment | Treatment | MedicalProcedure | — | K04.0 | Mature | 3.6 | รักษารากฟัน, endodontic treatment, RCT | ['*'] | Alternative to extraction when tooth can be saved. R18: 3.6.5 stub removed → canonical home Section 3.11 Endodontics |
+| 2 | Tooth Extraction | tooth-extraction | Procedure | MedicalProcedure | — | K08.409 | Mature | 3.4.3 | ถอนฟัน, tooth removal | ['*'] | Often precedes implant placement |
+| 3 | Wisdom Tooth Removal | wisdom-tooth-removal | Procedure | MedicalProcedure | tooth-extraction | K01.1 | Mature | 3.4.4 | ผ่าฟันคุด, impacted wisdom tooth removal, third molar extraction | ['*'] | |
+| 4 | Dental Filling | dental-filling | Treatment | MedicalProcedure | — | K02.9 | Mature | 3.4.2 | อุดฟัน, composite filling, tooth filling | ['*'] | |
+| 5 | Removable Denture | removable-denture | Treatment | MedicalDevice | — | — | Mature | 3.5.4 | ฟันปลอมถอดได้, complete denture, partial denture | ['*'] | Often starting point before All-on-X conversion. R18: moved 3.6.6→3.14.4 (Restorative & Prosthetic) |
 | 6 | Torus Removal | torus-removal | Procedure | MedicalProcedure | — | — | Mature | 3.8.6 | ตัดปุ่มกระดูก, torus mandibularis removal, torus palatinus removal, exostosis removal | ['*'] | Surgical removal of bony exostosis (mandibular/palatal torus). Often pre-prosthetic |
 | 7 | Alveoloplasty | alveoloplasty | Procedure | MedicalProcedure | — | — | Mature | 3.8.6.4 | ปรับสันกระดูก, alveolar ridge recontouring, ridge reduction | ['*'] | Reshaping alveolar bone for prosthesis or implant fit |
 | 8 | Maxillary Tuberosity Reduction | tuberectomy | Procedure | MedicalProcedure | alveoloplasty | — | Mature | 3.8.6.3 | ปรับปุ่มกระดูกหลังฟันบน, maxillary tuberosity surgery | ['*'] | Reducing posterior maxillary bony prominence — pre-prosthetic or pre-implant |
-| 9 | Dental Scaling & Prophylaxis | dental-scaling | Procedure | MedicalProcedure | — | K03.6 | Mature | 3.6.1 | ขูดหินปูน, ขูดหินปูน ราคา, dental scaling, dental cleaning, prophylaxis, tartar removal, ขูดหินปูน เจ็บไหม, scaling root planing | ['*'] | R18 NEW (#164). DFS goldmine 12,100/mo TH LOW competition — anchors 3.6.1 cleaning cluster (8 long-tail pages). Previously mis-tagged as dental-filling. SRP for early perio also under periodontitis (3.6.1.3) |
+| 9 | Dental Scaling & Prophylaxis | dental-scaling | Procedure | MedicalProcedure | — | K03.6 | Mature | 3.4.1 | ขูดหินปูน, ขูดหินปูน ราคา, dental scaling, dental cleaning, prophylaxis, tartar removal, ขูดหินปูน เจ็บไหม, scaling root planing | ['*'] | R18 NEW (#164). DFS goldmine 12,100/mo TH LOW competition — anchors General cleaning cluster (8 long-tail pages). Previously mis-tagged as dental-filling. SRP for early perio also under periodontitis |
+| 10 | Frenectomy | frenectomy | Procedure | MedicalProcedure | — | — | Mature | 3.8.4 | ตัดเอ็นยึดลิ้น, frenectomy, ตัดพังผืดใต้ลิ้น, lingual frenectomy, labial frenectomy, ลิ้นติด | ['*'] | R22 NEW (#165). Soft-tissue release of lingual/labial frenum (tongue-tie / lip-tie). Was mis-tagged tooth-extraction |
+| 11 | Oral Pathology Surgery | oral-pathology | Procedure | MedicalProcedure | — | — | Mature | 3.8.2 | ผ่าตัดเนื้องอกในช่องปาก, oral pathology, ผ่าตัดซีสต์, cyst removal, oral lesion removal, biopsy | ['*'] | R22 NEW (#166). Surgical removal/biopsy of oral lesions, tumors, cysts (anchors 3.8.2 + 3.8.3). Was mis-tagged tooth-extraction |
 
 ---
 
@@ -320,16 +322,16 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Pediatric Dentistry | pediatric-dentistry | Treatment | MedicalProcedure | — | — | Mature | 3.9 | ทันตกรรมเด็ก, kids dentistry, pediatric dental care | ['*'] | Specialty branch — covers all dental care for children 0-12 |
-| 2 | Pediatric Pulpotomy | pediatric-pulpotomy | Procedure | MedicalProcedure | pediatric-dentistry | K04.0 | Mature | 3.9.6 | รักษารากฟันน้ำนม, pulpotomy, pulpectomy, baby tooth pulp | ['*'] | Pulp therapy for primary teeth — vital pulp therapy or pulpectomy |
-| 3 | Pediatric Crown | pediatric-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.9.7 | ครอบฟันเด็ก, stainless steel crown, SSC, zirconia pediatric crown | ['*'] | SS or zirconia crown for primary molars after pulp therapy or extensive caries |
-| 4 | Fluoride Treatment | fluoride-treatment | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.9.4 | เคลือบฟลูออไรด์, fluoride varnish, topical fluoride | ['*'] | Caries prevention — varnish, gel, or rinse application |
-| 5 | Pit & Fissure Sealant | pit-fissure-sealant | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.9.5 | เคลือบหลุมร่องฟัน, dental sealant, occlusal sealant | ['*'] | Resin coating on permanent molars to prevent occlusal caries |
-| 6 | Space Maintainer | space-maintainer | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.9.8 | เครื่องมือกันฟันล้ม, space maintainer, band & loop, lingual arch | ['*'] | Maintains arch length after premature primary tooth loss |
-| 7 | Behavior Management (Pediatric) | behavior-management | Concept | — | pediatric-dentistry | — | Mature | 3.9.11 | จัดการพฤติกรรมเด็ก, tell-show-do, behavior guidance | ['*'] | Communication/behavioral techniques for treating fearful pediatric patients |
-| 8 | Early Orthodontic Intervention | early-orthodontic-intervention | Treatment | MedicalProcedure | pediatric-dentistry | M26.4 | Growing | 3.9.12 | จัดฟันเด็ก, interceptive ortho, Phase I orthodontics, ortho intervention | ['*'] | Phase I orthodontics — corrects developing malocclusion in mixed dentition |
-| 9 | Habit Appliance | habit-appliance | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.9.10 | เครื่องมือแก้นิสัย, thumb sucking appliance, tongue crib | ['*'] | Appliance to break harmful oral habits (thumb sucking, tongue thrust) |
-| 10 | Pediatric Extraction | pediatric-extraction | Procedure | MedicalProcedure | tooth-extraction | K08.409 | Mature | 3.9.9 | ถอนฟันน้ำนม, primary tooth extraction, baby tooth removal | ['*'] | Extraction of primary teeth — timing and technique differ from permanent |
+| 1 | Pediatric Dentistry | pediatric-dentistry | Treatment | MedicalProcedure | — | — | Mature | 3.11 | ทันตกรรมเด็ก, kids dentistry, pediatric dental care | ['*'] | Specialty branch — covers all dental care for children 0-12 |
+| 2 | Pediatric Pulpotomy | pediatric-pulpotomy | Procedure | MedicalProcedure | pediatric-dentistry | K04.0 | Mature | 3.11.6 | รักษารากฟันน้ำนม, pulpotomy, pulpectomy, baby tooth pulp | ['*'] | Pulp therapy for primary teeth — vital pulp therapy or pulpectomy |
+| 3 | Pediatric Crown | pediatric-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.11.7 | ครอบฟันเด็ก, stainless steel crown, SSC, zirconia pediatric crown | ['*'] | SS or zirconia crown for primary molars after pulp therapy or extensive caries |
+| 4 | Fluoride Treatment | fluoride-treatment | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.11.4 | เคลือบฟลูออไรด์, fluoride varnish, topical fluoride | ['*'] | Caries prevention — varnish, gel, or rinse application |
+| 5 | Pit & Fissure Sealant | pit-fissure-sealant | Treatment | MedicalProcedure | pediatric-dentistry | — | Mature | 3.11.5 | เคลือบหลุมร่องฟัน, dental sealant, occlusal sealant | ['*'] | Resin coating on permanent molars to prevent occlusal caries |
+| 6 | Space Maintainer | space-maintainer | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.11.8 | เครื่องมือกันฟันล้ม, space maintainer, band & loop, lingual arch | ['*'] | Maintains arch length after premature primary tooth loss |
+| 7 | Behavior Management (Pediatric) | behavior-management | Concept | — | pediatric-dentistry | — | Mature | 3.11.11 | จัดการพฤติกรรมเด็ก, tell-show-do, behavior guidance | ['*'] | Communication/behavioral techniques for treating fearful pediatric patients |
+| 8 | Early Orthodontic Intervention | early-orthodontic-intervention | Treatment | MedicalProcedure | pediatric-dentistry | M26.4 | Growing | 3.11.12 | จัดฟันเด็ก, interceptive ortho, Phase I orthodontics, ortho intervention | ['*'] | Phase I orthodontics — corrects developing malocclusion in mixed dentition |
+| 9 | Habit Appliance | habit-appliance | Device | MedicalDevice | pediatric-dentistry | — | Mature | 3.11.10 | เครื่องมือแก้นิสัย, thumb sucking appliance, tongue crib | ['*'] | Appliance to break harmful oral habits (thumb sucking, tongue thrust) |
+| 10 | Pediatric Extraction | pediatric-extraction | Procedure | MedicalProcedure | tooth-extraction | K08.409 | Mature | 3.11.9 | ถอนฟันน้ำนม, primary tooth extraction, baby tooth removal | ['*'] | Extraction of primary teeth — timing and technique differ from permanent |
 
 ---
 
@@ -341,13 +343,13 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Endodontic Microscope | endodontic-microscope | Device | MedicalDevice | — | — | Growing | 3.11.4 | dental operating microscope, DOM, endodontic OM | ['*'] | High-magnification microscope for endodontic precision. Standard-of-care for specialists |
-| 2 | Root Canal Retreatment | root-canal-retreatment | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.11.2 | รักษารากฟันซ้ำ, endo retreatment, root canal redo | ['*'] | Treatment of previously root-canaled tooth that failed |
-| 3 | Apicoectomy | apicoectomy | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.11.3 | ผ่าตัดปลายราก, root-end surgery, apical surgery, surgical endodontics | ['*'] | Surgical removal of root apex + retrograde filling — last-resort to save tooth |
-| 4 | Internal Bleaching | internal-bleaching | Treatment | MedicalProcedure | root-canal-treatment | — | Mature | 3.11.6 | ฟอกฟันตายภายใน, intracoronal bleaching, walking bleach, non-vital bleaching | ['*'] | Bleaching from inside non-vital tooth — for darkened endo-treated teeth |
-| 5 | Cracked Tooth | cracked-tooth | Condition | MedicalCondition | — | S02.5XXA | Mature | 3.11.7 | ฟันร้าว, cracked tooth syndrome, vertical root fracture | ['*'] | Diagnosis challenge — endo specialist tools required to confirm |
-| 6 | Pulp Regeneration | pulp-regeneration | Procedure | MedicalProcedure | root-canal-treatment | — | Emerging | 3.11.8 | regenerative endodontics, REP, revascularization, apexogenesis | ['*'] | Newer technique for immature permanent teeth — promotes pulp tissue regrowth |
-| 7 | Rotary Endodontic System | rotary-endodontic-system | Device | MedicalDevice | — | — | Mature | 3.11.5 | rotary file, reciprocating endo, NiTi rotary | ['*'] | Mechanized files for canal preparation — faster + more consistent than hand instrumentation |
+| 1 | Endodontic Microscope | endodontic-microscope | Device | MedicalDevice | — | — | Growing | 3.6.4 | dental operating microscope, DOM, endodontic OM | ['*'] | High-magnification microscope for endodontic precision. Standard-of-care for specialists |
+| 2 | Root Canal Retreatment | root-canal-retreatment | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.6.2 | รักษารากฟันซ้ำ, endo retreatment, root canal redo | ['*'] | Treatment of previously root-canaled tooth that failed |
+| 3 | Apicoectomy | apicoectomy | Procedure | MedicalProcedure | root-canal-treatment | K04.0 | Mature | 3.6.3 | ผ่าตัดปลายราก, root-end surgery, apical surgery, surgical endodontics | ['*'] | Surgical removal of root apex + retrograde filling — last-resort to save tooth |
+| 4 | Internal Bleaching | internal-bleaching | Treatment | MedicalProcedure | root-canal-treatment | — | Mature | 3.6.6 | ฟอกฟันตายภายใน, intracoronal bleaching, walking bleach, non-vital bleaching | ['*'] | Bleaching from inside non-vital tooth — for darkened endo-treated teeth |
+| 5 | Cracked Tooth | cracked-tooth | Condition | MedicalCondition | — | S02.5XXA | Mature | 3.6.7 | ฟันร้าว, cracked tooth syndrome, vertical root fracture | ['*'] | Diagnosis challenge — endo specialist tools required to confirm |
+| 6 | Pulp Regeneration | pulp-regeneration | Procedure | MedicalProcedure | root-canal-treatment | — | Emerging | 3.6.8 | regenerative endodontics, REP, revascularization, apexogenesis | ['*'] | Newer technique for immature permanent teeth — promotes pulp tissue regrowth |
+| 7 | Rotary Endodontic System | rotary-endodontic-system | Device | MedicalDevice | — | — | Mature | 3.6.5 | rotary file, reciprocating endo, NiTi rotary | ['*'] | Mechanized files for canal preparation — faster + more consistent than hand instrumentation |
 
 ---
 
@@ -359,9 +361,9 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Conscious Sedation | conscious-sedation | Procedure | MedicalProcedure | — | — | Mature | 3.10.1 | sedation dentistry, minimal sedation, oral sedation, nitrous oxide | ['*'] | Mild sedation — patient awake but relaxed. Nitrous oxide / oral sedation routes |
-| 2 | General Anesthesia Dentistry | ga-dentistry | Procedure | MedicalProcedure | — | — | Mature | 3.10.3 | ดมยาสลบทำฟัน, dental general anesthesia, GA dentistry, IV anesthesia | ['*'] | Full unconsciousness for complex/anxious patients. Requires anesthesiologist + monitoring |
-| 3 | IV Sedation | iv-sedation | Procedure | MedicalProcedure | conscious-sedation | — | Mature | 3.10.2 | intravenous sedation, moderate sedation, twilight sedation | ['*'] | Moderate sedation via IV — between conscious and GA |
+| 1 | Conscious Sedation | conscious-sedation | Procedure | MedicalProcedure | — | — | Mature | 3.12.1 | sedation dentistry, minimal sedation, oral sedation, nitrous oxide | ['*'] | Mild sedation — patient awake but relaxed. Nitrous oxide / oral sedation routes |
+| 2 | General Anesthesia Dentistry | ga-dentistry | Procedure | MedicalProcedure | — | — | Mature | 3.12.3 | ดมยาสลบทำฟัน, dental general anesthesia, GA dentistry, IV anesthesia | ['*'] | Full unconsciousness for complex/anxious patients. Requires anesthesiologist + monitoring |
+| 3 | IV Sedation | iv-sedation | Procedure | MedicalProcedure | conscious-sedation | — | Mature | 3.12.2 | intravenous sedation, moderate sedation, twilight sedation | ['*'] | Moderate sedation via IV — between conscious and GA |
 | 4 | Dental Anxiety / Phobia | dental-anxiety | Condition | MedicalCondition | — | F40.218 | Mature | 5.4 | กลัวหมอฟัน, dental phobia, odontophobia | ['*'] | Common reason for sedation dentistry referral |
 
 ---
@@ -392,7 +394,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
 | 1 | Social Security Dental Benefit (TH) | social-security-dental-benefit | Concept | — | — | — | Mature | 5.13.2 | ประกันสังคมทำฟัน, สิทธิ์ประกันสังคมทำฟัน, SSO dental, ม.33 ทำฟัน | ['*'] | Thai SSO Article 33/39/40 dental benefit. Annual cap 900 baht (operator confirm if updated to 1,200). Covers scaling/filling/extraction/wisdom-tooth + separate denture cap 1,500-4,400 baht/5yr |
-| 2 | Q-Clinic Direct Billing (SSO) | sso-direct-billing-q-clinic | Concept | — | social-security-dental-benefit | — | Growing | 3.12.2 | ไม่ต้องสำรองจ่าย, Q-Clinic, SSO direct bill, ทำฟันไม่ต้องสำรองจ่าย | ['smile-scape'] | SmileScape Q-Clinic status (R4-confirmed). Direct billing model — patient pays only out-of-pocket excess. Key conversion differentiator |
+| 2 | Q-Clinic Direct Billing (SSO) | sso-direct-billing-q-clinic | Concept | — | social-security-dental-benefit | — | Growing | 3.14.1 | ไม่ต้องสำรองจ่าย, Q-Clinic, SSO direct bill, ทำฟันไม่ต้องสำรองจ่าย | ['smile-scape'] | SmileScape Q-Clinic status (R4-confirmed). Direct billing model — patient pays only out-of-pocket excess. Key conversion differentiator |
 | 3 | Universal Coverage (บัตรทอง / 30 บาท) | universal-coverage-th | Concept | — | — | — | Mature | 5.13.2.5 | บัตรทอง, 30 บาท, สปสช, UCS, universal coverage | ['*'] | NHSO scheme — distinct from SSO. Often confused with SSO; comparison content valuable. Operator to confirm SmileScape acceptance |
 | 4 | Civil Servant Medical Benefit (CGA) | civil-servant-dental-benefit | Concept | — | — | — | Mature | 5.13.5 | ราชการเบิกค่าทำฟัน, ข้าราชการ ทำฟัน, กรมบัญชีกลาง, CGA | ['*'] | Comptroller General's Dept scheme for govt employees + family. Direct billing acceptance TBD |
 | 5 | Private Health Insurance (TH Dental) | private-dental-insurance-th | Concept | — | — | — | Mature | 5.13.6 | ประกันสุขภาพเอกชน ทำฟัน, AIA dental, Cigna dental | ['*'] | Private insurer dental rider — reimbursement model typically. Receipt + medical certificate required |

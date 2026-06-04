@@ -1,5 +1,51 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 22 Section 3 Category Reorder + Numbering Cleanup + 3.8 Entity Fix
+
+**By:** Operator review — Section 3 top-level category ORDER was not logical (Restorative §3.14 stranded at the end after Demographic; Endodontics among access sections) + several internal numbering gaps from prior consolidations.
+
+**Scope:** scripted migration (Python, two-pass-safe via per-match callback) — ~150 references renumbered across `sitemap.md` + `entities.md` Primary Page column. Page-neutral (728); reorder + renumber only (content placement unchanged). Historical round-notes / changelog FROZEN (reference numbering as-of-their-round).
+
+**1. Top-level category reorder (14 categories, logical grouping):**
+| New | Category | Was |
+|---|---|---|
+| 3.1 | Precision Diagnostics | 3.1 |
+| 3.2 | Implant Mastery (hero) | 3.2 |
+| 3.3 | All-on-X Full Arch (hero) | 3.3 |
+| 3.4 | General Dentistry | 3.6 |
+| 3.5 | Restorative & Prosthetic | 3.14 |
+| 3.6 | Endodontics | 3.11 |
+| 3.7 | Periodontics | 3.7 |
+| 3.8 | Oral Surgery | 3.8 |
+| 3.9 | Cosmetic Dentistry | 3.4 |
+| 3.10 | Orthodontics | 3.5 |
+| 3.11 | Pediatric | 3.9 |
+| 3.12 | Sedation & GA | 3.10 |
+| 3.13 | Demographic-Specific | 3.13 |
+| 3.14 | SSO / Q-Clinic | 3.12 |
+
+Logic: Diagnose → Implant hero → core restore/save-tooth (General/Restorative/Endo/Perio/Surgery) → aesthetic (Cosmetic/Ortho) → population (Pediatric/Sedation/Demographic) → access (SSO). Restorative moved out of the tail into the core group.
+
+**2. Numbering gap-close (within-section, no content move):**
+- Cosmetic (now 3.9): closed 3.4.3 gap — whitening cluster → 3.9.3(+subs), gum 3.9.4, makeover 3.9.5, price 3.9.6
+- SSO (now 3.14): closed 3.12.1/3.12.4 gaps → 3.14.1/3.14.2(+subs)/3.14.3
+- Demographic 3.13.1: closed 3.13.1.1/.2 gaps (R9/R10 removals) → 3.13.1.1-.4 ; 3.13.2.2 → 3.13.2.1
+
+**3. R22 entity fix (3.8 Oral Surgery) + 2 new entities:**
+- 3.8.2 Oral Pathology + 3.8.3 Cyst: `tooth-extraction` → **`oral-pathology`** (#166, new)
+- 3.8.4 Frenectomy: `tooth-extraction` → **`frenectomy`** (#165, new — has search "ตัดเอ็นยึดลิ้น")
+- entity type distribution: Procedure 50→52, Total **164→166**
+
+**4. Cross-links added:** 3.8.1 Complex Impaction ↔ 3.4.4 (wisdom routine) / 3.7.4 Gum Recession ↔ 3.2.9.7.3 Root Coverage / 3.1.5 DSD → canonical 3.9.1 / 3.13.1.2 denture → +3.5.4
+
+**Verification:** no duplicate page IDs; 728 numbered rows; Section 3 sub-blocks physically reordered to numeric sequence; cross-links resolve to new numbers (spot-checked 5.10.9→3.10.1.1, 4.6.1→3.10.1.2, 3.2.11.1→3.5.2); percentages (3.3%/3.7%) preserved; top round-note block untouched.
+
+**Note:** sitemap numbers are internal IDs (final URLs derive from slugs). Some inline historical breadcrumbs ("เดิม X") now show new numbers — changelog is authoritative for history.
+
+**Net 0 pages** → Sitemap **728** / Entities **166**
+
+---
+
 ## [2026-06-05] — Round 21 DFS-Driven: Veneer Sub-Hub + All-on-X Jaw Consolidation
 
 **By:** Operator authorized live DataForSEO queries to resolve the R19-R20 flags instead of deferring to Stage 1 Gate.

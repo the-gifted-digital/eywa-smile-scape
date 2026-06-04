@@ -27,7 +27,7 @@ eywa-smile-scape/
 │   └── signature-programs/
 │
 ├── content-plan/                 🌳 STAGE 1 Planning (markdown)
-│   └── sitemap.md                (728p Round 21 — DFS-driven veneer/all-on-x, deep review in progress)
+│   └── sitemap.md                (728p Round 22 — Section 3 reordered (14 categories) + numbering clean, ALL Section 3 reviewed)
 │
 ├── content-drafts/               📝 STAGE 2 Drafting (per template)
 │   ├── pillar-pages/
@@ -58,11 +58,12 @@ eywa-smile-scape/
    - Open workspace: `eywa-smile-scape.code-workspace` (sees both spec + this repo)
    - Read `EYWA_HANDOVER.md` Section 7 (Stage 1 → 1.5 → 2 workflow)
 
-4. **Stage status (Round 21 — 2026-06-05):**
-   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **164 entities** (+dental-scaling R18) / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
-   - Phase E 🔄 **Operator deep review R21 in progress** — sitemap **728 pages** (Section 3.2 ✅ / 3.3 ✅ / 3.4 ✅ / 3.5 ✅ / 3.6 ✅ reviewed; §3.14 Restorative created)
-   - **DFS resolved (R21):** Veneer sub-hub built (veneer 2,400/mo LOW) ✅ / All-on-4 jaw consolidated (no demand) ✅ / 3.2.8.3 demoted ✅
-   - **Remaining for full keyword research (Stage 1 Gate):** per-page volume validation all sections; DFS TH dataset had null-volume gaps on some head terms (re-pull at full batch)
+4. **Stage status (Round 22 — 2026-06-05):**
+   - Phase A ✅ done / Phase B ✅ done / Phase B.2 ✅ done / Phase C ✅ done (20 clusters / **166 entities** (+frenectomy +oral-pathology R22) / **271 edges** / 16 citation pillars / 6 Signature Offerings / 1 Clinical Protocol)
+   - Phase E 🔄 **Operator deep review R22** — sitemap **728 pages** / **Section 3 ALL 14 categories reviewed ✅** + reordered to logical sequence + numbering gaps closed
+   - New Section 3 order: Diag → Implant hero → core (General/Restorative/Endo/Perio/Surgery) → aesthetic (Cosmetic/Ortho) → population (Pediatric/Sedation/Demo) → access (SSO)
+   - **Next:** Section 5 Concerns (193) / Section 6 Knowledge (169) / Section 4 Tech (44) / Section 7-8
+   - **Flagged for DataForSEO (Stage 1 Gate):** per-page volume validation all sections (re-pull; TH dataset had null-volume gaps)
    - Stage 1 Gate ❌ pending (operator review approval + DataForSEO full keyword research batch — R14)
 
 ---
