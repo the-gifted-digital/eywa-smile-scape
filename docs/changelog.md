@@ -17,7 +17,7 @@
 - 4.5 Implant Systems → 3.2.11.6 เปรียบเทียบแบรนด์
 - **4.7 Prosthetic Tech → 3.5 Restorative & Prosthetic** (the DR-002 link explicitly deferred in R18, now that §3.5 exists)
 - 4.7.3 Hybrid Prosthesis → 3.3 All-on-X
-- 4.9.1 Cool Light Whitening Unit → 3.9.4.1 Cool Light Whitening (service)
+- 4.9.1 Cool Light Whitening Unit → 3.9.3.1 Cool Light Whitening (service)
 
 **Files:** `sitemap.md` (Section 4 entities + cross-links + header + R23 note) / `changelog.md` / `README.md`
 

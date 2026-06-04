@@ -24,7 +24,7 @@
 > **Round 19 (2026-06-05):** **3.4 Cosmetic finish** — ปิด gap 3.4.4-.6 ที่เหลือจาก R18 (renumber Whitening 3.4.7→3.4.4 + subs / Gum 3.4.8→3.4.5 / Makeover 3.4.9→3.4.6 / ราคา 3.4.10→3.4.7) + แก้ Cool Light entity device→method (`cool-light-whitening-unit`→`teeth-whitening`, device อยู่ Tech 4.9.1) + repoint 5.11.8→3.4.5. Veneer expansion flagged รอ keyword. Page-neutral 726 — see `docs/changelog.md`
 > **Round 21 (2026-06-05):** **DFS-driven (Veneer + All-on-X)** — ยิง DataForSEO resolve flags: 🆕 **Veneer sub-hub 3.4.2** (DFS veneer 2,400/mo + composite 590/mo LOW → +porcelain/composite/ราคา/vs-crown, +3) / **3.3.4+3.3.5 jaw รวม** (DFS ไม่มี jaw-specific demand, −1) / **3.2.8.3 demote A→B** (intent: all-on-4 info, commercial อยู่ 3.3) / +cross-links 3.3.5→3.14.4, 3.3.6→3.13.1. Net +2 → 728 — see `docs/changelog.md`
 > **Round 22 (2026-06-05):** **Section 3 Category Reorder + Numbering Cleanup** (operator-driven) — จัดลำดับ 14 หมวดใหญ่ใหม่: Diag→Implant hero→core (General 3.4/Restorative 3.5/Endo 3.6/Perio 3.7/Surgery 3.8)→aesthetic (Cosmetic 3.9/Ortho 3.10)→population (Pediatric 3.11/Sedation 3.12/Demo 3.13)→access (SSO 3.14). ปิด numbering gap + 3.8 entity fix (frenectomy/oral-pathology) + cross-links. Scripted renumber, historical round-notes frozen. Page-neutral 728 / entities 164→166 — see `docs/changelog.md`
-> **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.4.1. Page-neutral 728 — see `docs/changelog.md`
+> **Round 23 (2026-06-05):** **Section 4 Technology review** — entity fix: 4.5.4 Ceramic Implant `titanium-implant`→`ceramic-implant` (align service 3.2.8.11) / 4.5.7 Connection `dental-crown`→`dental-implant`. เติม tech→service DR-002 back-links ที่ขาด: 4.2→3.1 / 4.3→3.1.4 / 4.5→3.2.11.6 / **4.7→3.5 Restorative** (deferred จาก R18) / 4.7.3→3.3 / 4.9.1→3.9.3.1. Page-neutral 728 — see `docs/changelog.md`
 > **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
@@ -717,7 +717,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 4.9 | เทคโนโลยีทันตกรรมเพื่อความสวยงาม (hub) | L3 | D | mid | A | digital-smile-design |
-| 4.9.1 | → Cool Light Whitening Unit — เครื่องฟอกสีฟันด้วยแสง LED เย็น ★ 🌟 (Service → 3.9.4.1 Cool Light Whitening) | L3 | C | mid | A | cool-light-whitening-unit |
+| 4.9.1 | → Cool Light Whitening Unit — เครื่องฟอกสีฟันด้วยแสง LED เย็น ★ 🌟 (Service → 3.9.3.1 Cool Light Whitening) | L3 | C | mid | A | cool-light-whitening-unit |
 | | → → ไม่ทำให้ฟันร้อน / ลด post-op sensitivity / In-office activation 1-2 ชั่วโมง | | — | — | — |
 
 ---
