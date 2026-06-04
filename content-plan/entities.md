@@ -13,7 +13,7 @@
 | Type | Count | Notes |
 |------|-------|-------|
 | Treatment | 39 | + 1 R11 (direct-print-clear-aligner Signature #6) |
-| Procedure | 49 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) |
+| Procedure | 50 | + peri-implantitis-treatment, implantoplasty, dental-laser-therapy, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery (R3) + dental-scaling (R18) |
 | Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
 | Concept | 16 | + in-house-aligner-lab + thermoformed-aligner (R11) |
@@ -21,7 +21,7 @@
 | Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **163** | (R13 recount via script: 163 entity rows. Was claimed 167 — corrected R13 audit. Includes R11 Direct Print Signature #6 entities) |
+| **Total** | **164** | (R18: +dental-scaling = 164. R13 recount via script: 163 entity rows. Includes R11 Direct Print Signature #6 entities) |
 
 ---
 
@@ -163,11 +163,11 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
 | 1 | Digital Smile Design | digital-smile-design | Procedure | MedicalProcedure | — | — | Growing | 3.4.1 | DSD, ออกแบบรอยยิ้มดิจิทัล, smile design, digital smile | ['*'] | Digital pre-visualization of smile outcome before treatment |
 | 2 | Dental Veneer | dental-veneer | Treatment | MedicalProcedure | — | — | Mature | 3.4.2 | วีเนียร์, porcelain veneer, veneer ฟัน, composite veneer | ['*'] | Thin ceramic shell over tooth surface |
-| 3 | Porcelain Veneer | porcelain-veneer | Treatment | MedicalProcedure | dental-veneer | — | Mature | 3.4.2 | วีเนียร์พอร์ซเลน, ceramic veneer | ['*'] | Premium — longer lasting than composite |
-| 4 | Teeth Whitening | teeth-whitening | Treatment | MedicalProcedure | — | — | Mature | 3.4.7 | ฟอกสีฟัน, tooth bleaching, ฟันขาว | ['*'] | |
-| 5 | Dental Crown | dental-crown | Treatment | MedicalDevice | — | — | Mature | 3.4.4 | ครอบฟัน, tooth cap, crown | ['*'] | |
-| 6 | Zirconia Crown | zirconia-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.4.4.1 | ครอบฟันเซอร์โคเนีย, zirconia cap | ['*'] | All-ceramic crown — high aesthetic + strength |
-| 7 | Gold Crown | gold-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.4.4.4 | ครอบฟันทอง, ครอบฟันทองคำ, gold crown, ครอบฟันโลหะมีค่า, ทองครอบฟัน | ['*'] | Premium metal-ceramic / full-cast gold crown. Long lifespan, biocompatibility, posterior teeth preference. Traditional Asian luxury anchor. DFS volume: gold crown 320/mo TH LOW competition (R3-validated) |
+| 3 | Porcelain Veneer | porcelain-veneer | Treatment | MedicalProcedure | dental-veneer | — | Mature | 3.4.2.1 | วีเนียร์พอร์ซเลน, ceramic veneer | ['*'] | Premium — longer lasting than composite. R21: 3.4.2→3.4.2.1 (veneer sub-hub; parent dental-veneer = 3.4.2 hub, DFS veneer 2,400/mo) |
+| 4 | Teeth Whitening | teeth-whitening | Treatment | MedicalProcedure | — | — | Mature | 3.4.4 | ฟอกสีฟัน, tooth bleaching, ฟันขาว | ['*'] | R19: renumber 3.4.7→3.4.4. Anchors whitening cluster (Cool Light/Home/Walking Bleach). Device cool-light-whitening-unit @ Tech 4.9.1 |
+| 5 | Dental Crown | dental-crown | Treatment | MedicalDevice | — | — | Mature | 3.14.1 | ครอบฟัน, tooth cap, crown | ['*'] | R18: moved 3.4.4→3.14.1 (Restorative section). Also anchors bridge 3.14.2 + inlay/onlay 3.14.3 |
+| 6 | Zirconia Crown | zirconia-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.14.1.1 | ครอบฟันเซอร์โคเนีย, zirconia cap | ['*'] | All-ceramic crown — high aesthetic + strength. R18: 3.4.4.1→3.14.1.1 |
+| 7 | Gold Crown | gold-crown | Treatment | MedicalDevice | dental-crown | — | Mature | 3.14.1.4 | ครอบฟันทอง, ครอบฟันทองคำ, gold crown, ครอบฟันโลหะมีค่า, ทองครอบฟัน | ['*'] | Premium metal-ceramic / full-cast gold crown. Long lifespan, biocompatibility, posterior teeth preference. Traditional Asian luxury anchor. DFS volume: gold crown 320/mo TH LOW competition (R3-validated). R18: 3.4.4.4→3.14.1.4 |
 
 ---
 
@@ -180,7 +180,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
 | 1 | Soft Tissue Management | soft-tissue-management | Procedure | MedicalProcedure | — | — | Growing | 3.2.9.7 | การจัดการเนื้อเยื่ออ่อน, gum management, soft tissue surgery, perio aesthetics | ['smile-scape'] | Studied with Dr. Ricardo Kern (Brazil). Pink aesthetic protocol. Citation: P5-C1 (Benic 2014) |
-| 2 | Gum Contouring | gum-contouring | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.4.8 | ตกแต่งเหงือก, gummy smile correction, gingivoplasty | ['*'] | Reshaping gum line for aesthetic purposes |
+| 2 | Gum Contouring | gum-contouring | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.4.5 | ตกแต่งเหงือก, gummy smile correction, gingivoplasty | ['*'] | Reshaping gum line for aesthetic purposes. R19: renumber 3.4.8→3.4.5 |
 | 3 | Connective Tissue Graft | connective-tissue-graft | Procedure | MedicalProcedure | soft-tissue-management | — | Mature | 3.2.9.7 | ปลูกถ่ายเนื้อเยื่อ, CTG, subepithelial connective tissue graft | ['*'] | Gum recession correction around implants |
 | 4 | Peri-Implant Mucosa | peri-implant-mucosa | Anatomy | AnatomicalStructure | — | — | Mature | 3.2.9.7 | เนื้อเยื่อรอบรากเทียม, peri-implant tissue | ['*'] | Soft tissue surrounding implant — key aesthetic determinant |
 | 5 | Keratinized Mucosa | keratinized-mucosa | Anatomy | AnatomicalStructure | peri-implant-mucosa | — | Mature | 3.7.5 | เนื้อเยื่อแข็ง, keratinized gingiva, attached gingiva | ['*'] | Adequate band required for long-term peri-implant health |
@@ -248,14 +248,15 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 
 | # | Entity Name | Slug | Type | Schema.org | Parent (text) | ICD-10 | Lifecycle | Primary Page | Aliases | Brand Scope | Notes |
 |---|-------------|------|------|------------|---------------|--------|-----------|--------------|---------|-------------|-------|
-| 1 | Root Canal Treatment | root-canal-treatment | Treatment | MedicalProcedure | — | K04.0 | Mature | 3.6.5 | รักษารากฟัน, endodontic treatment, RCT | ['*'] | Alternative to extraction when tooth can be saved |
+| 1 | Root Canal Treatment | root-canal-treatment | Treatment | MedicalProcedure | — | K04.0 | Mature | 3.11 | รักษารากฟัน, endodontic treatment, RCT | ['*'] | Alternative to extraction when tooth can be saved. R18: 3.6.5 stub removed → canonical home Section 3.11 Endodontics |
 | 2 | Tooth Extraction | tooth-extraction | Procedure | MedicalProcedure | — | K08.409 | Mature | 3.6.3 | ถอนฟัน, tooth removal | ['*'] | Often precedes implant placement |
 | 3 | Wisdom Tooth Removal | wisdom-tooth-removal | Procedure | MedicalProcedure | tooth-extraction | K01.1 | Mature | 3.6.4 | ผ่าฟันคุด, impacted wisdom tooth removal, third molar extraction | ['*'] | |
 | 4 | Dental Filling | dental-filling | Treatment | MedicalProcedure | — | K02.9 | Mature | 3.6.2 | อุดฟัน, composite filling, tooth filling | ['*'] | |
-| 5 | Removable Denture | removable-denture | Treatment | MedicalDevice | — | — | Mature | 3.6.6 | ฟันปลอมถอดได้, complete denture, partial denture | ['*'] | Often starting point before All-on-X conversion |
+| 5 | Removable Denture | removable-denture | Treatment | MedicalDevice | — | — | Mature | 3.14.4 | ฟันปลอมถอดได้, complete denture, partial denture | ['*'] | Often starting point before All-on-X conversion. R18: moved 3.6.6→3.14.4 (Restorative & Prosthetic) |
 | 6 | Torus Removal | torus-removal | Procedure | MedicalProcedure | — | — | Mature | 3.8.6 | ตัดปุ่มกระดูก, torus mandibularis removal, torus palatinus removal, exostosis removal | ['*'] | Surgical removal of bony exostosis (mandibular/palatal torus). Often pre-prosthetic |
 | 7 | Alveoloplasty | alveoloplasty | Procedure | MedicalProcedure | — | — | Mature | 3.8.6.4 | ปรับสันกระดูก, alveolar ridge recontouring, ridge reduction | ['*'] | Reshaping alveolar bone for prosthesis or implant fit |
 | 8 | Maxillary Tuberosity Reduction | tuberectomy | Procedure | MedicalProcedure | alveoloplasty | — | Mature | 3.8.6.3 | ปรับปุ่มกระดูกหลังฟันบน, maxillary tuberosity surgery | ['*'] | Reducing posterior maxillary bony prominence — pre-prosthetic or pre-implant |
+| 9 | Dental Scaling & Prophylaxis | dental-scaling | Procedure | MedicalProcedure | — | K03.6 | Mature | 3.6.1 | ขูดหินปูน, ขูดหินปูน ราคา, dental scaling, dental cleaning, prophylaxis, tartar removal, ขูดหินปูน เจ็บไหม, scaling root planing | ['*'] | R18 NEW (#164). DFS goldmine 12,100/mo TH LOW competition — anchors 3.6.1 cleaning cluster (8 long-tail pages). Previously mis-tagged as dental-filling. SRP for early perio also under periodontitis (3.6.1.3) |
 
 ---
 

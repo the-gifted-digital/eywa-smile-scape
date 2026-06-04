@@ -1,5 +1,103 @@
 # SmileScape Brand Repo — Changelog
 
+## [2026-06-05] — Round 21 DFS-Driven: Veneer Sub-Hub + All-on-X Jaw Consolidation
+
+**By:** Operator authorized live DataForSEO queries to resolve the R19-R20 flags instead of deferring to Stage 1 Gate.
+
+**DFS data (TH, Google Ads volume + Labs intent):**
+- `veneer` **2,400/mo LOW** (CPC 1.57) / `composite veneer` **590/mo LOW** / `วีเนียร์` informational / `วีเนียร์ ราคา` commercial
+- `all-on-x` 70/mo LOW / `all-on-6` 90/mo LOW / `all on 4` informational + `all on 4 ราคา` commercial / `all-on-4 บน/ล่าง` **no data**
+- Note: DFS TH dataset returned null volume for several head terms (วีเนียร์, porcelain veneer, all-on-4, ครอบฟัน) — known limitation; anchors + intent signals were sufficient to decide.
+
+**Decisions & changes (sitemap, net +2 → 728):**
+1. **Veneer expansion (3.4) — DONE.** veneer 2,400/mo LOW is the biggest cosmetic keyword found; 3.4 had only 2 sibling pages + no hub. Built **veneer sub-hub 3.4.2** (วีเนียร์ hub Tier B) → 3.4.2.1 Porcelain / 3.4.2.2 Composite / **3.4.2.3 วีเนียร์ ราคา** (commercial) / **3.4.2.4 วีเนียร์ vs ครอบฟัน** (→3.14.1). +3 pages. Number 3.4.3 left as intentional skip (note added; avoids re-renumbering whitening cluster from R19).
+2. **All-on-4 jaw split (3.3.4/.5) — CONSOLIDATED.** `all-on-4 บน/ล่าง` returned no search data → merged into single 3.3.4 "All-on-4 บน vs ล่าง". 3.3.6-3.3.11 renumbered → 3.3.5-3.3.10. −1 page.
+3. **All-on-4 cannibalization (3.2.8.3) — DEMOTED A→B.** Intent split confirmed (all-on-4 informational / commercial = all-on-4-ราคา at 3.3). 3.2.8.3 = info type-entry → 3.3; 3.3 = commercial canonical. R20 cross-link retained.
+4. **All-on-6 — left as-is.** 90/mo LOW; 3.2.8.4 + comparison 3.2.11.3 adequate. No new page.
+
+**Cross-links added:** 3.3.5 (denture-wearers) → 3.14.4 / 3.3.6 (elderly) → 3.13.1 Geriatric hub.
+
+**Ripple:** entities.md porcelain-veneer Primary Page 3.4.2→3.4.2.1 (dental-veneer = veneer hub 3.4.2). No external refs to renumbered 3.3.x pages (verified). Section 3: 240→242 (3.3 12→11, 3.4 11→14).
+
+**Files:** `sitemap.md` (3.4 veneer / 3.3 jaw / 3.2.8.3 / headers / ratio / R21 note) / `entities.md` (porcelain-veneer) / `changelog.md` / `README.md`
+
+**Flags resolved:** Veneer expansion ✅ / All-on-4 dual Tier-A ✅. **Remaining for full keyword research:** per-page volume validation across all sections (Stage 1 Gate full batch).
+
+**Net +2 pages** → Sitemap **728** / Entities **164**
+
+---
+
+## [2026-06-05] — Round 20 Section 3.2 Implant Hero Review (canonical cross-links + tier flag)
+
+**By:** Operator review of §3.2 Implant Mastery (74 pages, hero). Verdict: cleanest section reviewed — strong entity hygiene (method-led, no brand-leak; Osseodensification → `internal-sinus-lift` with Densah brand at Tech 4.4.4), logical structure, `dental-implant` catch-all (25×) all legitimate (overview/candidacy/complex-case demographics/lifetime care). No restructure needed.
+
+**One architectural finding:** All-on-4/6 appears both as implant-type entries (3.2.8.3 Tier A / 3.2.8.4) and as the full §3.3 All-on-X section (Tier A hub) — defensible dual placement (type vs treatment), but lacked cross-links → potential head-term cannibalization.
+
+**Changes — sitemap (page-neutral, 726):**
+- Cross-link 3.2.8.3 All-on-4 + 3.2.8.4 All-on-6 → **3.3 (canonical All-on-X home)**
+- Cross-link (R18 follow-up) 3.2.11.1 รากเทียม-vs-สะพานฟัน → **3.14.2** / 3.2.11.2 รากเทียม-vs-ฟันปลอม → **3.14.4**
+- Inline flag note added under 3.2.8 (Tier/cannibalization)
+
+**Deferred (decided NOT to do now — premature):**
+- Tier demotion of 3.2.8.3 (A→C) — cannibalization depends on real SERP data; doc policy = tiers recompute at keyword-research stage. **Flagged for DataForSEO Stage 1 Gate.**
+- Soft-tissue cluster (3.2.9.7, 4-level deep, Tier D techniques) — justified E-E-A-T "Global Mastery" showcase; watch for thin at content phase only.
+
+**Net 0 pages** → Sitemap **726** / Entities **164** (unchanged). §3.2 review complete.
+
+---
+
+## [2026-06-05] — Round 19 Section 3.4 Cosmetic Finish (renumber gap-close + Cool Light entity)
+
+**By:** Continuing the Section 3.4 review after R18 pulled crown/bridge/inlay out to §3.14 (which left a numbering gap).
+
+**Changes — sitemap (page-neutral, 726):**
+- **Renumber to close gap 3.4.4-.6** (left by R18 restorative move): Whitening 3.4.7→**3.4.4** (+subs Cool Light/Home/Walking Bleach 3.4.4.1-.3) / Gum Contouring 3.4.8→**3.4.5** / Smile Makeover 3.4.9→**3.4.6** / Price 3.4.10→**3.4.7**. Cosmetic now clean sequential, aesthetic-only.
+- **Entity fix — Cool Light Whitening (3.4.4.1):** device-leak `cool-light-whitening-unit` → `teeth-whitening` (method). The device entity stays anchored to Tech 4.9.1 (SS-DR-002 brand/device→Tech pattern, same as Densah/Airflow/Damon/Invisalign). Added service↔tech cross-link 3.4.4.1 ↔ 4.9.1.
+
+**Ripple:**
+- sitemap: 5.11.8 Gingival Asymmetry "→ link 3.4.8" → **3.4.5**
+- entities.md Primary Page: teeth-whitening 3.4.7→3.4.4 / gum-contouring 3.4.8→3.4.5 (cool-light-whitening-unit stays 4.9.1 Tech; internal-bleaching stays 3.11.6 Endo)
+- Verified: no other inbound refs to 3.4.7-.10 besides 5.11.8
+
+**Files:** `sitemap.md` (3.4 renumber + Cool Light entity + headers + R19 note) / `entities.md` (2 Primary Pages) / `changelog.md` / `README.md`
+
+**Deferred (flagged in sitemap + README):**
+- **Veneer expansion** — Veneer under-built vs Whitening (2 sibling pages, no hub) while "วีเนียร์" is a high-volume TH term. Expand to sub-hub (hub + ราคา + ใครเหมาะ + ดูแล) pending DataForSEO keyword research.
+
+**Net 0 pages** → Sitemap **726** / Entities **164** (unchanged)
+
+---
+
+## [2026-06-05] — Round 18 Restorative & Prosthetic Reorganization (new §3.14) + dental-scaling entity
+
+**By:** Operator review of Section 3.6 — flagged that "General Dentistry" mixed disciplines (รักษาราก + ฟันปลอม "stuck out") and lacked consistency. Investigation surfaced a wider problem: restorative work was split across two sections, with ครอบฟัน/สะพานฟัน/inlay mis-filed under 3.4 Cosmetic.
+
+**Diagnosis — restorative/prosthetic work scattered:**
+- 3.6 General: ฟันปลอม (prosthetic, misfit) + รักษาราก (endo — already owned by §3.11)
+- 3.4 Cosmetic: ครอบฟัน(5) + สะพานฟัน + inlay/onlay — restorative, not aesthetic (esp. Gold Crown / Implant Crown)
+
+**Decision (operator):** Full reorg — dedicated Restorative & Prosthetic section.
+
+**Changes — sitemap (page-neutral, 726):**
+- 🆕 **§3.14 ทันตกรรมบูรณะและประดิษฐ์ (Restorative & Prosthetic)** — 9 pages: ครอบฟัน hub (+zirconia/emax/implant/gold) + สะพานฟัน + inlay/onlay (จาก 3.4) + ฟันปลอม (จาก 3.6). Ties to Prosthodontics Team 2.2.5 + Prosthetic Tech 4.7
+- **3.6 General slimmed** → ขูดหินปูน(8) + อุดฟัน + ถอนฟัน + ผ่าฟันคุด(+2). รักษาราก stub (3.6.5) removed → §3.11; ฟันปลอม (3.6.6) → §3.14.4
+- **3.4 Cosmetic purified** → aesthetic-only. ครอบ/สะพาน/inlay → §3.14. Numbering gap 3.4.4-.6 left intentionally (note added; avoids renumber ripple on whitening cluster)
+- Page math: −7 (3.4) −2 (3.6: 1 moved + 1 deleted) +9 (3.14) = net 0 → **726 unchanged**; Section 3 stays 240
+
+**Changes — dental-scaling entity:**
+- Discovered ขูดหินปูน goldmine (12,100/mo) had NO entity — 7 pages mis-tagged `dental-filling` (registry maps that to อุดฟัน 3.6.2)
+- entities.md: added **`dental-scaling` (#164, Procedure, K03.6, primary 3.6.1)**; re-tagged 3.6 hub + 3.6.1 cluster (7 pages) → `dental-scaling`; Procedure 49→50, Total **163→164**
+
+**Ripple (entities.md Primary Page):** dental-crown 3.4.4→3.14.1 / zirconia 3.4.4.1→3.14.1.1 / gold-crown 3.4.4.4→3.14.1.4 / removable-denture 3.6.6→3.14.4 / root-canal-treatment 3.6.5→3.11. Verified no hard numbered backlinks to moved pages (refs entity-based, valid); 6.5.1.4 FAQ note updated; 3.6.1.3 SRP → 3.7 cross-link added.
+
+**Files:** `sitemap.md` (3.4/3.6/§3.14 + headers + ratio + R18 note) / `entities.md` (5 Primary Pages + dental-scaling #164 + distribution) / `changelog.md` / `README.md` (164 + R18)
+
+**Deferred:** 4.7→§3.14 DR-002 cross-link (minor) / 3.4 sequential renumber-tidy (gap 3.4.4-.6) / entities.md crown entity-section regroup
+
+**Net 0 pages** → Sitemap **726** / Entities **164**
+
+---
+
 ## [2026-06-05] — Round 17 Section 3.5 Remainder: Entity Cleanup + Self-Ligating Fold + Orthognathic Delivery Model
 
 **By:** Operator review of Section 3.5 remainder (3.5.3 Self-Ligating → 3.5.8 Orthognathic), continuing the Section 3.5 deep review from R16.

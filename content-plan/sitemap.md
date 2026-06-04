@@ -1,6 +1,6 @@
 # SmileScape Dental Clinic — Sitemap 2026
 
-> **Total Pages:** 726 (Round 17 — Section 3.5 remainder: entity cleanup + Self-Ligating fold + Orthognathic delivery model, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
+> **Total Pages:** 728 (Round 21 — DFS-driven: Veneer sub-hub expand + All-on-4 jaw consolidate + tier demote, 2026-06-05) | **Schema:** 7-column (upgraded 2026-05-11 per DR-022)
 > **Columns:** # / Page Name / Layer (content hierarchy L1-L7) / Tier / Funnel / Page Type / Primary Entity
 > **Note:** Funnel / Page Type / Primary Entity cells = `—` (TBD) → populate at Phase F content briefing
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
@@ -20,6 +20,10 @@
 > **Round 15 (2026-05-30):** **Section 8.1 Contact Hub Consolidation** — 8.1.1 (Book Free Consultation) + 8.1.2 (Line @Smile_Scape) merged into single comprehensive 8.1 page (in-page sections: Booking form + 3D X-ray / Line OA QR / Phone-Email-Hours NAP). 8.1 becomes canonical booking + contact action (was 8.1.1 at R14); Section 2.4 cross-link updated 8.1.1 → 8.1. Net -2 pages → ~726 (count audit 2026-06-05: actual 730) — see `docs/changelog.md`
 > **Round 16 (2026-06-05):** **Clear Aligner (3.5.1) Restructure + Invisalign Service/Tech Parity** — 3.5.1 ยุบ direct-print proof-point + แก้ near-duplicate กับ Tech 4.6.0 (SS-DR-002 brand/tech split) / 3.5.1.1 = "SmileScape In-House Clear Aligner" (Signature commercial face) / NEW 3.5.1.3 Thermoformed (method-led) + 4.6.2 Invisalign (brand keyword → ลิงก์กลับ service) mirror TrioClear pattern / old 3.5.1.4 → Tech 4.6.0.6 / Damon+Digital renumber 4.6.3-4. Net -2 pages → 728 — see `docs/changelog.md`
 > **Round 17 (2026-06-05):** **Section 3.5 Remainder — Entity Cleanup + Self-Ligating Fold + Orthognathic Delivery Model** — แก้ entity brand-leak/ผิด 4 จุด (3.5.3 hub damon-system→passive-self-ligating / 3.5.4-.5-.7 clear-aligner→orthodontic-intervention) / ยุบ 3.5.3.3+.4 metal-ceramic → in-page ของ 3.5.3.1 (−2) / 3.5.3 PSL+ASL confirmed / 3.5.8 Orthognathic = "SmileScape-managed program" (ผ่าตัดผ่าน partner — compliance guardrail, เก็บครบ 9 หน้า). Net -2 pages → 726 — see `docs/changelog.md`
+> **Round 18 (2026-06-05):** **Restorative & Prosthetic Reorganization (operator-driven)** — General Dentistry มี รักษาราก/ฟันปลอม แหลมออก + ครอบ/สะพาน/inlay filed ผิดใต้ Cosmetic. แก้: 🆕 **§3.14 ทันตกรรมบูรณะและประดิษฐ์** (รวม ครอบฟัน+subs/สะพาน/inlay จาก 3.4 + ฟันปลอม จาก 3.6) / 3.6 General slim เหลือ ขูด-อุด-ถอน-ฟันคุด (รักษาราก stub → 3.11) / 3.4 Cosmetic = aesthetic-only (เว้นเลข 3.4.4-.6) / fold dental-scaling entity #164 (ขูดหินปูน goldmine เลิกขโมย entity อุดฟัน). Page-neutral 726 — see `docs/changelog.md`
+> **Round 19 (2026-06-05):** **3.4 Cosmetic finish** — ปิด gap 3.4.4-.6 ที่เหลือจาก R18 (renumber Whitening 3.4.7→3.4.4 + subs / Gum 3.4.8→3.4.5 / Makeover 3.4.9→3.4.6 / ราคา 3.4.10→3.4.7) + แก้ Cool Light entity device→method (`cool-light-whitening-unit`→`teeth-whitening`, device อยู่ Tech 4.9.1) + repoint 5.11.8→3.4.5. Veneer expansion flagged รอ keyword. Page-neutral 726 — see `docs/changelog.md`
+> **Round 21 (2026-06-05):** **DFS-driven (Veneer + All-on-X)** — ยิง DataForSEO resolve flags: 🆕 **Veneer sub-hub 3.4.2** (DFS veneer 2,400/mo + composite 590/mo LOW → +porcelain/composite/ราคา/vs-crown, +3) / **3.3.4+3.3.5 jaw รวม** (DFS ไม่มี jaw-specific demand, −1) / **3.2.8.3 demote A→B** (intent: all-on-4 info, commercial อยู่ 3.3) / +cross-links 3.3.5→3.14.4, 3.3.6→3.13.1. Net +2 → 728 — see `docs/changelog.md`
+> **Round 20 (2026-06-05):** **3.2 Implant review (hero)** — section สะอาด (entity hygiene ดี, ไม่มี brand-leak). เพิ่ม canonical cross-links: 3.2.8.3/.4 All-on-4/6 → 3.3 (canonical home) / 3.2.11.1 → 3.14.2 + 3.2.11.2 → 3.14.4 (ค้างจาก R18). Flag: All-on-4 dual Tier-A (3.2.8.3 + 3.3) → Tier review defer DataForSEO. Page-neutral 726 — see `docs/changelog.md`
 
 ## Tier Distribution (approximate — recompute at end of Phase E)
 - **Tier A:** ~12 pages (2.3%) — target: 5-8% ⚠️ จะปรับเพิ่มตอน keyword research
@@ -41,13 +45,13 @@
 ## Pages per Section (count audit 2026-06-05 — actual numbered URL rows)
 - **1. HOME:** 1 page
 - **2. OUR UNIQUENESS — The Global Mastery:** 26 pages
-- **3. SERVICES:** 240 pages
+- **3. SERVICES:** 242 pages
 - **4. TECHNOLOGY:** 44 pages
 - **5. TREATMENT BY CONCERNS:** 193 pages
 - **6. KNOWLEDGE:** 169 pages
 - **7. CASE STUDIES:** 38 pages
 - **8. CONTACT & LOCAL SEO:** 15 pages
-- **TOTAL:** 726 pages
+- **TOTAL:** 728 pages
 
 > **หมายเหตุ:** round-by-round deltas (R1–R15) ดูที่ `docs/changelog.md` — บล็อกนี้คือยอดนับจริง ณ 2026-06-05
 
@@ -169,7 +173,7 @@
 
 ---
 
-## Section 3: SERVICES & PROGRAMS (240 pages — recount 2026-06-05; R16 3.5.1 + R17 3.5 remainder)
+## Section 3: SERVICES & PROGRAMS (242 pages — recount 2026-06-05; R16-R19 + R20 3.2 + R21 veneer/jaw DFS)
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages always on sitemap regardless of search volume
 
 ### 3.1 Precision Diagnostics — ระบบวินิจฉัยดิจิทัล
@@ -218,8 +222,10 @@
 | 3.2.8 | → ประเภทรากฟันเทียม (hub) | L2 | B | mid | A | dental-implant |
 | 3.2.8.1 | → → Single Implant — รากฟันเทียมซี่เดียว (1-2 ซี่) | L2 | C | mid | A | single-tooth-implant |
 | 3.2.8.2 | → → Multiple Implants — รากฟันเทียมหลายซี่ | L2 | C | mid | A | multiple-implants |
-| 3.2.8.3 | → → All-on-4 — ฟันทั้งปากบน 4 ราก 🌟 | L2 | A | mid | A | all-on-4 |
-| 3.2.8.4 | → → All-on-6 — ฟันทั้งปากบน 6 ราก | L2 | B | mid | A | all-on-6 |
+| 3.2.8.3 | → → All-on-4 — ฟันทั้งปากบน 4 ราก 🌟 (type/info → canonical 3.3 All-on-X) | L2 | **B** | mid | A | all-on-4 |
+| | → → R21 demote A→B: "all on 4" = informational / commercial intent อยู่ที่ 3.3 (treatment canonical) — เลี่ยง dual Tier-A | | — | — | — |
+| 3.2.8.4 | → → All-on-6 — ฟันทั้งปากบน 6 ราก (→ canonical 3.3 All-on-X) | L2 | B | mid | A | all-on-6 |
+| | → → ⚠️ R20 flag: All-on-4 มี Tier A ทั้ง 3.2.8.3 + 3.3 hub — Tier/cannibalization review → defer DataForSEO Stage 1 Gate | | — | — | — |
 | 3.2.8.5 | → → Immediate Implant — ถอนฟันฝังรากทันที | L2 | B | mid | A | immediate-implant |
 | 3.2.8.6 | → → Immediate Loading — ใส่ฟันชั่วคราวได้ทันทีหลังผ่าตัด | L2 | C | mid | A | immediate-loading |
 | 3.2.8.7 | → → Overdenture — ฟันเทียมถอดได้บนรากเทียม | L2 | C | mid | A | overdenture |
@@ -289,8 +295,8 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.2.11 | → เปรียบเทียบทางเลือก — Implant Decision Guide (hub) | L2 | B | mid | D | dental-implant |
-| 3.2.11.1 | → → รากฟันเทียม vs สะพานฟัน — เลือกอะไรดี | L2 | C | mid | D | dental-implant |
-| 3.2.11.2 | → → รากฟันเทียม vs ฟันปลอม — เปรียบเทียบข้อดีข้อเสีย | L2 | C | mid | D | removable-denture |
+| 3.2.11.1 | → → รากฟันเทียม vs สะพานฟัน — เลือกอะไรดี (→ link 3.14.2 Bridge) | L2 | C | mid | D | dental-implant |
+| 3.2.11.2 | → → รากฟันเทียม vs ฟันปลอม — เปรียบเทียบข้อดีข้อเสีย (→ link 3.14.4 Denture) | L2 | C | mid | D | removable-denture |
 | 3.2.11.3 | → → All-on-4 vs All-on-6 — เลือกแบบไหน | L2 | C | mid | D | all-on-6 |
 | 3.2.11.4 | → → All-on-4 vs Overdenture — ฟันทั้งปากแบบไหนเหมาะกับคุณ | L2 | C | mid | D | overdenture |
 | 3.2.11.5 | → → Immediate vs Delayed Implant — ฝังทันทีหรือรอ | L2 | C | mid | D | dental-implant |
@@ -321,14 +327,13 @@
 | 3.3.1 | → All-on-X คืออะไร — ทำฟันทั้งปากภายใน 1 วัน | L2 | B | mid | A | all-on-x |
 | 3.3.2 | → ขั้นตอน All-on-X — จากไม่มีฟันสู่รอยยิ้มใหม่ | L2 | C | mid | A | all-on-x |
 | 3.3.3 | → Immediate Function — ใช้ฟันได้ทันทีหลังผ่าตัด 🏆 | L2 | C | mid | A | full-arch-immediate-loading |
-| 3.3.4 | → All-on-4 บนขากรรไกรบน — Upper Jaw | L2 | C | mid | A | all-on-4 |
-| 3.3.5 | → All-on-4 บนขากรรไกรล่าง — Lower Jaw | L2 | C | mid | A | all-on-4 |
-| 3.3.6 | → All-on-X สำหรับผู้ที่ใส่ฟันปลอมมานาน | L2 | C | mid | A | all-on-x |
-| 3.3.7 | → All-on-X สำหรับผู้สูงอายุ | L2 | C | mid | A | all-on-x |
-| 3.3.8 | → วัสดุฟันถาวร All-on-X — Zirconia vs Acrylic vs Hybrid | L2 | C | mid | D | all-on-x |
-| 3.3.9 | → ราคา All-on-X SmileScape — แผนผ่อนชำระ | L2 | C | bottom | D | all-on-x |
-| 3.3.10 | → การดูแลหลัง All-on-X — ทำความสะอาดและตรวจเช็ค | L2 | D | mid | A | all-on-x |
-| 3.3.11 | → All-on-X Case Gallery — ผลงานจริง | L7 | C | mid | A | all-on-x |
+| 3.3.4 | → All-on-4 บน vs ล่าง — Upper & Lower Jaw (R21 รวม 2→1: DFS ไม่มี jaw-specific demand) | L2 | C | mid | A | all-on-4 |
+| 3.3.5 | → All-on-X สำหรับผู้ที่ใส่ฟันปลอมมานาน (→ link 3.14.4 Denture) | L2 | C | mid | A | all-on-x |
+| 3.3.6 | → All-on-X สำหรับผู้สูงอายุ (→ link 3.13.1 Geriatric hub) | L2 | C | mid | A | all-on-x |
+| 3.3.7 | → วัสดุฟันถาวร All-on-X — Zirconia vs Acrylic vs Hybrid | L2 | C | mid | D | all-on-x |
+| 3.3.8 | → ราคา All-on-X SmileScape — แผนผ่อนชำระ | L2 | C | bottom | D | all-on-x |
+| 3.3.9 | → การดูแลหลัง All-on-X — ทำความสะอาดและตรวจเช็ค | L2 | D | mid | A | all-on-x |
+| 3.3.10 | → All-on-X Case Gallery — ผลงานจริง | L7 | C | mid | A | all-on-x |
 
 ---
 
@@ -338,24 +343,21 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.4 | ทันตกรรมเพื่อความสวยงาม — Smile Design (hub) | L2 | B | mid | A | digital-smile-design |
 | 3.4.1 | → Digital Smile Design — ออกแบบรอยยิ้มดิจิทัล | L2 | C | mid | A | digital-smile-design |
-| 3.4.2 | → Porcelain Veneer — วีเนียร์พอร์ซเลน | L2 | C | mid | A | porcelain-veneer |
-| 3.4.3 | → Composite Veneer — วีเนียร์คอมโพสิท | L2 | C | mid | A | dental-veneer |
-| 3.4.4 | → Dental Crown — ครอบฟัน (hub) | L2 | C | mid | A | dental-crown |
-| 3.4.4.1 | → → Zirconia Crown — ครอบฟันเซอร์โคเนีย | L2 | D | mid | A | zirconia-crown |
-| 3.4.4.2 | → → E-Max Crown — ครอบฟันอีแมกซ์ | L2 | D | mid | A | dental-crown |
-| 3.4.4.3 | → → Implant Crown — ครอบฟันบนรากเทียม | L2 | D | mid | A | dental-crown |
-| 3.4.4.4 | → → Gold Crown — ครอบฟันทองคำ ★ | L2 | C | mid | A | gold-crown |
-| | → → → Long lifespan / Biocompatibility / Posterior teeth preference / Traditional Asian luxury anchor / DFS-validated 320/mo TH | | — | — | — |
-| 3.4.5 | → Dental Bridge — สะพานฟัน | L2 | C | mid | A | dental-crown |
-| 3.4.6 | → Inlay / Onlay — ชิ้นงานเซรามิกเฉพาะจุด | L2 | D | mid | A | dental-crown |
-| 3.4.7 | → Teeth Whitening — ฟอกสีฟัน (hub) | L2 | C | mid | A | teeth-whitening |
-| 3.4.7.1 | → → Cool Light Whitening — ฟอกฟันในคลินิกที่ SmileScape ★ 🌟 | L2 | C | mid | A | cool-light-whitening-unit |
-| | → → → ไม่ทำให้ฟันร้อน / ลด sensitivity / 1-2 ชั่วโมงเสร็จ / ขาวขึ้นทันที | | — | — | — |
-| 3.4.7.2 | → → Home Bleaching — ฟอกที่บ้านด้วยถาดฟอก | L2 | D | mid | A | teeth-whitening |
-| 3.4.7.3 | → → Walking Bleach — ฟอกฟันตายภายในเฉพาะซี่ (→ link 3.11.6 Internal Bleaching) | L2 | D | mid | A | internal-bleaching |
-| 3.4.8 | → Gum Contouring — ตกแต่งเหงือก (Gummy Smile) | L2 | C | mid | A | gum-contouring |
-| 3.4.9 | → Smile Makeover — แปลงโฉมรอยยิ้มครบวงจร | L2 | C | mid | A | digital-smile-design |
-| 3.4.10 | → ราคาทันตกรรมเพื่อความสวยงาม SmileScape | L2 | C | bottom | D | digital-smile-design |
+| 3.4.2 | → วีเนียร์ — Dental Veneer (sub-hub) ★ | L2 | **B** | mid | A | dental-veneer |
+| | → → **R21 expand (DFS: veneer 2,400/mo + composite 590/mo LOW).** เลข 3.4.3 เว้นไว้ (veneer รวมใน 3.4.2.x) | | — | — | — |
+| 3.4.2.1 | → → Porcelain Veneer — วีเนียร์พอร์ซเลน | L2 | C | mid | A | porcelain-veneer |
+| 3.4.2.2 | → → Composite Veneer — วีเนียร์คอมโพสิท (DFS 590/mo) | L2 | C | mid | A | dental-veneer |
+| 3.4.2.3 | → → วีเนียร์ ราคา — เปรียบเทียบราคาแต่ละแบบ (R21 — commercial intent) | L2 | C | bottom | D | dental-veneer |
+| 3.4.2.4 | → → วีเนียร์ vs ครอบฟัน — เลือกแบบไหน (R21 → link 3.14.1 Crown) | L2 | C | mid | D | dental-veneer |
+| | → → **R18:** ครอบ/สะพาน/inlay (เดิม 3.4.4-.6) → 3.14 Restorative. **R19:** renumber ปิด gap — Whitening ต่อที่ 3.4.4. **Veneer expansion flagged** (รอ DataForSEO) | | — | — | — |
+| 3.4.4 | → Teeth Whitening — ฟอกสีฟัน (hub) | L2 | C | mid | A | teeth-whitening |
+| 3.4.4.1 | → → Cool Light Whitening — ฟอกฟันในคลินิกที่ SmileScape ★ 🌟 (→ tech 4.9.1 device) | L2 | C | mid | A | teeth-whitening |
+| | → → → ไม่ทำให้ฟันร้อน / ลด sensitivity / 1-2 ชั่วโมงเสร็จ / ขาวขึ้นทันที (R19: entity device→method teeth-whitening; device cool-light-whitening-unit อยู่ 4.9.1) | | — | — | — |
+| 3.4.4.2 | → → Home Bleaching — ฟอกที่บ้านด้วยถาดฟอก | L2 | D | mid | A | teeth-whitening |
+| 3.4.4.3 | → → Walking Bleach — ฟอกฟันตายภายในเฉพาะซี่ (→ link 3.11.6 Internal Bleaching) | L2 | D | mid | A | internal-bleaching |
+| 3.4.5 | → Gum Contouring — ตกแต่งเหงือก (Gummy Smile) | L2 | C | mid | A | gum-contouring |
+| 3.4.6 | → Smile Makeover — แปลงโฉมรอยยิ้มครบวงจร | L2 | C | mid | A | digital-smile-design |
+| 3.4.7 | → ราคาทันตกรรมเพื่อความสวยงาม SmileScape | L2 | C | bottom | D | digital-smile-design |
 
 ---
 
@@ -401,25 +403,24 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 3.6 | ทันตกรรมทั่วไป — General Dentistry (hub) | L2 | C | mid | A | dental-implant |
-| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) 🎯 | L2 | **B** | mid | A | dental-filling |
-| | → → **DFS-validated 12,100/mo TH LOW competition — traffic goldmine (R3)** | | — | — | — |
-| 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | C | mid | A | dental-filling |
+| 3.6 | ทันตกรรมทั่วไป — General Dentistry (hub) | L2 | C | mid | A | dental-scaling |
+| | → → **R18 scope:** หัตถการพื้นฐาน visit เดียวจบ (ขูด/อุด/ถอน/ฟันคุด). รักษาราก → 3.11 Endo / ครอบ-สะพาน-ฟันปลอม → 3.14 Restorative | | — | — | — |
+| 3.6.1 | → ตรวจฟันและขูดหินปูน — Dental Checkup & Cleaning (hub) 🎯 | L2 | **B** | mid | A | dental-scaling |
+| | → → **DFS-validated 12,100/mo TH LOW competition — traffic goldmine (R3). R18: entity dental-filling→dental-scaling (#164)** | | — | — | — |
+| 3.6.1.1 | → → ขูดหินปูนแบบ Ultrasonic — มาตรฐาน | L2 | C | mid | A | dental-scaling |
 | 3.6.1.2 | → → ขูดหินปูนแบบ Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
 | | → → → Air-Water-Powder system / Guided Biofilm Therapy (GBT) / Patient-friendly (R12: brand-specific EMS Airflow at 4.4.5) | | — | — | — |
-| 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก | L2 | C | mid | A | periodontitis |
-| 3.6.1.4 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ | L2 | C | bottom | D | dental-filling |
-| 3.6.1.5 | → → ขูดหินปูน เจ็บไหม — ความรู้สึกจริง + วิธีลดเจ็บ | L2 | C | top | A | dental-filling |
-| 3.6.1.6 | → → ขูดหินปูนบ่อยแค่ไหน — Schedule ที่แนะนำ | L2 | C | mid | A | dental-filling |
-| 3.6.1.7 | → → ขูดหินปูนใช้สิทธิประกันสังคม / สปสช | L2 | C | bottom | D | dental-filling |
-| 3.6.1.8 | → → ขูดหินปูนหลังจัดฟัน / หลังฝังรากเทียม | L2 | C | mid | A | dental-filling |
+| 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก (→ link 3.7 Periodontics) | L2 | C | mid | A | periodontitis |
+| 3.6.1.4 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ | L2 | C | bottom | D | dental-scaling |
+| 3.6.1.5 | → → ขูดหินปูน เจ็บไหม — ความรู้สึกจริง + วิธีลดเจ็บ | L2 | C | top | A | dental-scaling |
+| 3.6.1.6 | → → ขูดหินปูนบ่อยแค่ไหน — Schedule ที่แนะนำ | L2 | C | mid | A | dental-scaling |
+| 3.6.1.7 | → → ขูดหินปูนใช้สิทธิประกันสังคม / สปสช | L2 | C | bottom | D | dental-scaling |
+| 3.6.1.8 | → → ขูดหินปูนหลังจัดฟัน / หลังฝังรากเทียม | L2 | C | mid | A | dental-scaling |
 | 3.6.2 | → อุดฟัน — Dental Filling | L2 | C | mid | A | dental-filling |
 | 3.6.3 | → ถอนฟัน — Tooth Extraction | L2 | C | mid | A | tooth-extraction |
 | 3.6.4 | → ผ่าฟันคุด — Wisdom Tooth Removal | L2 | C | mid | A | wisdom-tooth-removal |
 | 3.6.4.1 | → → ฟันคุดฝัง — Impacted Wisdom Tooth | L2 | D | mid | A | wisdom-tooth-removal |
 | 3.6.4.2 | → → การฟื้นตัวหลังผ่าฟันคุด | L2 | D | mid | A | wisdom-tooth-removal |
-| 3.6.5 | → รักษารากฟัน — Root Canal Treatment (→ ดูรายละเอียดที่ Section 3.11 Endodontics) | L2 | C | mid | A | root-canal-treatment |
-| 3.6.6 | → ฟันปลอม — Dentures (Removable) | L2 | C | mid | A | removable-denture |
 
 ---
 
@@ -589,6 +590,25 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.13.4 | Special Needs Dentistry (comprehensive page) | L2 | C | mid | A | special-needs-dentistry |
 | | → → R13 consolidated (low volume + thematic overlap). In-page sections: Autism / ADHD / Down's Syndrome (Behavior-Aware) / Dementia / Alzheimer's (Adapted Protocol) / GA pathway → cross-ref 3.10.6 | | — | — | — |
+
+---
+
+### 3.14 ทันตกรรมบูรณะและประดิษฐ์ — Restorative & Prosthetic Dentistry 🆕 (R18 — 9 pages)
+> 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — brand service pages
+> **R18 reorg:** รวมงานบูรณะ/ประดิษฐ์ที่เคยกระจาย — ครอบ/สะพาน/inlay (จาก 3.4 Cosmetic) + ฟันปลอม (จาก 3.6 General). ผูกกับ Prosthodontics Team 2.2.5 + Prosthetic Tech 4.7. อุดฟัน (basic restorative) ยังอยู่ 3.6.2 ตามที่ operator ให้คงไว้
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
+|---|-----------|-------|------|-------|-----------|----------------|
+| 3.14 | ทันตกรรมบูรณะและประดิษฐ์ — Restorative & Prosthetic Dentistry (hub) | L2 | B | mid | A | dental-crown |
+| 3.14.1 | → ครอบฟัน — Dental Crown (hub) | L2 | C | mid | A | dental-crown |
+| 3.14.1.1 | → → Zirconia Crown — ครอบฟันเซอร์โคเนีย | L2 | D | mid | A | zirconia-crown |
+| 3.14.1.2 | → → E-Max Crown — ครอบฟันอีแมกซ์ | L2 | D | mid | A | dental-crown |
+| 3.14.1.3 | → → Implant Crown — ครอบฟันบนรากเทียม (→ link 3.2.8 + tech 4.7) | L2 | D | mid | A | dental-crown |
+| 3.14.1.4 | → → Gold Crown — ครอบฟันทองคำ ★ | L2 | C | mid | A | gold-crown |
+| | → → → Long lifespan / Biocompatibility / Posterior teeth preference / Traditional Asian luxury anchor / DFS-validated 320/mo TH | | — | — | — |
+| 3.14.2 | → สะพานฟัน — Dental Bridge | L2 | C | mid | A | dental-crown |
+| 3.14.3 | → Inlay / Onlay — ชิ้นงานเซรามิกเฉพาะจุด | L2 | D | mid | A | dental-crown |
+| 3.14.4 | → ฟันปลอม — Removable Denture (เดิม 3.6.6) | L2 | C | mid | A | removable-denture |
 
 ---
 
@@ -856,7 +876,7 @@
 | 5.11.5 | → ช่องว่างระหว่างเหงือก (Black Triangle) — แก้ได้อย่างไร (→ link 3.2.9.7) | L4 | C | top | A | black-triangle |
 | 5.11.6 | → เหงือกบาง / เหงือกอ่อน — เปลี่ยนให้แข็งแรง (→ link 3.2.9.7.1 Keratinized Tissue) | L4 | C | top | A | keratinized-mucosa |
 | 5.11.7 | → เหงือกบาง มองเห็นสีรากฟัน / โครงรากเทียมโผล่ (→ link 3.2.9.7.2 Thickness) | L4 | C | top | A | peri-implant-mucosa |
-| 5.11.8 | → เหงือกไม่เท่ากัน / สูงต่ำไม่สมมาตร (Gingival Asymmetry) (→ link 3.2.9.7 + 3.4.8) | L4 | C | top | A | gum-contouring |
+| 5.11.8 | → เหงือกไม่เท่ากัน / สูงต่ำไม่สมมาตร (Gingival Asymmetry) (→ link 3.2.9.7 + 3.4.5) | L4 | C | top | A | gum-contouring |
 | 5.11.9 | → หลังถอนฟันเหงือกยุบลง — Soft Tissue Loss (→ link 3.2.9.7 + 3.2.9.6 Socket Preservation) | L4 | C | top | A | soft-tissue-management |
 
 ### 5.12 ปัญหาฟันเด็ก
@@ -1272,7 +1292,7 @@
 | 6.5.1.1 | → FAQ รากฟันเทียม (20+ คำถาม) — ← link from 3.2 | L5 | B | mid | A | dental-implant |
 | 6.5.1.2 | → FAQ All-on-4 / All-on-6 (15+) — ← link from 3.3 | L5 | B | mid | A | all-on-6 |
 | 6.5.1.3 | → FAQ จัดฟัน (15+) — ← link from 3.5 | L5 | C | mid | A | clear-aligner |
-| 6.5.1.4 | → FAQ วีเนียร์และครอบฟัน — ← link from 3.4 | L5 | C | mid | A | dental-veneer |
+| 6.5.1.4 | → FAQ วีเนียร์และครอบฟัน — ← link from 3.4 (วีเนียร์) + 3.14 (ครอบฟัน, R18) | L5 | C | mid | A | dental-veneer |
 | 6.5.1.5 | → FAQ ทันตกรรมเด็ก — ← link from 3.9 | L5 | C | mid | A | pediatric-dentistry |
 | 6.5.1.6 | → FAQ Endodontics / รักษารากฟัน — ← link from 3.11 | L5 | C | mid | A | root-canal-treatment |
 | 6.5.1.7 | → FAQ Sedation / ดมยาสลบทำฟัน — ← link from 3.10 | L5 | C | mid | A | ga-dentistry |
@@ -1464,20 +1484,21 @@
 
 ## Summary Statistics
 
-### Section 3 Internal Ratio (count audit 2026-06-05 — base 240 pages, R17)
-- **3.1 Diagnostics:** 9 pages (3.8%)
-- **3.2 Implant Mastery:** 74 pages (30.8%)
-- **3.3 All-on-X:** 12 pages (5.0%)
-- **3.4 Cosmetic:** 18 pages (7.5%)
-- **3.5 Orthodontics:** 24 pages (10.0%) — R16: 3.5.1 11→7 / R17: 3.5.3 7→5
-- **3.6 General:** 17 pages (7.1%)
-- **3.7 Periodontics:** 17 pages (7.1%)
-- **3.8 Oral Surgery:** 11 pages (4.6%)
+### Section 3 Internal Ratio (count audit 2026-06-05 — base 242 pages, R21)
+- **3.1 Diagnostics:** 9 pages (3.7%)
+- **3.2 Implant Mastery:** 74 pages (30.6%)
+- **3.3 All-on-X:** 11 pages (4.5%) — R21: −1 (jaw บน/ล่าง รวม, DFS no demand)
+- **3.4 Cosmetic:** 14 pages (5.8%) — R18: −7→3.14 / R21: +3 veneer sub-hub (DFS 2,400/mo)
+- **3.5 Orthodontics:** 24 pages (9.9%) — R16: 3.5.1 11→7 / R17: 3.5.3 7→5
+- **3.6 General:** 15 pages (6.2%) — R18: −2 (รักษาราก→3.11, ฟันปลอม→3.14)
+- **3.7 Periodontics:** 17 pages (7.0%)
+- **3.8 Oral Surgery:** 11 pages (4.5%)
 - **3.9 Pediatric:** 14 pages (5.8%)
 - **3.10 Sedation:** 8 pages (3.3%)
-- **3.11 Endodontics:** 10 pages (4.2%)
+- **3.11 Endodontics:** 10 pages (4.1%)
 - **3.12 SSO / Q-Clinic:** 8 pages (3.3%)
-- **3.13 Demographic-Specific:** 18 pages (7.5%)
-- **Total Section 3:** 240 pages
+- **3.13 Demographic-Specific:** 18 pages (7.4%)
+- **3.14 Restorative & Prosthetic:** 9 pages (3.7%) — R18 NEW (ครอบ/สะพาน/inlay/ฟันปลอม)
+- **Total Section 3:** 242 pages
 
-> **Implant focus (3.2+3.3) = 86 pages = 35.8% ของ Section 3** — 3.2 รากฟันเทียมเป็น subsection ใหญ่สุดของไซต์ (30.8%) สะท้อน positioning "ตัวจริงด้านรากฟันเทียม"
+> **Implant focus (3.2+3.3) = 85 pages = 35.1% ของ Section 3** — 3.2 รากฟันเทียมเป็น subsection ใหญ่สุดของไซต์ (30.6%) สะท้อน positioning "ตัวจริงด้านรากฟันเทียม"
