@@ -1,0 +1,50 @@
+---
+// <FaqBlock> — renders an FAQ accordion AND emits FAQPage JSON-LD.
+//
+// SKELETON STUB: visual accordion is plain <details>; structured-data emission
+// is wired so answer engines (GEO/AEO) + Google rich results pick it up.
+//
+// Usage: <FaqBlock items={page.data.faq} heading="คำถามที่พบบ่อย" />
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items?: FaqItem[];
+  heading?: string;
+}
+
+const { items = [], heading = 'คำถามที่พบบ่อย' } = Astro.props;
+
+const jsonLd =
+  items.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: items.map((it) => ({
+          '@type': 'Question',
+          name: it.q,
+          acceptedAnswer: { '@type': 'Answer', text: it.a },
+        })),
+      }
+    : null;
+---
+{
+  items.length > 0 && (
+    <section aria-label={heading} class="mt-16">
+      <h2 class="text-2xl font-bold text-brand-anchor">{heading}</h2>
+      <div class="mt-4 divide-y divide-brand-neutral-200 border-t border-brand-neutral-200">
+        {items.map((it) => (
+          <details class="group py-4">
+            <summary class="cursor-pointer list-none font-semibold text-brand-neutral-900 marker:hidden">
+              {it.q}
+            </summary>
+            <p class="mt-2 text-brand-neutral-700 leading-relaxed">{it.a}</p>
+          </details>
+        ))}
+      </div>
+      {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
+    </section>
+  )
+}

@@ -1,0 +1,45 @@
+---
+// <RelatedContent> — DR-021 internal-linking render point.
+//
+// SKELETON STUB. In the full build this resolves `items` (slugs from a page's
+// `related_pages` / `related_entities` frontmatter, or the Supabase entity-edge
+// graph) into a styled "บทความ/บริการที่เกี่ยวข้อง" block. Reciprocal-link
+// detection (DR-021) runs at build time over the resolved set.
+//
+// Usage: <RelatedContent items={page.data.related_pages} heading="บริการที่เกี่ยวข้อง" />
+interface RelatedItem {
+  href: string;
+  title: string;
+  summary?: string;
+}
+
+interface Props {
+  items?: (RelatedItem | string)[];
+  heading?: string;
+}
+
+const { items = [], heading = 'เนื้อหาที่เกี่ยวข้อง' } = Astro.props;
+
+// Normalise: bare slug strings become minimal links (full resolver lands later).
+const resolved: RelatedItem[] = items.map((it) =>
+  typeof it === 'string' ? { href: `/${it}/`, title: it } : it
+);
+---
+{
+  resolved.length > 0 && (
+    <nav aria-label={heading} class="mt-16 border-t border-brand-neutral-200 pt-8">
+      <h2 class="text-xl font-bold text-brand-anchor">{heading}</h2>
+      <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+        {resolved.map((item) => (
+          <li class="rounded-lg border border-brand-neutral-200 bg-brand-paper p-4 transition hover:border-brand-primary">
+            <a href={item.href} class="font-semibold text-brand-primary hover:text-brand-primary-deep">
+              {item.title}
+            </a>
+            {item.summary && <p class="mt-1 text-sm text-brand-neutral-500">{item.summary}</p>}
+          </li>
+        ))}
+      </ul>
+      {/* TODO(full-build): resolve slugs via getCollection() + entity-edge graph; run DR-021 reciprocal-link audit. */}
+    </nav>
+  )
+}

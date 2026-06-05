@@ -1,0 +1,164 @@
+---
+// Base layout — shared HTML shell for standard SmileScape pages.
+//
+// Mirrors the EYWA Astro reference shell (DR-EYWA-MKT-005) with:
+//   - i18n-aware <html lang> + hreflang alternates (th default / en)
+//   - SEO + OpenGraph
+//   - Dentist / MedicalClinic JSON-LD (NAP = PLACEHOLDERS until operator confirms)
+//   - Partytown-gated analytics (no-op until PUBLIC_GTM_ID is set)
+import '~/styles/global.css';
+import AnalyticsHead from '~/components/AnalyticsHead.astro';
+import AnalyticsBody from '~/components/AnalyticsBody.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  /** override for non-website OG types, e.g. 'article' */
+  ogType?: string;
+  /** extra JSON-LD node(s) to merge into the page (e.g. Service, FAQPage) */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, canonical, ogType = 'website', jsonLd } = Astro.props;
+
+const siteName = 'SmileScape Dental Clinic';
+const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
+const ogLocale = lang === 'en' ? 'en_US' : 'th_TH';
+
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+
+// hreflang alternates (TH-first; prefixDefaultLocale:false → th at root, en under /en/).
+const p = Astro.url.pathname;
+const thPath = p.startsWith('/en/') ? p.slice(3) : p === '/en' ? '/' : p;
+const enPath = ('/en' + thPath).replace(/\/{2,}/g, '/');
+const alt = {
+  th: new URL(thPath, Astro.site).toString(),
+  en: new URL(enPath, Astro.site).toString(),
+};
+
+// ---- Organization JSON-LD (PLACEHOLDER NAP — see README open questions) ----
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dentist',
+  name: siteName,
+  url: Astro.site?.toString(),
+  description:
+    'คลินิกทันตกรรม SmileScape — รากฐานฟันที่มั่นคงเพื่อความสุขที่ยั่งยืนตลอดชีวิต. เด่นด้านรากฟันเทียม (Implant-first).',
+  medicalSpecialty: 'Dentistry',
+  // NOTE: telephone / address / geo / openingHours are PLACEHOLDERS — fill from operator data.
+  department: [
+    {
+      '@type': 'Dentist',
+      name: 'SmileScape สาขารัตนาธิเบศร์',
+      areaServed: 'รัตนาธิเบศร์ / นนทบุรี',
+    },
+    {
+      '@type': 'Dentist',
+      name: 'SmileScape สาขาศรีนครินทร์',
+      areaServed: 'ศรีนครินทร์',
+    },
+  ],
+};
+
+const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
+
+const nav =
+  lang === 'en'
+    ? [
+        { href: '/en/services/', label: 'Services' },
+        { href: '/en/implants/', label: 'Dental Implants' },
+        { href: '/en/about/', label: 'About' },
+        { href: '/en/contact/', label: 'Contact' },
+        { href: '/en/booking/', label: 'Book Now', cta: true },
+      ]
+    : [
+        { href: '/services/', label: 'บริการ' },
+        { href: '/implants/', label: 'รากฟันเทียม' },
+        { href: '/about/', label: 'เกี่ยวกับเรา' },
+        { href: '/contact/', label: 'ติดต่อ / สาขา' },
+        { href: '/booking/', label: 'จองคิว', cta: true },
+      ];
+const homeHref = lang === 'en' ? '/en/' : '/';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="th" href={alt.th} />
+    <link rel="alternate" hreflang="en" href={alt.en} />
+    <link rel="alternate" hreflang="x-default" href={alt.th} />
+
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={fullTitle} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <meta name="generator" content={Astro.generator} />
+
+    {/* TODO(web-session): uncomment once woff2 files land in public/fonts/
+    <link rel="preload" href="/fonts/LINESeedSansTH-Rg.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/LINESeedSansTH-Bd.woff2" as="font" type="font/woff2" crossorigin />
+    */}
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(ldNodes)} />
+
+    <AnalyticsHead />
+  </head>
+  <body class="min-h-screen flex flex-col bg-brand-neutral-0 text-brand-neutral-900">
+    <AnalyticsBody />
+    <header class="border-b border-brand-neutral-200">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href={homeHref} class="font-bold text-xl tracking-tight text-brand-anchor">
+          Smile<span class="text-brand-primary">Scape</span>
+        </a>
+        <nav class="text-sm text-brand-neutral-700 flex flex-wrap gap-x-6 gap-y-2 items-center">
+          {
+            nav.map((item) =>
+              item.cta ? (
+                <a
+                  href={item.href}
+                  class="rounded-full bg-brand-primary px-4 py-1.5 font-medium text-brand-neutral-0 hover:bg-brand-primary-deep"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a href={item.href} class="hover:text-brand-primary">
+                  {item.label}
+                </a>
+              )
+            )
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-brand-neutral-200 mt-16 bg-brand-paper">
+      <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-brand-neutral-500">
+        <p class="font-semibold text-brand-anchor">SmileScape Dental Clinic</p>
+        <p class="mt-1">รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต</p>
+        <p class="mt-3">สาขารัตนาธิเบศร์ (MRT สีม่วง) · สาขาศรีนครินทร์ (MRT สีเหลือง)</p>
+        <p class="mt-3">© {new Date().getFullYear()} SmileScape Dental Clinic</p>
+      </div>
+    </footer>
+  </body>
+</html>

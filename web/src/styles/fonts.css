@@ -1,0 +1,41 @@
+/**
+ * LINE Seed Sans Thai — self-hosted from web/public/fonts/.
+ *
+ * Carry-over default from the EYWA Astro reference stack (DR-EYWA-MKT-005).
+ * Official source: seed.line.me. SIL Open Font License (free).
+ * Single file covers BOTH Thai + Latin.
+ *
+ * ⚠️ SKELETON: the woff2 files are NOT in this repo yet. Until a web session
+ * drops them into web/public/fonts/, these @font-face rules silently fall back
+ * to the system-ui stack (see global.css body + tokens.json). Confirm or swap
+ * the typeface in the brand session before launch.
+ *
+ * Mapping (weight range → file):
+ *   100–600  → LINESeedSansTH-Rg.woff2
+ *   601–749  → LINESeedSansTH-Bd.woff2
+ *   750–900  → LINESeedSansTH-He.woff2
+ */
+
+@font-face {
+  font-family: 'LINE Seed Sans Thai';
+  src: url('/fonts/LINESeedSansTH-Rg.woff2') format('woff2');
+  font-weight: 100 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans Thai';
+  src: url('/fonts/LINESeedSansTH-Bd.woff2') format('woff2');
+  font-weight: 601 749;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINE Seed Sans Thai';
+  src: url('/fonts/LINESeedSansTH-He.woff2') format('woff2');
+  font-weight: 750 900;
+  font-style: normal;
+  font-display: swap;
+}
