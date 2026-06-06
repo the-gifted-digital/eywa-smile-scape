@@ -1,41 +1,137 @@
 /**
- * LINE Seed Sans Thai — self-hosted from web/public/fonts/.
+ * Self-hosted @font-face declarations.
  *
- * Carry-over default from the EYWA Astro reference stack (DR-EYWA-MKT-005).
- * Official source: seed.line.me. SIL Open Font License (free).
- * Single file covers BOTH Thai + Latin.
+ * 1) Cabinet Grotesk — Latin display/headings (Fontshare, ITF Free License).
+ * 2) Google Sans — body + UI for BOTH Latin and Thai (Google Fonts 2025 public
+ *    release, open license). Subsets self-hosted: latin, latin-ext, thai.
  *
- * ⚠️ SKELETON: the woff2 files are NOT in this repo yet. Until a web session
- * drops them into web/public/fonts/, these @font-face rules silently fall back
- * to the system-ui stack (see global.css body + tokens.json). Confirm or swap
- * the typeface in the brand session before launch.
- *
- * Mapping (weight range → file):
- *   100–600  → LINESeedSansTH-Rg.woff2
- *   601–749  → LINESeedSansTH-Bd.woff2
- *   750–900  → LINESeedSansTH-He.woff2
+ * All long-cached via public/_headers (/fonts/* immutable). No Google Fonts CDN.
  */
 
+/* ---------- Cabinet Grotesk (Latin display) ---------- */
 @font-face {
-  font-family: 'LINE Seed Sans Thai';
-  src: url('/fonts/LINESeedSansTH-Rg.woff2') format('woff2');
-  font-weight: 100 600;
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/cabinet-grotesk/CabinetGrotesk-800.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
+/* ---------- Google Sans (latin + latin-ext + thai) ---------- */
 @font-face {
-  font-family: 'LINE Seed Sans Thai';
-  src: url('/fonts/LINESeedSansTH-Bd.woff2') format('woff2');
-  font-weight: 601 749;
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-thai-400.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
 }
-
 @font-face {
-  font-family: 'LINE Seed Sans Thai';
-  src: url('/fonts/LINESeedSansTH-He.woff2') format('woff2');
-  font-weight: 750 900;
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-ext-400.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-thai-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-ext-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-thai-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-ext-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-thai-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-ext-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Google Sans';
+  src: url('/fonts/google-sans/GoogleSans-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

@@ -43,6 +43,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        // Latin display/headings (Cabinet Grotesk) → Thai falls back to Noto. Class: font-display
+        display: v(type.fontFamily.display).split(',').map((s) => s.trim().replace(/^['"]|['"]$/g, '')),
+        // Body/UI (DM Sans) → Thai falls back to Noto. Class: font-sans (default)
         sans: v(type.fontFamily.sans).split(',').map((s) => s.trim().replace(/^['"]|['"]$/g, '')),
         mono: v(type.fontFamily.mono).split(',').map((s) => s.trim().replace(/^['"]|['"]$/g, '')),
       },
