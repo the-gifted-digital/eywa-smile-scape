@@ -341,7 +341,7 @@ blue diamond ราคา
 blue diamond รับประกัน
 blue diamond korea
 blue diamond vs straumann
-blue diamond vs osstem
+blue diamond vs neodent
 blue diamond รีวิว
 รากเทียม blue diamond
 รากเทียมเกาหลี blue diamond
@@ -363,19 +363,18 @@ straumann SLActive
 รากเทียมสวิส straumann
 ```
 
-### 5C. Osstem / Dentium (Value)
+### 5C. Neodent (Value-Premium)
 
 ```
-osstem
-osstem implant
-osstem ราคา
-osstem ดีไหม
-osstem korea
-osstem vs blue diamond
-รากเทียม osstem
-dentium implant
-dentium ราคา
-รากเทียม dentium
+neodent
+neodent implant
+neodent รากฟันเทียม
+neodent ราคา
+neodent ดีไหม
+neodent vs blue diamond
+neodent straumann group
+รากเทียม neodent
+รากเทียม neodent ราคา
 ```
 
 ### 5D. Ceramic Implant (Premium Differentiator — SS-DR-006)

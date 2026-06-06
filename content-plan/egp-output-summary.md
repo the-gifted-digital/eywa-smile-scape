@@ -181,7 +181,7 @@ To run before flat-load to Supabase:
 **Entity Extensions (Stage 1.5 step 3 — DR-024 binding):**
 
 - [ ] `seo_entity_condition` — populate 14 Condition rows (SNOMED CT, MeSH, prevalence_thailand[], severity_levels[], symptoms[], related_anatomy_fps[], treatment_drugs_fps[], treatment_procedures_fps[], affected_age_groups[])
-- [ ] `seo_entity_product` — populate 9 Product rows (Blue Diamond, Osstem, Straumann, TrioClear, Damon + materials)
+- [ ] `seo_entity_product` — populate 9 Product rows (Blue Diamond, Neodent, Straumann, TrioClear, Damon + materials)
 - [ ] `seo_entity_anatomy` — populate 6 Anatomy rows (FMA ID, UBERON ID, body_system='digestive/skeletal', parent_anatomy_fp hierarchy, affected_by_conditions_fps[])
 - [ ] `seo_entity_organization` — populate 3 Organization rows (1 clinic + 2 branches with Wikidata Q-numbers, sameAs cross-refs)
 

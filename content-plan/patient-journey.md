@@ -97,7 +97,7 @@
 
 **Painpoints at this stage:**
 
-1. สับสนระหว่าง brand รากฟันเทียม (Straumann vs Osstem vs Blue Diamond — ต่างกันยังไง?)
+1. สับสนระหว่าง brand รากฟันเทียม (Straumann vs Neodent vs Blue Diamond — ต่างกันยังไง?)
 2. กลัวเจ็บ / กังวลเรื่องการผ่าตัด
 3. ไม่รู้ราคาจริง — "ราคาเริ่มต้น" กับ "ราคาจริงที่จ่าย" ต่างกันเยอะไหม
 4. ไม่รู้วิธีเลือกหมอ — ดูอะไร? ถามอะไร?
@@ -179,7 +179,7 @@
 | PP-2 | กลัวเจ็บ / กลัวการผ่าตัดช่องปาก | C1 รากฟันเทียมทั่วไป | Consideration | High |
 | PP-3 | ไม่รู้ราคาจริงคือเท่าไหร่ / กลัวราคาพุ่ง | C5 ราคา | Consideration | Medium-High |
 | PP-4 | กระดูกน้อย — ทำรากฟันเทียมได้ไหม | C2 Blue Diamond, C4 GBR | Consideration | High |
-| PP-5 | ไม่รู้จะเลือก brand รากฟันเทียมยังไง | C2 Blue Diamond, C3 Osstem | Consideration | Medium |
+| PP-5 | ไม่รู้จะเลือก brand รากฟันเทียมยังไง | C2 Blue Diamond, C3 Neodent | Consideration | Medium |
 | PP-6 | ฟันปลอมใส่ไม่สบาย — อยากเปลี่ยน | C7 All-on-X | Awareness-Consideration | Medium |
 | PP-7 | ฟันหมดทั้งปาก — ทำอะไรได้บ้าง | C7 All-on-X | Awareness-Consideration | High |
 | PP-8 | กังวลเรื่องความทนทาน — รากฟันเทียมอยู่นานแค่ไหน | C1, C2 | Consideration | Medium |

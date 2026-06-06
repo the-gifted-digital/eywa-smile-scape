@@ -10,5 +10,10 @@
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   },
+  // Parallel-launch phase: Astro served on the `go.` subdomain (Google Ads landing
+  // pages) while WordPress keeps serving the apex. DNS is on Cloudflare, so this
+  // custom_domain route auto-creates the go.smilescapeclinic.com DNS record + cert.
+  // At full cutover, point the apex here too.
+  "routes": [{ "pattern": "go.smilescapeclinic.com", "custom_domain": true }],
   "observability": { "enabled": true }
 }

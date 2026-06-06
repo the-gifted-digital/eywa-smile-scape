@@ -139,7 +139,7 @@
 | Premium Metal-Free | **Ceramic Implant** | TBD | Differentiator — เหมาะฟันหน้า/คนแพ้โลหะ |
 | Premium | **Straumann** | Switzerland | Top-tier reputation, premium price |
 | Value-Premium ⭐ | **Blue Diamond** | Korea | **Hero offering** — quality at value |
-| Value | **Osstem / Dentium** | Korea | Entry-level clear option |
+| Value-Premium | **Neodent** | Brazil (Straumann Group) | Straumann-Group backing at value price |
 
 → **Pattern:** Section 3 (Services) นำด้วย **วิธีการ** (เช่น "การฝังรากเทียม") / Section 4 (Technology) ใช้ **ยี่ห้อ** ได้ (specs) / Section 6 (Knowledge) ดัก **brand search intent**
 
@@ -239,7 +239,7 @@ content_strategy_decisions:
 
 implant_strategy:
   - Section 3: นำด้วยวิธีการ (ไม่เอ่ยยี่ห้อ — patient-centric)
-  - Section 4: ยี่ห้อ OK (Blue Diamond / Osstem / Straumann / Ceramic) — tech specs
+  - Section 4: ยี่ห้อ OK (Blue Diamond / Neodent / Straumann / Ceramic) — tech specs
   - Section 6: ดัก brand search intent (knowledge layer)
   
 ortho_strategy:
@@ -291,7 +291,7 @@ internal_linking_strategy:
   needed_for: "T9 Author Profile + brand-config.json team_assignment"
 
 2_implant_brands_completeness:
-  q: "Implant brands อื่นนอกจาก Blue Diamond / Osstem / Straumann / Ceramic? (เช่น Nobel Biocare?)"
+  q: "Implant brands อื่นนอกจาก Blue Diamond / Neodent / Straumann / Ceramic? (เช่น Nobel Biocare?)"
   needed_for: "T4 Technology pages + Section 3.2 Implant Mastery"
 
 3_technology_inventory:

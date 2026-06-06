@@ -1,0 +1,1032 @@
+---
+import Landing from '~/layouts/Landing.astro';
+
+const LINE_URL = 'https://maac.io/6yp2p';
+const PHONE_TEL = '+66922936226';
+
+const title = 'รากฟันเทียม Blue Diamond เริ่ม 29,900฿ (รวมครอบฟัน) | SmileScape';
+const description =
+  'รากฟันเทียม Blue Diamond นำเข้าเกาหลี เริ่ม 29,900฿ รวมครอบฟัน · ผ่อน 0% 10 เดือน ไม่ต้องใช้บัตร · รับประกันตลอดอายุการใช้งาน · ทันตแพทย์เฉพาะทางศัลยฯ มหิดล · 2 สาขาติด MRT';
+
+// 8 real before/after case photos pulled from the original page.
+const beforeAfter = [
+  '/images/lp/review1.jpg',
+  '/images/lp/review2.jpg',
+  '/images/lp/review3.jpg',
+  '/images/lp/review4.jpg',
+  '/images/lp/review5.png',
+  '/images/lp/review6.png',
+  '/images/lp/review7.png',
+];
+
+const included = [
+  'ราคารวมครอบฟันคุณภาพแล้ว',
+  'ผ่อน 0% นานสูงสุด 10 เดือน — แม้ไม่มีบัตรเครดิต',
+  'ฟรี! ตรวจและวางแผนการรักษากับทันตแพทย์เฉพาะทาง',
+  'รับประกันตัวรากฟัน ตลอดอายุการใช้งาน',
+  'ดูแลโดยทันตแพทย์เฉพาะทางที่มีประสบการณ์',
+];
+
+const why = [
+  { t: 'Blue Diamond นำเข้าเกาหลี', d: 'รากฟันเทียมตัว Top คุณภาพจัดเต็ม วัสดุไทเทเนียมเกรดการแพทย์ เข้ากับร่างกายได้ดี ปลอดภัย' },
+  { t: 'รับประกันตลอดอายุการใช้งาน', d: 'มั่นใจระยะยาว ดูแลใกล้ชิดหลังการรักษา ติดตามผลทุกขั้นตอน' },
+  { t: 'ผ่อน 0% ไม่ต้องใช้บัตร', d: 'แบ่งชำระสบาย นานสูงสุด 10 เดือน เริ่มต้นการรักษาได้ทันที' },
+  { t: 'ทันตแพทย์เฉพาะทาง มหิดล', d: 'ฝังรากโดยทันตแพทย์เฉพาะทางศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล' },
+];
+
+const steps = [
+  { n: '1', t: 'นัดหมาย จองคิว', d: 'ติดต่อคลินิก เลือกวันเวลาที่สะดวก นัดหมายปรึกษากับทันตแพทย์เฉพาะทางศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล', img: '/images/lp/step1.png' },
+  { n: '2', t: 'ปรึกษา ตรวจฟันละเอียด', d: 'เข้ามาพบทันตแพทย์เฉพาะทางเพื่อปรึกษาปัญหาที่กังวลใจ และตรวจฟันอย่างละเอียดด้วยการ X-ray, CT หรือ Scan ช่องปาก', img: '/images/lp/step2.png' },
+  { n: '3', t: 'วางแผนการรักษา', d: 'เมื่อตรวจและทราบความกังวลใจเกี่ยวกับปัญหาแล้ว ทันตแพทย์เฉพาะทางวางแผนการรักษาอย่างละเอียด เพื่อให้ได้ผลการรักษาที่มีประสิทธิภาพและความพึงพอใจสูงสุด โดยไม่มีค่าใช้จ่าย', img: '/images/lp/step3.png' },
+  { n: '4', t: 'ฝังรากฟันเทียม', d: 'ฝังรากฟันเทียม และชำระค่ารักษาส่วนแรก หลังจากนั้นรอกระดูกยึดติดกับรากฟันเทียมประมาณ 3 เดือน', img: '/images/lp/step4.png' },
+  { n: '5', t: 'ใส่ครอบฟัน', d: 'เมื่อกระดูกยึดติดกับรากฟันเทียมดีแล้ว นัดหมายเพื่อใส่ครอบฟันคุณภาพสูง สีเหมือนฟันจริง และชำระค่าบริการส่วนที่เหลือ', img: '/images/lp/step5.png' },
+];
+
+const cases = [
+  {
+    t: 'ฝังรากฟันเทียม กรณีที่มีฟันหายไปเพียง 1 – 2 ซี่',
+    d: 'ทำได้ 2 วิธี คือการทำรากฟันเทียม และสะพานฟัน แต่การทำรากฟันเทียมเป็นวิธีใส่ฟันที่ได้ผลดีที่สุด และยังมีข้อดีมากกว่าการใส่สะพานฟัน เพราะไม่ต้องกรอฟันข้างเคียง ทำความสะอาดได้ง่ายกว่า ส่วนวิธีสะพานฟันจะมีส่วนครอบของฟันติดกันทั้งหมด',
+    img: '/images/lp/case1.png',
+  },
+  {
+    t: 'ฝังรากฟันเทียม กรณีที่มีฟันหายไปเป็นจำนวนมาก',
+    d: 'รากฟันเทียมจะช่วยให้ฟันเทียมแบบถอดได้แน่นขึ้น โดยไม่จำเป็นต้องใส่ตะขอฟันปลอม หรือทำให้ส่วนของเหงือกปลอมสั้นลง',
+    img: '/images/lp/case2.png',
+  },
+  {
+    t: 'ฝังรากฟันเทียม กรณีที่มีฟันหายไปทั้งปาก (ทำรากฟันเทียมทั้งปาก)',
+    d: 'รากฟันเทียมสามารถช่วยทดแทนฟันได้ทั้งแบบติดแน่นและแบบถอดได้ โดยแบบติดแน่นทันตแพทย์จะฝังรากเทียมจำนวน 4, 6 หรือ 8 ตัวต่อ 1 ขากรรไกร ส่วนแบบถอดได้จะฝังรากฟันเทียมจำนวน 2 – 4 ตัว',
+    img: '/images/lp/case3.png',
+  },
+];
+
+const indications = [
+  'มีความหนาของกระดูกเพียงพอ สันเหงือกมีช่องว่าง ตั้งแต่ 1 ซี่ ขึ้นไป',
+  'มีสุขภาพร่างกายสมบูรณ์ แข็งแรง ไม่มีโรคประจำตัวที่มีผลต่อการสร้างกระดูก',
+  'มีสุขอนามัยภายในช่องปากที่ดี สุขภาพช่องปากแข็งแรง ไม่เป็นโรคเหงือก',
+  'ไม่มีประวัตินอนกัดฟัน หากมี อาจจำเป็นต้องตรวจเพิ่มเติมอย่างละเอียด',
+  'ไม่สูบบุหรี่',
+];
+
+const benefits = [
+  'ไม่ทำให้ฟันและเหงือกบริเวณใกล้ๆ เป็นอันตราย',
+  'สันกระดูกเหงือกลดการละลายตัว',
+  'สุขภาพปากและฟันดี เพราะง่ายต่อการทำความสะอาด',
+  'การเคี้ยวอาหาร การพูด ดีขึ้น และมีประสิทธิภาพ',
+  'เสริมบุคลิกภาพ เสริมความมั่นใจ',
+  'อายุการใช้งานยาวนาน เมื่อเทียบกับการรักษาด้วยวิธีอื่น ๆ เช่น การใช้ฟันปลอมแบบชั่วคราว',
+];
+
+const limitations = [
+  'อาจรู้สึกเจ็บหรือปวดขณะทันตแพทย์ทำการรักษา ในกรณีที่เจ็บปวดมากและกังวลมาก ทันตแพทย์อาจพิจารณาใช้ยาชาเฉพาะที่เพื่อระงับความปวดเพิ่มเติม',
+  'การรักษามีหลายขั้นตอน อาจใช้เวลานาน 3 – 6 เดือน หรืออาจมากถึง 1 ปี แล้วแต่กรณี ขึ้นกับเงื่อนไขที่แตกต่างกันในแต่ละบุคคล และบริเวณที่ต้องปลูกกระดูกเพิ่มเติม',
+  'หากพบปัญหาจากการฝังรากเทียม มักต้องแก้ไขด้วยการผ่าตัด',
+  'การปักรากเทียมอาจมีหลายปัจจัยที่ควบคุมไม่ได้ เช่น ลักษณะทางกายภาพของเนื้อเยื่อ สุขภาพช่องปาก โรคประจำตัว ความสามารถในการหายของแผลของแต่ละบุคคล หรือพฤติกรรมการใช้งานฟัน/การบดเคี้ยว ซึ่งหากมีปัจจัยที่ควบคุมไม่ได้มาก อาจส่งผลต่อความสำเร็จของการรักษา',
+];
+
+const choose = [
+  'สถานพยาบาลได้รับอนุญาตถูกต้อง ตรวจสอบได้',
+  'เดินทางสะดวก หรือมีที่จอดรถสะดวกสบาย',
+  'ทันตแพทย์เฉพาะทางให้บริการตามแต่ละสาขา',
+  'ผลิตภัณฑ์ที่ใช้ได้มาตรฐาน มีคุณภาพ',
+  'เทคโนโลยีทันตกรรมที่ทันสมัย',
+  'ทันตแพทย์เฉพาะทางมีประสบการณ์',
+  'การดูแลใกล้ชิดหลังการรักษาที่มีคุณภาพ',
+];
+
+const reviews = [
+  { name: 'ปลาวาฬ นพรรณพ', text: 'คุณหมอแฮมให้คำปรึกษาดีมาก ให้เวลาคนไข้สุด ๆ ตรวจฟันละเอียด แนะนำการดูแลฟันให้ด้วย ประทับใจมาก' },
+  { name: 'ยุทธพิชัย ไชยศรี', text: 'ตัดสินใจจากการอ่านรีวิว จนมาใช้บริการเอง ประทับใจครับ บริการดี คุณหมอมือเบา บอกก่อนทำทุกขั้นตอน' },
+  { name: 'Pohnvipa K.', text: 'ประทับใจมาก ติด MRT สถานที่สะอาด ใหม่ คุณหมอใจดีมากๆ แล้วเก่งมากด้วยค่ะ' },
+  { name: 'Micah Abawag', text: 'Very approachable staff. Easy to book an appointment, and a very professional dentist. ⭐️⭐️⭐️⭐️⭐️' },
+];
+
+const faq = [
+  { q: 'การฝังรากฟันเทียมใช้เวลานานไหม?', a: 'ฝังรากฟันเทียม 1 ซี่ใช้เวลาไม่เกิน 30 นาที หากมีหลายซี่หรือต้องปลูกกระดูกอาจนานขึ้นเล็กน้อย' },
+  { q: 'หลังฝังต้องพักฟื้นนานไหม?', a: 'เป็นการผ่าตัดเล็กภายใต้ยาชาเฉพาะที่ ส่วนใหญ่เจ็บใกล้เคียงหรือน้อยกว่าการถอนฟัน ไม่ต้องพักฟื้น ใช้ชีวิตได้ตามปกติ' },
+  { q: 'ต้องปลูกกระดูกก่อนทำไหม?', a: 'ขึ้นอยู่กับความหนาของกระดูกขากรรไกร ถ้ากระดูกบางมากอาจต้องปลูกก่อน หมอจะประเมินและแนะนำวิธีที่เหมาะสมที่สุด' },
+  { q: 'เป็นเบาหวานทำรากฟันเทียมได้ไหม?', a: 'ทำได้ หากควบคุมค่าน้ำตาลได้ในเกณฑ์ปกติจะไม่มีผล หากค่าน้ำตาลสูงแผลอาจหายช้ากว่าปกติเล็กน้อย' },
+  { q: 'รากฟันเทียมใช้งานได้นานไหม?', a: 'แข็งแรงทนทานมาก หากดูแลความสะอาดดีและตรวจฟันสม่ำเสมอ สามารถอยู่ได้ยาวนานหรือตลอดอายุการใช้งาน' },
+  { q: 'ราคา 29,900฿ รวมอะไรบ้าง?', a: 'รวมตัวรากฟันเทียม Blue Diamond + ครอบฟัน + ตรวจและวางแผน พร้อมรับประกันตัวรากฟันตลอดอายุการใช้งาน (จากราคาปกติ 50,000฿)' },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+
+<Landing title={title} description={description} jsonLd={faqLd}>
+  <!-- HERO -->
+  <section data-hero class="relative overflow-hidden text-white">
+    <!-- cover/feature image (LCP) -->
+    <img src="/images/lp/clinic1.webp" alt="ทันตแพทย์ถือรากฟันเทียม Blue Diamond ที่ SmileScape" width="1024" height="603" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-anchor via-brand-anchor/90 to-brand-anchor/50" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-anchor/85 to-transparent" aria-hidden="true"></div>
+    <div class="absolute -right-16 -top-10 w-80 h-80 rounded-full bg-brand-highlight/20 blur-2xl" aria-hidden="true"></div>
+    <div class="max-w-5xl mx-auto px-4 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center relative">
+      <div>
+        <p class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">
+          Blue Diamond Implant · นำเข้าเกาหลี
+        </p>
+        <h1 class="mt-3 text-3xl md:text-5xl font-bold leading-tight">
+          รากฟันเทียม<br />เริ่ม <span class="price-hl">29,900฿</span><br />รวมครอบฟัน
+        </h1>
+        <p class="mt-4 text-white/85 text-lg">
+          รับประกันตลอดอายุการใช้งาน · ผ่อน 0% ไม่ต้องใช้บัตร · ดูแลโดยทันตแพทย์เฉพาะทางศัลยฯ มหิดล
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-sm">
+          <span class="rounded-full bg-white/10 border border-white/15 px-3 py-1">✓ 2 สาขา ติด MRT</span>
+          <span class="rounded-full bg-white/10 border border-white/15 px-3 py-1">✓ ฟรี ปรึกษา + วางแผน</span>
+          <span class="rounded-full bg-white/10 border border-white/15 px-3 py-1">✓ รีวิวจริง 5 ดาว</span>
+        </div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href={LINE_URL} class="cta-pulse rounded-full bg-brand-primary-deep px-6 py-3 font-semibold hover:opacity-90">
+            จองคิวปรึกษาฟรี (LINE) →
+          </a>
+          <a href={`tel:${PHONE_TEL}`} class="rounded-full border border-white/35 px-6 py-3 font-semibold hover:bg-white/10">
+            ☎ โทร 092 293 6226
+          </a>
+        </div>
+      </div>
+
+      <!-- Offer card -->
+      <div class="bg-white text-brand-neutral-900 rounded-2xl p-6 shadow-lg">
+        <div class="flex items-center gap-2">
+          <span class="rounded-full bg-brand-accent/15 text-brand-primary-deep text-xs font-semibold px-3 py-1">โปรโมชั่นพิเศษ</span>
+          <span class="text-sm text-brand-neutral-500 line-through">ปกติ 50,000฿</span>
+        </div>
+        <div class="mt-2 font-display font-extrabold text-5xl text-brand-anchor">29,900฿
+          <span class="text-base font-sans font-medium text-brand-neutral-500">/ ซี่</span>
+        </div>
+        <div class="mt-2 inline-flex items-center gap-1.5 rounded-full bg-brand-accent/20 px-3 py-1.5 text-[15px] font-bold text-brand-primary-deep">
+          ✓ ราคานี้รวมครอบฟันแล้ว
+        </div>
+        <ul class="mt-4 space-y-2 text-[15px]">
+          {included.map((i) => (
+            <li class="flex gap-2"><span class="text-brand-primary-deep font-bold">✓</span><span>{i}</span></li>
+          ))}
+        </ul>
+        <a href={LINE_URL} class="mt-5 block text-center rounded-full bg-brand-primary-deep px-6 py-3 font-semibold text-white hover:opacity-90">
+          รับโปรฯ จำนวนจำกัด — แอด LINE
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-brand-ice border-y border-brand-neutral-200">
+    <div class="max-w-5xl mx-auto px-4 py-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm font-medium text-brand-anchor">
+      <div>🦷 เฉพาะทางศัลยฯ มหิดล</div>
+      <div>🚆 ติดรถไฟฟ้า 2 สาขา</div>
+      <div>♾️ รับประกันตลอดชีพ</div>
+      <div>💳 ผ่อน 0% ไม่ใช้บัตร</div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER GALLERY (social proof up top) -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <div class="text-center">
+      <p class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary-deep">Real Results</p>
+      <h2 class="mt-2 text-2xl md:text-3xl font-bold text-brand-anchor">ผลลัพธ์จริง ก่อน &amp; หลัง</h2>
+      <p class="mt-2 text-brand-neutral-500">เคสจริงจากคนไข้ที่ SmileScape Clinic</p>
+    </div>
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
+      {beforeAfter.map((src, i) => (
+        <figure class={`relative rounded-xl overflow-hidden border border-brand-neutral-200 bg-white ${i === 0 ? 'col-span-2 md:col-span-1' : ''}`}>
+          <img src={src} alt={`เคสรากฟันเทียม ก่อนและหลัง ${i + 1}`} loading="lazy" width="500" height="500" class="ba-img cursor-zoom-in aspect-square w-full object-cover transition hover:opacity-90" />
+          <figcaption class="pointer-events-none absolute top-2 left-2 rounded-full bg-brand-anchor/85 text-white text-[11px] font-medium px-2.5 py-0.5">ก่อน · หลัง</figcaption>
+          <span class="pointer-events-none absolute bottom-2 right-2 rounded-full bg-brand-anchor/70 text-white text-[11px] px-2 py-0.5">🔍 ดูเต็ม</span>
+        </figure>
+      ))}
+    </div>
+    <p class="mt-4 text-center text-xs text-brand-neutral-400">* ผลลัพธ์ขึ้นกับสภาพช่องปากของแต่ละบุคคล</p>
+  </section>
+
+  <!-- WHY -->
+  <section class="bg-brand-paper border-y border-brand-neutral-200">
+    <div class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">ทำไมต้อง Blue Diamond ที่ SmileScape</h2>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        {why.map((w) => (
+          <div class="rounded-xl border border-brand-neutral-200 bg-white p-5">
+            <h3 class="font-semibold text-brand-anchor">{w.t}</h3>
+            <p class="mt-1.5 text-base text-brand-neutral-700 leading-relaxed">{w.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BLUE DIAMOND HIGHLIGHT -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <div class="rounded-2xl bg-brand-anchor text-white p-6 md:p-10 grid md:grid-cols-[1fr_300px] gap-6 md:gap-8 items-center relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-12 w-56 h-56 rounded-full bg-brand-highlight/20 blur-2xl" aria-hidden="true"></div>
+      <div class="relative">
+        <p class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-brand-highlight">NEW · Blue Diamond Implant</p>
+        <h2 class="mt-2 text-2xl md:text-3xl font-bold">รากฟันเทียม Blue Diamond</h2>
+        <p class="mt-3 text-white/85 leading-relaxed">
+          เทคโนโลยีรากฟันเทียมแบบใหม่ นำเข้าจากเกาหลี — รากฟันเทียม “ตัว Top” คุณภาพจัดเต็ม
+          วัสดุไทเทเนียมเกรดการแพทย์ เข้ากับร่างกายได้ดี ผ่อนได้ พร้อมรับประกันตลอดอายุการใช้งาน
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <span class="text-xs text-white/60">ผลิตโดย</span>
+          <img src="/images/lp/megagen-logo.png" alt="MegaGen Korea" width="130" height="32" loading="lazy" class="h-7 w-auto bg-white rounded px-2 py-1" />
+        </div>
+      </div>
+      <div class="relative flex items-center justify-center">
+        <img src="/images/lp/bluediamond.png" alt="รากฟันเทียม Blue Diamond นำเข้าเกาหลี" width="996" height="1094" loading="lazy" class="bd-float w-full md:max-w-[260px] h-auto rounded-2xl drop-shadow-2xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS / COMPONENTS -->
+  <section class="max-w-5xl mx-auto px-4 py-14 grid md:grid-cols-[1fr_400px] gap-8 items-center">
+    <div>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">รากฟันเทียมคืออะไร</h2>
+      <p class="mt-3 text-brand-neutral-700 leading-relaxed">
+        รากฟันเทียม (Dental Implant) คือการฝังวัสดุไทเทเนียมเกรดการแพทย์ลงในกระดูกขากรรไกร
+        ทดแทนรากฟันที่สูญเสียไป แล้วใส่ครอบฟันด้านบน ให้ความรู้สึกและการใช้งานใกล้เคียงฟันธรรมชาติ
+        เป็นวิธีที่ทันตแพทย์ใช้รักษามากว่า 30 ปี ปลอดภัยและได้รับการยอมรับทางการแพทย์
+      </p>
+      <ul class="mt-4 space-y-1.5 text-sm text-brand-neutral-700">
+        <li><b class="text-brand-anchor">Fixture</b> — สกรูไทเทเนียมที่ฝังในกระดูก ทำหน้าที่แทนรากฟัน</li>
+        <li><b class="text-brand-anchor">Abutment</b> — ตัวเชื่อมระหว่างรากฟันเทียมกับครอบฟัน</li>
+        <li><b class="text-brand-anchor">Prosthetic</b> — ครอบฟัน/สะพานฟัน/ฟันปลอม ส่วนที่มองเห็น</li>
+      </ul>
+    </div>
+    <figure class="cmp-fig relative mx-auto w-full max-w-[380px] aspect-square rounded-2xl border border-brand-neutral-200 bg-gradient-to-br from-brand-ice via-white to-brand-primary-soft/50 overflow-hidden">
+      <img src="/images/lp/component1.png" alt="ส่วนประกอบของรากฟันเทียม: Fixture, Abutment และครอบฟัน" loading="lazy" width="212" height="268" class="absolute inset-0 m-auto max-h-[74%] w-auto drop-shadow-md" />
+      <div class="cmp-marker" style="--i:0; left:33%; top:57%;">
+        <span class="cmp-dot"></span>
+        <span class="cmp-label cmp-label--left">ครอบฟัน<small>Prosthetic</small></span>
+      </div>
+      <div class="cmp-marker" style="--i:1; left:50%; top:40%;">
+        <span class="cmp-dot"></span>
+        <span class="cmp-label cmp-label--top">Abutment<small>ตัวเชื่อม</small></span>
+      </div>
+      <div class="cmp-marker" style="--i:2; left:67%; top:50%;">
+        <span class="cmp-dot"></span>
+        <span class="cmp-label cmp-label--right">Fixture<small>รากเทียม</small></span>
+      </div>
+    </figure>
+  </section>
+
+  <!-- OFFER BREAKDOWN -->
+  <section class="bg-brand-anchor text-white">
+    <div class="max-w-3xl mx-auto px-4 py-12 text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold">โปรฯ รากเทียม + ครอบฟัน</h2>
+      <div class="mt-2 font-display text-5xl font-extrabold text-brand-highlight">29,900฿ <span class="text-lg text-white/70 font-sans line-through">50,000฿</span></div>
+      <ul class="mt-6 inline-block text-left space-y-2">
+        {included.map((i) => (
+          <li class="flex gap-2"><span class="text-brand-highlight font-bold">✓</span><span class="text-white/90">{i}</span></li>
+        ))}
+      </ul>
+      <div class="mt-7">
+        <a href={LINE_URL} class="rounded-full bg-brand-primary-deep px-7 py-3 font-semibold hover:opacity-90">รับโปรฯ จำนวนจำกัด — แอด LINE →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">ขั้นตอนการรักษา</h2>
+    <p class="mt-1 text-brand-neutral-500">ปรึกษาและวางแผนการรักษา ฟรี ไม่มีค่าใช้จ่าย</p>
+    <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-5">
+      {steps.map((s) => (
+        <div class="rounded-xl bg-white border border-brand-neutral-200 overflow-hidden">
+          <img src={s.img} alt={s.t} loading="lazy" width="212" height="268" class="w-full aspect-[212/268] object-cover" />
+          <div class="p-4">
+            <div class="font-display text-2xl font-extrabold text-brand-highlight">{s.n}</div>
+            <h3 class="mt-0.5 font-semibold text-sm text-brand-anchor">{s.t}</h3>
+            <p class="mt-1 text-sm text-brand-neutral-500 leading-relaxed">{s.d}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="bg-brand-ice border-y border-brand-neutral-200">
+    <div class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">รูปแบบของการปักรากฟันเทียม</h2>
+      <div class="mt-8 space-y-8 md:space-y-12">
+        {cases.map((c) => (
+          <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+            <div class="rounded-2xl border-2 border-dashed border-brand-neutral-300 bg-white p-2">
+              <img src={c.img} alt={c.t} loading="lazy" width="1000" height="1000" class="w-full aspect-square object-cover rounded-xl bg-brand-anchor" />
+            </div>
+            <div>
+              <h3 class="font-display text-xl md:text-2xl font-bold text-brand-anchor leading-snug">{c.t}</h3>
+              <p class="mt-3 text-base text-brand-neutral-700 leading-relaxed">{c.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INDICATIONS / BENEFITS / LIMITATIONS -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <!-- ข้อบ่งชี้ -->
+    <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">ข้อบ่งชี้ของการฝังรากเทียม</h2>
+    <ul class="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-2.5">
+      {indications.map((x) => (
+        <li class="flex gap-2.5 text-base text-brand-neutral-700"><span class="text-brand-primary-deep font-bold mt-0.5">✓</span><span>{x}</span></li>
+      ))}
+    </ul>
+
+    <!-- ข้อดี + ภาพเคสจริง -->
+    <div class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+      <figure class="rounded-2xl overflow-hidden border border-brand-neutral-200 bg-white">
+        <img src="/images/lp/indication-case.jpg" alt="เคสจริง ก่อนและหลังทำรากฟันเทียม" loading="lazy" width="1000" height="1000" class="w-full aspect-square object-cover" />
+      </figure>
+      <div>
+        <h3 class="font-display text-xl md:text-2xl font-bold text-brand-anchor">ข้อดีของทันตกรรมรากฟันเทียม</h3>
+        <ul class="mt-4 space-y-2.5">
+          {benefits.map((x) => (
+            <li class="flex gap-2.5 text-base text-brand-neutral-700"><span class="text-brand-primary-deep font-bold mt-0.5">✓</span><span>{x}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- ข้อจำกัด (ข้อมูลสมดุลเพื่อการตัดสินใจ) -->
+    <div class="mt-12 rounded-2xl border border-brand-neutral-200 bg-brand-paper p-6 md:p-8">
+      <h3 class="font-display text-xl md:text-2xl font-bold text-brand-anchor">ข้อจำกัดของการฝังรากฟันเทียม</h3>
+      <p class="mt-1 text-sm text-brand-neutral-500">ข้อมูลตามจริงเพื่อประกอบการตัดสินใจ</p>
+      <ol class="mt-4 space-y-3 list-decimal pl-6 text-base text-brand-neutral-700 marker:text-brand-primary-deep marker:font-bold">
+        {limitations.map((x) => (
+          <li class="leading-relaxed pl-1">{x}</li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <div class="grid md:grid-cols-[240px_1fr] gap-6 items-center">
+      <div class="relative w-full aspect-[572/620] overflow-hidden rounded-2xl bg-brand-ice md:mx-auto md:max-w-[240px] md:shadow-md">
+        <img src="/images/lp/doctor1.png" alt="ทพ. วรภัทร จรางกุล (หมอแฮม)" loading="lazy" width="572" height="620" class="doc-img-a absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/lp/doctor-praew.png" alt="ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)" loading="lazy" width="572" height="620" class="doc-img-b absolute inset-0 w-full h-full object-cover" />
+      </div>
+      <div>
+        <p class="font-display text-xs font-semibold uppercase tracking-wide text-brand-primary-deep">Oral and Maxillofacial Specialist</p>
+        <h2 class="doc-name relative mt-1 text-2xl font-bold text-brand-anchor">
+          <span class="doc-name-a">ทพ. วรภัทร จรางกุล (หมอแฮม)</span>
+          <span class="doc-name-b absolute inset-x-0 top-0">ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)</span>
+        </h2>
+        <p class="mt-2 text-brand-neutral-700 leading-relaxed">
+          ทันตแพทย์เฉพาะทางศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล · SmileScape Clinic
+          ฝังรากฟันเทียมโดยผู้เชี่ยวชาญ ให้เวลาปรึกษาเต็มที่ และดูแลใกล้ชิดทุกขั้นตอน
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXT REVIEWS -->
+  <section class="bg-brand-paper border-y border-brand-neutral-200">
+    <div class="max-w-5xl mx-auto px-4 py-14">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">เสียงจากคนไข้จริง</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {reviews.map((r) => (
+          <div class="rounded-xl bg-white border border-brand-neutral-200 p-5">
+            <div class="text-brand-accent">★★★★★</div>
+            <p class="mt-2 text-base text-brand-neutral-700 leading-relaxed">“{r.text}”</p>
+            <p class="mt-3 text-sm font-semibold text-brand-anchor">{r.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO REVIEW -->
+  <section class="max-w-5xl mx-auto px-4 py-14">
+    <div class="text-center">
+      <p class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary-deep">Video</p>
+      <h2 class="mt-2 text-2xl md:text-3xl font-bold text-brand-anchor">คลิปรีวิวจากคนไข้</h2>
+      <p class="mt-2 text-brand-neutral-500">บรรยากาศจริง ที่ SmileScape Clinic</p>
+    </div>
+    <div class="mt-6 flex justify-center">
+      <video
+        controls
+        preload="none"
+        playsinline
+        poster="/images/lp/video-poster.jpg"
+        width="1280" height="1280"
+        class="rounded-2xl border border-brand-neutral-200 bg-black w-full max-w-[440px] aspect-square"
+      >
+        <source src="/videos/review-clip.mp4" type="video/mp4" />
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+      </video>
+    </div>
+    {/* TODO: ย้ายวิดีโอไป Cloudflare Stream (โปร Images & Stream) เพื่อ adaptive streaming + ลดขนาด repo */}
+  </section>
+
+  <!-- WHERE TO CHOOSE -->
+  <section class="max-w-3xl mx-auto px-4 py-14">
+    <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">ทำรากฟันเทียมที่ไหนดี?</h2>
+    <p class="mt-3 text-base text-brand-neutral-700 leading-relaxed">
+      ทำรากฟันเทียมที่ไหนดี เป็นคำถามสำคัญที่ต้องพิจารณาหลายด้านก่อนตัดสินใจเลือกสถานพยาบาล
+      เพื่อแก้ปัญหาฟันที่กังวลได้อย่างปลอดภัย ใช้งานได้จริง และมีประสิทธิภาพ
+    </p>
+    <p class="mt-4 font-semibold text-brand-anchor">เช็คลิสต์ก่อนตัดสินใจ — SmileScape ครบทุกข้อ ✓</p>
+    <ul class="mt-4 space-y-2">
+      {choose.map((c) => (
+        <li class="flex gap-3 items-start rounded-lg bg-brand-ice px-4 py-3">
+          <span class="text-brand-primary-deep font-bold mt-0.5">✓</span><span class="text-base text-brand-neutral-700">{c}</span>
+        </li>
+      ))}
+    </ul>
+    <div class="mt-5 rounded-xl bg-brand-anchor text-white p-5">
+      <p class="font-semibold">✓ SmileScape ครบทุกเกณฑ์</p>
+      <p class="mt-1 text-base text-white/85 leading-relaxed">
+        ทันตแพทย์เฉพาะทางศัลยศาสตร์ช่องปากฯ (มหิดล) · 2 สาขาติด MRT มีที่จอดรถ · X-ray 3 มิติ ·
+        ดูแลใกล้ชิดหลังการรักษา พร้อมรับประกันตลอดอายุการใช้งาน
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-brand-ice border-y border-brand-neutral-200">
+    <div class="max-w-3xl mx-auto px-4 py-14">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-brand-anchor">คำถามที่พบบ่อย</h2>
+      <div class="mt-6 divide-y divide-brand-neutral-200 border-t border-brand-neutral-200">
+        {faq.map((f) => (
+          <details class="group py-4">
+            <summary class="cursor-pointer list-none font-semibold text-brand-neutral-900 flex justify-between gap-4">
+              <span>{f.q}</span><span class="text-brand-primary-deep group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-2 text-brand-neutral-700 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT FORM -->
+  <section class="max-w-5xl mx-auto px-4 pt-14 pb-0 md:pb-14 overflow-hidden md:overflow-visible">
+    <p class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary-deep">Make an Appointment</p>
+    <h2 class="mt-2 font-display text-2xl md:text-3xl font-bold text-brand-anchor">Prompt &amp; Compassionate Care When You Need It</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- form (embed) -->
+      <div>
+        <style is:inline>
+        #smilescape-lead-form *{box-sizing:border-box;margin:0;padding:0}
+        #smilescape-lead-form{
+          --ss-blue:#1153A1; --ss-cyan:#217DEA; --ss-blue-dark:#0d3f7a;
+          --ss-bg:#F5FAFE; --ss-bg2:#EBF3FA; --ss-border:#c8daea;
+          --ss-text:#243240; --ss-text2:#5a6a7a; --ss-text3:#8a9aaa;
+          --ss-red:#d94444; --ss-green:#0f7b6c;
+          font-family:'Google Sans','Noto Sans Thai','Prompt','Sarabun',system-ui,-apple-system,'Segoe UI',sans-serif;
+          color:var(--ss-text); line-height:1.6; font-size:16px;
+          max-width:560px; margin:0 auto; -webkit-font-smoothing:antialiased;
+        }
+        #smilescape-lead-form .ssf-card{
+          background:#fff; border:1px solid var(--ss-border); border-radius:18px;
+          box-shadow:0 18px 48px -24px rgba(17,83,161,.35); overflow:hidden;
+        }
+        #smilescape-lead-form .ssf-head{
+          background:linear-gradient(135deg,#dce8f5 0%,#7BA4DD 48%,var(--ss-blue) 100%);
+          color:#fff; padding:26px 26px 22px;
+        }
+        #smilescape-lead-form .ssf-eyebrow{
+          font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+          color:rgba(255,255,255,.82); margin-bottom:6px;
+        }
+        #smilescape-lead-form .ssf-head h2{font-size:23px; font-weight:700; line-height:1.3}
+        #smilescape-lead-form .ssf-head p{font-size:14px; color:rgba(255,255,255,.85); margin-top:6px}
+        #smilescape-lead-form .ssf-body{padding:24px 26px 26px}
+        #smilescape-lead-form .ssf-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px 14px}
+        #smilescape-lead-form .ssf-full{grid-column:1 / -1}
+        @media (max-width:480px){#smilescape-lead-form .ssf-grid{grid-template-columns:1fr}}
+        #smilescape-lead-form label.ssf-lab{
+          display:block; font-size:13.5px; font-weight:600; color:var(--ss-text);
+          margin-bottom:6px;
+        }
+        #smilescape-lead-form .ssf-req{color:var(--ss-red); margin-left:2px}
+        #smilescape-lead-form .ssf-field input,
+        #smilescape-lead-form .ssf-field select{
+          width:100%; font:inherit; font-size:15px; color:var(--ss-text);
+          background:var(--ss-bg); border:1.5px solid var(--ss-border); border-radius:11px;
+          padding:12px 13px; outline:none; transition:border-color .15s, box-shadow .15s, background .15s;
+          -webkit-appearance:none; appearance:none;
+        }
+        #smilescape-lead-form select{
+          background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a6a7a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+          background-repeat:no-repeat; background-position:right 13px center; padding-right:38px;
+        }
+        #smilescape-lead-form .ssf-field input:focus,
+        #smilescape-lead-form .ssf-field select:focus{
+          border-color:var(--ss-cyan); background:#fff;
+          box-shadow:0 0 0 4px rgba(33,125,234,.13);
+        }
+        #smilescape-lead-form .ssf-field input::placeholder{color:var(--ss-text3)}
+        #smilescape-lead-form .ssf-field.ssf-invalid input,
+        #smilescape-lead-form .ssf-field.ssf-invalid select{
+          border-color:var(--ss-red); background:#fff5f5;
+        }
+        #smilescape-lead-form .ssf-err{
+          display:none; font-size:12.5px; color:var(--ss-red); margin-top:5px;
+        }
+        #smilescape-lead-form .ssf-field.ssf-invalid .ssf-err{display:block}
+        #smilescape-lead-form .ssf-hint{font-size:12px; color:var(--ss-text3); margin-top:5px}
+        #smilescape-lead-form .ssf-consent{
+          display:flex; gap:10px; align-items:flex-start; margin-top:18px;
+          background:var(--ss-bg2); border:1px solid var(--ss-border); border-radius:11px; padding:13px 14px;
+        }
+        #smilescape-lead-form .ssf-consent input{margin-top:3px; width:18px; height:18px; accent-color:var(--ss-blue); flex:0 0 auto}
+        #smilescape-lead-form .ssf-consent label{font-size:12.5px; color:var(--ss-text2); line-height:1.55}
+        #smilescape-lead-form .ssf-consent a{color:var(--ss-blue); font-weight:600; text-decoration:underline}
+        #smilescape-lead-form .ssf-consent.ssf-invalid{border-color:var(--ss-red); background:#fff5f5}
+        #smilescape-lead-form .ssf-submit{
+          width:100%; margin-top:18px; font:inherit; font-size:16.5px; font-weight:700; color:#fff;
+          background:linear-gradient(135deg,var(--ss-cyan),var(--ss-blue)); border:none; border-radius:12px;
+          padding:15px 18px; cursor:pointer; transition:filter .15s, transform .05s, box-shadow .15s;
+          box-shadow:0 12px 26px -12px rgba(17,83,161,.65); display:flex; align-items:center; justify-content:center; gap:10px;
+        }
+        #smilescape-lead-form .ssf-submit:hover{filter:brightness(1.06)}
+        #smilescape-lead-form .ssf-submit:active{transform:translateY(1px)}
+        #smilescape-lead-form .ssf-submit:disabled{opacity:.7; cursor:not-allowed; filter:none}
+        #smilescape-lead-form .ssf-spin{
+          width:17px; height:17px; border:2.5px solid rgba(255,255,255,.45); border-top-color:#fff;
+          border-radius:50%; animation:ssf-rot .7s linear infinite; display:none;
+        }
+        #smilescape-lead-form.ssf-sending .ssf-spin{display:inline-block}
+        @keyframes ssf-rot{to{transform:rotate(360deg)}}
+        #smilescape-lead-form .ssf-secure{
+          text-align:center; font-size:11.5px; color:var(--ss-text3); margin-top:13px;
+          display:flex; align-items:center; justify-content:center; gap:5px;
+        }
+        #smilescape-lead-form .ssf-hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+        #smilescape-lead-form .ssf-result{display:none; padding:34px 26px; text-align:center}
+        #smilescape-lead-form .ssf-result .ssf-ico{
+          width:64px; height:64px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center;
+        }
+        #smilescape-lead-form .ssf-result.ok .ssf-ico{background:#e3f5ef; color:var(--ss-green)}
+        #smilescape-lead-form .ssf-result.fail .ssf-ico{background:#fde8e8; color:var(--ss-red)}
+        #smilescape-lead-form .ssf-result h3{font-size:21px; font-weight:700; margin-bottom:8px}
+        #smilescape-lead-form .ssf-result p{font-size:14.5px; color:var(--ss-text2); margin-bottom:6px}
+        #smilescape-lead-form .ssf-fallback{
+          margin-top:16px; display:flex; flex-direction:column; gap:9px; align-items:center;
+        }
+        #smilescape-lead-form .ssf-fallback a{
+          display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:600; text-decoration:none;
+          padding:10px 18px; border-radius:10px; border:1.5px solid var(--ss-border); color:var(--ss-blue); background:var(--ss-bg);
+        }
+        #smilescape-lead-form .ssf-retry{
+          margin-top:14px; font:inherit; font-size:14.5px; font-weight:600; color:var(--ss-blue);
+          background:none; border:none; cursor:pointer; text-decoration:underline;
+        }
+        #smilescape-lead-form.ssf-done .ssf-formwrap{display:none}
+        </style>
+
+        <div id="smilescape-lead-form">
+          <div class="ssf-card">
+            <div class="ssf-head">
+              <div class="ssf-eyebrow">SmileScape Dental Clinic</div>
+              <h2>นัดหมาย &amp; ปรึกษาทันตแพทย์ฟรี</h2>
+              <p>กรอกข้อมูลสั้น ๆ ทีมงานจะติดต่อกลับเพื่อยืนยันวันและเวลานัดหมายของคุณ</p>
+            </div>
+            <div class="ssf-formwrap">
+              <form class="ssf-body" id="ssfForm" novalidate>
+                <div class="ssf-field ssf-full" data-field>
+                  <label class="ssf-lab" for="ssf-service">บริการที่สนใจ<span class="ssf-req">*</span></label>
+                  <select id="ssf-service" name="service" required>
+                    <option value="" disabled selected>— เลือกบริการ —</option>
+                    <option>รากฟันเทียม (Dental Implant)</option>
+                    <option>รากฟันเทียมทั้งปาก All-on-4 / All-on-X</option>
+                    <option>จัดฟัน / จัดฟันใส (Clear Aligner)</option>
+                    <option>ครอบฟัน / สะพานฟัน / ฟันปลอม</option>
+                    <option>วีเนียร์ / ออกแบบรอยยิ้ม (Veneer &amp; Smile Design)</option>
+                    <option>ฟอกสีฟัน (Teeth Whitening)</option>
+                    <option>อุดฟัน / ถอนฟัน / ขูดหินปูน (ทันตกรรมทั่วไป)</option>
+                    <option>รักษารากฟัน (Root Canal)</option>
+                    <option>รักษาเหงือก / โรคปริทันต์</option>
+                    <option>ทันตกรรมสำหรับเด็ก</option>
+                    <option>ตรวจสุขภาพช่องปาก / ปรึกษาฟรี</option>
+                    <option>บริการอื่น ๆ</option>
+                  </select>
+                  <div class="ssf-err">กรุณาเลือกบริการที่สนใจ</div>
+                </div>
+                <div class="ssf-grid">
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-firstName">ชื่อ<span class="ssf-req">*</span></label>
+                    <input id="ssf-firstName" name="firstName" type="text" autocomplete="given-name" placeholder="ชื่อจริง" required>
+                    <div class="ssf-err">กรุณากรอกชื่อ</div>
+                  </div>
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-lastName">นามสกุล<span class="ssf-req">*</span></label>
+                    <input id="ssf-lastName" name="lastName" type="text" autocomplete="family-name" placeholder="นามสกุล" required>
+                    <div class="ssf-err">กรุณากรอกนามสกุล</div>
+                  </div>
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-phone">เบอร์โทรศัพท์<span class="ssf-req">*</span></label>
+                    <input id="ssf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08X-XXX-XXXX" required>
+                    <div class="ssf-err">กรุณากรอกเบอร์โทรให้ถูกต้อง</div>
+                  </div>
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-email">อีเมล <span class="ssf-hint" style="display:inline">(ไม่บังคับ)</span></label>
+                    <input id="ssf-email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+                    <div class="ssf-err">รูปแบบอีเมลไม่ถูกต้อง</div>
+                  </div>
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-date">วันที่สะดวกนัดหมาย<span class="ssf-req">*</span></label>
+                    <input id="ssf-date" name="appointmentDate" type="date" required>
+                    <div class="ssf-err">กรุณาเลือกวันที่</div>
+                  </div>
+                  <div class="ssf-field" data-field>
+                    <label class="ssf-lab" for="ssf-time">เวลาที่สะดวก<span class="ssf-req">*</span></label>
+                    <select id="ssf-time" name="appointmentTime" required>
+                      <option value="" disabled selected>— เลือกเวลา —</option>
+                    </select>
+                    <div class="ssf-err">กรุณาเลือกเวลา</div>
+                  </div>
+                </div>
+                <div class="ssf-field ssf-full" data-field style="margin-top:14px">
+                  <label class="ssf-lab" for="ssf-branch">สาขาที่ต้องการ<span class="ssf-req">*</span></label>
+                  <select id="ssf-branch" name="branch" required>
+                    <option value="" disabled selected>— เลือกสาขา —</option>
+                    <option>สาขารัตนาธิเบศร์ (นนทบุรี · MRT สีม่วง รัตนาธิเบศร์)</option>
+                    <option>สาขาศรีนครินทร์ (กรุงเทพฯ · MRT สีเหลือง)</option>
+                    <option>ยังไม่แน่ใจ — ให้ทีมงานแนะนำ</option>
+                  </select>
+                  <div class="ssf-err">กรุณาเลือกสาขา</div>
+                </div>
+                <div class="ssf-hp" aria-hidden="true">
+                  <label>อย่ากรอกช่องนี้</label>
+                  <input type="text" name="company" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="ssf-consent" data-consent>
+                  <input id="ssf-consent" type="checkbox" required>
+                  <label for="ssf-consent">
+                    ข้าพเจ้ายินยอมให้ SmileScape Dental Clinic จัดเก็บและใช้ข้อมูลข้างต้นเพื่อติดต่อกลับและนัดหมาย
+                    ตาม<a href="/privacy-policy/" target="_blank" rel="noopener">นโยบายความเป็นส่วนตัว (PDPA)</a>
+                  </label>
+                </div>
+                <button type="submit" class="ssf-submit" id="ssfSubmit">
+                  <span class="ssf-spin" aria-hidden="true"></span>
+                  <span class="ssf-btn-label">ยืนยันการนัดหมาย</span>
+                </button>
+                <div class="ssf-secure">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  ข้อมูลของคุณถูกส่งอย่างปลอดภัย และใช้เพื่อการนัดหมายเท่านั้น
+                </div>
+              </form>
+            </div>
+            <div class="ssf-result ok" id="ssfOk">
+              <div class="ssf-ico">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3>ได้รับข้อมูลของคุณแล้ว 🎉</h3>
+              <p>ทีมงาน SmileScape จะติดต่อกลับเพื่อยืนยันการนัดหมายโดยเร็วที่สุด</p>
+              <p style="font-size:13px;color:var(--ss-text3)">โดยปกติภายในเวลาทำการ (10:00–20:00 น.)</p>
+              <div class="ssf-fallback" id="ssfOkFallback"></div>
+            </div>
+            <div class="ssf-result fail" id="ssfFail">
+              <div class="ssf-ico">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3>ส่งข้อมูลไม่สำเร็จ</h3>
+              <p>ขออภัย เกิดข้อผิดพลาดในการส่ง กรุณาลองอีกครั้ง หรือติดต่อเราโดยตรง</p>
+              <div class="ssf-fallback" id="ssfFailFallback"></div>
+              <button type="button" class="ssf-retry" id="ssfRetry">↻ ลองส่งอีกครั้ง</button>
+            </div>
+          </div>
+        </div>
+
+        <script is:inline>
+        (function(){
+          var CONFIG = {
+            webhookUrl: 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-form',
+            clinicPhone: '092 293 6226',
+            lineUrl: 'https://maac.io/6yp2p',
+            timeStart: 10, timeEnd: 20, slotMinutes: 30
+          };
+          var root = document.getElementById('smilescape-lead-form');
+          var form = document.getElementById('ssfForm');
+          if(!root || !form) return;
+          var submitBtn = document.getElementById('ssfSubmit');
+          var btnLabel  = root.querySelector('.ssf-btn-label');
+          var okPanel   = document.getElementById('ssfOk');
+          var failPanel = document.getElementById('ssfFail');
+          var dateInput = document.getElementById('ssf-date');
+          var timeSel   = document.getElementById('ssf-time');
+          (function(){
+            for(var h=CONFIG.timeStart; h<CONFIG.timeEnd; h++){
+              for(var m=0; m<60; m+=CONFIG.slotMinutes){
+                var t = (h<10?'0':'')+h+':'+(m<10?'0':'')+m;
+                var o = document.createElement('option');
+                o.value = t; o.textContent = t + ' น.';
+                timeSel.appendChild(o);
+              }
+            }
+          })();
+          (function(){
+            var d = new Date();
+            var iso = d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+            dateInput.min = iso;
+          })();
+          function buildFallback(el){
+            if(!el) return;
+            var html = '';
+            if(CONFIG.clinicPhone){
+              html += '<a href="tel:'+CONFIG.clinicPhone.replace(/[^0-9+]/g,'')+'">'
+                    + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>'
+                    + 'โทร '+CONFIG.clinicPhone+'</a>';
+            }
+            if(CONFIG.lineUrl){
+              html += '<a href="'+CONFIG.lineUrl+'" target="_blank" rel="noopener" style="color:#06C755;border-color:#b6ecca;background:#f1fcf5">'
+                    + '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.02 3.55 7.39 8.35 8.02.33.07.77.22.88.5.1.26.07.66.03.92l-.14.85c-.04.26-.2 1.02.89.56s5.86-3.45 8-5.9c1.48-1.63 2.19-3.28 2.19-5.95C22.2 5.64 17.72 2 12 2z"/></svg>'
+                    + 'แชทผ่าน LINE</a>';
+            }
+            el.innerHTML = html;
+          }
+          buildFallback(document.getElementById('ssfOkFallback'));
+          buildFallback(document.getElementById('ssfFailFallback'));
+          function fieldOf(input){ return input.closest('[data-field]'); }
+          function setInvalid(input, bad){ var f = fieldOf(input); if(f) f.classList.toggle('ssf-invalid', !!bad); }
+          function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+          function validPhone(v){ var d = v.replace(/[\s\-().]/g,''); return /^(0\d{8,9}|\+?66\d{8,9})$/.test(d); }
+          form.addEventListener('input', function(e){
+            var f = fieldOf(e.target); if(f) f.classList.remove('ssf-invalid');
+            var c = e.target.closest('[data-consent]'); if(c) c.classList.remove('ssf-invalid');
+          });
+          function validate(){
+            var ok = true, firstBad = null;
+            var req = [
+              ['ssf-service','val'], ['ssf-firstName','val'], ['ssf-lastName','val'],
+              ['ssf-phone','phone'], ['ssf-date','val'], ['ssf-time','val'], ['ssf-branch','val']
+            ];
+            req.forEach(function(r){
+              var el = document.getElementById(r[0]); var bad=false;
+              var v = (el.value||'').trim();
+              if(r[1]==='val') bad = !v;
+              else if(r[1]==='phone') bad = !validPhone(v);
+              setInvalid(el, bad);
+              if(bad){ ok=false; if(!firstBad) firstBad=el; }
+            });
+            var em = document.getElementById('ssf-email'); var ev=(em.value||'').trim();
+            if(ev && !validEmail(ev)){ setInvalid(em,true); ok=false; if(!firstBad) firstBad=em; }
+            var cons = document.getElementById('ssf-consent');
+            if(!cons.checked){ cons.closest('[data-consent]').classList.add('ssf-invalid'); ok=false; if(!firstBad) firstBad=cons; }
+            if(firstBad){ try{ firstBad.focus({preventScroll:false}); }catch(_){ firstBad.focus(); } }
+            return ok;
+          }
+          function toDDMMYYYY(iso){ if(!iso) return ''; var p = iso.split('-'); return p.length===3 ? (p[2]+'/'+p[1]+'/'+p[0]) : iso; }
+          function genId(){ return 'ss-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8); }
+          function setSending(on){
+            root.classList.toggle('ssf-sending', on);
+            submitBtn.disabled = on;
+            btnLabel.textContent = on ? 'กำลังส่ง…' : 'ยืนยันการนัดหมาย';
+          }
+          function showResult(which){
+            root.classList.add('ssf-done');
+            okPanel.style.display   = which==='ok'   ? 'block' : 'none';
+            failPanel.style.display = which==='fail' ? 'block' : 'none';
+            try{ root.scrollIntoView({behavior:'smooth', block:'start'}); }catch(_){}
+          }
+          var lastPayload = null;
+          function buildPayload(){
+            var hp = form.querySelector('input[name="company"]');
+            if(hp && hp.value){ return {__spam:true}; }
+            return {
+              service:         document.getElementById('ssf-service').value,
+              firstName:       document.getElementById('ssf-firstName').value.trim(),
+              lastName:        document.getElementById('ssf-lastName').value.trim(),
+              phone:           document.getElementById('ssf-phone').value.trim(),
+              email:           document.getElementById('ssf-email').value.trim(),
+              appointmentDate: toDDMMYYYY(document.getElementById('ssf-date').value),
+              appointmentTime: document.getElementById('ssf-time').value,
+              branch:          document.getElementById('ssf-branch').value,
+              submissionId:    genId(),
+              consent:         true,
+              pageUrl:         (location && location.href) || '',
+              submittedAt:     new Date().toISOString()
+            };
+          }
+          function send(payload){
+            setSending(true);
+            if(payload && payload.__spam){
+              setTimeout(function(){ setSending(false); showResult('ok'); }, 600);
+              return;
+            }
+            fetch(CONFIG.webhookUrl, {
+              method:'POST',
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify(payload)
+            }).then(function(res){
+              if(!res.ok) throw new Error('HTTP '+res.status);
+              (window.dataLayer = window.dataLayer || []).push({ event:'lead_submit', form_service: payload.service, form_branch: payload.branch });
+              setSending(false); showResult('ok'); form.reset();
+            }).catch(function(err){
+              setSending(false); showResult('fail');
+              try{ console.warn('[SmileScape form] submit failed:', err); }catch(_){}
+            });
+          }
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(!validate()) return;
+            lastPayload = buildPayload();
+            send(lastPayload);
+          });
+          document.getElementById('ssfRetry').addEventListener('click', function(){
+            failPanel.style.display='none';
+            if(lastPayload && !lastPayload.__spam){
+              lastPayload.submissionId = genId();
+              lastPayload.submittedAt = new Date().toISOString();
+              root.classList.remove('ssf-done');
+              send(lastPayload);
+            } else {
+              root.classList.remove('ssf-done');
+            }
+          });
+        })();
+        </script>
+      </div>
+
+      <!-- doctor + trust badges -->
+      <div class="relative mt-6 md:mt-0 -mx-4 md:mx-0">
+        <img src="/images/lp/doctor-haam-cutout.png" alt="ทพ. วรภัทร จรางกุล (หมอแฮม)" width="996" height="1094" loading="lazy" class="block w-full max-w-none md:max-w-[460px] mx-auto" />
+        <div class="absolute bottom-10 right-0 lg:-right-2 bg-white rounded-2xl shadow-xl p-5 space-y-3 max-w-[280px]">
+          <div class="flex items-center gap-3">
+            <span class="flex-none w-6 h-6 rounded-full bg-brand-accent text-white grid place-items-center text-sm font-bold">✓</span>
+            <span class="font-medium text-brand-anchor">ทันตแพทย์เฉพาะทาง</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="flex-none w-6 h-6 rounded-full bg-brand-accent text-white grid place-items-center text-sm font-bold">✓</span>
+            <span class="font-medium text-brand-anchor">เดินทางสะดวก ติดรถไฟฟ้า</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="bg-brand-anchor text-white">
+    <div class="max-w-5xl mx-auto px-4 py-14 text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold">พร้อมเริ่มต้นรอยยิ้มใหม่?</h2>
+      <p class="mt-2 text-white/85">ปรึกษาฟรีกับทันตแพทย์เฉพาะทาง · เลือกสาขาที่สะดวก · รับโปรฯ 29,900฿ จำนวนจำกัด</p>
+      <div class="mt-6 flex flex-wrap gap-3 justify-center">
+        <a href={LINE_URL} class="rounded-full bg-brand-primary-deep px-7 py-3 font-semibold hover:opacity-90">จองคิวผ่าน LINE →</a>
+        <a href={`tel:${PHONE_TEL}`} class="rounded-full border border-white/35 px-7 py-3 font-semibold hover:bg-white/10">☎ โทร 092 293 6226</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox for before/after gallery -->
+  <div id="ba-lightbox" class="ba-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="ภาพผลลัพธ์ขนาดเต็ม">
+    <button type="button" class="ba-close" aria-label="ปิด">✕</button>
+    <img class="ba-lightbox-img" src="" alt="" />
+  </div>
+</Landing>
+
+<style>
+  /* Blue Diamond gentle float (premium motion). Respects reduced-motion. */
+  @keyframes bd-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .bd-float {
+    animation: bd-float 4s ease-in-out infinite;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bd-float { animation: none; }
+  }
+
+  /* Component callouts — pulsing dots + staggered animated labels */
+  .cmp-marker { position: absolute; transform: translate(-50%, -50%); }
+  .cmp-dot {
+    display: block; width: 14px; height: 14px; border-radius: 9999px;
+    background: #217DEA; box-shadow: 0 0 0 4px rgba(33, 125, 234, 0.25);
+    animation: cmp-pulse 2s ease-in-out infinite;
+  }
+  @keyframes cmp-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(33, 125, 234, 0.25); }
+    50% { box-shadow: 0 0 0 9px rgba(33, 125, 234, 0); }
+  }
+  .cmp-label {
+    position: absolute; white-space: nowrap;
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 9999px;
+    padding: 4px 11px; font-size: 12px; font-weight: 600; line-height: 1.15; color: #14386b;
+    box-shadow: 0 6px 14px rgba(20, 56, 107, 0.12);
+  }
+  .cmp-label small { display: block; font-weight: 400; font-size: 10px; color: #64748b; }
+  .cmp-label--left  { right: 22px; top: 50%; transform: translateY(-50%); }
+  .cmp-label--right { left: 22px; top: 50%; transform: translateY(-50%); }
+  .cmp-label--top   { left: 50%; bottom: 22px; transform: translateX(-50%); }
+  /* progressive entrance: JS adds .cmp-js (hide), then .shown (reveal staggered) */
+  .cmp-fig.cmp-js .cmp-label { opacity: 0; }
+  .cmp-fig.cmp-js .cmp-label--left  { transform: translateY(-50%) translateX(10px); }
+  .cmp-fig.cmp-js .cmp-label--right { transform: translateY(-50%) translateX(-10px); }
+  .cmp-fig.cmp-js .cmp-label--top   { transform: translateX(-50%) translateY(10px); }
+  .cmp-fig.cmp-js.shown .cmp-label {
+    opacity: 1; transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--i) * 0.2s + 0.15s);
+  }
+  .cmp-fig.cmp-js.shown .cmp-label--left,
+  .cmp-fig.cmp-js.shown .cmp-label--right { transform: translateY(-50%); }
+  .cmp-fig.cmp-js.shown .cmp-label--top { transform: translateX(-50%); }
+  @media (prefers-reduced-motion: reduce) {
+    .cmp-dot { animation: none; }
+    .cmp-fig.cmp-js .cmp-label { opacity: 1 !important; transition: none; }
+    .cmp-fig.cmp-js .cmp-label--left, .cmp-fig.cmp-js .cmp-label--right { transform: translateY(-50%); }
+    .cmp-fig.cmp-js .cmp-label--top { transform: translateX(-50%); }
+  }
+
+  /* Hero price highlighter — white number with a coral marker stripe (pops on navy) */
+  .price-hl {
+    color: #fff;
+    background: linear-gradient(transparent 56%, rgba(238, 156, 156, 0.65) 56%);
+    padding: 0 0.12em;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* CTA attention pulse — radiating ring on the LINE button */
+  @keyframes cta-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(127, 180, 255, 0.55); }
+    70%  { box-shadow: 0 0 0 14px rgba(127, 180, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(127, 180, 255, 0); }
+  }
+  .cta-pulse { animation: cta-pulse 2s ease-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .cta-pulse { animation: none; }
+  }
+
+  /* Before/after lightbox */
+  .ba-lightbox {
+    position: fixed; inset: 0; z-index: 100;
+    display: none; align-items: center; justify-content: center;
+    background: rgba(11, 26, 46, 0.93); padding: 20px;
+  }
+  .ba-lightbox.open { display: flex; }
+  .ba-lightbox-img {
+    max-width: 100%; max-height: 88vh; width: auto; height: auto;
+    border-radius: 12px; box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55);
+    animation: ba-zoom 0.22s ease;
+  }
+  @keyframes ba-zoom { from { transform: scale(0.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .ba-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 44px; height: 44px; border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.16); color: #fff; font-size: 20px;
+    border: none; cursor: pointer; line-height: 1;
+  }
+  .ba-close:hover { background: rgba(255, 255, 255, 0.28); }
+
+  /* Doctor cross-fade (dissolve) — แฮม ↔ แพรว, image + name in sync (8s loop) */
+  @keyframes doc-cross-a {
+    0%, 42% { opacity: 1; }
+    50%, 92% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes doc-cross-b {
+    0%, 42% { opacity: 0; }
+    50%, 92% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .doc-img-a, .doc-name-a { animation: doc-cross-a 8s ease-in-out infinite; }
+  .doc-img-b, .doc-name-b { animation: doc-cross-b 8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .doc-img-a, .doc-name-a { animation: none; opacity: 1; }
+    .doc-img-b, .doc-name-b { animation: none; opacity: 0; }
+  }
+</style>
+
+<script>
+  for (const fig of document.querySelectorAll('.cmp-fig')) {
+    fig.classList.add('cmp-js');
+    new IntersectionObserver((entries, obs) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.classList.add('shown'); obs.unobserve(e.target); }
+      }
+    }, { threshold: 0.35 }).observe(fig);
+  }
+
+  // Before/after lightbox
+  const lb = document.getElementById('ba-lightbox');
+  if (lb) {
+    const lbImg = lb.querySelector('.ba-lightbox-img');
+    const open = (src, alt) => {
+      lbImg.src = src; lbImg.alt = alt || '';
+      lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; lbImg.src = '';
+    };
+    for (const img of document.querySelectorAll('.ba-img')) {
+      img.addEventListener('click', () => open(img.currentSrc || img.src, img.alt));
+    }
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb || e.target.classList.contains('ba-close')) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  }
+</script>
