@@ -9,6 +9,7 @@ interface Props {
   items: { image: { src?: string; alt: string; label?: string }; caption: string }[];
 }
 const { heading, enabled = true, note, items } = Astro.props;
+const lbLabel = Astro.currentLocale === 'th' ? 'ภาพผลลัพธ์ขนาดเต็ม' : Astro.currentLocale === 'zh-cn' ? '查看完整图片' : 'View full-size image';
 ---
 {enabled && (
   <Section>
@@ -23,9 +24,9 @@ const { heading, enabled = true, note, items } = Astro.props;
     </div>
     {note && <p class="mt-4 text-center text-xs text-brand-neutral-400">{note}</p>}
 
-    <div id="ba-lightbox" class="ba-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="ภาพผลลัพธ์ขนาดเต็ม">
+    <div id="ba-lightbox" class="ba-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label={lbLabel}>
       <button type="button" class="ba-close" aria-label="close">✕</button>
-      <img class="ba-lightbox-img" src="" alt="" />
+      <img class="ba-lightbox-img" alt="" />
     </div>
   </Section>
 )}
@@ -34,6 +35,7 @@ const { heading, enabled = true, note, items } = Astro.props;
   .ba-lightbox.open { display: flex; }
   .ba-lightbox-img { max-width: 100%; max-height: 88vh; width: auto; height: auto; border-radius: 12px; box-shadow: 0 16px 50px rgba(0,0,0,0.55); animation: ba-zoom 0.22s ease; }
   @keyframes ba-zoom { from { transform: scale(0.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .ba-lightbox-img { animation: none; } }
   .ba-close { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 9999px; background: rgba(255,255,255,0.16); color: #fff; font-size: 20px; border: none; cursor: pointer; line-height: 1; }
   .ba-close:hover { background: rgba(255,255,255,0.28); }
 </style>
@@ -45,6 +47,7 @@ const { heading, enabled = true, note, items } = Astro.props;
       lbImg.src = src; lbImg.alt = alt || '';
       lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      (lb.querySelector('.ba-close') as HTMLElement | null)?.focus();
     };
     const close = () => {
       lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
