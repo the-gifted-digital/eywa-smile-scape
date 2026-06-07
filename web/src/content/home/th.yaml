@@ -1,0 +1,99 @@
+meta:
+  title: SmileScape Dental Clinic
+  description: >-
+    คลินิกทันตกรรม SmileScape — รากฐานฟันที่มั่นคงเพื่อความสุขที่ยั่งยืนตลอดชีวิต.
+    เด่นด้านรากฟันเทียม Blue Diamond รับประกันตลอดชีพ ผ่อน 0%. สาขารัตนาธิเบศร์ และ ศรีนครินทร์.
+hero:
+  eyebrow: The Lifetime Foundation
+  title: รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต
+  body: คลินิกทันตกรรมเฉพาะทางด้านรากฟันเทียม นำโดยทันตแพทย์ผู้เชี่ยวชาญระดับสากล ด้วยมาตรฐานการวินิจฉัยและการดูแลระยะยาว
+  primaryCta: { label: จองคิวปรึกษาฟรี, href: '#booking' }
+  secondaryCta: { label: ดูรากฟันเทียม Blue Diamond, href: /lp/dental-implant/ }
+  image: { alt: คลินิก SmileScape, label: hero }
+trustBar:
+  - { label: รีวิว 5.0★ Google }
+  - { label: 2 สาขา ติด MRT }
+  - { label: รับประกันตลอดชีพ }
+  - { label: ผ่อน 0% ไม่ใช้บัตร }
+  - { label: วางแผน Digital 100% }
+pillars:
+  - { icon: implant, title: Implant Mastery, body: ผลลัพธ์รากฟันเทียมแม่นยำ ด้วยดีกรีระดับโลก + วางแผนดิจิทัล 100% }
+  - { icon: shield, title: Family-Standard Integrity, body: 'มาตรฐานครอบครัว: เคสที่ไม่กล้าทำให้พ่อแม่ตัวเอง เราไม่ทำ — ไม่ over-treatment' }
+  - { icon: clock, title: Efficiency & Comfort, body: ลดเวลาผ่าตัด ลดความเจ็บปวด ฟื้นตัวเร็ว }
+  - { icon: heart, title: Lifelong Confidence, body: รากฟันเทียมที่ออกแบบให้ใช้งานได้จริงระยะยาว }
+blueDiamond:
+  eyebrow: Hero Service
+  title: Blue Diamond Implant — รากฟันเทียมตัวเลือกสุดท้ายของคุณ
+  priceLabel: เริ่ม 29,900 บาท / ซี่
+  bullets:
+    - รับประกันตลอดชีพ
+    - ผ่อน 0% ไม่ต้องใช้บัตรเครดิต
+    - วัสดุนำเข้าเกาหลี (value-premium)
+    - Tissue / Operator / Patient Friendly + MegaGen
+  image: { alt: Blue Diamond Implant, label: 'Blue Diamond' }
+  cta: { label: ดูรายละเอียด Blue Diamond, href: /lp/dental-implant/ }
+services:
+  - { title: รากฟันเทียม, summary: Single / Multiple implant, href: /lp/dental-implant/, image: { alt: รากฟันเทียม, label: service } }
+  - { title: All-on-X รากฟันเทียมทั้งปาก, summary: ฟันทั้งขากรรไกรบนรากเทียม, href: '#booking', image: { alt: All-on-X, label: service } }
+  - { title: จัดฟัน / จัดฟันใส, summary: โลหะ · ใส · Clear Aligner, href: '#booking', image: { alt: จัดฟัน, label: service } }
+  - { title: วีเนียร์ & Smile Design, summary: ออกแบบรอยยิ้ม, href: '#booking', image: { alt: วีเนียร์, label: service } }
+  - { title: ทันตกรรมทั่วไป, summary: อุด ถอน ขูดหินปูน รักษาราก, href: '#booking', image: { alt: ทันตกรรมทั่วไป, label: service } }
+  - { title: เฉพาะทางอื่น ๆ, summary: ปริทันต์ · เด็ก · ครอบ-สะพานฟัน, href: '#booking', image: { alt: เฉพาะทาง, label: service } }
+partners:
+  - { name: MegaGen, logo: { alt: MegaGen, label: LOGO } }
+  - { name: Neodent, logo: { alt: Neodent, label: LOGO } }
+  - { name: Straumann, logo: { alt: Straumann, label: LOGO } }
+  - { name: 3Shape, logo: { alt: 3Shape, label: LOGO } }
+  - { name: Acteon, logo: { alt: Acteon, label: LOGO } }
+  - { name: Invisalign, logo: { alt: Invisalign, label: LOGO } }
+founders:
+  - name: ทพ. วรภัทร จรางกุล (หมอแฮม)
+    role: Medical Director & Lead Implantologist
+    credentials:
+      - เกียรตินิยมอันดับ 1 (เหรียญทอง) ทันตแพทยศาสตร์ มหิดล
+      - วุฒิบัตรศัลยกรรมช่องปากและขากรรไกร จุฬาฯ
+      - Dual M.Sc. Implantology (ไทย + เยอรมนี)
+      - Global Masterclasses (Urban / Kern / ILAPEO)
+    image: { alt: หมอแฮม, label: หมอแฮม }
+  - name: ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)
+    role: ศัลยแพทย์ช่องปากและขากรรไกร · ผู้ร่วมก่อตั้ง
+    credentials:
+      - ศัลยแพทย์เฉพาะทางช่องปากและแม็กซิลโลเฟเชียล
+      - วิทยากรด้านทันตกรรมรากเทียม
+      - Co-CEO & ผู้ร่วมก่อตั้ง SmileScape
+    image: { alt: หมอแพรว, label: หมอแพรว }
+doctors:
+  - { name: ทันตแพทย์เฉพาะทางปริทันต์, role: Periodontist, image: { alt: ทันตแพทย์, label: หมอ } }
+  - { name: ทันตแพทย์เฉพาะทางรักษาราก, role: Endodontist, image: { alt: ทันตแพทย์, label: หมอ } }
+  - { name: ทันตแพทย์เฉพาะทางเด็ก, role: Pediatric Dentist, image: { alt: ทันตแพทย์, label: หมอ } }
+  - { name: ทันตแพทย์จัดฟัน, role: Orthodontist, image: { alt: ทันตแพทย์, label: หมอ } }
+  - { name: ทันตแพทย์ทั่วไป, role: General Dentist, image: { alt: ทันตแพทย์, label: หมอ } }
+  - { name: ทันตแพทย์ศัลยกรรมช่องปาก, role: Oral Surgeon, image: { alt: ทันตแพทย์, label: หมอ } }
+process:
+  - { step: 1, title: ปรึกษาฟรี, body: ประเมินเคสและเป้าหมาย, image: { alt: ปรึกษา, label: '1' } }
+  - { step: 2, title: X-ray & วินิจฉัย, body: สแกน 3 มิติ วางแผนดิจิทัล, image: { alt: x-ray, label: '2' } }
+  - { step: 3, title: วางแผนการรักษา, body: ออกแบบแผนเฉพาะบุคคล, image: { alt: วางแผน, label: '3' } }
+  - { step: 4, title: รักษา, body: ฝังรากเทียมแม่นยำ, image: { alt: รักษา, label: '4' } }
+  - { step: 5, title: ติดตามผล, body: ดูแลระยะยาว, image: { alt: ติดตาม, label: '5' } }
+beforeAfter:
+  - { caption: เคสตัวอย่าง 1, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
+  - { caption: เคสตัวอย่าง 2, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
+  - { caption: เคสตัวอย่าง 3, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
+reviews:
+  - { quote: ดูแลดีมาก อธิบายละเอียด ไม่เจ็บอย่างที่กลัว, name: คุณ A, stars: 5 }
+  - { quote: ทำรากฟันเทียมแล้วมั่นใจขึ้นเยอะ, name: คุณ B, stars: 5 }
+  - { quote: ทีมงานเป็นกันเอง คลินิกสะอาด, name: คุณ C, stars: 5 }
+video:
+  label: วิดีโอรีวิว
+  poster: { alt: วิดีโอรีวิวคนไข้, label: '▶ รีวิว' }
+branches:
+  - { name: สาขารัตนาธิเบศร์, mrt: MRT สีม่วง · สถานีแยกนนทบุรี 1, address: 'นนทบุรี (ที่อยู่เต็มรอผู้ดูแล)', mapUrl: 'https://maps.google.com/?q=SmileScape+รัตนาธิเบศร์' }
+  - { name: สาขาศรีนครินทร์, mrt: MRT สีเหลือง, address: 'กรุงเทพฯ (ที่อยู่เต็มรอผู้ดูแล)', mapUrl: 'https://maps.google.com/?q=SmileScape+ศรีนครินทร์' }
+faq:
+  - { q: รากฟันเทียม Blue Diamond ราคาเท่าไหร่?, a: เริ่มต้น 29,900 บาทต่อซี่ รับประกันตลอดชีพ และผ่อน 0% ได้โดยไม่ต้องใช้บัตรเครดิต (เงื่อนไขเป็นไปตามที่คลินิกกำหนด). }
+  - { q: SmileScape มีกี่สาขา?, a: ปัจจุบันมี 2 สาขา คือ สาขารัตนาธิเบศร์ (ติด MRT สีม่วง) และสาขาศรีนครินทร์ (ติด MRT สีเหลือง). }
+  - { q: ต้องนัดหมายก่อนไหม?, a: แนะนำให้นัดหมายล่วงหน้าผ่านฟอร์มจองคิวหรือ LINE เพื่อความสะดวกและลดเวลารอ. }
+finalCta:
+  title: เริ่มต้นรากฐานรอยยิ้มที่มั่นคงของคุณวันนี้
+  body: ปรึกษาฟรีกับทันตแพทย์เฉพาะทาง
+  cta: { label: จองคิวปรึกษาฟรี, href: '#booking' }

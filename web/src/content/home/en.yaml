@@ -1,0 +1,100 @@
+meta:
+  title: SmileScape Dental Clinic
+  description: >-
+    SmileScape Dental Clinic — The Lifetime Foundation. Implant-first specialty
+    care, Blue Diamond implant with lifetime warranty and 0% installments. Two
+    branches: Rattanathibet & Srinagarindra.
+hero:
+  eyebrow: The Lifetime Foundation
+  title: A stable foundation for a lifetime of confident smiles
+  body: An implant-first dental clinic led by globally-trained specialists, with rigorous diagnostics and long-term care.
+  primaryCta: { label: Book a free consultation, href: '#booking' }
+  secondaryCta: { label: Explore Blue Diamond implants, href: /en/lp/dental-implant/ }
+  image: { alt: SmileScape clinic, label: hero }
+trustBar:
+  - { label: 5.0★ Google reviews }
+  - { label: 2 branches by MRT }
+  - { label: Lifetime warranty }
+  - { label: 0% installments }
+  - { label: 100% digital planning }
+pillars:
+  - { icon: implant, title: Implant Mastery, body: Precise implant outcomes with global degrees and 100% digital planning. }
+  - { icon: shield, title: Family-Standard Integrity, body: 'If we wouldn''t do it for our own parents, we won''t do it for you — no over-treatment.' }
+  - { icon: clock, title: Efficiency & Comfort, body: Shorter surgery, less pain, faster recovery. }
+  - { icon: heart, title: Lifelong Confidence, body: Implants engineered for real long-term use. }
+blueDiamond:
+  eyebrow: Hero Service
+  title: Blue Diamond Implant — your final dental implant selection
+  priceLabel: From 29,900 THB / tooth
+  bullets:
+    - Lifetime warranty
+    - 0% installments, no credit card
+    - Korea-manufactured (value-premium)
+    - Tissue / Operator / Patient Friendly + MegaGen
+  image: { alt: Blue Diamond Implant, label: 'Blue Diamond' }
+  cta: { label: See Blue Diamond details, href: /en/lp/dental-implant/ }
+services:
+  - { title: Dental Implants, summary: Single / multiple implant, href: /en/lp/dental-implant/, image: { alt: implants, label: service } }
+  - { title: All-on-X full-arch, summary: Full-arch implant restoration, href: '#booking', image: { alt: All-on-X, label: service } }
+  - { title: Orthodontics / Clear Aligner, summary: Metal · clear · aligner, href: '#booking', image: { alt: ortho, label: service } }
+  - { title: Veneers & Smile Design, summary: Smile design, href: '#booking', image: { alt: veneers, label: service } }
+  - { title: General Dentistry, summary: Fillings, extraction, scaling, RCT, href: '#booking', image: { alt: general, label: service } }
+  - { title: Other Specialties, summary: Perio · pediatric · crown-bridge, href: '#booking', image: { alt: specialty, label: service } }
+partners:
+  - { name: MegaGen, logo: { alt: MegaGen, label: LOGO } }
+  - { name: Neodent, logo: { alt: Neodent, label: LOGO } }
+  - { name: Straumann, logo: { alt: Straumann, label: LOGO } }
+  - { name: 3Shape, logo: { alt: 3Shape, label: LOGO } }
+  - { name: Acteon, logo: { alt: Acteon, label: LOGO } }
+  - { name: Invisalign, logo: { alt: Invisalign, label: LOGO } }
+founders:
+  - name: Dr. Worapat Jarangkul (Dr. Ham)
+    role: Medical Director & Lead Implantologist
+    credentials:
+      - First-class honours (Gold Medal), Mahidol Dentistry
+      - Board cert. Oral & Maxillofacial Surgery, Chulalongkorn
+      - Dual M.Sc. Implantology (Thailand + Germany)
+      - Global Masterclasses (Urban / Kern / ILAPEO)
+    image: { alt: Dr. Ham, label: Dr. Ham }
+  - name: Dr. Pitchapa Phudphong (Dr. Praew)
+    role: Oral & Maxillofacial Surgeon · Co-Founder
+    credentials:
+      - Oral & maxillofacial surgeon
+      - Implantology educator
+      - Co-CEO & co-founder of SmileScape
+    image: { alt: Dr. Praew, label: Dr. Praew }
+doctors:
+  - { name: Periodontist, role: Gum specialist, image: { alt: dentist, label: dr } }
+  - { name: Endodontist, role: Root canal specialist, image: { alt: dentist, label: dr } }
+  - { name: Pediatric Dentist, role: Kids specialist, image: { alt: dentist, label: dr } }
+  - { name: Orthodontist, role: Braces specialist, image: { alt: dentist, label: dr } }
+  - { name: General Dentist, role: General care, image: { alt: dentist, label: dr } }
+  - { name: Oral Surgeon, role: Surgery, image: { alt: dentist, label: dr } }
+process:
+  - { step: 1, title: Free consultation, body: Assess case and goals, image: { alt: consult, label: '1' } }
+  - { step: 2, title: X-ray & diagnosis, body: 3D scan, digital planning, image: { alt: x-ray, label: '2' } }
+  - { step: 3, title: Treatment plan, body: Personalised plan, image: { alt: plan, label: '3' } }
+  - { step: 4, title: Treatment, body: Precise implant placement, image: { alt: treat, label: '4' } }
+  - { step: 5, title: Follow-up, body: Long-term care, image: { alt: follow, label: '5' } }
+beforeAfter:
+  - { caption: Case 1, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
+  - { caption: Case 2, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
+  - { caption: Case 3, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
+reviews:
+  - { quote: Great care, detailed explanation, far less painful than I feared., name: Patient A, stars: 5 }
+  - { quote: Much more confident after my implant., name: Patient B, stars: 5 }
+  - { quote: Friendly team, spotless clinic., name: Patient C, stars: 5 }
+video:
+  label: Patient review video
+  poster: { alt: patient review video, label: '▶ review' }
+branches:
+  - { name: Rattanathibet branch, mrt: MRT Purple · Yaek Nonthaburi 1, address: 'Nonthaburi (full address pending)', mapUrl: 'https://maps.google.com/?q=SmileScape+Rattanathibet' }
+  - { name: Srinagarindra branch, mrt: MRT Yellow, address: 'Bangkok (full address pending)', mapUrl: 'https://maps.google.com/?q=SmileScape+Srinagarindra' }
+faq:
+  - { q: How much is the Blue Diamond implant?, a: From 29,900 THB per tooth with lifetime warranty and 0% installments (no credit card needed; clinic terms apply). }
+  - { q: How many branches does SmileScape have?, a: Two — Rattanathibet (MRT Purple) and Srinagarindra (MRT Yellow). }
+  - { q: Do I need an appointment?, a: We recommend booking ahead via the form or LINE to reduce waiting time. }
+finalCta:
+  title: Start your stable smile foundation today
+  body: Free consultation with our specialists
+  cta: { label: Book a free consultation, href: '#booking' }

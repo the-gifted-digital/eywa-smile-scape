@@ -86,4 +86,48 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { pages, articles };
+// ---------- Home (single composed landing page per locale) ----------
+const imageRef = z.object({
+  src: z.string().optional(),   // undefined or "placeholder:..." → placeholder box (DR-035 swap point)
+  alt: z.string(),
+  label: z.string().optional(), // placeholder badge text
+});
+const cta = z.object({ label: z.string(), href: z.string() });
+
+const home = defineCollection({
+  type: 'data',
+  schema: z.object({
+    meta: z.object({ title: z.string(), description: z.string() }),
+    hero: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+      body: z.string(),
+      primaryCta: cta,
+      secondaryCta: cta,
+      image: imageRef,
+    }),
+    trustBar: z.array(z.object({ label: z.string() })),
+    pillars: z.array(z.object({ icon: z.string(), title: z.string(), body: z.string() })),
+    blueDiamond: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+      priceLabel: z.string(),
+      bullets: z.array(z.string()),
+      image: imageRef,
+      cta,
+    }),
+    services: z.array(z.object({ title: z.string(), summary: z.string(), href: z.string(), image: imageRef })),
+    partners: z.array(z.object({ name: z.string(), logo: imageRef })),
+    founders: z.array(z.object({ name: z.string(), role: z.string(), credentials: z.array(z.string()), image: imageRef })),
+    doctors: z.array(z.object({ name: z.string(), role: z.string(), image: imageRef })),
+    process: z.array(z.object({ step: z.number(), title: z.string(), body: z.string(), image: imageRef })),
+    beforeAfter: z.array(z.object({ before: imageRef, after: imageRef, caption: z.string() })),
+    reviews: z.array(z.object({ quote: z.string(), name: z.string(), stars: z.number() })),
+    video: z.object({ poster: imageRef, src: z.string().optional(), label: z.string() }),
+    branches: z.array(z.object({ name: z.string(), mrt: z.string(), address: z.string(), mapUrl: z.string() })),
+    faq: z.array(faqItem),
+    finalCta: z.object({ title: z.string(), body: z.string(), cta }),
+  }),
+});
+
+export const collections = { pages, articles, home };
