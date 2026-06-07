@@ -13,5 +13,9 @@
 | (filled as we go) | | | |
 
 ## Flags
-- Author slug: entities.md `dr-woraphat-jarangkul` vs team file `dr-worapat-jarangkul.md` — canonical chosen = TBD at Task 5.
-- Shared-entity type mismatch (e.g. ceramic-implant product vs treatment): existing row wins.
+- Author slug: entities.md `dr-woraphat-jarangkul` (Woraphat) vs CV `dr-worapat-jarangkul.md` (Worapat) — **RESOLVED**: keep entity/`author_fp` slug `dr-woraphat-jarangkul`; display name "Worapat" per CV.
+- Shared-entity type mismatch (e.g. ceramic-implant product vs treatment): existing row wins (ON CONFLICT).
+- Entities pre-load diff: 163 authored = 50 already-exist (`['*']` shared) + **113 net-new** to insert.
+- หมอแพรว has NO Person entity in entities.md (only woraphat + tomas); loaded as author only (`author_fp` NULL).
+- Pages: parser yields **722 unique** (721 entity-bearing + `6.2` hub). Official audit "726" double-counts 4 section-6 hub-index rows (6.1/6.3/6.4/6.6 also exist as 7-col page rows) → de-duped.
+- Page orphan ref: `orthodontic-intervention` ×3 pages (3.5.4/.5/.7, R17 rename) — entity not in entities.md → expect `orphan_entity=3`. Phase F: add entity or remap.
