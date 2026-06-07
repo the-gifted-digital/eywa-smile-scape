@@ -10,7 +10,9 @@
 ## Progress
 | Phase | Table | Rows | Status |
 |---|---|---|---|
-| (filled as we go) | | | |
+| 00 | `seo_topic_cluster_master` | 20 | ✅ loaded + validated (fp_ok 20, sync_state flat_loaded 20, with_parent 4, brand_scoped 1) |
+| 01 | `seo_entity_graph` | +113 net-new | ✅ loaded + validated (present_of_ours 163, +113 → global 369, ss_badcase 0, stray_scope 0). NOTE: legacy entities purged externally (722→256 federation baseline); legacy_capitalized now 0 (spec-pure). 341 universal + 27 ss-excl + 1 deezy-excl. |
+| 02 | entity extensions | full coverage | ✅ loaded + validated (entities==ext: condition 63=63, procedure 68=68, anatomy 15=15; symptom/drug no-op). product+device deferred. |
 
 ## Flags
 - Author slug: entities.md `dr-woraphat-jarangkul` (Woraphat) vs CV `dr-worapat-jarangkul.md` (Worapat) — **RESOLVED**: keep entity/`author_fp` slug `dr-woraphat-jarangkul`; display name "Worapat" per CV.

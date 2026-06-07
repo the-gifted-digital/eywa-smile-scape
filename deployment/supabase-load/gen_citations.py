@@ -56,7 +56,8 @@ def row_select(r):
     if r["doi"]:  guard += " or x.doi=" + q(r["doi"])
     if r["pmid"]: guard += " or x.pubmed_pmid=" + q(r["pmid"])
     return ("select " + ",".join([
-        q(r["slug"]), q(r["title"]), q(r["authors"]),
+        q(r["slug"]), q(r["title"]),
+        text_array((r["authors"] or "").split(",")),   # authors is text[] — split on comma
         (r["year"] or "NULL"), q(r["pmid"]), q(r["doi"]),
         q(r["journal"]), r["tier"], q(r["ctype"]), norm_scope(r["scope"])
     ]) + " where not exists (select 1 from public.seo_citations x where " + guard + ")")

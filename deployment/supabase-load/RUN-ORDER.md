@@ -13,7 +13,7 @@
 ## RUN ORDER (generated 2026-06-07 — counts are exact, from generator + MCP pre-diffs)
 | # | File | Table | Expected effect | Status |
 |---|------|-------|------|--------|
-| 00 | `00_clusters.sql` | `seo_topic_cluster_master` | +20 (4 parent links) | ⏳ pending |
+| 00 | `00_clusters.sql` | `seo_topic_cluster_master` | +20 (4 parent links) | ✅ done (20, fp_ok=20, parent=4) |
 | 01 | `01_entities.sql` | `seo_entity_graph` | 163 authored → **+113 net-new** (50 shared `['*']` reused); global 722→835 | ⏳ pending |
 | 02 | `02_entity_extensions.sql` | condition/symptom/anatomy/procedures/drug | SmileScape-scoped: condition 28 + procedure 46 + anatomy 6 | ⏳ pending |
 | 03 | `03_citations.sql` | `seo_citations` | 93 → **+91** (2 DOI already in pool); `ours_present`=91 | ⏳ pending |
