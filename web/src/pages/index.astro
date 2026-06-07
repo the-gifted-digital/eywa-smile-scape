@@ -1,77 +1,39 @@
 ---
 import Base from '~/layouts/Base.astro';
+import { getHome } from '~/lib/home';
+import Hero from '~/components/sections/Hero.astro';
+import TrustBar from '~/components/sections/TrustBar.astro';
+import WhyPillars from '~/components/sections/WhyPillars.astro';
+import BlueDiamond from '~/components/sections/BlueDiamond.astro';
+import ServicesGrid from '~/components/sections/ServicesGrid.astro';
+import PartnerLogos from '~/components/sections/PartnerLogos.astro';
+import FoundersMastery from '~/components/sections/FoundersMastery.astro';
+import TeamRoster from '~/components/sections/TeamRoster.astro';
+import ProcessSteps from '~/components/sections/ProcessSteps.astro';
+import BeforeAfter from '~/components/sections/BeforeAfter.astro';
+import Reviews from '~/components/sections/Reviews.astro';
+import Branches from '~/components/sections/Branches.astro';
 import FaqBlock from '~/components/FaqBlock.astro';
-import RelatedContent from '~/components/RelatedContent.astro';
+import BookingForm from '~/components/forms/BookingForm.astro';
+import FinalCta from '~/components/sections/FinalCta.astro';
 
-const title = 'SmileScape Dental Clinic';
-const description =
-  'คลินิกทันตกรรม SmileScape — รากฐานฟันที่มั่นคงเพื่อความสุขที่ยั่งยืนตลอดชีวิต. เด่นด้านรากฟันเทียม Blue Diamond Implant รับประกันตลอดชีพ ผ่อน 0%. สาขารัตนาธิเบศร์ และ ศรีนครินทร์.';
-
-// Skeleton sample data (real content comes from collections / Supabase later).
-const faq = [
-  {
-    q: 'รากฟันเทียม Blue Diamond ราคาเท่าไหร่?',
-    a: 'เริ่มต้น 29,900 บาทต่อซี่ รับประกันตลอดชีพ และผ่อน 0% ได้โดยไม่ต้องใช้บัตรเครดิต (เงื่อนไขเป็นไปตามที่คลินิกกำหนด).',
-  },
-  {
-    q: 'SmileScape มีกี่สาขา?',
-    a: 'ปัจจุบันมี 2 สาขา คือ สาขารัตนาธิเบศร์ (ติด MRT สีม่วง) และสาขาศรีนครินทร์ (ติด MRT สีเหลือง).',
-  },
-];
-const related = [
-  { href: '/implants/', title: 'รากฟันเทียม Blue Diamond Implant', summary: 'เริ่ม 29,900 บาท/ซี่ — รับประกันตลอดชีพ' },
-  { href: '/services/', title: 'บริการทันตกรรมทั้งหมด', summary: 'จัดฟัน รักษาราก ครอบฟัน ฟอกสีฟัน และอื่น ๆ' },
-];
+const h = await getHome('th');
+// FAQPage JSON-LD is emitted by <FaqBlock> below — do NOT duplicate it here.
 ---
-
-<Base title={title} description={description}>
-  <!-- Hero -->
-  <section class="bg-brand-anchor text-brand-neutral-0">
-    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28">
-      <p class="font-display text-sm font-medium uppercase tracking-[0.2em] text-brand-highlight">
-        The Lifetime Foundation
-      </p>
-      <h1 class="mt-4 text-4xl md:text-6xl font-bold leading-tight">
-        รากฐานฟันที่มั่นคง<br />เพื่อความสุขที่ยั่งยืนตลอดชีวิต
-      </h1>
-      <p class="mt-6 max-w-xl text-lg text-brand-neutral-200">
-        คลินิกทันตกรรมเฉพาะทางด้านรากฟันเทียม นำโดยทันตแพทย์ผู้เชี่ยวชาญ
-        ด้วยมาตรฐานการวินิจฉัยและการดูแลระยะยาว
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a
-          href="/booking/"
-          class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep"
-        >
-          จองคิวปรึกษา
-        </a>
-        <a
-          href="/implants/"
-          class="rounded-full border border-brand-neutral-0/30 px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-neutral-0/10"
-        >
-          ดูรากฟันเทียม Blue Diamond
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero service card -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="rounded-lg border border-brand-neutral-200 bg-brand-ice p-8">
-      <span class="inline-flex items-center gap-2 rounded-full bg-brand-accent/15 px-3 py-1 text-sm font-medium text-brand-primary-deep">
-        Hero Service
-      </span>
-      <h2 class="mt-4 text-2xl md:text-3xl font-bold text-brand-anchor">
-        Blue Diamond Implant — เริ่ม 29,900 บาท / ซี่
-      </h2>
-      <ul class="mt-4 grid gap-2 text-brand-neutral-700 sm:grid-cols-3">
-        <li>✓ รับประกันตลอดชีพ</li>
-        <li>✓ ผ่อน 0% ไม่ต้องใช้บัตร</li>
-        <li>✓ วัสดุเกาหลี value-premium</li>
-      </ul>
-    </div>
-
-    <RelatedContent items={related} heading="บริการแนะนำ" />
-    <FaqBlock items={faq} />
-  </section>
+<Base title={h.meta.title} description={h.meta.description} stickyCta>
+  <Hero {...h.hero} />
+  <TrustBar items={h.trustBar} />
+  <WhyPillars heading="ทำไมต้อง SmileScape" pillars={h.pillars} />
+  <BlueDiamond {...h.blueDiamond} />
+  <ServicesGrid heading="บริการทันตกรรมครบวงจร" services={h.services} />
+  <PartnerLogos heading="พันธมิตรแบรนด์ระดับโลก" partners={h.partners} />
+  <FoundersMastery heading="The Global Mastery — ทีมผู้ก่อตั้ง" founders={h.founders} />
+  <TeamRoster heading="ทีมทันตแพทย์ของเรา" doctors={h.doctors} />
+  <ProcessSteps heading="ขั้นตอนการรักษา" steps={h.process} />
+  <BeforeAfter heading="ผลลัพธ์ก่อน-หลัง" items={h.beforeAfter} />
+  <Reviews heading="เสียงจากคนไข้" reviews={h.reviews} video={h.video} />
+  <Branches heading="สาขาของเรา" mapLabel="เปิดในแผนที่ →" branches={h.branches} />
+  <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} /></div>
+  <BookingForm heading="นัดหมาย & ปรึกษาทันตแพทย์ฟรี" subtitle="กรอกข้อมูลเพื่อให้เราติดต่อกลับ" />
+  <FinalCta {...h.finalCta} />
 </Base>
