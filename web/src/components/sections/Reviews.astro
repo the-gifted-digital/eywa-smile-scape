@@ -1,0 +1,24 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import ReviewCard from '~/components/cards/ReviewCard.astro';
+import Image from '~/components/ui/Image.astro';
+interface Props {
+  heading: string;
+  reviews: { quote: string; name: string; stars: number }[];
+  video: { poster: { src?: string; alt: string; label?: string }; src?: string; label: string };
+}
+const { heading, reviews, video } = Astro.props;
+---
+<Section tone="paper">
+  <SectionHeading title={heading} align="center" />
+  <div class="mt-8 grid gap-6 lg:grid-cols-3">
+    <div class="lg:col-span-2 grid gap-4 sm:grid-cols-2">
+      {reviews.map((r) => <ReviewCard quote={r.quote} name={r.name} stars={r.stars} />)}
+    </div>
+    <div class="max-w-[280px] mx-auto w-full">
+      <Image src={video.poster.src} alt={video.poster.alt} label={video.poster.label} width={280} height={280} />
+      <p class="mt-2 text-center text-sm text-brand-neutral-500">{video.label}</p>
+    </div>
+  </div>
+</Section>

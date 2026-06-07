@@ -1,0 +1,13 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import BranchCard from '~/components/cards/BranchCard.astro';
+interface Props { heading: string; mapLabel?: string; branches: { name: string; mrt: string; address: string; mapUrl: string }[]; }
+const { heading, mapLabel, branches } = Astro.props;
+---
+<Section>
+  <SectionHeading title={heading} align="center" />
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    {branches.map((b) => <BranchCard name={b.name} mrt={b.mrt} address={b.address} mapUrl={b.mapUrl} mapLabel={mapLabel} />)}
+  </div>
+</Section>
