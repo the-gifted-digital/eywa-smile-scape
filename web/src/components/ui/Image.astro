@@ -1,0 +1,43 @@
+---
+// Image.astro — single image seam (DR-035). MVP renders placeholders;
+// later set `src` to a Cloudflare URL (https://...) or local /assets path
+// with NO markup change. Always pass width/height to prevent CLS.
+interface Props {
+  src?: string;
+  alt: string;
+  width: number;
+  height: number;
+  label?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  rounded?: boolean;
+}
+const { src, alt, width, height, label, class: className = '', loading = 'lazy', rounded = true } = Astro.props;
+const isPlaceholder = !src || src.startsWith('placeholder:');
+const ratio = `${width} / ${height}`;
+const radius = rounded ? 'rounded-lg' : '';
+---
+{isPlaceholder ? (
+  <div
+    role="img"
+    aria-label={alt}
+    style={`aspect-ratio:${ratio}`}
+    class:list={[
+      'flex w-full items-center justify-center bg-brand-neutral-100 border border-brand-neutral-200 text-brand-neutral-400 text-xs font-semibold text-center p-2',
+      radius,
+      className,
+    ]}
+  >
+    <span>{label ?? alt}</span>
+  </div>
+) : (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding="async"
+    class:list={['w-full h-auto object-cover', radius, className]}
+  />
+)}
