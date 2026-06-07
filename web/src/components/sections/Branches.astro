@@ -6,8 +6,8 @@ interface Props { heading: string; mapLabel?: string; branches: { name: string; 
 const { heading, mapLabel, branches } = Astro.props;
 ---
 <Section>
-  <SectionHeading title={heading} align="center" />
-  <div class="mt-8 grid gap-4 sm:grid-cols-2">
-    {branches.map((b) => <BranchCard name={b.name} mrt={b.mrt} address={b.address} mapUrl={b.mapUrl} mapLabel={mapLabel} />)}
+  <div data-reveal><SectionHeading title={heading} align="center" /></div>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2" data-reveal-stagger>
+    {branches.map((b) => <div data-reveal><BranchCard name={b.name} mrt={b.mrt} address={b.address} mapUrl={b.mapUrl} mapLabel={mapLabel} /></div>)}
   </div>
 </Section>

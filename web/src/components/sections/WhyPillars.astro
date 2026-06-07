@@ -6,8 +6,8 @@ interface Props { heading: string; pillars: { icon: string; title: string; body:
 const { heading, pillars } = Astro.props;
 ---
 <Section tone="paper">
-  <SectionHeading title={heading} align="center" />
-  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    {pillars.map((p) => <Pillar icon={p.icon} title={p.title} body={p.body} />)}
+  <div data-reveal><SectionHeading title={heading} align="center" /></div>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
+    {pillars.map((p) => <div data-reveal><Pillar icon={p.icon} title={p.title} body={p.body} /></div>)}
   </div>
 </Section>

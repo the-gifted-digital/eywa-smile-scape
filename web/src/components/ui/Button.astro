@@ -5,7 +5,7 @@ interface Props {
   class?: string;
 }
 const { href, variant = 'primary', class: className = '' } = Astro.props;
-const base = 'inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-colors';
+const base = 'inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition-colors hover:-translate-y-0.5 active:translate-y-0 transition-transform';
 const styles = {
   primary: 'bg-brand-primary text-brand-neutral-0 hover:bg-brand-primary-deep',
   outline: 'border border-brand-neutral-300 text-brand-anchor hover:border-brand-primary',

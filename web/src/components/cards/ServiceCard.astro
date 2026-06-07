@@ -3,7 +3,7 @@ import Image from '~/components/ui/Image.astro';
 interface Props { title: string; summary: string; href: string; image: { src?: string; alt: string; label?: string }; }
 const { title, summary, href, image } = Astro.props;
 ---
-<a href={href} class="group block rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 overflow-hidden hover:border-brand-primary transition-colors">
+<a href={href} class="group block rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 overflow-hidden hover:border-brand-primary transition-colors u-hover">
   <Image src={image.src} alt={image.alt} label={image.label} width={400} height={240} rounded={false} />
   <div class="p-4">
     <h3 class="font-display font-bold text-brand-anchor group-hover:text-brand-primary-deep">{title}</h3>

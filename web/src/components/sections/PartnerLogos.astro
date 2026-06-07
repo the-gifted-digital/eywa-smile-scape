@@ -6,7 +6,7 @@ const { heading, partners } = Astro.props;
 ---
 <Section tone="paper">
   <p class="text-center text-sm font-medium uppercase tracking-[0.15em] text-brand-neutral-500">{heading}</p>
-  <div class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center">
-    {partners.map((p) => <Image src={p.logo.src} alt={p.logo.alt} label={p.logo.label} width={160} height={64} />)}
+  <div class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center" data-reveal-stagger>
+    {partners.map((p) => <div data-reveal><Image src={p.logo.src} alt={p.logo.alt} label={p.logo.label} width={160} height={64} /></div>)}
   </div>
 </Section>

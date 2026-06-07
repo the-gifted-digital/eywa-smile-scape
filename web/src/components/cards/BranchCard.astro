@@ -2,7 +2,7 @@
 interface Props { name: string; mrt: string; address: string; mapUrl: string; mapLabel?: string; }
 const { name, mrt, address, mapUrl, mapLabel = 'View on map →' } = Astro.props;
 ---
-<div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
+<div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5 u-hover">
   <h3 class="font-display font-bold text-brand-anchor">{name}</h3>
   <p class="mt-1 text-sm text-brand-primary-deep">{mrt}</p>
   <p class="mt-1 text-sm text-brand-neutral-700">{address}</p>
