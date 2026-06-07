@@ -23,3 +23,38 @@
       'Helvetica Neue', sans-serif;
   }
 }
+
+/* ===== Motion layer (style B — spring). Reduced-motion safe. ===== */
+/* Reveal + smooth-scroll only when motion is allowed; reduced-motion → elements
+   stay at their natural (visible) state, never trapped at opacity:0. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(26px) scale(0.96);
+    transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0s),
+                transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  [data-reveal].is-in { opacity: 1; transform: none; }
+}
+
+/* Hover lift (cards / interactive). Spring easing, motion-safe. */
+.u-hover { transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease; }
+@media (prefers-reduced-motion: no-preference) {
+  .u-hover:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 30px rgba(20, 56, 107, 0.14); }
+}
+
+/* Hero ambient sheen (slow drifting brand-blue radials over the dark hero). */
+.hero-sheen {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(55% 75% at 18% 0%, rgba(33, 125, 234, 0.38), transparent 60%),
+              radial-gradient(45% 65% at 92% 18%, rgba(123, 164, 221, 0.26), transparent 60%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-sheen { animation: heroSheen 14s ease-in-out infinite alternate; will-change: transform, opacity; }
+}
+@keyframes heroSheen {
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  to   { transform: translate3d(0, -3%, 0) scale(1.08); opacity: 1; }
+}

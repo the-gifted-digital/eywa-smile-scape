@@ -181,5 +181,46 @@ const footer = footerByLocale[lang] ?? footerByLocale.th;
         else if (href.startsWith('tel:')) dl.push({ event: 'call_click', link_url: href });
       });
     </script>
+    <script>
+      // Motion layer — reveal on scroll (spring), staggered groups, desktop parallax.
+      // Fully disabled under prefers-reduced-motion.
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        // staggered groups: each child gets an incremental reveal delay
+        document.querySelectorAll('[data-reveal-stagger]').forEach((group) => {
+          group.querySelectorAll(':scope > [data-reveal]').forEach((el, i) => {
+            (el as HTMLElement).style.setProperty('--reveal-delay', (i * 0.09) + 's');
+          });
+        });
+        // reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+
+        // desktop-only parallax (bounded, rAF-throttled)
+        if (window.matchMedia('(min-width: 768px)').matches) {
+          const items = Array.from(document.querySelectorAll('[data-parallax]')) as HTMLElement[];
+          if (items.length) {
+            let ticking = false;
+            const update = () => {
+              const y = window.scrollY;
+              items.forEach((el) => {
+                const f = parseFloat(el.dataset.parallax || '0.08');
+                const offset = Math.min(y * f, 48);
+                el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+              });
+              ticking = false;
+            };
+            window.addEventListener('scroll', () => {
+              if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }, { passive: true });
+            update();
+          }
+        }
+      }
+    </script>
   </body>
 </html>
