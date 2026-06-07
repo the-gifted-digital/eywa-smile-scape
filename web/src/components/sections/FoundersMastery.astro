@@ -1,0 +1,24 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import Image from '~/components/ui/Image.astro';
+interface Props { heading: string; founders: { name: string; role: string; credentials: string[]; image: { src?: string; alt: string; label?: string } }[]; }
+const { heading, founders } = Astro.props;
+---
+<Section tone="anchor">
+  <SectionHeading title={heading} align="center" onDark />
+  <div class="mt-8 grid gap-6 md:grid-cols-2">
+    {founders.map((f) => (
+      <div class="grid grid-cols-[120px_1fr] gap-4 rounded-lg bg-brand-neutral-0/5 p-4">
+        <Image src={f.image.src} alt={f.image.alt} label={f.image.label} width={120} height={150} />
+        <div>
+          <h3 class="font-display font-bold text-brand-neutral-0">{f.name}</h3>
+          <p class="text-sm text-brand-highlight">{f.role}</p>
+          <ul class="mt-2 space-y-1 text-sm text-brand-neutral-200">
+            {f.credentials.map((c) => <li>• {c}</li>)}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</Section>

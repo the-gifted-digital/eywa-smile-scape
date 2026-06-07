@@ -1,0 +1,33 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import DoctorCard from '~/components/cards/DoctorCard.astro';
+interface Props { heading: string; subtitle?: string; doctors: { name: string; role: string; image: { src?: string; alt: string; label?: string } }[]; }
+const { heading, subtitle, doctors } = Astro.props;
+---
+<Section>
+  <SectionHeading title={heading} subtitle={subtitle} align="center" />
+  <div data-team class="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+    {doctors.map((d) => (
+      <div data-doc class="contents">
+        <DoctorCard name={d.name} role={d.role} image={d.image} />
+      </div>
+    ))}
+  </div>
+</Section>
+<script>
+  // Show a random 4–6 of the roster; hide the rest. (go. is noindex → SEO-safe.)
+  const wrap = document.querySelector('[data-team]');
+  if (wrap) {
+    const cards = Array.from(wrap.querySelectorAll('[data-doc]')) as HTMLElement[];
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    const show = Math.min(cards.length, 4 + Math.floor(Math.random() * 3)); // 4–6
+    cards.forEach((c, idx) => {
+      if (idx >= show) c.style.display = 'none';
+      else wrap.appendChild(c); // reorder to shuffled order
+    });
+  }
+</script>
