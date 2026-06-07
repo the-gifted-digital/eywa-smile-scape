@@ -31,7 +31,7 @@ with a2 as (
   values
     ('ทพญ. พิชชาภา ผุดผ่อง',
      '{"th":"ทพญ. พิชชาภา ผุดผ่อง","en":"Dr. Pitchapa Phudphong","nickname_th":"หมอแพรว","nickname_en":"Dr. Praew"}'::jsonb,
-     array['DDS']::text[], array['Diploma, Thai Board of Oral and Maxillofacial Surgery (2023)']::text[], NULL,
+     array['DDS']::text[], '["Diploma, Thai Board of Oral and Maxillofacial Surgery (2023)"]'::jsonb, NULL,
      'TH', array['smile-scape-clinic']::text[], 'Oral & Maxillofacial Surgery',
      array['Oral & Maxillofacial Surgery','Implantology','Zygomatic Implants','Guided Bone Regeneration','Full-Arch Rehabilitation']::text[],
      array['th','en']::text[], true,
