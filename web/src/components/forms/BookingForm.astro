@@ -4,27 +4,52 @@ import SectionHeading from '~/components/ui/SectionHeading.astro';
 interface Props { heading: string; subtitle?: string; }
 const { heading, subtitle } = Astro.props;
 const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-form';
+const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
+const L = {
+  th: {
+    name: 'ชื่อ-นามสกุล', phone: 'เบอร์โทร',
+    servicePh: 'เลือกบริการที่สนใจ',
+    services: ['รากฟันเทียม', 'All-on-X', 'จัดฟัน/จัดฟันใส', 'วีเนียร์ / Smile Design', 'ทันตกรรมทั่วไป', 'อื่น ๆ'],
+    branchPh: 'เลือกสาขา', branches: ['รัตนาธิเบศร์', 'ศรีนครินทร์'],
+    pdpa: 'ยินยอมให้คลินิกติดต่อกลับและเก็บข้อมูลตามนโยบาย PDPA',
+    submit: 'ยืนยันการนัดหมาย',
+    sending: 'กำลังส่ง…',
+    success: 'ส่งคำขอนัดหมายเรียบร้อย เราจะติดต่อกลับโดยเร็ว ✓',
+    error: 'ส่งไม่สำเร็จ กรุณาโทร 092 293 6226 หรือทักไลน์',
+  },
+  en: {
+    name: 'Full name', phone: 'Phone number',
+    servicePh: 'Select a service',
+    services: ['Dental implants', 'All-on-X', 'Orthodontics / aligners', 'Veneers / Smile Design', 'General dentistry', 'Other'],
+    branchPh: 'Select a branch', branches: ['Rattanathibet', 'Srinagarindra'],
+    pdpa: 'I consent to be contacted and to data processing per the PDPA policy.',
+    submit: 'Confirm appointment',
+    sending: 'Sending…',
+    success: "Request sent — we'll contact you shortly ✓",
+    error: 'Could not send. Please call 092 293 6226 or message us on LINE.',
+  },
+}[lang];
 ---
 <Section id="booking" tone="ice">
   <SectionHeading title={heading} subtitle={subtitle} align="center" />
-  <form id="ss-booking" class="mt-8 max-w-xl mx-auto grid gap-4" data-webhook={WEBHOOK} novalidate>
+  <form id="ss-booking" class="mt-8 max-w-xl mx-auto grid gap-4" data-webhook={WEBHOOK} data-msg-sending={L.sending} data-msg-success={L.success} data-msg-error={L.error} novalidate>
     <div class="grid sm:grid-cols-2 gap-4">
-      <input name="name" required placeholder="ชื่อ-นามสกุล" class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
-      <input name="phone" required inputmode="tel" placeholder="เบอร์โทร" class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+      <input name="name" required placeholder={L.name} class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+      <input name="phone" required inputmode="tel" placeholder={L.phone} class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
     </div>
     <select name="service" class="rounded-lg border border-brand-neutral-300 px-4 py-3">
-      <option value="">เลือกบริการที่สนใจ</option>
-      <option>รากฟันเทียม</option><option>All-on-X</option><option>จัดฟัน/จัดฟันใส</option>
-      <option>วีเนียร์ / Smile Design</option><option>ทันตกรรมทั่วไป</option><option>อื่น ๆ</option>
+      <option value="">{L.servicePh}</option>
+      {L.services.map((s) => <option>{s}</option>)}
     </select>
     <select name="branch" class="rounded-lg border border-brand-neutral-300 px-4 py-3">
-      <option value="">เลือกสาขา</option><option>รัตนาธิเบศร์</option><option>ศรีนครินทร์</option>
+      <option value="">{L.branchPh}</option>
+      {L.branches.map((b) => <option>{b}</option>)}
     </select>
     <label class="flex items-start gap-2 text-sm text-brand-neutral-700">
       <input type="checkbox" name="pdpa" required class="mt-1" />
-      ยินยอมให้คลินิกติดต่อกลับและเก็บข้อมูลตามนโยบาย PDPA
+      {L.pdpa}
     </label>
-    <button type="submit" class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep">ยืนยันการนัดหมาย</button>
+    <button type="submit" class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep">{L.submit}</button>
     <p data-msg role="status" class="text-center text-sm"></p>
   </form>
 </Section>
@@ -36,7 +61,7 @@ const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const data = Object.fromEntries(new FormData(form).entries());
-      msg.textContent = 'กำลังส่ง…';
+      msg.textContent = form.dataset.msgSending!;
       try {
         const res = await fetch(form.dataset.webhook!, {
           method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
@@ -45,9 +70,9 @@ const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ event: 'lead_submit', form: 'homepage_booking' });
         form.reset();
-        msg.textContent = 'ส่งคำขอนัดหมายเรียบร้อย เราจะติดต่อกลับโดยเร็ว ✓';
+        msg.textContent = form.dataset.msgSuccess!;
       } catch {
-        msg.textContent = 'ส่งไม่สำเร็จ กรุณาโทร 092 293 6226 หรือทักไลน์';
+        msg.textContent = form.dataset.msgError!;
       }
     });
   }
