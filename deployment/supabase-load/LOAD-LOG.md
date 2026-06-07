@@ -13,6 +13,20 @@
 | 00 | `seo_topic_cluster_master` | 20 | ✅ loaded + validated (fp_ok 20, sync_state flat_loaded 20, with_parent 4, brand_scoped 1) |
 | 01 | `seo_entity_graph` | +113 net-new | ✅ loaded + validated (present_of_ours 163, +113 → global 369, ss_badcase 0, stray_scope 0). NOTE: legacy entities purged externally (722→256 federation baseline); legacy_capitalized now 0 (spec-pure). 341 universal + 27 ss-excl + 1 deezy-excl. |
 | 02 | entity extensions | full coverage | ✅ loaded + validated (entities==ext: condition 63=63, procedure 68=68, anatomy 15=15; symptom/drug no-op). product+device deferred. |
+| 03 | `seo_citations` | +90 | ✅ loaded + validated (ours_present 90, fp_ok 90, tier 1-6 all, authors arrays, global 48→138; 13 tier-5 brand-internal). 3 skipped (2 DOI + 1 PMID already in pool). FIX: `authors` is text[] → array literal. |
+| 04 | `seo_authors_reviewers` + assignments | 2 (+2) | ✅ loaded + validated (auth_ fp; แฮม medical_director/primary fp→dr-woraphat-jarangkul, แพรว medical_director/secondary). FIX: `board_certifications` is jsonb → jsonb array. |
+| 05 | `seo_branches` | 2 (partial) | ✅ loaded + validated (brch_ fp; รัตนาธิเบศร์ primary, ศรีนครินทร์ secondary; org_linked both true). addr/phone/geo/license NULL → operator UPDATE later. |
+| 06 | `seo_website_page_master` | 722 stub | ✅ loaded + validated (722; `page_` fp all 722; with_entity 721, with_cluster 718, orphan_entity 3 = orthodontic-intervention [flagged]). Deezy 689 untouched (VitalSleep legacy pages purged externally). NOTE: page auto-fp prefix is `page_` (spec said `pg_` — doc typo). |
+| 10 | `seo_x_ads_keywords_contextual_master` | 525 seed | ✅ loaded + validated (ss_keywords 525, fp_ok 525; fp `smile scape clinic::🇹🇭 th – thailand::🇹🇭 th – thai::{kw}`). → hand off to DataForSEO full run for metric/SERP/intent enrichment. |
+
+## ✅ LOAD COMPLETE — 2026-06-07
+All 8 files loaded + MCP-validated. Final SmileScape footprint on GTGT:
+- clusters **20** · entities **+113 net-new** (graph 369; 27 ss-exclusive) · entity-ext full coverage (cond/proc/anat) · citations **+90** (pool 138; 13 tier-5 internal) · authors **2** (+2 assignments) · branches **2** (partial) · pages **722** stub · keywords **525** seed.
+- **Brand isolation verified:** Deezy pages 689 untouched; citations pool 48→138 (+90 only); no other-brand rows modified (all inserts append-only `ON CONFLICT`/`NOT EXISTS`).
+- **Security advisors:** 0 new findings from this load (pure DML). 111 WARN + 3 ERROR are pre-existing/schema-level; the 3 ERROR are RLS-disabled on `_archive_legacy_*` backup tables created by the external legacy cleanup (federation housekeeping, not ours).
+
+### Next (deferred — not this session)
+relationships (edge-vocab + evidence) · page↔citation + internal-links (Phase F) · product/device ext (enum) · programmatic templates (Wave 1B) · **keyword enrichment → DataForSEO** · branch addr/geo/phone/license UPDATE (operator batch) · Notion sync (n8n) · image URLs (Cloudflare) · resolve `orthodontic-intervention` entity (3 orphan pages).
 
 ## Flags
 - Author slug: entities.md `dr-woraphat-jarangkul` (Woraphat) vs CV `dr-worapat-jarangkul.md` (Worapat) — **RESOLVED**: keep entity/`author_fp` slug `dr-woraphat-jarangkul`; display name "Worapat" per CV.
