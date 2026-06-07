@@ -1,0 +1,27 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import Image from '~/components/ui/Image.astro';
+interface Props {
+  heading: string;
+  enabled?: boolean; // compliance gate (spec §10)
+  items: { before: { src?: string; alt: string; label?: string }; after: { src?: string; alt: string; label?: string }; caption: string }[];
+}
+const { heading, enabled = true, items } = Astro.props;
+---
+{enabled && (
+  <Section>
+    <SectionHeading title={heading} align="center" />
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {items.map((it) => (
+        <figure class="rounded-lg border border-brand-neutral-200 overflow-hidden">
+          <div class="grid grid-cols-2">
+            <Image src={it.before.src} alt={it.before.alt} label={it.before.label} width={200} height={200} rounded={false} />
+            <Image src={it.after.src} alt={it.after.alt} label={it.after.label} width={200} height={200} rounded={false} />
+          </div>
+          <figcaption class="p-2 text-xs text-brand-neutral-500 text-center">{it.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </Section>
+)}

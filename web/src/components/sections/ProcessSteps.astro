@@ -1,0 +1,20 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import Image from '~/components/ui/Image.astro';
+interface Props { heading: string; steps: { step: number; title: string; body: string; image: { src?: string; alt: string; label?: string } }[]; }
+const { heading, steps } = Astro.props;
+---
+<Section tone="ice">
+  <SectionHeading title={heading} align="center" />
+  <ol class="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+    {steps.map((s) => (
+      <li class="rounded-lg bg-brand-neutral-0 border border-brand-neutral-200 p-4">
+        <Image src={s.image.src} alt={s.image.alt} label={s.image.label} width={200} height={140} rounded={false} />
+        <p class="mt-2 text-xs font-bold text-brand-primary-deep">STEP {s.step}</p>
+        <h3 class="font-semibold text-brand-anchor">{s.title}</h3>
+        <p class="text-sm text-brand-neutral-700">{s.body}</p>
+      </li>
+    ))}
+  </ol>
+</Section>
