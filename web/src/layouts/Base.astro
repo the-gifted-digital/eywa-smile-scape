@@ -13,6 +13,10 @@ import '~/styles/fonts.css';
 import '~/styles/global.css';
 import AnalyticsHead from '~/components/AnalyticsHead.astro';
 import AnalyticsBody from '~/components/AnalyticsBody.astro';
+import StickyCta from '~/components/sections/StickyCta.astro';
+const PHONE_TEL = '+66922936226';
+const PHONE_DISPLAY = '092 293 6226';
+const LINE_URL = 'https://maac.io/6yp2p';
 
 interface Props {
   title: string;
@@ -22,9 +26,11 @@ interface Props {
   ogType?: string;
   /** extra JSON-LD node(s) to merge into the page (e.g. Service, FAQPage) */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  robots?: string;        // NEW — go. policy default
+  stickyCta?: boolean;    // NEW
 }
 
-const { title, description, canonical, ogType = 'website', jsonLd } = Astro.props;
+const { title, description, canonical, ogType = 'website', jsonLd, robots = 'noindex,follow', stickyCta = false } = Astro.props;
 
 const siteName = 'SmileScape Dental Clinic';
 const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
@@ -71,18 +77,12 @@ const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] :
 const nav =
   lang === 'en'
     ? [
-        { href: '/en/services/', label: 'Services' },
-        { href: '/en/implants/', label: 'Dental Implants' },
-        { href: '/en/about/', label: 'About' },
-        { href: '/en/contact/', label: 'Contact' },
-        { href: '/en/booking/', label: 'Book Now', cta: true },
+        { href: '/en/lp/dental-implant/', label: 'Dental Implants' },
+        { href: '/en/#booking', label: 'Book Now', cta: true },
       ]
     : [
-        { href: '/services/', label: 'บริการ' },
-        { href: '/implants/', label: 'รากฟันเทียม' },
-        { href: '/about/', label: 'เกี่ยวกับเรา' },
-        { href: '/contact/', label: 'ติดต่อ / สาขา' },
-        { href: '/booking/', label: 'จองคิว', cta: true },
+        { href: '/lp/dental-implant/', label: 'รากฟันเทียม' },
+        { href: '/#booking', label: 'จองคิว', cta: true },
       ];
 const homeHref = lang === 'en' ? '/en/' : '/';
 ---
@@ -99,6 +99,7 @@ const homeHref = lang === 'en' ? '/en/' : '/';
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={robots} />
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="th" href={alt.th} />
@@ -159,5 +160,17 @@ const homeHref = lang === 'en' ? '/en/' : '/';
         <p class="mt-3">© {new Date().getFullYear()} SmileScape Dental Clinic</p>
       </div>
     </footer>
+    {stickyCta && <StickyCta phoneTel={PHONE_TEL} phoneDisplay={PHONE_DISPLAY} lineUrl={LINE_URL} />}
+    <script>
+      // Global conversion listeners (set GTM triggers: line_click / call_click)
+      document.addEventListener('click', (e) => {
+        const a = (e.target as HTMLElement).closest('a');
+        if (!a) return;
+        const href = a.getAttribute('href') || '';
+        const dl = ((window as any).dataLayer = (window as any).dataLayer || []);
+        if (href.includes('maac.io') || href.includes('lin.ee') || href.includes('line.me')) dl.push({ event: 'line_click', link_url: href });
+        else if (href.startsWith('tel:')) dl.push({ event: 'call_click', link_url: href });
+      });
+    </script>
   </body>
 </html>
