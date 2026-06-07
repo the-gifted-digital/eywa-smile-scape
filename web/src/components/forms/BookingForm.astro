@@ -1,0 +1,53 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+interface Props { heading: string; subtitle?: string; }
+const { heading, subtitle } = Astro.props;
+const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-form';
+---
+<Section id="booking" tone="ice">
+  <SectionHeading title={heading} subtitle={subtitle} align="center" />
+  <form id="ss-booking" class="mt-8 max-w-xl mx-auto grid gap-4" data-webhook={WEBHOOK} novalidate>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <input name="name" required placeholder="ชื่อ-นามสกุล" class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+      <input name="phone" required inputmode="tel" placeholder="เบอร์โทร" class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+    </div>
+    <select name="service" class="rounded-lg border border-brand-neutral-300 px-4 py-3">
+      <option value="">เลือกบริการที่สนใจ</option>
+      <option>รากฟันเทียม</option><option>All-on-X</option><option>จัดฟัน/จัดฟันใส</option>
+      <option>วีเนียร์ / Smile Design</option><option>ทันตกรรมทั่วไป</option><option>อื่น ๆ</option>
+    </select>
+    <select name="branch" class="rounded-lg border border-brand-neutral-300 px-4 py-3">
+      <option value="">เลือกสาขา</option><option>รัตนาธิเบศร์</option><option>ศรีนครินทร์</option>
+    </select>
+    <label class="flex items-start gap-2 text-sm text-brand-neutral-700">
+      <input type="checkbox" name="pdpa" required class="mt-1" />
+      ยินยอมให้คลินิกติดต่อกลับและเก็บข้อมูลตามนโยบาย PDPA
+    </label>
+    <button type="submit" class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep">ยืนยันการนัดหมาย</button>
+    <p data-msg role="status" class="text-center text-sm"></p>
+  </form>
+</Section>
+<script>
+  const form = document.getElementById('ss-booking') as HTMLFormElement | null;
+  if (form) {
+    const msg = form.querySelector('[data-msg]') as HTMLElement;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const data = Object.fromEntries(new FormData(form).entries());
+      msg.textContent = 'กำลังส่ง…';
+      try {
+        await fetch(form.dataset.webhook!, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
+        });
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({ event: 'lead_submit', form: 'homepage_booking' });
+        form.reset();
+        msg.textContent = 'ส่งคำขอนัดหมายเรียบร้อย เราจะติดต่อกลับโดยเร็ว ✓';
+      } catch {
+        msg.textContent = 'ส่งไม่สำเร็จ กรุณาโทร 092 293 6226 หรือทักไลน์';
+      }
+    });
+  }
+</script>
