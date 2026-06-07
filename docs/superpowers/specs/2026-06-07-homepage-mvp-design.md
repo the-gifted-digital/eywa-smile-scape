@@ -209,3 +209,11 @@ Runtime-only config (not content): `PUBLIC_GTM_ID`, feature flags such as `showB
 - **Partner brand** real logos + the confirmed partner list.
 - **EN copy**: drafted as translation of TH; operator review recommended.
 - **Q-Clinic license #** for trust/footer badge.
+
+## 15. Cross-brand reuse & incremental memory capture (operator directive 2026-06-07)
+
+SmileScape is the **first EYWA brand to build the full Astro component library** — treat it as the reference implementation, build pragmatically, and refine across brands rather than perfecting up front.
+
+- **Brand-agnostic by construction.** Components carry no brand-specific logic or copy: visuals via `brand-*` Tailwind tokens (DR-029), content via the `home` collection. A component lifted to another brand should work by swapping tokens + content only — never hardcode "SmileScape", phone numbers, or fixed copy inside a component.
+- **Promotion path.** Proven components/conventions get promoted upward: brand → EYWA `Content_Templates` (T1–T22 blocks) + the polyvex/reference Astro profile, so other brands inherit them.
+- **Memory logging (ongoing habit).** As components/conventions stabilise, record them to memory — `MEMORY.md` for SmileScape-local notes; flag protocol-level conventions for the EYWA spec — so the next brand reuses rather than reinvents. Loop: **build → learn → record → refine.**
