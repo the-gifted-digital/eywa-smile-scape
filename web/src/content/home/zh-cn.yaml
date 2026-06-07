@@ -54,14 +54,14 @@ founders:
       - 朱拉隆功大学口腔颌面外科专科证书
       - 双硕士：种植学（泰国 + 德国）
       - 全球大师班（Urban / Kern / ILAPEO）
-    image: { alt: Ham 医生, label: Dr. Ham }
+    image: { src: /images/lp/doctor1.png, alt: Ham 医生, label: Dr. Ham }
   - name: Dr. Pitchapa Phudphong（Praew 医生）
     role: 口腔颌面外科医师 · 联合创始人
     credentials:
       - 口腔颌面外科医师
       - 种植学讲师
       - SmileScape 联合首席执行官与联合创始人
-    image: { alt: Praew 医生, label: Dr. Praew }
+    image: { src: /images/lp/doctor-praew.png, alt: Praew 医生, label: Dr. Praew }
 doctors:
   - { name: 牙周病专科医师, role: 牙周专科, image: { alt: 牙医, label: dr } }
   - { name: 根管治疗专科医师, role: 根管专科, image: { alt: 牙医, label: dr } }
@@ -76,16 +76,22 @@ process:
   - { step: 4, title: 治疗, body: 精准植入种植体, image: { alt: 治疗, label: '4' } }
   - { step: 5, title: 复诊跟进, body: 长期照护, image: { alt: 跟进, label: '5' } }
 beforeAfter:
-  - { caption: 案例 1, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
-  - { caption: 案例 2, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
-  - { caption: 案例 3, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
+  - { image: { src: /images/lp/review1.jpg, alt: 种植牙术前术后 1 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review2.jpg, alt: 种植牙术前术后 2 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review3.jpg, alt: 种植牙术前术后 3 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review4.jpg, alt: 种植牙术前术后 4 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review5.png, alt: 种植牙术前术后 5 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review6.png, alt: 种植牙术前术后 6 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review7.png, alt: 种植牙术前术后 7 }, caption: 术前 · 术后 }
+  - { image: { src: /images/lp/review8.png, alt: 种植牙术前术后 8 }, caption: 术前 · 术后 }
 reviews:
   - { quote: 照护非常好，讲解详细，没有想象中那么痛。, name: 患者 A, stars: 5 }
   - { quote: 做完种植牙后自信多了。, name: 患者 B, stars: 5 }
   - { quote: 团队亲切，诊所整洁。, name: 患者 C, stars: 5 }
 video:
   label: 患者评价视频
-  poster: { alt: 患者评价视频, label: '▶ 评价' }
+  poster: { src: /images/lp/video-poster.jpg, alt: 患者评价视频, label: '▶ 评价' }
+  src: /videos/review-clip.mp4
 branches:
   - { name: Rattanathibet 分院, mrt: MRT 紫线 · Yaek Nonthaburi 1 站, address: '暖武里府（详细地址待提供）', mapUrl: 'https://maps.google.com/?q=SmileScape+Rattanathibet' }
   - { name: Srinagarindra 分院, mrt: MRT 黄线, address: '曼谷（详细地址待提供）', mapUrl: 'https://maps.google.com/?q=SmileScape+Srinagarindra' }

@@ -55,14 +55,14 @@ founders:
       - Board cert. Oral & Maxillofacial Surgery, Chulalongkorn
       - Dual M.Sc. Implantology (Thailand + Germany)
       - Global Masterclasses (Urban / Kern / ILAPEO)
-    image: { alt: Dr. Ham, label: Dr. Ham }
+    image: { src: /images/lp/doctor1.png, alt: Dr. Ham, label: Dr. Ham }
   - name: Dr. Pitchapa Phudphong (Dr. Praew)
     role: Oral & Maxillofacial Surgeon · Co-Founder
     credentials:
       - Oral & maxillofacial surgeon
       - Implantology educator
       - Co-CEO & co-founder of SmileScape
-    image: { alt: Dr. Praew, label: Dr. Praew }
+    image: { src: /images/lp/doctor-praew.png, alt: Dr. Praew, label: Dr. Praew }
 doctors:
   - { name: Periodontist, role: Gum specialist, image: { alt: dentist, label: dr } }
   - { name: Endodontist, role: Root canal specialist, image: { alt: dentist, label: dr } }
@@ -77,16 +77,22 @@ process:
   - { step: 4, title: Treatment, body: Precise implant placement, image: { alt: treat, label: '4' } }
   - { step: 5, title: Follow-up, body: Long-term care, image: { alt: follow, label: '5' } }
 beforeAfter:
-  - { caption: Case 1, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
-  - { caption: Case 2, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
-  - { caption: Case 3, before: { alt: before, label: BEFORE }, after: { alt: after, label: AFTER } }
+  - { image: { src: /images/lp/review1.jpg, alt: Dental implant before-after 1 }, caption: Before · After }
+  - { image: { src: /images/lp/review2.jpg, alt: Dental implant before-after 2 }, caption: Before · After }
+  - { image: { src: /images/lp/review3.jpg, alt: Dental implant before-after 3 }, caption: Before · After }
+  - { image: { src: /images/lp/review4.jpg, alt: Dental implant before-after 4 }, caption: Before · After }
+  - { image: { src: /images/lp/review5.png, alt: Dental implant before-after 5 }, caption: Before · After }
+  - { image: { src: /images/lp/review6.png, alt: Dental implant before-after 6 }, caption: Before · After }
+  - { image: { src: /images/lp/review7.png, alt: Dental implant before-after 7 }, caption: Before · After }
+  - { image: { src: /images/lp/review8.png, alt: Dental implant before-after 8 }, caption: Before · After }
 reviews:
   - { quote: Great care, detailed explanation, far less painful than I feared., name: Patient A, stars: 5 }
   - { quote: Much more confident after my implant., name: Patient B, stars: 5 }
   - { quote: Friendly team, spotless clinic., name: Patient C, stars: 5 }
 video:
   label: Patient review video
-  poster: { alt: patient review video, label: '▶ review' }
+  poster: { src: /images/lp/video-poster.jpg, alt: patient review video, label: '▶ review' }
+  src: /videos/review-clip.mp4
 branches:
   - { name: Rattanathibet branch, mrt: MRT Purple · Yaek Nonthaburi 1, address: 'Nonthaburi (full address pending)', mapUrl: 'https://maps.google.com/?q=SmileScape+Rattanathibet' }
   - { name: Srinagarindra branch, mrt: MRT Yellow, address: 'Bangkok (full address pending)', mapUrl: 'https://maps.google.com/?q=SmileScape+Srinagarindra' }

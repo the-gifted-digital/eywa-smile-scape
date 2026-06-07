@@ -54,14 +54,14 @@ founders:
       - วุฒิบัตรศัลยกรรมช่องปากและขากรรไกร จุฬาฯ
       - Dual M.Sc. Implantology (ไทย + เยอรมนี)
       - Global Masterclasses (Urban / Kern / ILAPEO)
-    image: { alt: หมอแฮม, label: หมอแฮม }
+    image: { src: /images/lp/doctor1.png, alt: หมอแฮม, label: หมอแฮม }
   - name: ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)
     role: ศัลยแพทย์ช่องปากและขากรรไกร · ผู้ร่วมก่อตั้ง
     credentials:
       - ศัลยแพทย์เฉพาะทางช่องปากและแม็กซิลโลเฟเชียล
       - วิทยากรด้านทันตกรรมรากเทียม
       - Co-CEO & ผู้ร่วมก่อตั้ง SmileScape
-    image: { alt: หมอแพรว, label: หมอแพรว }
+    image: { src: /images/lp/doctor-praew.png, alt: หมอแพรว, label: หมอแพรว }
 doctors:
   - { name: ทันตแพทย์เฉพาะทางปริทันต์, role: Periodontist, image: { alt: ทันตแพทย์, label: หมอ } }
   - { name: ทันตแพทย์เฉพาะทางรักษาราก, role: Endodontist, image: { alt: ทันตแพทย์, label: หมอ } }
@@ -76,16 +76,22 @@ process:
   - { step: 4, title: รักษา, body: ฝังรากเทียมแม่นยำ, image: { alt: รักษา, label: '4' } }
   - { step: 5, title: ติดตามผล, body: ดูแลระยะยาว, image: { alt: ติดตาม, label: '5' } }
 beforeAfter:
-  - { caption: เคสตัวอย่าง 1, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
-  - { caption: เคสตัวอย่าง 2, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
-  - { caption: เคสตัวอย่าง 3, before: { alt: ก่อน, label: BEFORE }, after: { alt: หลัง, label: AFTER } }
+  - { image: { src: /images/lp/review1.jpg, alt: เคสรากฟันเทียม ก่อน-หลัง 1 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review2.jpg, alt: เคสรากฟันเทียม ก่อน-หลัง 2 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review3.jpg, alt: เคสรากฟันเทียม ก่อน-หลัง 3 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review4.jpg, alt: เคสรากฟันเทียม ก่อน-หลัง 4 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review5.png, alt: เคสรากฟันเทียม ก่อน-หลัง 5 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review6.png, alt: เคสรากฟันเทียม ก่อน-หลัง 6 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review7.png, alt: เคสรากฟันเทียม ก่อน-หลัง 7 }, caption: ก่อน · หลัง }
+  - { image: { src: /images/lp/review8.png, alt: เคสรากฟันเทียม ก่อน-หลัง 8 }, caption: ก่อน · หลัง }
 reviews:
   - { quote: ดูแลดีมาก อธิบายละเอียด ไม่เจ็บอย่างที่กลัว, name: คุณ A, stars: 5 }
   - { quote: ทำรากฟันเทียมแล้วมั่นใจขึ้นเยอะ, name: คุณ B, stars: 5 }
   - { quote: ทีมงานเป็นกันเอง คลินิกสะอาด, name: คุณ C, stars: 5 }
 video:
   label: วิดีโอรีวิว
-  poster: { alt: วิดีโอรีวิวคนไข้, label: '▶ รีวิว' }
+  poster: { src: /images/lp/video-poster.jpg, alt: วิดีโอรีวิวคนไข้, label: '▶ รีวิว' }
+  src: /videos/review-clip.mp4
 branches:
   - { name: สาขารัตนาธิเบศร์, mrt: MRT สีม่วง · สถานีแยกนนทบุรี 1, address: 'นนทบุรี (ที่อยู่เต็มรอผู้ดูแล)', mapUrl: 'https://maps.google.com/?q=SmileScape+รัตนาธิเบศร์' }
   - { name: สาขาศรีนครินทร์, mrt: MRT สีเหลือง, address: 'กรุงเทพฯ (ที่อยู่เต็มรอผู้ดูแล)', mapUrl: 'https://maps.google.com/?q=SmileScape+ศรีนครินทร์' }

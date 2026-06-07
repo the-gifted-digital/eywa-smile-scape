@@ -121,7 +121,7 @@ const home = defineCollection({
     founders: z.array(z.object({ name: z.string(), role: z.string(), credentials: z.array(z.string()), image: imageRef })),
     doctors: z.array(z.object({ name: z.string(), role: z.string(), image: imageRef })),
     process: z.array(z.object({ step: z.number(), title: z.string(), body: z.string(), image: imageRef })),
-    beforeAfter: z.array(z.object({ before: imageRef, after: imageRef, caption: z.string() })),
+    beforeAfter: z.array(z.object({ image: imageRef, caption: z.string() })),
     reviews: z.array(z.object({ quote: z.string(), name: z.string(), stars: z.number() })),
     video: z.object({ poster: imageRef, src: z.string().optional(), label: z.string() }),
     branches: z.array(z.object({ name: z.string(), mrt: z.string(), address: z.string(), mapUrl: z.string() })),

@@ -4,24 +4,61 @@ import SectionHeading from '~/components/ui/SectionHeading.astro';
 import Image from '~/components/ui/Image.astro';
 interface Props {
   heading: string;
-  enabled?: boolean; // compliance gate (spec §10)
-  items: { before: { src?: string; alt: string; label?: string }; after: { src?: string; alt: string; label?: string }; caption: string }[];
+  enabled?: boolean; // compliance gate (spec §10 of the MVP)
+  note?: string;
+  items: { image: { src?: string; alt: string; label?: string }; caption: string }[];
 }
-const { heading, enabled = true, items } = Astro.props;
+const { heading, enabled = true, note, items } = Astro.props;
 ---
 {enabled && (
   <Section>
-    <SectionHeading title={heading} align="center" />
-    <div class="mt-8 grid gap-4 sm:grid-cols-3">
-      {items.map((it) => (
-        <figure class="rounded-lg border border-brand-neutral-200 overflow-hidden">
-          <div class="grid grid-cols-2">
-            <Image src={it.before.src} alt={it.before.alt} label={it.before.label} width={200} height={200} rounded={false} />
-            <Image src={it.after.src} alt={it.after.alt} label={it.after.label} width={200} height={200} rounded={false} />
-          </div>
-          <figcaption class="p-2 text-xs text-brand-neutral-500 text-center">{it.caption}</figcaption>
+    <div data-reveal><SectionHeading title={heading} align="center" /></div>
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal-stagger>
+      {items.map((it, i) => (
+        <figure data-reveal class={`relative rounded-xl overflow-hidden border border-brand-neutral-200 bg-brand-neutral-0 u-hover ${i === 0 ? 'col-span-2 md:col-span-1' : ''}`}>
+          <Image src={it.image.src} alt={it.image.alt} label={it.image.label} width={500} height={500} rounded={false} class="ba-img cursor-zoom-in aspect-square" />
+          <figcaption class="pointer-events-none absolute top-2 left-2 rounded-full bg-brand-anchor/85 text-brand-neutral-0 text-[11px] font-medium px-2.5 py-0.5">{it.caption}</figcaption>
         </figure>
       ))}
     </div>
+    {note && <p class="mt-4 text-center text-xs text-brand-neutral-400">{note}</p>}
+
+    <div id="ba-lightbox" class="ba-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="ภาพผลลัพธ์ขนาดเต็ม">
+      <button type="button" class="ba-close" aria-label="close">✕</button>
+      <img class="ba-lightbox-img" src="" alt="" />
+    </div>
   </Section>
 )}
+<style>
+  .ba-lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; background: rgba(11,26,46,0.93); padding: 20px; }
+  .ba-lightbox.open { display: flex; }
+  .ba-lightbox-img { max-width: 100%; max-height: 88vh; width: auto; height: auto; border-radius: 12px; box-shadow: 0 16px 50px rgba(0,0,0,0.55); animation: ba-zoom 0.22s ease; }
+  @keyframes ba-zoom { from { transform: scale(0.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .ba-close { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 9999px; background: rgba(255,255,255,0.16); color: #fff; font-size: 20px; border: none; cursor: pointer; line-height: 1; }
+  .ba-close:hover { background: rgba(255,255,255,0.28); }
+</style>
+<script>
+  const lb = document.getElementById('ba-lightbox');
+  if (lb) {
+    const lbImg = lb.querySelector('.ba-lightbox-img') as HTMLImageElement;
+    const open = (src: string, alt: string) => {
+      lbImg.src = src; lbImg.alt = alt || '';
+      lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; lbImg.src = '';
+    };
+    document.querySelectorAll('.ba-img').forEach((img) => {
+      img.addEventListener('click', () => open((img as HTMLImageElement).currentSrc || (img as HTMLImageElement).src, (img as HTMLImageElement).alt));
+    });
+    lb.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      if (t === lb || t.classList.contains('ba-close')) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  }
+</script>
