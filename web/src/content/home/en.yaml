@@ -50,6 +50,7 @@ partners:
 founders:
   - name: Dr. Worapat Jarangkul (Dr. Ham)
     role: Medical Director & Lead Implantologist
+    nickname: Dr. Ham
     credentials:
       - First-class honours (Gold Medal), Mahidol Dentistry
       - Board cert. Oral & Maxillofacial Surgery, Chulalongkorn
@@ -58,6 +59,7 @@ founders:
     image: { src: /images/lp/doctor1.png, alt: Dr. Ham, label: Dr. Ham }
   - name: Dr. Pitchapa Phudphong (Dr. Praew)
     role: Oral & Maxillofacial Surgeon · Co-Founder
+    nickname: Dr. Praew
     credentials:
       - Oral & maxillofacial surgeon
       - Implantology educator

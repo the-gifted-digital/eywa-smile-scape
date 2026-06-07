@@ -4,7 +4,7 @@ import SectionHeading from '~/components/ui/SectionHeading.astro';
 import Image from '~/components/ui/Image.astro';
 interface Props {
   heading: string;
-  founders: { name: string; role: string; credentials: string[]; image: { src?: string; alt: string; label?: string } }[];
+  founders: { name: string; role: string; nickname?: string; credentials: string[]; image: { src?: string; alt: string; label?: string } }[];
 }
 const { heading, founders } = Astro.props;
 const [a, b] = founders;
@@ -15,6 +15,8 @@ const [a, b] = founders;
     <div class="relative w-full aspect-square overflow-hidden rounded-2xl bg-brand-anchor/40 md:max-w-[280px] mx-auto">
       <div class="doc-x doc-x-a absolute inset-0"><Image src={a?.image.src} alt={a?.image.alt} label={a?.image.label} width={560} height={560} rounded={false} class="w-full h-full object-cover" /></div>
       {b && <div class="doc-x doc-x-b absolute inset-0"><Image src={b.image.src} alt={b.image.alt} label={b.image.label} width={560} height={560} rounded={false} class="w-full h-full object-cover" /></div>}
+      {a?.nickname && <span class="doc-x-a absolute bottom-3 left-3 z-10 rounded-full bg-brand-anchor/85 px-3 py-1 text-sm font-semibold text-brand-neutral-0 backdrop-blur-sm shadow">{a.nickname}</span>}
+      {b?.nickname && <span class="doc-x-b absolute bottom-3 left-3 z-10 rounded-full bg-brand-anchor/85 px-3 py-1 text-sm font-semibold text-brand-neutral-0 backdrop-blur-sm shadow">{b.nickname}</span>}
     </div>
     <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
       {founders.map((f) => (

@@ -49,6 +49,7 @@ partners:
 founders:
   - name: Dr. Worapat Jarangkul（Ham 医生）
     role: 医疗总监与首席种植医师
+    nickname: Ham 医生
     credentials:
       - 玛希隆大学牙医学士（一等荣誉 · 金奖）
       - 朱拉隆功大学口腔颌面外科专科证书
@@ -57,6 +58,7 @@ founders:
     image: { src: /images/lp/doctor1.png, alt: Ham 医生, label: Dr. Ham }
   - name: Dr. Pitchapa Phudphong（Praew 医生）
     role: 口腔颌面外科医师 · 联合创始人
+    nickname: Praew 医生
     credentials:
       - 口腔颌面外科医师
       - 种植学讲师

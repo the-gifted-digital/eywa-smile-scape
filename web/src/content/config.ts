@@ -118,7 +118,7 @@ const home = defineCollection({
     }),
     services: z.array(z.object({ title: z.string(), summary: z.string(), href: z.string(), image: imageRef })),
     partners: z.array(z.object({ name: z.string(), logo: imageRef })),
-    founders: z.array(z.object({ name: z.string(), role: z.string(), credentials: z.array(z.string()), image: imageRef })),
+    founders: z.array(z.object({ name: z.string(), role: z.string(), nickname: z.string().optional(), credentials: z.array(z.string()), image: imageRef })),
     doctors: z.array(z.object({ name: z.string(), role: z.string(), image: imageRef })),
     process: z.array(z.object({ step: z.number(), title: z.string(), body: z.string(), image: imageRef })),
     beforeAfter: z.array(z.object({ image: imageRef, caption: z.string() })),
