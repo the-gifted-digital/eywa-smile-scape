@@ -1,0 +1,13 @@
+---
+import Section from '~/components/ui/Section.astro';
+import SectionHeading from '~/components/ui/SectionHeading.astro';
+import ServiceCard from '~/components/cards/ServiceCard.astro';
+interface Props { heading: string; subtitle?: string; services: { title: string; summary: string; href: string; image: { src?: string; alt: string; label?: string } }[]; }
+const { heading, subtitle, services } = Astro.props;
+---
+<Section>
+  <SectionHeading title={heading} subtitle={subtitle} align="center" />
+  <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {services.map((s) => <ServiceCard title={s.title} summary={s.summary} href={s.href} image={s.image} />)}
+  </div>
+</Section>
