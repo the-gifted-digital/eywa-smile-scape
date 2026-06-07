@@ -19,7 +19,7 @@ const { heading, subtitle, doctors } = Astro.props;
   // Show a random 4–6 of the roster; hide the rest. (go. is noindex → SEO-safe.)
   const wrap = document.querySelector('[data-team]');
   if (wrap) {
-    const cards = Array.from(wrap.querySelectorAll('[data-doc]')) as HTMLElement[];
+    const cards = Array.from(wrap.querySelectorAll<HTMLElement>('[data-doc]'));
     for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [cards[i], cards[j]] = [cards[j], cards[i]];

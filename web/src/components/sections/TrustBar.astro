@@ -4,6 +4,6 @@ const { items } = Astro.props;
 ---
 <div class="bg-brand-ice border-y border-brand-neutral-200">
   <ul class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-brand-anchor">
-    {items.map((it) => <li class="flex items-center gap-1.5"><span class="text-brand-primary">✓</span>{it.label}</li>)}
+    {items.map((it) => <li class="flex items-center gap-1.5"><span class="text-brand-primary" aria-hidden="true">✓</span>{it.label}</li>)}
   </ul>
 </div>

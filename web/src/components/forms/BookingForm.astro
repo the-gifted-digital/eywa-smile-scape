@@ -38,9 +38,10 @@ const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-
       const data = Object.fromEntries(new FormData(form).entries());
       msg.textContent = 'กำลังส่ง…';
       try {
-        await fetch(form.dataset.webhook!, {
+        const res = await fetch(form.dataset.webhook!, {
           method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
         });
+        if (!res.ok) throw new Error(String(res.status));
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ event: 'lead_submit', form: 'homepage_booking' });
         form.reset();
