@@ -13,11 +13,18 @@ const { heading, reviews, video } = Astro.props;
 <Section tone="paper">
   <SectionHeading title={heading} align="center" />
   <div class="mt-8 grid gap-6 lg:grid-cols-3">
-    <div class="lg:col-span-2 grid gap-4 sm:grid-cols-2">
-      {reviews.map((r) => <ReviewCard quote={r.quote} name={r.name} stars={r.stars} />)}
+    <div class="lg:col-span-2 grid gap-4 sm:grid-cols-2" data-reveal-stagger>
+      {reviews.map((r) => <div data-reveal><ReviewCard quote={r.quote} name={r.name} stars={r.stars} /></div>)}
     </div>
-    <div class="max-w-[280px] mx-auto w-full">
-      <Image src={video.poster.src} alt={video.poster.alt} label={video.poster.label} width={280} height={280} />
+    <div class="max-w-[300px] mx-auto w-full" data-reveal>
+      {video.src ? (
+        <video controls preload="none" playsinline poster={video.poster.src} width="1280" height="1280"
+               class="rounded-2xl border border-brand-neutral-200 bg-black w-full aspect-square">
+          <source src={video.src} type="video/mp4" />
+        </video>
+      ) : (
+        <Image src={video.poster.src} alt={video.poster.alt} label={video.poster.label} width={300} height={300} />
+      )}
       <p class="mt-2 text-center text-sm text-brand-neutral-500">{video.label}</p>
     </div>
   </div>

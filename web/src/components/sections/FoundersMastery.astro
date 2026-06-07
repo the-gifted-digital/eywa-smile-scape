@@ -2,23 +2,40 @@
 import Section from '~/components/ui/Section.astro';
 import SectionHeading from '~/components/ui/SectionHeading.astro';
 import Image from '~/components/ui/Image.astro';
-interface Props { heading: string; founders: { name: string; role: string; credentials: string[]; image: { src?: string; alt: string; label?: string } }[]; }
+interface Props {
+  heading: string;
+  founders: { name: string; role: string; credentials: string[]; image: { src?: string; alt: string; label?: string } }[];
+}
 const { heading, founders } = Astro.props;
+const [a, b] = founders;
 ---
 <Section tone="anchor">
-  <SectionHeading title={heading} align="center" onDark />
-  <div class="mt-8 grid gap-6 md:grid-cols-2">
-    {founders.map((f) => (
-      <div class="grid grid-cols-[120px_1fr] gap-4 rounded-lg bg-brand-neutral-0/5 p-4">
-        <Image src={f.image.src} alt={f.image.alt} label={f.image.label} width={120} height={150} />
-        <div>
+  <div data-reveal><SectionHeading title={heading} align="center" onDark /></div>
+  <div class="mt-8 grid gap-8 md:grid-cols-[280px_1fr] items-center" data-reveal>
+    <div class="relative w-full aspect-square overflow-hidden rounded-2xl bg-brand-anchor/40 md:max-w-[280px] mx-auto">
+      <div class="doc-x doc-x-a absolute inset-0"><Image src={a?.image.src} alt={a?.image.alt} label={a?.image.label} width={560} height={560} rounded={false} class="w-full h-full object-cover" /></div>
+      {b && <div class="doc-x doc-x-b absolute inset-0"><Image src={b.image.src} alt={b.image.alt} label={b.image.label} width={560} height={560} rounded={false} class="w-full h-full object-cover" /></div>}
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+      {founders.map((f) => (
+        <div class="rounded-lg bg-brand-neutral-0/5 p-4">
           <h3 class="font-display font-bold text-brand-neutral-0">{f.name}</h3>
           <p class="text-sm text-brand-highlight">{f.role}</p>
           <ul class="mt-2 space-y-1 text-sm text-brand-neutral-200">
             {f.credentials.map((c) => <li>• {c}</li>)}
           </ul>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 </Section>
+<style>
+  @keyframes doc-cross-a { 0%,42% { opacity: 1; } 50%,92% { opacity: 0; } 100% { opacity: 1; } }
+  @keyframes doc-cross-b { 0%,42% { opacity: 0; } 50%,92% { opacity: 1; } 100% { opacity: 0; } }
+  .doc-x-a { animation: doc-cross-a 8s ease-in-out infinite; }
+  .doc-x-b { animation: doc-cross-b 8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .doc-x-a { animation: none; opacity: 1; }
+    .doc-x-b { animation: none; opacity: 0; }
+  }
+</style>
