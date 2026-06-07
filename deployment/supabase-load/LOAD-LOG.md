@@ -19,3 +19,6 @@
 - หมอแพรว has NO Person entity in entities.md (only woraphat + tomas); loaded as author only (`author_fp` NULL).
 - Pages: parser yields **722 unique** (721 entity-bearing + `6.2` hub). Official audit "726" double-counts 4 section-6 hub-index rows (6.1/6.3/6.4/6.6 also exist as 7-col page rows) → de-duped.
 - Page orphan ref: `orthodontic-intervention` ×3 pages (3.5.4/.5/.7, R17 rename) — entity not in entities.md → expect `orphan_entity=3`. Phase F: add entity or remap.
+- Citations: 93 parsed; 2 DOIs already in shared pool (`10.1016/j.jdent.2019.03.008`, `10.1111/j.1600-0501.2012.02546.x`) → **91 net-new**. `citation_type` mostly `other` (bare grade letters / `—` / retrospectives) — Phase F enrich. Only 11 of 93 carry a DOI (md DOI/URL column sparse).
+- Keywords: 525 unique (after dropping 21 `[service]`/`[BRAND]`/`[condition]` template placeholders). Source doc claimed ~680 (loose).
+- Source counts vs handover: entities **163** (not 166/167); pages **722 unique** (not 726).
