@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+  onDark?: boolean;   // switch text to light for dark (anchor) sections
+}
+const { eyebrow, title, subtitle, align = 'left', onDark = false } = Astro.props;
+const alignCls = align === 'center' ? 'text-center mx-auto' : '';
+const titleCls = onDark ? 'text-brand-neutral-0' : 'text-brand-anchor';
+const subCls = onDark ? 'text-brand-neutral-200' : 'text-brand-neutral-700';
+const eyebrowCls = onDark ? 'text-brand-highlight' : 'text-brand-primary-deep';
+---
+<div class:list={['max-w-2xl', alignCls]}>
+  {eyebrow && <p class:list={['font-display text-sm font-medium uppercase tracking-[0.2em]', eyebrowCls]}>{eyebrow}</p>}
+  <h2 class:list={['mt-2 text-2xl md:text-3xl font-bold', titleCls]}>{title}</h2>
+  {subtitle && <p class:list={['mt-3 leading-relaxed', subCls]}>{subtitle}</p>}
+</div>
