@@ -1,32 +1,39 @@
 ---
 import Base from '~/layouts/Base.astro';
+import { getHome } from '~/lib/home';
+import Hero from '~/components/sections/Hero.astro';
+import TrustBar from '~/components/sections/TrustBar.astro';
+import WhyPillars from '~/components/sections/WhyPillars.astro';
+import BlueDiamond from '~/components/sections/BlueDiamond.astro';
+import ServicesGrid from '~/components/sections/ServicesGrid.astro';
+import PartnerLogos from '~/components/sections/PartnerLogos.astro';
+import FoundersMastery from '~/components/sections/FoundersMastery.astro';
+import TeamRoster from '~/components/sections/TeamRoster.astro';
+import ProcessSteps from '~/components/sections/ProcessSteps.astro';
+import BeforeAfter from '~/components/sections/BeforeAfter.astro';
+import Reviews from '~/components/sections/Reviews.astro';
+import Branches from '~/components/sections/Branches.astro';
+import FaqBlock from '~/components/FaqBlock.astro';
+import BookingForm from '~/components/forms/BookingForm.astro';
+import FinalCta from '~/components/sections/FinalCta.astro';
 
-const title = 'SmileScape Dental Clinic';
-const description =
-  'SmileScape Dental Clinic — a lifetime foundation for your smile. Implant-first dental care, led by specialist dentists. Branches at Rattanathibet and Srinakarin.';
+const h = await getHome('en');
+// FAQPage JSON-LD is emitted by <FaqBlock> below — do NOT duplicate it here.
 ---
-
-<Base title={title} description={description}>
-  <section class="bg-brand-anchor text-brand-neutral-0">
-    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28">
-      <p class="font-display text-sm font-medium uppercase tracking-[0.2em] text-brand-highlight">
-        The Lifetime Foundation
-      </p>
-      <h1 class="font-display mt-4 text-4xl md:text-6xl font-bold leading-tight">
-        A stable foundation for a lifetime of smiles
-      </h1>
-      <p class="mt-6 max-w-xl text-lg text-brand-neutral-200">
-        A specialist implant-first dental clinic, led by experienced dentists with
-        a focus on careful diagnosis and long-term care.
-      </p>
-      <div class="mt-8">
-        <a
-          href="/en/booking/"
-          class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep"
-        >
-          Book a consultation
-        </a>
-      </div>
-    </div>
-  </section>
+<Base title={h.meta.title} description={h.meta.description} stickyCta>
+  <Hero {...h.hero} />
+  <TrustBar items={h.trustBar} />
+  <WhyPillars heading="Why SmileScape" pillars={h.pillars} />
+  <BlueDiamond {...h.blueDiamond} />
+  <ServicesGrid heading="Comprehensive dental services" services={h.services} />
+  <PartnerLogos heading="We work with global brands" partners={h.partners} />
+  <FoundersMastery heading="The Global Mastery — Founders" founders={h.founders} />
+  <TeamRoster heading="Our dental team" doctors={h.doctors} />
+  <ProcessSteps heading="Treatment process" steps={h.process} />
+  <BeforeAfter heading="Before &amp; after" items={h.beforeAfter} />
+  <Reviews heading="Patient voices" reviews={h.reviews} video={h.video} />
+  <Branches heading="Our branches" mapLabel="View on map →" branches={h.branches} />
+  <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} heading="FAQ" /></div>
+  <BookingForm heading="Book a free consultation" subtitle="Leave your details and we'll call you back" />
+  <FinalCta {...h.finalCta} />
 </Base>
