@@ -1,0 +1,9 @@
+---
+interface Props { quote: string; name: string; stars: number; }
+const { quote, name, stars } = Astro.props;
+---
+<figure class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
+  <div class="text-brand-accent" aria-label={`${stars} ดาว`}>{'★'.repeat(stars)}</div>
+  <blockquote class="mt-2 text-brand-neutral-700">{quote}</blockquote>
+  <figcaption class="mt-3 text-sm font-semibold text-brand-anchor">{name}</figcaption>
+</figure>

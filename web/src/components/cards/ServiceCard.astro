@@ -1,0 +1,12 @@
+---
+import Image from '~/components/ui/Image.astro';
+interface Props { title: string; summary: string; href: string; image: { src?: string; alt: string; label?: string }; }
+const { title, summary, href, image } = Astro.props;
+---
+<a href={href} class="group block rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 overflow-hidden hover:border-brand-primary transition-colors">
+  <Image src={image.src} alt={image.alt} label={image.label} width={400} height={240} rounded={false} />
+  <div class="p-4">
+    <h3 class="font-display font-bold text-brand-anchor group-hover:text-brand-primary-deep">{title}</h3>
+    <p class="mt-1 text-sm text-brand-neutral-700">{summary}</p>
+  </div>
+</a>

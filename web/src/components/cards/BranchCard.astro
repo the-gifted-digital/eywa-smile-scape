@@ -1,0 +1,10 @@
+---
+interface Props { name: string; mrt: string; address: string; mapUrl: string; }
+const { name, mrt, address, mapUrl } = Astro.props;
+---
+<div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
+  <h3 class="font-display font-bold text-brand-anchor">{name}</h3>
+  <p class="mt-1 text-sm text-brand-primary-deep">{mrt}</p>
+  <p class="mt-1 text-sm text-brand-neutral-700">{address}</p>
+  <a href={mapUrl} class="mt-3 inline-block text-sm font-semibold text-brand-primary-deep hover:underline">เปิดในแผนที่ →</a>
+</div>

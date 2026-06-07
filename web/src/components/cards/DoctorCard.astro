@@ -1,0 +1,12 @@
+---
+import Image from '~/components/ui/Image.astro';
+interface Props { name: string; role: string; image: { src?: string; alt: string; label?: string }; }
+const { name, role, image } = Astro.props;
+---
+<div class="rounded-lg border border-brand-neutral-200 overflow-hidden bg-brand-neutral-0">
+  <Image src={image.src} alt={image.alt} label={image.label} width={300} height={320} rounded={false} />
+  <div class="p-3">
+    <p class="font-semibold text-brand-anchor text-sm">{name}</p>
+    <p class="text-xs text-brand-neutral-500">{role}</p>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+---
+interface Props { icon: string; title: string; body: string; }
+const { title, body } = Astro.props;
+---
+<div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
+  <div class="h-9 w-9 rounded-full bg-brand-primary-soft"></div>
+  <h3 class="mt-3 font-display font-bold text-brand-anchor">{title}</h3>
+  <p class="mt-1 text-sm text-brand-neutral-700 leading-relaxed">{body}</p>
+</div>
