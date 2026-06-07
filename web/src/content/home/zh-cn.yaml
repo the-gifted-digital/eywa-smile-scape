@@ -1,0 +1,99 @@
+meta:
+  title: SmileScape 牙科诊所
+  description: >-
+    SmileScape 牙科诊所 — 终身稳固的根基。以种植牙为核心的专科诊所，Blue Diamond
+    种植体终身保固、0% 分期付款。两家分院：Rattanathibet 与 Srinagarindra。
+hero:
+  eyebrow: The Lifetime Foundation
+  title: 稳固的牙齿根基，成就一生自信笑容
+  body: 以种植牙为核心的牙科诊所，由具备国际资历的专科医师主理，严谨诊断、长期照护。
+  primaryCta: { label: 预约免费咨询, href: '#booking' }
+  secondaryCta: { label: 了解 Blue Diamond 种植牙, href: /en/lp/dental-implant/ }
+  image: { alt: SmileScape 诊所, label: hero }
+trustBar:
+  - { label: Google 5.0★ 评价 }
+  - { label: 2 家分院 邻近 MRT }
+  - { label: 终身保固 }
+  - { label: 0% 分期 免信用卡 }
+  - { label: 100% 数字化方案 }
+pillars:
+  - { icon: implant, title: Implant Mastery, body: 凭借全球学位与 100% 数字化规划，实现精准种植效果。 }
+  - { icon: shield, title: Family-Standard Integrity, body: 不敢为自己父母做的方案，我们绝不为您做 — 拒绝过度治疗。 }
+  - { icon: clock, title: Efficiency & Comfort, body: 缩短手术时间、减轻疼痛、恢复更快。 }
+  - { icon: heart, title: Lifelong Confidence, body: 为长期实际使用而设计的种植牙。 }
+blueDiamond:
+  eyebrow: Hero Service
+  title: Blue Diamond 种植牙 — 您最后的种植牙选择
+  priceLabel: 每颗 29,900 泰铢起
+  bullets:
+    - 终身保固
+    - 0% 分期 免信用卡
+    - 韩国制造（高性价比优质级）
+    - 对组织 / 医师 / 患者友好 + MegaGen
+  image: { alt: Blue Diamond 种植牙, label: 'Blue Diamond' }
+  cta: { label: 查看 Blue Diamond 详情, href: /en/lp/dental-implant/ }
+services:
+  - { title: 种植牙, summary: 单颗 / 多颗种植, href: /en/lp/dental-implant/, image: { alt: 种植牙, label: service } }
+  - { title: All-on-X 全口种植, summary: 全颌种植修复, href: '#booking', image: { alt: All-on-X, label: service } }
+  - { title: 牙齿矫正 / 隐形矫正, summary: 金属 · 隐形 · 矫正器, href: '#booking', image: { alt: 牙齿矫正, label: service } }
+  - { title: 贴面与微笑设计, summary: 微笑设计, href: '#booking', image: { alt: 贴面, label: service } }
+  - { title: 一般牙科, summary: 补牙、拔牙、洗牙、根管, href: '#booking', image: { alt: 一般牙科, label: service } }
+  - { title: 其他专科, summary: 牙周 · 儿童 · 牙冠牙桥, href: '#booking', image: { alt: 其他专科, label: service } }
+partners:
+  - { name: MegaGen, logo: { alt: MegaGen, label: LOGO } }
+  - { name: Neodent, logo: { alt: Neodent, label: LOGO } }
+  - { name: Straumann, logo: { alt: Straumann, label: LOGO } }
+  - { name: 3Shape, logo: { alt: 3Shape, label: LOGO } }
+  - { name: Acteon, logo: { alt: Acteon, label: LOGO } }
+  - { name: Invisalign, logo: { alt: Invisalign, label: LOGO } }
+founders:
+  - name: Dr. Worapat Jarangkul（Ham 医生）
+    role: 医疗总监与首席种植医师
+    credentials:
+      - 玛希隆大学牙医学士（一等荣誉 · 金奖）
+      - 朱拉隆功大学口腔颌面外科专科证书
+      - 双硕士：种植学（泰国 + 德国）
+      - 全球大师班（Urban / Kern / ILAPEO）
+    image: { alt: Ham 医生, label: Dr. Ham }
+  - name: Dr. Pitchapa Phudphong（Praew 医生）
+    role: 口腔颌面外科医师 · 联合创始人
+    credentials:
+      - 口腔颌面外科医师
+      - 种植学讲师
+      - SmileScape 联合首席执行官与联合创始人
+    image: { alt: Praew 医生, label: Dr. Praew }
+doctors:
+  - { name: 牙周病专科医师, role: 牙周专科, image: { alt: 牙医, label: dr } }
+  - { name: 根管治疗专科医师, role: 根管专科, image: { alt: 牙医, label: dr } }
+  - { name: 儿童牙科专科医师, role: 儿童牙科, image: { alt: 牙医, label: dr } }
+  - { name: 牙齿矫正专科医师, role: 矫正专科, image: { alt: 牙医, label: dr } }
+  - { name: 全科牙医, role: 全科诊疗, image: { alt: 牙医, label: dr } }
+  - { name: 口腔外科医师, role: 外科, image: { alt: 牙医, label: dr } }
+process:
+  - { step: 1, title: 免费咨询, body: 评估病例与目标, image: { alt: 咨询, label: '1' } }
+  - { step: 2, title: X 光与诊断, body: 3D 扫描、数字化规划, image: { alt: x-ray, label: '2' } }
+  - { step: 3, title: 治疗方案, body: 个性化方案, image: { alt: 方案, label: '3' } }
+  - { step: 4, title: 治疗, body: 精准植入种植体, image: { alt: 治疗, label: '4' } }
+  - { step: 5, title: 复诊跟进, body: 长期照护, image: { alt: 跟进, label: '5' } }
+beforeAfter:
+  - { caption: 案例 1, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
+  - { caption: 案例 2, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
+  - { caption: 案例 3, before: { alt: 术前, label: 术前 }, after: { alt: 术后, label: 术后 } }
+reviews:
+  - { quote: 照护非常好，讲解详细，没有想象中那么痛。, name: 患者 A, stars: 5 }
+  - { quote: 做完种植牙后自信多了。, name: 患者 B, stars: 5 }
+  - { quote: 团队亲切，诊所整洁。, name: 患者 C, stars: 5 }
+video:
+  label: 患者评价视频
+  poster: { alt: 患者评价视频, label: '▶ 评价' }
+branches:
+  - { name: Rattanathibet 分院, mrt: MRT 紫线 · Yaek Nonthaburi 1 站, address: '暖武里府（详细地址待提供）', mapUrl: 'https://maps.google.com/?q=SmileScape+Rattanathibet' }
+  - { name: Srinagarindra 分院, mrt: MRT 黄线, address: '曼谷（详细地址待提供）', mapUrl: 'https://maps.google.com/?q=SmileScape+Srinagarindra' }
+faq:
+  - { q: Blue Diamond 种植牙多少钱？, a: 每颗 29,900 泰铢起，终身保固，可 0% 分期且无需信用卡（具体条件以诊所规定为准）。 }
+  - { q: SmileScape 有几家分院？, a: 目前两家：Rattanathibet（MRT 紫线）与 Srinagarindra（MRT 黄线）。 }
+  - { q: 需要提前预约吗？, a: 建议通过表单或 LINE 提前预约，以减少等待时间。 }
+finalCta:
+  title: 今天就为您稳固的笑容打下根基
+  body: 与专科医师免费咨询
+  cta: { label: 预约免费咨询, href: '#booking' }

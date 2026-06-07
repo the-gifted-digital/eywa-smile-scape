@@ -1,0 +1,39 @@
+---
+import Base from '~/layouts/Base.astro';
+import { getHome } from '~/lib/home';
+import Hero from '~/components/sections/Hero.astro';
+import TrustBar from '~/components/sections/TrustBar.astro';
+import WhyPillars from '~/components/sections/WhyPillars.astro';
+import BlueDiamond from '~/components/sections/BlueDiamond.astro';
+import ServicesGrid from '~/components/sections/ServicesGrid.astro';
+import PartnerLogos from '~/components/sections/PartnerLogos.astro';
+import FoundersMastery from '~/components/sections/FoundersMastery.astro';
+import TeamRoster from '~/components/sections/TeamRoster.astro';
+import ProcessSteps from '~/components/sections/ProcessSteps.astro';
+import BeforeAfter from '~/components/sections/BeforeAfter.astro';
+import Reviews from '~/components/sections/Reviews.astro';
+import Branches from '~/components/sections/Branches.astro';
+import FaqBlock from '~/components/FaqBlock.astro';
+import BookingForm from '~/components/forms/BookingForm.astro';
+import FinalCta from '~/components/sections/FinalCta.astro';
+
+const h = await getHome('zh-cn');
+// FAQPage JSON-LD is emitted by <FaqBlock> below — do NOT duplicate it here.
+---
+<Base title={h.meta.title} description={h.meta.description} stickyCta>
+  <Hero {...h.hero} />
+  <TrustBar items={h.trustBar} />
+  <WhyPillars heading="为什么选择 SmileScape" pillars={h.pillars} />
+  <BlueDiamond {...h.blueDiamond} />
+  <ServicesGrid heading="全面的牙科服务" services={h.services} />
+  <PartnerLogos heading="我们与全球品牌合作" partners={h.partners} />
+  <FoundersMastery heading="The Global Mastery — 创始团队" founders={h.founders} />
+  <TeamRoster heading="我们的牙医团队" doctors={h.doctors} />
+  <ProcessSteps heading="治疗流程" steps={h.process} />
+  <BeforeAfter heading="术前 / 术后" items={h.beforeAfter} />
+  <Reviews heading="患者心声" reviews={h.reviews} video={h.video} />
+  <Branches heading="我们的分院" mapLabel="在地图中查看 →" branches={h.branches} />
+  <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} heading="常见问题" /></div>
+  <BookingForm heading="预约 & 免费牙医咨询" subtitle="留下您的资料，我们会与您联系" />
+  <FinalCta {...h.finalCta} />
+</Base>

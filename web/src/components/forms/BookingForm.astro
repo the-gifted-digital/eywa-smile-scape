@@ -4,8 +4,8 @@ import SectionHeading from '~/components/ui/SectionHeading.astro';
 interface Props { heading: string; subtitle?: string; }
 const { heading, subtitle } = Astro.props;
 const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-form';
-const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
-const L = {
+const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en' | 'zh-cn';
+const LABELS = {
   th: {
     name: 'ชื่อ-นามสกุล', phone: 'เบอร์โทร',
     servicePh: 'เลือกบริการที่สนใจ',
@@ -28,7 +28,19 @@ const L = {
     success: "Request sent — we'll contact you shortly ✓",
     error: 'Could not send. Please call 092 293 6226 or message us on LINE.',
   },
-}[lang];
+  'zh-cn': {
+    name: '姓名', phone: '电话号码',
+    servicePh: '选择服务项目',
+    services: ['种植牙', 'All-on-X', '牙齿矫正 / 隐形矫正', '贴面 / 微笑设计', '一般牙科', '其他'],
+    branchPh: '选择分院', branches: ['Rattanathibet', 'Srinagarindra'],
+    pdpa: '我同意接受联系并依据 PDPA 政策处理我的资料。',
+    submit: '确认预约',
+    sending: '发送中…',
+    success: '预约请求已发送，我们会尽快与您联系 ✓',
+    error: '发送失败，请致电 092 293 6226 或通过 LINE 联系我们。',
+  },
+};
+const L = LABELS[lang] ?? LABELS.th;
 ---
 <Section id="booking" tone="ice">
   <SectionHeading title={heading} subtitle={subtitle} align="center" />

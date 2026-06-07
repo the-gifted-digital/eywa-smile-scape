@@ -13,19 +13,19 @@ export default defineConfig({
   trailingSlash: 'always',
 
   // TH-first multilingual (SS-DR-012). Default locale (th) served at root with
-  // NO prefix; en served under /en/. zh is a future locale (add when ready).
+  // NO prefix; en served under /en/; zh-cn served under /zh-cn/.
   i18n: {
     defaultLocale: 'th',
-    locales: ['th', 'en'],
+    locales: ['th', 'en', 'zh-cn'],
     routing: { prefixDefaultLocale: false },
-    fallback: { en: 'th' },
+    fallback: { en: 'th', 'zh-cn': 'th' },
   },
 
   integrations: [
     sitemap({
       i18n: {
         defaultLocale: 'th',
-        locales: { th: 'th-TH', en: 'en-US' },
+        locales: { th: 'th-TH', en: 'en-US', 'zh-cn': 'zh-CN' },
       },
     }),
     tailwind({ applyBaseStyles: false }),

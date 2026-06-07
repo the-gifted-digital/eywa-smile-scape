@@ -33,19 +33,22 @@ interface Props {
 const { title, description, canonical, ogType = 'website', jsonLd, robots = 'noindex,follow', stickyCta = false } = Astro.props;
 
 const siteName = 'SmileScape Dental Clinic';
-const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
-const ogLocale = lang === 'en' ? 'en_US' : 'th_TH';
+const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en' | 'zh-cn';
+const ogLocale = lang === 'en' ? 'en_US' : lang === 'zh-cn' ? 'zh_CN' : 'th_TH';
 
 const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
 
-// hreflang alternates (TH-first; prefixDefaultLocale:false → th at root, en under /en/).
+// hreflang alternates (TH-first; prefixDefaultLocale:false → th at root, en under /en/, zh-cn under /zh-cn/).
 const p = Astro.url.pathname;
-const thPath = p.startsWith('/en/') ? p.slice(3) : p === '/en' ? '/' : p;
-const enPath = ('/en' + thPath).replace(/\/{2,}/g, '/');
+const seg = p.split('/')[1];
+const known = ['en', 'zh-cn'];
+const basePath = known.includes(seg) ? (p.slice(seg.length + 1) || '/') : p;
+const withLocale = (loc: string) => (loc === 'th' ? basePath : ('/' + loc + basePath).replace(/\/{2,}/g, '/'));
 const alt = {
-  th: new URL(thPath, Astro.site).toString(),
-  en: new URL(enPath, Astro.site).toString(),
+  th: new URL(withLocale('th'), Astro.site).toString(),
+  en: new URL(withLocale('en'), Astro.site).toString(),
+  'zh-cn': new URL(withLocale('zh-cn'), Astro.site).toString(),
 };
 
 // ---- Organization JSON-LD (PLACEHOLDER NAP — see README open questions) ----
@@ -54,7 +57,9 @@ const orgLd = {
   '@type': 'Dentist',
   name: siteName,
   url: Astro.site?.toString(),
-  description: lang === 'en'
+  description: lang === 'zh-cn'
+    ? 'SmileScape 牙科诊所 — 终身稳固的根基。以种植牙为核心的专科牙科诊所。'
+    : lang === 'en'
     ? 'SmileScape Dental Clinic — The Lifetime Foundation. Implant-first specialty dental care.'
     : 'คลินิกทันตกรรม SmileScape — รากฐานฟันที่มั่นคงเพื่อความสุขที่ยั่งยืนตลอดชีวิต. เด่นด้านรากฟันเทียม (Implant-first).',
   medicalSpecialty: 'Dentistry',
@@ -75,20 +80,19 @@ const orgLd = {
 
 const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
 
-const nav =
-  lang === 'en'
-    ? [
-        { href: '/en/lp/dental-implant/', label: 'Dental Implants' },
-        { href: '/en/#booking', label: 'Book Now', cta: true },
-      ]
-    : [
-        { href: '/lp/dental-implant/', label: 'รากฟันเทียม' },
-        { href: '/#booking', label: 'จองคิว', cta: true },
-      ];
-const homeHref = lang === 'en' ? '/en/' : '/';
-const footer = lang === 'en'
-  ? { tagline: 'A stable foundation for a lifetime of confident smiles', branches: 'Rattanathibet branch (MRT Purple) · Srinagarindra branch (MRT Yellow)' }
-  : { tagline: 'รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต', branches: 'สาขารัตนาธิเบศร์ (MRT สีม่วง) · สาขาศรีนครินทร์ (MRT สีเหลือง)' };
+const navByLocale = {
+  th: [{ href: '/lp/dental-implant/', label: 'รากฟันเทียม' }, { href: '/#booking', label: 'จองคิว', cta: true }],
+  en: [{ href: '/en/lp/dental-implant/', label: 'Dental Implants' }, { href: '/en/#booking', label: 'Book Now', cta: true }],
+  'zh-cn': [{ href: '/en/lp/dental-implant/', label: '种植牙' }, { href: '/zh-cn/#booking', label: '预约', cta: true }],
+};
+const nav = navByLocale[lang] ?? navByLocale.th;
+const homeHref = lang === 'en' ? '/en/' : lang === 'zh-cn' ? '/zh-cn/' : '/';
+const footerByLocale = {
+  th: { tagline: 'รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต', branches: 'สาขารัตนาธิเบศร์ (MRT สีม่วง) · สาขาศรีนครินทร์ (MRT สีเหลือง)' },
+  en: { tagline: 'A stable foundation for a lifetime of confident smiles', branches: 'Rattanathibet branch (MRT Purple) · Srinagarindra branch (MRT Yellow)' },
+  'zh-cn': { tagline: '稳固的牙齿根基，成就一生自信笑容', branches: 'Rattanathibet 分院（MRT 紫线）· Srinagarindra 分院（MRT 黄线）' },
+};
+const footer = footerByLocale[lang] ?? footerByLocale.th;
 ---
 
 <!doctype html>
@@ -108,6 +112,7 @@ const footer = lang === 'en'
     <!-- hreflang -->
     <link rel="alternate" hreflang="th" href={alt.th} />
     <link rel="alternate" hreflang="en" href={alt.en} />
+    <link rel="alternate" hreflang="zh-CN" href={alt['zh-cn']} />
     <link rel="alternate" hreflang="x-default" href={alt.th} />
 
     <!-- OpenGraph -->

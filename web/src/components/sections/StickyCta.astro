@@ -1,9 +1,11 @@
 ---
 interface Props { phoneTel: string; phoneDisplay: string; lineUrl: string; }
 const { phoneTel, phoneDisplay, lineUrl } = Astro.props;
-const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en';
+const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en' | 'zh-cn';
 const t = lang === 'en'
   ? { call: 'Call', line: 'Book via LINE' }
+  : lang === 'zh-cn'
+  ? { call: '立即致电', line: '通过 LINE 预约' }
   : { call: 'โทรเลย', line: 'จองคิวผ่าน LINE' };
 ---
 <div id="ssf-sticky-cta" class="ssf-cta md:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-brand-neutral-200 grid grid-cols-2 gap-2 p-2 shadow-[0_-4px_20px_rgba(20,56,107,0.14)]">
