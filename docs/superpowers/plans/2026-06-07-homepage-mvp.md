@@ -543,6 +543,7 @@ interface Props { icon: string; title: string; body: string; }
 const { title, body } = Astro.props;
 ---
 <div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
+  {/* TODO(polish): render `icon` slug as an SVG; placeholder dot for MVP */}
   <div class="h-9 w-9 rounded-full bg-brand-primary-soft"></div>
   <h3 class="mt-3 font-display font-bold text-brand-anchor">{title}</h3>
   <p class="mt-1 text-sm text-brand-neutral-700 leading-relaxed">{body}</p>
@@ -591,7 +592,7 @@ interface Props { quote: string; name: string; stars: number; }
 const { quote, name, stars } = Astro.props;
 ---
 <figure class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
-  <div class="text-brand-accent" aria-label={`${stars} ดาว`}>{'★'.repeat(stars)}</div>
+  <div class="text-brand-accent" aria-label={`${stars}/5`}>{'★'.repeat(stars)}</div>
   <blockquote class="mt-2 text-brand-neutral-700">{quote}</blockquote>
   <figcaption class="mt-3 text-sm font-semibold text-brand-anchor">{name}</figcaption>
 </figure>
@@ -601,14 +602,14 @@ const { quote, name, stars } = Astro.props;
 
 ```astro
 ---
-interface Props { name: string; mrt: string; address: string; mapUrl: string; }
-const { name, mrt, address, mapUrl } = Astro.props;
+interface Props { name: string; mrt: string; address: string; mapUrl: string; mapLabel?: string; }
+const { name, mrt, address, mapUrl, mapLabel = 'View on map →' } = Astro.props;
 ---
 <div class="rounded-lg border border-brand-neutral-200 bg-brand-neutral-0 p-5">
   <h3 class="font-display font-bold text-brand-anchor">{name}</h3>
   <p class="mt-1 text-sm text-brand-primary-deep">{mrt}</p>
   <p class="mt-1 text-sm text-brand-neutral-700">{address}</p>
-  <a href={mapUrl} class="mt-3 inline-block text-sm font-semibold text-brand-primary-deep hover:underline">เปิดในแผนที่ →</a>
+  <a href={mapUrl} class="mt-3 inline-block text-sm font-semibold text-brand-primary-deep hover:underline">{mapLabel}</a>
 </div>
 ```
 
@@ -666,7 +667,7 @@ const { items } = Astro.props;
 ---
 <div class="bg-brand-ice border-y border-brand-neutral-200">
   <ul class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-brand-anchor">
-    {items.map((it) => <li class="flex items-center gap-1.5"><span class="text-brand-primary">✓</span>{it.label}</li>)}
+    {items.map((it) => <li class="flex items-center gap-1.5"><span class="text-brand-primary" aria-hidden="true">✓</span>{it.label}</li>)}
   </ul>
 </div>
 ```
@@ -726,7 +727,7 @@ const { eyebrow, title, priceLabel, bullets, image, cta } = Astro.props;
       <h2 class="mt-3 text-2xl md:text-3xl font-bold text-brand-anchor">{title}</h2>
       <p class="mt-2 text-lg font-semibold text-brand-primary-deep">{priceLabel}</p>
       <ul class="mt-4 grid gap-2 text-brand-neutral-700">
-        {bullets.map((b) => <li class="flex gap-2"><span class="text-brand-primary">✓</span>{b}</li>)}
+        {bullets.map((b) => <li class="flex gap-2"><span class="text-brand-primary" aria-hidden="true">✓</span>{b}</li>)}
       </ul>
       <Button href={cta.href} class="mt-6">{cta.label}</Button>
     </div>
@@ -852,7 +853,7 @@ const { heading, subtitle, doctors } = Astro.props;
   // Show a random 4–6 of the roster; hide the rest. (go. is noindex → SEO-safe.)
   const wrap = document.querySelector('[data-team]');
   if (wrap) {
-    const cards = Array.from(wrap.querySelectorAll('[data-doc]')) as HTMLElement[];
+    const cards = Array.from(wrap.querySelectorAll<HTMLElement>('[data-doc]'));
     for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [cards[i], cards[j]] = [cards[j], cards[i]];
@@ -993,13 +994,13 @@ const { heading, reviews, video } = Astro.props;
 import Section from '~/components/ui/Section.astro';
 import SectionHeading from '~/components/ui/SectionHeading.astro';
 import BranchCard from '~/components/cards/BranchCard.astro';
-interface Props { heading: string; branches: { name: string; mrt: string; address: string; mapUrl: string }[]; }
-const { heading, branches } = Astro.props;
+interface Props { heading: string; mapLabel?: string; branches: { name: string; mrt: string; address: string; mapUrl: string }[]; }
+const { heading, mapLabel, branches } = Astro.props;
 ---
 <Section>
   <SectionHeading title={heading} align="center" />
   <div class="mt-8 grid gap-4 sm:grid-cols-2">
-    {branches.map((b) => <BranchCard name={b.name} mrt={b.mrt} address={b.address} mapUrl={b.mapUrl} />)}
+    {branches.map((b) => <BranchCard name={b.name} mrt={b.mrt} address={b.address} mapUrl={b.mapUrl} mapLabel={mapLabel} />)}
   </div>
 </Section>
 ```
@@ -1079,9 +1080,10 @@ const WEBHOOK = 'https://nexorcus.app.n8n.cloud/webhook/smilescape-website-lead-
       const data = Object.fromEntries(new FormData(form).entries());
       msg.textContent = 'กำลังส่ง…';
       try {
-        await fetch(form.dataset.webhook!, {
+        const res = await fetch(form.dataset.webhook!, {
           method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data),
         });
+        if (!res.ok) throw new Error(String(res.status));
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({ event: 'lead_submit', form: 'homepage_booking' });
         form.reset();
@@ -1291,7 +1293,7 @@ const h = await getHome('th');
   <ProcessSteps heading="ขั้นตอนการรักษา" steps={h.process} />
   <BeforeAfter heading="ผลลัพธ์ก่อน-หลัง" items={h.beforeAfter} />
   <Reviews heading="เสียงจากคนไข้" reviews={h.reviews} video={h.video} />
-  <Branches heading="สาขาของเรา" branches={h.branches} />
+  <Branches heading="สาขาของเรา" mapLabel="เปิดในแผนที่ →" branches={h.branches} />
   <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} /></div>
   <BookingForm heading="นัดหมาย & ปรึกษาทันตแพทย์ฟรี" subtitle="กรอกข้อมูลเพื่อให้เราติดต่อกลับ" />
   <FinalCta {...h.finalCta} />
@@ -1350,7 +1352,7 @@ const h = await getHome('en');
   <ProcessSteps heading="Treatment process" steps={h.process} />
   <BeforeAfter heading="Before & after" items={h.beforeAfter} />
   <Reviews heading="Patient voices" reviews={h.reviews} video={h.video} />
-  <Branches heading="Our branches" branches={h.branches} />
+  <Branches heading="Our branches" mapLabel="View on map →" branches={h.branches} />
   <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} heading="FAQ" /></div>
   <BookingForm heading="Book a free consultation" subtitle="Leave your details and we'll call you back" />
   <FinalCta {...h.finalCta} />
@@ -1410,4 +1412,6 @@ git add -A web/ && git commit -m "chore(home): verification fixes + deploy homep
 - Replace `getHome` with Supabase-hydrated data (Session B).
 - Healthcare-marketing-compliance review of guarantee copy + before/after before ad spend / apex cutover.
 - Fill NAP / per-branch phone / GBP Place IDs / real doctor roster / partner logos.
+- **i18n note (implemented):** shell/form micro-copy is locale-aware via `Astro.currentLocale` + internal `{th,en}` label maps in `BookingForm`, `StickyCta`, and `Base` (footer + org JSON-LD description). Section content comes from the per-locale `home` collection. Never hardcode locale copy in a component.
+- **Known debt:** Base org JSON-LD `department[]` branch names are still Thai on the EN page (structured-data only, invisible, noindex) — localise later. `showBeforeAfter` env/`site.ts` flag not wired (BeforeAfter `enabled` prop toggled in-page for now).
 - **Wire founders/team to `web/src/data/doctors.json`** (canonical CV-sourced source-of-truth; currently only the 2 founders exist there) instead of duplicating in `home/*.yaml`. Founder names corrected to canonical this session (Worapat **Jarangkul**; Dr. Praew = Oral & Maxillofacial Surgeon, not "TBD"). When real specialist CVs land, add them to doctors.json → TeamRoster picks them up.
