@@ -193,9 +193,11 @@ founders:
       - Global Masterclasses (Urban / Kern / ILAPEO)
     image: { alt: หมอแฮม, label: หมอแฮม }
   - name: ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)
-    role: Co-Founder
+    role: ศัลยแพทย์ช่องปากและขากรรไกร · ผู้ร่วมก่อตั้ง
     credentials:
-      - ผู้ร่วมก่อตั้ง SmileScape
+      - ศัลยแพทย์เฉพาะทางช่องปากและแม็กซิลโลเฟเชียล
+      - วิทยากรด้านทันตกรรมรากเทียม
+      - Co-CEO & ผู้ร่วมก่อตั้ง SmileScape
     image: { alt: หมอแพรว, label: หมอแพรว }
 doctors:
   - { name: ทันตแพทย์เฉพาะทางปริทันต์, role: Periodontist, image: { alt: ทันตแพทย์, label: หมอ } }
@@ -287,7 +289,7 @@ partners:
   - { name: Acteon, logo: { alt: Acteon, label: LOGO } }
   - { name: Invisalign, logo: { alt: Invisalign, label: LOGO } }
 founders:
-  - name: Dr. Worapat Charangkul (Dr. Ham)
+  - name: Dr. Worapat Jarangkul (Dr. Ham)
     role: Medical Director & Lead Implantologist
     credentials:
       - First-class honours (Gold Medal), Mahidol Dentistry
@@ -296,9 +298,11 @@ founders:
       - Global Masterclasses (Urban / Kern / ILAPEO)
     image: { alt: Dr. Ham, label: Dr. Ham }
   - name: Dr. Pitchapa Phudphong (Dr. Praew)
-    role: Co-Founder
+    role: Oral & Maxillofacial Surgeon · Co-Founder
     credentials:
-      - Co-founder of SmileScape
+      - Oral & maxillofacial surgeon
+      - Implantology educator
+      - Co-CEO & co-founder of SmileScape
     image: { alt: Dr. Praew, label: Dr. Praew }
 doctors:
   - { name: Periodontist, role: Gum specialist, image: { alt: dentist, label: dr } }
@@ -1406,3 +1410,4 @@ git add -A web/ && git commit -m "chore(home): verification fixes + deploy homep
 - Replace `getHome` with Supabase-hydrated data (Session B).
 - Healthcare-marketing-compliance review of guarantee copy + before/after before ad spend / apex cutover.
 - Fill NAP / per-branch phone / GBP Place IDs / real doctor roster / partner logos.
+- **Wire founders/team to `web/src/data/doctors.json`** (canonical CV-sourced source-of-truth; currently only the 2 founders exist there) instead of duplicating in `home/*.yaml`. Founder names corrected to canonical this session (Worapat **Jarangkul**; Dr. Praew = Oral & Maxillofacial Surgeon, not "TBD"). When real specialist CVs land, add them to doctors.json → TeamRoster picks them up.
