@@ -1,2 +1,105 @@
+# EYWA Protocol — Universal .gitignore (mirrors eywa-the-face-hospital)
+# Use across all eywa-* and per-brand repos
+
+# ===== OS Files =====
 .DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+*~
+desktop.ini
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.history/
+*.code-workspace
+
+# ===== Agent / local state =====
+.claude/
 .superpowers/
+.understand-anything/
+.playwright-mcp/
+
+# ===== Sensitive / Credentials =====
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+secrets.json
+credentials.json
+*.pem
+*.key
+*.pfx
+
+# Database / API credentials
+supabase-keys.txt
+notion-token.txt
+n8n-credentials.json
+dataforseo-credentials.txt
+
+# ===== Logs =====
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Dependencies (if any) =====
+node_modules/
+vendor/
+.composer/
+
+# ===== Build / Cache =====
+dist/
+build/
+.cache/
+.tmp/
+*.zip
+*.tar.gz
+
+# ===== WordPress-specific (for plugin repos) =====
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# ===== Python (migration / load scripts) =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+venv/
+.venv/
+
+# ===== Drafts / Working files =====
+drafts/
+working/
+*.draft.md
+*.tmp.md
+
+# ===== EYWA-specific =====
+# Don't commit content data exports (use Supabase)
+content-exports/
+data-snapshots/
+
+# ===== Adobe Illustrator source files (local-only) =====
+*.ai
+
+# ===== Allow exceptions =====
+!.env.example
+!.gitkeep
+
+# ===== SmileScape large binaries (local-only) =====
+# Per DR-035: binaries belong on Cloudflare, not git. Text already extracted to
+# docs/team/*.md (CV) and theme/brand-assets + web/public (web-ready logos).
+# Keep these heavy source archives local-only as provenance.
+docs/CV Dr/
+design/Smile Scape_Logo/
