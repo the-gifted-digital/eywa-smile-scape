@@ -1,0 +1,25 @@
+---
+import Section from '~/components/ui/Section.astro';
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/ui/Image.astro';
+interface Props {
+  eyebrow: string; title: string; priceLabel: string; bullets: string[];
+  image: { src?: string; alt: string; label?: string };
+  cta: { label: string; href: string };
+}
+const { eyebrow, title, priceLabel, bullets, image, cta } = Astro.props;
+---
+<Section tone="ice">
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+    <Image src={image.src} alt={image.alt} label={image.label} width={560} height={420} />
+    <div>
+      <span class="inline-flex items-center rounded-full bg-brand-accent/15 px-3 py-1 text-sm font-medium text-brand-primary-deep">{eyebrow}</span>
+      <h2 class="mt-3 text-2xl md:text-3xl font-bold text-brand-anchor">{title}</h2>
+      <p class="mt-2 text-lg font-semibold text-brand-primary-deep">{priceLabel}</p>
+      <ul class="mt-4 grid gap-2 text-brand-neutral-700">
+        {bullets.map((b) => <li class="flex gap-2"><span class="text-brand-primary">✓</span>{b}</li>)}
+      </ul>
+      <Button href={cta.href} class="mt-6">{cta.label}</Button>
+    </div>
+  </div>
+</Section>
