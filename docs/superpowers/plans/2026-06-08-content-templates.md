@@ -98,6 +98,13 @@ export const relatedCluster = z.object({
 export const baseFields = {
   meta: z.object({ title: z.string(), description: z.string() }),
   template: templateKey,
+  primaryEntity: z.string().optional(),   // entity slug — link-engine graph PIVOT (backfill on EVERY template) + getPublishedIndex key
+  section: z.string().optional(),         // sitemap 7-col taxonomy (all templates)
+  layer: z.string().optional(),
+  tier: z.string().optional(),
+  funnel: z.string().optional(),
+  pageType: z.string().optional(),
+  sidebarRelatedEdge: z.string().optional(), // override the registry default backfill edge for the sidebar (data-driven, not hardcoded)
   breadcrumb: z.array(z.object({ linkTo: z.string().optional(), href: z.string().optional(), label: z.string() })).optional(),
   hero: z.object({
     eyebrow: z.string().optional(),
@@ -246,8 +253,8 @@ import Concern from '../layouts/templates/Concern.astro';
 import Service from '../layouts/templates/Service.astro';
 
 export const TEMPLATES = [
-  { code: 'T1', key: 'concern', name: 'Medical Condition', schemaType: 'MedicalCondition', component: Concern, demoSlug: 'demo' },
-  { code: 'T5', key: 'service', name: 'Service / Money Page', schemaType: 'Service', component: Service, demoSlug: 'demo' },
+  { code: 'T1', key: 'concern', name: 'Medical Condition', schemaType: 'MedicalCondition', component: Concern, demoSlug: 'demo', sidebarEdge: 'treats' },
+  { code: 'T5', key: 'service', name: 'Service / Money Page', schemaType: 'Service', component: Service, demoSlug: 'demo', sidebarEdge: 'alternative_to' },
 ] as const;
 
 export const TEMPLATE_BY_KEY = Object.fromEntries(TEMPLATES.map((t) => [t.key, t]));
@@ -782,7 +789,7 @@ const { hasSidebar = true } = Astro.props;
 </div>
 ```
 
-- [ ] **Step 2: `Sidebar`** (`{ toc, sidebarRelated, sidebarCta, pivot, idx, locale }`) — three boxes (prototype `.sidebar-box`): ToC (`toc[]` of `{ id, label }` → anchor links, scrollspy), compact related (`resolveList({surface:'sidebar', curated: sidebarRelated, pivot, edge:'alternative_to', min:2, target:4})` → hide box if `hidden`), mini-CTA (`sidebarCta`). ToC title / labels via locale map.
+- [ ] **Step 2: `Sidebar`** (`{ toc, sidebarRelated, sidebarCta, pivot, edge, idx, locale }`) — three boxes (prototype `.sidebar-box`): ToC (`toc[]` of `{ id, label }` → anchor links, scrollspy), compact related (`resolveList({surface:'sidebar', curated: sidebarRelated, pivot, edge, min:2, target:4})` → hide box if `hidden`), mini-CTA (`sidebarCta`). **`edge` is passed in by the template layout — `data.sidebarRelatedEdge ?? TEMPLATE_BY_KEY[data.template].sidebarEdge` — never hardcoded** (so concern backfills on `treats`, service on `alternative_to`, etc.). ToC title / labels via locale map.
 
 - [ ] **Step 3: ToC scrollspy script** — adapt the prototype's scroll listener (`web/src/components/layout/Sidebar.astro` scoped `<script>`): on scroll, mark the `.toc-list a` whose section is in view `active` (`bg-brand-paper text-brand-anchor font-bold border-l-brand-secondary`).
 
@@ -802,17 +809,29 @@ git commit -m "feat(layout): PageShell two-column reading layout + sticky Sideba
 - Create: `web/src/lib/schema.ts`
 - Modify: `web/src/layouts/Base.astro`
 
-- [ ] **Step 1: `buildPageSchema(data, locale, url)`** — returns a `@graph` array: the Tier-2 node (`MedicalCondition` for concern; `Service`+`MedicalProcedure` for service, cross-referenced by `@id`), a `BreadcrumbList` from `data.breadcrumb`, and `SpeakableSpecification` pointing at the hero. `reviewer` → `reviewedBy` (`Person` + `credentials`) + `lastReviewed: reviewedDate`. Return `{ '@context':'https://schema.org', '@graph':[...] }`.
+- [ ] **Step 1: `buildPageSchema(data, locale, url)` — MAP-DRIVEN (universal, not per-template branched)** — a `SCHEMA_NODE_BUILDERS` map keyed by `schemaType` produces the Tier-2 entity node. The page node, `BreadcrumbList`, `SpeakableSpecification`, and `reviewer`→`reviewedBy`/`lastReviewed` are emitted **identically for every template**. Adding a template = add one map entry (keyed by its registry `schemaType`), never edit an if-chain.
 
 ```ts
 // web/src/lib/schema.ts
+type NodeBuilder = (data: any, url: string) => any;
+
+// Tier-2 entity node per schemaType. Extend this map to add a template — nothing else changes.
+const SCHEMA_NODE_BUILDERS: Record<string, NodeBuilder> = {
+  MedicalCondition: (d, url) => ({ '@type': 'MedicalCondition', '@id': `${url}#entity`, name: d.meta.title }),
+  Service:          (d, url) => ({ '@type': ['Service', 'MedicalProcedure'], '@id': `${url}#entity`, name: d.meta.title }),
+  // future: Article, MedicalDevice, Person, LocalBusiness, CollectionPage, DefinedTerm ...
+};
+// Page-node @type per schemaType (defaults to WebPage).
+const PAGE_TYPE: Record<string, string> = { MedicalCondition: 'MedicalWebPage' };
+
 export function buildPageSchema(data: any, locale: string, url: string) {
   const graph: any[] = [];
-  const pageId = `${url}#page`;
-  if (data.schemaType === 'MedicalCondition') graph.push({ '@type': 'MedicalCondition', '@id': `${url}#entity`, name: data.meta.title });
-  if (data.schemaType === 'Service') graph.push({ '@type': ['Service', 'MedicalProcedure'], '@id': `${url}#entity`, name: data.meta.title });
-  graph.push({ '@type': data.schemaType === 'MedicalCondition' ? 'MedicalWebPage' : 'WebPage', '@id': pageId, url, name: data.meta.title,
-    ...(data.reviewer && { reviewedBy: { '@type': 'Person', name: data.reviewer.name }, lastReviewed: data.reviewer.reviewedDate }) });
+  const entity = SCHEMA_NODE_BUILDERS[data.schemaType]?.(data, url);
+  if (entity) graph.push(entity);
+  graph.push({ '@type': PAGE_TYPE[data.schemaType] ?? 'WebPage', '@id': `${url}#page`, url, name: data.meta.title,
+    ...(entity && { mainEntity: { '@id': `${url}#entity` } }),
+    ...(data.reviewer && { reviewedBy: { '@type': 'Person', name: data.reviewer.name }, lastReviewed: data.reviewer.reviewedDate }),
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.speakable-hero'] } });
   if (data.breadcrumb?.length) graph.push({ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumbs`,
     itemListElement: data.breadcrumb.map((b: any, i: number) => ({ '@type': 'ListItem', position: i + 1, name: b.label })) });
   return { '@context': 'https://schema.org', '@graph': graph };
@@ -829,34 +848,116 @@ git commit -m "feat(schema): buildPageSchema @graph (Tier-2 + Breadcrumb + Speak
 
 ---
 
-## Phase 5 — Full template layouts
+## Phase 5 — Universal shell + full template layouts
 
-### Task 16: `Concern.astro` (T1, full)
+### Task 15B: `TemplateShell.astro` (universal frame — used by EVERY template)
+
+**Files:**
+- Create: `web/src/layouts/templates/TemplateShell.astro`
+
+This is the spec's D12 "universal-by-construction" frame: the ONE place Base + schema + breadcrumb + hero + quickFacts + PageShell + Sidebar + RelatedCluster + FinalCta + link wiring live. Per-template layouts only supply body blocks.
+
+- [ ] **Step 1: Implement the shell**
+
+```astro
+---
+// web/src/layouts/templates/TemplateShell.astro — universal frame for all templates.
+import Base from '../Base.astro';
+import Breadcrumb from '../../components/blocks/Breadcrumb.astro';
+import Hero from '../../components/sections/Hero.astro';
+import QuickFacts from '../../components/blocks/QuickFacts.astro';
+import PageShell from '../../components/layout/PageShell.astro';
+import Sidebar from '../../components/layout/Sidebar.astro';
+import RelatedCluster from '../../components/blocks/RelatedCluster.astro';
+import FinalCta from '../../components/sections/FinalCta.astro';
+import { buildPageSchema } from '../../lib/schema';
+import { TEMPLATE_BY_KEY } from '../../lib/templates';
+
+interface Props { data: any; locale: string; idx: any; toc?: { id: string; label: string }[]; robots?: string; }
+const { data, locale, idx, toc = [], robots } = Astro.props;
+const url = Astro.url.pathname;
+const jsonLd = buildPageSchema(data, locale, url);
+const pivot = data.primaryEntity;
+const sidebarEdge = data.sidebarRelatedEdge ?? TEMPLATE_BY_KEY[data.template]?.sidebarEdge;
+const hasSidebar = !!(toc.length || data.sidebarRelated || data.sidebarCta);
+---
+<Base title={data.meta.title} description={data.meta.description} jsonLd={jsonLd} robots={robots} stickyCta>
+  {data.breadcrumb && <Breadcrumb trail={data.breadcrumb} idx={idx} locale={locale} />}
+  <Hero {...data.hero} class="speakable-hero" />
+  {data.quickFacts && <QuickFacts facts={data.quickFacts} locale={locale} />}
+  <PageShell hasSidebar={hasSidebar}>
+    <slot />
+    {hasSidebar && (
+      <Sidebar slot="sidebar" toc={toc} sidebarRelated={data.sidebarRelated} sidebarCta={data.sidebarCta}
+               pivot={pivot} edge={sidebarEdge} idx={idx} locale={locale} />
+    )}
+  </PageShell>
+  {data.relatedCluster && <RelatedCluster cluster={data.relatedCluster} pivot={pivot} idx={idx} locale={locale} />}
+  {data.finalCta && <FinalCta {...data.finalCta} />}
+</Base>
+```
+
+- [ ] **Step 2: Verify + commit** — `npm run check` (0 new). (Hero `class` pass-through: if `Hero` doesn't accept a class prop, add a `speakable` boolean prop instead that sets the `.speakable-hero` class on its summary.)
+```bash
+git add web/src/layouts/templates/TemplateShell.astro
+git commit -m "feat(templates): universal TemplateShell frame (D12 universal-by-construction)"
+```
+
+### Task 16: `Concern.astro` (T1, full — body only)
 
 **Files:**
 - Modify: `web/src/layouts/templates/Concern.astro`
 
-- [ ] **Step 1: Compose** — replace the stub. Build `idx = await getPublishedIndex()`; `jsonLd = buildPageSchema(data, locale, Astro.url.pathname)`. Order: `Breadcrumb` → `Hero` → `QuickFacts(essentials)` → `PageShell`[ main: `ProseBlock(definition)`, `RiskFactors(causes)`, `ProseBlock(symptoms, checklist)`, `ProseBlock(diagnosis)`, `TreatmentOptions(treatment)`, `clinicalInsight?`, `BeforeAfter?`, `Reviews?`, `FaqBlock`, `DoctorReview`, `ReferencesBlock` ; sidebar slot: `Sidebar` w/ `toc` derived from rendered section ids, `sidebarRelated`, `sidebarCta` ] → `RelatedCluster` → `FinalCta`. Each optional block guarded by presence. Pass `idx`/`locale`/`pivot=data.primaryEntity` into link-aware components. Wrap in `Base` with `jsonLd` + `robots` default + `stickyCta`.
+- [ ] **Step 1: Compose body inside the shell** — replace the stub. Compute `idx = await getPublishedIndex()` and `toc` (the in-page section ids/labels). Render `<TemplateShell data={data} locale={locale} idx={idx} toc={toc}>` with the **body blocks only** as default-slot children (the shell handles breadcrumb/hero/quickFacts/sidebar/related/finalCta/schema): `ProseBlock(definition)`, `RiskFactors(causes)`, `ProseBlock(symptoms, variant:checklist)`, `ProseBlock(diagnosis)`, `TreatmentOptions(treatment)`, `clinicalInsight?`, `BeforeAfter?`, `Reviews?`, `FaqBlock`, `DoctorReview`, `ReferencesBlock` — each guarded by presence, each passed `idx`/`locale`.
 
-- [ ] **Step 2: Verify** — `npm run check` (0 new). (Renders verified in Phase 6 with the demo.)
-
-- [ ] **Step 3: Commit**
-```bash
-git add web/src/layouts/templates/Concern.astro
-git commit -m "feat(templates): full Concern (T1) layout"
+```astro
+---
+import TemplateShell from './TemplateShell.astro';
+import { getPublishedIndex } from '../../lib/pages';
+import ProseBlock from '../../components/blocks/ProseBlock.astro';
+import RiskFactors from '../../components/blocks/RiskFactors.astro';
+import TreatmentOptions from '../../components/blocks/TreatmentOptions.astro';
+import DoctorReview from '../../components/blocks/DoctorReview.astro';
+import ReferencesBlock from '../../components/blocks/ReferencesBlock.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
+interface Props { data: any; locale: string; robots?: string; }   // robots passed through for preview noindex
+const { data, locale, robots } = Astro.props;
+const idx = await getPublishedIndex();
+const toc = [
+  { id: 'definition', label: data.definition?.heading }, { id: 'causes', label: data.causes?.heading },
+  { id: 'symptoms', label: data.symptoms?.heading }, { id: 'diagnosis', label: data.diagnosis?.heading },
+  { id: 'treatment', label: data.treatment?.heading }, { id: 'faq', label: 'FAQ' },
+].filter((t) => t.label);
+---
+<TemplateShell data={data} locale={locale} idx={idx} toc={toc} robots={robots}>
+  <section id="definition"><ProseBlock block={data.definition} idx={idx} locale={locale} /></section>
+  <section id="causes"><RiskFactors causes={data.causes} idx={idx} locale={locale} /></section>
+  <section id="symptoms"><ProseBlock block={{ ...data.symptoms, variant: 'checklist' }} idx={idx} locale={locale} /></section>
+  <section id="diagnosis"><ProseBlock block={data.diagnosis} idx={idx} locale={locale} /></section>
+  <section id="treatment"><TreatmentOptions treatment={data.treatment} idx={idx} locale={locale} /></section>
+  {data.faq?.length > 0 && <section id="faq"><FaqBlock items={data.faq} /></section>}
+  {data.reviewer && <DoctorReview reviewer={data.reviewer} locale={locale} />}
+  {data.references?.length > 0 && <ReferencesBlock references={data.references} locale={locale} />}
+</TemplateShell>
 ```
 
-### Task 17: `Service.astro` (T5, full prototype parity)
+- [ ] **Step 2: Verify + commit** — `npm run check` (0 new). (Renders verified in Phase 6.)
+```bash
+git add web/src/layouts/templates/Concern.astro
+git commit -m "feat(templates): full Concern (T1) body composed via TemplateShell"
+```
+
+### Task 17: `Service.astro` (T5, full prototype parity — body only)
 
 **Files:**
 - Modify: `web/src/layouts/templates/Service.astro`
 
-- [ ] **Step 1: Compose** — order: `Breadcrumb` → `Hero(badge, CTA#1)` → `QuickFacts(stats)` → `PageShell`[ main: `ProseBlock(definition)`, `ProcessSteps(process)`, `whoFor` (ProseBlock or concern-cards), `TechBadges`, `ExpertiseBox`, `CtaInline(midCta)`, `PricingTable`, `comparison?`, `FaqBlock` ; sidebar: `Sidebar`(toc, sidebarRelated, sidebarCta) ] → `RelatedCluster` → `FinalCta`. Same `idx`/`jsonLd`/`Base` wiring as Task 16; `pivot=data.primaryEntity`. Reuse existing `ProcessSteps` + `BeforeAfter` components.
+- [ ] **Step 1: Compose body inside the shell** — same pattern as Task 16 (incl. `interface Props { data; locale; robots? }` and passing `robots` through to `TemplateShell`): `idx`/`toc`, `<TemplateShell …>` with the **body blocks only**: `ProseBlock(definition)`, `ProcessSteps(process)`, `whoFor` (ProseBlock OR concern-cards per its shape), `TechBadges`, `ExpertiseBox`, `CtaInline(midCta)`, `PricingTable`, `comparison?`, `FaqBlock`. Reuse existing `ProcessSteps`. Wrap each in a `<section id>` matching its `toc` entry. The shell supplies breadcrumb/hero/quickFacts(stats)/sidebar/relatedCluster/finalCta/schema.
 
 - [ ] **Step 2: Verify + commit** — `npm run check` (0 new).
 ```bash
 git add web/src/layouts/templates/Service.astro
-git commit -m "feat(templates): full Service (T5) layout — All-on-4 prototype parity"
+git commit -m "feat(templates): full Service (T5) body composed via TemplateShell — prototype parity"
 ```
 
 ---
@@ -911,9 +1012,9 @@ const { template } = Astro.params;
 const data = await getDemo(template as any, 'th');
 const Template = TEMPLATE_BY_KEY[template!].component;
 ---
-<Template data={data} locale="th" />
+<Template data={data} locale="th" robots="noindex,nofollow" />
 ```
-EN/zh-cn variants: `getDemo(template,'en'|'zh-cn')` and matching `locale`. (Each template layout already sets `robots` via Base; for preview, pass `robots="noindex,nofollow"` — add a `robots` prop pass-through to the template layouts, defaulting to Base's default, and set it here.)
+EN/zh-cn variants: `getDemo(template,'en'|'zh-cn')` and matching `locale`. The `robots` prop flows layout → `TemplateShell` → `Base` (the pass-through added in Tasks 16/17), forcing `noindex,nofollow` on every preview page regardless of Base's default.
 
 - [ ] **Step 2: Preview gallery (TH)** — `pages/preview/index.astro`: iterate `TEMPLATES`, render a card per template (code, name, schemaType) linking to `/preview/<key>/`, `/en/preview/<key>/`, `/zh-cn/preview/<key>/`. Wrap in `Base` with `robots="noindex,nofollow"`. EN/zh-cn galleries mirror.
 
@@ -965,7 +1066,8 @@ git add docs/ ; git commit -m "docs: record content-template system + link engin
 
 ## Self-review notes (author)
 
-- **Spec coverage:** §4.1 schema → Tasks 1–2; §4.5 registry → Task 3; §4.6 loaders+index → Task 4; §4.7 routing → Task 5; §5 link engine (registry/resolver/backfill/audit/inline) → Tasks 6–9, 10; §4.3 blocks → Tasks 10–13; §4.8 PageShell → Task 14; §4.9 schema → Task 15; §4.4 layouts → Tasks 16–17; §6 harness → Tasks 18–19; §7 mapping → Task 20; §9 verification → Task 21. All sections mapped.
+- **Spec coverage:** §4.1 schema (incl. `primaryEntity` pivot + taxonomy) → Tasks 1–2; §4.5 registry (w/ `sidebarEdge`) → Task 3; §4.6 loaders+index → Task 4; §4.7 routing → Task 5; §5 link engine (registry/resolver/backfill/audit/inline) → Tasks 6–9, 10; §4.3 blocks → Tasks 10–13; §4.8 PageShell → Task 14; §4.9 map-driven schema → Task 15; §4.4 `TemplateShell` (D12 universal frame) → Task 15B; §4.4 layouts (body-only) → Tasks 16–17; §6 harness → Tasks 18–19; §7 mapping → Task 20; §9 verification → Task 21. All sections mapped.
+- **Universal-by-construction (D12) — audited:** link engine (`resolveLink`/`resolveList`) takes a `surface`, never a template; `TemplateShell` (Task 15B) is the single frame every template inherits; `buildPageSchema` (Task 15) is a `schemaType→builder` map; sidebar backfill edge is registry/data-driven (Task 14/15B); loaders + dispatcher + preview iterate the registry. **A new template = collection extending `baseFields` + one registry row + a thin body layout + a demo. No universal logic is re-implemented per template.**
 - **No test runner:** link logic verified via `node scripts/verify-links.mjs`; everything else via `npm run check`/`build`/`preview` (matches spec §9 — no framework introduced).
 - **Type consistency:** `resolveLink`/`resolveList`/`PublishedIndex`/`Resolved` names match across Tasks 7–8 and consumers (10–17). `getPublishedIndex` (Task 4) ↔ `idx` consumers. `TEMPLATE_BY_KEY` (Task 3) ↔ dispatchers (Task 5) + preview (Task 19).
 - **Known soft spots for the executor:** (a) confirm the Node TS-import method in Task 7 Step 2 on the installed Node version; (b) confirm whether a YAML vite plugin already exists before Task 6 Step 3; (c) leaf-block markup is specified by prop-contract + prototype reference rather than full inline CSS (DRY against the existing prototype) — read the cited `.class` in the prototype per block.

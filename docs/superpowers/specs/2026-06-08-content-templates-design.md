@@ -42,6 +42,7 @@ This deliverable locks the architecture by building the two hardest reference te
 | D9 | **Prototype parity** | Build T5 to **full parity** with the All-on-4 prototype (PageShell + sticky sidebar + ToC, tabbed RelatedCluster, expertise box, tech badges, multi-CTA, breadcrumb) |
 | D10 | **Internal-link mechanism** | **Entity-token** `[label](entity:slug)` resolved at build by a single engine (chosen because it's the only option that enables centralized existence-checking → clean fallback) |
 | D11 | **Link fallback** | Resolver is the single chokepoint; 4-state resolution + per-surface graceful degradation + graph backfill (§5) — never ship a dead link or a near-empty link box |
+| D12 | **Universal-by-construction** | Every cross-cutting capability (link engine, `TemplateShell` frame, `buildPageSchema` map, fallback, i18n, loaders, dispatcher, preview) is **template-agnostic**. A template is registered in ONE place (registry row) + a collection extending `baseFields` + a thin body layout + a demo. No universal logic is implemented per-template. |
 
 ## 4. Architecture (Approach A)
 
@@ -75,7 +76,10 @@ Collection-per-template, **`type:'data'`**. Extract a shared base.
   ```
   meta:        { title, description }
   template:    templateKey
+  primaryEntity?: string                          // entity slug — the link-engine graph PIVOT (used by backfill on EVERY template; also keys getPublishedIndex)
+  section?, layer?, tier?, funnel?, pageType?      // sitemap 7-col taxonomy (optional, all templates)
   breadcrumb?: [{ linkTo|href, label }]          // visible Breadcrumb UI + BreadcrumbList schema (B-nav)
+  sidebarRelatedEdge?: string                     // edge type to backfill the sidebar from (default per template: service→alternative_to, concern→treats); data-driven, NOT hardcoded
   hero:        { eyebrow?, badge?, title, body, image, primaryCta: cta, secondaryCta? }   // B01 + CTA#1
   quickFacts?: { variant: 'stats'|'essentials', items:[...] }   // B02 (stat-band OR 5-essentials+toggle)
   toc?:        boolean (default true)            // render sticky sidebar ToC (scrollspy)
@@ -128,25 +132,26 @@ The entry's path under its locale folder **is** the URL slug. `content/concern/t
 | **`PageShell.astro`** (two-column reading layout + sticky sidebar host) | layout | both (§4.8) |
 | **`Sidebar.astro`** (ToC scrollspy + compact related + mini-CTA) | layout/nav | both (§4.8) |
 
-### 4.4 Template layouts (`web/src/layouts/templates/`)
+### 4.4 Template layouts (`web/src/layouts/templates/`) + the universal `TemplateShell`
 
-Receive resolved `{ data, locale }`, compose blocks in EYWA order, render only blocks whose data is present, wrap body in `PageShell` (main + sidebar), wrap page in `Base`, pass `jsonLd` from `lib/schema.ts`. Inline links + all link surfaces pre-resolved through `lib/links.ts` (§5).
+**`TemplateShell.astro` (universal frame — applies to EVERY template, present + future).** Computes `idx = getPublishedIndex()` once and `jsonLd = buildPageSchema(...)`, then renders the universal chrome **for whatever base data is present** (all base blocks are optional except hero): `Base`(jsonLd, robots, stickyCta) → `Breadcrumb?` → `Hero` → `QuickFacts?` → `PageShell`[ **`<slot/>` = per-template body (main column)** ; sidebar slot = `Sidebar`(toc/sidebarRelated/sidebarCta) auto-rendered, single-column if all empty ] → `RelatedCluster?` → `FinalCta?`. Props: `{ data, locale, idx, robots? }`. The shell is the single place link-engine wiring, schema, fallback, and i18n are applied — so a new template inherits all of it **by construction**, never by re-implementation.
 
-- **`Service.astro`** (T5, prototype parity): Breadcrumb → Hero(CTA#1) → QuickFacts(stats) → **PageShell**[ main: Definition(inline links) → Process → WhoFor(concern cards) → TechBadges → ExpertiseBox → CtaInline(CTA#2) → Pricing → Comparison? → FaqBlock ; sidebar: ToC + sidebarRelated + sidebarCta ] → RelatedCluster(tabs) → FinalCta(CTA#3). Schema: `Service` + `MedicalProcedure`.
-- **`Concern.astro`** (T1): Breadcrumb → Hero → QuickFacts(essentials) → **PageShell**[ main: Definition → Causes → Symptoms → Diagnosis → Treatment → ClinicalInsight? → BeforeAfter? → Reviews? → FaqBlock → DoctorReview → ReferencesBlock ; sidebar: ToC + sidebarRelated + sidebarCta ] → RelatedCluster(tabs) → FinalCta. Schema: `MedicalCondition` + `MedicalWebPage`.
+**Per-template layouts** supply only their unique body blocks inside the shell (compute `idx` once, pass to shell + body blocks). They render only blocks whose data is present (EYWA order). Inline links + all surfaces pre-resolve through `lib/links.ts` (§5).
+- **`Service.astro`** (T5, prototype parity) body: Definition(inline links) → ProcessSteps → WhoFor(concern cards) → TechBadges → ExpertiseBox → CtaInline(midCta) → PricingTable → Comparison? → FaqBlock. quickFacts=`stats`. Schema row: `Service`+`MedicalProcedure`.
+- **`Concern.astro`** (T1) body: Definition → Causes → Symptoms → Diagnosis → Treatment → ClinicalInsight? → BeforeAfter? → Reviews? → FaqBlock → DoctorReview → ReferencesBlock. quickFacts=`essentials`. Schema row: `MedicalCondition`+`MedicalWebPage`.
 
-T1/T5 required blocks per the EYWA spec are honored; `B09` optional in both.
+T1/T5 required blocks per the EYWA spec are honored; `B09` optional in both. **Adding any future template = new collection (extends `baseFields`) + registry row + a thin body layout (shell does the rest) + a demo fixture.**
 
 ### 4.5 Registry (`web/src/lib/templates.ts`)
 
 Single source of truth, read by dispatcher **and** preview gallery:
 ```
 export const TEMPLATES = [
-  { code:'T1', key:'concern', name:'Medical Condition', schemaType:'MedicalCondition', component: Concern, demoSlug:'demo' },
-  { code:'T5', key:'service', name:'Service / Money Page', schemaType:'Service',         component: Service, demoSlug:'demo' },
+  { code:'T1', key:'concern', name:'Medical Condition', schemaType:'MedicalCondition', component: Concern, demoSlug:'demo', sidebarEdge:'treats' },
+  { code:'T5', key:'service', name:'Service / Money Page', schemaType:'Service',         component: Service, demoSlug:'demo', sidebarEdge:'alternative_to' },
 ] as const
 ```
-Adding a template later = append one row.
+Adding a template later = append one row. The registry row carries everything template-specific the universal layer needs: `component` (dispatch + preview), `schemaType` (drives the §4.9 schema map), `sidebarEdge` (default backfill edge), `demoSlug` (harness). No other file changes to register a template's universal behavior.
 
 ### 4.6 Loaders (`web/src/lib/pages.ts`)
 
@@ -166,7 +171,7 @@ Sidebar is `position: sticky`. Templates pass `toc`/`sidebarRelated`/`sidebarCta
 
 ### 4.9 Schema `@graph` (`web/src/lib/schema.ts`)
 
-`buildPageSchema(entry, locale)` → Tier-2 page node (`MedicalCondition` for T1; `Service`+`MedicalProcedure` for T5) + `BreadcrumbList` (from `breadcrumb`, resolved) + `SpeakableSpecification` (hero summary). `reviewer` → `reviewedBy`+`lastReviewed`. `Base` gains an optional `jsonLd` prop injected server-side in `<head>` (joins Base's Tier-1 Organization/WebSite). `FaqBlock` keeps its own FAQPage (Tier-3) inline; single-`@graph` consolidation is a follow-up.
+`buildPageSchema(data, locale, url)` is **map-driven, not branched per template**: a `SCHEMA_NODE_BUILDERS: Record<schemaType, (data,url)=>node>` map produces the Tier-2 entity node (`MedicalCondition`, `['Service','MedicalProcedure']`, and later `Article`, `MedicalDevice`, `Person`, `LocalBusiness`, `CollectionPage`, `DefinedTerm`…). The builder always emits the page node (`WebPage`/`MedicalWebPage`), `BreadcrumbList` (from resolved `breadcrumb`), `SpeakableSpecification` (hero), and `reviewer`→`reviewedBy`+`lastReviewed` — **the same for every template**. Adding a template = add one map entry (keyed by its registry `schemaType`), never edit an if-chain. `Base` gains an optional `jsonLd` prop injected server-side in `<head>` (joins Base's Tier-1 Organization/WebSite). `FaqBlock` keeps its own FAQPage (Tier-3) inline; single-`@graph` consolidation is a follow-up.
 
 ### 4.10 i18n
 
