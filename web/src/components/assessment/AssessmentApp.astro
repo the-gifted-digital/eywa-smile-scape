@@ -99,7 +99,9 @@ const clientData = {
   </div>
 </Section>
 
-<FaqBlock items={data.faq} heading={data.ui.faqHeading} />
+<div class="max-w-2xl mx-auto px-4 pb-16">
+  <FaqBlock items={data.faq} heading={data.ui.faqHeading} />
+</div>
 
 <script type="application/json" id="ss-assess-data" set:html={JSON.stringify(clientData)}></script>
 
