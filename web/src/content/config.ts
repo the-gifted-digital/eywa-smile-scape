@@ -130,4 +130,55 @@ const home = defineCollection({
   }),
 });
 
-export const collections = { pages, articles, home };
+// ---------- Assessment (Implant Readiness Check, per locale) ----------
+const assessmentOption = z.object({ label: z.string(), value: z.string() });
+const assessmentQuestion = z.object({
+  id: z.string(), eyebrow: z.string(), text: z.string(),
+  options: z.array(assessmentOption).min(2),
+});
+const assessmentTier = z.object({
+  badge: z.string(), title: z.string(), summary: z.string(),
+  steps: z.array(z.string()).default([]),
+  ctaLabel: z.string(), ctaHref: z.string(),
+});
+const assessmentRec = z.object({
+  text: z.string(), topic: z.string(),
+  href: z.string().optional(), published: z.boolean().default(false),
+});
+const assessment = defineCollection({
+  type: 'data',
+  schema: z.object({
+    meta: z.object({ title: z.string(), description: z.string() }),
+    ui: z.object({ progressLabel: z.string(), backLabel: z.string(), faqHeading: z.string() }),
+    intro: z.object({
+      eyebrow: z.string(), title: z.string(), body: z.string(),
+      timeNote: z.string(), startLabel: z.string(), disclaimer: z.string(),
+    }),
+    questions: z.array(assessmentQuestion),
+    teaser: z.object({
+      resultLabel: z.string(), inviteTitle: z.string(),
+      inviteBody: z.string(), buttonLabel: z.string(), microcopy: z.string(),
+    }),
+    gate: z.object({
+      title: z.string(), body: z.string(),
+      nameLabel: z.string(), phoneLabel: z.string(), emailLabel: z.string(),
+      sexLabel: z.string(), sexOptions: z.array(z.string()),
+      pdpa: z.string(), submitLabel: z.string(),
+      sending: z.string(), success: z.string(), error: z.string(),
+    }),
+    tiers: z.object({
+      A: assessmentTier, B: assessmentTier, C: assessmentTier,
+      info: assessmentTier, minor: assessmentTier,
+    }),
+    recommendations: z.record(assessmentRec),
+    relatedContent: z.object({ onScreen: z.boolean().default(true), email: z.boolean().default(false) }),
+    reportLabels: z.object({
+      whyTitle: z.string(), nextTitle: z.string(), relatedTitle: z.string(),
+      fallbackLabel: z.string(), fallbackHref: z.string(), errorNote: z.string(),
+    }),
+    references: z.array(z.object({ label: z.string(), href: z.string().optional() })),
+    faq: z.array(faqItem),
+  }),
+});
+
+export const collections = { pages, articles, home, assessment };
