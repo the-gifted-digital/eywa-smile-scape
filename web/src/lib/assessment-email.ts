@@ -108,7 +108,6 @@ function esc(s: string): string {
 const FONT_BASE = 'https://go.smilescapeclinic.com/fonts';
 const BODY_FONT =
   "'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Leelawadee UI', 'Sukhumvit Set', Tahoma, Arial, sans-serif";
-const DISPLAY_FONT = "'Cabinet Grotesk', " + BODY_FONT;
 const UR_THAI = 'U+02D7,U+0303,U+0331,U+0E01-0E5B,U+200C-200D,U+25CC';
 const UR_LATIN =
   'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
@@ -117,8 +116,6 @@ const FONT_FACE = `
 @font-face{font-family:'Google Sans';font-weight:400;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-latin-400.woff2') format('woff2');unicode-range:${UR_LATIN};}
 @font-face{font-family:'Google Sans';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-thai-700.woff2') format('woff2');unicode-range:${UR_THAI};}
 @font-face{font-family:'Google Sans';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-latin-700.woff2') format('woff2');unicode-range:${UR_LATIN};}
-@font-face{font-family:'Cabinet Grotesk';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/cabinet-grotesk/CabinetGrotesk-700.woff2') format('woff2');}
-@font-face{font-family:'Cabinet Grotesk';font-weight:800;font-style:normal;font-display:swap;src:url('${FONT_BASE}/cabinet-grotesk/CabinetGrotesk-800.woff2') format('woff2');}
 `;
 
 export function buildAssessmentEmail(o: { name: string; locale: Locale; report: EmailReport; relatedOn: boolean }): { subject: string; html: string } {
@@ -160,9 +157,9 @@ export function buildAssessmentEmail(o: { name: string; locale: Locale; report: 
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:16px;overflow:hidden;font-family:${BODY_FONT};">
 
       <!-- Header -->
-      <tr><td style="background:#1E6BB8;padding:20px 24px;">
-        <div style="font-family:${DISPLAY_FONT};font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.2px;">Smile<span style="color:#BFE0FF;">Scape</span></div>
-        <div style="font-size:12px;color:#D6E8FA;margin-top:2px;">${esc(c.tagline)}</div>
+      <tr><td style="background:#ffffff;padding:24px 24px 16px;border-bottom:3px solid #1E6BB8;">
+        <img src="https://go.smilescapeclinic.com/images/lp/logo-smilescape.png" alt="SmileScape Dental Clinic" width="180" style="display:block;width:180px;max-width:62%;height:auto;border:0;outline:none;text-decoration:none;" />
+        <div style="font-size:12px;color:#5A6B7C;margin-top:10px;">${esc(c.tagline)}</div>
       </td></tr>
 
       <!-- Greeting + intro -->
