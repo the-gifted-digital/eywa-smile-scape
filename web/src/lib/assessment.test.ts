@@ -58,3 +58,19 @@ test('flags are de-duplicated (bone from duration + bone question)', () => {
   const r = scoreAssessment({ ...base, duration: 'gt-2y', bone: 'yes' });
   expect(r.flags.filter((f) => f === 'bone')).toHaveLength(1);
 });
+
+test('medical "unsure" is treated conservatively → tier C', () => {
+  expect(scoreAssessment({ ...base, medical: 'unsure' }).tier).toBe('C');
+});
+
+test('bruxism "unsure" does not escalate → tier A', () => {
+  expect(scoreAssessment({ ...base, bruxism: 'unsure' }).tier).toBe('A');
+});
+
+test('gum disease (often) → tier B', () => {
+  expect(scoreAssessment({ ...base, gums: 'often' }).tier).toBe('B');
+});
+
+test('bruxism (yes) → tier B', () => {
+  expect(scoreAssessment({ ...base, bruxism: 'yes' }).tier).toBe('B');
+});
