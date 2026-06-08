@@ -59,6 +59,9 @@ const loop = [...items, ...items]; // duplicate for seamless desktop carousel
   .ba-close:hover { background: rgba(255,255,255,0.28); }
 </style>
 <script>
+  // ---- Shared pause flag (module scope so lightbox close() can unfreeze carousel) ----
+  let baPaused = false;
+
   // ---- Lightbox (attaches to all .ba-img: mobile grid + desktop carousel real set) ----
   const lb = document.getElementById('ba-lightbox');
   if (lb) {
@@ -71,7 +74,7 @@ const loop = [...items, ...items]; // duplicate for seamless desktop carousel
     };
     const close = () => {
       lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; lbImg.src = '';
+      document.body.style.overflow = ''; lbImg.src = ''; baPaused = false;
     };
     document.querySelectorAll('.ba-img').forEach((img) => {
       img.addEventListener('click', () => open((img as HTMLImageElement).currentSrc || (img as HTMLImageElement).src, (img as HTMLImageElement).alt));
@@ -97,18 +100,18 @@ const loop = [...items, ...items]; // duplicate for seamless desktop carousel
       const b = track.children[SET] as HTMLElement | undefined;
       return a && b ? b.offsetLeft - a.offsetLeft : 0;
     };
-    let w = measure(), dist = 0, paused = false, running = false, rafId = 0;
+    let w = measure(), dist = 0, running = false, rafId = 0;
     const BASE = 0.35; // slow glam drift
     window.addEventListener('resize', () => { w = measure(); }, { passive: true });
     track.style.touchAction = 'pan-y';
-    track.addEventListener('pointerenter', (e) => { if ((e as PointerEvent).pointerType === 'mouse') paused = true; });
-    track.addEventListener('pointerleave', (e) => { if ((e as PointerEvent).pointerType === 'mouse') paused = false; });
-    track.addEventListener('pointerdown', () => { paused = true; });
-    const release = () => { paused = false; };
+    track.addEventListener('pointerenter', (e) => { if ((e as PointerEvent).pointerType === 'mouse') baPaused = true; });
+    track.addEventListener('pointerleave', (e) => { if ((e as PointerEvent).pointerType === 'mouse') baPaused = false; });
+    track.addEventListener('pointerdown', () => { baPaused = true; });
+    const release = () => { baPaused = false; };
     track.addEventListener('pointerup', release);
     track.addEventListener('pointercancel', release);
     const frame = () => {
-      if (!paused) dist += BASE;
+      if (!baPaused) dist += BASE;
       if (w > 0) track.style.transform = `translate3d(${(-mod(dist, w)).toFixed(1)}px,0,0)`; // leftward
       rafId = requestAnimationFrame(frame);
     };
