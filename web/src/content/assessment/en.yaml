@@ -1,0 +1,203 @@
+meta:
+  title: Dental Implant Readiness Check
+  description: >-
+    A ~1-minute educational self-check based on factors dentists consider
+    (not a diagnosis). Get personalized guidance plus an emailed copy.
+ui:
+  progressLabel: 'Question {n}/{total}'
+  backLabel: ← Back
+  faqHeading: Frequently asked questions
+intro:
+  eyebrow: Implant Readiness Check
+  title: Are you a candidate for dental implants?
+  body: Answer 10 quick questions (~1 min) for an initial readiness result and personalized guidance.
+  timeNote: ~1 minute · free
+  startLabel: Start the check
+  disclaimer: Educational self-check only — not a medical diagnosis. Results depend on a dentist's examination.
+questions:
+  - id: age
+    eyebrow: About you
+    text: Your age range
+    options:
+      - { label: Under 18, value: under-18 }
+      - { label: 18–39, value: 18-39 }
+      - { label: 40–59, value: 40-59 }
+      - { label: 60+, value: 60+ }
+  - id: situation
+    eyebrow: Your teeth
+    text: Your current tooth situation
+    options:
+      - { label: Many / most teeth missing, value: many-all-missing }
+      - { label: 1–2 teeth missing, value: 1-2-missing }
+      - { label: About to extract / advised to, value: about-to-extract }
+      - { label: Have a denture/bridge but unhappy, value: denture-unhappy }
+      - { label: Teeth intact, just researching, value: teeth-intact }
+  - id: duration
+    eyebrow: Your teeth
+    text: How long has the tooth/gap been missing?
+    options:
+      - { label: Recently (under 6 months), value: lt-6mo }
+      - { label: 6 months – 2 years, value: 6mo-2y }
+      - { label: More than 2 years, value: gt-2y }
+      - { label: Not missing / no gap, value: none }
+  - id: bone
+    eyebrow: Bone
+    text: Has a dentist ever said you have "not enough bone" or need a bone graft/sinus lift?
+    options:
+      - { label: Yes, value: yes }
+      - { label: No, value: no }
+      - { label: Not sure, value: unsure }
+  - id: gums
+    eyebrow: Gums
+    text: Bleeding when brushing, swollen/receding gums, or a history of gum disease?
+    options:
+      - { label: Often, value: often }
+      - { label: Sometimes, value: sometimes }
+      - { label: Never, value: never }
+  - id: smoking
+    eyebrow: Lifestyle
+    text: Do you smoke?
+    options:
+      - { label: Regularly, value: regular }
+      - { label: Occasionally / quitting, value: occasional }
+      - { label: No / quit over a year ago, value: none }
+  - id: diabetes
+    eyebrow: Health
+    text: Do you have diabetes, and how well is it controlled?
+    options:
+      - { label: Yes, poorly controlled / unsure, value: yes-poor }
+      - { label: Yes, well controlled, value: yes-controlled }
+      - { label: No, value: no }
+  - id: medical
+    eyebrow: Health
+    text: Any of these — bisphosphonate/antiresorptive bone meds, jaw radiation, or a weakened immune system?
+    options:
+      - { label: Yes, one or more, value: has-any }
+      - { label: None, value: none }
+      - { label: Not sure, value: unsure }
+  - id: bruxism
+    eyebrow: Lifestyle
+    text: Do you grind or clench your teeth often?
+    options:
+      - { label: Yes / told I grind at night, value: yes }
+      - { label: Not sure, value: unsure }
+      - { label: No, value: no }
+  - id: intent
+    eyebrow: Goal
+    text: When would you like to start?
+    options:
+      - { label: Soon, value: soon }
+      - { label: Within 3–6 months, value: 3-6mo }
+      - { label: Just researching, value: researching }
+teaser:
+  resultLabel: Your initial result
+  inviteTitle: Want the full report for your case?
+  inviteBody: The full report includes personalized guidance, recommended next steps and what to prepare — with a copy emailed to you.
+  buttonLabel: Get my full report (free)
+  microcopy: Educational self-check, not a diagnosis
+gate:
+  title: One step to see your full report
+  body: Enter your details to see the report on-screen and get a copy by email. We only follow up if you want us to.
+  nameLabel: Full name
+  phoneLabel: Phone number
+  emailLabel: Email
+  sexLabel: Sex (optional)
+  sexOptions: [Male, Female, Prefer not to say]
+  pdpa: I consent to be contacted and to data processing per the PDPA policy.
+  submitLabel: See my full report
+  sending: Processing…
+  success: Done ✓ A copy has been sent to your email
+  error: Couldn't send the email, but your result is below — or call 092 293 6226 / message us on LINE
+tiers:
+  A:
+    badge: 🟢 Good implant candidate
+    title: You look well-prepared for dental implants
+    summary: Based on your answers, most factors favor implants. The next step is a planning exam to confirm.
+    steps: [Consult + 3D scan, Digital planning, Schedule the implant]
+    ctaLabel: Book a free planning consult
+    ctaHref: /en/#booking
+  B:
+    badge: 🟡 Candidate — some prep first
+    title: You're a candidate, with a few things to handle first
+    summary: A few factors are worth preparing first to improve long-term success — all manageable before you start.
+    steps: [Consult + 3D scan of bone/gums, Prepare per guidance, Digital plan then begin]
+    ctaLabel: Book a free preparation consult
+    ctaHref: /en/#booking
+  C:
+    badge: 🟠 Best evaluated by a dentist first
+    title: Your case should be evaluated individually
+    summary: Some health factors need an in-person dental evaluation first, for the safest plan tailored to you.
+    steps: [See a specialist dentist, Share full medical/medication history, Get an individual plan]
+    ctaLabel: Consult a specialist dentist
+    ctaHref: /en/#booking
+  info:
+    badge: ℹ️ Not needed right now
+    title: You don't need implants right now
+    summary: Your teeth are intact — keep this for future reference, and we're happy to advise when the time comes.
+    steps: [Keep up oral hygiene, Annual dental check-ups, Consult if issues arise]
+    ctaLabel: Ask us a question
+    ctaHref: /en/#booking
+  minor:
+    badge: ℹ️ Not the right age yet
+    title: Implants suit adults with fully developed jaw bone
+    summary: Generally recommended from age 18+ — please see a dentist for options suited to your age.
+    steps: [See a dentist for assessment, Maintain oral health]
+    ctaLabel: Consult a dentist
+    ctaHref: /en/#booking
+recommendations:
+  bone:
+    text: You may need a bone graft first — SmileScape uses the Sausage Technique (Dr. Istvan Urban) for low-bone cases.
+    topic: Bone grafting (Sausage Technique)
+    href: ''
+    published: false
+  perio:
+    text: Treating your gums to a healthy state first lowers long-term implant risk.
+    topic: Gum care before implants
+    href: ''
+    published: false
+  smoking:
+    text: Reducing or quitting smoking significantly improves implant success rates.
+    topic: Smoking and dental implants
+    href: ''
+    published: false
+  medical:
+    text: Getting your blood sugar well-controlled first helps healing and osseointegration.
+    topic: Diabetes and dental implants
+    href: ''
+    published: false
+  complex:
+    text: Because of medications/conditions to watch, an individual specialist evaluation is recommended.
+    topic: Specialist consultation
+    href: ''
+    published: false
+  bruxism:
+    text: If you grind your teeth, a night guard may be needed to protect the implant from overload.
+    topic: Grinding and implants
+    href: ''
+    published: false
+  allarch:
+    text: With many teeth missing, All-on-X (immediate-load) may suit you — 4–6 implants supporting a full arch.
+    topic: All-on-X full-arch implants
+    href: ''
+    published: false
+relatedContent:
+  onScreen: true
+  email: false
+reportLabels:
+  whyTitle: Why you're in this group
+  nextTitle: Recommended next steps
+  relatedTitle: For your case
+  fallbackLabel: See Blue Diamond implant service
+  fallbackHref: /en/lp/dental-implant/
+  errorNote: We couldn't email it, but here is your result — save this page, or message/call us
+references:
+  - { label: 'ITI (International Team for Implantology) — Treatment Guides' }
+  - { label: 'AAP (American Academy of Periodontology) — peri-implant health' }
+  - { label: 'ADA — patient oral-health information' }
+faq:
+  - q: Can this replace a dental exam?
+    a: No — it's an educational pre-check. A real result requires an exam and X-rays by a dentist.
+  - q: Is my information safe?
+    a: We store data under the PDPA policy and use it only to send your result / follow up as you consent.
+  - q: How long does it take?
+    a: About 1 minute — 10 short questions.
