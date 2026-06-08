@@ -1,0 +1,203 @@
+meta:
+  title: 种植牙适合度自测
+  description: >-
+    约 1 分钟的科普式自测，依据牙医评估时考量的因素（非诊断）。
+    获取个性化建议，并发送副本到您的邮箱。
+ui:
+  progressLabel: '第 {n}/{total} 题'
+  backLabel: ← 返回
+  faqHeading: 常见问题
+intro:
+  eyebrow: Implant Readiness Check
+  title: 您适合种植牙吗？
+  body: 回答 10 道简短问题（约 1 分钟），获取初步适合度结果与个性化建议。
+  timeNote: 约 1 分钟 · 免费
+  startLabel: 开始自测
+  disclaimer: 仅供科普参考，非医疗诊断 —— 结果取决于牙医的检查。
+questions:
+  - id: age
+    eyebrow: 关于您
+    text: 您的年龄段
+    options:
+      - { label: 18 岁以下, value: under-18 }
+      - { label: 18–39 岁, value: 18-39 }
+      - { label: 40–59 岁, value: 40-59 }
+      - { label: 60 岁以上, value: 60+ }
+  - id: situation
+    eyebrow: 牙齿情况
+    text: 您目前的牙齿情况
+    options:
+      - { label: 缺失多颗 / 几乎全口, value: many-all-missing }
+      - { label: 缺失 1–2 颗, value: 1-2-missing }
+      - { label: 即将拔牙 / 医生建议拔, value: about-to-extract }
+      - { label: 戴义齿–牙桥但不满意, value: denture-unhappy }
+      - { label: 牙齿完好，只是了解信息, value: teeth-intact }
+  - id: duration
+    eyebrow: 牙齿情况
+    text: 牙齿/缺口缺失多久了
+    options:
+      - { label: 刚缺失（不到 6 个月）, value: lt-6mo }
+      - { label: 6 个月 – 2 年, value: 6mo-2y }
+      - { label: 超过 2 年, value: gt-2y }
+      - { label: 未缺失 / 无缺口, value: none }
+  - id: bone
+    eyebrow: 骨量
+    text: 是否有牙医说过您"骨量不足"或需要植骨/上颌窦提升？
+    options:
+      - { label: 是, value: yes }
+      - { label: 否, value: no }
+      - { label: 不确定, value: unsure }
+  - id: gums
+    eyebrow: 牙龈
+    text: 刷牙出血、牙龈肿胀/萎缩，或有牙周病史吗？
+    options:
+      - { label: 经常, value: often }
+      - { label: 偶尔, value: sometimes }
+      - { label: 没有, value: never }
+  - id: smoking
+    eyebrow: 生活习惯
+    text: 您吸烟吗？
+    options:
+      - { label: 经常吸, value: regular }
+      - { label: 偶尔 / 正在戒, value: occasional }
+      - { label: 不吸 / 戒烟超过一年, value: none }
+  - id: diabetes
+    eyebrow: 健康
+    text: 您有糖尿病吗？血糖控制如何？
+    options:
+      - { label: 有，控制不佳 / 不确定, value: yes-poor }
+      - { label: 有，但控制良好, value: yes-controlled }
+      - { label: 没有, value: no }
+  - id: medical
+    eyebrow: 健康
+    text: 是否有以下情况 —— 双膦酸盐类骨质疏松药、颌骨放疗史、或免疫力低下？
+    options:
+      - { label: 有其中一项, value: has-any }
+      - { label: 没有, value: none }
+      - { label: 不确定, value: unsure }
+  - id: bruxism
+    eyebrow: 生活习惯
+    text: 您常磨牙 / 紧咬牙吗？
+    options:
+      - { label: 是 / 被说夜间磨牙, value: yes }
+      - { label: 不确定, value: unsure }
+      - { label: 否, value: no }
+  - id: intent
+    eyebrow: 目标
+    text: 您希望何时开始？
+    options:
+      - { label: 尽快, value: soon }
+      - { label: 3–6 个月内, value: 3-6mo }
+      - { label: 仅了解信息, value: researching }
+teaser:
+  resultLabel: 您的初步结果
+  inviteTitle: 想要针对您情况的完整报告吗？
+  inviteBody: 完整报告包含个性化建议、推荐步骤与需要准备的事项，并发送副本到您的邮箱。
+  buttonLabel: 获取完整报告（免费）
+  microcopy: 仅供科普，非诊断
+gate:
+  title: 再一步即可查看完整报告
+  body: 填写信息即可在页面查看报告并获取邮件副本。仅在您需要时我们才会联系您。
+  nameLabel: 姓名
+  phoneLabel: 电话号码
+  emailLabel: 邮箱
+  sexLabel: 性别（选填）
+  sexOptions: [男, 女, 不愿透露]
+  pdpa: 我同意接受联系并依据 PDPA 政策处理我的资料。
+  submitLabel: 查看完整报告
+  sending: 处理中…
+  success: 完成 ✓ 副本已发送到您的邮箱
+  error: 邮件发送失败，但结果就在下方 —— 或致电 092 293 6226 / 通过 LINE 联系
+tiers:
+  A:
+    badge: 🟢 适合种植牙
+    title: 您具备良好的种植牙条件
+    summary: 根据您的回答，多数因素都有利于种植牙。下一步是检查与方案规划以确认。
+    steps: [面诊 + 3D 扫描, 数字化方案, 预约种植]
+    ctaLabel: 预约免费方案面诊
+    ctaHref: /zh-cn/#booking
+  B:
+    badge: 🟡 适合 —— 但需先做准备
+    title: 您适合种植牙，但有几点需先处理
+    summary: 有几项因素值得先准备以提升长期成功率 —— 都可在开始前处理好。
+    steps: [面诊 + 骨/牙龈 3D 扫描, 按建议做准备, 数字化方案后开始]
+    ctaLabel: 预约免费准备面诊
+    ctaHref: /zh-cn/#booking
+  C:
+    badge: 🟠 建议先由牙医评估
+    title: 您的情况应进行个别评估
+    summary: 部分健康因素需先经过面对面的牙科评估，以制定最安全、最适合您的方案。
+    steps: [咨询专科牙医, 完整告知病史/用药, 获取个别方案]
+    ctaLabel: 咨询专科牙医
+    ctaHref: /zh-cn/#booking
+  info:
+    badge: ℹ️ 目前尚不需要
+    title: 您目前还不需要种植牙
+    summary: 您的牙齿完好 —— 可留作日后参考，需要时我们乐意为您提供建议。
+    steps: [保持口腔卫生, 每年口腔检查, 有问题时咨询]
+    ctaLabel: 向我们咨询
+    ctaHref: /zh-cn/#booking
+  minor:
+    badge: ℹ️ 年龄尚不适合
+    title: 种植牙适合颌骨发育完全的成年人
+    summary: 通常建议 18 岁以上 —— 请咨询牙医了解适合您年龄的方案。
+    steps: [咨询牙医评估, 保持口腔健康]
+    ctaLabel: 咨询牙医
+    ctaHref: /zh-cn/#booking
+recommendations:
+  bone:
+    text: 您可能需要先植骨 —— SmileScape 采用 Sausage 技术（Dr. Istvan Urban）处理骨量不足的病例。
+    topic: 植骨（Sausage 技术）
+    href: ''
+    published: false
+  perio:
+    text: 先把牙龈治疗到健康状态可降低种植体的长期风险。
+    topic: 种植前的牙龈护理
+    href: ''
+    published: false
+  smoking:
+    text: 减少或戒烟能显著提升种植牙的成功率。
+    topic: 吸烟与种植牙
+    href: ''
+    published: false
+  medical:
+    text: 先把血糖控制好有助于伤口愈合与骨结合。
+    topic: 糖尿病与种植牙
+    href: ''
+    published: false
+  complex:
+    text: 由于存在需注意的药物/状况，建议由专科牙医进行个别评估。
+    topic: 专科咨询
+    href: ''
+    published: false
+  bruxism:
+    text: 若有磨牙，可能需要佩戴咬合垫以保护种植体免受过大咬合力。
+    topic: 磨牙与种植牙
+    href: ''
+    published: false
+  allarch:
+    text: 缺失较多时，All-on-X（即刻负重）可能适合您 —— 4–6 颗种植体支撑整个牙弓。
+    topic: All-on-X 全口种植
+    href: ''
+    published: false
+relatedContent:
+  onScreen: true
+  email: false
+reportLabels:
+  whyTitle: 为什么您在此组
+  nextTitle: 推荐步骤
+  relatedTitle: 针对您的情况
+  fallbackLabel: 查看 Blue Diamond 种植服务
+  fallbackHref: /en/lp/dental-implant/
+  errorNote: 邮件未能发送，但这是您的结果 —— 请保存此页，或通过 LINE/电话联系我们
+references:
+  - { label: 'ITI（国际口腔种植学会）— 治疗指南' }
+  - { label: 'AAP（美国牙周病学会）— 种植体周围健康' }
+  - { label: 'ADA — 患者口腔健康资讯' }
+faq:
+  - q: 这个自测能代替牙科检查吗？
+    a: 不能 —— 这是科普式的初步自测。真实结果需要牙医的检查与 X 光片。
+  - q: 我的信息安全吗？
+    a: 我们依据 PDPA 政策存储数据，仅在您同意的范围内用于发送结果/回访。
+  - q: 需要多长时间？
+    a: 约 1 分钟，共 10 道简短问题。
