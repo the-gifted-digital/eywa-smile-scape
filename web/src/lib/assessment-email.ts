@@ -97,7 +97,25 @@ function esc(s: string): string {
   return String(s).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m] as string));
 }
 
-const FONT = "'Helvetica Neue', Arial, 'Leelawadee UI', 'Sukhumvit Set', Tahoma, sans-serif";
+// Brand fonts, mirroring the site tokens (design/brand-foundation/tokens.json).
+// @font-face works in Apple Mail / iOS Mail; Gmail/Outlook ignore it and use the
+// (brand-matched) fallback chain. URLs are absolute (self-hosted on go.). Update
+// FONT_BASE at apex cutover.
+const FONT_BASE = 'https://go.smilescapeclinic.com/fonts';
+const BODY_FONT =
+  "'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Leelawadee UI', 'Sukhumvit Set', Tahoma, Arial, sans-serif";
+const DISPLAY_FONT = "'Cabinet Grotesk', " + BODY_FONT;
+const UR_THAI = 'U+02D7,U+0303,U+0331,U+0E01-0E5B,U+200C-200D,U+25CC';
+const UR_LATIN =
+  'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+const FONT_FACE = `
+@font-face{font-family:'Google Sans';font-weight:400;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-thai-400.woff2') format('woff2');unicode-range:${UR_THAI};}
+@font-face{font-family:'Google Sans';font-weight:400;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-latin-400.woff2') format('woff2');unicode-range:${UR_LATIN};}
+@font-face{font-family:'Google Sans';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-thai-700.woff2') format('woff2');unicode-range:${UR_THAI};}
+@font-face{font-family:'Google Sans';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/google-sans/GoogleSans-latin-700.woff2') format('woff2');unicode-range:${UR_LATIN};}
+@font-face{font-family:'Cabinet Grotesk';font-weight:700;font-style:normal;font-display:swap;src:url('${FONT_BASE}/cabinet-grotesk/CabinetGrotesk-700.woff2') format('woff2');}
+@font-face{font-family:'Cabinet Grotesk';font-weight:800;font-style:normal;font-display:swap;src:url('${FONT_BASE}/cabinet-grotesk/CabinetGrotesk-800.woff2') format('woff2');}
+`;
 
 export function buildAssessmentEmail(o: { name: string; locale: Locale; report: EmailReport; relatedOn: boolean }): { subject: string; html: string } {
   const c = CHROME[o.locale] ?? CHROME.th;
@@ -131,15 +149,15 @@ export function buildAssessmentEmail(o: { name: string; locale: Locale; report: 
         </td></tr>`
       : '';
 
-  const html = `<!doctype html><html lang="${o.locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"></head>
+  const html = `<!doctype html><html lang="${o.locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light only"><style>${FONT_FACE}</style></head>
 <body style="margin:0;padding:0;background:#F2F5F8;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F2F5F8;padding:20px 12px;">
   <tr><td align="center">
-    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:16px;overflow:hidden;font-family:${FONT};">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:16px;overflow:hidden;font-family:${BODY_FONT};">
 
       <!-- Header -->
       <tr><td style="background:#1E6BB8;padding:20px 24px;">
-        <div style="font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.2px;">Smile<span style="color:#BFE0FF;">Scape</span></div>
+        <div style="font-family:${DISPLAY_FONT};font-size:20px;font-weight:800;color:#ffffff;letter-spacing:-.2px;">Smile<span style="color:#BFE0FF;">Scape</span></div>
         <div style="font-size:12px;color:#D6E8FA;margin-top:2px;">${esc(c.tagline)}</div>
       </td></tr>
 
