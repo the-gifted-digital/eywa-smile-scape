@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string; body: string;
+  nameLabel: string; phoneLabel: string; emailLabel: string;
+  sexLabel: string; sexOptions: string[];
+  pdpa: string; submitLabel: string;
+}
+const { title, body, nameLabel, phoneLabel, emailLabel, sexLabel, sexOptions, pdpa, submitLabel } = Astro.props;
+---
+<div>
+  <h3 class="text-xl font-semibold text-brand-anchor">{title}</h3>
+  <p class="mt-2 text-sm text-brand-neutral-700">{body}</p>
+  <form id="ss-gate-form" class="mt-5 grid gap-3 max-w-lg" novalidate>
+    <div class="grid sm:grid-cols-2 gap-3">
+      <input name="name" required placeholder={nameLabel} class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+      <input name="phone" required inputmode="tel" placeholder={phoneLabel} class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+    </div>
+    <input name="email" required type="email" placeholder={emailLabel} class="rounded-lg border border-brand-neutral-300 px-4 py-3" />
+    <select name="sex" aria-label={sexLabel} class="rounded-lg border border-brand-neutral-300 px-4 py-3 text-brand-neutral-700">
+      <option value="">{sexLabel}</option>
+      {sexOptions.map((s) => <option value={s}>{s}</option>)}
+    </select>
+    <label class="flex items-start gap-2 text-sm text-brand-neutral-700">
+      <input type="checkbox" name="pdpa" required class="mt-1" />
+      {pdpa}
+    </label>
+    <button type="submit" class="rounded-full bg-brand-primary px-6 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep">{submitLabel}</button>
+    <p data-msg role="status" class="text-center text-sm"></p>
+  </form>
+</div>
