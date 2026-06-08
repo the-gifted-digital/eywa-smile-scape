@@ -201,17 +201,19 @@ export function buildAssessmentEmail(o: { name: string; locale: Locale; report: 
         <div style="background:#F7FAFC;border-radius:10px;padding:12px 14px;font-size:13px;color:#42566B;line-height:1.6;">${esc(c.reassurance)}</div>
       </td></tr>
 
-      <!-- CTAs (3 stacked full-width buttons) -->
+      <!-- CTAs (3 stacked full-width buttons — TD carries the fill so it stays full-width even where Gmail strips display:block on <a>) -->
       <tr><td style="padding:18px 24px 6px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-          <tr><td>
-            <a href="${esc(r.ctaUrl)}" style="display:block;background:${accent};color:#ffffff;text-decoration:none;border-radius:12px;padding:15px;font-weight:800;font-size:16px;text-align:center;">${esc(c.bookLabel)}</a>
+          <tr><td bgcolor="${accent}" style="background:${accent};border-radius:12px;text-align:center;">
+            <a href="${esc(r.ctaUrl)}" style="display:block;padding:15px;color:#ffffff;text-decoration:none;font-weight:800;font-size:16px;">${esc(c.bookLabel)}</a>
           </td></tr>
-          <tr><td style="padding-top:8px;">
-            <a href="${esc(CLINIC.line)}" style="display:block;background:#06C755;color:#ffffff;text-decoration:none;border-radius:12px;padding:12px;font-weight:700;font-size:14px;text-align:center;">${esc(c.lineLabel)}</a>
+          <tr><td height="8" style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+          <tr><td bgcolor="#06C755" style="background:#06C755;border-radius:12px;text-align:center;">
+            <a href="${esc(CLINIC.line)}" style="display:block;padding:12px;color:#ffffff;text-decoration:none;font-weight:700;font-size:14px;">${esc(c.lineLabel)}</a>
           </td></tr>
-          <tr><td style="padding-top:8px;">
-            <a href="tel:${esc(CLINIC.phoneTel)}" style="display:block;background:#ffffff;color:#1E6BB8;border:1.5px solid #1E6BB8;text-decoration:none;border-radius:12px;padding:11px;font-weight:700;font-size:14px;text-align:center;">${esc(c.callLabel)} ${esc(CLINIC.phoneDisplay)}</a>
+          <tr><td height="8" style="height:8px;line-height:8px;font-size:0;">&nbsp;</td></tr>
+          <tr><td style="background:#ffffff;border:1.5px solid #1E6BB8;border-radius:12px;text-align:center;">
+            <a href="tel:${esc(CLINIC.phoneTel)}" style="display:block;padding:11px;color:#1E6BB8;text-decoration:none;font-weight:700;font-size:14px;">${esc(c.callLabel)} ${esc(CLINIC.phoneDisplay)}</a>
           </td></tr>
         </table>
       </td></tr>
