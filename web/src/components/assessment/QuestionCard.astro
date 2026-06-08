@@ -1,0 +1,21 @@
+---
+interface Option { label: string; value: string; }
+interface Props { id: string; index: number; eyebrow: string; text: string; options: Option[]; }
+const { id, index, eyebrow, text, options } = Astro.props;
+---
+<div class="ss-card" data-question={id} data-index={index} hidden>
+  <p class="font-display text-xs uppercase tracking-wide text-brand-primary">{eyebrow}</p>
+  <h3 class="mt-3 text-lg sm:text-xl font-semibold text-brand-anchor leading-snug">{text}</h3>
+  <div class="mt-5 grid gap-2.5">
+    {options.map((o) => (
+      <button
+        type="button"
+        data-value={o.value}
+        class="ss-opt text-left rounded-xl border border-brand-neutral-300 px-4 py-3 font-medium text-brand-neutral-900 hover:border-brand-primary hover:bg-brand-ice transition u-hover"
+      >{o.label}</button>
+    ))}
+  </div>
+</div>
+<style>
+  .ss-opt.is-selected { border-color: var(--tw-brand-primary, #1E6BB8); background: #EAF3FB; color: #154E86; font-weight: 700; }
+</style>
