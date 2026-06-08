@@ -25,7 +25,7 @@ test('includes greeting, badge, tier title, why (topic+text), steps, cta', () =>
   expect(html).toContain('Smoking'); // why topic
   expect(html).toContain('No smoking — an advantage'); // why text
   expect(html).toContain('Consult'); // step
-  expect(html).toContain('Book a consult'); // cta
+  expect(html).toContain('Book a free consult'); // cta (bookLabel)
 });
 
 test('includes clinic contact footer (phone + LINE)', () => {

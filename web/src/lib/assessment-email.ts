@@ -23,6 +23,7 @@ interface Chrome {
   nextTitle: string;
   relatedTitle: string;
   reassurance: string;
+  bookLabel: string;
   lineLabel: string;
   callLabel: string;
   branches: string;
@@ -55,8 +56,9 @@ const CHROME: Record<Locale, Chrome> = {
     nextTitle: 'ขั้นตอนที่แนะนำสำหรับคุณ',
     relatedTitle: 'อ่านต่อเรื่องที่เกี่ยวกับเคสของคุณ',
     reassurance: 'ที่ SmileScape เรายึด “มาตรฐานครอบครัว” — เคสที่เราไม่กล้าทำให้พ่อแม่ตัวเอง เราจะไม่แนะนำให้คุณ และจะให้ข้อมูลตรงไปตรงมาเสมอ',
+    bookLabel: 'จองปรึกษาฟรี',
     lineLabel: 'ทักไลน์',
-    callLabel: 'โทรเลย',
+    callLabel: 'โทร',
     branches: 'สาขารัตนาธิเบศร์ (MRT สีม่วง) · สาขาศรีนครินทร์ (MRT สีเหลือง)',
     disclaimer: 'แบบประเมินนี้เพื่อการศึกษาเบื้องต้น ไม่ใช่การวินิจฉัยทางการแพทย์ — ผลลัพธ์ขึ้นกับการตรวจและเอกซเรย์โดยทันตแพทย์',
     unsubscribe: 'คุณได้รับอีเมลนี้เพราะทำแบบประเมินความพร้อมรากฟันเทียมบนเว็บไซต์ของเรา',
@@ -70,8 +72,9 @@ const CHROME: Record<Locale, Chrome> = {
     nextTitle: 'Recommended next steps for you',
     relatedTitle: 'Further reading for your case',
     reassurance: 'At SmileScape we follow the “Family Standard” — if we wouldn’t do a case for our own parents, we won’t recommend it to you, and we always give you honest information.',
+    bookLabel: 'Book a free consult',
     lineLabel: 'Message on LINE',
-    callLabel: 'Call us',
+    callLabel: 'Call',
     branches: 'Rattanathibet branch (MRT Purple) · Srinagarindra branch (MRT Yellow)',
     disclaimer: 'This is an educational self-check, not a medical diagnosis — results depend on an in-person dental exam and X-rays.',
     unsubscribe: 'You received this email because you took the implant readiness check on our website.',
@@ -85,8 +88,9 @@ const CHROME: Record<Locale, Chrome> = {
     nextTitle: '为您推荐的步骤',
     relatedTitle: '针对您情况的延伸阅读',
     reassurance: 'SmileScape 坚持“家人标准”——不敢为自己父母做的方案，绝不会推荐给您，并始终如实告知。',
+    bookLabel: '预约免费咨询',
     lineLabel: '通过 LINE 联系',
-    callLabel: '致电我们',
+    callLabel: '致电',
     branches: 'Rattanathibet 分院（MRT 紫线）· Srinagarindra 分院（MRT 黄线）',
     disclaimer: '本评估仅供科普参考，非医疗诊断 —— 结果取决于牙医的面诊与 X 光检查。',
     unsubscribe: '您收到此邮件是因为在我们网站完成了种植牙适合度自测。',
@@ -197,13 +201,19 @@ export function buildAssessmentEmail(o: { name: string; locale: Locale; report: 
         <div style="background:#F7FAFC;border-radius:10px;padding:12px 14px;font-size:13px;color:#42566B;line-height:1.6;">${esc(c.reassurance)}</div>
       </td></tr>
 
-      <!-- CTAs -->
-      <tr><td style="padding:18px 24px 4px;" align="center">
-        <a href="${esc(r.ctaUrl)}" style="display:inline-block;background:${accent};color:#ffffff;text-decoration:none;border-radius:99px;padding:13px 30px;font-weight:800;font-size:15px;">${esc(r.ctaLabel)}</a>
-      </td></tr>
-      <tr><td style="padding:8px 24px 4px;" align="center">
-        <a href="${esc(CLINIC.line)}" style="display:inline-block;background:#06C755;color:#ffffff;text-decoration:none;border-radius:99px;padding:9px 18px;font-weight:700;font-size:13px;margin:3px;">${esc(c.lineLabel)}</a>
-        <a href="tel:${esc(CLINIC.phoneTel)}" style="display:inline-block;background:#ffffff;color:#1E6BB8;border:1.5px solid #1E6BB8;text-decoration:none;border-radius:99px;padding:8px 18px;font-weight:700;font-size:13px;margin:3px;">${esc(c.callLabel)} ${esc(CLINIC.phoneDisplay)}</a>
+      <!-- CTAs (3 stacked full-width buttons) -->
+      <tr><td style="padding:18px 24px 6px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr><td>
+            <a href="${esc(r.ctaUrl)}" style="display:block;background:${accent};color:#ffffff;text-decoration:none;border-radius:12px;padding:15px;font-weight:800;font-size:16px;text-align:center;">${esc(c.bookLabel)}</a>
+          </td></tr>
+          <tr><td style="padding-top:8px;">
+            <a href="${esc(CLINIC.line)}" style="display:block;background:#06C755;color:#ffffff;text-decoration:none;border-radius:12px;padding:12px;font-weight:700;font-size:14px;text-align:center;">${esc(c.lineLabel)}</a>
+          </td></tr>
+          <tr><td style="padding-top:8px;">
+            <a href="tel:${esc(CLINIC.phoneTel)}" style="display:block;background:#ffffff;color:#1E6BB8;border:1.5px solid #1E6BB8;text-decoration:none;border-radius:12px;padding:11px;font-weight:700;font-size:14px;text-align:center;">${esc(c.callLabel)} ${esc(CLINIC.phoneDisplay)}</a>
+          </td></tr>
+        </table>
       </td></tr>
 
       <!-- Footer -->
