@@ -5,10 +5,17 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "eywa-smile-scape",
   "compatibility_date": "2026-06-06",
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
+  },
+  "vars": {
+    "N8N_ASSESSMENT_WEBHOOK_URL": "https://nexorcus.app.n8n.cloud/webhook/smilescape-implant-check-lead",
+    "RESEND_FROM": "SmileScape <results@smilescapeclinic.com>",
+    "RELATED_EMAIL_ENABLED": "false"
   },
   // Parallel-launch phase: Astro served on the `go.` subdomain (Google Ads landing
   // pages) while WordPress keeps serving the apex. DNS is on Cloudflare, so this
