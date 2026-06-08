@@ -1610,7 +1610,7 @@ test('non-API request is served by ASSETS', async () => {
 });
 
 test('valid POST forwards to n8n + sends email, returns ok', async () => {
-  const fetchMock = vi.fn(async () => new Response('{}', { status: 200 }));
+  const fetchMock = vi.fn(async (..._args: any[]) => new Response('{}', { status: 200 }));
   vi.stubGlobal('fetch', fetchMock);
   const res = await worker.fetch(new Request('https://go.x/api/assessment-lead', {
     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(validBody),
