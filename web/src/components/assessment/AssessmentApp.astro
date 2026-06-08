@@ -196,7 +196,7 @@ const clientData = {
         ? recs.filter((x: any) => x.published && x.href).map((x: any) => ({ label: x.topic, url: origin + x.href }))
         : [];
       const payload = {
-        form: 'implant_check', locale: data.locale, consent: true,
+        form: 'implant_check', locale: data.locale, consent: fd.get('pdpa') === 'on',
         contact,
         age: answers.age || '', tier: r.tier, flags: r.flags, intent: answers.intent || '', answers,
         report: {

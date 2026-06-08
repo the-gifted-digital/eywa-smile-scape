@@ -41,7 +41,7 @@ async function handleLead(request: Request, env: Env): Promise<Response> {
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ from: env.RESEND_FROM, to: body.contact.email, subject, html }),
     });
-  } catch { /* non-fatal */ }
+  } catch (err) { console.error('resend error', err); /* non-fatal */ }
 
   return json({ ok: n8nOk }, n8nOk ? 200 : 502);
 }
