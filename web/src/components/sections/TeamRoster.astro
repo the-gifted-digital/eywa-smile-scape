@@ -49,61 +49,75 @@ const bottomSet = roster.slice(10, 20);
 <script>
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const marquee = document.querySelector('[data-team-marquee]');
-  const rowTop = marquee?.querySelector('[data-row="top"]') as HTMLElement | null;
-  const rowBottom = marquee?.querySelector('[data-row="bottom"]') as HTMLElement | null;
+  const rowEls = marquee ? (Array.from(marquee.querySelectorAll('[data-row]')) as HTMLElement[]) : [];
+  if (marquee && rowEls.length && !reduce) {
+    const SET = 10;
+    const BASE = 0.315;      // idle drift (−10%)
+    const DECAY = 0.9;
+    const BOOST_K = 0.245;   // scroll → speed (−30%)
+    const BOOST_CAP = 10;    // (−30%)
+    const mod = (n: number, m: number) => ((n % m) + m) % m;
 
-  if (marquee && rowTop && rowBottom && !reduce) {
-    const SET = 10;                 // unique cards per row before the duplicate
-    const BASE = 0.35;              // px/frame slow base drift
-    const DECAY = 0.9;              // boost easing per frame
-    const BOOST_CAP = 14;           // max extra px/frame
+    const rows = rowEls.map((el) => {
+      const measure = () => {
+        const a = el.children[0] as HTMLElement | undefined;
+        const b = el.children[SET] as HTMLElement | undefined;
+        return a && b ? b.offsetLeft - a.offsetLeft : 0;
+      };
+      const w = measure();
+      const dirSign = el.getAttribute('data-row') === 'top' ? 1 : -1; // top drifts right, bottom left
+      return { el, dirSign, measure, w, dist: dirSign < 0 && w ? w / SET / 2 : 0, hover: false, down: false, lastX: 0, dragged: false };
+    });
 
-    // exact repeat distance = offsetLeft of the first duplicate card minus first card
-    const measure = (row: HTMLElement) => {
-      const ch = row.children;
-      return (ch[SET] as HTMLElement).offsetLeft - (ch[0] as HTMLElement).offsetLeft;
-    };
-
-    let wTop = measure(rowTop), wBottom = measure(rowBottom);
-    window.addEventListener('resize', () => { wTop = measure(rowTop); wBottom = measure(rowBottom); }, { passive: true });
-
-    let distTop = 0;
-    // half-card phase stagger on bottom row so cards don't vertically align
-    let distBottom = wBottom > 0 ? (wBottom / SET) / 2 : 0;
-
-    let boost = 0, lastY = window.scrollY;
+    let boost = 0, lastY = window.scrollY, running = false, rafId = 0;
+    window.addEventListener('resize', () => rows.forEach((r) => { r.w = r.measure(); }), { passive: true });
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      boost = Math.min(boost + Math.abs(y - lastY) * 0.35, BOOST_CAP);
+      boost = Math.min(boost + Math.abs(y - lastY) * BOOST_K, BOOST_CAP);
       lastY = y;
     }, { passive: true });
 
-    let running = false, rafId = 0;
+    rows.forEach((r) => {
+      r.el.style.touchAction = 'pan-y'; // vertical page scroll stays; horizontal = our drag
+      r.el.addEventListener('pointerenter', (e) => { if ((e as PointerEvent).pointerType === 'mouse') r.hover = true; });
+      r.el.addEventListener('pointerleave', (e) => { if ((e as PointerEvent).pointerType === 'mouse') r.hover = false; });
+      r.el.addEventListener('pointerdown', (e) => {
+        const pe = e as PointerEvent;
+        r.down = true; r.dragged = false; r.lastX = pe.clientX;
+        try { r.el.setPointerCapture(pe.pointerId); } catch (_) {}
+      });
+      r.el.addEventListener('pointermove', (e) => {
+        if (!r.down) return;
+        const pe = e as PointerEvent;
+        const dx = pe.clientX - r.lastX; r.lastX = pe.clientX;
+        r.dist += r.dirSign * dx; // content follows the finger
+        if (Math.abs(dx) > 1) r.dragged = true;
+      });
+      const release = (e: Event) => {
+        if (!r.down) return;
+        r.down = false;
+        try { r.el.releasePointerCapture((e as PointerEvent).pointerId); } catch (_) {}
+      };
+      r.el.addEventListener('pointerup', release);
+      r.el.addEventListener('pointercancel', release);
+      r.el.addEventListener('click', (e) => { if (r.dragged) { e.preventDefault(); e.stopPropagation(); r.dragged = false; } }, true);
+    });
+
     const frame = () => {
       const v = BASE + boost;
-      boost *= DECAY;
-      if (boost < 0.01) boost = 0;
-
-      distTop += v;
-      distBottom += v;
-
-      // top row drifts RIGHT (positive translateX that wraps back)
-      if (wTop > 0)    rowTop.style.transform    = `translate3d(${(((distTop % wTop) - wTop)).toFixed(1)}px,0,0)`;
-      // bottom row drifts LEFT (negative translateX that wraps back)
-      if (wBottom > 0) rowBottom.style.transform = `translate3d(${((-(distBottom % wBottom))).toFixed(1)}px,0,0)`;
-
+      boost *= DECAY; if (boost < 0.01) boost = 0;
+      rows.forEach((r) => {
+        if (!r.hover && !r.down) r.dist += v;
+        if (!r.w) return;
+        const m = mod(r.dist, r.w);
+        r.el.style.transform = `translate3d(${(r.dirSign > 0 ? m - r.w : -m).toFixed(1)}px,0,0)`;
+      });
       rafId = requestAnimationFrame(frame);
     };
-
     new IntersectionObserver((entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting && !running) {
-          running = true;
-          rafId = requestAnimationFrame(frame);
-        } else if (!e.isIntersecting && running) {
-          running = false;
-          cancelAnimationFrame(rafId);
-        }
+        if (e.isIntersecting && !running) { running = true; rafId = requestAnimationFrame(frame); }
+        else if (!e.isIntersecting && running) { running = false; cancelAnimationFrame(rafId); }
       });
     }, { threshold: 0 }).observe(marquee);
   }
