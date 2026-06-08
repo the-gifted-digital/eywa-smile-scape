@@ -1,0 +1,15 @@
+---
+import Base from '~/layouts/Base.astro';
+import AssessmentApp from '~/components/assessment/AssessmentApp.astro';
+import { getAssessment } from '~/lib/assessment-content';
+const lang = 'th' as const;
+const data = await getAssessment(lang);
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: data.faq.map((f: any) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const pageLd = { '@context': 'https://schema.org', '@type': 'MedicalWebPage', name: data.meta.title, description: data.meta.description };
+---
+<Base title={data.meta.title} description={data.meta.description} robots="noindex,follow" stickyCta={true} jsonLd={[pageLd, faqLd]}>
+  <AssessmentApp data={data} lang={lang} />
+</Base>
