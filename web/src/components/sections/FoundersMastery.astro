@@ -16,7 +16,7 @@ const [a, b] = founders;
   <div class="md:hidden mt-8 grid gap-8" data-reveal-stagger>
     {founders.map((f) => (
       <div data-reveal>
-        <div class="relative mx-auto aspect-square w-full max-w-[300px] overflow-hidden rounded-2xl bg-brand-anchor/40">
+        <div class="relative -mx-4 aspect-square overflow-hidden bg-brand-anchor/40">
           <Image src={f.image.src} alt={f.image.alt} label={f.image.label} width={600} height={600} rounded={false} class="h-full w-full object-cover" />
           {f.nickname && <span class="absolute bottom-3 left-3 z-10 rounded-full bg-brand-anchor/85 px-3 py-1 text-sm font-semibold text-brand-neutral-0 backdrop-blur-sm shadow">{f.nickname}</span>}
         </div>
