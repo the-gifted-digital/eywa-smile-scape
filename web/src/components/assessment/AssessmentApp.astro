@@ -141,15 +141,18 @@ const clientData = {
       dl().push({ event: 'assessment_start' });
     });
 
+    let advancing = false;
     wizard.addEventListener('click', (e) => {
       const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-value]');
-      if (!btn) return;
+      if (!btn || advancing) return;
       const card = btn.closest<HTMLElement>('[data-question]')!;
       answers[card.dataset.question!] = btn.dataset.value!;
       card.querySelectorAll('[data-value]').forEach((b) => b.classList.remove('is-selected'));
       btn.classList.add('is-selected');
       if (data.perQuestionTracking) dl().push({ event: 'assessment_question_answered', step: step + 1 });
-      if (step < total - 1) { step++; setTimeout(renderStep, 180); } else finish();
+      advancing = true;
+      if (step < total - 1) { step++; setTimeout(() => { renderStep(); advancing = false; }, 180); }
+      else finish();
     });
 
     back.addEventListener('click', () => { if (step > 0) { step--; renderStep(); } });
@@ -183,8 +186,9 @@ const clientData = {
         name: String(fd.get('name') || ''), phone: String(fd.get('phone') || ''),
         email: String(fd.get('email') || ''), sex: String(fd.get('sex') || ''),
       };
+      const r = result;
+      if (!r) return;
       msg.textContent = data.gate.sending;
-      const r = result!;
       const t = tierOf(r.tier);
       const recs = recsFor(r.flags);
       const origin = location.origin;
