@@ -4,24 +4,43 @@ import SectionHeading from '~/components/ui/SectionHeading.astro';
 import Image from '~/components/ui/Image.astro';
 interface Props {
   heading: string;
-  enabled?: boolean; // compliance gate (spec §10 of the MVP)
+  enabled?: boolean; // compliance gate
   note?: string;
   items: { image: { src?: string; alt: string; label?: string }; caption: string }[];
 }
 const { heading, enabled = true, note, items } = Astro.props;
 const lbLabel = Astro.currentLocale === 'th' ? 'ภาพผลลัพธ์ขนาดเต็ม' : Astro.currentLocale === 'zh-cn' ? '查看完整图片' : 'View full-size image';
+const loop = [...items, ...items]; // duplicate for seamless desktop carousel
 ---
 {enabled && (
   <Section>
     <div data-reveal><SectionHeading title={heading} align="center" /></div>
-    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3" data-reveal-stagger>
+
+    {/* Mobile (<md): grid + lightbox (unchanged behavior) */}
+    <div class="md:hidden mt-8 grid grid-cols-2 gap-3" data-reveal-stagger>
       {items.map((it, i) => (
-        <figure data-reveal class={`relative rounded-xl overflow-hidden border border-brand-neutral-200 bg-brand-neutral-0 u-hover ${i === 0 ? 'col-span-2 md:col-span-1' : ''}`}>
+        <figure data-reveal class={`relative overflow-hidden rounded-xl border border-brand-neutral-200 bg-brand-neutral-0 u-hover ${i === 0 ? 'col-span-2' : ''}`}>
           <Image src={it.image.src} alt={it.image.alt} label={it.image.label} width={500} height={500} rounded={false} class="ba-img cursor-zoom-in aspect-square" />
-          <figcaption class="pointer-events-none absolute top-2 left-2 rounded-full bg-brand-anchor/85 text-brand-neutral-0 text-[11px] font-medium px-2.5 py-0.5">{it.caption}</figcaption>
+          <figcaption class="pointer-events-none absolute top-2 left-2 rounded-full bg-brand-anchor/85 px-2.5 py-0.5 text-[11px] font-medium text-brand-neutral-0">{it.caption}</figcaption>
         </figure>
       ))}
     </div>
+
+    {/* Desktop (md+): auto-loop carousel, right→left; pause on hover/press; click → lightbox */}
+    <div data-ba-carousel data-reveal class="hidden md:block mt-8 overflow-hidden">
+      <div data-ba-track class="flex will-change-transform">
+        {loop.map((it, i) => (
+          <figure
+            class="relative mr-4 w-[clamp(300px,30vw,400px)] shrink-0 overflow-hidden rounded-2xl border border-brand-neutral-200 bg-brand-neutral-0"
+            aria-hidden={i >= items.length ? 'true' : undefined}
+          >
+            <Image src={it.image.src} alt={it.image.alt} label={it.image.label} width={600} height={600} rounded={false} class={`aspect-square ${i < items.length ? 'ba-img cursor-zoom-in' : ''}`} />
+            <figcaption class="pointer-events-none absolute top-3 left-3 rounded-full bg-brand-anchor/85 px-3 py-1 text-xs font-medium text-brand-neutral-0">{it.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+
     {note && <p class="mt-4 text-center text-xs text-brand-neutral-400">{note}</p>}
 
     <div id="ba-lightbox" class="ba-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label={lbLabel}>
@@ -40,6 +59,7 @@ const lbLabel = Astro.currentLocale === 'th' ? 'ภาพผลลัพธ์�
   .ba-close:hover { background: rgba(255,255,255,0.28); }
 </style>
 <script>
+  // ---- Lightbox (attaches to all .ba-img: mobile grid + desktop carousel real set) ----
   const lb = document.getElementById('ba-lightbox');
   if (lb) {
     const lbImg = lb.querySelector('.ba-lightbox-img') as HTMLImageElement;
@@ -63,5 +83,40 @@ const lbLabel = Astro.currentLocale === 'th' ? 'ภาพผลลัพธ์�
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lb.classList.contains('open')) close();
     });
+  }
+
+  // ---- Desktop carousel: seamless leftward auto-loop; pause on hover/press ----
+  const reduceC = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const carEl = document.querySelector('[data-ba-carousel]');
+  const track = carEl?.querySelector('[data-ba-track]') as HTMLElement | null;
+  if (carEl && track && track.children.length > 1 && !reduceC) {
+    const SET = track.children.length / 2;
+    const mod = (n: number, m: number) => ((n % m) + m) % m;
+    const measure = () => {
+      const a = track.children[0] as HTMLElement | undefined;
+      const b = track.children[SET] as HTMLElement | undefined;
+      return a && b ? b.offsetLeft - a.offsetLeft : 0;
+    };
+    let w = measure(), dist = 0, paused = false, running = false, rafId = 0;
+    const BASE = 0.35; // slow glam drift
+    window.addEventListener('resize', () => { w = measure(); }, { passive: true });
+    track.style.touchAction = 'pan-y';
+    track.addEventListener('pointerenter', (e) => { if ((e as PointerEvent).pointerType === 'mouse') paused = true; });
+    track.addEventListener('pointerleave', (e) => { if ((e as PointerEvent).pointerType === 'mouse') paused = false; });
+    track.addEventListener('pointerdown', () => { paused = true; });
+    const release = () => { paused = false; };
+    track.addEventListener('pointerup', release);
+    track.addEventListener('pointercancel', release);
+    const frame = () => {
+      if (!paused) dist += BASE;
+      if (w > 0) track.style.transform = `translate3d(${(-mod(dist, w)).toFixed(1)}px,0,0)`; // leftward
+      rafId = requestAnimationFrame(frame);
+    };
+    new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !running) { running = true; rafId = requestAnimationFrame(frame); }
+        else if (!e.isIntersecting && running) { running = false; cancelAnimationFrame(rafId); }
+      });
+    }, { threshold: 0 }).observe(carEl);
   }
 </script>

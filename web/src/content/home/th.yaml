@@ -85,7 +85,6 @@ beforeAfter:
   - { image: { src: /images/lp/review5.png, alt: เคสรากฟันเทียม ก่อน-หลัง 5 }, caption: ก่อน · หลัง }
   - { image: { src: /images/lp/review6.png, alt: เคสรากฟันเทียม ก่อน-หลัง 6 }, caption: ก่อน · หลัง }
   - { image: { src: /images/lp/review7.png, alt: เคสรากฟันเทียม ก่อน-หลัง 7 }, caption: ก่อน · หลัง }
-  - { image: { src: /images/lp/review8.png, alt: เคสรากฟันเทียม ก่อน-หลัง 8 }, caption: ก่อน · หลัง }
 reviews:
   - { quote: ดูแลดีมาก อธิบายละเอียด ไม่เจ็บอย่างที่กลัว, name: คุณ A, stars: 5 }
   - { quote: ทำรากฟันเทียมแล้วมั่นใจขึ้นเยอะ, name: คุณ B, stars: 5 }

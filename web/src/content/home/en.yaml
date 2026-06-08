@@ -86,7 +86,6 @@ beforeAfter:
   - { image: { src: /images/lp/review5.png, alt: Dental implant before-after 5 }, caption: Before · After }
   - { image: { src: /images/lp/review6.png, alt: Dental implant before-after 6 }, caption: Before · After }
   - { image: { src: /images/lp/review7.png, alt: Dental implant before-after 7 }, caption: Before · After }
-  - { image: { src: /images/lp/review8.png, alt: Dental implant before-after 8 }, caption: Before · After }
 reviews:
   - { quote: Great care, detailed explanation, far less painful than I feared., name: Patient A, stars: 5 }
   - { quote: Much more confident after my implant., name: Patient B, stars: 5 }

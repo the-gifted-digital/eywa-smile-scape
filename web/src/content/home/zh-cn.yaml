@@ -85,7 +85,6 @@ beforeAfter:
   - { image: { src: /images/lp/review5.png, alt: 种植牙术前术后 5 }, caption: 术前 · 术后 }
   - { image: { src: /images/lp/review6.png, alt: 种植牙术前术后 6 }, caption: 术前 · 术后 }
   - { image: { src: /images/lp/review7.png, alt: 种植牙术前术后 7 }, caption: 术前 · 术后 }
-  - { image: { src: /images/lp/review8.png, alt: 种植牙术前术后 8 }, caption: 术前 · 术后 }
 reviews:
   - { quote: 照护非常好，讲解详细，没有想象中那么痛。, name: 患者 A, stars: 5 }
   - { quote: 做完种植牙后自信多了。, name: 患者 B, stars: 5 }
