@@ -1,0 +1,23 @@
+---
+interface Props {
+  name: string;
+  license: string;
+  specialty: string;
+  photo: string;
+  href: string;
+  viewLabel: string;
+  dkey: string;
+}
+const { name, license, specialty, photo, href, viewLabel, dkey } = Astro.props;
+---
+<a href={href} data-card data-key={dkey} class="u-hover group flex w-[230px] shrink-0 items-center gap-3 rounded-2xl border border-brand-neutral-200 bg-brand-neutral-0 p-3">
+  <span class="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-brand-ice">
+    <img src={photo} alt={name} width="112" height="112" loading="lazy" decoding="async" class="h-full w-full object-cover" data-card-photo />
+  </span>
+  <span class="min-w-0 flex-1">
+    <span class="block truncate font-display font-bold text-brand-anchor text-sm" data-card-name>{name}</span>
+    <span class="block text-xs text-brand-neutral-500" data-card-license>{license}</span>
+    <span class="block truncate text-xs text-brand-primary-deep" data-card-specialty>{specialty}</span>
+    <span class="mt-0.5 inline-block text-[11px] font-semibold text-brand-primary group-hover:underline">{viewLabel} →</span>
+  </span>
+</a>
