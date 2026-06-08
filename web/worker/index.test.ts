@@ -11,7 +11,7 @@ const validBody = {
   form: 'implant_check', locale: 'en', consent: true,
   contact: { name: 'A', phone: '1', email: 'a@b.com', sex: '' },
   age: '40-59', tier: 'A', flags: [], intent: 'soon', answers: {},
-  report: { tierTitle: 'T', tierSummary: 'S', whyBullets: [], nextSteps: [], relatedLinks: [], ctaUrl: 'https://x/#b', ctaLabel: 'Book' },
+  report: { tier: 'A', tierBadge: '🟢 Good', tierTitle: 'T', tierSummary: 'S', whyItems: [], nextSteps: [], relatedLinks: [], ctaUrl: 'https://x/#b', ctaLabel: 'Book' },
   ts: '2026-06-08T00:00:00Z',
 };
 

@@ -202,8 +202,9 @@ const clientData = {
         contact,
         age: answers.age || '', tier: r.tier, flags: r.flags, intent: answers.intent || '', answers,
         report: {
+          tier: r.tier, tierBadge: t.badge,
           tierTitle: t.title, tierSummary: t.summary,
-          whyBullets: recs.map((x: any) => x.text), nextSteps: t.steps || [],
+          whyItems: recs.map((x: any) => ({ topic: x.topic, text: x.text })), nextSteps: t.steps || [],
           relatedLinks, ctaUrl: origin + t.ctaHref, ctaLabel: t.ctaLabel,
         },
         ts: new Date().toISOString(),
