@@ -25,8 +25,8 @@ const roster = TEAM_MOCK.map((d) => ({
   specialty: d.specialty[lang],
 }));
 
-const top = roster.slice(0, 6);
-const bottom = roster.slice(6, 12);
+const topSet = roster.slice(0, 10);
+const bottomSet = roster.slice(10, 20);
 ---
 <Section>
   <div data-reveal class="text-center">
@@ -35,35 +35,15 @@ const bottom = roster.slice(6, 12);
   </div>
 
   <div data-team-marquee class="mt-8 overflow-hidden">
-    <div data-row="top" class="flex gap-4 will-change-transform">
-      {top.map((d) => (
-        <ProfileCard
-          name={d.name}
-          license={d.license}
-          specialty={d.specialty}
-          photo={d.photo}
-          href={d.href}
-          viewLabel={t.view}
-          dkey={d.key}
-        />
-      ))}
+    <div data-row="top" class="flex will-change-transform">
+      {topSet.map((d) => <ProfileCard name={d.name} license={d.license} specialty={d.specialty} photo={d.photo} href={d.href} viewLabel={t.view} dkey={d.key} />)}
+      {topSet.map((d) => <ProfileCard name={d.name} license={d.license} specialty={d.specialty} photo={d.photo} href={d.href} viewLabel={t.view} dkey={d.key} dup />)}
     </div>
-    <div data-row="bottom" class="mt-4 flex gap-4 pl-12 will-change-transform">
-      {bottom.map((d) => (
-        <ProfileCard
-          name={d.name}
-          license={d.license}
-          specialty={d.specialty}
-          photo={d.photo}
-          href={d.href}
-          viewLabel={t.view}
-          dkey={d.key}
-        />
-      ))}
+    <div data-row="bottom" class="mt-4 flex will-change-transform">
+      {bottomSet.map((d) => <ProfileCard name={d.name} license={d.license} specialty={d.specialty} photo={d.photo} href={d.href} viewLabel={t.view} dkey={d.key} />)}
+      {bottomSet.map((d) => <ProfileCard name={d.name} license={d.license} specialty={d.specialty} photo={d.photo} href={d.href} viewLabel={t.view} dkey={d.key} dup />)}
     </div>
   </div>
-
-  <script type="application/json" data-team-pool set:html={JSON.stringify(roster)}></script>
 </Section>
 
 <script>
@@ -72,63 +52,59 @@ const bottom = roster.slice(6, 12);
   const rowTop = marquee?.querySelector('[data-row="top"]') as HTMLElement | null;
   const rowBottom = marquee?.querySelector('[data-row="bottom"]') as HTMLElement | null;
 
-  // (A) scroll-coupled horizontal drift: top → right / bottom → left as you scroll down; reverses on scroll up.
   if (marquee && rowTop && rowBottom && !reduce) {
-    const AMP = 90;
-    let ticking = false;
-    const onScroll = () => {
-      const rect = (marquee as HTMLElement).getBoundingClientRect();
-      const vh = window.innerHeight || 1;
-      let p = (vh - rect.top) / (vh + rect.height);
-      p = Math.max(0, Math.min(1, p));
-      const x = (p - 0.5) * 2 * AMP;
-      rowTop.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`;
-      rowBottom.style.transform = `translate3d(${(-x).toFixed(1)}px,0,0)`;
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(onScroll);
-      }
-    }, { passive: true });
-    onScroll();
-  }
+    const SET = 10;                 // unique cards per row before the duplicate
+    const BASE = 0.35;              // px/frame slow base drift
+    const DECAY = 0.9;              // boost easing per frame
+    const BOOST_CAP = 14;           // max extra px/frame
 
-  // (B) auto-crossfade: every 3s, fade one visible card to a different doctor from the 20-pool.
-  const poolEl = document.querySelector('[data-team-pool]');
-  const cards = Array.from(document.querySelectorAll('[data-card]')) as HTMLElement[];
-  if (poolEl && cards.length && !reduce) {
-    const pool = JSON.parse(poolEl.textContent || '[]') as Array<{
-      key: string;
-      license: string;
-      photo: string;
-      href: string;
-      name: string;
-      specialty: string;
-    }>;
-    const shown = new Set(cards.map((c) => c.dataset.key));
-    setInterval(() => {
-      const card = cards[Math.floor(Math.random() * cards.length)];
-      const candidates = pool.filter((d) => !shown.has(d.key));
-      if (!candidates.length) return;
-      const next = candidates[Math.floor(Math.random() * candidates.length)];
-      const prevKey = card.dataset.key!;
-      card.style.transition = 'opacity .45s ease';
-      card.style.opacity = '0';
-      setTimeout(() => {
-        card.dataset.key = next.key;
-        card.setAttribute('href', next.href);
-        (card.querySelector('[data-card-name]') as HTMLElement).textContent = next.name;
-        (card.querySelector('[data-card-license]') as HTMLElement).textContent = next.license;
-        (card.querySelector('[data-card-specialty]') as HTMLElement).textContent = next.specialty;
-        const img = card.querySelector('[data-card-photo]') as HTMLImageElement;
-        img.src = next.photo;
-        img.alt = next.name;
-        shown.delete(prevKey);
-        shown.add(next.key);
-        card.style.opacity = '1';
-      }, 460);
-    }, 3000);
+    // exact repeat distance = offsetLeft of the first duplicate card minus first card
+    const measure = (row: HTMLElement) => {
+      const ch = row.children;
+      return (ch[SET] as HTMLElement).offsetLeft - (ch[0] as HTMLElement).offsetLeft;
+    };
+
+    let wTop = measure(rowTop), wBottom = measure(rowBottom);
+    window.addEventListener('resize', () => { wTop = measure(rowTop); wBottom = measure(rowBottom); }, { passive: true });
+
+    let distTop = 0;
+    // half-card phase stagger on bottom row so cards don't vertically align
+    let distBottom = wBottom > 0 ? (wBottom / SET) / 2 : 0;
+
+    let boost = 0, lastY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      boost = Math.min(boost + Math.abs(y - lastY) * 0.35, BOOST_CAP);
+      lastY = y;
+    }, { passive: true });
+
+    let running = false, rafId = 0;
+    const frame = () => {
+      const v = BASE + boost;
+      boost *= DECAY;
+      if (boost < 0.01) boost = 0;
+
+      distTop += v;
+      distBottom += v;
+
+      // top row drifts RIGHT (positive translateX that wraps back)
+      if (wTop > 0)    rowTop.style.transform    = `translate3d(${(((distTop % wTop) - wTop)).toFixed(1)}px,0,0)`;
+      // bottom row drifts LEFT (negative translateX that wraps back)
+      if (wBottom > 0) rowBottom.style.transform = `translate3d(${((-(distBottom % wBottom))).toFixed(1)}px,0,0)`;
+
+      rafId = requestAnimationFrame(frame);
+    };
+
+    new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !running) {
+          running = true;
+          rafId = requestAnimationFrame(frame);
+        } else if (!e.isIntersecting && running) {
+          running = false;
+          cancelAnimationFrame(rafId);
+        }
+      });
+    }, { threshold: 0 }).observe(marquee);
   }
 </script>
