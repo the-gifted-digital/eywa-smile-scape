@@ -21,7 +21,7 @@
 
 ## 2. Goal / non-goals
 
-**Goal.** Ship a dedicated, trilingual, interactive **Implant Readiness Check** at `/implant-check/` (+ `/en/`, `/zh-cn/`): a step-by-step wizard (~9 questions) grounded in recognized clinical implant-eligibility factors, framed as an **educational self-check (not a diagnosis)**. After completion it shows a **free teaser result**, then a **soft, non-hardsell gate** (name/phone/email + PDPA) that unlocks the **full personalized report on-screen** and emails a detailed copy. Lead → n8n (existing pipeline); email → Resend (via a thin Cloudflare Worker endpoint). The page is a shareable, ad-landing-friendly, SEO/AEO lead magnet, built from the existing component library + motion layer.
+**Goal.** Ship a dedicated, trilingual, interactive **Implant Readiness Check** at `/implant-check/` (+ `/en/`, `/zh-cn/`): a step-by-step wizard (~10 questions, incl. age) grounded in recognized clinical implant-eligibility factors, framed as an **educational self-check (not a diagnosis)**. After completion it shows a **free teaser result**, then a **soft, non-hardsell gate** (name/phone/email + PDPA) that unlocks the **full personalized report on-screen** and emails a detailed copy. Lead → n8n (existing pipeline); email → Resend (via a thin Cloudflare Worker endpoint). The page is a shareable, ad-landing-friendly, SEO/AEO lead magnet, built from the existing component library + motion layer.
 
 **Non-goals (this workstream).**
 - No change to the homepage, LP, or other live pages **except** small additive entry CTAs (§12), done last and low-risk.
@@ -35,7 +35,7 @@
 
 | # | Decision | Choice |
 |---|----------|--------|
-| D1 | Instrument | **Implant Readiness Check** ("Am I a candidate?"), ~9 Q, recognized clinical risk factors, educational self-check (not diagnosis) |
+| D1 | Instrument | **Implant Readiness Check** ("Am I a candidate?"), ~10 Q (incl. age), recognized clinical risk factors, educational self-check (not diagnosis) |
 | D2 | Results flow | **Teaser (free, on-screen) → soft gate → full report on-screen + emailed copy** (refines handover's email-only) |
 | D3 | Teaser tone | **No lock/blur metaphor.** Give real partial value, then a soft "want the full personalized report?" invite — an offer, not a wall |
 | D4 | Backend split | **Lead → n8n** (existing pipeline, consistency) · **Email → Resend** (REST API) — both orchestrated by one thin **Cloudflare Worker** endpoint |
@@ -44,6 +44,7 @@
 | D7 | Index policy | `noindex,follow` (go. policy; flip at apex cutover) |
 | D8 | Quiz UX | **Step-by-step wizard** (one card per question + progress + motion reveal) |
 | D9 | Related-content in email | **Designed but switched OFF by default** (`relatedContent.email = false`); on-screen related links ON but render only available targets, else fallback |
+| D10 | Demographics | **age** = Q1 (clinical guard for under-18 + context/routing); **sex** = optional inclusive field at the gate (marketing segmentation only, not scored) |
 
 ## 4. Instrument — the questions
 
@@ -51,35 +52,41 @@
 
 | # | id | Question (TH gist) | Options (value) | Sets |
 |---|-----|--------------------|-----------------|------|
-| 1 | `situation` | สถานการณ์ฟันตอนนี้ | many/all-missing · 1-2 missing · about-to-extract · denture-bridge-unhappy · teeth-intact-researching | need + intent; `intact` → Informational result |
-| 2 | `duration` | ฟัน/ช่องว่างหายมานานแค่ไหน | <6mo · 6mo-2y · >2y · none | `flag:bone` if `>2y` |
-| 3 | `bone` | เคยถูกบอกว่ากระดูกไม่พอ / ต้องปลูกกระดูก-ยกไซนัส | yes · no · unsure | `flag:bone` if yes/unsure |
-| 4 | `gums` | เหงือก: เลือดออก/บวม-ร่น/เคยเป็นโรคเหงือก | often · sometimes · never | `flag:perio` if often |
-| 5 | `smoking` | สูบบุหรี่ | regular · occasional-quitting · none | `flag:smoking` if regular |
-| 6 | `diabetes` | เบาหวาน + การคุมน้ำตาล | yes-poor/unsure · yes-controlled · no | `flag:medical` if poor/unsure |
-| 7 | `medical` | bisphosphonate/ยากระดูกพรุน · ฉายแสงขากรรไกร · ภูมิคุ้มกันบกพร่อง | has-any · none · unsure | `flag:complex` if has-any |
-| 8 | `bruxism` | นอนกัดฟัน/กัดแน่นบ่อย | yes · unsure · no | `flag:bruxism` if yes (minor) |
-| 9 | `intent` | ความพร้อม/เป้าหมาย | soon · 3-6mo · researching | lead temperature (n8n routing); **not** scored to tier |
+| 1 | `age` | ช่วงอายุของคุณ | under-18 · 18-39 · 40-59 · 60+ | `flag:minor` if under-18; `flag:senior` if 60+ (context/routing, **not** a B/C driver) |
+| 2 | `situation` | สถานการณ์ฟันตอนนี้ | many/all-missing · 1-2 missing · about-to-extract · denture-bridge-unhappy · teeth-intact-researching | need + intent; `intact` → Informational result |
+| 3 | `duration` | ฟัน/ช่องว่างหายมานานแค่ไหน | <6mo · 6mo-2y · >2y · none | `flag:bone` if `>2y` |
+| 4 | `bone` | เคยถูกบอกว่ากระดูกไม่พอ / ต้องปลูกกระดูก-ยกไซนัส | yes · no · unsure | `flag:bone` if yes/unsure |
+| 5 | `gums` | เหงือก: เลือดออก/บวม-ร่น/เคยเป็นโรคเหงือก | often · sometimes · never | `flag:perio` if often |
+| 6 | `smoking` | สูบบุหรี่ | regular · occasional-quitting · none | `flag:smoking` if regular |
+| 7 | `diabetes` | เบาหวาน + การคุมน้ำตาล | yes-poor/unsure · yes-controlled · no | `flag:medical` if poor/unsure |
+| 8 | `medical` | bisphosphonate/ยากระดูกพรุน · ฉายแสงขากรรไกร · ภูมิคุ้มกันบกพร่อง | has-any · none · unsure | `flag:complex` if has-any |
+| 9 | `bruxism` | นอนกัดฟัน/กัดแน่นบ่อย | yes · unsure · no | `flag:bruxism` if yes (minor effect on tier) |
+| 10 | `intent` | ความพร้อม/เป้าหมาย | soon · 3-6mo · researching | lead temperature (n8n routing); **not** scored to tier |
 
-**Deliberately omitted:** an age question (kept to 9, avoids feeling intrusive). Covered by a universal disclaimer: "implants are for adults with completed jaw growth; an in-person exam confirms suitability." Easy to add later if desired (touch-up candidate).
+**Demographics decision (touch-up 2026-06-08):** **age** is Q1 — clinically meaningful (jaw-growth guard for under-18 + healing/bone context + routing). **Sex** is collected as an **optional, inclusive** field (ชาย / หญิง / ไม่ระบุ) on the **gate form** (§7/§9), used for **marketing segmentation only** — it does **not** affect tier/recommendations, because the mechanisms sex might proxy for are already captured directly by Q4 (gums), Q7 (diabetes) and Q8 (antiresorptive meds). Universal disclaimer remains: "implants are for adults with completed jaw growth; an in-person exam confirms suitability."
 
 ## 5. Scoring — rules engine (flags → tier), not a numeric score
 
 Pure function `scoreAssessment(answers): { tier, flags, recommendations }` in `lib/assessment.ts`. Tier resolved by priority (first match wins):
 
-1. **`info` — Informational** — if `situation = teeth-intact-researching`. Copy: "implants aren't needed right now — here's what to know for the future." Soft CTA. (Honors brand value: **no over-treatment**.)
-2. **🟠 `C` — "ควรให้ทันตแพทย์ประเมินก่อน" (needs professional evaluation)** — if `flag:complex` (Q7) **or** `flag:medical` (Q6 poorly-controlled diabetes). Honest, non-promissory: "your situation needs an individual evaluation."
-3. **🟡 `B` — "เหมาะ — ควรเตรียมพร้อมก่อน" (candidate with preparation)** — if any of `flag:bone | perio | smoking | bruxism`. Personalized prep recommendations.
-4. **🟢 `A` — "เหมาะกับรากฟันเทียม" (good candidate)** — none of the above; mostly favorable answers.
+1. **`minor` — under-18** — if `flag:minor` (Q1). Honest refer: implants need completed jaw growth (generally 18+); recommends seeing a dentist for age-appropriate options. **Top override.**
+2. **`info` — Informational** — if `situation = teeth-intact-researching` (Q2). Copy: "implants aren't needed right now — here's what to know for the future." Soft CTA. (Honors brand value: **no over-treatment**.)
+3. **🟠 `C` — "ควรให้ทันตแพทย์ประเมินก่อน" (needs professional evaluation)** — if `flag:complex` (Q8) **or** `flag:medical` (Q7 poorly-controlled diabetes). Honest, non-promissory: "your situation needs an individual evaluation."
+4. **🟡 `B` — "เหมาะ — ควรเตรียมพร้อมก่อน" (candidate with preparation)** — if any of `flag:bone | perio | smoking | bruxism`. Personalized prep recommendations.
+5. **🟢 `A` — "เหมาะกับรากฟันเทียม" (good candidate)** — none of the above; mostly favorable answers.
 
-**All tiers end on a "book a free consultation" CTA**, with copy tuned per tier. Tier badge + tier copy come from the content collection (localized).
+`flag:senior` (Q1 = 60+) does **not** change the tier but **strengthens the All-on-X / full-arch emphasis** in recommendations when many/all teeth are missing.
+
+**All non-`minor` tiers end on a "book a free consultation" CTA**, with copy tuned per tier (`minor` ends on a softer "see a dentist" CTA). Tier badge + tier copy come from the content collection (localized).
 
 **Representative verification cases** (for testing the pure function):
+- `age=under-18` (+ anything) → `minor` (top override).
 - All favorable (no flags) → `A`.
 - `bone=yes` only → `B` + bone recommendation.
 - `medical=has-any` + `bone=yes` → `C` (complex overrides B).
 - `diabetes=yes-poor` → `C`. `smoking=regular` only → `B`.
-- `situation=teeth-intact-researching` (+ any flags) → `info` (situation overrides).
+- `situation=teeth-intact-researching` (+ flags, age ≥18) → `info` (situation overrides B/C).
+- `age=60+` + `situation=many/all-missing` → tier per other flags, with All-on-X emphasized.
 
 ## 6. Personalized recommendations (flag → recommendation → optional link)
 
@@ -95,12 +102,14 @@ Each fired flag maps to a localized recommendation entry `{ text, topic, href, p
 | `situation=many/all-missing` | All-on-X immediate loading อาจเหมาะ | all-on-x page |
 | `complex` | ปรึกษาทันตแพทย์เฉพาะทางเพื่อประเมินรายบุคคล | (no link; consult CTA) |
 
+**Age context (Q1):** `senior` (60+) + many/all teeth missing → All-on-X / full-arch recommendation is surfaced first. `minor` (under-18) suppresses all implant recommendations and shows only the age-appropriate refer message (per §5).
+
 **Related-content engine (graceful):** the map lives in the content collection. A link renders only if `published: true`; otherwise it is **omitted** (on-screen) or the block falls back to a single "ปรึกษา/ดูบริการรากฟันเทียม" link pointing at the live LP (`/lp/dental-implant/`). Two switches (per D9): `relatedContent.onScreen` (default **true**) and `relatedContent.email` (default **false**). As real pages ship, flip `published` per entry — no code change. Reuses the spirit of `RelatedContent.astro`.
 
 ## 7. Page flow & UX
 
 ```
-INTRO ─▶ WIZARD (Q1..Q9, one card, progress, back/next, motion reveal)
+INTRO ─▶ WIZARD (Q1..Q10, one card, progress, back/next, motion reveal)
         └─ on finish: scoreAssessment(answers) [client] ─▶ TEASER (free, on-screen)
               └─ "ขอรายงานฉบับเต็ม (ฟรี)" ─▶ GATE (name/phone/email + PDPA)
                     └─ submit ─▶ POST /api/assessment-lead (Worker)
@@ -109,9 +118,9 @@ INTRO ─▶ WIZARD (Q1..Q9, one card, progress, back/next, motion reveal)
 ```
 
 - **Intro:** short hero — headline ("คุณเหมาะกับรากฟันเทียมไหม?"), ~1-min / free / "not a diagnosis", **Start** button. Server-rendered (SSG) so content is crawlable.
-- **Wizard:** all question cards present in the DOM (crawlable), JS shows one at a time; progress bar (`ข้อ n/9`); auto-advance on select with a small delay, plus Back/Next; uses the existing motion layer for card reveal. State held in a plain JS object.
+- **Wizard:** all question cards present in the DOM (crawlable), JS shows one at a time; progress bar (`ข้อ n/10`); auto-advance on select with a small delay, plus Back/Next; uses the existing motion layer for card reveal. State held in a plain JS object.
 - **Teaser (D3):** tier badge + a genuine partial insight given freely; a soft invite card describing what the full report adds; one button → gate. No lock/blur.
-- **Gate:** mirrors `BookingForm` (fields, PDPA checkbox, localized messages, validation) but submits to the Worker endpoint, not directly to n8n. Privacy-policy link.
+- **Gate:** mirrors `BookingForm` (fields, PDPA checkbox, localized messages, validation) but submits to the Worker endpoint, not directly to n8n. Privacy-policy link. Includes an **optional, inclusive sex select** (ชาย / หญิง / ไม่ระบุ; default unselected, never required) captured for marketing segmentation only (not used in scoring/email tier).
 - **Full report:** tier + "why you're in this group" + recommended next steps + (switchable) related links + book / LINE / call CTAs + disclaimer. Revealed client-side after the gate response (the result was already computed at teaser time).
 - **Trust + FAQ:** a "how this works / references" disclosure (sources, disclaimer) + `FaqBlock` (FAQPage JSON-LD) at the foot.
 
@@ -137,7 +146,7 @@ web/src/
   worker/index.ts                      # thin Worker: POST /api/assessment-lead → n8n + Resend; else ASSETS.fetch
 ```
 
-**Content collection `assessment` (`type:'data'`, schema in `content/config.ts`):** `meta{title,description}`, `intro{eyebrow,title,body,startLabel,timeNote,disclaimer}`, `questions[]{id,eyebrow,text,options[]{label,value,flags[]}}`, `tiers{A,B,C,info}{badge,title,summary,nextStepsLabel,ctaLabel,ctaHref}`, `recommendations{<flag>:{text,topic,href,published}}`, `relatedContent{onScreen:boolean,email:boolean}`, `teaser{inviteTitle,inviteBody,buttonLabel}`, `gate{title,body,...}`, `references[]`, `faq[]`. Component-level microcopy (button/error/status strings) stays in internal `LABELS[lang]` maps (BookingForm pattern), **not** the collection.
+**Content collection `assessment` (`type:'data'`, schema in `content/config.ts`):** `meta{title,description}`, `intro{eyebrow,title,body,startLabel,timeNote,disclaimer}`, `questions[]{id,eyebrow,text,options[]{label,value,flags[]}}` (includes Q1 `age`), `tiers{A,B,C,info,minor}{badge,title,summary,nextStepsLabel,ctaLabel,ctaHref}`, `recommendations{<flag>:{text,topic,href,published}}`, `relatedContent{onScreen:boolean,email:boolean}`, `teaser{inviteTitle,inviteBody,buttonLabel}`, `gate{title,body,sexLabel,sexOptions[],...}`, `references[]`, `faq[]`. Component-level microcopy (button/error/status strings) stays in internal `LABELS[lang]` maps (BookingForm pattern), **not** the collection.
 
 **Client script (vanilla TS, no framework — consistent with the codebase):** manages step index + answers, calls `scoreAssessment` (imported from `lib/assessment.ts`, bundled by Astro into the client script), drives teaser→gate→report DOM, fires GTM events, POSTs the gate. Localized copy (questions/tiers/recs) is emitted by `AssessmentApp` as a JSON `<script type="application/json">` block and read by the client — so no locale strings are hardcoded in the script.
 
@@ -148,7 +157,7 @@ web/src/
 **Worker (`web/worker/index.ts`), wired via `wrangler.jsonc`:** add `main: "worker/index.ts"` and `assets.binding: "ASSETS"`. Logic:
 ```
 if (POST /api/assessment-lead):
-    parse {contact{name,phone,email}, consent, answers, tier, flags, locale, ts}
+    parse {contact{name,phone,email,sex?}, consent, answers, age, tier, flags, locale, ts}
     validate + basic anti-abuse (require consent; simple rate/heuristic)
     1) forward lead → fetch(N8N_ASSESSMENT_WEBHOOK_URL, JSON)   // lead capture (must-succeed)
     2) build localized email via assessment-email.ts (relatedOn = relatedContent.email)
@@ -157,7 +166,7 @@ if (POST /api/assessment-lead):
 else:
     return env.ASSETS.fetch(request)   // serve static site unchanged
 ```
-- **n8n payload** extends the homepage shape: `{ form:'implant_check', name, phone, email, consent, locale, tier, flags, answers, intent, ts }`. **Recommend a new webhook** `smilescape-implant-check-lead` so automations/routing differ from homepage; reuse the existing webhook only if the operator prefers (config value).
+- **n8n payload** extends the homepage shape: `{ form:'implant_check', name, phone, email, sex?, consent, locale, age, tier, flags, answers, intent, ts }` (`sex` optional/segmentation; `age` from Q1). **Recommend a new webhook** `smilescape-implant-check-lead` so automations/routing differ from homepage; reuse the existing webhook only if the operator prefers (config value).
 - **Resend:** REST call from the Worker (no SDK needed). Requires a **verified sending domain** (e.g., `smilescapeclinic.com` or `mail.smilescapeclinic.com`) + `RESEND_FROM` (e.g., `SmileScape <results@smilescapeclinic.com>`). DNS (SPF/DKIM) added via Cloudflare. The Resend MCP can create the domain + key and preview/test the template during build.
 - **Client failure handling:** the **full report still renders on-screen** once the gate is submitted (it was computed client-side) — a network failure never blocks the user's result. On Worker 5xx, show a subtle "couldn't send email — call/LINE us" note (call/LINE still convert). Optional defensive fallback: client may also POST the lead directly to n8n (homepage path) if the Worker errors.
 
@@ -201,7 +210,7 @@ The gate is a swappable component with a `mode` concept: `mode:'email'` (now) vs
 
 - Article/service destination pages (deliverable 2) — until then, fallback links.
 - LINE-OA gate (phase 2, §13). Email related-links block (ships OFF, §6/D9).
-- Optional age question (§4). Optional per-question tracking (§10).
+- Optional per-question tracking (§10).
 - Result-share / PDF download of the report. A/B testing teaser copy.
 
 ## 17. Proposed Decision Records (to log on approval)
