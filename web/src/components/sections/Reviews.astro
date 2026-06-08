@@ -16,7 +16,7 @@ const { heading, reviews, video } = Astro.props;
     <div class="lg:col-span-2 grid gap-4 sm:grid-cols-2" data-reveal-stagger>
       {reviews.map((r) => <div data-reveal><ReviewCard quote={r.quote} name={r.name} stars={r.stars} /></div>)}
     </div>
-    <div class="max-w-[300px] mx-auto w-full" data-reveal>
+    <div class="w-full" data-reveal>
       {video.src ? (
         <video controls preload="none" playsinline poster={video.poster.src} width="1280" height="1280"
                class="rounded-2xl border border-brand-neutral-200 bg-black w-full aspect-square">
