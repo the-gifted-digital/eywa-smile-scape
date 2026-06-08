@@ -49,7 +49,7 @@ const CHROME: Record<Locale, Chrome> = {
   th: {
     subject: 'ผลประเมินความพร้อมรากฟันเทียมของคุณ + คำแนะนำเฉพาะคุณ',
     tagline: 'รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต',
-    greeting: (n) => `สวัสดีค่ะ/ครับ คุณ${n ? ' ' + n : ''} 👋`,
+    greeting: (n) => `สวัสดี คุณ${n ? ' ' + n : ''} 👋`,
     intro: 'นี่คือผลประเมินความพร้อมก่อนทำรากฟันเทียมเบื้องต้นของคุณ พร้อมคำแนะนำเฉพาะบุคคล (เพื่อการศึกษา ไม่ใช่การวินิจฉัยทางการแพทย์)',
     whyTitle: 'สิ่งที่เราพบจากคำตอบของคุณ',
     nextTitle: 'ขั้นตอนที่แนะนำสำหรับคุณ',
@@ -169,7 +169,7 @@ export function buildAssessmentEmail(o: { name: string; locale: Locale; report: 
 
       <!-- Tier result card -->
       <tr><td style="padding:14px 24px 4px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${tint};border-left:4px solid ${accent};border-radius:10px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${tint};border-radius:10px;">
           <tr><td style="padding:14px 16px;">
             <span style="display:inline-block;background:#ffffff;color:${accent};border:1px solid ${accent};border-radius:99px;padding:4px 12px;font-size:13px;font-weight:800;">${esc(r.tierBadge)}</span>
             <div style="font-size:16px;font-weight:800;color:#0B2A4A;margin-top:10px;">${esc(r.tierTitle)}</div>
