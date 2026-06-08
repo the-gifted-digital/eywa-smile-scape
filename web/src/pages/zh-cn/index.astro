@@ -15,6 +15,7 @@ import Reviews from '~/components/sections/Reviews.astro';
 import Branches from '~/components/sections/Branches.astro';
 import FaqBlock from '~/components/FaqBlock.astro';
 import BookingForm from '~/components/forms/BookingForm.astro';
+import AssessmentBand from '~/components/sections/AssessmentBand.astro';
 import FinalCta from '~/components/sections/FinalCta.astro';
 
 const h = await getHome('zh-cn');
@@ -34,6 +35,7 @@ const h = await getHome('zh-cn');
   <Reviews heading="患者心声" reviews={h.reviews} video={h.video} />
   <Branches heading="我们的分院" mapLabel="在地图中查看 →" branches={h.branches} />
   <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} heading="常见问题" /></div>
+  <AssessmentBand />
   <BookingForm heading="预约 & 免费牙医咨询" subtitle="留下您的资料，我们会与您联系" />
   <FinalCta {...h.finalCta} />
 </Base>

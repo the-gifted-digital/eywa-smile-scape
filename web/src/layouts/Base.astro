@@ -81,9 +81,9 @@ const orgLd = {
 const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
 
 const navByLocale = {
-  th: [{ href: '/lp/dental-implant/', label: 'รากฟันเทียม' }, { href: '/#booking', label: 'จองคิว', cta: true }],
-  en: [{ href: '/en/lp/dental-implant/', label: 'Dental Implants' }, { href: '/en/#booking', label: 'Book Now', cta: true }],
-  'zh-cn': [{ href: '/en/lp/dental-implant/', label: '种植牙' }, { href: '/zh-cn/#booking', label: '预约', cta: true }],
+  th: [{ href: '/lp/dental-implant/', label: 'รากฟันเทียม' }, { href: '/implant-check/', label: 'เช็กความพร้อมรากเทียม' }, { href: '/#booking', label: 'จองคิว', cta: true }],
+  en: [{ href: '/en/lp/dental-implant/', label: 'Dental Implants' }, { href: '/en/implant-check/', label: 'Implant Readiness Check' }, { href: '/en/#booking', label: 'Book Now', cta: true }],
+  'zh-cn': [{ href: '/en/lp/dental-implant/', label: '种植牙' }, { href: '/zh-cn/implant-check/', label: '种植牙自测' }, { href: '/zh-cn/#booking', label: '预约', cta: true }],
 };
 const nav = navByLocale[lang] ?? navByLocale.th;
 const homeHref = lang === 'en' ? '/en/' : lang === 'zh-cn' ? '/zh-cn/' : '/';

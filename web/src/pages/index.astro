@@ -15,6 +15,7 @@ import Reviews from '~/components/sections/Reviews.astro';
 import Branches from '~/components/sections/Branches.astro';
 import FaqBlock from '~/components/FaqBlock.astro';
 import BookingForm from '~/components/forms/BookingForm.astro';
+import AssessmentBand from '~/components/sections/AssessmentBand.astro';
 import FinalCta from '~/components/sections/FinalCta.astro';
 
 const h = await getHome('th');
@@ -34,6 +35,7 @@ const h = await getHome('th');
   <Reviews heading="เสียงจากคนไข้" reviews={h.reviews} video={h.video} />
   <Branches heading="สาขาของเรา" mapLabel="เปิดในแผนที่ →" branches={h.branches} />
   <div class="max-w-6xl mx-auto px-4"><FaqBlock items={h.faq} /></div>
+  <AssessmentBand />
   <BookingForm heading="นัดหมาย & ปรึกษาทันตแพทย์ฟรี" subtitle="กรอกข้อมูลเพื่อให้เราติดต่อกลับ" />
   <FinalCta {...h.finalCta} />
 </Base>

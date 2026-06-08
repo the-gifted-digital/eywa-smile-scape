@@ -1,0 +1,19 @@
+---
+import Section from '~/components/ui/Section.astro';
+import type { Locale } from '~/lib/home';
+const lang = (Astro.currentLocale ?? 'th') as Locale;
+const COPY = {
+  th: { eyebrow: 'เช็กฟรี ~1 นาที', title: 'คุณเหมาะกับรากฟันเทียมไหม?', body: 'ทำแบบประเมินความพร้อมเบื้องต้น รับคำแนะนำเฉพาะคุณ', cta: 'เริ่มเช็กเลย', href: '/implant-check/' },
+  en: { eyebrow: 'Free ~1-min check', title: 'Are you a candidate for dental implants?', body: 'Take the readiness check and get personalized guidance', cta: 'Start the check', href: '/en/implant-check/' },
+  'zh-cn': { eyebrow: '免费约 1 分钟', title: '您适合种植牙吗？', body: '做个适合度自测，获取个性化建议', cta: '开始自测', href: '/zh-cn/implant-check/' },
+};
+const c = COPY[lang] ?? COPY.th;
+---
+<Section tone="ice">
+  <div data-reveal class="max-w-4xl mx-auto text-center rounded-3xl bg-brand-paper border border-brand-neutral-200 px-6 py-10">
+    <p class="font-display text-xs uppercase tracking-wide text-brand-primary">{c.eyebrow}</p>
+    <h2 class="mt-3 font-display text-2xl sm:text-3xl font-bold text-brand-anchor">{c.title}</h2>
+    <p class="mt-3 text-brand-neutral-700">{c.body}</p>
+    <a href={c.href} class="mt-6 inline-block rounded-full bg-brand-primary px-8 py-3 font-semibold text-brand-neutral-0 hover:bg-brand-primary-deep u-hover">{c.cta}</a>
+  </div>
+</Section>
