@@ -47,7 +47,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
       </a>
       <nav class="hidden lg:flex items-center gap-0.5 mx-auto" aria-label="Primary">
         {h.nav.map((item) => item.panel ? (
-          <button type="button" class={`ssf-trigger nav-item ${item.flag ? 'flag' : ''}`} data-panel={item.panel} aria-expanded="false">
+          <button type="button" class={`ssf-trigger nav-item ${item.flag ? 'flag' : ''}`} data-panel={item.panel} aria-haspopup="true" aria-expanded="false">
             {item.flag && <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>}
             {item.label}<Icon name="chevron" class="chev w-[11px] h-[11px]" />
           </button>
@@ -60,7 +60,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
       <a href={h.cta.href} class="hidden lg:inline-flex items-center gap-1.5 ml-auto shrink-0 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{h.cta.label} →</a>
       <div class="lg:hidden ml-auto flex items-center gap-2">
         <div class="relative">
-          <button type="button" id="ssf-mlang" class="flex items-center gap-1.5 h-[42px] px-3 rounded-xl bg-brand-ice text-brand-anchor text-sm font-bold">
+          <button type="button" id="ssf-mlang" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-1.5 h-[42px] px-3 rounded-xl bg-brand-ice text-brand-anchor text-sm font-bold">
             <Icon name="globe" class="w-[17px] h-[17px] opacity-80" />{h.langLabel}<Icon name="chevron" class="w-[11px] h-[11px] opacity-70" />
           </button>
           <div id="ssf-mlang-menu" class="hidden absolute top-[calc(100%+8px)] right-0 bg-white border border-brand-neutral-200 rounded-xl shadow-lg p-1.5 min-w-[140px] z-[70]">
@@ -113,7 +113,6 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
             <div class="rounded-2xl border-2 border-dashed border-brand-neutral-300 bg-gradient-to-br from-brand-ice to-brand-primary-soft flex flex-col items-center justify-center text-center text-brand-anchor p-6 min-h-full">
               <Icon name="check" class="w-10 h-10 opacity-40 mb-2.5" />
               <b class="text-sm">{data.imageLabel}</b>
-              <span class="text-xs text-brand-neutral-500 mt-1">DR-035 swap seam</span>
             </div>
           )}
         </div>
@@ -221,7 +220,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 
   @media (prefers-reduced-motion: reduce){
     .ssf-util, .ssf-panel, #ssf-backdrop, .nav-item .chev, .ssf-link,
-    #ssf-scrim, #ssf-drawer, .ssf-acc .chev, .ssf-acc-panel, .ssf-bookcta, .ssf-bookcta::before{ transition:none; }
+    #ssf-scrim, #ssf-drawer, .ssf-acc .chev, .ssf-acc-panel, .ssf-bookcta, .ssf-bookcta .ssf-arrow, .ssf-bookcta::before{ transition:none; }
   }
 </style>
 
@@ -288,6 +287,6 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 
   const mlang = document.getElementById('ssf-mlang')!;
   const mlangMenu = document.getElementById('ssf-mlang-menu')!;
-  mlang.addEventListener('click', (e) => { e.stopPropagation(); mlangMenu.classList.toggle('hidden'); });
-  document.addEventListener('click', () => mlangMenu.classList.add('hidden'));
+  mlang.addEventListener('click', (e) => { e.stopPropagation(); const open = mlangMenu.classList.toggle('hidden'); mlang.setAttribute('aria-expanded', String(!open)); });
+  document.addEventListener('click', () => { mlangMenu.classList.add('hidden'); mlang.setAttribute('aria-expanded', 'false'); });
 </script>
