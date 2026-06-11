@@ -58,7 +58,19 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
         ))}
       </nav>
       <a href={h.cta.href} class="hidden lg:inline-flex items-center gap-1.5 ml-auto shrink-0 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{h.cta.label} →</a>
-      <div id="ssf-mobile-controls" class="lg:hidden ml-auto flex items-center gap-2"></div>
+      <div class="lg:hidden ml-auto flex items-center gap-2">
+        <div class="relative">
+          <button type="button" id="ssf-mlang" class="flex items-center gap-1.5 h-[42px] px-3 rounded-xl bg-brand-ice text-brand-anchor text-sm font-bold">
+            <Icon name="globe" class="w-[17px] h-[17px] opacity-80" />{h.langLabel}<Icon name="chevron" class="w-[11px] h-[11px] opacity-70" />
+          </button>
+          <div id="ssf-mlang-menu" class="hidden absolute top-[calc(100%+8px)] right-0 bg-white border border-brand-neutral-200 rounded-xl shadow-lg p-1.5 min-w-[140px] z-[70]">
+            <a href={alt.th} class="block px-3 py-2.5 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">ไทย (TH)</a>
+            <a href={alt.en} class="block px-3 py-2.5 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">English (EN)</a>
+            <a href={alt['zh-cn']} class="block px-3 py-2.5 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">中文 (ZH)</a>
+          </div>
+        </div>
+        <button type="button" id="ssf-burger" aria-label="Menu" aria-expanded="false" class="w-[42px] h-[42px] grid place-items-center rounded-xl bg-brand-ice text-brand-anchor"><Icon name="menu" class="w-[23px] h-[23px]" /></button>
+      </div>
     </div>
   </div>
 
@@ -110,7 +122,60 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
   ))}
 
   <div id="ssf-backdrop" class="hidden lg:block fixed inset-0 z-40"></div>
-  <!-- mobile drawer mounts here (Task 5) -->
+  <!-- mobile scrim + drawer -->
+  <div id="ssf-scrim" class="lg:hidden fixed inset-0 z-[55]"></div>
+  <aside id="ssf-drawer" class="lg:hidden fixed top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white z-[56] flex flex-col" aria-hidden="true">
+    <div class="h-[58px] shrink-0 flex items-center justify-between px-4 border-b border-brand-neutral-200">
+      <img src="/images/lp/logo-smilescape.png" alt="SmileScape" width="600" height="106" class="h-[26px] w-auto" />
+      <button type="button" id="ssf-close" aria-label="Close" class="w-10 h-10 grid place-items-center rounded-xl bg-brand-ice text-brand-anchor"><Icon name="close" class="w-5 h-5" /></button>
+    </div>
+    <div class="flex-1 overflow-y-auto py-2">
+      {h.nav.map((item) => item.panel ? (
+        <Fragment>
+          <button type="button" class="ssf-acc w-full flex items-center gap-2.5 px-5 py-3.5 text-base font-semibold text-brand-anchor text-left" data-acc={item.panel} aria-expanded={item.panel === 'implant' ? 'true' : 'false'}>
+            {item.flag && <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>}{item.label}
+            <Icon name="chevron" class="chev w-[18px] h-[18px] ml-auto text-brand-neutral-300" />
+          </button>
+          <div class="ssf-acc-panel overflow-hidden bg-brand-ice" data-acc-panel={item.panel}>
+            <div class="px-5 pt-1.5 pb-4">
+              {h.megaPanels[item.panel].columns.map((col) => (
+                <Fragment>
+                  <div class="text-[10.5px] font-bold tracking-[.14em] text-brand-primary uppercase mt-3 mb-1">{col.label}</div>
+                  {col.links.map((l) => l.soon ? (
+                    <span class="flex items-center gap-2 py-2.5 text-sm text-brand-neutral-300"><span class="w-[7px] h-[7px] rounded-full bg-brand-neutral-200"></span>{l.label}<span class="text-[9.5px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
+                  ) : (
+                    <a href={l.href} class="flex items-center gap-2 py-2.5 text-sm font-medium text-brand-neutral-900"><span class="w-[7px] h-[7px] rounded-full bg-brand-highlight"></span>{l.label}{l.live && <span class="text-[9.5px] font-bold text-[#0a8f4d] bg-[#d9f3e3] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
+                  ))}
+                </Fragment>
+              ))}
+              {h.megaPanels[item.panel].promo && (
+                <div class="ssf-promo rounded-xl p-4 mt-3.5 text-white">
+                  <div class="text-[9.5px] font-bold tracking-[.16em] uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
+                  <h5 class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</h5>
+                  <div class="font-display text-2xl font-extrabold mt-1"><span class="text-xs font-medium opacity-85">{h.megaPanels[item.panel].promo!.priceEyebrow}</span> {h.megaPanels[item.panel].promo!.price}</div>
+                  <a href={h.megaPanels[item.panel].promo!.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-[13px] px-4 py-2.5 rounded-full mt-3">{h.megaPanels[item.panel].promo!.ctaLabel} →</a>
+                </div>
+              )}
+              <a href={h.megaPanels[item.panel].ctaHref} class="block text-brand-primary-deep font-bold mt-2">{h.megaPanels[item.panel].ctaLabel} →</a>
+            </div>
+          </div>
+        </Fragment>
+      ) : item.soon ? (
+        <span class="block px-5 py-3.5 text-base font-semibold text-brand-neutral-300">{item.label}</span>
+      ) : (
+        <a href={item.href} class="block px-5 py-3.5 text-base font-semibold text-brand-anchor">{item.label}</a>
+      ))}
+    </div>
+    <div class="shrink-0 border-t border-brand-neutral-200 p-[18px]">
+      <a href={h.mobileCta.href} class="ssf-bookcta relative overflow-hidden w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-full text-white font-bold text-[14.5px]">{h.mobileCta.label} <span class="ssf-arrow">→</span></a>
+      <div class="flex items-center justify-between mt-3.5">
+        <a href="tel:+66984624949" class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-anchor"><Icon name="phone" class="w-4 h-4" />098 462 4949</a>
+        <div class="flex gap-3.5">
+          {h.social.map((s) => (<a href={s.href} aria-label={s.name} class="text-brand-neutral-500"><Icon name={s.name} class="w-[19px] h-[19px]" /></a>))}
+        </div>
+      </div>
+    </div>
+  </aside>
 </header>
 
 <style>
@@ -137,8 +202,26 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
   #ssf-backdrop{ background:rgba(20,56,107,.32); backdrop-filter:blur(2px); opacity:0; visibility:hidden; transition:.22s; }
   #ssf-backdrop.open{ opacity:1; visibility:visible; }
 
+  #ssf-scrim{ background:rgba(13,34,64,.55); backdrop-filter:blur(16px) saturate(.9); opacity:0; visibility:hidden; transition:.28s; }
+  #ssf-scrim.open{ opacity:1; visibility:visible; }
+  #ssf-drawer{ transform:translateX(100%); transition:transform .3s cubic-bezier(.16,1,.3,1); box-shadow:-20px 0 50px rgba(15,42,80,.25); }
+  #ssf-drawer.open{ transform:translateX(0); }
+  .ssf-acc.open{ background:#EAF3FB; }
+  .ssf-acc.open .chev{ transform:rotate(180deg); }
+  .ssf-acc .chev{ transition:transform .25s; }
+  .ssf-acc-panel{ max-height:0; transition:max-height .3s ease; }
+  .ssf-acc-panel.open{ max-height:680px; }
+  .ssf-bookcta{ background:linear-gradient(120deg, #217DEA, #1B66C2); box-shadow:0 10px 22px rgba(33,125,234,.4); transition:transform .2s, box-shadow .2s; }
+  .ssf-bookcta:hover{ transform:translateY(-2px); box-shadow:0 16px 32px rgba(33,125,234,.52); }
+  .ssf-bookcta .ssf-arrow{ transition:transform .2s; }
+  .ssf-bookcta:hover .ssf-arrow{ transform:translateX(4px); }
+  .ssf-bookcta::before{ content:""; position:absolute; top:0; left:-120%; width:55%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.38), transparent); transform:skewX(-20deg); transition:left .55s ease; pointer-events:none; }
+  .ssf-bookcta:hover::before{ left:150%; }
+
   @media (prefers-reduced-motion: reduce){
-    .ssf-util, .ssf-panel, #ssf-backdrop, .nav-item .chev, .ssf-link{ transition:none; }
+    .ssf-util, .ssf-panel, #ssf-backdrop, .nav-item .chev, .ssf-link,
+    #ssf-scrim, #ssf-drawer, .ssf-acc .chev, .ssf-acc-panel, .ssf-bookcta, .ssf-bookcta::before{ transition:none; }
   }
 </style>
 
@@ -182,4 +265,29 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
   const onScroll = () => document.body.classList.toggle('ssf-scrolled', window.scrollY > 8);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // mobile drawer
+  const drawer = document.getElementById('ssf-drawer')!;
+  const scrim = document.getElementById('ssf-scrim')!;
+  const burger = document.getElementById('ssf-burger')!;
+  const openDrawer = () => { drawer.classList.add('open'); scrim.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); burger.setAttribute('aria-expanded', 'true'); };
+  const closeDrawer = () => { drawer.classList.remove('open'); scrim.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); burger.setAttribute('aria-expanded', 'false'); };
+  burger.addEventListener('click', openDrawer);
+  document.getElementById('ssf-close')!.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+  document.querySelectorAll<HTMLElement>('.ssf-acc').forEach((t) => {
+    const panel = document.querySelector<HTMLElement>(`.ssf-acc-panel[data-acc-panel="${t.dataset.acc}"]`)!;
+    if (t.getAttribute('aria-expanded') === 'true') { t.classList.add('open'); panel.classList.add('open'); }
+    t.addEventListener('click', () => {
+      const open = t.classList.toggle('open'); panel.classList.toggle('open');
+      t.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  const mlang = document.getElementById('ssf-mlang')!;
+  const mlangMenu = document.getElementById('ssf-mlang-menu')!;
+  mlang.addEventListener('click', (e) => { e.stopPropagation(); mlangMenu.classList.toggle('hidden'); });
+  document.addEventListener('click', () => mlangMenu.classList.add('hidden'));
 </script>
