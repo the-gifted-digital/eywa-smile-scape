@@ -1,0 +1,75 @@
+---
+import Icon from '~/components/ui/Icon.astro';
+import { getFooter, type Locale } from '~/lib/site-nav';
+const locale = (Astro.currentLocale ?? 'th') as Locale;
+const f = getFooter(locale);
+const soonLabel = locale === 'en' ? 'soon' : 'เร็วๆ นี้';
+const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผนที่ →';
+---
+<footer class="bg-brand-ice text-brand-neutral-500 border-t border-brand-neutral-200">
+  <div class="max-w-wide mx-auto px-6 py-12 grid gap-9 md:grid-cols-[1.6fr_1fr_1fr_1.25fr_1.25fr]">
+    <!-- brand -->
+    <div>
+      <img src="/images/lp/logo-stacked.png" alt="SmileScape Dental Clinic" width="400" height="248" class="h-14 w-auto mb-4" />
+      <p class="font-display font-medium text-sm text-brand-anchor/90 max-w-[30ch] leading-snug">{f.tagline}</p>
+      <div class="flex gap-5 mt-5">
+        {f.social.map((s) => (
+          <a href={s.href} aria-label={s.name} class="text-brand-neutral-500 hover:text-brand-primary transition-colors"><Icon name={s.name} class="w-5 h-5" /></a>
+        ))}
+      </div>
+    </div>
+
+    <!-- link groups (mobile: 2-col block; desktop: own columns via md:contents) -->
+    <div class="grid grid-cols-2 gap-x-4 gap-y-6 md:contents">
+      {f.groups.map((g) => (
+        <div>
+          <h4 class="text-brand-anchor text-sm font-bold tracking-wide mb-3">{g.label}</h4>
+          {g.links.map((l) => l.soon ? (
+            <span class="block text-sm py-1.5 text-brand-neutral-300">{l.label} <span class="text-[10px] bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full align-middle">{soonLabel}</span></span>
+          ) : (
+            <a href={l.href} class="block text-sm py-1.5 text-brand-neutral-900 hover:text-brand-primary-deep transition-colors">{l.label}</a>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <!-- branches -->
+    {f.branches.map((b) => (
+      <div>
+        <h4 class="text-brand-anchor text-[15px] font-bold mb-2">{b.name}</h4>
+        <span class="inline-block text-[11px] font-semibold text-brand-primary-deep bg-brand-primary-soft px-2.5 py-0.5 rounded-full mb-2">{b.mrt}</span>
+        <p class="text-[13.5px] text-brand-neutral-500 mb-2">{b.province}</p>
+        <a href={`tel:${b.phoneTel}`} class="flex items-center gap-2 text-[13.5px] text-brand-neutral-900 py-0.5"><Icon name="phone" class="w-[15px] h-[15px] text-brand-anchor/60" />{b.phoneDisplay}</a>
+        <p class="flex items-start gap-2 text-[13.5px] text-brand-neutral-500 py-0.5"><Icon name="clock" class="w-[15px] h-[15px] text-brand-anchor/60 mt-[3px] shrink-0" /><span class="leading-snug"><span class="inline md:block">{b.hours[0]}</span>{' '}<span class="inline md:block">{b.hours[1]}</span></span></p>
+        <a href={b.mapUrl} class="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-brand-primary hover:text-brand-primary-deep mt-2">{mapLabel}</a>
+      </div>
+    ))}
+  </div>
+
+  <!-- bottom bar -->
+  <div class="bg-brand-primary-soft">
+    <div class="max-w-wide mx-auto px-6 py-[18px] text-[12.5px] text-brand-neutral-500 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+      <div class="ssf-legal leading-relaxed">
+        {f.legal.map((line, i) => (
+          <span class="ssf-legal-item">{i === 1 ? <a href="/privacy-policy/" class="text-brand-anchor hover:text-brand-primary-deep">{line}</a> : line}</span>
+        ))}
+      </div>
+      <a href={f.verify.href} target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ssf-verify transition-colors">
+        <Icon name="check" class="w-3.5 h-3.5" />{f.verify.label}<Icon name="external" class="w-3 h-3 opacity-70" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* one-off success-green for the verify badge (not a brand token) */
+  .ssf-verify{ color:#0a8f4d; background:#e3f7ec; border:1px solid #b6e6c8; }
+  .ssf-verify:hover{ background:#d4f1de; border-color:#8fd9a8; }
+  /* desktop bottom bar = inline with separators; mobile = stacked one-per-line */
+  .ssf-legal-item{ display:block; }
+  @media (min-width:768px){
+    .ssf-legal-item{ display:inline; }
+    .ssf-legal-item + .ssf-legal-item::before{ content:"·"; opacity:.4; margin:0 .5rem; }
+  }
+</style>
