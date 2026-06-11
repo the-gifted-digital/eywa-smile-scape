@@ -1,0 +1,185 @@
+---
+import Icon from '~/components/ui/Icon.astro';
+import { getHeader, getAltLocales, type Locale, type MegaPanel } from '~/lib/site-nav';
+const locale = (Astro.currentLocale ?? 'th') as Locale;
+const h = getHeader(locale);
+const alt = getAltLocales(Astro.url.pathname, Astro.site!.toString());
+const soonLabel = locale === 'en' ? 'soon' : 'เร็วๆ นี้';
+const liveLabel = locale === 'en' ? 'ready' : 'พร้อมใช้';
+const homeHref = locale === 'en' ? '/en/' : locale === 'zh-cn' ? '/zh-cn/' : '/';
+const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
+  { key: 'implant', data: h.megaPanels.implant },
+  { key: 'services', data: h.megaPanels.services },
+];
+---
+<header id="ssf-header" class="sticky top-0 z-[60]">
+  <!-- TIER 1 — utility (navy) -->
+  <div class="ssf-util bg-brand-anchor text-white/80 overflow-hidden">
+    <div class="max-w-wide mx-auto px-6 h-10 flex items-center justify-between gap-4">
+      <span class="hidden sm:block font-display font-medium text-[13.5px] tracking-tight">{h.slogan}</span>
+      <div class="flex items-center gap-3 ml-auto">
+        <div class="flex items-center gap-4">
+          {h.social.map((s) => (
+            <a href={s.href} aria-label={s.name} class="text-white/70 hover:text-white transition-colors"><Icon name={s.name} class="w-[17px] h-[17px]" /></a>
+          ))}
+        </div>
+        <span class="w-px h-5 bg-white/20"></span>
+        <div class="relative">
+          <button type="button" id="ssf-lang" aria-haspopup="true" aria-expanded="false"
+            class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[13px] font-semibold text-white border border-white/25 hover:border-white">
+            <Icon name="globe" class="w-3.5 h-3.5 opacity-85" />{h.langLabel}<Icon name="chevron" class="w-2.5 h-2.5" />
+          </button>
+          <div id="ssf-lang-menu" class="hidden absolute top-[calc(100%+8px)] right-0 bg-white border border-brand-neutral-200 rounded-xl shadow-lg p-1.5 min-w-[140px] z-[70]">
+            <a href={alt.th} class="block px-3 py-2 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">ไทย (TH)</a>
+            <a href={alt.en} class="block px-3 py-2 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">English (EN)</a>
+            <a href={alt['zh-cn']} class="block px-3 py-2 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">中文 (ZH)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIER 2 — main (white) -->
+  <div class="ssf-main bg-white/95 backdrop-blur border-b border-brand-neutral-200">
+    <div class="max-w-wide mx-auto px-6 h-[72px] flex items-center gap-5">
+      <a href={homeHref} class="shrink-0">
+        <img src="/images/lp/logo-smilescape.png" alt="SmileScape Dental Clinic" width="600" height="106" class="h-[31px] w-auto" />
+      </a>
+      <nav class="hidden lg:flex items-center gap-0.5 mx-auto" aria-label="Primary">
+        {h.nav.map((item) => item.panel ? (
+          <button type="button" class={`ssf-trigger nav-item ${item.flag ? 'flag' : ''}`} data-panel={item.panel} aria-expanded="false">
+            {item.flag && <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>}
+            {item.label}<Icon name="chevron" class="chev w-[11px] h-[11px]" />
+          </button>
+        ) : item.soon ? (
+          <span class="nav-item text-brand-neutral-300 cursor-default">{item.label}</span>
+        ) : (
+          <a href={item.href} class="nav-item">{item.label}</a>
+        ))}
+      </nav>
+      <a href={h.cta.href} class="hidden lg:inline-flex items-center gap-1.5 ml-auto shrink-0 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{h.cta.label} →</a>
+      <div id="ssf-mobile-controls" class="lg:hidden ml-auto flex items-center gap-2"></div>
+    </div>
+  </div>
+
+  <!-- MEGA PANELS -->
+  {panels.map(({ key, data }) => (
+    <div class="ssf-panel hidden lg:block absolute left-0 right-0 top-full px-6 pt-3.5" id={`ssf-panel-${key}`}>
+      <div class="max-w-wide mx-auto bg-white rounded-[22px] shadow-lg border border-brand-neutral-200 overflow-hidden">
+        <div class="flex items-center justify-between gap-6 px-8 pt-6 pb-5">
+          <div>
+            <h3 class="font-display text-[23px] font-extrabold text-brand-anchor leading-tight">{data.heading}</h3>
+            <p class="text-sm text-brand-neutral-500 mt-1.5">{data.sub}</p>
+          </div>
+          <a href={data.ctaHref} class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{data.ctaLabel} →</a>
+        </div>
+        <div class="h-px bg-brand-neutral-200 mx-8"></div>
+        <div class={`grid gap-6 px-8 py-8 ${key === 'implant' ? 'lg:grid-cols-[1fr_1fr_1.05fr]' : 'lg:grid-cols-[repeat(4,1fr)_1.1fr]'}`}>
+          {data.columns.map((col) => (
+            <div>
+              <div class="text-[11px] font-bold tracking-[.16em] text-brand-primary uppercase mb-3.5">{col.label}</div>
+              {col.links.map((l) => l.soon ? (
+                <span class="flex items-center gap-2 py-1.5 text-[15px] text-brand-neutral-300 cursor-default">{l.label}<span class="text-[10px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
+              ) : (
+                <a href={l.href} class="ssf-link flex items-center gap-2 py-1.5 text-[15px] font-medium text-brand-neutral-900">{l.label}{l.live && <span class="text-[10px] font-bold text-[#0a8f4d] bg-[#e3f7ec] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
+              ))}
+            </div>
+          ))}
+          {data.promo && (
+            <div class="ssf-promo rounded-2xl p-6 text-white relative overflow-hidden">
+              <div class="text-[11px] font-bold tracking-[.2em] opacity-80 uppercase">{data.promo.kw}</div>
+              <div class="text-[30px] mt-1.5 mb-0.5">💎</div>
+              <h4 class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</h4>
+              <div class="font-display text-[34px] font-extrabold mt-3"><span class="text-sm font-medium opacity-85">{data.promo.priceEyebrow}</span> {data.promo.price}</div>
+              <ul class="list-none my-3 text-[13px] opacity-90 grid gap-1.5">
+                {data.promo.bullets.map((b) => <li class="flex items-center gap-2 before:content-['✓'] before:text-[#7BD0A6] before:font-extrabold">{b}</li>)}
+              </ul>
+              <a href={data.promo.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-sm px-5 py-2.5 rounded-full">{data.promo.ctaLabel} →</a>
+            </div>
+          )}
+          {data.imageLabel && (
+            <div class="rounded-2xl border-2 border-dashed border-brand-neutral-300 bg-gradient-to-br from-brand-ice to-brand-primary-soft flex flex-col items-center justify-center text-center text-brand-anchor p-6 min-h-full">
+              <Icon name="check" class="w-10 h-10 opacity-40 mb-2.5" />
+              <b class="text-sm">{data.imageLabel}</b>
+              <span class="text-xs text-brand-neutral-500 mt-1">DR-035 swap seam</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  ))}
+
+  <div id="ssf-backdrop" class="hidden lg:block fixed inset-0 z-40"></div>
+  <!-- mobile drawer mounts here (Task 5) -->
+</header>
+
+<style>
+  /* brand hex mirrors design tokens (DR-029): anchor #14386B, primary #217DEA,
+     primary-deep #1B66C2, ice #EAF3FB — literal here because scoped component CSS
+     can't reliably use Tailwind token classes / theme(). */
+  .nav-item{ display:inline-flex; align-items:center; gap:.3rem; padding:.5rem .7rem; border-radius:.625rem;
+    font-size:15px; font-weight:500; color:#14386B; white-space:nowrap; transition:.16s; background:none; border:none; cursor:pointer; }
+  a.nav-item:hover, button.nav-item:hover{ background:#EAF3FB; color:#1B66C2; }
+  .nav-item.flag{ color:#1B66C2; font-weight:600; }
+  .nav-item.active{ background:#EAF3FB; color:#1B66C2; }
+  .nav-item .chev{ transition:transform .2s; }
+  .nav-item.active .chev{ transform:rotate(180deg); }
+  .ssf-link:hover{ color:#1B66C2; transform:translateX(3px); transition:.14s; }
+
+  .ssf-util{ height:40px; transition:height .26s cubic-bezier(.16,1,.3,1), opacity .2s ease; }
+  :global(body.ssf-scrolled) .ssf-util{ height:0; opacity:0; }
+  :global(body.ssf-scrolled) .ssf-main{ box-shadow:0 6px 20px rgba(20,56,107,.08); }
+
+  .ssf-panel{ opacity:0; visibility:hidden; transform:translateY(-10px); transition:.22s cubic-bezier(.16,1,.3,1); }
+  .ssf-panel.open{ opacity:1; visibility:visible; transform:translateY(0); }
+  .ssf-promo{ background:radial-gradient(120% 120% at 100% 0%, #1B66C2 0%, #14386B 60%); }
+
+  #ssf-backdrop{ background:rgba(20,56,107,.32); backdrop-filter:blur(2px); opacity:0; visibility:hidden; transition:.22s; }
+  #ssf-backdrop.open{ opacity:1; visibility:visible; }
+
+  @media (prefers-reduced-motion: reduce){
+    .ssf-util, .ssf-panel, #ssf-backdrop, .nav-item .chev, .ssf-link{ transition:none; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('ssf-header')!;
+  const backdrop = document.getElementById('ssf-backdrop')!;
+  const triggers = Array.from(document.querySelectorAll<HTMLElement>('.ssf-trigger'));
+  let hoverTimer: number | undefined;
+
+  function closeAll() {
+    document.querySelectorAll('.ssf-panel.open').forEach((p) => p.classList.remove('open'));
+    triggers.forEach((t) => { t.classList.remove('active'); t.setAttribute('aria-expanded', 'false'); });
+    backdrop.classList.remove('open');
+  }
+  function openPanel(key: string) {
+    closeAll();
+    document.getElementById('ssf-panel-' + key)?.classList.add('open');
+    const t = document.querySelector<HTMLElement>(`.ssf-trigger[data-panel="${key}"]`);
+    t?.classList.add('active'); t?.setAttribute('aria-expanded', 'true');
+    backdrop.classList.add('open');
+  }
+  triggers.forEach((t) => {
+    const key = t.dataset.panel!;
+    t.addEventListener('click', (e) => { e.stopPropagation(); t.classList.contains('active') ? closeAll() : openPanel(key); });
+    t.addEventListener('mouseenter', () => { window.clearTimeout(hoverTimer); openPanel(key); });
+  });
+  header.addEventListener('mouseleave', () => { hoverTimer = window.setTimeout(closeAll, 200); });
+  header.addEventListener('mouseenter', () => window.clearTimeout(hoverTimer));
+  backdrop.addEventListener('click', closeAll);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+
+  const langBtn = document.getElementById('ssf-lang')!;
+  const langMenu = document.getElementById('ssf-lang-menu')!;
+  langBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = langMenu.classList.toggle('hidden');
+    langBtn.setAttribute('aria-expanded', String(!open));
+  });
+  document.addEventListener('click', () => { langMenu.classList.add('hidden'); langBtn.setAttribute('aria-expanded', 'false'); });
+
+  const onScroll = () => document.body.classList.toggle('ssf-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
