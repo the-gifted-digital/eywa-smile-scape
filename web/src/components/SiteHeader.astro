@@ -89,7 +89,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
         <div class={`grid gap-6 px-8 py-8 ${key === 'implant' ? 'lg:grid-cols-[1fr_1fr_1.05fr]' : 'lg:grid-cols-[repeat(4,1fr)_1.1fr]'}`}>
           {data.columns.map((col) => (
             <div>
-              <div class="text-[11px] font-bold tracking-[.16em] text-brand-primary uppercase mb-3.5">{col.label}</div>
+              <div class="text-[11px] font-bold text-brand-primary uppercase mb-3.5">{col.label}</div>
               {col.links.map((l) => l.soon ? (
                 <span class="flex items-center gap-2 py-1.5 text-[15px] text-brand-neutral-300 cursor-default">{l.label}<span class="text-[10px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
               ) : (
@@ -99,7 +99,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
           ))}
           {data.promo && (
             <div class="ssf-promo rounded-2xl p-6 text-white relative overflow-hidden">
-              <div class="text-[11px] font-bold tracking-[.2em] opacity-80 uppercase">{data.promo.kw}</div>
+              <div class="text-[11px] font-bold opacity-80 uppercase">{data.promo.kw}</div>
               <div class="text-[30px] mt-1.5 mb-0.5">💎</div>
               <h4 class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</h4>
               <div class="font-display text-[34px] font-extrabold mt-3"><span class="text-sm font-medium opacity-85">{data.promo.priceEyebrow}</span> {data.promo.price}</div>
@@ -139,7 +139,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
             <div class="px-5 pt-1.5 pb-4">
               {h.megaPanels[item.panel].columns.map((col) => (
                 <Fragment>
-                  <div class="text-[10.5px] font-bold tracking-[.14em] text-brand-primary uppercase mt-3 mb-1">{col.label}</div>
+                  <div class="text-[10.5px] font-bold text-brand-primary uppercase mt-3 mb-1">{col.label}</div>
                   {col.links.map((l) => l.soon ? (
                     <span class="flex items-center gap-2 py-2.5 text-sm text-brand-neutral-300"><span class="w-[7px] h-[7px] rounded-full bg-brand-neutral-200"></span>{l.label}<span class="text-[9.5px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
                   ) : (
@@ -149,7 +149,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
               ))}
               {h.megaPanels[item.panel].promo && (
                 <div class="ssf-promo rounded-xl p-4 mt-3.5 text-white">
-                  <div class="text-[9.5px] font-bold tracking-[.16em] uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
+                  <div class="text-[9.5px] font-bold uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
                   <h5 class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</h5>
                   <div class="font-display text-2xl font-extrabold mt-1"><span class="text-xs font-medium opacity-85">{h.megaPanels[item.panel].promo!.priceEyebrow}</span> {h.megaPanels[item.panel].promo!.price}</div>
                   <a href={h.megaPanels[item.panel].promo!.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-[13px] px-4 py-2.5 rounded-full mt-3">{h.megaPanels[item.panel].promo!.ctaLabel} →</a>
