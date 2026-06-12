@@ -10,7 +10,13 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    // Run worker/index.ts on EVERY request (not just non-asset paths) so it can
+    // attach the host-scoped `X-Robots-Tag: noindex` belt (SS-DR-017) to asset
+    // responses too. Without this, static assets are served directly and bypass
+    // the Worker, so the header never lands. At apex cutover the header
+    // self-disables (apex ∈ INDEXABLE_HOSTS); you may then set this back to false.
+    "run_worker_first": true
   },
   "vars": {
     "N8N_ASSESSMENT_WEBHOOK_URL": "https://nexorcus.app.n8n.cloud/webhook/smilescape-implant-check-lead",

@@ -46,12 +46,25 @@ async function handleLead(request: Request, env: Env): Promise<Response> {
   return json({ ok: n8nOk }, n8nOk ? 200 : 502);
 }
 
+// Hosts allowed to be indexed by search engines. Everything else — the `go.`
+// parallel-launch subdomain, *.workers.dev preview, localhost — is forced
+// noindex via an X-Robots-Tag header (SS-DR-017). This is a server-level belt
+// over the per-page `<meta name="robots" content="noindex">` default in the
+// layouts: it also covers non-HTML responses (sitemap.xml, images) and any page
+// that ever forgets the meta. Self-disables at apex cutover (apex is indexable),
+// so the only cutover edits are flipping the layout meta defaults.
+const INDEXABLE_HOSTS = new Set(['smilescapeclinic.com', 'www.smilescapeclinic.com']);
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     if (url.pathname === '/api/assessment-lead' && request.method === 'POST') {
       return handleLead(request, env);
     }
-    return env.ASSETS.fetch(request);
+    const res = await env.ASSETS.fetch(request);
+    if (INDEXABLE_HOSTS.has(url.hostname)) return res;
+    const guarded = new Response(res.body, res);
+    guarded.headers.set('X-Robots-Tag', 'noindex');
+    return guarded;
   },
 };

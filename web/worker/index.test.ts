@@ -23,6 +23,17 @@ test('non-API request is served by ASSETS', async () => {
   expect(await res.text()).toBe('asset');
 });
 
+test('go. parallel-launch host is forced noindex via X-Robots-Tag', async () => {
+  const res = await worker.fetch(new Request('https://go.smilescapeclinic.com/'), env);
+  expect(res.headers.get('X-Robots-Tag')).toBe('noindex');
+  expect(await res.text()).toBe('asset'); // body preserved through the wrapper
+});
+
+test('apex (cutover) host is indexable — no X-Robots-Tag header', async () => {
+  const res = await worker.fetch(new Request('https://smilescapeclinic.com/'), env);
+  expect(res.headers.get('X-Robots-Tag')).toBeNull();
+});
+
 test('valid POST forwards to n8n + sends email, returns ok', async () => {
   const fetchMock = vi.fn(async (..._args: any[]) => new Response('{}', { status: 200 }));
   vi.stubGlobal('fetch', fetchMock);

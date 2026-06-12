@@ -274,6 +274,80 @@ PubMed evidence base (6 studies 2021-2025) confirms:
 
 ---
 
+## [SS-DR-015] — Media / DAM Pipeline: Notion-managed → n8n → R2 + Supabase (2026-06-07)
+
+**Status:** Architecture locked (operator confirmed) — build pending R2 enablement
+**Companion to:** DR-035 (universal: binaries on Cloudflare, Supabase stores URL only)
+**Spec:** `docs/SESSION-A-MEDIA-PIPELINE.md`
+
+**Context:**
+The production site (722 pages) needs a media system where the operator + content team can manage images without touching code, with SEO-clean stable URLs that the Supabase content model consumes per DR-035. The MVP Google-Ads landing page assets are explicitly **out of scope** (left as committed static assets).
+
+**Decision:**
+- **Notion** "Media Library" DB = human management surface (source of truth for metadata authoring).
+- **n8n** syncs Notion → uploads binaries to **Cloudflare R2** (`smilescape-media`) → upserts **Supabase `media_assets`** (the app source of truth) → writes the CDN URL back to Notion.
+- Delivery via `cdn.smilescapeclinic.com` + Image Transformations (`/cdn-cgi/image/`, format=auto, responsive widths).
+- Astro reads the `servable_media` view at build (never bare URL columns).
+- Storage chosen as **R2 + Transformations over Cloudflare Images**: human-readable SEO URLs, single source of truth, free egress, fully scriptable migration.
+
+**Rationale:**
+- Notion-first is the most practical authoring surface for a non-technical content team.
+- R2 binaries are immutable + cache-friendly; Notion file URLs expire (~1h) so a copy to R2 is mandatory.
+- `media_assets` as a real record (alt TH/EN, w/h, entity link, consent) enables bilingual alt text, CLS-safe markup, and cross-page reuse — not achievable with scattered URL strings.
+
+---
+
+## [SS-DR-016] — Patient-Image Consent Lifecycle & Auto-Expiry (L2 enforcement) (2026-06-07)
+
+**Status:** Locked (operator confirmed) — PDPA safety mechanism
+**Companion to:** SS-DR-015, privacy-policy page
+**Spec:** `docs/SESSION-A-MEDIA-PIPELINE.md` §4, §6
+
+**Context:**
+Before/after patient photos carry PDPA + consent risk. No one reviews images daily, so the system must remove a patient image automatically when consent lapses — preventing unintended legal conflict with the image owner.
+
+**Decision:**
+- `media_assets.is_patient_image` (boolean) toggle. When `true`, DB constraints **require** consent fields + a usage rule: `usage_perpetual = true` (ใช้ได้ตลอดไป) **or** `usage_expires_at` (date).
+- A patient image is only servable when `consent_status = 'obtained'` AND (perpetual OR not past expiry) — enforced by the `servable_media` view (build-time belt).
+- **L2 enforcement** (operator choice over L1 / L3): a daily n8n sweep on expiry/revocation (1) **quarantines the R2 object** (move to `_quarantine/`, delete original → URL 404), (2) **purges the Cloudflare edge cache**, (3) flips Supabase + Notion status, (4) triggers a rebuild (cosmetic HTML cleanup), (5) notifies the team. 30-day quarantine grace before hard-delete.
+
+**Rationale:**
+- R2 quarantine + cache purge makes the image unreachable the moment the sweep runs — independent of the static build state, caches, or bookmarks. This is the actual legal backstop; the rebuild is secondary.
+- L1 (rebuild filter only) leaves the binary reachable via cached/bookmarked URLs — insufficient for PDPA. L3 (per-request gated Worker) is real-time but adds latency + complexity not justified at clinic scale.
+- Optional ≤30-day expiry warning lets the team renew consent before auto-removal.
+
+---
+
+## [SS-DR-017] — Parallel-Launch: `go.smilescapeclinic.com` as temporary production domain (2026-06-12)
+
+**Status:** ACTIVE — in effect from 2026-06-12 until apex cutover
+**Companion to:** DR-EYWA-MKT-005 (Astro stack profile), SS-DR-012 (TH-first multilingual)
+**Config:** `web/wrangler.jsonc` (route), `web/worker/index.ts` (noindex belt), `web/src/layouts/{Base,Landing}.astro` (meta default), `web/astro.config.mjs` (`site`)
+
+**Context:**
+The live WordPress site keeps serving the apex `smilescapeclinic.com` with zero downtime. The new Astro site is built + deployed in parallel on the `go.` subdomain. From 2026-06-12 we treat `go.smilescapeclinic.com` as the **real, live production domain** (paid-ad landing pages, internal review, demos, sharing) while the 722-page content set is filled in. When the site is content-complete + compliance-cleared, the apex is cut over to the same Astro Worker.
+
+**Decision:**
+- `go.smilescapeclinic.com` is the temporary production host — fully live (real DNS + Cloudflare-managed cert via the `custom_domain` route), **not** a staging URL.
+- The entire `go.` domain is **noindex** via two independent layers:
+  1. Per-page `<meta name="robots" content="noindex,follow">` — the default in both `Base.astro` and `Landing.astro`.
+  2. A server-level `X-Robots-Tag: noindex` header for every non-apex host (`go.`, `*.workers.dev`, localhost), set in `worker/index.ts`. Covers non-HTML responses (sitemap, images) + any page that ever forgets the meta. Self-disables on the apex host (`INDEXABLE_HOSTS`).
+- `astro.config.mjs` `site` stays `https://smilescapeclinic.com` (apex) **on purpose**: canonical / hreflang / sitemap URLs are pre-pointed at the future apex, so cutover needs no URL rewrites. Harmless while noindex (search engines ignore canonicals on noindex pages).
+- **No `robots.txt` `Disallow`** — crawlers must be allowed to fetch pages so they can *see* the noindex. (A `Disallow: /` would hide the noindex and is forbidden here.)
+
+**Cutover checklist (apex → Astro — do NOT run until content-complete + compliance-cleared):**
+1. Add the apex route to `wrangler.jsonc` (`smilescapeclinic.com` + `www`) or repoint apex DNS to the Worker; retire/redirect the WordPress apex.
+2. Flip the indexing default to `index,follow` in `Base.astro` (and per-page decisions in `Landing.astro` for ad LPs).
+3. The `X-Robots-Tag` belt auto-lifts on apex (apex ∈ `INDEXABLE_HOSTS`) — no header edit needed.
+4. Rebuild + deploy; submit the apex sitemap in Search Console; decide on `go.` → apex 301s.
+
+**Rationale:**
+- Parallel `go.` lets us launch + iterate on real infra with zero risk to the live WordPress revenue site.
+- Two-layer noindex stops the temp subdomain being indexed as a duplicate of the future apex (which would split ranking signals / create canonical conflicts).
+- Keeping `site=apex` makes cutover a near-no-op for URLs — the lowest-regret choice for a domain that is always noindex until it *becomes* the apex.
+
+---
+
 ## Future Brand-Specific DRs (placeholders)
 
 - SS-DR-011: Sub-brand strategy for "รากฟันเทียม by SmileScape" Facebook page
