@@ -120,7 +120,6 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
     </div>
   ))}
 
-  <div id="ssf-backdrop" class="hidden lg:block fixed inset-0 z-40"></div>
   <!-- mobile scrim + drawer -->
   <div id="ssf-scrim" class="lg:hidden fixed inset-0 z-[55]"></div>
   <aside id="ssf-drawer" class="lg:hidden fixed top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white z-[56] flex flex-col" aria-hidden="true">
@@ -176,6 +175,9 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
     </div>
   </aside>
 </header>
+
+<!-- desktop mega-panel backdrop — OUTSIDE <header> so the header (z-60) + open panel stay bright; only the page below is dimmed -->
+<div id="ssf-backdrop" class="hidden lg:block fixed inset-0 z-40"></div>
 
 <style>
   /* brand hex mirrors design tokens (DR-029): anchor #14386B, primary #217DEA,
