@@ -38,6 +38,7 @@ const LINE_URL = 'https://maac.io/6yp2p';
 const PHONE_DISPLAY = '098 462 4949'; // PLACEHOLDER — per-branch real numbers pending (spec §7)
 const PHONE_TEL = '+66984624949';
 const VERIFY_URL = 'https://hosp.hss.moph.go.th/';
+const YEAR = new Date().getFullYear();
 const SOCIAL: SocialLink[] = [
   { name: 'facebook', href: '#' },
   { name: 'instagram', href: '#' },
@@ -136,7 +137,7 @@ const BUNDLES: Partial<Record<Locale, Bundle>> = {
           phoneDisplay: PHONE_DISPLAY, phoneTel: PHONE_TEL, hours: ['เปิดทุกวัน', 'เวลา 10.00–20.00'],
           mapUrl: 'https://maps.google.com/?q=SmileScape+ศรีนครินทร์' },
       ],
-      legal: ['© ' + 2026 + ' SmileScape Dental Clinic', 'นโยบายความเป็นส่วนตัว', 'ข้อมูลใช้เพื่อการนัดหมายตามนโยบาย PDPA'],
+      legal: ['© ' + YEAR + ' SmileScape Dental Clinic', 'นโยบายความเป็นส่วนตัว', 'ข้อมูลใช้เพื่อการนัดหมายตามนโยบาย PDPA'],
       verify: { label: 'คลินิกได้รับอนุญาตถูกต้อง · ตรวจสอบได้', href: VERIFY_URL },
     },
   },
@@ -205,7 +206,7 @@ const BUNDLES: Partial<Record<Locale, Bundle>> = {
           phoneDisplay: PHONE_DISPLAY, phoneTel: PHONE_TEL, hours: ['Open daily', '10.00–20.00'],
           mapUrl: 'https://maps.google.com/?q=SmileScape+ศรีนครินทร์' },
       ],
-      legal: ['© ' + 2026 + ' SmileScape Dental Clinic', 'Privacy Policy', 'Data used for appointments per PDPA'],
+      legal: ['© ' + YEAR + ' SmileScape Dental Clinic', 'Privacy Policy', 'Data used for appointments per PDPA'],
       verify: { label: 'Licensed clinic · verify', href: VERIFY_URL },
     },
   },
