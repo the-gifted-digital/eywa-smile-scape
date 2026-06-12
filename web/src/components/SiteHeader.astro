@@ -14,8 +14,8 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 ---
 <header id="ssf-header" class="sticky top-0 z-[60]">
   <!-- TIER 1 — utility (navy) -->
-  <div class="ssf-util bg-brand-anchor text-white/80 overflow-hidden">
-    <div class="max-w-wide mx-auto px-6 h-10 flex items-center justify-between gap-4">
+  <div class="ssf-util hidden lg:block bg-brand-anchor text-white/80">
+    <div class="max-w-6xl mx-auto px-4 h-10 flex items-center justify-between gap-4">
       <span class="hidden sm:block font-display font-medium text-[13.5px] tracking-tight">{h.slogan}</span>
       <div class="flex items-center gap-3 ml-auto">
         <div class="flex items-center gap-4">
@@ -41,7 +41,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 
   <!-- TIER 2 — main (white) -->
   <div class="ssf-main bg-white/95 backdrop-blur border-b border-brand-neutral-200">
-    <div class="max-w-wide mx-auto px-6 h-[72px] flex items-center gap-5">
+    <div class="max-w-6xl mx-auto px-4 h-[72px] flex items-center gap-5">
       <a href={homeHref} class="shrink-0">
         <img src="/images/lp/logo-smilescape.png" alt="SmileScape Dental Clinic" width="600" height="106" class="h-[31px] w-auto" />
       </a>
@@ -76,8 +76,8 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 
   <!-- MEGA PANELS -->
   {panels.map(({ key, data }) => (
-    <div class="ssf-panel hidden lg:block absolute left-0 right-0 top-full px-6 pt-3.5" id={`ssf-panel-${key}`}>
-      <div class="max-w-wide mx-auto bg-white rounded-[22px] shadow-lg border border-brand-neutral-200 overflow-hidden">
+    <div class="ssf-panel hidden lg:block absolute left-0 right-0 top-full px-4 pt-3.5" id={`ssf-panel-${key}`}>
+      <div class="max-w-6xl mx-auto bg-white rounded-[22px] shadow-lg border border-brand-neutral-200 overflow-hidden">
         <div class="flex items-center justify-between gap-6 px-8 pt-6 pb-5">
           <div>
             <h3 class="font-display text-[23px] font-extrabold text-brand-anchor leading-tight">{data.heading}</h3>
@@ -191,7 +191,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
   .ssf-link:hover{ color:#1B66C2; transform:translateX(3px); transition:.14s; }
 
   .ssf-util{ height:40px; transition:height .26s cubic-bezier(.16,1,.3,1), opacity .2s ease; }
-  :global(body.ssf-scrolled) .ssf-util{ height:0; opacity:0; }
+  :global(body.ssf-scrolled) .ssf-util{ height:0; opacity:0; overflow:hidden; }
   :global(body.ssf-scrolled) .ssf-main{ box-shadow:0 6px 20px rgba(20,56,107,.08); }
 
   .ssf-panel{ opacity:0; visibility:hidden; transform:translateY(-10px); transition:.22s cubic-bezier(.16,1,.3,1); }

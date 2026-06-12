@@ -7,7 +7,7 @@ const soonLabel = locale === 'en' ? 'soon' : 'เร็วๆ นี้';
 const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผนที่ →';
 ---
 <footer class="bg-brand-ice text-brand-neutral-500 border-t border-brand-neutral-200">
-  <div class="max-w-wide mx-auto px-6 py-12 grid gap-9 md:grid-cols-[1.6fr_1fr_1fr_1.25fr_1.25fr]">
+  <div class="max-w-6xl mx-auto px-4 py-12 grid gap-9 md:grid-cols-[1.6fr_1fr_1fr_1.25fr_1.25fr]">
     <!-- brand -->
     <div>
       <img src="/images/lp/logo-stacked.png" alt="SmileScape Dental Clinic" width="400" height="248" class="h-14 w-auto mb-4" />
@@ -48,7 +48,7 @@ const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผ
 
   <!-- bottom bar -->
   <div class="bg-brand-primary-soft">
-    <div class="max-w-wide mx-auto px-6 py-[18px] text-[12.5px] text-brand-neutral-500 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+    <div class="max-w-6xl mx-auto px-4 py-[18px] text-[12.5px] text-brand-neutral-500 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
       <div class="ssf-legal leading-relaxed">
         {f.legal.map((line, i) => (
           <span class="ssf-legal-item">{i === 1 ? <a href="/privacy-policy/" class="text-brand-anchor hover:text-brand-primary-deep">{line}</a> : line}</span>
