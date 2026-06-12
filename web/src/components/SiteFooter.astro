@@ -48,7 +48,7 @@ const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผ
 
   <!-- bottom bar -->
   <div class="bg-brand-primary-soft">
-    <div class="max-w-6xl mx-auto px-4 py-[18px] text-[12.5px] text-brand-neutral-500 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
+    <div class="ssf-foot-bottom max-w-6xl mx-auto px-4 py-[18px] text-[12.5px] text-brand-neutral-500 flex flex-col items-center gap-3 text-center md:flex-row md:justify-between md:text-left">
       <div class="ssf-legal leading-relaxed">
         {f.legal.map((line, i) => (
           <span class="ssf-legal-item">{i === 1 ? <a href="/privacy-policy/" class="text-brand-anchor hover:text-brand-primary-deep">{line}</a> : line}</span>
@@ -71,5 +71,9 @@ const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผ
   @media (min-width:768px){
     .ssf-legal-item{ display:inline; }
     .ssf-legal-item + .ssf-legal-item::before{ content:"·"; opacity:.4; margin:0 .5rem; }
+  }
+  /* clear the mobile sticky CTA bar — only on pages that render it (body.ssf-has-cta) */
+  @media (max-width:767px){
+    :global(body.ssf-has-cta) .ssf-foot-bottom{ padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
   }
 </style>
