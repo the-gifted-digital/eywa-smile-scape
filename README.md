@@ -7,6 +7,8 @@
 **EYWA Protocol:** v3.19 / Schema v1.15 / Content_Templates v1.5 LOCKED / Handover v1.13 / DR v1.13
 **Engagement:** DEAL CLOSED 2026-04-08 — Founding Partner Rate
 
+> ⚡ **LIVE (2026-06-12):** new Astro site is in production on **`go.smilescapeclinic.com`** — temporary domain, **`noindex`**. WordPress still serves the apex `smilescapeclinic.com`; apex cutover pending. See **SS-DR-017** in [`docs/decision-records.md`](docs/decision-records.md) and the session briefing in [`CLAUDE.md`](CLAUDE.md).
+
 ---
 
 ## 📂 Folder Map
