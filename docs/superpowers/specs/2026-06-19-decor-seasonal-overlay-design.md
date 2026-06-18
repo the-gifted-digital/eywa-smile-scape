@@ -150,6 +150,10 @@ pointer-events:none; z-index:30;` hidden until the script adds `data-active`.
 ### Crossing motif (JS-scheduled, one at a time)
 - A single motif element at the bottom strip (`bottom: ~16px`), inlined Tabler SVG
   (`snowman` / `christmas-tree` / `deer`, MIT), navy `currentColor` at ~0.82 opacity, ~46px.
+- **Exactly one motif per crossing.** The character is chosen at the *start* of a crossing and never
+  changes mid-pass; a new random motif (≠ previous) is chosen only for the *next* crossing. (Implement
+  via a single non-looping cross animation + `animationend`, gated on `e.animationName === '<cross>'` —
+  do **not** use `animationiteration` or an infinite loop, which can swap the icon mid-pass.)
 - Scheduler (runs only when active + motion allowed):
   `runOnce()` → pick a random motif (≠ previous), play one cross animation, on `animationend`
   wait a random gap, then `runOnce()` again.
