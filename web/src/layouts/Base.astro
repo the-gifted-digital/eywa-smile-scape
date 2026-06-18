@@ -16,6 +16,7 @@ import AnalyticsBody from '~/components/AnalyticsBody.astro';
 import StickyCta from '~/components/sections/StickyCta.astro';
 import SiteHeader from '~/components/SiteHeader.astro';
 import SiteFooter from '~/components/SiteFooter.astro';
+import DecorLayer from '~/components/DecorLayer.astro';
 const PHONE_TEL = '+66922936226';
 const PHONE_DISPLAY = '092 293 6226';
 const LINE_URL = 'https://maac.io/6yp2p';
@@ -30,9 +31,10 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   robots?: string;        // NEW — go. policy default
   stickyCta?: boolean;    // NEW
+  decor?: boolean;        // seasonal decor overlay (default on; pass false to opt out)
 }
 
-const { title, description, canonical, ogType = 'website', jsonLd, robots = 'noindex,follow', stickyCta = false } = Astro.props;
+const { title, description, canonical, ogType = 'website', jsonLd, robots = 'noindex,follow', stickyCta = false, decor = true } = Astro.props;
 
 const siteName = 'SmileScape Dental Clinic';
 const lang = (Astro.currentLocale ?? 'th') as 'th' | 'en' | 'zh-cn';
@@ -127,6 +129,7 @@ const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] :
 
     <SiteFooter />
     {stickyCta && <StickyCta phoneTel={PHONE_TEL} phoneDisplay={PHONE_DISPLAY} lineUrl={LINE_URL} />}
+    <DecorLayer enabled={decor} />
     <script>
       // Global conversion listeners (set GTM triggers: line_click / call_click)
       document.addEventListener('click', (e) => {

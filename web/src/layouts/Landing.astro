@@ -5,6 +5,7 @@
 // the full SEO implant page lives elsewhere later).
 import '~/styles/fonts.css';
 import '~/styles/global.css';
+import DecorLayer from '~/components/DecorLayer.astro';
 
 interface Props {
   title: string;
@@ -12,8 +13,10 @@ interface Props {
   noindex?: boolean;
   /** extra JSON-LD (e.g. FAQPage) merged into the graph */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** seasonal decor overlay (default on; pass false to opt out) */
+  decor?: boolean;
 }
-const { title, description, noindex = true, jsonLd } = Astro.props;
+const { title, description, noindex = true, jsonLd, decor = true } = Astro.props;
 
 const PHONE_DISPLAY = '092 293 6226';
 const PHONE_TEL = '+66922936226';
@@ -175,5 +178,7 @@ const ldNodes = [ld, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []
         }
       });
     </script>
+
+    <DecorLayer enabled={decor} />
   </body>
 </html>

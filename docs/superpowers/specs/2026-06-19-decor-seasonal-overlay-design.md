@@ -61,7 +61,7 @@ visitors flip at the same wall-clock regardless of their device timezone.
 ```
 web/src/lib/decor.ts            ← types + festival presets + resolveActiveDecor() [pure]
 web/src/lib/decor.test.ts       ← vitest unit tests (pattern: site-nav.test.ts)
-web/src/components/DecorLayer.astro  ← build-time markup + scoped CSS + inline runtime script
+web/src/components/DecorLayer.astro  ← empty container + global CSS + runtime build/gate script
 ```
 
 Wiring: render `<DecorLayer enabled={decor} />` just before `</body>` in **both**
@@ -69,12 +69,12 @@ Wiring: render `<DecorLayer enabled={decor} />` just before `</body>` in **both*
 `decor?: boolean` prop (default `true`) that passes through to the component.
 
 ### Data flow
-1. **Build time:** `DecorLayer.astro` imports the presets, renders `#decor-root` containing N
-   snowflake particles (deterministic positions/sizes/delays) and an empty motif slot, all inert
-   (root hidden). It inlines the presets as JSON and a small activation script.
-2. **Runtime (browser):** the inline script computes "today in Bangkok", checks `prefers-reduced-motion`
-   and any URL override, calls the same resolve logic, and — if a preset is active and motion is
-   allowed — sets `data-active`/`data-theme` on `#decor-root` and starts the motif scheduler. CSS does
+1. **Build time:** `DecorLayer.astro` outputs only an empty `#decor-root` (omitted entirely when
+   `enabled={false}`). The bundled script imports the presets + resolver from `lib/decor.ts`.
+2. **Runtime (browser):** the script computes "today in Bangkok", checks `prefers-reduced-motion`
+   and any URL override, calls the resolve logic, and — if a preset is active and motion is
+   allowed — **builds** the snowflake symbol + particle pool + motif slot inside `#decor-root` and
+   starts the motif scheduler; otherwise it removes `#decor-root`. CSS does
    all visual work; if nothing is active the script removes `#decor-root` from the DOM.
 
 ## 5. Config model — `lib/decor.ts`
@@ -124,6 +124,9 @@ Rules:
 - Skip presets with `enabled === false` or whose `locales` excludes `locale`.
 - Date match: inclusive on both ends. `repeatYearly` compares `MM-DD`; handles wrap-around windows
   where `start > end` (window spans New Year). First match wins.
+- One-off (non-`repeatYearly`) presets MUST use full `YYYY-MM-DD`. A bare `MM-DD` there can never match
+  (a real `YYYY-..` is always lexicographically greater), so it **fails closed and `console.warn`s in
+  dev** rather than silently never showing — guards an easy copy-paste mistake.
 
 Helper: `todayInBangkok(): string` using
 `new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date())` → `YYYY-MM-DD`.
@@ -131,21 +134,30 @@ Helper: `todayInBangkok(): string` using
 ## 6. Effect engine (`DecorLayer.astro`)
 
 ### Container
-`<div id="decor-root" aria-hidden="true" data-theme>` — `position:fixed; inset:0;
-pointer-events:none; z-index:30;` hidden until the script adds `data-active`.
+Build output is just `{enabled && <div id="decor-root" aria-hidden="true"></div>}` — an empty,
+opt-out-able container. The runtime script (below) builds everything inside it **only when active**, so
+off-season / reduced-motion / opted-out pages ship ~0 decor markup. `#decor-root` is
+`position:fixed; inset:0; pointer-events:none; z-index:30;`.
+
+> Styles are `<style is:global>` namespaced under `#decor-root` (unique id, no leak), **not** Astro
+> scoped — so JS-injected nodes are styled identically. (An earlier draft rendered the snow pool at
+> build time "so scoped styles apply"; that rationale was wrong for a global stylesheet, and building at
+> runtime avoids shipping ~1.7 KB gzip of inert snow markup on every page for the ~11 months it's off.)
 
 ### Snow
-- N snowflake spans rendered at build time (so Astro scoped styles apply), each carrying inline CSS
-  custom props: `--left`, `--size` (11–22px), `--dur` (7–13s), `--delay`, `--sway` (±30px),
-  `--spin` (±120–540deg), `--op` (0.55–1).
-- Distribution is **deterministic** (index-based spread, e.g. fractional `i·φ`) — stable git diffs,
-  natural-looking coverage. No `Math.random` at build.
-- Each particle = inlined **Tabler `snowflake`** SVG (MIT). Single CSS keyframe `decor-fall`:
-  `translate(0,-20px) rotate(0)` → `translate(var(--sway), 110vh) rotate(var(--spin))`, linear infinite.
-- Counts: desktop medium ≈ 34 (light ≈ 18, heavy ≈ 56); mobile (`max-width: 767px`) ≈ half via a
-  media query that hides every 2nd particle (or a separate count) — keeps mobile light.
+- The script injects a one-off `<symbol id="decor-flake-sym">` (inlined **Tabler `snowflake`**, MIT) plus
+  N `<span class="decor-flake"><svg><use/></svg></span>` particles, each with inline props: `left`,
+  `width/height` (11–22px), `opacity` (0.5–0.95), `--sway` (±30px), `--spin` (±120–520deg),
+  `animation-duration` (7–13s), `animation-delay` (−0…−12s). Params are `Math.random` at runtime (natural
+  per-visit variety; determinism no longer needed since nothing is shipped in HTML).
+- Single keyframe `decor-fall`: `translate(0,-24px) rotate(0)` → `translate(var(--sway), 110vh)
+  rotate(var(--spin))`, linear infinite. The running animation self-promotes to a compositor layer, so
+  **no static `will-change`** on flakes (that would pin ~34 layers all month for no benefit).
+- Counts: desktop medium 34 (light 18, heavy 56); mobile (`max-width: 767px`) = `ceil(base/2)` (≈17 at
+  medium). The active density's exact count is generated — no over-rendering of hidden tiers.
 - Particles are small + translucent and sit **above** content (sections have opaque backgrounds, so a
-  behind-content layer wouldn't show). Legibility preserved by small size + opacity, not by z-order.
+  behind-content layer wouldn't show). Mixed white + navy tints so some flakes read on both light and
+  dark sections. Legibility preserved by small size + opacity, not by z-order.
 
 ### Crossing motif (JS-scheduled, one at a time)
 - A single motif element at the bottom strip (`bottom: ~16px`), inlined Tabler SVG
@@ -157,17 +169,25 @@ pointer-events:none; z-index:30;` hidden until the script adds `data-active`.
 - Scheduler (runs only when active + motion allowed):
   `runOnce()` → pick a random motif (≠ previous), play one cross animation, on `animationend`
   wait a random gap, then `runOnce()` again.
-  - Cross: `translateX(-140px)` → `translateX(calc(100vw + 140px))`, **fully off the far side**,
-    duration ~18–22s (the "~50% slower, glides all the way through" requirement).
-  - Gap between crossings: random ~15–35s (the "นาน ๆ ผ่านที" feel).
+  - Cross: `translateX(-160px)` → `translateX(calc(100vw + 160px))`, **fully off the far side**,
+    duration ~20s (the "~50% slower, glides all the way through" requirement). `will-change:transform`
+    only while `.run` (scoped to the active crossing, dropped during the idle gap).
+  - Gap between crossings: random ~15–35s (the "นาน ๆ ผ่านที" feel). The scheduler stops if the slot is
+    detached (`isConnected` guard) so no timer leaks after teardown.
   - Gentle vertical bob on an inner wrapper (`translateY` ±7px, ~2.6s ease-in-out) for life.
+  - On mobile (`max-width:767px`) the motif sits at `bottom: calc(84px + env(safe-area-inset-bottom))` so
+    it clears the opaque sticky CTA bar (z-50) + iOS home indicator instead of gliding behind it.
 
 ### Accessibility & performance
-- If `prefers-reduced-motion: reduce` → script does nothing (no snow, no motif). Matches the existing
-  `Base.astro` motion layer precedent.
+- If `prefers-reduced-motion: reduce` → script removes the overlay entirely (no snow, no motif). Matches
+  the existing `Base.astro` motion-layer precedent. Because this layer animates continuously (unlike
+  Base's one-shot reveals), it **also** registers a `matchMedia('… reduce').addEventListener('change')`
+  so a *mid-session* toggle tears the overlay down (stopping animations + the motif timer), not just the
+  CSS belt that hides it.
 - `aria-hidden="true"` on the root; `pointer-events:none` guarantees it never intercepts taps/clicks.
 - All animation is compositor-only (`transform`/`opacity`). No `requestAnimationFrame` loop, no canvas,
-  no layout thrash. No network requests (SVGs inlined). Negligible LCP impact (root hidden until JS).
+  no layout thrash. No network requests (SVGs inlined). Built after load into a `position:fixed` layer →
+  no LCP/CLS impact; off-season/opted-out pages do no work and ship no markup.
 
 ## 7. Per-page opt-out & preview override
 
@@ -180,9 +200,12 @@ pointer-events:none; z-index:30;` hidden until the script adds `data-active`.
 
 ## 8. Assets & licensing
 
-Snowflake and all motif glyphs are **Tabler Icons**, MIT-licensed — free for commercial use, no
-attribution required. We **inline the SVG path data** into `DecorLayer.astro` (no `@tabler` dependency,
-no icon webfont). This both keeps payload minimal and sidesteps any third-party-character IP concern.
+Snowflake and all motif glyphs are **Tabler Icons**, MIT-licensed — free for commercial use. MIT's one
+obligation is that the copyright + permission notice be retained, so it is kept in
+`web/THIRD-PARTY-NOTICES.md` plus a short pointer comment in `DecorLayer.astro` (copy the notice along
+when reusing the component in other brands). We **inline the SVG path data** into `DecorLayer.astro`
+(no `@tabler` dependency, no icon webfont). This both keeps payload minimal and sidesteps any
+third-party-character IP concern.
 **Explicitly excluded:** Disney "Frozen" characters (Elsa, Olaf, Sven, the sleigh design) — using them
 on a commercial site is a copyright/trademark risk. We reproduce the *winter aesthetic*, not the IP.
 
@@ -194,13 +217,15 @@ Locale-agnostic by default (snow + generic motifs look the same in th/en/zh-cn).
 
 ## 10. Testing
 
-- **Unit (`decor.test.ts`, vitest):** `resolveActiveDecor` —
+- **Unit (`decor.test.ts`, vitest — 20 tests):** `resolveActiveDecor` —
   inclusive boundaries (start/end days on/just-outside), `repeatYearly` MM-DD matching, year-wrap
-  window, `locales` targeting, `enabled:false`, override (`<key>` and `off`), no-match → `null`.
-  Plus `todayInBangkok()` format sanity.
-- **Manual (dev + preview tools):** `npm run dev`, open `?decor=christmas`, confirm snow + motif,
-  confirm motif crosses fully and alternates, confirm buttons/links remain clickable through the layer,
-  confirm `?decor=off` and reduced-motion (emulate) disable it, screenshot desktop + mobile widths.
+  window, one-off `YYYY-MM-DD` (and the fail-closed guard for a mis-written one-off `MM-DD`), `locales`
+  targeting, `enabled:false`, override (`<key>` and `off`), no-match → `null`. Plus `todayInBangkok()`
+  format/timezone sanity.
+- **Manual (dev + preview tools):** open `?decor=christmas`, confirm snow + motif, motif crosses fully
+  and alternates one-per-pass, buttons/links remain clickable through the layer (`pointer-events:none`),
+  `?decor=off` and off-window both remove `#decor-root`, density count (34 desktop / 17 mobile), and the
+  motif clears the mobile sticky CTA. Reduced-motion verified via the shipped CSS rule.
 
 ## 11. Deployment & lifecycle
 
@@ -211,7 +236,7 @@ Locale-agnostic by default (snow + generic motifs look the same in th/en/zh-cn).
 - **Add a festival later:** append a preset (+ any new motif SVGs/`theme`); no architectural change.
 
 ## 12. Open questions (non-blocking)
-- Exact desktop particle counts (34/18/56) and crossing/gap timings are starting values to fine-tune
-  visually during implementation via the dev preview.
+- Desktop particle counts (medium 34 / light 18 / heavy 56) and crossing/gap timings are tuned values;
+  adjust further in `DecorLayer.astro` if desired.
 - Whether to also drop the overlay on the assessment/implant-check tool pages — left ON by default;
   operator can add `decor={false}` per page if desired.
