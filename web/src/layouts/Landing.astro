@@ -89,7 +89,9 @@ const ldNodes = [ld, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []
       </div>
     </header>
 
-    <slot />
+    <main>
+      <slot />
+    </main>
 
     <!-- Footer -->
     <footer class="bg-brand-anchor text-white/80">

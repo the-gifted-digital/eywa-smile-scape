@@ -80,7 +80,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
       <div class="max-w-6xl mx-auto bg-white rounded-[22px] shadow-lg border border-brand-neutral-200 overflow-hidden">
         <div class="flex items-center justify-between gap-6 px-8 pt-6 pb-5">
           <div>
-            <h3 class="font-display text-[23px] font-extrabold text-brand-anchor leading-tight">{data.heading}</h3>
+            <p class="font-display text-[23px] font-extrabold text-brand-anchor leading-tight">{data.heading}</p>
             <p class="text-sm text-brand-neutral-500 mt-1.5">{data.sub}</p>
           </div>
           <a href={data.ctaHref} class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{data.ctaLabel} →</a>
@@ -101,7 +101,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
             <div class="ssf-promo rounded-2xl p-6 text-white relative overflow-hidden">
               <div class="text-[11px] font-bold opacity-80 uppercase">{data.promo.kw}</div>
               <div class="text-[30px] mt-1.5 mb-0.5">💎</div>
-              <h4 class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</h4>
+              <p class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</p>
               <div class="font-display text-[34px] font-extrabold mt-3"><span class="text-sm font-medium opacity-85">{data.promo.priceEyebrow}</span> {data.promo.price}</div>
               <ul class="list-none my-3 text-[13px] opacity-90 grid gap-1.5">
                 {data.promo.bullets.map((b) => <li class="flex items-center gap-2 before:content-['✓'] before:text-[#7BD0A6] before:font-extrabold">{b}</li>)}
@@ -122,7 +122,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
 
   <!-- mobile scrim + drawer -->
   <div id="ssf-scrim" class="lg:hidden fixed inset-0 z-[55]"></div>
-  <aside id="ssf-drawer" class="lg:hidden fixed top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white z-[56] flex flex-col" aria-hidden="true">
+  <div id="ssf-drawer" class="lg:hidden fixed top-0 right-0 bottom-0 w-[88%] max-w-sm bg-white z-[56] flex flex-col" aria-hidden="true">
     <div class="h-[58px] shrink-0 flex items-center justify-between px-4 border-b border-brand-neutral-200">
       <img src="/images/lp/logo-smilescape.png" alt="SmileScape" width="600" height="106" class="h-[26px] w-auto" />
       <button type="button" id="ssf-close" aria-label="Close" class="w-10 h-10 grid place-items-center rounded-xl bg-brand-ice text-brand-anchor"><Icon name="close" class="w-5 h-5" /></button>
@@ -149,7 +149,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
               {h.megaPanels[item.panel].promo && (
                 <div class="ssf-promo rounded-xl p-4 mt-3.5 text-white">
                   <div class="text-[9.5px] font-bold uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
-                  <h5 class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</h5>
+                  <p class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</p>
                   <div class="font-display text-2xl font-extrabold mt-1"><span class="text-xs font-medium opacity-85">{h.megaPanels[item.panel].promo!.priceEyebrow}</span> {h.megaPanels[item.panel].promo!.price}</div>
                   <a href={h.megaPanels[item.panel].promo!.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-[13px] px-4 py-2.5 rounded-full mt-3">{h.megaPanels[item.panel].promo!.ctaLabel} →</a>
                 </div>
@@ -173,7 +173,7 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
         </div>
       </div>
     </div>
-  </aside>
+  </div>
 </header>
 
 <!-- desktop mega-panel backdrop — OUTSIDE <header> so the header (z-60) + open panel stay bright; only the page below is dimmed -->

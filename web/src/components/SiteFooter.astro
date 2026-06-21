@@ -22,26 +22,32 @@ const mapLabel = locale === 'en' ? 'Open in map →' : 'เปิดในแผ
     <!-- link groups (mobile: 2-col block; desktop: own columns via md:contents) -->
     <div class="grid grid-cols-2 gap-x-4 gap-y-6 md:contents">
       {f.groups.map((g) => (
-        <div>
-          <h4 class="text-brand-anchor text-sm font-bold mb-3">{g.label}</h4>
-          {g.links.map((l) => l.soon ? (
-            <span class="block text-sm py-1.5 text-brand-neutral-300">{l.label} <span class="text-[10px] bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full align-middle">{soonLabel}</span></span>
-          ) : (
-            <a href={l.href} class="block text-sm py-1.5 text-brand-neutral-900 hover:text-brand-primary-deep transition-colors">{l.label}</a>
-          ))}
-        </div>
+        <nav aria-label={g.label}>
+          <p class="text-brand-anchor text-sm font-bold mb-3">{g.label}</p>
+          <ul class="list-none m-0 p-0">
+            {g.links.map((l) => (
+              <li>{l.soon ? (
+                <span class="block text-sm py-1.5 text-brand-neutral-300">{l.label} <span class="text-[10px] bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full align-middle">{soonLabel}</span></span>
+              ) : (
+                <a href={l.href} class="block text-sm py-1.5 text-brand-neutral-900 hover:text-brand-primary-deep transition-colors">{l.label}</a>
+              )}</li>
+            ))}
+          </ul>
+        </nav>
       ))}
     </div>
 
     <!-- branches -->
     {f.branches.map((b) => (
       <div>
-        <h4 class="text-brand-anchor text-[15px] font-bold mb-2">{b.name}</h4>
-        <span class="inline-block text-[11px] font-semibold text-brand-primary-deep bg-brand-primary-soft px-2.5 py-0.5 rounded-full mb-2">{b.mrt}</span>
-        <p class="text-[13.5px] text-brand-neutral-500 mb-2">{b.province}</p>
-        <a href={`tel:${b.phoneTel}`} class="flex items-center gap-2 text-[13.5px] text-brand-neutral-900 py-0.5"><Icon name="phone" class="w-[15px] h-[15px] text-brand-anchor/60" />{b.phoneDisplay}</a>
-        <p class="flex items-start gap-2 text-[13.5px] text-brand-neutral-500 py-0.5"><Icon name="clock" class="w-[15px] h-[15px] text-brand-anchor/60 mt-[3px] shrink-0" /><span class="leading-snug"><span class="inline md:block">{b.hours[0]}</span>{' '}<span class="inline md:block">{b.hours[1]}</span></span></p>
-        <a href={b.mapUrl} class="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-brand-primary hover:text-brand-primary-deep mt-2">{mapLabel}</a>
+        <p class="text-brand-anchor text-[15px] font-bold mb-2">{b.name}</p>
+        <address class="not-italic">
+          <span class="inline-block text-[11px] font-semibold text-brand-primary-deep bg-brand-primary-soft px-2.5 py-0.5 rounded-full mb-2">{b.mrt}</span>
+          <p class="text-[13.5px] text-brand-neutral-500 mb-2">{b.province}</p>
+          <a href={`tel:${b.phoneTel}`} class="flex items-center gap-2 text-[13.5px] text-brand-neutral-900 py-0.5"><Icon name="phone" class="w-[15px] h-[15px] text-brand-anchor/60" />{b.phoneDisplay}</a>
+          <p class="flex items-start gap-2 text-[13.5px] text-brand-neutral-500 py-0.5"><Icon name="clock" class="w-[15px] h-[15px] text-brand-anchor/60 mt-[3px] shrink-0" /><span class="leading-snug"><span class="inline md:block">{b.hours[0]}</span>{' '}<span class="inline md:block">{b.hours[1]}</span></span></p>
+          <a href={b.mapUrl} class="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-brand-primary hover:text-brand-primary-deep mt-2">{mapLabel}</a>
+        </address>
       </div>
     ))}
   </div>
