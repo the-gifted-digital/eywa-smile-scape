@@ -19,13 +19,17 @@ describe('getHeader', () => {
     const panels = h.nav.filter((n) => n.panel).map((n) => n.panel);
     expect(panels).toEqual(['about', 'services', 'technology', 'concerns']);
   });
-  it('renders mega panels as empty placeholders for now (no columns yet)', () => {
+  it('gives every mega panel a heading and columns', () => {
     const h = getHeader('th');
     for (const key of ['about', 'services', 'technology', 'concerns'] as const) {
       expect(h.megaPanels[key].heading).toBeTruthy();
-      expect(h.megaPanels[key].placeholder).toBeTruthy();
-      expect(h.megaPanels[key].columns).toBeUndefined();
+      expect((h.megaPanels[key].columns ?? []).length).toBeGreaterThan(0);
     }
+  });
+  it('restores the real services content', () => {
+    const services = getHeader('th').megaPanels.services;
+    const labels = (services.columns ?? []).flatMap((c) => c.links).map((l) => l.label);
+    expect(labels).toContain('วีเนียร์');
   });
 });
 

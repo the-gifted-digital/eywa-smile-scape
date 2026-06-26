@@ -44,9 +44,8 @@ const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).
       </a>
       <nav class="hidden lg:flex items-center gap-0.5 mx-auto" aria-label="Primary">
         {h.nav.map((item) => item.panel ? (
-          <button type="button" class={`ssf-trigger nav-item ${item.flag ? 'flag' : ''}`} data-panel={item.panel} aria-haspopup="true" aria-expanded="false">
-            {item.flag && <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>}
-            {item.label}<Icon name="chevron" class="chev w-[11px] h-[11px]" />
+          <button type="button" class="ssf-trigger nav-item" data-panel={item.panel} aria-haspopup="true" aria-expanded="false">
+            <span class="ssf-navdot"></span>{item.label}<Icon name="chevron" class="chev w-[11px] h-[11px]" />
           </button>
         ) : item.soon ? (
           <span class="nav-item text-brand-neutral-300 cursor-default">{item.label}</span>
@@ -195,6 +194,9 @@ const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).
   a.nav-item:hover, button.nav-item:hover{ background:#EAF3FB; color:#1B66C2; }
   .nav-item.flag{ color:#1B66C2; font-weight:600; }
   .nav-item.active{ background:#EAF3FB; color:#1B66C2; }
+  /* pink dot on the active (open) menu tab */
+  .ssf-navdot{ display:none; width:6px; height:6px; border-radius:9999px; background:#EE9C9C; }
+  .nav-item.active .ssf-navdot{ display:inline-block; }
   .nav-item .chev{ transition:transform .2s; }
   .nav-item.active .chev{ transform:rotate(180deg); }
   .ssf-link:hover{ color:#1B66C2; transform:translateX(3px); transition:.14s; }

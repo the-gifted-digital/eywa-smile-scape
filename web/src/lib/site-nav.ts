@@ -5,8 +5,8 @@
 
 export type Locale = 'th' | 'en' | 'zh-cn';
 
-// Desktop mega-menu panels. Content is being (re)built — panels currently render
-// as empty placeholders (MegaPanel.placeholder). Add columns/promo per key later.
+// Desktop mega-menu panels. `services` carries real content; about/technology/concerns
+// share a generic skeleton (same shape) — polish each panel's content separately later.
 export type PanelKey = 'about' | 'services' | 'technology' | 'concerns';
 
 export interface LinkItem { label: string; href?: string; soon?: boolean; live?: boolean; }
@@ -50,9 +50,26 @@ const SOCIAL: SocialLink[] = [
   { name: 'line', href: LINE_URL },
 ];
 
-// Placeholder mega panels — content TBD ("we'll build the mega menu next").
-const PLACEHOLDER_TH = 'อยู่ระหว่างจัดเตรียมเนื้อหา — เดี๋ยวเรามาทำ mega menu กันต่อ';
-const PLACEHOLDER_EN = 'Content coming soon.';
+/**
+ * Generic mega-panel skeleton (same shape for about/technology/concerns) — a
+ * starting template to be replaced with real content panel-by-panel.
+ */
+const skel = (loc: 'th' | 'en', heading: string): MegaPanel => {
+  const t = loc === 'th';
+  const item = t ? 'รายการตัวอย่าง' : 'Sample item';
+  const cat = t ? 'หมวดหมู่' : 'Category';
+  return {
+    heading,
+    sub: t ? 'โครงเมนูตัวอย่าง — รอลงเนื้อหารายเมนู' : 'Skeleton — content per panel TBD',
+    ctaLabel: t ? 'ดูทั้งหมด' : 'View all', ctaHref: '#',
+    columns: [
+      { label: `${cat} 1`, links: [{ label: item, soon: true }, { label: item, soon: true }, { label: item, soon: true }] },
+      { label: `${cat} 2`, links: [{ label: item, soon: true }, { label: item, soon: true }, { label: item, soon: true }] },
+      { label: `${cat} 3`, links: [{ label: item, soon: true }, { label: item, soon: true }] },
+    ],
+    imageLabel: t ? 'พื้นที่ภาพ' : 'Image area',
+  };
+};
 
 /** Return m[locale], else m.en, else m.th. */
 export function pick<T>(m: Partial<Record<Locale, T>>, locale: Locale): T {
@@ -79,10 +96,29 @@ const BUNDLES: Partial<Record<Locale, Bundle>> = {
     cta: { label: 'จองคิว', href: '#booking' },
     mobileCta: { label: 'นัดปรึกษาทันตแพทย์เฉพาะทาง', href: '#booking' },
     megaPanels: {
-      about: { heading: 'เกี่ยวกับเรา', placeholder: PLACEHOLDER_TH },
-      services: { heading: 'บริการ', placeholder: PLACEHOLDER_TH },
-      technology: { heading: 'เทคโนโลยี', placeholder: PLACEHOLDER_TH },
-      concerns: { heading: 'บริการตามปัญหา', placeholder: PLACEHOLDER_TH },
+      about: skel('th', 'เกี่ยวกับเรา'),
+      services: {
+        heading: 'บริการทันตกรรมครบวงจร',
+        sub: 'ตั้งแต่ดูแลทั่วไป จัดฟัน ความงาม ไปจนถึงงานเฉพาะทาง — ครบในที่เดียว',
+        ctaLabel: 'ดูบริการทั้งหมด', ctaHref: '#',
+        columns: [
+          { label: 'ความงาม', links: [
+            { label: 'วีเนียร์', soon: true }, { label: 'ฟอกสีฟัน', soon: true }, { label: 'Digital Smile Design', soon: true },
+          ]},
+          { label: 'จัดฟัน', links: [
+            { label: 'จัดฟันใส', soon: true }, { label: 'Damon System', soon: true },
+          ]},
+          { label: 'ทั่วไป & รักษา', links: [
+            { label: 'รักษารากฟัน', soon: true }, { label: 'ถอนฟัน / ฟันคุด', soon: true }, { label: 'อุดฟัน · ฟันปลอม', soon: true },
+          ]},
+          { label: 'เหงือก', links: [
+            { label: 'รักษาปริทันต์', soon: true }, { label: 'รักษาเหงือกร่น', soon: true },
+          ]},
+        ],
+        imageLabel: 'ภาพคลินิก & ทีมแพทย์',
+      },
+      technology: skel('th', 'เทคโนโลยี'),
+      concerns: skel('th', 'บริการตามปัญหา'),
     },
     footer: {
       tagline: SLOGAN, social: SOCIAL,
@@ -124,10 +160,20 @@ const BUNDLES: Partial<Record<Locale, Bundle>> = {
     cta: { label: 'Book Now', href: '#booking' },
     mobileCta: { label: 'Consult a Specialist Dentist', href: '#booking' },
     megaPanels: {
-      about: { heading: 'About', placeholder: PLACEHOLDER_EN },
-      services: { heading: 'Services', placeholder: PLACEHOLDER_EN },
-      technology: { heading: 'Technology', placeholder: PLACEHOLDER_EN },
-      concerns: { heading: 'By Concern', placeholder: PLACEHOLDER_EN },
+      about: skel('en', 'About'),
+      services: {
+        heading: 'Full-service dentistry', sub: 'General, ortho, cosmetic and specialist care — all in one place.',
+        ctaLabel: 'View all services', ctaHref: '#',
+        columns: [
+          { label: 'Cosmetic', links: [{ label: 'Veneers', soon: true }, { label: 'Whitening', soon: true }, { label: 'Digital Smile Design', soon: true }] },
+          { label: 'Orthodontics', links: [{ label: 'Clear aligners', soon: true }, { label: 'Damon System', soon: true }] },
+          { label: 'General & restorative', links: [{ label: 'Root canal', soon: true }, { label: 'Extraction / wisdom tooth', soon: true }, { label: 'Filling · dentures', soon: true }] },
+          { label: 'Gums', links: [{ label: 'Periodontal care', soon: true }, { label: 'Gum recession', soon: true }] },
+        ],
+        imageLabel: 'Clinic & dental team',
+      },
+      technology: skel('en', 'Technology'),
+      concerns: skel('en', 'By Concern'),
     },
     footer: {
       tagline: SLOGAN, social: SOCIAL,
