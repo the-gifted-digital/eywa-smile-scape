@@ -1,0 +1,531 @@
+---
+/**
+ * SmileScape — Design System reference page  (/designsystem/)
+ *
+ * "ภาษากลางของทีม" — หน้าอ้างอิงภายในที่ render design tokens ออกมาให้ดู เพื่อให้
+ * เวลาพูดถึง "สีนี้ / ฟอนต์นี้ / คอมโพเนนต์นี้" ทุกคนเข้าใจตรงกัน.
+ *
+ * SOURCE OF TRUTH: ค่าทั้งหมด (สี/ตัวอักษร/ระยะ/รัศมี/เงา/มอชั่น) import ตรงจาก
+ *   design/brand-foundation/tokens.json — ตัวเดียวกับที่ tailwind.config.mjs ใช้.
+ *   แก้ token → ค่าบนหน้านี้เปลี่ยนตามอัตโนมัติ.  noindex (internal only).
+ */
+import '~/styles/fonts.css';
+import '~/styles/global.css';
+import tokens from '../../../design/brand-foundation/tokens.json';
+
+const v = (n) => n?.value;
+const rows = (group) => Object.entries(group).filter(([k]) => !k.startsWith('_'));
+
+const c = tokens.color.brand;
+const ty = tokens.typography;
+
+// ---- brand roles (display order) + Thai usage notes ----
+const roleMeta = {
+  anchor:        { th: 'Hero · footer · section มืด · โมเมนต์พรีเมียม "Blue Diamond"', dark: true },
+  primary:       { th: 'ปุ่มหลัก · ลิงก์ · active · wordmark', dark: true },
+  'primary-deep':{ th: 'hover / active ของปุ่มหลัก', dark: true },
+  highlight:     { th: 'สีโลโก้ periwinkle · เน้นเงียบ ๆ · ปุ่มรอง · brand-soft fill', dark: true },
+  'primary-soft':{ th: 'พื้นการ์ด · chips · การ์ดราคา', dark: false },
+  ice:           { th: 'พื้นหลัง section สลับ (อ่อน) · hover', dark: false },
+  paper:         { th: 'พื้นหลังหน้าหลัก (off-white เย็น ไม่ใช่ครีม)', dark: false },
+  accent:        { th: 'coral — human-touch pop เดียวที่อนุญาต · เช็กถูก/แบดจ์อบอุ่น (ใช้น้อย ๆ)', dark: false },
+};
+const brandRoles = Object.keys(roleMeta).map((k) => ({ key: k, hex: v(c[k]), ...roleMeta[k] }));
+const neutral = rows(c.neutral).map(([k, n]) => [k, v(n)]);
+const semantic = rows(tokens.color.semantic);
+
+const scale = rows(ty.scale);          // xs … 6xl
+const weights = rows(ty.fontWeight);   // regular … bold
+const lineH = rows(ty.lineHeight);
+const tracking = rows(ty.letterSpacing);
+
+const spacing = rows(tokens.spacing);
+const radius = rows(tokens.radius);
+const shadow = rows(tokens.shadow);
+const durations = rows(tokens.motion.duration);
+const eases = rows(tokens.motion.ease);
+const breakpoints = rows(tokens.breakpoint);
+const maxW = rows(tokens.layout.maxWidth);
+
+// px helper for rem values (16px base)
+const px = (val) => (typeof val === 'string' && val.endsWith('rem')) ? `${parseFloat(val) * 16}px` : '';
+
+// named type roles (brand-rule aware — NO wide tracking on Thai)
+const typeRoles = [
+  ['heading-1', 'Cabinet Grotesk', '5xl · 48px', '700', '1.1 · -0.02em'],
+  ['heading-2', 'Cabinet Grotesk', '4xl · 36px', '600', '1.1'],
+  ['heading-3', 'Cabinet Grotesk', '2xl · 24px', '600', '1.3 snug'],
+  ['label / eyebrow', 'Google Sans', 'sm · 14px', '700', 'UPPERCASE + bold · ไม่ยืดระยะ (กฎแบรนด์)'],
+  ['body-base', 'Google Sans', 'base · 16px', '400', '1.5 normal'],
+  ['body-large', 'Google Sans', 'lg · 18px', '400', '1.75 relaxed (TH ยาว)'],
+  ['caption', 'Google Sans', 'sm · 14px', '400', '1.3 snug'],
+];
+
+// fonts × language (จริง 3 ภาษา)
+const langs = [
+  { code: 'th', name: 'ไทย', note: 'Default · root', sample: 'รากฐานฟันที่มั่นคง', en: 'The Lifetime Foundation — SmileScape',
+    heading: 'Cabinet Grotesk → Google Sans (ไทยตกมาที่ Google Sans)', body: 'Google Sans (subset thai)', load: 'self-host woff2' },
+  { code: 'en', name: 'English', note: 'en-US', sample: 'The Lifetime Foundation', en: 'Body in Google Sans · headings in Cabinet Grotesk',
+    heading: 'Cabinet Grotesk', body: 'Google Sans', load: 'self-host woff2' },
+  { code: 'zh-cn', name: '简体中文', note: 'zh-CN', sample: '终身稳固的根基', en: 'The Lifetime Foundation · SmileScape',
+    heading: 'MiSans (.font-display override)', body: 'MiSans → PingFang SC → 微软雅黑', load: 'self-host · CJK subset (โหลดเฉพาะ zh-cn)' },
+];
+
+// component vocabulary (อ้างไฟล์จริงใน web/src/components/)
+const componentGroups = [
+  { cat: 'layout', items: [
+    ['SiteHeader / SiteFooter', 'หัว–ท้ายเว็บ + เมกะเมนู + ตัวสลับภาษา'],
+    ['Section / SectionHeading', 'กล่อง section + หัวข้อมาตรฐาน'],
+    ['Hero', 'hero สองสกิน (navy เต็มจอ / light course-landing)'],
+  ]},
+  { cat: 'conversion', items: [
+    ['FinalCta / StickyCta', 'แถบปิดการขาย + CTA ลอยติดล่าง'],
+    ['BookingForm', 'ฟอร์มนัดหมาย → worker /api/assessment-lead'],
+  ]},
+  { cat: 'content', items: [
+    ['WhyPillars / Pillar', 'เหตุผลเลือกเรา เป็นการ์ดเสา'],
+    ['ServicesGrid / ServiceCard', 'กริดบริการ'],
+    ['ProcessSteps', 'ขั้นตอนการรักษาเป็นสเต็ป'],
+    ['BeforeAfter', 'ภาพก่อน–หลัง (รอ compliance)'],
+    ['BlueDiamond', 'โมเมนต์พรีเมียม navy'],
+    ['Branches / BranchCard', 'สาขา + แผนที่/NAP'],
+    ['FaqBlock', 'คำถามพบบ่อย accordion'],
+  ]},
+  { cat: 'trust (E-E-A-T)', items: [
+    ['DoctorCard / ProfileCard', 'byline แพทย์ผู้ตรวจทาน (reviewer/editor)'],
+    ['Reviews / ReviewCard', 'รีวิวจริงของคนไข้'],
+    ['FoundersMastery / TeamRoster', 'ทีมแพทย์ผู้ก่อตั้ง'],
+    ['TrustBar / PartnerLogos', 'แถบความน่าเชื่อถือ + โลโก้พาร์ตเนอร์'],
+  ]},
+  { cat: 'interactive', items: [
+    ['AssessmentApp / Gate / QuestionCard', 'แบบประเมินตนเอง + ผลลัพธ์ (/implant-check)'],
+    ['AssessmentBand', 'แถบนำเข้าแบบประเมิน'],
+  ]},
+  { cat: 'media · ui · SEO', items: [
+    ['Image', 'seam รูปภาพ (สลับไป R2/CDN ได้)'],
+    ['Button / Icon', 'ปุ่ม pill + ไอคอน'],
+    ['RelatedContent', 'ลิงก์เนื้อหาในคลัสเตอร์เดียวกัน'],
+  ]},
+];
+
+const updated = '27 มิถุนายน 2569';
+---
+
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Design System · ภาษากลางของทีม | SmileScape Dental Clinic</title>
+    <meta name="description" content="ระบบดีไซน์กลางของ SmileScape — สี ฟอนต์ ตัวอักษรแต่ละภาษา ระยะห่าง รัศมี เงา และคอมโพเนนต์ เพื่อให้ทีมสื่อสารด้วยภาษาเดียวกัน (อ้างอิงภายใน)" />
+  </head>
+  <body class="bg-brand-paper text-brand-neutral-900 antialiased">
+    <!-- ===== hero ===== -->
+    <header class="relative overflow-hidden bg-brand-anchor text-white">
+      <div class="hero-sheen"></div>
+      <div class="relative z-10 max-w-wide mx-auto px-5 py-16 md:py-20">
+        <p class="text-xs font-bold uppercase text-brand-highlight">SmileScape · Design System</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mt-3">ภาษากลางของทีม</h1>
+        <p class="mt-4 max-w-2xl text-white/80 leading-relaxed">
+          ระบบดีไซน์เดียวที่เราใช้อ้างอิงร่วมกัน — เพื่อให้รีวิว/คอมเมนต์/สั่งงานได้แม่นยำขึ้น.
+          ค่าทั้งหมดดึงจาก token ที่ <b class="text-white">LOCKED</b> แล้ว
+          (<code class="font-mono text-brand-highlight">design/brand-foundation/tokens.json</code>)
+          — นี่คือ <i>แหล่งความจริงเดียว</i> ของแบรนด์.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs">
+          <span class="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20">Bridge palette · periwinkle + coral</span>
+          <span class="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20">TH · EN · ZH-CN</span>
+          <span class="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20">W3C DTCG tokens</span>
+          <span class="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20">Astro + Cloudflare</span>
+          <span class="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20">noindex · internal reference</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-wide mx-auto px-5 py-12 space-y-16">
+
+      <!-- ===== 01 Colors ===== -->
+      <section>
+        <p class="ds-eyebrow">01 · Foundation</p>
+        <h2 class="ds-h2">Colors — สี</h2>
+        <p class="ds-lead">
+          พาเลตต์ "Bridge" (LOCKED 2026-06-06) — ดึงจากสีระบบของเว็บเดิม: periwinkle โลโก้
+          <code class="ds-code">#7BA4DD</code>, coral <code class="ds-code">#EE9C9C</code>, action blue
+          <code class="ds-code">#217DEA</code> สะพานสู่ navy พรีเมียม. คอมโพเนนต์ใช้ผ่าน
+          <i>semantic role</i> (เช่น <code class="ds-code">bg-brand-primary</code>) ไม่อ้าง hex ตรง ๆ.
+          <b>คลิกการ์ดเพื่อคัดลอกค่า hex.</b>
+        </p>
+
+        <h3 class="ds-h3">Brand roles · บทบาทหลักของแบรนด์</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {brandRoles.map((r) => (
+            <button class="ds-swatch group text-left" data-copy={r.hex}>
+              <span class="block h-20 rounded-t-md" style={`background:${r.hex}`}></span>
+              <span class="block rounded-b-md border border-t-0 border-brand-neutral-200 bg-white p-3">
+                <span class="block font-semibold text-brand-anchor capitalize">{r.key}</span>
+                <span class="block font-mono text-xs text-brand-neutral-500 mt-0.5">bg-brand-{r.key}</span>
+                <span class="block font-mono text-xs text-brand-neutral-400">{r.hex}</span>
+                <span class="block text-xs text-brand-neutral-500 mt-1.5 leading-snug">{r.th}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <h3 class="ds-h3">Neutral ramp · ข้อความ &amp; เส้นขอบ</h3>
+        <div class="flex flex-wrap rounded-md overflow-hidden border border-brand-neutral-200">
+          {neutral.map(([k, hex]) => (
+            <button class="ds-copy grow basis-16 text-left" data-copy={hex}>
+              <span class="block h-14" style={`background:${hex}`}></span>
+              <span class="block bg-white px-2 py-1.5 border-t border-brand-neutral-100">
+                <span class="block font-mono text-[11px] text-brand-neutral-700">{k}</span>
+                <span class="block font-mono text-[10px] text-brand-neutral-400">{hex}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+        <p class="ds-note">
+          <code class="ds-code">text-brand-neutral-900</code> = body ink (#383838) ·
+          <code class="ds-code">500</code> = caption · อย่าใช้ <code class="ds-code">300</code> กับข้อความที่ต้องอ่าน.
+        </p>
+
+        <h3 class="ds-h3">Semantic roles · บทบาทเชิงความหมาย</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          {semantic.map(([k, n]) => (
+            <div class="flex items-center gap-2 rounded-md border border-brand-neutral-200 bg-white p-2">
+              <span class="h-7 w-7 shrink-0 rounded ring-1 ring-brand-neutral-200" style={`background:${v(n)}`}></span>
+              <span class="min-w-0">
+                <span class="block font-mono text-xs text-brand-anchor truncate">{k}</span>
+                <span class="block font-mono text-[10px] text-brand-neutral-400 truncate">{v(n)}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+        <p class="ds-note">หมายเหตุ: state colors (success/warning/danger) ยังไม่ถูกกำหนดใน token — เป็น SKELETON ไว้ล็อกในรอบ brand session.</p>
+      </section>
+
+      <!-- ===== 02 Signature surfaces ===== -->
+      <section>
+        <p class="ds-eyebrow">02 · Foundation</p>
+        <h2 class="ds-h2">Signature surfaces — พื้นผิวลายเซ็น</h2>
+        <p class="ds-lead">พื้นผิวเฉพาะของแบรนด์ "navy=sell, light=learn". ใช้กับ hero และ section มืด.</p>
+        <div class="grid md:grid-cols-3 gap-3">
+          <div class="relative h-36 rounded-lg overflow-hidden bg-brand-anchor text-white">
+            <div class="hero-sheen"></div>
+            <span class="relative z-10 block p-4 font-semibold">Anchor + hero-sheen</span>
+            <span class="relative z-10 block px-4 text-xs text-white/70 font-mono">bg-brand-anchor · .hero-sheen</span>
+          </div>
+          <div class="h-36 rounded-lg overflow-hidden text-white" style="background:linear-gradient(160deg,#14386B,#1B66C2 70%,#217DEA)">
+            <span class="block p-4 font-semibold">Navy → primary gradient</span>
+            <span class="block px-4 text-xs text-white/70 font-mono">linear-gradient(160deg, anchor → primary)</span>
+          </div>
+          <div class="h-36 rounded-lg overflow-hidden border border-brand-neutral-200 bg-brand-primary-soft text-brand-anchor">
+            <span class="block p-4 font-semibold">Soft brand tint</span>
+            <span class="block px-4 text-xs text-brand-anchor/60 font-mono">bg-brand-primary-soft</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 03 Typography ===== -->
+      <section>
+        <p class="ds-eyebrow">03 · Type</p>
+        <h2 class="ds-h2">Typography — ตัวอักษร</h2>
+        <p class="ds-lead">
+          สองตระกูลหลัก: <b>Cabinet Grotesk</b> (display/หัวข้อ — Latin) คู่กับ <b>Google Sans</b>
+          (body+UI ครอบทั้ง Latin และไทยในหน้าเดียว). Self-hosted ทั้งคู่ ไม่พึ่ง Google Fonts CDN (PDPA + LCP).
+        </p>
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="rounded-lg border border-brand-neutral-200 bg-white p-5">
+            <p class="font-display text-5xl text-brand-anchor">Aa กข</p>
+            <p class="mt-3 font-semibold text-brand-anchor">Cabinet Grotesk — Display</p>
+            <p class="text-sm text-brand-neutral-500 mt-1">หัวข้อ H1–H3, hero. Latin เท่านั้น; ไทยตกไป Google Sans.</p>
+            <p class="font-mono text-xs text-brand-neutral-400 mt-2">font-display</p>
+          </div>
+          <div class="rounded-lg border border-brand-neutral-200 bg-white p-5">
+            <p class="font-sans text-5xl text-brand-anchor">Aa กขค</p>
+            <p class="mt-3 font-semibold text-brand-anchor">Google Sans — Body / UI</p>
+            <p class="text-sm text-brand-neutral-500 mt-1">เนื้อหา, ปุ่ม, ฉลาก. ฟอนต์เดียวครอบ TH + EN.</p>
+            <p class="font-mono text-xs text-brand-neutral-400 mt-2">font-sans (default)</p>
+          </div>
+          <div class="rounded-lg border border-brand-neutral-200 bg-white p-5">
+            <p class="font-mono text-5xl text-brand-anchor">1234</p>
+            <p class="mt-3 font-semibold text-brand-anchor">Mono stack</p>
+            <p class="text-sm text-brand-neutral-500 mt-1">ราคา/ตัวเลข/สเปกเทคนิค. system-mono.</p>
+            <p class="font-mono text-xs text-brand-neutral-400 mt-2">font-mono</p>
+          </div>
+        </div>
+
+        <h3 class="ds-h3">น้ำหนัก · Weights</h3>
+        <div class="flex flex-wrap gap-4">
+          {weights.map(([k, n]) => (
+            <div class="rounded-md border border-brand-neutral-200 bg-white px-4 py-3">
+              <span class="text-2xl text-brand-anchor" style={`font-weight:${v(n)}`}>Aa {v(n)}</span>
+              <span class="block font-mono text-xs text-brand-neutral-400 mt-1">font-{k === 'regular' ? 'normal' : k}</span>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="ds-h3">Type scale · modular 1.25 (major third)</h3>
+        <div class="rounded-lg border border-brand-neutral-200 bg-white divide-y divide-brand-neutral-100">
+          {scale.slice().reverse().map(([k, n]) => (
+            <div class="flex items-baseline gap-4 px-4 py-2.5">
+              <span class="font-mono text-xs text-brand-neutral-400 w-28 shrink-0">{k} · {v(n)}{px(v(n)) && ` / ${px(v(n))}`}</span>
+              <span class="font-display text-brand-anchor truncate" style={`font-size:${v(n)};line-height:1.1`}>รากฐานที่มั่นคง</span>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="ds-h3">Named roles · ชื่อเรียกระดับข้อความ</h3>
+        <div class="overflow-x-auto rounded-lg border border-brand-neutral-200">
+          <table class="w-full text-sm">
+            <thead class="bg-brand-ice text-brand-anchor text-left">
+              <tr>
+                <th class="px-3 py-2 font-semibold">Role</th>
+                <th class="px-3 py-2 font-semibold">Font</th>
+                <th class="px-3 py-2 font-semibold">Size</th>
+                <th class="px-3 py-2 font-semibold">Weight</th>
+                <th class="px-3 py-2 font-semibold">Line / tracking</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-neutral-100 bg-white">
+              {typeRoles.map(([role, font, size, weight, lt]) => (
+                <tr>
+                  <td class="px-3 py-2 font-mono text-brand-primary whitespace-nowrap">{role}</td>
+                  <td class="px-3 py-2 text-brand-neutral-700">{font}</td>
+                  <td class="px-3 py-2 text-brand-neutral-700 whitespace-nowrap">{size}</td>
+                  <td class="px-3 py-2 text-brand-neutral-700">{weight}</td>
+                  <td class="px-3 py-2 text-brand-neutral-500">{lt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="ds-note">
+          <b>กฎแบรนด์:</b> ห้ามใส่ <code class="ds-code">tracking</code> กว้างกับข้อความ (โดยเฉพาะภาษาไทย) —
+          ป้ายกำกับ/eyebrow ใช้ <b>ตัวพิมพ์ใหญ่ + bold</b> แทน ไม่ยืดระยะตัวอักษร. (<code class="ds-code">tracking-tight</code> สำหรับหัวข้อ Latin ใช้ได้)
+          token tracking ที่มี: {tracking.map(([k, n], i) => <span class="font-mono">{i ? ' · ' : ''}{k} ({v(n)})</span>)}
+        </p>
+      </section>
+
+      <!-- ===== 04 Fonts × language ===== -->
+      <section>
+        <p class="ds-eyebrow">04 · Type · หัวใจของ multi-language</p>
+        <h2 class="ds-h2">Fonts × ภาษา — การจับคู่ฟอนต์</h2>
+        <p class="ds-lead">
+          เว็บรองรับ <b>3 ภาษา</b> (TH default / EN / ZH-CN). หลักการ: <b>Latin display = Cabinet Grotesk</b>,
+          <b>body สากล = Google Sans</b> (ครอบ TH/EN). ภาษาจีนใช้ <b>MiSans</b> (SC subset) โหลดเฉพาะ locale นั้นผ่าน font chain
+          — แหล่งจริงอยู่ที่ <code class="ds-code">web/src/styles/global.css</code> + <code class="ds-code">tokens.json</code>.
+        </p>
+        <div class="grid md:grid-cols-3 gap-3">
+          {langs.map((l) => (
+            <div class="rounded-lg border border-brand-neutral-200 bg-white p-5">
+              <div class="flex items-center gap-2">
+                <span class="rounded bg-brand-primary px-2 py-0.5 text-xs font-mono text-white">{l.code}</span>
+                <span class="font-semibold text-brand-anchor">{l.name}</span>
+                <span class="text-xs text-brand-neutral-400">{l.note}</span>
+              </div>
+              <p lang={l.code} class="font-display text-3xl text-brand-anchor mt-3 leading-snug">{l.sample}</p>
+              <p class="text-sm text-brand-neutral-400 mt-1">{l.en}</p>
+              <dl class="mt-3 space-y-1 text-xs">
+                <div class="flex gap-2"><dt class="text-brand-neutral-400 w-16 shrink-0">Heading</dt><dd class="text-brand-neutral-700">{l.heading}</dd></div>
+                <div class="flex gap-2"><dt class="text-brand-neutral-400 w-16 shrink-0">Body</dt><dd class="text-brand-neutral-700">{l.body}</dd></div>
+                <div class="flex gap-2"><dt class="text-brand-neutral-400 w-16 shrink-0">โหลด</dt><dd class="text-brand-neutral-700">{l.load}</dd></div>
+              </dl>
+            </div>
+          ))}
+        </div>
+        <p class="ds-note">
+          <b>กฎทอง:</b> คุมด้วย <code class="ds-code">:lang(xx){'{font-family:…}'}</code> สำหรับ body และ
+          <code class="ds-code">html[lang="zh-cn"] .font-display</code> สำหรับหัวข้อจีน. ⚠️ font stack อยู่ 3 ที่ที่ต้อง sync กัน
+          (tokens.json display + sans, และ global.css body) — แก้ฟอนต์ต้อง restart dev.
+        </p>
+      </section>
+
+      <!-- ===== 05 Spacing ===== -->
+      <section>
+        <p class="ds-eyebrow">05 · Layout</p>
+        <h2 class="ds-h2">Spacing — ระยะห่าง</h2>
+        <p class="ds-lead">ฐาน 4px. ใช้กับ padding / margin / gap ทุกที่ — ห้ามใส่ค่าดิบ. <code class="ds-code">p-4</code> = 1rem, <code class="ds-code">gap-6</code> = 1.5rem.</p>
+        <div class="space-y-2">
+          {spacing.filter(([k]) => k !== '0').map(([k, n]) => (
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-xs text-brand-neutral-400 w-32 shrink-0">{k} · {v(n)}{px(v(n)) && ` · ${px(v(n))}`}</span>
+              <span class="h-4 rounded bg-brand-primary" style={`width:${v(n)}`}></span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ===== 06 Radius ===== -->
+      <section>
+        <p class="ds-eyebrow">06 · Layout</p>
+        <h2 class="ds-h2">Radius — ความโค้งมุม</h2>
+        <p class="ds-lead">การ์ดมาตรฐาน = <code class="ds-code">md</code> (10px, ตรงกับเว็บเดิม); ปุ่ม pill = <code class="ds-code">full</code>.</p>
+        <div class="flex flex-wrap gap-4">
+          {radius.map(([k, n]) => (
+            <div class="text-center">
+              <span class="block h-20 w-20 bg-brand-primary-soft border-2 border-brand-primary" style={`border-radius:${v(n)}`}></span>
+              <span class="block font-mono text-xs text-brand-neutral-500 mt-1.5">{k}</span>
+              <span class="block font-mono text-[10px] text-brand-neutral-400">{v(n)}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ===== 07 Shadow ===== -->
+      <section>
+        <p class="ds-eyebrow">07 · Layout</p>
+        <h2 class="ds-h2">Shadow — เงา</h2>
+        <p class="ds-lead">เงาทุกระดับย้อมด้วย navy (<code class="ds-code">#14386B</code>) ให้ความรู้สึกสะอาด พรีเมียม.</p>
+        <div class="flex flex-wrap gap-6 p-2">
+          {shadow.map(([k, n]) => (
+            <div class="text-center">
+              <span class="block h-20 w-32 rounded-lg bg-white" style={`box-shadow:${v(n)}`}></span>
+              <span class="block font-mono text-xs text-brand-neutral-500 mt-3">shadow-{k}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- ===== 08 Motion ===== -->
+      <section>
+        <p class="ds-eyebrow">08 · Motion</p>
+        <h2 class="ds-h2">Motion — การเคลื่อนไหว</h2>
+        <p class="ds-lead">เคลื่อนไหวแบบสงบ เน้นความชัด ไม่หวือหวา. (ชี้เมาส์ที่การ์ดเพื่อดูแต่ละ duration)</p>
+        <div class="flex flex-wrap gap-3">
+          {durations.map(([k, n]) => (
+            <div class="ds-motion rounded-lg border border-brand-neutral-200 bg-white px-5 py-4" style={`transition-duration:${v(n)}`}>
+              <span class="block font-semibold text-brand-anchor capitalize">{k}</span>
+              <span class="block font-mono text-xs text-brand-neutral-400">{v(n)}</span>
+            </div>
+          ))}
+        </div>
+        <div class="overflow-x-auto rounded-lg border border-brand-neutral-200 mt-3">
+          <table class="w-full text-sm">
+            <thead class="bg-brand-ice text-brand-anchor text-left"><tr><th class="px-3 py-2 font-semibold">Ease token</th><th class="px-3 py-2 font-semibold">Value</th><th class="px-3 py-2 font-semibold">ใช้กับ</th></tr></thead>
+            <tbody class="divide-y divide-brand-neutral-100 bg-white">
+              {eases.map(([k, n]) => (
+                <tr><td class="px-3 py-2 font-mono text-brand-primary">ease-{k}</td><td class="px-3 py-2 font-mono text-brand-neutral-700">{v(n)}</td><td class="px-3 py-2 text-brand-neutral-500">{k === 'out' ? 'เข้า/ปรากฏ — การ์ด, hover' : 'สลับสถานะ, accordion'}</td></tr>
+              ))}
+              <tr><td class="px-3 py-2 font-mono text-brand-primary">[data-reveal]</td><td class="px-3 py-2 text-brand-neutral-700">scroll-reveal · 0.7s spring</td><td class="px-3 py-2 text-brand-neutral-500">section ค่อย ๆ ลอยขึ้นตอนสกรอลล์</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 09 Breakpoints & widths ===== -->
+      <section>
+        <p class="ds-eyebrow">09 · Layout</p>
+        <h2 class="ds-h2">Breakpoints &amp; widths</h2>
+        <p class="ds-lead">Mobile-first. ใช้ prefix Tailwind: <code class="ds-code">md:</code>, <code class="ds-code">lg:</code> …</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="overflow-x-auto rounded-lg border border-brand-neutral-200">
+            <table class="w-full text-sm">
+              <thead class="bg-brand-ice text-brand-anchor text-left"><tr><th class="px-3 py-2 font-semibold">Breakpoint</th><th class="px-3 py-2 font-semibold">Min-width</th></tr></thead>
+              <tbody class="divide-y divide-brand-neutral-100 bg-white">
+                {breakpoints.map(([k, n]) => (<tr><td class="px-3 py-2 font-mono text-brand-primary">{k}</td><td class="px-3 py-2 font-mono text-brand-neutral-700">{v(n)}</td></tr>))}
+              </tbody>
+            </table>
+          </div>
+          <div class="overflow-x-auto rounded-lg border border-brand-neutral-200">
+            <table class="w-full text-sm">
+              <thead class="bg-brand-ice text-brand-anchor text-left"><tr><th class="px-3 py-2 font-semibold">Max-width</th><th class="px-3 py-2 font-semibold">Value</th></tr></thead>
+              <tbody class="divide-y divide-brand-neutral-100 bg-white">
+                {maxW.map(([k, n]) => (<tr><td class="px-3 py-2 font-mono text-brand-primary">{k}</td><td class="px-3 py-2 font-mono text-brand-neutral-700">{v(n)}</td></tr>))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 10 Buttons ===== -->
+      <section>
+        <p class="ds-eyebrow">10 · Components</p>
+        <h2 class="ds-h2">Buttons — ปุ่ม</h2>
+        <p class="ds-lead">ปุ่มเป็น pill (<code class="ds-code">rounded-full</code>) ยกตัวเล็กน้อยตอน hover. ลำดับ: primary → anchor → secondary → ghost.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="u-hover rounded-full bg-brand-primary px-6 py-2.5 font-semibold text-white shadow-md">จองคิว</button>
+          <button class="u-hover rounded-full bg-brand-anchor px-6 py-2.5 font-semibold text-white">ปรึกษาแพทย์</button>
+          <button class="u-hover rounded-full bg-brand-primary-soft px-6 py-2.5 font-semibold text-brand-anchor">ดูแพ็กเกจ</button>
+          <button class="u-hover rounded-full border border-brand-highlight px-6 py-2.5 font-semibold text-brand-primary">อ่านเพิ่ม</button>
+          <span class="u-hover inline-flex items-center gap-1.5 rounded-full bg-brand-accent px-5 py-2 font-semibold text-brand-anchor">✓ ดูแลด้วยใจ</span>
+        </div>
+        <p class="ds-note">
+          <code class="ds-code">primary</code> #217DEA + เงา brand · <code class="ds-code">anchor</code> navy #14386B ·
+          <code class="ds-code">secondary</code> primary-soft + ตัวอักษร navy · <code class="ds-code">ghost</code> เส้นขอบ highlight ·
+          <code class="ds-code">accent</code> coral = human-touch (ใช้น้อย ๆ).
+        </p>
+      </section>
+
+      <!-- ===== 11 Component vocabulary ===== -->
+      <section>
+        <p class="ds-eyebrow">11 · Components</p>
+        <h2 class="ds-h2">Component vocabulary — คำศัพท์กลาง</h2>
+        <p class="ds-lead">ชื่อบล็อกที่ใช้ซ้ำในเว็บ (อยู่จริงที่ <code class="ds-code">web/src/components/</code>). เวลาสั่งงาน/รีวิว ให้เรียกด้วยชื่อเหล่านี้จะตรงกัน.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {componentGroups.map((g) => (
+            <div class="rounded-lg border border-brand-neutral-200 bg-white p-4">
+              <p class="text-xs font-bold uppercase text-brand-primary">{g.cat}</p>
+              <ul class="mt-2 space-y-2">
+                {g.items.map(([name, desc]) => (
+                  <li>
+                    <span class="block font-mono text-sm text-brand-anchor">{name}</span>
+                    <span class="block text-xs text-brand-neutral-500 leading-snug">{desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-brand-neutral-200 bg-white">
+      <div class="max-w-wide mx-auto px-5 py-6 text-sm text-brand-neutral-500">
+        © {new Date().getFullYear()} SmileScape Dental Clinic · Design System (internal reference · noindex) ·
+        ปรับปรุง {updated} · source: <code class="font-mono text-xs">design/brand-foundation/tokens.json</code>
+      </div>
+    </footer>
+
+    <div id="ds-toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 translate-y-4 opacity-0 rounded-full bg-brand-anchor px-5 py-2 text-sm font-semibold text-white shadow-lg pointer-events-none transition-all duration-200">คัดลอกแล้ว ✓</div>
+
+    <script>
+      const toast = document.getElementById('ds-toast');
+      let t: number | undefined;
+      document.querySelectorAll<HTMLElement>('[data-copy]').forEach((el) => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', async () => {
+          const val = el.getAttribute('data-copy');
+          if (!val) return;
+          try { await navigator.clipboard.writeText(val); } catch { return; }
+          if (toast) {
+            toast.textContent = `คัดลอกแล้ว ✓  ${val}`;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translate(-50%, 0)';
+            clearTimeout(t);
+            t = window.setTimeout(() => {
+              toast.style.opacity = '0';
+              toast.style.transform = 'translate(-50%, 1rem)';
+            }, 1400);
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .ds-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #217DEA; }
+      .ds-h2 { font-family: 'Cabinet Grotesk', 'Google Sans', sans-serif; font-size: 1.875rem; font-weight: 700; color: #14386B; margin-top: 0.25rem; }
+      .ds-h3 { font-family: 'Cabinet Grotesk', 'Google Sans', sans-serif; font-size: 1.125rem; font-weight: 600; color: #14386B; margin: 1.75rem 0 0.75rem; }
+      .ds-lead { color: #334155; line-height: 1.7; margin-top: 0.5rem; margin-bottom: 1.25rem; max-width: 70ch; }
+      .ds-note { font-size: 0.8125rem; color: #64748b; margin-top: 0.75rem; line-height: 1.6; }
+      .ds-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; background: #EAF3FB; color: #1B66C2; padding: 0.05em 0.4em; border-radius: 4px; }
+      .ds-motion { transition-property: transform, box-shadow; transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
+      .ds-motion:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(20,56,107,0.16); }
+      .ds-swatch { transition: transform 0.15s ease; }
+      .ds-swatch:hover { transform: translateY(-3px); }
+    </style>
+  </body>
+</html>
