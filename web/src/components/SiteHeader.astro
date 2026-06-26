@@ -7,10 +7,7 @@ const alt = getAltLocales(Astro.url.pathname, Astro.site!.toString());
 const soonLabel = locale === 'en' ? 'soon' : 'เร็วๆ นี้';
 const liveLabel = locale === 'en' ? 'ready' : 'พร้อมใช้';
 const homeHref = locale === 'en' ? '/en/' : locale === 'zh-cn' ? '/zh-cn/' : '/';
-const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
-  { key: 'implant', data: h.megaPanels.implant },
-  { key: 'services', data: h.megaPanels.services },
-];
+const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).map(([key, data]) => ({ key, data }));
 ---
 <header id="ssf-header" class="sticky top-0 z-[60]">
   <!-- TIER 1 — utility (navy) -->
@@ -81,41 +78,45 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
         <div class="flex items-center justify-between gap-6 px-8 pt-6 pb-5">
           <div>
             <p class="font-display text-[23px] font-extrabold text-brand-anchor leading-tight">{data.heading}</p>
-            <p class="text-sm text-brand-neutral-500 mt-1.5">{data.sub}</p>
+            {data.sub && <p class="text-sm text-brand-neutral-500 mt-1.5">{data.sub}</p>}
           </div>
-          <a href={data.ctaHref} class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{data.ctaLabel} →</a>
+          {data.ctaLabel && <a href={data.ctaHref} class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-primary text-white font-bold text-[14.5px] shadow-md hover:bg-brand-primary-deep transition">{data.ctaLabel} →</a>}
         </div>
         <div class="h-px bg-brand-neutral-200 mx-8"></div>
-        <div class={`grid gap-6 px-8 py-8 ${key === 'implant' ? 'lg:grid-cols-[1fr_1fr_1.05fr]' : 'lg:grid-cols-[repeat(4,1fr)_1.1fr]'}`}>
-          {data.columns.map((col) => (
-            <div>
-              <div class="text-[11px] font-bold text-brand-primary uppercase mb-3.5">{col.label}</div>
-              {col.links.map((l) => l.soon ? (
-                <span class="flex items-center gap-2 py-1.5 text-[15px] text-brand-neutral-300 cursor-default">{l.label}<span class="text-[10px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
-              ) : (
-                <a href={l.href} class="ssf-link flex items-center gap-2 py-1.5 text-[15px] font-medium text-brand-neutral-900">{l.label}{l.live && <span class="text-[10px] font-bold text-[#0a8f4d] bg-[#e3f7ec] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
-              ))}
-            </div>
-          ))}
-          {data.promo && (
-            <div class="ssf-promo rounded-2xl p-6 text-white relative overflow-hidden">
-              <div class="text-[11px] font-bold opacity-80 uppercase">{data.promo.kw}</div>
-              <div class="text-[30px] mt-1.5 mb-0.5">💎</div>
-              <p class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</p>
-              <div class="font-display text-[34px] font-extrabold mt-3"><span class="text-sm font-medium opacity-85">{data.promo.priceEyebrow}</span> {data.promo.price}</div>
-              <ul class="list-none my-3 text-[13px] opacity-90 grid gap-1.5">
-                {data.promo.bullets.map((b) => <li class="flex items-center gap-2 before:content-['✓'] before:text-[#7BD0A6] before:font-extrabold">{b}</li>)}
-              </ul>
-              <a href={data.promo.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-sm px-5 py-2.5 rounded-full">{data.promo.ctaLabel} →</a>
-            </div>
-          )}
-          {data.imageLabel && (
-            <div class="rounded-2xl border-2 border-dashed border-brand-neutral-300 bg-gradient-to-br from-brand-ice to-brand-primary-soft flex flex-col items-center justify-center text-center text-brand-anchor p-6 min-h-full">
-              <Icon name="check" class="w-10 h-10 opacity-40 mb-2.5" />
-              <b class="text-sm">{data.imageLabel}</b>
-            </div>
-          )}
-        </div>
+        {data.placeholder ? (
+          <div class="px-8 py-14 text-center text-sm text-brand-neutral-400">{data.placeholder}</div>
+        ) : (
+          <div class="grid gap-6 px-8 py-8 lg:grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+            {(data.columns ?? []).map((col) => (
+              <div>
+                <div class="text-[11px] font-bold text-brand-primary uppercase mb-3.5">{col.label}</div>
+                {col.links.map((l) => l.soon ? (
+                  <span class="flex items-center gap-2 py-1.5 text-[15px] text-brand-neutral-300 cursor-default">{l.label}<span class="text-[10px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
+                ) : (
+                  <a href={l.href} class="ssf-link flex items-center gap-2 py-1.5 text-[15px] font-medium text-brand-neutral-900">{l.label}{l.live && <span class="text-[10px] font-bold text-[#0a8f4d] bg-[#e3f7ec] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
+                ))}
+              </div>
+            ))}
+            {data.promo && (
+              <div class="ssf-promo rounded-2xl p-6 text-white relative overflow-hidden">
+                <div class="text-[11px] font-bold opacity-80 uppercase">{data.promo.kw}</div>
+                <div class="text-[30px] mt-1.5 mb-0.5">💎</div>
+                <p class="font-display text-[21px] font-extrabold leading-tight">{data.promo.title}</p>
+                <div class="font-display text-[34px] font-extrabold mt-3"><span class="text-sm font-medium opacity-85">{data.promo.priceEyebrow}</span> {data.promo.price}</div>
+                <ul class="list-none my-3 text-[13px] opacity-90 grid gap-1.5">
+                  {data.promo.bullets.map((b) => <li class="flex items-center gap-2 before:content-['✓'] before:text-[#7BD0A6] before:font-extrabold">{b}</li>)}
+                </ul>
+                <a href={data.promo.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-sm px-5 py-2.5 rounded-full">{data.promo.ctaLabel} →</a>
+              </div>
+            )}
+            {data.imageLabel && (
+              <div class="rounded-2xl border-2 border-dashed border-brand-neutral-300 bg-gradient-to-br from-brand-ice to-brand-primary-soft flex flex-col items-center justify-center text-center text-brand-anchor p-6 min-h-full">
+                <Icon name="check" class="w-10 h-10 opacity-40 mb-2.5" />
+                <b class="text-sm">{data.imageLabel}</b>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   ))}
@@ -130,31 +131,37 @@ const panels: { key: 'implant' | 'services'; data: MegaPanel }[] = [
     <div class="flex-1 overflow-y-auto py-2">
       {h.nav.map((item) => item.panel ? (
         <Fragment>
-          <button type="button" class="ssf-acc w-full flex items-center gap-2.5 px-5 py-3.5 text-base font-semibold text-brand-anchor text-left" data-acc={item.panel} aria-expanded={item.panel === 'implant' ? 'true' : 'false'}>
+          <button type="button" class="ssf-acc w-full flex items-center gap-2.5 px-5 py-3.5 text-base font-semibold text-brand-anchor text-left" data-acc={item.panel} aria-expanded="false">
             {item.flag && <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>}{item.label}
             <Icon name="chevron" class="chev w-[18px] h-[18px] ml-auto text-brand-neutral-300" />
           </button>
           <div class="ssf-acc-panel overflow-hidden bg-brand-ice" data-acc-panel={item.panel}>
             <div class="px-5 pt-1.5 pb-4">
-              {h.megaPanels[item.panel].columns.map((col) => (
+              {h.megaPanels[item.panel].placeholder ? (
+                <p class="text-sm text-brand-neutral-400 py-3">{h.megaPanels[item.panel].placeholder}</p>
+              ) : (
                 <Fragment>
-                  <div class="text-[10.5px] font-bold text-brand-primary uppercase mt-3 mb-1">{col.label}</div>
-                  {col.links.map((l) => l.soon ? (
-                    <span class="flex items-center gap-2 py-2.5 text-sm text-brand-neutral-300"><span class="w-[7px] h-[7px] rounded-full bg-brand-neutral-200"></span>{l.label}<span class="text-[9.5px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
-                  ) : (
-                    <a href={l.href} class="flex items-center gap-2 py-2.5 text-sm font-medium text-brand-neutral-900"><span class="w-[7px] h-[7px] rounded-full bg-brand-highlight"></span>{l.label}{l.live && <span class="text-[9.5px] font-bold text-[#0a8f4d] bg-[#d9f3e3] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
+                  {(h.megaPanels[item.panel].columns ?? []).map((col) => (
+                    <Fragment>
+                      <div class="text-[10.5px] font-bold text-brand-primary uppercase mt-3 mb-1">{col.label}</div>
+                      {col.links.map((l) => l.soon ? (
+                        <span class="flex items-center gap-2 py-2.5 text-sm text-brand-neutral-300"><span class="w-[7px] h-[7px] rounded-full bg-brand-neutral-200"></span>{l.label}<span class="text-[9.5px] font-semibold bg-brand-neutral-200 text-brand-neutral-500 px-1.5 py-0.5 rounded-full ml-auto">{soonLabel}</span></span>
+                      ) : (
+                        <a href={l.href} class="flex items-center gap-2 py-2.5 text-sm font-medium text-brand-neutral-900"><span class="w-[7px] h-[7px] rounded-full bg-brand-highlight"></span>{l.label}{l.live && <span class="text-[9.5px] font-bold text-[#0a8f4d] bg-[#d9f3e3] px-1.5 py-0.5 rounded-full">{liveLabel}</span>}</a>
+                      ))}
+                    </Fragment>
                   ))}
+                  {h.megaPanels[item.panel].promo && (
+                    <div class="ssf-promo rounded-xl p-4 mt-3.5 text-white">
+                      <div class="text-[9.5px] font-bold uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
+                      <p class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</p>
+                      <div class="font-display text-2xl font-extrabold mt-1"><span class="text-xs font-medium opacity-85">{h.megaPanels[item.panel].promo!.priceEyebrow}</span> {h.megaPanels[item.panel].promo!.price}</div>
+                      <a href={h.megaPanels[item.panel].promo!.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-[13px] px-4 py-2.5 rounded-full mt-3">{h.megaPanels[item.panel].promo!.ctaLabel} →</a>
+                    </div>
+                  )}
+                  {h.megaPanels[item.panel].ctaLabel && <a href={h.megaPanels[item.panel].ctaHref} class="block text-brand-primary-deep font-bold mt-2">{h.megaPanels[item.panel].ctaLabel} →</a>}
                 </Fragment>
-              ))}
-              {h.megaPanels[item.panel].promo && (
-                <div class="ssf-promo rounded-xl p-4 mt-3.5 text-white">
-                  <div class="text-[9.5px] font-bold uppercase opacity-80">{h.megaPanels[item.panel].promo!.kw}</div>
-                  <p class="font-display text-[17px] font-extrabold mt-0.5">💎 {h.megaPanels[item.panel].promo!.title}</p>
-                  <div class="font-display text-2xl font-extrabold mt-1"><span class="text-xs font-medium opacity-85">{h.megaPanels[item.panel].promo!.priceEyebrow}</span> {h.megaPanels[item.panel].promo!.price}</div>
-                  <a href={h.megaPanels[item.panel].promo!.ctaHref} class="inline-flex items-center gap-1.5 bg-white text-brand-anchor font-bold text-[13px] px-4 py-2.5 rounded-full mt-3">{h.megaPanels[item.panel].promo!.ctaLabel} →</a>
-                </div>
               )}
-              <a href={h.megaPanels[item.panel].ctaHref} class="block text-brand-primary-deep font-bold mt-2">{h.megaPanels[item.panel].ctaLabel} →</a>
             </div>
           </div>
         </Fragment>

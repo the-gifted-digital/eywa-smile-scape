@@ -14,16 +14,18 @@ describe('pick', () => {
 });
 
 describe('getHeader', () => {
-  it('has both mega panels with the flagship first', () => {
+  it('exposes the four mega-menu panels in nav order', () => {
     const h = getHeader('th');
     const panels = h.nav.filter((n) => n.panel).map((n) => n.panel);
-    expect(panels).toEqual(['implant', 'services']);
-    expect(h.megaPanels.implant.promo).toBeTruthy();
+    expect(panels).toEqual(['about', 'services', 'technology', 'concerns']);
   });
-  it('marks unbuilt service links as soon', () => {
+  it('renders mega panels as empty placeholders for now (no columns yet)', () => {
     const h = getHeader('th');
-    const services = h.megaPanels.services.columns.flatMap((c) => c.links);
-    expect(services.some((l) => l.soon)).toBe(true);
+    for (const key of ['about', 'services', 'technology', 'concerns'] as const) {
+      expect(h.megaPanels[key].heading).toBeTruthy();
+      expect(h.megaPanels[key].placeholder).toBeTruthy();
+      expect(h.megaPanels[key].columns).toBeUndefined();
+    }
   });
 });
 
