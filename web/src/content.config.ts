@@ -1,4 +1,4 @@
-// SmileScape — Content Collections schema (Astro 4).
+// SmileScape — Content Collections schema (Astro 7 Content Layer).
 //
 // SKELETON shape. The fields mirror the content-plan sitemap 7-column model
 // (#/Page Name/Layer/Tier/Funnel/Page Type/Primary Entity) plus body content,
@@ -9,6 +9,7 @@
 // these collections from Supabase; until then, Markdown files are the source.
 
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // Sitemap taxonomy enums (kept loose as strings where the vocabulary is still wide).
 const tier = z.enum(['A', 'B', 'C', 'D']);
@@ -33,7 +34,9 @@ const faqItem = z.object({
 
 // ---------- Pages (service hubs, procedures, trust, nav) ----------
 const pages = defineCollection({
-  type: 'content',
+  // `!**/_*` preserves the legacy underscore-prefix "ignore this file" convention
+  // (the Content Layer glob loader, unlike legacy collections, loads them by default).
+  loader: glob({ pattern: ['**/*.{md,mdx}', '!**/_*'], base: './src/content/pages' }),
   schema: z.object({
     // Identity
     title: z.string(), // TH-first headline
@@ -68,7 +71,7 @@ const pages = defineCollection({
 
 // ---------- Articles (knowledge / blog / citation content) ----------
 const articles = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: ['**/*.{md,mdx}', '!**/_*'], base: './src/content/articles' }),
   schema: z.object({
     title: z.string(),
     title_en: z.string().optional(),
@@ -95,18 +98,22 @@ const imageRef = z.object({
 const cta = z.object({ label: z.string(), href: z.string() });
 
 const home = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.yaml', base: './src/content/home' }),
   schema: z.object({
     meta: z.object({ title: z.string(), description: z.string() }),
     hero: z.object({
       eyebrow: z.string(),
       title: z.string(),
+      titleAccent: z.string().optional(), // emphasized second line (coral highlighter)
       body: z.string(),
       primaryCta: cta,
       secondaryCta: cta,
       image: imageRef,
+      // Floating glass credibility cards over the portrait (above-the-fold trust)
+      badges: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+      microTrust: z.string().optional(), // reassurance line under the CTAs
     }),
-    trustBar: z.array(z.object({ label: z.string() })),
+    trustBar: z.array(z.object({ label: z.string(), icon: z.string().optional() })),
     pillars: z.array(z.object({ icon: z.string(), title: z.string(), body: z.string() })),
     blueDiamond: z.object({
       eyebrow: z.string(),
@@ -146,7 +153,7 @@ const assessmentRec = z.object({
   href: z.string().optional(), published: z.boolean().default(false),
 });
 const assessment = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.yaml', base: './src/content/assessment' }),
   schema: z.object({
     meta: z.object({ title: z.string(), description: z.string() }),
     ui: z.object({ progressLabel: z.string(), backLabel: z.string(), faqHeading: z.string() }),

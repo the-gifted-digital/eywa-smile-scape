@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
 
 // SmileScape Dental Clinic — Astro config.
@@ -28,9 +27,14 @@ export default defineConfig({
         locales: { th: 'th-TH', en: 'en-US', 'zh-cn': 'zh-CN' },
       },
     }),
-    tailwind({ applyBaseStyles: false }),
     partytown({ config: { forward: ['dataLayer.push'] } }),
   ],
+
+  // Tailwind v4 runs through PostCSS (postcss.config.mjs), NOT @tailwindcss/vite —
+  // the Vite plugin calls a classic-Vite API (createIdResolver) that Astro 7's
+  // Rolldown-based Vite doesn't implement. The @astrojs/tailwind integration was
+  // dropped (no Astro 6/7 support). The DTCG token bridge still lives in
+  // tailwind.config.mjs, loaded via `@config` in src/styles/global.css.
 
   build: { format: 'directory', inlineStylesheets: 'always', assets: '_astro' },
   compressHTML: true,

@@ -3,11 +3,40 @@
  * Brand font (Noto Sans Thai) is loaded via @fontsource in Base.astro.
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Explicit `/index.css` entry: Astro 7's Vite resolves the `@import` itself and
+ * doesn't honor the package's `style` export condition for the bare `tailwindcss`
+ * specifier, so we point at the real CSS file the package exposes. */
+@import 'tailwindcss/index.css';
+
+/* Keep the DTCG token bridge (tokens.json → tailwind.config.mjs). Tailwind v4 is
+ * CSS-first, but `@config` loads the existing JS config so the whole brand theme
+ * (colors / type / spacing / radius / shadow / motion / breakpoints) keeps
+ * resolving exactly as before. Path is relative to this file. */
+@config '../../tailwind.config.mjs';
+
+/* Tailwind v4 preflight compat: v4 changed the default border/divide color from
+ * gray-200 to `currentColor`. Restore the v3 default so un-colored borders across
+ * the component library don't suddenly inherit text color. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, #e5e7eb);
+  }
+}
 
 @layer base {
+  /* Tailwind v4 preflight compat: v4 sets `<button>` cursor to `default`
+   * (browser default) instead of v3's `pointer`. Restore pointer on enabled
+   * buttons so the language switcher, mobile drawer toggle, quiz controls, etc.
+   * still feel clickable. */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

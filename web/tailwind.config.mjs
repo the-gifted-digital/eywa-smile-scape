@@ -78,8 +78,17 @@ export default {
       spacing: palette(tokens.spacing),
       screens: palette(tokens.breakpoint),
       maxWidth: palette(tokens.layout.maxWidth),
-      borderRadius: palette(tokens.radius),
-      boxShadow: palette(tokens.shadow),
+      // Token scales define sm/md/lg/etc. Tailwind v4 renamed the *bare* utilities
+      // (`rounded`→`rounded-sm`, `shadow`→`shadow-sm`, `blur`→`blur-sm`) and drops
+      // the old bare/`-sm` keys. We restore the v3 values for the bare + `-sm`
+      // names still used across the component library, so the upgrade is visually
+      // a no-op. Remove these once components are migrated to the v4 names.
+      borderRadius: { DEFAULT: '0.25rem', ...palette(tokens.radius) },
+      boxShadow: {
+        DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+        ...palette(tokens.shadow),
+      },
+      blur: { DEFAULT: '8px', sm: '4px' },
       transitionDuration: palette(tokens.motion.duration),
       transitionTimingFunction: palette(tokens.motion.ease),
     },
