@@ -68,3 +68,13 @@ Steps run (all via MCP, idempotent SQL committed):
 `06_pages.sql` also regenerated from R26 (was built from pre-review sitemap) so the file set now reproduces the canonical state from scratch: 00→06→06b→10→11→12→13.
 
 ### Residual (Phase F, unchanged): page_type/slug/seo_title/target_keyword_fp still deferred; keyword enrichment via DFS = Stage-1-Gate.
+
+## 2026-07-09 (cont) — Wave 4 (partial): page_type SEMANTIC derivation + column-semantics fix
+
+**Column-meaning traced to source.** `page_type` was being conflated with the A/B/C/D tier. Original schema dict `archive/Schema_Overview_EYWA_v1_8.md` settles it: L992/L1143 `node_tier` = tier A/B/C/D (CHECK); L995 `page_type` = SEMANTIC category ('pillar'/'service'/'doctor_profile'/…). Current spec v1_23 agrees. **So the sitemap's "Page Type" A/B column is a legacy placeholder — NOT the DB page_type.** (Federation data bug found: VTH BioDent stored tier letters in `page_type`, 696 rows → flagged for re-derivation, not ours to fix here.)
+
+- **`14_page_type.sql`** — derived `page_type` for all 722 SmileScape pages from entity_type + section + hub/leaf (deterministic, DFS-independent). Distribution: knowledge_article 163 · service_page 222 · condition_pillar 109 · technology_page 67 · evidence_case 38 · supporting 36 · procedure_pillar 33 · about 23 · local_landing 12 · pillar 9 · doctor_profile 6 · branch_landing 2 · home 1 · contact 1. **722/722.**
+- **Live `COMMENT ON COLUMN`** added to GTGT `seo_website_page_master` (page_type, node_tier, schema_markup_type, page_intent_type) so any brand inspecting the DB sees the correct semantics — migration `clarify_page_master_column_semantics_page_type_vs_node_tier`.
+- **Protocol updated + pushed** (eywa-protocol-spec `538c584`): Schema_Overview v1_23 "Page taxonomy" now spells out page_type vs node_tier vs node_tier_strategy as three independent axes + the VTH bug note.
+
+### Still Phase F (unchanged): slug / seo_title / target_keyword_fp / internal-links / page↔citations. DFS keyword batch = Stage-1 Gate.
