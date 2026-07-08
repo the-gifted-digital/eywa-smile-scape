@@ -38,3 +38,17 @@ relationships (edge-vocab + evidence) · page↔citation + internal-links (Phase
 - Citations: 93 parsed; 2 DOIs already in shared pool (`10.1016/j.jdent.2019.03.008`, `10.1111/j.1600-0501.2012.02546.x`) → **91 net-new**. `citation_type` mostly `other` (bare grade letters / `—` / retrospectives) — Phase F enrich. Only 11 of 93 carry a DOI (md DOI/URL column sparse).
 - Keywords: 525 unique (after dropping 21 `[service]`/`[BRAND]`/`[condition]` template placeholders). Source doc claimed ~680 (loose).
 - Source counts vs handover: entities **163** (not 166/167); pages **722 unique** (not 726).
+
+## 2026-07-09 — Wave 1+2 backfill (post-review) + page-node divergence FOUND
+
+Continues the flat-load. Files: `11_relationships.sql`, `12_pages_enrich.sql`, `gen_relationships.py`, `gen_pages_enrich.py`, `BACKFILL-PLAN.md`.
+
+- **Entities (delta):** +3 R18/R22 entities that missed the 2026-06-07 load (`dental-scaling`, `frenectomy`, `oral-pathology`) + procedure ext. +orphan resolve: `orthodontic-intervention` (3 pages) remapped → shared `orthodontic-treatment` (EUG reuse). Graph now clean for those pages.
+- **Wave 1 — `seo_entity_relationships`:** +255 edges inserted (263 parsed from `content-plan/relationships.md`; 8 pre-existing universal skipped). 181 universal + 74 ss-scoped. FK orphan 0/0. Grand total 833→1088 (+255 only; no other-brand rows touched). Fixed source bug: `endodontics-specialist` (cluster slug) → `endodontist` (entity) in relationships.md.
+- **Wave 2 — `seo_website_page_master` structural:** node_tier + funnel_stage (from R26 sitemap) + sitemap_section + crawl_depth + parent_page_fp (derived in-SQL from sitemap_node_id). **Updated 667 / 722.** Tier A baseline = 14 (≈2.1%, pre-DFS).
+  - Correction to BACKFILL-PLAN assumption: sitemap Funnel column is NOT `—`/TBD — it carries real top/mid/bottom per row → loaded. Page Type column is placeholder (`A` for 651/722) → still skipped for Phase F.
+
+### ⚠️ FINDING — page-node divergence (55 rows), needs Wave 2b reconciliation
+The 2026-06-07 page load ran from the PRE-review sitemap (branch `sitemap-review-r18-21` R18–R26 was only merged to main 2026-07-09). Result: **55 DB page rows carry stale pre-R18/R22 node IDs** that no longer exist in the canonical R26 sitemap, and **55 canonical R26 nodes have no DB row** (symmetric). Examples of stale DB-only: `3.5.8.x` (Orthognathic — R22 moved to 3.10.8.x), `3.4.5/3.4.7.x` (whitening pre-R19), `3.6.1.x` (scaling long-tail), `3.9.7–13`, `6.2`, `6.2.5.10`. Full list: `/tmp/db_nodes.txt` (session-local) / re-derivable via `node_tier is null` after Wave 2.
+- These 55 were NOT enriched (correctly — they map to different content now). NOT fabricated.
+- **Recommended Wave 2b (needs operator OK — involves DELETE):** delete the 55 stale SS page rows (no dependents: SS has 0 page_citations / 0 internal_links), then re-run `06_pages.sql` (idempotent) to insert the 55 new R26 nodes as stubs, then re-run `12_pages_enrich.sql` → 722/722. Safe because content moved, not just renumbered — a pure rename would mis-map entities.
