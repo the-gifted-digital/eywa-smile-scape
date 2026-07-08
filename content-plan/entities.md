@@ -12,7 +12,7 @@
 
 | Type | Count | Notes |
 |------|-------|-------|
-| Treatment | 39 | + 1 R11 (direct-print-clear-aligner Signature #6) |
+| Treatment | 40 | + 1 R11 (direct-print-clear-aligner Signature #6) + orthodontic-treatment (R27 shared reuse) |
 | Procedure | 52 | + dental-scaling (R18) + frenectomy + oral-pathology (R22) + peri-implantitis-treatment et al. (R3) |
 | Condition | 27 | + 11 R5 concerns (dental-caries, white-spot-lesion, root-caries, dental-abscess, bruxism, tmj-disorder, halitosis, xerostomia, tooth-fracture, dry-socket, pregnancy-gingivitis) |
 | Product | 9 | (unchanged R3) |
@@ -21,7 +21,7 @@
 | Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
 | Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
-| **Total** | **166** | (R22: +frenectomy +oral-pathology = 166. R18: +dental-scaling = 164. R13 recount: 163 rows) |
+| **Total** | **167** | (R27: +orthodontic-treatment shared reuse = 167. R22: +frenectomy +oral-pathology = 166. R18: +dental-scaling = 164. R13 recount: 163 rows) |
 
 ---
 
@@ -237,6 +237,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 11 | Aligner Attachment | aligner-attachment | Device | MedicalDevice | clear-aligner | — | Mature | 3.10.1.5 | attachment, composite attachment, aligner button | ['*'] | Composite tooth-bonded buttons for thermoformed aligner retention. R11 Direct Print uses FEWER of these due to built-in features |
 | 12 | 3D Printer (Aligner) | 3d-printer-aligner | Device | MedicalDevice | in-house-aligner-lab | — | Growing | 4.6.0.1 | Asiga Pro4K, SprintRay Pro95, Formlabs Form 3B+, dental 3D printer | ['smile-scape'] | Photopolymer 3D printer for direct-print aligner. Specific model TBD operator confirm |
 | 13 | Thermoformed Aligner | thermoformed-aligner | Concept | MedicalProcedure | clear-aligner | — | Mature | 3.10.1.4 | thermoformed aligner, vacuum-formed aligner, traditional aligner, Invisalign-style aligner | ['*'] | Traditional aligner production: thermoform plastic over 3D-printed model. Used by Invisalign, TrioClear, ClearCorrect. Comparison anchor for Direct Print differentiation content |
+| 14 | Orthodontic Treatment | orthodontic-treatment | Treatment | MedicalProcedure | — | M26.4 | Mature | 3.10.4 | จัดฟัน, orthodontics, braces, จัดฟันเหล็ก, จัดฟันผู้ใหญ่ | ['*'] | R27 (2026-07-09): shared universal entity — already in federation graph; adopted per EUG (Search Before Create) to resolve R17 orphan `orthodontic-intervention` (3.10.4/.5/.7 remapped) |
 
 ---
 

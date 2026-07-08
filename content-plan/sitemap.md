@@ -492,10 +492,10 @@
 | | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape มีทั้ง PSL + ASL (R17 confirmed). brand: Damon @ Tech 4.6.3 (ลิงก์กลับหน้านี้) | | — | — | — |
 | 3.10.3.1 | → → Passive Self-Ligating (PSL) — Metal vs Ceramic Options ★ 🌟 (R17: metal/ceramic detail = in-page sections) | L2 | C | mid | A | passive-self-ligating |
 | 3.10.3.2 | → → Active vs Passive Self-Ligating — เปรียบเทียบ (2 ตัวเลือกจริงที่คลินิกมี) | L2 | D | mid | D | passive-self-ligating |
-| 3.10.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | orthodontic-intervention |
-| 3.10.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | orthodontic-intervention |
+| 3.10.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | orthodontic-treatment |
+| 3.10.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | orthodontic-treatment |
 | 3.10.6 | → จัดฟันก่อนทำรากฟันเทียม — Ortho + Implant Sequencing 🌟 | L6 | C | mid | A | ortho-implant-sequencing |
-| 3.10.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | orthodontic-intervention |
+| 3.10.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | orthodontic-treatment |
 | 3.10.8 | → จัดฟันร่วมผ่าตัดเลื่อนขากรรไกร — Orthognathic Surgery Program 🌟 (hub) | L2 | B | mid | A | orthognathic-surgery |
 | | → → **R17 delivery model:** SmileScape-managed program — คลินิกเป็นเจ้าของ pre/post-surgical ortho + digital planning + coordination ครบวงจร / การผ่าตัดทำโดย affiliated OMFS @ partner hospital. **⚠️ Phase F compliance guardrail:** นำเสนอเป็น "โปรแกรมที่ SmileScape ดูแลครบวงจร" — ห้าม claim ผ่าใน OR ตัวเอง (พ.ร.บ.สถานพยาบาล + สบส. + Google YMYL/E-E-A-T) | | — | — | — |
 | 3.10.8.1 | → → ใครเหมาะ — Class III / Class II Severe / Skeletal Asymmetry | L2 | C | mid | D | orthognathic-surgery |
