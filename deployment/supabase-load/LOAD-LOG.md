@@ -52,3 +52,19 @@ Continues the flat-load. Files: `11_relationships.sql`, `12_pages_enrich.sql`, `
 The 2026-06-07 page load ran from the PRE-review sitemap (branch `sitemap-review-r18-21` R18–R26 was only merged to main 2026-07-09). Result: **55 DB page rows carry stale pre-R18/R22 node IDs** that no longer exist in the canonical R26 sitemap, and **55 canonical R26 nodes have no DB row** (symmetric). Examples of stale DB-only: `3.5.8.x` (Orthognathic — R22 moved to 3.10.8.x), `3.4.5/3.4.7.x` (whitening pre-R19), `3.6.1.x` (scaling long-tail), `3.9.7–13`, `6.2`, `6.2.5.10`. Full list: `/tmp/db_nodes.txt` (session-local) / re-derivable via `node_tier is null` after Wave 2.
 - These 55 were NOT enriched (correctly — they map to different content now). NOT fabricated.
 - **Recommended Wave 2b (needs operator OK — involves DELETE):** delete the 55 stale SS page rows (no dependents: SS has 0 page_citations / 0 internal_links), then re-run `06_pages.sql` (idempotent) to insert the 55 new R26 nodes as stubs, then re-run `12_pages_enrich.sql` → 722/722. Safe because content moved, not just renumbered — a pure rename would mis-map entities.
+
+## 2026-07-09 (cont) — Wave 2b DONE: full page-node reconciliation to R26
+
+Executed the reconciliation. Turned out BIGGER than the initial 55-row finding: R18–R22 didn't just add/remove nodes, it **reordered whole Section-3 categories** (e.g. 3.4 Cosmetic→General, 3.5 Ortho→Restorative, 3.6→Endo, 3.9↔3.11, 3.10 Sedation→Ortho, 3.12→Sedation). Many node NUMBERS survived while their CONTENT moved.
+
+Steps run (all via MCP, idempotent SQL committed):
+1. **DELETE 55 stale** rows (nodes vanished from R26; 0 dependents) — `node_tier is null` after Wave 2 = exact stale set.
+2. **`06b_pages_delta.sql`** — insert the 55 NEW R26 nodes as stubs (regenerated from R26 sitemap; entities pre-verified present). → 722 rows, 722 with entity.
+3. **re-run `12_pages_enrich.sql`** → 722/722 node_tier + funnel + section + crawl_depth; parent 647.
+4. **`13_pages_resync.sql`** — resync page_name + primary_entity_fp for **127 surviving-but-moved nodes** (77 entity changes + 106 name changes, union 127) to canonical R26; then re-derive cluster.
+
+**Final state (validated): 722 pages · orphan_entity 0 · cluster 722/722 · tier 722/722 · Deezy 690 untouched.** Section counts match R26 header exactly: §1=1 §2=26 §3=242 §4=44 §5=193 §6=163 §7=38 §8=15.
+
+`06_pages.sql` also regenerated from R26 (was built from pre-review sitemap) so the file set now reproduces the canonical state from scratch: 00→06→06b→10→11→12→13.
+
+### Residual (Phase F, unchanged): page_type/slug/seo_title/target_keyword_fp still deferred; keyword enrichment via DFS = Stage-1-Gate.
