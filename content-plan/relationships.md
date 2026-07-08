@@ -238,7 +238,7 @@
 | densah-bur | related_to | smilescape-dental-clinic | Yes | Signature Offering #5 anchor — SmileScape brand-specific tool |
 | black-triangle | related_to | gum-recession | Yes | Both are recession-related aesthetic concerns — link Section 5.11 concerns |
 | pediatric-dentistry | related_to | early-orthodontic-intervention | Yes | Pediatric → interceptive ortho commonly co-managed |
-| endodontics-specialist | related_to | apicoectomy | Yes | Surgical endo specialty subset |
+| endodontist | related_to | apicoectomy | Yes | Surgical endo specialty subset (R27: was cluster-slug endodontics-specialist → entity endodontist) |
 | dental-anxiety | related_to | conscious-sedation | Yes | Anxiety = primary indication for sedation referral |
 | dental-anxiety | related_to | ga-dentistry | Yes | Severe phobia → GA dentistry pathway |
 
