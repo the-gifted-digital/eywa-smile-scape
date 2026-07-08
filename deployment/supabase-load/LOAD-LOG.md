@@ -78,3 +78,15 @@ Steps run (all via MCP, idempotent SQL committed):
 - **Protocol updated + pushed** (eywa-protocol-spec `538c584`): Schema_Overview v1_23 "Page taxonomy" now spells out page_type vs node_tier vs node_tier_strategy as three independent axes + the VTH bug note.
 
 ### Still Phase F (unchanged): slug / seo_title / target_keyword_fp / internal-links / page↔citations. DFS keyword batch = Stage-1 Gate.
+
+## 2026-07-09 (cont) — Wave 5: internal-link graph (DR-021) — 2306 planned links
+
+**`15_internal_links.sql`** — deterministic structural link graph (no DFS, no content drafting; all `status='planned'`, `implemented=false`, anchor_text = target page_name, refined to authored anchors at Phase F). Mirrors VTH BioDent's model.
+- **L1 breadcrumb 1580** — each page → every ancestor (recursive on parent_page_fp) + home. role=primary_hub, pri 9.
+- **L2 hub→spoke 660** — parent → each direct child (647) + 13 orphan-closers. role=cluster_spoke, pri 7.
+- **L3 curated cross-cluster 66** — the operator's "→ link X.Y" annotations parsed from sitemap.md (100% resolved). role=cross_cluster, pri 6.
+- **L4 orphan-close** — 13 top-level pages (2.4/2.5/4.1/4.8/5.22/6.2.6.x/6.2.7.x/7.1/8.1 — parent is a non-materialized section root) linked from nearest existing ancestor (else home).
+
+**Validated: 2306 links · FK 0 bad from/to · orphans 0 (every page ≥1 inbound) · avg inbound 3.2/page · home_inbound 721 · auto-reciprocal flagged 1294 · VTH 4901 + Deezy 4197 untouched.**
+
+Deferred to Phase F: authored topical anchor_text variants + full contextual body links (entity-relationship-derived cross-links from the 255 edges can seed more) + flip status planned→live at publish.
