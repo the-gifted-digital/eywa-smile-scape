@@ -126,7 +126,7 @@
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
-| 2.2.3 | → ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว) — Co-Founder & [Specialty TBD] | L1 | B | mid | A | smilescape-dental-clinic |
+| 2.2.3 | → ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว) — Co-Founder & [Specialty TBD] | L1 | B | mid | A | dr-pitchapa-phudphong |
 - Education & Credentials — การศึกษาและวุฒิบัตร
 - Clinical Specialty & Approach — ความเชี่ยวชาญและแนวทางรักษา
 - บทบาทในคลินิก

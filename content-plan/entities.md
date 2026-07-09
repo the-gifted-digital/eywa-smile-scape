@@ -20,7 +20,7 @@
 | Anatomy | 6 | (unchanged) |
 | Device | 16 | + 3 R11 (photopolymer-resin-tc85 + aligner-attachment + 3d-printer-aligner) |
 | Organization | 3 | (unchanged) |
-| Person | 2 | + dr-tomas-linkevicius (R3 — external authority anchor) |
+| Person | 3 | + dr-tomas-linkevicius (R3) + dr-pitchapa-phudphong (R28 — หมอแพรว, was author-only) |
 | **Total** | **167** | (R27: +orthodontic-treatment shared reuse = 167. R22: +frenectomy +oral-pathology = 166. R18: +dental-scaling = 164. R13 recount: 163 rows) |
 
 ---
@@ -419,6 +419,7 @@ Valid types — spec 15-type master list (Title Case in planning files; maps 1:1
 | 7 | SmileScape สาขาศรีนครินทร์ | smilescape-srinakarin | Organization | Dentist | smilescape-dental-clinic | — | Growing | 8.3 | สาขาศรีนครินทร์, SmileScape Srinakarin, SmileScape สวนหลวง ร.9, MRT สีเหลือง | ['smile-scape'] | Primary branch. Transit: MRT สีเหลือง. Full address/GPS/phone TBD. See `branches.md`. schema:LocalBusiness + Dentist |
 | 8 | Zero Bone Loss Concept | zero-bone-loss-concept | Concept | — | smilescape-dental-clinic | — | Growing | 2.1.6 | Zero Bone Loss, ZBL Protocol, Linkevicius Protocol, ZBL Concept | ['smile-scape'] | Brand clinical framework (R3). Authority: Dr. Tomas Linkevicius (Lithuania, 2009+ research, 2019 Quintessence textbook). Pairs with SMILE DNA + Family Standard as brand triad. Subcrestal placement / platform switching / tissue-level abutment / cement-screw retention / KM ≥2mm / maintenance protocol. Pending operator: หมอแฮม Linkevicius training credential. DFS volume: zero bone loss concept 20/mo (E-E-A-T anchor, not traffic target) |
 | 9 | Dr. Tomas Linkevicius | dr-tomas-linkevicius | Person | Physician | — | — | Mature | — | Tomas Linkevicius, Linkevicius, Linkevichus, Vilnius Implant | ['*'] | External authority anchor — Lithuanian implant specialist, author "Zero Bone Loss Concept" (Quintessence 2019). Referenced for E-E-A-T in implant content. DFS: linkevicius 10/mo TH |
+| 10 | Dr. Pitchapa Phudphong | dr-pitchapa-phudphong | Person | Physician | smilescape-dental-clinic | — | Growing | 2.2.3 | หมอแพรว, ทพญ. พิชชาภา ผุดผ่อง, Dr. Praew, Specialist Oral & Maxillofacial Surgeon SmileScape, Co-CEO | ['smile-scape'] | R28 (2026-07-09): Co-CEO & Co-Founder, Specialist OMS — Thai Board of Oral & Maxillofacial Surgery Diploma (2023), CMU DDS. Zygomatic implants + full-arch + GBR. Faculty TG-BIC + special lecturer Univ. of Phayao. Was author-only; now Person entity + linked to doctor_assignment + page 2.2.3 |
 
 ---
 
