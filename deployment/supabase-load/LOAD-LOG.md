@@ -90,3 +90,12 @@ Steps run (all via MCP, idempotent SQL committed):
 **Validated: 2306 links · FK 0 bad from/to · orphans 0 (every page ≥1 inbound) · avg inbound 3.2/page · home_inbound 721 · auto-reciprocal flagged 1294 · VTH 4901 + Deezy 4197 untouched.**
 
 Deferred to Phase F: authored topical anchor_text variants + full contextual body links (entity-relationship-derived cross-links from the 255 edges can seed more) + flip status planned→live at publish.
+
+## 2026-07-09 (cont) — Wave 6: node_tier_strategy + schema_markup_type · Wave 7 finding
+
+**`16_page_strategy_schema.sql`** — two deterministic page_master fields (722/722):
+- `node_tier_strategy` (hub/leaf role): spoke 613 · pillar 62 · hub 34 · supporting 13.
+- `schema_markup_type` (schema.org primary type from page_type): MedicalProcedure 255 · Article 201 · MedicalCondition 109 · MedicalDevice 67 · WebPage 37 · AboutPage 23 · Dentist 14 · MedicalWebPage 9 · Physician 6 · ContactPage 1. NOTE live col is single `text`, not `text[]` (drift from v1_8).
+
+### Wave 7 (`seo_page_citations`) — RE-SCOPED to Phase F (was mis-estimated as deterministic)
+Investigation: 0 edges carry `edge_evidence_citation` FK; only ~23 `evidenced_by` entity edges exist, citing pillar codes (P2-C2, P15…) as FREE TEXT + raw PMIDs; citation_slug uses pillar codes (p2-c2) so a crosswalk is *possible* but sparse + fragile. Decisive: **`content-plan/citation-pool-seed.md` itself scopes page↔citation linking to "Phase F step 3 — per-page depth research during content writing"**, and a `seo_page_citations` row requires `citation_purpose` + `supports_claim` + anchor (content-briefing outputs). The Stage-1 evidence layer is correctly the 23 `evidenced_by` ENTITY edges (already in `seo_entity_relationships`). → **`seo_page_citations` stays empty until Phase F. Not force-filled.**
