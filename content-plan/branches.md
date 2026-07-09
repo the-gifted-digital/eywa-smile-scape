@@ -28,41 +28,45 @@
 
 ### smilescape-rattanathibet
 
+> **NAP verified from Google Business Profile — 2026-07-09** (share.google/J4Z732WoNtZfWgBYG). Loaded to `seo_branches`.
+
 | Field | Value | Status |
 |-------|-------|--------|
 | `business_name_legal` | TBD (จะใส่ชื่อจดทะเบียน DBD) | Operator action |
-| `business_name_brand` | SmileScape สาขารัตนาธิเบศร์ | ✅ Set |
-| `street_address` | TBD | Operator action |
-| `address` (free-form) | TBD | Operator action |
-| `district` (แขวง/ตำบล) | TBD | Operator action |
-| `city` (จังหวัด/อำเภอ) | นนทบุรี | ✅ Set |
+| `business_name_brand` | SmileScape Dental Clinic สาขารัตนาธิเบศร์ | ✅ Set |
+| `street_address` | 401, 403 ถนนรัตนาธิเบศร์ | ✅ GBP |
+| `address` (free-form) | 401, 403 ถนนรัตนาธิเบศร์ ตำบลบางกระสอ อำเภอเมืองนนทบุรี | ✅ GBP |
+| `district` (แขวง/ตำบล) | บางกระสอ | ✅ GBP |
+| `city` (จังหวัด/อำเภอ) | เมืองนนทบุรี | ✅ GBP |
 | `region` (ภาค) | นนทบุรี | ✅ Set |
 | `country_code` | TH | ✅ Set |
-| `postal_code` | TBD | Operator action |
-| `formatted_address` | TBD (auto-computed from Google geocoding) | Stage 1.5 |
-| `phone` | TBD (E.164 format: +66...) | Operator action |
+| `postal_code` | 11000 | ✅ GBP |
+| `formatted_address` | 401, 403 ถนนรัตนาธิเบศร์ ตำบลบางกระสอ อำเภอเมืองนนทบุรี นนทบุรี 11000 | ✅ GBP |
+| `phone` | +66 92 293 6226 | ✅ GBP |
 | `email` | TBD | Operator action |
 | `line_id` | TBD (LINE OA ID) | Operator action |
-| `website_url` | https://smilescapeclinic.com/รัตนาธิเบศร์ | ✅ Set |
+| `website_url` | https://smilescapeclinic.com | ✅ GBP (apex) |
 
 ### smilescape-srinakarin
 
+> **NAP verified from Google Business Profile — 2026-07-09** (share.google/94nmxV2iZNhvLhUiH). Loaded to `seo_branches`.
+
 | Field | Value | Status |
 |-------|-------|--------|
 | `business_name_legal` | TBD (จะใส่ชื่อจดทะเบียน DBD) | Operator action |
-| `business_name_brand` | SmileScape สาขาศรีนครินทร์ | ✅ Set |
-| `street_address` | TBD | Operator action |
-| `address` (free-form) | TBD | Operator action |
-| `district` (แขวง/ตำบล) | TBD (อาจเป็นสวนหลวง ร.9 area) | Operator action |
-| `city` | กรุงเทพมหานคร | ✅ Set |
+| `business_name_brand` | SmileScape Dental Clinic สาขาศรีนครินทร์ | ✅ Set |
+| `street_address` | 1, 7 โครงการ ซอยหมู่บ้านแกรนด์ เดอ วิลล์ | ✅ GBP |
+| `address` (free-form) | 1, 7 โครงการ ซอยหมู่บ้านแกรนด์ เดอ วิลล์ แขวงหนองบอน เขตประเวศ | ✅ GBP |
+| `district` (แขวง/ตำบล) | หนองบอน | ✅ GBP |
+| `city` | ประเวศ | ✅ GBP |
 | `region` | กรุงเทพมหานคร | ✅ Set |
 | `country_code` | TH | ✅ Set |
-| `postal_code` | TBD | Operator action |
-| `formatted_address` | TBD | Stage 1.5 |
-| `phone` | TBD | Operator action |
+| `postal_code` | 10250 | ✅ GBP |
+| `formatted_address` | 1, 7 โครงการ ซอยหมู่บ้านแกรนด์ เดอ วิลล์ แขวงหนองบอน เขตประเวศ กรุงเทพมหานคร 10250 | ✅ GBP |
+| `phone` | +66 63 649 5396 | ✅ GBP |
 | `email` | TBD | Operator action |
 | `line_id` | TBD | Operator action |
-| `website_url` | https://smilescapeclinic.com/ศรีนครินทร์ | ✅ Set |
+| `website_url` | https://smilescapeclinic.com | ✅ GBP (apex) |
 
 ---
 
@@ -70,8 +74,8 @@
 
 | Branch | Latitude | Longitude | Plus Code | Transit |
 |--------|----------|-----------|-----------|---------|
-| smilescape-rattanathibet | TBD | TBD | TBD | MRT สีม่วง สถานีรัตนาธิเบศร์ |
-| smilescape-srinakarin | TBD | TBD | TBD | MRT สีเหลือง (สวนหลวง ร.9) |
+| smilescape-rattanathibet | 13.8528902 | 100.5233113 | G3QF+QP | MRT สีม่วง สถานีรัตนาธิเบศร์ |
+| smilescape-srinakarin | 13.7031 | 100.617 | 7C5J+W5 | MRT สีเหลือง (สวนหลวง ร.9) |
 
 > `geo_point` = PostGIS computed from lat/lng. `plus_code` from Google geocoding API.
 
@@ -85,9 +89,9 @@
 {
   "@type": "OpeningHoursSpecification",
   "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-  "opens": "TBD",
-  "closes": "TBD",
-  "_note": "Operator confirmation pending. TH dental clinic norm 09:00-20:00; many close 1 weekday."
+  "opens": "per branch — see below",
+  "closes": "per branch — see below",
+  "_note": "GBP-verified 2026-07-09: รัตนาธิเบศร์ 10:00–20:00 daily (7d); ศรีนครินทร์ 10:30–20:00 daily (7d). Both open all week."
 }
 ```
 
@@ -146,7 +150,7 @@ Both branches offer the universal SmileScape service catalog. Slugs reference `e
 | smilescape-rattanathibet | TBD (likely both founders + visiting specialists) | Operator action — confirm rotation |
 | smilescape-srinakarin | TBD (likely both founders + visiting specialists) | Operator action — confirm rotation |
 
-> Currently mapped doctors in `entities.md`: `dr-woraphat-jarangkul` (หมอแฮม). Co-Founder `ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)` pending entity creation (Stage 1.5).
+> Currently mapped doctors in `entities.md`: `dr-woraphat-jarangkul` (หมอแฮม). Co-Founder `ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว)` → entity `dr-pitchapa-phudphong` created + loaded 2026-07-09.
 
 ### `equipment_at_branch_fps[]` (FK → `seo_entity_graph.fingerprint` type=device)
 
@@ -165,12 +169,13 @@ Both branches assumed equipped with:
 
 | Field | smilescape-rattanathibet | smilescape-srinakarin | Status |
 |-------|--------------------------|-----------------------|--------|
-| `gbp_place_id` | TBD | TBD | Operator action — GBP registration |
+| `gbp_place_id` | ChIJfs2aP5tPazsRhyIUDuzx2Cw | ChIJ67n4qsoVHTERFRL5aFg2tJ4 | ✅ GBP 2026-07-09 |
 | `gbp_account_id` | TBD | TBD | Operator action |
 | `gbp_categories[]` | ["Dental Implants Periodontist", "Dental Clinic", "Cosmetic Dentist"] | (same) | Proposed default; operator to confirm |
-| `gbp_review_count` | 0 (initial) | 0 (initial) | Auto-synced via Flow E1 every 6h |
-| `gbp_avg_rating` | NULL | NULL | Auto-synced |
+| `gbp_review_count` | 773 (snapshot 2026-07-09) | 141 (snapshot 2026-07-09) | Auto-synced via Flow E1 every 6h |
+| `gbp_avg_rating` | 4.9 | 4.8 | ✅ GBP snapshot |
 | `gbp_last_synced_at` | NULL | NULL | Set by Flow E1 first run |
+| `cid` / `kgmid` | — | 0x311d61812e6d114d:0xbf165039d307ee07 / /g/11qp2yrl3r | ✅ GBP (srinakarin) |
 
 ---
 
