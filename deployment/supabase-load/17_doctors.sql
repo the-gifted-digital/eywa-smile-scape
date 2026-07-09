@@ -31,8 +31,14 @@ update public.seo_website_page_master p set
   cluster_id = (select topic_cluster_id from public.seo_entity_graph where entity_fingerprint='dr-pitchapa-phudphong')
 where p.page_fingerprint='smilescape-2.2.3';
 
+-- 4) หมอแฮม board_certifications: null -> [] (verified none — CV shows OMS Certificate + dual M.Sc.,
+--    no Thai Board diploma; distinct from หมอแพรว who holds the Thai Board OMFS Diploma 2023).
+update public.seo_authors_reviewers set board_certifications='[]'::jsonb
+where fingerprint='auth_9D1AD1694B2A4544' and board_certifications is null;
+
 -- validation
 select
  (select count(*) from public.seo_entity_graph where entity_type='person' and 'smile-scape-clinic'=any(brand_scope)) ss_person_entities,
+ (select count(*) from public.seo_authors_reviewers where brand_scope=array['smile-scape-clinic'] and board_certifications is null) ss_authors_null_board,
  (select count(*) from public.seo_doctor_assignments where brand_id='c93a5e7b-bed3-4b10-8ffa-11cf9fbbaf25' and author_fp is null) assignments_null,
  (select count(*) from public.seo_website_page_master where page_fingerprint like 'smilescape-%' and page_type='doctor_profile') doctor_profile_pages;

@@ -109,3 +109,8 @@ Resolved the long-standing "หมอแพรว = author-only" gap (she had a 
 - entities.md (#10, Person 2→3) + sitemap.md 2.2.3 synced on `main` (commit 47e9bd4).
 
 Author rows: both founders already carried full name / canonical_names / credential_types / specialties / primary_specialty / bio / short_bio (แพรว also board_certifications). CV rich data (education/publications/awards/experience) has no author-table columns — it lives in `web/src/data/doctors.json` for the T9 doctor-profile PAGE (Phase F render). **Still operator-pending:** `medical_license_number` (not in CV source), `photo_url`, `email` (personal only — must not publish per doctors.json _meta warning). หมอแฮม `board_certifications` genuinely empty (M.Sc. + certificates, no board diploma).
+
+## 2026-07-09 (cont) — Wave 8b: board-cert re-verify + .md/json back-fill
+- **หมอแฮม board_certifications re-checked** against full CV (`docs/team/dr-worapat-jarangkul.md`): confirmed **no board diploma** — highest OMS credential is a *Certificate* in Oral & Maxillofacial Surgery (Chulalongkorn 2018) + dual M.Sc. (Mahidol + Duisburg-Essen). Set `board_certifications` null → `[]` (verified-empty, distinct from unknown). หมอแพรว keeps her Thai Board OMFS Diploma (2023). 0 SS authors now null-board.
+- **Back-filled source files:** `web/src/data/doctors.json` — added `"entities_slug": "dr-pitchapa-phudphong"` to หมอแพรว (mirrors หมอแฮม, marks her registered entity). `docs/team/README.md` — added SEO-entity registration note + board-cert clarification. (These previously-untracked source-of-truth files are now committed.)
+- Per operator (2026-07-09): `medical_license_number` = skip (not blocking) · `photo_url` = to follow.

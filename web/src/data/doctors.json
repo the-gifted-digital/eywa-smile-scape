@@ -1,0 +1,255 @@
+{
+  "_meta": {
+    "doc": "SmileScape — doctor / team profile data, extracted verbatim from the doctors' official CVs (docs/CV Dr/, 14 bilingual pages). Source of truth for team pages, Physician schema.org markup, About page, and author/E-E-A-T bylines.",
+    "source": "docs/CV Dr/CV docter3 [Recovered]-01..14.jpg",
+    "extracted_at": "2026-06-07",
+    "language_note": "Fields ending _en are English (per CV English pages); _th are Thai (per CV Thai pages). Thai-year (พ.ศ./BE) values from the CV were converted to CE in the *_en lists (BE = CE + 543).",
+    "contact_warning": "phone / email / personal_address fields are the PERSONAL contact details printed on each CV — NOT the clinic NAP. Do NOT publish as clinic contact. Clinic NAP lives in brand-config.json + content-plan/branches.md (Rattanathibet / Srinakarin). Confirm with each doctor before surfacing any personal detail publicly.",
+    "discrepancies": [
+      "Name spelling: CV English reads 'Worapat Jarangkul'. The existing SEO entity registry (content-plan/entities.md, brand-config.json) uses slug 'dr-woraphat-jarangkul' (Woraphat). Slug kept for URL/entity continuity; display name follows the CV ('Worapat').",
+      "Dr. Pitchapa — Thai education page (CV image 10) additionally lists 3 training items that also appear on Dr. Worapat's CV (Tachakorn Regeneration Course; FMR & TMD: Beyond the Teeth; International Full Arch Summit 2026). The English page (image 05) does NOT list them. Likely a layout copy-paste artifact — VERIFY with the doctors before publishing. The English list is treated as authoritative here."
+    ]
+  },
+
+  "doctors": [
+    {
+      "slug": "dr-woraphat-jarangkul",
+      "entities_slug": "dr-woraphat-jarangkul",
+      "nickname_th": "หมอแฮม",
+      "nickname_en": "Dr. Ham",
+      "name_en": "Worapat Jarangkul",
+      "name_th": "วรภัทร จรางกุล",
+      "honorific_th": "ทพ.",
+      "full_name_th": "ทพ. วรภัทร จรางกุล",
+      "post_nominals": "D.D.S., M.Sc.",
+      "role_en": "Oral Surgery & Implantologist | Digital Dentistry Informatics Background",
+      "role_th": "ศัลยกรรมช่องปาก และ รากฟันเทียม",
+      "position": "Co-CEO, SmileScape Dental Clinic",
+      "position_internal_titles": [
+        "Co-CEO",
+        "Medical Director (per entities.md / brand-config.json)",
+        "Lead Implantologist"
+      ],
+      "schema_org_type": "Physician",
+      "location_en": "Bangkok, Thailand",
+      "location_th": "กรุงเทพมหานคร ประเทศไทย",
+      "personal_phone": "(+66) 81 454 4625",
+      "personal_email": "nexorcus@gmail.com",
+      "personal_address_en": "21/162 Juladis Tower Condominium, Phetchaburi 19 Alley, Phetchaburi Road, Thanon Phaya Thai Subdistrict, Ratchathewi District, Bangkok 10400, Thailand",
+      "personal_address_th": "21/162 จุลดิศ ทาวเวอร์ คอนโดมิเนียม ซอยเพชรบุรี 19 ถนนเพชรบุรี แขวงถนนพญาไท เขตราชเทวี กรุงเทพมหานคร 10400",
+      "profile_en": "Gold Medal Doctor of Dental Surgery graduate from Mahidol University with advanced postgraduate training in oral surgery and implantology. Holds Master of Science qualifications in Oral Surgery and Implantology from Mahidol University and the University of Duisburg-Essen, International Medical College, supporting focused clinical practice as an implantologist with a strong foundation in oral and maxillofacial surgery. Combines implant dentistry, oral surgery, restorative treatment interests, and a distinctive background in computer science, informatics, image processing, and competitive programming to support digitally informed dental care.",
+      "profile_th": "ทันตแพทย์ผู้สำเร็จการศึกษาทันตแพทยศาสตรบัณฑิตจากมหาวิทยาลัยมหิดลด้วยเกียรตินิยมอันดับหนึ่งและเหรียญทอง มีการศึกษาต่อระดับบัณฑิตศึกษาในสาขาศัลยกรรมช่องปากและทันตกรรมรากเทียม และได้รับวุฒิวิทยาศาสตรมหาบัณฑิตสาขาศัลยศาสตร์ช่องปากและรากฟันเทียม จากมหาวิทยาลัยมหิดล และ University of Duisburg-Essen, International Medical College มีพื้นฐานทางคลินิกด้านศัลยกรรมช่องปากและทันตกรรมรากเทียม โดยเน้นการปฏิบัติงานในฐานะทันตแพทย์รากเทียม พร้อมผสานความสนใจด้านทันตกรรมรากเทียม ศัลยกรรมช่องปาก และพื้นฐานทางด้านวิทยาการคอมพิวเตอร์ สารสนเทศ การประมวลผลภาพ และการแข่งขันเขียนโปรแกรม เพื่อสนับสนุนการดูแลรักษาทางทันตกรรมที่สอดคล้องกับยุคดิจิทัล",
+      "clinical_interests_en": [
+        "Implantology & Full-Arch Rehabilitation",
+        "Guided Bone Regeneration & Soft Tissue Management",
+        "Oral Surgery Procedures",
+        "Fixed Orthodontics with Twin Bracket and PSL Systems",
+        "Clear Aligner Therapy",
+        "Digital Dentistry & Treatment Planning",
+        "Multidisciplinary Patient Care",
+        "Leadership & Continuing Education"
+      ],
+      "clinical_interests_th": [
+        "ทันตกรรมรากเทียมและการบูรณะทั้งขากรรไกร",
+        "การปลูกเสริมกระดูกและการจัดการเนื้อเยื่ออ่อน",
+        "ศัลยกรรมช่องปาก",
+        "การจัดฟันแบบลวด Twin Bracket และ PSL",
+        "การจัดฟันแบบใส",
+        "ทันตกรรมดิจิทัลและการวางแผนการรักษา",
+        "การดูแลผู้ป่วยแบบสหสาขา",
+        "ภาวะผู้นำและการศึกษาต่อเนื่อง"
+      ],
+      "highlights_en": [
+        "Thailand Representative, IOI 2012",
+        "Co-CEO, SmileScape Dental Clinic",
+        "First-Class Honors & Gold Medal, Mahidol University (2017)",
+        "ACM-ICPC Programming Champion (2013–2014)"
+      ],
+      "education_en": [
+        { "year": "2008–2010", "item": "Mahidol Wittayanusorn School, Thailand. Cumulative GPA: 3.94" },
+        { "year": "2011–2016", "item": "Doctor of Dental Surgery (D.D.S.), Faculty of Dentistry, Mahidol University, Bangkok, Thailand. Cumulative GPA: 3.84" },
+        { "year": "2017", "item": "Graduated with First-Class Honors and Gold Medal, Doctor of Dental Surgery, Faculty of Dentistry, Mahidol University" },
+        { "year": "2018", "item": "Certificate in Oral and Maxillofacial Surgery, Faculty of Dentistry, Chulalongkorn University, Bangkok, Thailand" },
+        { "year": "2021", "item": "Master of Science (M.Sc.) in Oral Surgery and Implantology, Faculty of Dentistry, Mahidol University, Bangkok, Thailand" },
+        { "year": "2021", "item": "Master of Science (M.Sc.) in Oral Surgery and Implantology, University of Duisburg-Essen, International Medical College" },
+        { "year": "2022", "item": "Certificate in Advanced Soft & Hard Tissue / Soft Tissue Management Course with Dr. Ricardo Kern and Dr. Radoslaw Jadach, LearnDent, Singapore" },
+        { "year": "2022", "item": "Certificate in Tachakorn Regeneration Course" },
+        { "year": "2022", "item": "Certificate in Invisalign Provider (IDS)" },
+        { "year": "2022", "item": "Certificate in Master Class Veneer by Tanawat Dental Academy" },
+        { "year": "2022", "item": "Certificate in Mun Mao Mak multidisciplinary approach course by PPFaceDesign" },
+        { "year": "2022", "item": "Certificate in The Veneer Blueprint Course, 1st Cohort, Mediclass Training Center" },
+        { "year": "2023", "item": "Certificate in Full Arch 2: Implant-Assisted Overdenture and Fixed Detachable Prosthesis" },
+        { "year": "2023", "item": "Certificate in The Sausage Technique: Soft Tissue Reconstruction After Bone Regeneration, Geistlich & Meisinger APAC Symposium 2023" },
+        { "year": "2023", "item": "Certificate in Soft Tissue Management Around Dental Implants Workshop, Straumann Thailand Congress 2023, Bangkok, Thailand" },
+        { "year": "2024", "item": "Certificate in Full Arches All-on-X Course, ILAPEO, Brazil" },
+        { "year": "2025", "item": "Certificate in Cadaver Course in Oral Surgery and Implantology, Urban Institute, Budapest, Hungary" },
+        { "year": "2025", "item": "Certificate in FMR & TMD: Beyond the Teeth, by Dr. Lukas Lassmann" },
+        { "year": "2026", "item": "Certificate in International Full Arch Summit 2026" },
+        { "year": "2026", "item": "Certificate in International Osteology Symposium, Vienna, Austria" },
+        { "year": "2026", "item": "Certificate in Modern Techniques for Alveolar Ridge Preservation Aiming at Both Immediate and Late Implant Placement, by Dr. Mauricio Araujo, Vienna, Austria" }
+      ],
+      "experience_en": [
+        { "year": "Former", "item": "Dentist, Faculty of Dentistry, Mahidol University, Bangkok, Thailand" },
+        { "year": "2008–2010", "item": "Participated in national computer olympiad training camps organized by POSN and IPST during upper-secondary school" },
+        { "year": "2008–2010", "item": "Teaching volunteer, junior computer olympiad tutoring project, Mahidol Wittayanusorn School" },
+        { "year": "2008–2010", "item": "Internship in dental model image processing and scanning at NSTDA under Dr. Janjira Sinsatanyothin" },
+        { "year": "2012", "item": "Student activity organizer, Mahidol University Faculty of Dentistry orientation program and junior dental student camp" },
+        { "year": "2013", "item": "Organizer and stage/audio team member for Faculty of Dentistry student events and community dental activities" },
+        { "year": "2014", "item": "Studied English at Kaplan International Colleges, Perth, Australia" },
+        { "year": "2014–2016", "item": "Participated in student affairs, music club performances, and community dental service activities at the Faculty of Dentistry, Mahidol University" }
+      ],
+      "coaching_personal_development_en": [
+        { "year": "2025", "item": "Certificate in Peak Performance Coach (PPC), Life Enricher Co., Ltd." },
+        { "year": "2025", "item": "Certificate in Peak Performance Master Coach (PPMC), Life Enricher Co., Ltd." },
+        { "year": "2025", "item": "Certificate in Neuro-Linguistic Programming (NLP), Life Enricher Co., Ltd." },
+        { "year": "2025", "item": "Certificate in Neuro-Linguistic Programming Master (NLPM), Life Enricher Co., Ltd." },
+        { "year": "2025", "item": "Certificate in Emotional Hypnotic Therapy (EHT), Life Enricher Co., Ltd." },
+        { "year": "2025", "item": "Certificate in Emotional Hypnotic Therapy Master (EHTM), Life Enricher Co., Ltd." }
+      ],
+      "publications_speaking_en": [
+        { "year": "2022", "type": "Research publication", "item": "\"Patient-reported outcome measures (PROMs) comparing digital and conventional workflows for posterior single-unit implant restorations,\" Journal of Dentistry, 117, 103875 (Q1 journal)" },
+        { "year": "2022", "type": "Speaker", "item": "\"Scan as Star: Implant Universe,\" Straumann Group Online Academy, Straumann Thailand" },
+        { "year": "2024", "type": "Research publication", "item": "\"Comparison of Treatment Time for Single-Implant Crowns Between Digital and Conventional Workflows for Posterior Implant Restorations,\" International Journal of Oral and Maxillofacial Implants, 39(2), 286–293 (Q1 journal)" },
+        { "year": "2024", "type": "Speaker", "item": "\"IOS Nexus: Bridging Today and Tomorrow,\" Straumann Group Academic Center, Bangkok" },
+        { "year": "2024", "type": "Special speaker", "item": "\"Case Study: Integrated Implant Dentistry and Clear Aligner Therapy,\" Modern Dental Laboratory Thailand / TrioClear Dental Webinar" },
+        { "year": "2025", "type": "Instructor / Speaker", "item": "\"Advanced Clear Aligner Training for Complex Cases and Implants,\" Modern Dental Laboratory Thailand / TrioClear, Bangkok" }
+      ],
+      "technology_skills_en": [
+        "Computer Science — Gold Medalist, 5th Thailand Olympiad in Informatics; representative participant in the International Olympiad in Informatics 2012",
+        "Programming — First Prize Winner, ACM-ICPC Regional Programming Competition in 2013 and 2014"
+      ],
+      "honors_awards_en": [
+        { "year": "2009", "item": "Gold Medal, 5th Thailand Olympiad in Informatics Competition" },
+        { "year": "2012", "item": "Selected participant, International Olympiad in Informatics (IOI 2012)" },
+        { "year": "2013", "item": "First Prize, ACM-ICPC Central Region Programming Competition" },
+        { "year": "2014", "item": "Top overall score in Oral Microbiology" },
+        { "year": "2014", "item": "First Prize, ACM-ICPC Central Region 2 Programming Competition" },
+        { "year": "2014", "item": "Highest score in Anatomy in the Doctor of Dental Surgery curriculum, awarded by the Dr. Rasmi Wanishsorn Foundation" },
+        { "year": "2016", "item": "Top overall score in Physiology, Department of Oral Biology" },
+        { "year": "2016", "item": "Top overall score in Biochemistry, Department of Oral Biology" },
+        { "year": "2017", "item": "First-Class Honors and Gold Medal, Doctor of Dental Surgery, Faculty of Dentistry, Mahidol University" },
+        { "year": "2017", "item": "Top overall score from the Department of Prosthodontics" },
+        { "year": "2017", "item": "Top overall score from the Department of Oral and Maxillofacial Surgery, Prof. Dr. Weerasak Pirojwet Fund" }
+      ]
+    },
+
+    {
+      "slug": "dr-pitchapa-phudphong",
+      "entities_slug": "dr-pitchapa-phudphong",
+      "nickname_th": "หมอแพรว",
+      "nickname_en": "Dr. Praew",
+      "name_en": "Pitchapa Phudphong",
+      "name_th": "พิชชาภา ผุดผ่อง",
+      "honorific_th": "ทพญ.",
+      "full_name_th": "ทพญ. พิชชาภา ผุดผ่อง",
+      "post_nominals": "D.D.S.",
+      "role_en": "Oral & Maxillofacial Surgeon | Implantology Educator",
+      "role_th": "ศัลยแพทย์ช่องปากและแม็กซิลโลเฟเชียล | วิทยากรด้านรากฟันเทียม",
+      "position": "Co-CEO, SmileScape Dental Clinic",
+      "position_internal_titles": [
+        "Co-CEO",
+        "Co-Founder (per brand-config.json)",
+        "Specialist Oral & Maxillofacial Surgeon"
+      ],
+      "schema_org_type": "Physician",
+      "location_en": "Bangkok, Thailand",
+      "location_th": "กรุงเทพมหานคร ประเทศไทย",
+      "personal_phone": "(+66) 64 669 9555",
+      "personal_email": "praewpitchapa@gmail.com",
+      "personal_address_en": "96 Soi 6, Tedabannimitai Road, Lad Yao Subdistrict, Chatuchak District, Bangkok 10900, Thailand",
+      "personal_address_th": "96 ซอย 6 ถนนเทศบาลนิมิตใต้ แขวงลาดยาว เขตจตุจักร กรุงเทพมหานคร 10900",
+      "profile_en": "Oral and maxillofacial surgeon with advanced training in implantology, full-arch rehabilitation, guided bone regeneration, zygomatic implant rehabilitation, oral surgery, and facial aesthetic procedures. Experienced in clinical leadership, multidisciplinary dental care, hospital-based oral surgery, academic teaching, and continuing education. Currently serves as Co-CEO and specialist oral and maxillofacial surgeon at SmileScape Dental Clinic, while contributing as an educator in implantology and oral and maxillofacial surgery programs.",
+      "profile_th": "ศัลยแพทย์ช่องปากและแม็กซิลโลเฟเชียล ผู้มีการฝึกอบรมขั้นสูงด้านทันตกรรมรากฟันเทียม การบูรณะทั้งฟากกรรไกร (full-arch rehabilitation) การรักษาให้เกิดการสร้างกระดูกใหม่ (guided bone regeneration) การบูรณะด้วยรากฟันเทียมไซโกมาติก ศัลยกรรมช่องปาก และหัตถการด้านความงามใบหน้า มีประสบการณ์ด้านภาวะผู้นำทางคลินิก การดูแลรักษาทันตกรรมแบบสหสาขาวิชา ศัลยกรรมช่องปากในระบบโรงพยาบาล การสอนทางวิชาการ ปัจจุบันดำรงตำแหน่ง Co-CEO และศัลยแพทย์ผู้เชี่ยวชาญด้านศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล ณ คลินิกทันตกรรมสไมล์สเคป พร้อมทั้งเป็นวิทยากรในหลักสูตรด้านทันตกรรมรากฟันเทียม และศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล",
+      "clinical_interests_en": [
+        "Implantology & Full-Arch Rehabilitation",
+        "Guided Bone Regeneration & Soft Tissue Management",
+        "Zygomatic Implant Rehabilitation",
+        "Oral Surgery & Maxillofacial Procedures",
+        "Facial Aesthetic Procedures",
+        "Leadership & Continuing Education",
+        "Multidisciplinary Treatment Planning",
+        "Academic Teaching & Lecturing"
+      ],
+      "clinical_interests_th": [
+        "ทันตกรรมรากฟันเทียม และการบูรณะทั้งขากรรไกร",
+        "Guided Bone Regeneration & Soft Tissue Management",
+        "การบูรณะด้วยรากฟันเทียมไซโกมาติก",
+        "ศัลยกรรมช่องปากและแม็กซิลโลเฟเชียล",
+        "หัตถการด้านความงามใบหน้า",
+        "ผ่าตัดขากรรไกรร่วมกับจัดฟัน",
+        "การวางแผนการรักษาแบบสหสาขาวิชา",
+        "การสอนและการบรรยายทางวิชาการ"
+      ],
+      "highlights_en": [
+        "Specialist Oral & Maxillofacial Surgeon",
+        "Co-CEO, SmileScape Dental Clinic",
+        "Faculty Member, Thai-German Basic Implantology Course (TG-BIC)",
+        "Special Lecturer, University of Phayao"
+      ],
+      "education_en": [
+        { "year": "2008–2010", "item": "Horwang School, Thailand — Cumulative GPA 3.97" },
+        { "year": "2011–2016", "item": "Doctor of Dental Surgery (D.D.S.), Faculty of Dentistry, Chiang Mai University, Chiang Mai, Thailand" },
+        { "year": "2020", "item": "Certificate in Basic Oral Implantology, German Society of Oral Implantology (DGOI/ICOI)" },
+        { "year": "2023", "item": "Graduated Residency Training in Oral and Maxillofacial Surgery (equivalent to a doctoral degree), Faculty of Dentistry, Mahidol University, Bangkok, Thailand" },
+        { "year": "2023", "item": "Diploma of the Thai Board of Oral and Maxillofacial Surgery, Thailand" },
+        { "year": "2023", "item": "Certificate in Full Arch 2: Implant-Assisted Overdenture and Fixed Detachable Prosthesis" },
+        { "year": "2023", "item": "Certificate in The GBR Master Course by Buser & Friends" },
+        { "year": "2023", "item": "Certificate in The Sausage Technique: Soft Tissue Reconstruction After Bone Regeneration, Geistlich & Meisinger APAC Symposium" },
+        { "year": "2023", "item": "Certificate in Therapeutic and Aesthetic Applications of HA Filler, Botulinum Neurotoxin, and Thread Lifting" },
+        { "year": "2024", "item": "Certificate in Full Arches All-on-X Course, ILAPEO, Brazil" },
+        { "year": "2024", "item": "Certificate in Zi implant Masterclass by Prof. Dr. Sergio Rocha Bernades" },
+        { "year": "2025", "item": "Certificate in Zygomatic Implant Rehabilitation Course, ILAPEO, Brazil" },
+        { "year": "2025", "item": "Certificate in Cadaver Course in Oral Surgery and Implantology, Urban Institute, Budapest, Hungary" },
+        { "year": "2026", "item": "Certificate in Modern Techniques for Alveolar Ridge Preservation Aiming at Both Immediate and Late Implant Placement, by Dr. Mauricio Araujo, Vienna, Austria" }
+      ],
+      "education_th_only_extras_unverified": [
+        "Certificate in Tachakorn Regeneration Course (2025/2568) — appears ONLY on Thai page (image 10); also on Dr. Worapat's CV. Verify.",
+        "Certificate in FMR & TMD: Beyond the Teeth, by Dr. Lukas Lassmann (2025/2568) — Thai page only; also on Dr. Worapat's CV. Verify.",
+        "Certificate in International Full Arch Summit 2026 (2569) — Thai page only; also on Dr. Worapat's CV. Verify."
+      ],
+      "experience_en": [
+        { "year": "2017–2019", "item": "Head of Dental Department, Khemmarat Hospital, Ubon Ratchathani, Thailand" },
+        { "year": "2020–Present", "item": "Specialist in Oral and Maxillofacial Surgery and Co-CEO, SmileScape Dental Clinic" },
+        { "year": "2021–Present", "item": "Instructor, Thai-German Basic Implantology Course (TG-BIC)" },
+        { "year": "2023–2025", "item": "Oral and Maxillofacial surgeon (professional level) and special lecturer, Medical Organization, Nakhon Nayok Hospital, Thailand" },
+        { "year": "2024–Present", "item": "Special lecturer, Department of Oral and Maxillofacial Surgery, University of Phayao, Thailand" }
+      ],
+      "early_leadership_en": [
+        { "year": "2011–2017", "item": "Secretary of Student Committee, Faculty of Dentistry, Chiang Mai University" },
+        { "year": "2012–2017", "item": "Vice President of the Student Union, Chiang Mai University" },
+        { "year": "2012–2017", "item": "External Affairs Vice President, Student Association, Faculty of Dentistry, Chiang Mai University" },
+        { "year": "2012–2017", "item": "Member, Asia Pacific Dental Students Association (APDSA)" },
+        { "year": "2016", "item": "Clinical observation under the Chuea Chot Scholarship Program, Hat Yai Hospital, Songkhla, Thailand" }
+      ],
+      "continuing_education_en": [
+        { "year": "2017", "item": "Oral and Maxillofacial Pathology and Reconstruction" },
+        { "year": "2018", "item": "Intensive Basic-to-Advanced Course for Implant Restoration" },
+        { "year": "2019", "item": "Digital Technology in Oral and Maxillofacial Surgery" },
+        { "year": "2019", "item": "Orthognathic and Implant Surgery: A Multidisciplinary Approach" },
+        { "year": "2020", "item": "Workshop on Research Methodology and Biostatistics" },
+        { "year": "2022", "item": "Facial and Maxillofacial Trauma Course, 2nd Edition" },
+        { "year": "2023", "item": "The 2nd OMFS Cadaveric Workshop: Workshop Flaps in Oral and Maxillofacial Surgery" },
+        { "year": "2024", "item": "Virtual Planning in Oral and Maxillofacial Surgery: Lecture and Workshop for Orthognathic Surgery and Reconstruction" },
+        { "year": "2025", "item": "Zero Bone Loss Concepts Protocol in the Box" },
+        { "year": "2025", "item": "Soft Tissue Implant Surgery" },
+        { "year": "2025", "item": "Simplifying Bone & Tissue Regeneration: Autografts and Xenografts for Teeth and Implants" },
+        { "year": "2026", "item": "International Osteology Symposium, Vienna, Austria" }
+      ],
+      "publications_speaking_en": [
+        { "year": "2018", "type": "Research publication", "item": "\"Comparison of Accuracy of Alginate Impression and Intraoral Scanner in Model With and Without Orthodontic Brackets,\" Applied Sciences, Basel, Switzerland (Q2 journal)" },
+        { "year": "2022", "type": "Oral presentation", "item": "\"Primary Implant Placement in Fibula Free Flap Reconstruction in an Oral Squamous Cell Carcinoma Patient: The First Case of Our Country,\" Annual Academic Meeting of the Thai Association of Oral and Maxillofacial Surgery" },
+        { "year": "2023", "type": "Poster presentation", "item": "\"Comparison of Accuracy of Alginate Impression and Intraoral Scanner in Model With and Without Orthodontic Brackets,\" Annual Academic Meeting of the Thai Association of Oral and Maxillofacial Surgery" },
+        { "year": "2023", "type": "Speaker", "item": "\"Case Presentations and Treatment Options,\" TG-BIC & TADI, Pattaya, Thailand" }
+      ],
+      "honors_awards_en": [
+        { "year": "2011", "item": "Winner, Women's Doubles Badminton Competition, Chiang Mai University" },
+        { "year": "2012", "item": "Award for Outstanding Academic Innovation, Faculty of Dentistry, Chiang Mai University" },
+        { "year": "2017", "item": "First Runner-Up, Academic Innovation Presentation Award for \"Safe Dental Treatment with Captain Safety Vest\"" },
+        { "year": "2018", "item": "Featured in Thairath newspaper for patient-centered dental care at Khemmarat Hospital" },
+        { "year": "2020", "item": "First Place Academic Achievement Award, Basic Oral Implantology, DGOI/ICOI" },
+        { "year": "2022", "item": "Winner, Poster Presentation Award, Department of Oral and Maxillofacial Surgery" },
+        { "year": "2022", "item": "First Place, Highest Continuing Education Activity Units in Thailand, CDEC, Dental Council of Thailand" }
+      ]
+    }
+  ]
+}
