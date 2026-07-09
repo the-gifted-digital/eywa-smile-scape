@@ -99,3 +99,13 @@ Deferred to Phase F: authored topical anchor_text variants + full contextual bod
 
 ### Wave 7 (`seo_page_citations`) — RE-SCOPED to Phase F (was mis-estimated as deterministic)
 Investigation: 0 edges carry `edge_evidence_citation` FK; only ~23 `evidenced_by` entity edges exist, citing pillar codes (P2-C2, P15…) as FREE TEXT + raw PMIDs; citation_slug uses pillar codes (p2-c2) so a crosswalk is *possible* but sparse + fragile. Decisive: **`content-plan/citation-pool-seed.md` itself scopes page↔citation linking to "Phase F step 3 — per-page depth research during content writing"**, and a `seo_page_citations` row requires `citation_purpose` + `supports_claim` + anchor (content-briefing outputs). The Stage-1 evidence layer is correctly the 23 `evidenced_by` ENTITY edges (already in `seo_entity_relationships`). → **`seo_page_citations` stays empty until Phase F. Not force-filled.**
+
+## 2026-07-09 (cont) — Wave 8: founders/doctors complete (หมอแฮม + หมอแพรว) — `17_doctors.sql`
+
+Resolved the long-standing "หมอแพรว = author-only" gap (she had a seo_authors_reviewers row since Wave 04 but no graph entity):
+- **+Person entity `dr-pitchapa-phudphong`** (person/Physician, brand-doctor-authority) — mirrors dr-woraphat-jarangkul. SS person entities now **2** (แฮม + แพรว).
+- **doctor_assignment linked** — her `author_fp` NULL → `dr-pitchapa-phudphong` (assignments_null now 0).
+- **profile page 2.2.3** re-pointed org-placeholder → her entity; re-derived to page_type=doctor_profile / schema=Physician / cluster=brand-doctor-authority (doctor_profile pages 6→7).
+- entities.md (#10, Person 2→3) + sitemap.md 2.2.3 synced on `main` (commit 47e9bd4).
+
+Author rows: both founders already carried full name / canonical_names / credential_types / specialties / primary_specialty / bio / short_bio (แพรว also board_certifications). CV rich data (education/publications/awards/experience) has no author-table columns — it lives in `web/src/data/doctors.json` for the T9 doctor-profile PAGE (Phase F render). **Still operator-pending:** `medical_license_number` (not in CV source), `photo_url`, `email` (personal only — must not publish per doctors.json _meta warning). หมอแฮม `board_certifications` genuinely empty (M.Sc. + certificates, no board diploma).
