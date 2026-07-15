@@ -146,3 +146,27 @@ Root problem found: Deezy wrote a **bare file path** (`content-plan/entities.md`
 ⚠️ **"NULL = VTH" is ~99%, not 100%** — 9 Deezy stragglers are NULL (6 citations @2026-06-06 · 1 rel @2026-07-06 · 2 rel @2026-06-07 23:06, payer topic). Reliable rule: **VTH = created_at >= 2026-07-07**; NULL before that = Deezy. Left untouched per operator (SmileScape-only this round).
 
 **TODO (next brand):** teach the generators to emit `load_source` at insert time so this never needs back-filling again.
+
+## 2026-07-16 — Phase 2 COLLISION AUDIT (report) + Wave 11 fix — `21_page_cluster_remap.sql`
+
+**Audit (SmileScape's files held as source of truth, compared against the merged tables):**
+- `entities.md` = 168 entities → all 168 present in DB. **117 created by SmileScape · 51 created by DEEZY · 0 VTH.**
+- **All 51 Deezy-created entities differ from SmileScape's authored definition — every single one:**
+  - `topic_cluster_id` — **51/51** (the two brands use entirely different cluster taxonomies)
+  - `schema_org_type` ~18 (SS `MedicalProcedure` vs Deezy `MedicalTherapy`; `maxilla` SS `AnatomicalStructure` vs Deezy NULL)
+  - `entity_type` ~13 (`ceramic-implant` treatment/device · `cad-cam`,`intraoral-scanner` device/technology · `pediatric-dentistry`,`geriatric-dentistry` treatment/specialty)
+  - `parent_entity_fp` ~12 (`all-on-4` all-on-x/dental-implant · `peri-implantitis` periodontitis/dental-implant)
+  - `icd_10_code` ~17 — some are real clinical disagreements (`bruxism` F45.8 vs G47.63 · `malocclusion` M26.4 vs K07.4 · `peri-implantitis` M27.62 vs T85.69); many are precision (SS billable-level K02.9/K05.30 vs Deezy category K02/K05.3). **Neither brand is uniformly right** — Deezy's G47.63 fits their sleep/airway context.
+  - `brand_scope` 1 (`damon-system`: SS says brand-exclusive, DB says universal)
+- `clusters.md` 20 → 19 loaded; **`pediatric-dentistry` collided with Deezy's identically-named cluster** (legit shared slug).
+- `relationships.md` 263 unique → 255 loaded (8 pre-existing). `citation-pool-seed.md` 93 → 90 (3 DOI/PMID dupes).
+
+**🔴 Downstream impact found: 387 of 722 SmileScape pages (54%) were sitting in DEEZY's clusters** (implant-dentistry 161 · orthodontics 43 · preventive-general 36 · periodontics-gum 33 · cosmetic-dentistry 25 · …), because `06_pages.sql` copies `page.cluster_id` from the shared entity row.
+
+**Root cause (structural):** `topic_cluster_id` is a SINGLE field on a SHARED entity → an entity can live in only one brand's taxonomy; the second brand to load always loses. A reload would reproduce this exactly — `ON CONFLICT DO NOTHING` *is* "share if duplicate".
+
+**Wave 11 fix applied (operator-approved option B):** page.cluster_id now derives from SmileScape's OWN authored entity→cluster map, not from the shared entity row. **335 → 722/722 on SS clusters · foreign 387 → 0 · null 0.** Zero rows of Deezy/VTH/any entity touched. Reversible.
+
+**Raised to protocol governance (NOT actioned here):**
+1. `topic_cluster` should be **per-brand** (junction `entity × brand → cluster`) — one shared entity legitimately belongs to different clusters per brand.
+2. **Who owns the canonical definition** (entity_type / schema_org_type / ICD-10) of a shared entity when two brands disagree? Today it's just "whoever loaded first".
