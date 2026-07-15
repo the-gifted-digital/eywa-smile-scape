@@ -122,3 +122,27 @@ Author rows: both founders already carried full name / canonical_names / credent
 - `schema_markup_type` (text[]) mapped from `page_type` → schema.org types (e.g. condition_pillar→{MedicalCondition,MedicalWebPage}, service_page→{MedicalProcedure,WebPage}, doctor_profile→{Physician,ProfilePage}, branch_landing→{Dentist,WebPage}). 722/722.
 
 **`seo_page_citations` — NOT loaded (correctly deferred to Phase F).** Investigated: the junction needs `citation_purpose` (supporting_evidence/statistic/guideline_reference/…) + `supports_claim` + `citation_anchor_text` + `inline_position` — i.e. *which source backs which claim at which spot on which page* = an editorial decision made when the page body is written, not derivable from structure. The `evidenced_by` edges give only **entity-level** anchors and mostly reference a whole pillar (P6/P13/P14/P15) rather than a specific citation (only 4 edges carry a P#-C# code; 3 of those citations exist: p2-c2/p2-c3/p5-c1). Entity-level evidence is already captured in `seo_entity_relationships` (26 evidenced_by edges); the 90-citation pool is ready to attach during Stage-2 content authoring. Bulk-mapping now would fabricate page-level specificity — skipped by design.
+
+## 2026-07-16 — Wave 10: load-source provenance tagging (SmileScape) — `20_load_source_provenance.sql`
+
+**Convention adopted (operator-approved):** `load_source = '<brand-slug>:<repo-relative source path>'` on the cross-brand SHARED tables. Prefixing the brand keeps Deezy's rows untouched and makes provenance traceable. (`load_source` = *which brand's load created this row*; distinct from `brand_scope` = *who may use it*. Brand-OWNED tables — page_master, branches — use brand_id/brand_name instead and need no tagging.)
+
+Root problem found: Deezy wrote a **bare file path** (`content-plan/entities.md`) — every brand has that same path → ambiguous. SmileScape's generators never set `load_source` at all → all NULL.
+
+**Tagged (SmileScape only, this round). Identified by insert-batch timestamp, cross-checked to LOAD-LOG counts:**
+| table | SmileScape | Deezy (bare path) | NULL |
+|---|---|---|---|
+| seo_entity_graph | **117** | 257 | 339 |
+| seo_entity_relationships | **255** | 138 | 694 |
+| seo_citations | **90** | 42 | 54 |
+| seo_topic_cluster_master | **19** | 16 | 23 |
+| seo_authors_reviewers | **2** | 1 | 1 |
+| seo_entity_procedures | **41** | 30 | 76 |
+| seo_entity_condition | **13** | 50 | 58 |
+| seo_entity_anatomy | **3** | 12 | 6 |
+| ext_devices / symptom / drug | 0 (SS created none) | 30/7/4 | 30/13/5 |
+
+⚠️ **Gotcha for the next brand:** `seo_entity_relationships` — SS's batch (2026-07-08 **18:54**, 255) shares its DATE with VTH's batches (07:31–07:43, 692). Must separate by minute, not date.
+⚠️ **"NULL = VTH" is ~99%, not 100%** — 9 Deezy stragglers are NULL (6 citations @2026-06-06 · 1 rel @2026-07-06 · 2 rel @2026-06-07 23:06, payer topic). Reliable rule: **VTH = created_at >= 2026-07-07**; NULL before that = Deezy. Left untouched per operator (SmileScape-only this round).
+
+**TODO (next brand):** teach the generators to emit `load_source` at insert time so this never needs back-filling again.
