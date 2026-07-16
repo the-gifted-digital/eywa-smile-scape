@@ -209,3 +209,19 @@ Operator spotted the gaps; conventions reverse-engineered from **Deezy (689/689 
 - **`related_entities_fps` 722/722, avg 5.5/page** — derived from `seo_entity_relationships` edges (both directions, edge-type ranked, cap 8; cluster-mates fallback cap 4). Deezy avg 6.8.
 
 **Still empty by design:** keyword set (`target_keyword_fp`/`semantic_keywords_fps`/`page_intent_type`) → operator is firing DFS now · Phase-F content (slug/title/meta/brief/canonical) · DR-030 compliance flags (NULL federation-wide — a compliance-review output, not derivable) · ops (notion_id/published_date/viability_assessment).
+
+## 2026-07-16 — Wave 13: shared-table completion (non-keyword) — `23_shared_tables_completion.sql`
+
+Audited every SS non-page table against **Deezy (the reference complete brand)**. Rule: a column is a real gap only if Deezy populated it; anything Deezy left NULL is not baseline → not fabricated.
+
+**Filled:**
+- `seo_topic_cluster_master.hierarchy_level` — 0=root (15) / 1=has-parent (4). (descriptions is `{}` empty on Deezy too → non-gap; cluster_facet Deezy-NULL → skip.)
+- `seo_branches` arrays (both branches): **services_offered_fps 41 · specialties_at_branch 7 · equipment_at_branch_fps 5 · doctors_at_branch_fps 2** (แฮม+แพรว). Authored in branches.md; all 41 service + 5 equip slugs verified in entity_graph. Deezy left these NULL — this makes SS *more* complete, not fabricated. (doctors/equipment per-branch rotation still an operator refine.)
+
+**Confirmed NOT baseline (Deezy left NULL too → left alone, would be fabrication):** entity_graph wikidata_id/mesh_id/entity_subtype (Deezy: icd 45/257, schema_org 205/257 — partial is normal) · relationships edge_strength/edge_evidence_citation/medical_reviewer_fp · entity-extension clinical fields (cpt/recovery/contraindications/… = Phase-F clinical enrichment) · cluster descriptions/facet.
+
+**Empty tables — status:**
+- `seo_programmatic_templates` = **0 across the WHOLE federation** (no brand registered T1–T22). Shared-infra gap, not SmileScape's lane — flagged, not filled.
+- `seo_page_citations` / `seo_editorial_reviews` = Phase F / Stage 2. `seo_reviews`/`seo_directory_listings`/`seo_gbp_posts` = n8n Flows E1–E4 (operator infra). `seo_media_assets` = R2/DAM migration.
+
+**DFS status (operator running):** `seo_x_ads_keywords_contextual_master` — 215/525 now carry search_intent + qualitative_kd (~41%, landing in batches). Keyword-dependent page_master columns (target_keyword_fp/semantic_keywords/page_intent_type) + tier recompute wait for the full batch.
