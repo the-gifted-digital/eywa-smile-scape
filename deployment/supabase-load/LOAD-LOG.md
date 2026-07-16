@@ -170,3 +170,29 @@ Root problem found: Deezy wrote a **bare file path** (`content-plan/entities.md`
 **Raised to protocol governance (NOT actioned here):**
 1. `topic_cluster` should be **per-brand** (junction `entity × brand → cluster`) — one shared entity legitimately belongs to different clusters per brand.
 2. **Who owns the canonical definition** (entity_type / schema_org_type / ICD-10) of a shared entity when two brands disagree? Today it's just "whoever loaded first".
+
+## 2026-07-16 — Wave 10b: Deezy tidy-up + ext_devices resolution + cross-brand handovers
+
+**Deezy (done for them, at operator request):**
+- Filled the 9 rows they left NULL — citations +6 (42→**48**), relationships +3 (137→**140**). Both joined their own batches.
+- Prefixed every Deezy row `deezy-dental:` across all 11 shared tables. **`bare_left = 0` everywhere** — no ambiguous paths remain in the federation.
+
+**⚠️ Trap caught: "bare path = Deezy" was FALSE.** VTH also wrote one bare-path row — `orthodontic-treatment→cephalometric-analysis` (`2026-07-08 07:40`, inside VTH's 07:31–07:43 batch, `brand_scope=['vth-biodent']`). A blanket prefix would have relabelled it Deezy. Re-tagged `vth-biodent:content-plan/relationships.md` (the only VTH row touched).
+
+**✅ `seo_entity_devices` 13:39 batch RESOLVED — and it taught us the real rule.** The 30 "Deezy" + 8 NULL rows share one timestamp to the microsecond (`13:39:25.546608`) = **a single INSERT** that copied `load_source` **from the entity row** (`select entity_fingerprint, load_source from seo_entity_graph where entity_type='device'`). The split reflects the entities' origin, not the runner: Deezy's 30 entities had a path → inherited it; SmileScape's 8 were NULL then → inherited NULL. Operator confirmed the blue-diamond gang is SmileScape's 100% → tagged `smile-scape-clinic:` (`blue-diamond-implant`, `neodent-implant`, `trioclear-aligner`, `photopolymer-resin-tc85`, `prf-platelet-rich-fibrin`, `titanium`, `zirconia`, `bone-graft-substitute`). This also explains why SS's original load-log said *"product+device deferred"*.
+
+**📌 Rule established for the EXTENSION tables:** `load_source` **mirrors the parent entity's** `load_source` — read it as *"whose entity this extends"*, not *"who ran the script"*. Verified across all 6 ext tables: **0 mismatches** vs parent entity. SmileScape ext totals now: procedures 41 · condition 13 · **devices 8** · anatomy 3.
+
+**Final federation state — every shared row is brand-attributable:**
+| | smile-scape-clinic | deezy-dental | vth-biodent | bare | NULL (VTH, untagged) |
+|---|---|---|---|---|---|
+| entity_graph | 117 | 257 | — | **0** | 339 |
+| entity_relationships | 255 | 140 | 1 | **0** | 691 |
+| citations | 90 | 48 | — | **0** | 48 |
+| topic_cluster_master | 19 | 16 | — | **0** | 23 |
+| authors_reviewers | 2 | 1 | — | **0** | 1 |
+| ext (proc/cond/dev/anat/symp/drug) | 41/13/8/3/0/0 | 30/50/30/12/7/4 | — | **0** | 76/58/22/6/13/5 |
+
+**Handovers written (uncommitted — both repos have team WIP on feature branches):**
+- `eywa-deezy/docs/HANDOVER-load-source-provenance.md` — short: what was done for them, the ext-mirror precedent, fix generators, + the 51-entity definition disagreements as governance (incl. `maxilla.schema_org_type` empty, ICD precision).
+- `eywa-vth-biodent/docs/HANDOVER-load-source-provenance.md` — full: the convention, their exact footprint + ready SQL, the 4 traps (date≠brand · their bare-path row · devices 22-not-30 · ext-mirror rule), the `page_type` tier-letters bug (696 rows), and how to run their own cluster-collision audit.
