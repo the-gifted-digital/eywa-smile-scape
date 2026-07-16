@@ -196,3 +196,16 @@ Root problem found: Deezy wrote a **bare file path** (`content-plan/entities.md`
 **Handovers written (uncommitted — both repos have team WIP on feature branches):**
 - `eywa-deezy/docs/HANDOVER-load-source-provenance.md` — short: what was done for them, the ext-mirror precedent, fix generators, + the 51-entity definition disagreements as governance (incl. `maxilla.schema_org_type` empty, ICD precision).
 - `eywa-vth-biodent/docs/HANDOVER-load-source-provenance.md` — full: the convention, their exact footprint + ready SQL, the 4 traps (date≠brand · their bare-path row · devices 22-not-30 · ext-mirror rule), the `page_type` tier-letters bug (696 rows), and how to run their own cluster-collision audit.
+
+## 2026-07-16 — Wave 12: page_master completion — every keyword-independent column filled — `22_page_master_completion.sql`
+
+Operator spotted the gaps; conventions reverse-engineered from **Deezy (689/689 filled = the reference)**. All 722 SS pages now have:
+- **`content_format` = TEMPLATE CODE** (answer to "เติมอะไร"): T5 222 · T6 148 · T1 109 · T4 67 · T8 38 · T12 34 · T2 33 · T16 28 · T11 24 · T18 10 · T9 7 · T10 2. **This is where the T1–T22 template binding lives** (Deezy stores T1/T2b/…/T19 here) — the seo_programmatic_templates registry remains a separate, still-empty catalog table.
+- `conversion_event_primary/secondary` — `line_follow`/`[call_click]` (LINE-first); branch/local/contact pages inverted.
+- `required_min_inbound/outbound` (DR-021): A=3/2 · B=2/2 · C=1/1 · D=1/1.
+- `auto_suggested_word_count_target` — tier × template-family (knowledge 2300→1550 · service 1800→1200, mirrors Deezy's matrix).
+- `link_role` (primary_hub 96 / cluster_spoke / supporting) · `anchor_strategy_mode` (branded/partial/topical/generic) · `review_cycle` (A quarterly · B semiannual · else annual) · `robots_directive` 'index, follow' · `priority` XML 1.0/0.8/0.6/0.4 · `link_priority` 10/9/7/5/4.
+- `parent_page_name` 647 + `primary_entity_name` 722 — denormalizations that never auto-populated (no trigger does it; Deezy's primary_entity_name is 0 too — presumably Notion-sync fills it; we filled directly).
+- **`related_entities_fps` 722/722, avg 5.5/page** — derived from `seo_entity_relationships` edges (both directions, edge-type ranked, cap 8; cluster-mates fallback cap 4). Deezy avg 6.8.
+
+**Still empty by design:** keyword set (`target_keyword_fp`/`semantic_keywords_fps`/`page_intent_type`) → operator is firing DFS now · Phase-F content (slug/title/meta/brief/canonical) · DR-030 compliance flags (NULL federation-wide — a compliance-review output, not derivable) · ops (notion_id/published_date/viability_assessment).
