@@ -225,3 +225,24 @@ Audited every SS non-page table against **Deezy (the reference complete brand)**
 - `seo_page_citations` / `seo_editorial_reviews` = Phase F / Stage 2. `seo_reviews`/`seo_directory_listings`/`seo_gbp_posts` = n8n Flows E1–E4 (operator infra). `seo_media_assets` = R2/DAM migration.
 
 **DFS status (operator running):** `seo_x_ads_keywords_contextual_master` — 215/525 now carry search_intent + qualitative_kd (~41%, landing in batches). Keyword-dependent page_master columns (target_keyword_fp/semantic_keywords/page_intent_type) + tier recompute wait for the full batch.
+
+## 2026-07-16 (cont) — Wave 14: keyword↔entity↔page binding + tier recompute — Stage 1 Gate CLOSED
+
+Operator ran the DFS full keyword batch (525/525 keywords enriched with volume/CPC/competition/priority in `seo_x_ads_keywords_monthly_market_snapshot`) — this wave connects that data to entities and pages. `24_keyword_entity_binding.sql`.
+
+**Method (operator-directed, relevance-first):** grounded in `content-plan/keyword-seed-list.md` (operator's own cluster→subgroup→sitemap-anchor structure), NOT raw alias/volume fuzzy-matching — auto-alias-match alone only covered 100/525 (19%). Rule stated by operator: *"sitemap structure is the source of truth for what a page is about — relevance decides entity, not volume; a page keeps its DR-022 volume-immune identity even at volume=0 if the structure says it belongs."* Built a rule-based classifier (34 seed-list subgroups, per-keyword regex overrides for precision splits — e.g. peri-implantitis / osseointegration / internal vs lateral sinus lift / implant-supported-bridge vs multiple-implants) — verified against DB with a dry-run before writing.
+
+**Exclusions (operator-approved):**
+- **Osstem/Dentium** (cluster 5C) — discontinued per SS-DR-001 (Neodent replaced Osstem). Comparison keywords ("blue diamond vs osstem") kept under the subject brand (blue-diamond-implant), bare osstem/dentium terms dropped.
+- **"Other Aligner Brands"** (cluster 6D — zenyum, clearcorrect, spark aligner) — operator: take out entirely, no comparison content planned. 6 keywords left `primary_entity_fp = NULL` by design.
+- Cluster 16 geo-modifier templates (`[service] กรุงเทพ`) — not real keywords, skipped at parse.
+
+**Discovery:** DFS's actual 525-kw set included a 10-keyword **Neodent** cluster not in the original seed-list (operator hadn't pre-anticipated its search volume). Mapped to `neodent-implant` (entity already existed).
+
+**Results:**
+- **Wave 14a** keyword→entity: **519/525 bound** (98.9%). Left-NULL 6 = exactly the 6D exclusions, confirmed zero accidental drops.
+- **Wave 14b** page↔keyword: `target_keyword_fp` set on **67 anchor pages** (1 per entity — best-tier/shallowest-depth page owns the slot due to the UNIQUE constraint on `target_keyword_fp`; other pages sharing that entity get `semantic_keywords_fps` instead). `semantic_keywords_fps` populated on **484 pages** total. `ad_landing_page_fp` reverse-pointer set on the top-priority keyword per entity.
+- **Wave 14c** tier recompute (promote-only vs the existing structural floor, never demoted): **21 nodes promoted** — 10→A (3.4.1 scaling-hub, 3.4.4 wisdom-tooth, 3.5 restorative-hub, 3.6 root-canal-hub, 3.9.2 veneer-hub, 3.10.4 braces, 3.11 pediatric-hub, 3.11.3 primary-filling, 4.6.0.6 aligner-comparison, 5.19 post-op-hub) + 11→B. Tier A 14→**24**, distribution now A:24 · B:115 · C:432 · D:151 (722 total).
+- `content-plan/sitemap.md` back-filled to match (Round 27 note + 21 tier cells) — commit `a63c497`.
+
+**🎯 STAGE 1 GATE CLOSED.** Keyword research is fully integrated: metrics (DFS) → relevance (entity) → destination (page) → priority (tier). Phase F content briefing can now proceed with `target_keyword_fp` as ground truth per anchor page.
