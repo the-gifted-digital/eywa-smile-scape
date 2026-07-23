@@ -8,7 +8,7 @@
 // flips on/off at the same wall-clock regardless of their device timezone.
 
 export type Locale = 'th' | 'en' | 'zh-cn';
-export type DecorTheme = 'snow';
+export type DecorTheme = 'snow' | 'mourning';
 export type DecorMotif = 'snowman' | 'christmas-tree' | 'deer';
 export type SnowDensity = 'light' | 'medium' | 'heavy';
 
@@ -22,9 +22,9 @@ export interface DecorPreset {
   /** Compare MM-DD only (ignore year); supports year-wrapping windows. */
   repeatYearly?: boolean;
   theme: DecorTheme;
-  /** Crossing motifs — one is chosen at random per crossing. */
-  motifs: DecorMotif[];
-  /** Snowfall density (default 'medium'). */
+  /** Crossing motifs — one is chosen at random per crossing. Snow theme only. */
+  motifs?: DecorMotif[];
+  /** Snowfall density (default 'medium'). Snow theme only. */
   density?: SnowDensity;
   /** Restrict to these locales; omit = all locales. */
   locales?: Locale[];
@@ -33,8 +33,17 @@ export interface DecorPreset {
 }
 
 // ---- Festival schedule (edit here to add/adjust festivals) ----
-// First and only preset for now: Christmas snow, the whole of December, every year.
 export const DECOR_PRESETS: DecorPreset[] = [
+  // National mourning — whole site desaturated to grayscale (theme: 'mourning').
+  // Ends 2026-07-31 (end of month); extend `end` if the official period is longer.
+  // Listed first so it overrides any festival.
+  {
+    key: 'mourning',
+    start: '2026-07-24',
+    end: '2026-07-31',
+    theme: 'mourning',
+  },
+  // Christmas snow, the whole of December, every year.
   {
     key: 'christmas',
     start: '12-01',
