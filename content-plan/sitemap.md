@@ -217,7 +217,7 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.2.8 | → ประเภทรากฟันเทียม (hub) | L2 | B | mid | A | dental-implant |
 | 3.2.8.1 | → → Single Implant — รากฟันเทียมซี่เดียว (1-2 ซี่) | L2 | C | mid | A | single-tooth-implant |
-| 3.2.8.2 | → → Multiple Implants — รากฟันเทียมหลายซี่ | L2 | C | mid | A | multiple-implants |
+| 3.2.8.2 | → → Multiple Implants — รากฟันเทียมหลายซี่ | L2 | C | mid | A | multiple-implant |
 | 3.2.8.3 | → → All-on-4 — ฟันทั้งปากบน 4 ราก 🌟 | L2 | A | mid | A | all-on-4 |
 | 3.2.8.4 | → → All-on-6 — ฟันทั้งปากบน 6 ราก | L2 | B | mid | A | all-on-6 |
 | 3.2.8.5 | → → Immediate Implant — ถอนฟันฝังรากทันที | L2 | B | mid | A | immediate-implant |
@@ -1366,7 +1366,7 @@
 | 7.2 | ผลงานรากฟันเทียม (hub) | L7 | B | bottom | A | dental-implant |
 | 7.2.1 | → Case: Single Implant ฟันหน้า — คืนรอยยิ้มสวย | L7 | C | bottom | A | single-tooth-implant |
 | 7.2.2 | → Case: Single Implant ฟันกราม — กลับมากินอาหารได้ | L7 | C | bottom | A | single-tooth-implant |
-| 7.2.3 | → Case: Multiple Implants — ทดแทนฟันหลายซี่ | L7 | C | bottom | A | multiple-implants |
+| 7.2.3 | → Case: Multiple Implants — ทดแทนฟันหลายซี่ | L7 | C | bottom | A | multiple-implant |
 | 7.2.4 | → Case: Immediate Implant — ถอนแล้วฝังทันที | L7 | C | bottom | A | immediate-implant |
 | 7.2.5 | → Case: Implant + Bone Graft — เคสกระดูกไม่พอ | L7 | C | bottom | A | alveolar-bone-loss |
 | 7.2.6 | → Case: Implant + Sinus Lift — เคสยกพื้นไซนัส | L7 | C | bottom | A | sinus-lift |

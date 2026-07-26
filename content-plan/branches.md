@@ -119,7 +119,7 @@ Format: array of date-specific exceptions (closed days, holidays, extended hours
 Both branches offer the universal SmileScape service catalog. Slugs reference `entities.md`:
 
 **Implant & Bone:**
-- dental-implant / single-tooth-implant / multiple-implants / implant-supported-bridge / overdenture
+- dental-implant / single-tooth-implant / multiple-implant / implant-supported-bridge / overdenture
 - all-on-x / all-on-4 / all-on-6 / zygomatic-implant / full-arch-immediate-loading
 - guided-bone-regeneration / sausage-technique / bone-grafting / sinus-lift / ridge-augmentation / socket-preservation / vertical-bone-augmentation
 - soft-tissue-management / connective-tissue-graft

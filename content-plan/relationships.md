@@ -32,7 +32,7 @@
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
 | dental-implant | parent_of | single-tooth-implant | No | — |
-| dental-implant | parent_of | multiple-implants | No | — |
+| dental-implant | parent_of | multiple-implant | No | — |
 | dental-implant | parent_of | implant-supported-bridge | No | — |
 | dental-implant | parent_of | overdenture | No | — |
 | dental-implant | parent_of | all-on-x | No | Full-arch subset of implant treatment |
