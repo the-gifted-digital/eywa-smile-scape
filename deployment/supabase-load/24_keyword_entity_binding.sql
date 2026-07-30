@@ -13,15 +13,21 @@
 -- (DR-022 volume-immune) identity even where matched volume is 0.
 --
 -- EXCLUSIONS (operator-approved):
---   - Osstem/Dentium (cluster 5C): discontinued per SS-DR-001 (Neodent replaced Osstem in the implant
---     lineup). Comparison-content keywords (e.g. "blue diamond vs osstem") kept under their subject brand.
 --   - "Other Aligner Brands" (cluster 6D — zenyum, clearcorrect, spark aligner): operator said take out
 --     entirely, no comparison content planned. 6 keywords left with primary_entity_fp = NULL by design.
+--     These 6 are the ONLY intentional NULLs.
 --   - Cluster 16 (geo-modifier templates "[service] กรุงเทพ" etc.): not real keywords, skipped at parse.
+--   - Osstem/Dentium: n/a. Osstem was removed from the lineup in SS-DR-001 Round 2 (Neodent added, 2026-05-21),
+--     so the live seed-list + DFS batch contain ZERO Osstem/Dentium keywords. Nothing to exclude.
 --
--- DISCOVERY: DFS's actual 525-keyword set included a 10-keyword "Neodent" cluster NOT present in the
--- original seed-list.md (operator hadn't anticipated market search volume for it). Mapped to
--- neodent-implant (entity already exists — SS-DR-001 successor brand to Osstem).
+-- CORRECTION (self-caught 2026-07-17, provenance-only — DB state was always correct):
+-- An earlier header claimed the Neodent keywords were "DFS-discovered, NOT in seed-list.md" and listed
+-- "Osstem/Dentium (cluster 5C)" as an exclusion. BOTH WRONG. In the live keyword-seed-list.md, cluster 5C
+-- IS Neodent (Value-Premium); Osstem only survives in archive/keyword-research-dump.md (pre-SS-DR-001-R2).
+-- The classifier carried a stale "exclude 5C = Osstem" rule from that archive, so it wrongly dropped the
+-- Neodent seed keywords on the first pass — they were caught in the 16-unmapped audit and correctly bound
+-- to neodent-implant. Verified: all of cluster 5 (Blue Diamond / Straumann / Neodent / Ceramic / generic
+-- comparison) maps correctly and zero Osstem keywords exist. Narrative fixed; no data change.
 --
 -- RESULT: 519/525 keywords bound to an entity (Wave 14a) -> 67 anchor pages get target_keyword_fp
 -- (Wave 14b, one anchor page per entity — see de-dup note) -> 21 sitemap nodes promoted by tier
