@@ -313,3 +313,78 @@ operator เลือก: *เก็บ 5.13 cost-hub ตาม Wave 15 · ย�
 | 4 | คู่ขนานที่เหลือในหมวดปริทันต์ซึ่งเป็น VTH ↔ deezy ล้วน (`scaling`↔`scaling-polishing` · `deep-cleaning`↔`deep-scaling` · `laser-periodontal`↔`laser-perio` · `gum-surgery`↔`periodontal-surgery` · `periodontal-disease`↔`periodontitis`) — เว้นไว้ให้คิว VTH ตามลำดับ DR-046 ไม่ตัดสินเป็นผลพลอยได้ | คิว VTH |
 | 5 | คิว VTH ตาม DR-046 (137 หน้า) **ยังไม่ได้รัน** — `orthodontics-alignment` 29 · `aesthetic-restorative` 24 · `dentures-prosthetics` 10 ยัง active อยู่ | คิว VTH |
 | 6 | `periodontal-treatment` เป็น entity ใหม่ที่สร้างในรอบนี้ — deezy `3.4` (hub ปริทันต์) ใช้ต่อได้ทันที ควรเก็บตอนรอบ deezy ถัดไป | deezy |
+
+---
+
+# 🔴 Wave 16b — รอบแก้หลังอ่าน `similarity-layer-2026-08-06.md`
+
+**ข้อผิดพลาดของผม:** Wave 16 ทำ dedupe ด้วย**การเทียบสตริงอย่างเดียว** (ชื่อ · token-sort · ICD) ทั้งที่มีชั้นตรวจความคล้ายที่สร้างเสร็จแล้วรออยู่ — `pg_trgm` views + embedding 694 ตัว (openai-text-embedding-3-small) ที่รันเมื่อ 2026-08-06 · เอกสารนั้นเขียนไว้ตรง ๆ ว่า **"28 คู่ที่ cluster ไม่ตรงกัน คือคิวงานตรงของรอบ smile-scape"** และผมไม่ได้เปิดดู
+
+## ผลการรันชั้นที่ขาดไป
+
+| ชั้น | คู่ที่แตะ smile-scape | สรุป |
+|---|--:|---|
+| `v_page_title_near_duplicates` | **0** | S4 สะอาดอยู่แล้ว |
+| `v_entity_near_duplicates` (trigram) | **0** | Wave 16 กวาดหมดแล้วจริง — ยืนยันว่าชั้นสตริงไม่พลาด |
+| `v_entity_semantic_duplicates` (cosine) | **13** | **4 คู่เป็นของที่ Wave 16 มองไม่เห็น** |
+| `v_keyword_near_duplicates` (trigram, ทั้งสองฝั่งเป็น primary) | **13 คู่ / 26 หน้า** | Q1 ของ SOP จับไม่ได้เลยสักคู่ |
+
+## แก้อะไรไป
+
+| # | เจอเพราะ | ทำอะไร |
+|---|---|---|
+| A | cosine 0.167 · **name_sim 0.906** | ยุบ `social-security-dental-benefit` "(TH)" (**17 หน้า SS · 9 คีย์**) → `social-security-dental` (deezy) — รูปแบบ `(TH)` ที่ worklist Tier A เขียนไว้ แต่ token-sort/strip-เว้นวรรคจับไม่ได้เพราะคำว่า `Benefit` กับวงเล็บ |
+| B | cluster_conflict + cosine 0.180 | `tmj-disorder` (VTH 9 หน้า · SS 5 หน้า) ถูก loader รอบหลังเขียนทับให้ไปนั่งใน `patient-conditions-bone` = facet รากเทียมของ smile-scape → ย้ายกลับ `tmj-orofacial-pain` + ผูก edge `tmj-pain --symptom_of--> tmj-disorder` · **worklist 2026-08-04 §3 รายงานเคสนี้ไว้แล้วชื่อตรงตัว** |
+| C | cosine 0.173 · name_sim 0.370 | ยุบ `bone-graft-implant` (deezy · 1 หน้า · 0 คีย์ · implant-dentistry) → `bone-grafting` (deezy · 12 หน้า · 19 คีย์ · oral-surgery) — **deezy ซ้ำกับตัวเอง** สรุปภาษาไทยแทบเหมือนกันคำต่อคำ · ทั้งคู่ `load_from='deezy-dental'` จึงตัดสินด้วย DR-046 กฎข้อ 4 (หน้า/คีย์มากกว่าชนะ) |
+| D | cluster_conflict + cosine 0.175 | `early-orthodontic-intervention` ⟷ `pediatric-orthodontics` (deezy) — **ไม่ยุบ** เพราะเป็น subtype จริง (interceptive/phase-1) → ผูก `is_a` + ย้าย cluster ไป `orthodontics` ให้ตรงพ่อ + **ถอด ICD M26.4 ที่ติดผิดบนแถว treatment** |
+
+**ที่ระบบชูขึ้นมาแต่ยืนยันว่าห้ามยุบ** (ตรงกับที่เอกสาร similarity เตือนไว้เอง): `Single Tooth Implant` ⟷ `Multiple Teeth Implant` · `Guided Bone Regeneration` ⟷ `Osseodensification` · `Regenerative` ⟷ `Resective Peri-Implantitis Surgery` · `SmileScape สาขารัตนาธิเบศร์` ⟷ `สาขาศรีนครินทร์` · `Ridge` ⟷ `Vertical Bone Augmentation`
+
+## 🔴 บทเรียนใหม่ — Q1 ของ SOP มีรูที่ภาษาไทย (เสนอเป็น L20)
+
+trap L13 บอกให้เช็ค 2 แบบ (`kw_norm()` token-sort + strip เว้นวรรค) — **ทั้งสองแบบจับ "การสลับลำดับคำไทยที่ไม่เว้นวรรค" ไม่ได้** เพราะ token-sort ต้องมีช่องว่างให้ตัดคำ ส่วน strip-เว้นวรรคเทียบสตริงตรงตัวจึงแพ้เมื่อลำดับต่าง
+
+คู่ที่หลุด Q1 มาได้ทั้งที่เป็นคำเดียวกัน:
+
+| หน้า A | หน้า B | sim |
+|---|---|--:|
+| `รักษาโรคเหงือก` (5.11.3) | `โรคเหงือก รักษา` (5.6.3.8) | 0.722 |
+| `ผ่าตัดรากฟันเทียม` (3.2.3) | `รากฟันเทียม ผ่าตัด` (3.2.11.1) | 0.762 |
+| `คลินิกสไมล์สเคป` (8.1) | `สไมล์สเคป คลินิก` (2.2.10) | 0.778 |
+| `ผ่อนรากฟันเทียม` (3.2.8) | `รากฟันเทียม ผ่อน` (3.2.10.3) | 0.737 |
+| `smilescape รากฟันเทียม` (2.5) | `รากฟันเทียม by smilescape` (2.1.2) | 0.885 |
+| `รากฟันเทียม ผ่อน` (3.2.10.3) | `รากฟันเทียม ผ่อน 0` (6.2.1.5) | 0.895 |
+| `สิทธิ์ทันตกรรม ประกันสังคม` (3.14.3) | `สิทธิประกันสังคม ทันตกรรม` (5.13.2.3) | 0.828 |
+
+**เกตใหม่ที่เพิ่ม (G07b):** `v_keyword_near_duplicates` sim ≥ 0.70 โดยตัดคู่ที่ฝั่งหนึ่งเป็น substring ของอีกฝั่งออก (เพราะนั่นคือ "หัวคำ vs คำมุม" ที่ถูกต้องตาม DR-048 เช่น `รากฟันเทียม` vs `รากฟันเทียม ราคา`)
+
+**13 คู่ / 26 หน้า ติดธง `kw-dup-semantic` ไว้ ไม่แก้เอง** — การเลือกเจ้าของคีย์เป็นการตัดสินใจเรื่องเนื้อหา ต้องให้ operator
+⚠️ ในนั้นมี false positive ของ trigram อย่างน้อย 1 คู่: `ค่ารากฟันเทียม` ⟷ `ผ่ารากฟันเทียม` (0.765) ต่างกันแค่อักษรเดียวแต่คนละความหมายสิ้นเชิง — ยืนยันว่า view เป็น **รายการผู้ต้องสงสัย ไม่ใช่คำตัดสิน**
+
+## 🏁 QA หลัง Wave 16b
+
+| เกต | ผล |
+|---|--:|
+| G01 entity ชื่อซ้ำ (token-sort) | **0** |
+| **G01b** trigram near-dup ที่แตะ smile-scape | **0** |
+| **G01c** semantic near-dup ที่ยัง cluster ขัดกัน | **0** (จาก 3) |
+| G04 mismatch cluster ไม่มี notes | **0** |
+| G05 / G05b ตัวชี้ไป entity merged | **0 / 0** |
+| **G05d** embedding ที่ยังชี้ entity ที่ปิดไปแล้ว | **0** |
+| G06 / G07 Q1 token-sort / strip-เว้นวรรค | **0 / 0** |
+| **G07b** คีย์สลับลำดับคำไทยที่ยังไม่ติดธง | **0** |
+| G08 หน้าเนื้อหาไม่มีคีย์และไม่ติดธง | **0** |
+| G09 / G09b citation / Tier 1-3 | **0 / 0** |
+| G10 keyword_use_as ไม่ตรง | **0** |
+| G14 หน้านอก §3 ไม่มีเส้นทางกลับ §3 | **0** |
+| **G18** หัวข้อหน้าใกล้ซ้ำ (S4) | **0** |
+
+> เพิ่มขั้นตอนบำรุงรักษา: ทุกครั้งที่ยุบ entity ต้อง **ลบแถวใน `seo_entity_embeddings` ของตัวที่ปิด** ไม่งั้น `v_entity_semantic_duplicates` จะชูซากขึ้นมาซ้ำทุกรอบ (ทำแล้วในรอบนี้)
+
+## เพิ่มในรายการส่งต่อ
+
+| # | งาน | ใคร |
+|---|---|---|
+| 7 | **13 คู่คีย์ที่ติดธง `kw-dup-semantic`** — เลือกเจ้าของรายคู่ | **operator** |
+| 8 | เสนอ **L20** เข้า `Keyword_Assignment_SOP` — Q1 ต้องเพิ่มชั้นที่ 3 (`pg_trgm` ≥0.70 ตัด substring pair ออก) เพราะ L13 สองชั้นเดิมจับการสลับลำดับคำไทยไม่ได้ · และเพิ่มขั้นตอน "ลบ embedding ของ entity ที่ยุบ" เข้าเช็กลิสต์ merge | spec |
+| 9 | **รัน `v_entity_semantic_duplicates` เป็นเกตมาตรฐานของทุกรอบ dedupe** — รอบนี้พิสูจน์แล้วว่าชั้นสตริงสะอาด (trigram 0 คู่) ขณะที่ชั้น semantic ยังเจอของจริง 4 คู่ | spec |
