@@ -1460,3 +1460,39 @@ Dental Anxiety ← Obstetric Anesthesia guidelines) · bindings 1,623 → **1,53
 ประกาศเข้าสเปกเป็น **L30** (`Keyword_Assignment_SOP` v1.9) — *เกตที่ผ่านได้ทั้งจาก "สะอาดจริง"
 และจาก "ไม่ได้ตรวจ" ไม่ใช่เกต* · เวลารายงานความคืบหน้าต้องบอก **"ตรวจไปกี่ชิ้นจากทั้งหมดกี่ชิ้น"** เสมอ
 ไม่ใช่แค่ "เจอปัญหากี่ชิ้น"
+
+## Wave 16ad — slug + canonical_url ครบ 728 หน้า (2026-08-16)
+
+ต่อจาก §3 (16ab) จนครบทุกหมวด
+
+| หมวด | หน้า | ที่มาของ slug |
+|---|---|---|
+| §3 | 233 | ดึงฝั่งอังกฤษจาก `page_name` ได้ ~70% ที่เหลือแก้มือ ~115 |
+| §5 | 208 | **ไทยล้วนเกือบทั้งหมด** ตั้งชื่ออังกฤษเองทุกแถว |
+| §6 | 165 | รูป `-guide` / `-explained` ตามที่ deezy ใช้ · หน้า evidence ใช้ `evidence-<หัวข้อ>-<ผู้แต่ง>-<ปี>` |
+| §1·2·4·7·8·9 | 122 | เคสใช้ `case-<หัตถการ>-<เงื่อนไข>` · เรื่องเล่าใช้ `story-<ใจความ>` |
+
+**เกตปิดงาน** slug 728/728 · canonical 728/728 · **ชนกัน 0** · ฟอร์แมต kebab-case ผิด 0 ·
+canonical host ผิด 0 · ไม่มี trailing slash 0
+
+**canonical ซ้ำ 1 คู่ — ตั้งใจ** `3.1.5 digital-smile-design-diagnostics` → canonical ชี้
+`3.9.1 digital-smile-design` ตามที่ `page_name` กำกับไว้ว่า `(→ canonical 3.9.1)` ·
+หน้าแรก slug=`home` แต่ canonical ชี้ root ไม่ใช่ `/home/`
+
+**slug ซ้ำข้ามแบรนด์ 103 ตัว — ไม่ใช่ปัญหา** คนละโดเมน (`deezydental.com` vs `smilescapeclinic.com`)
+บันทึกไว้กันเข้าใจผิดว่าเป็น defect
+
+**ตัวที่ต้องเลี่ยงชนกันเอง ที่เจอระหว่างทาง**
+
+| หน้า | ชนกับ | แก้เป็น |
+|---|---|---|
+| 5.2.5 sausage-technique | 3.2.9.3 | `sausage-technique-for-bone-loss` |
+| 5.5 smile-makeover | 3.9.5 | `smile-makeover-concerns` |
+| 5.14.7 dry-socket | 5.19.4 | `pain-after-extraction` |
+| 6.2.1.6 implant-brand-comparison | 3.2.11.6 | `implant-brands-compared` |
+| 6.2.2.4 all-on-4-upper-vs-lower | 3.3.4 | `all-on-4-arch-differences` |
+| 7.3 all-on-x-case-gallery | 3.3.10 | `all-on-x-cases` |
+| 4.4.1 piezoelectric-surgery | 6.2.1.20 | `piezoelectric-surgery-unit` |
+
+**สถานะตารางตอนนี้:** primary keyword 673 · semantic 343 · slug 728 · canonical 728 ·
+`seo_title` / `meta_description` / `content_brief` ยัง **0** — เป็นงานถัดไป
