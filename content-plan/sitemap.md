@@ -200,7 +200,6 @@
 | 3.2.1 | → รากฟันเทียมคืออะไร — ทำความเข้าใจรากฐานใหม่ของคุณ | L2 | B | mid | A | dental-implant |
 | 3.2.2 | → ทำไมต้อง SmileScape — Dual Master's + Global Mastery | L2 | B | mid | A | dr-woraphat-jarangkul |
 | 3.2.3 | → ใครเหมาะกับรากฟันเทียม — Candidacy Assessment | L2 | C | mid | A | dental-implant |
-| 3.2.4 | → ราคารากฟันเทียม SmileScape — โปรโมชั่นและแผนผ่อนชำระ | L2 | B | bottom | D | dental-implant |
 
 #### ขั้นตอนการรักษา & เทคนิค
 
@@ -326,7 +325,6 @@
 | 3.3.6 | → All-on-X สำหรับผู้ที่ใส่ฟันปลอมมานาน | L2 | C | mid | A | all-on-x |
 | 3.3.7 | → All-on-X สำหรับผู้สูงอายุ | L2 | C | mid | A | all-on-x |
 | 3.3.8 | → วัสดุฟันถาวร All-on-X — Zirconia vs Acrylic vs Hybrid | L2 | C | mid | D | all-on-x |
-| 3.3.9 | → ราคา All-on-X SmileScape — แผนผ่อนชำระ | L2 | C | bottom | D | all-on-x |
 | 3.3.10 | → การดูแลหลัง All-on-X — ทำความสะอาดและตรวจเช็ค | L2 | D | mid | A | all-on-x |
 | 3.3.11 | → All-on-X Case Gallery — ผลงานจริง | L7 | C | mid | A | all-on-x |
 
@@ -355,7 +353,6 @@
 | 3.4.7.3 | → → Walking Bleach — ฟอกฟันตายภายในเฉพาะซี่ (→ link 3.11.6 Internal Bleaching) | L2 | D | mid | A | internal-bleaching |
 | 3.4.8 | → Gum Contouring — ตกแต่งเหงือก (Gummy Smile) | L2 | C | mid | A | gum-contouring |
 | 3.4.9 | → Smile Makeover — แปลงโฉมรอยยิ้มครบวงจร | L2 | C | mid | A | digital-smile-design |
-| 3.4.10 | → ราคาทันตกรรมเพื่อความสวยงาม SmileScape | L2 | C | bottom | D | digital-smile-design |
 
 ---
 
@@ -374,7 +371,6 @@
 | 3.5.1.3 | → → จัดฟันใส Thermoformed — Conventional Clear Aligner — 3rd option (R16) | L2 | C | mid | A | thermoformed-aligner |
 | | → → brand: Invisalign @ Tech 4.6.2 + Knowledge 6.2.5.2 + Case 7.5.3 (ทั้งหมดลิงก์กลับหน้านี้) | | — | — | — |
 | 3.5.1.4 | → → ใครเหมาะ / ไม่เหมาะกับจัดฟันใส + ข้อจำกัด (R16: รวม candidacy + limitations) | L2 | C | top | A | clear-aligner |
-| 3.5.1.5 | → → ราคาจัดฟันใส SmileScape — In-House Direct Print vs Outsourced Lab Tier | L2 | B | bottom | D | clear-aligner |
 | 3.5.1.6 | → → การดูแล Aligner — Cleaning + Storage + Replacement Schedule | L2 | D | mid | A | clear-aligner |
 | 3.5.3 | → Self-Ligating Braces — PSL & ASL (hub) | L2 | C | mid | A | passive-self-ligating |
 | | → → หลักการ / ต่างจากเหล็กธรรมดายังไง / SmileScape มีทั้ง PSL + ASL (R17 confirmed). brand: Damon @ Tech 4.6.3 (ลิงก์กลับหน้านี้) | | — | — | — |
@@ -383,7 +379,6 @@
 | 3.5.4 | → จัดฟันเหล็ก — Conventional Braces | L2 | C | mid | A | orthodontic-intervention |
 | 3.5.5 | → จัดฟันผู้ใหญ่ — Orthodontics for Adults | L2 | C | mid | A | orthodontic-intervention |
 | 3.5.6 | → จัดฟันก่อนทำรากฟันเทียม — Ortho + Implant Sequencing 🌟 | L6 | C | mid | A | ortho-implant-sequencing |
-| 3.5.7 | → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ | L2 | C | bottom | D | orthodontic-intervention |
 | 3.5.8 | → จัดฟันร่วมผ่าตัดเลื่อนขากรรไกร — Orthognathic Surgery Program 🌟 (hub) | L2 | B | mid | A | orthognathic-surgery |
 | | → → **R17 delivery model:** SmileScape-managed program — คลินิกเป็นเจ้าของ pre/post-surgical ortho + digital planning + coordination ครบวงจร / การผ่าตัดทำโดย affiliated OMFS @ partner hospital. **⚠️ Phase F compliance guardrail:** นำเสนอเป็น "โปรแกรมที่ SmileScape ดูแลครบวงจร" — ห้าม claim ผ่าใน OR ตัวเอง (พ.ร.บ.สถานพยาบาล + สบส. + Google YMYL/E-E-A-T) | | — | — | — |
 | 3.5.8.1 | → → ใครเหมาะ — Class III / Class II Severe / Skeletal Asymmetry | L2 | C | mid | D | orthognathic-surgery |
@@ -393,7 +388,6 @@
 | 3.5.8.5 | → → Bimaxillary (Two-jaw) Surgery | L2 | C | mid | A | orthognathic-surgery |
 | 3.5.8.6 | → → Genioplasty — เสริม/ลดคาง | L2 | D | mid | A | orthognathic-surgery |
 | 3.5.8.7 | → → Surgery-First Approach | L2 | D | mid | A | orthognathic-surgery |
-| 3.5.8.8 | → → ระยะเวลา & ค่าใช้จ่าย | L2 | D | bottom | D | orthognathic-surgery |
 
 ---
 
@@ -408,7 +402,6 @@
 | 3.6.1.2 | → → ขูดหินปูนแบบ Air Polishing ★ — ขจัดคราบลึก ไม่เจ็บ | L2 | C | mid | A | airflow-air-polishing |
 | | → → → Air-Water-Powder system / Guided Biofilm Therapy (GBT) / Patient-friendly (R12: brand-specific EMS Airflow at 4.4.5) | | — | — | — |
 | 3.6.1.3 | → → Deep Cleaning / Scaling & Root Planing — รักษาโรคเหงือกระยะแรก | L2 | C | mid | A | periodontitis |
-| 3.6.1.4 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ | L2 | C | bottom | D | dental-filling |
 | 3.6.1.5 | → → ขูดหินปูน เจ็บไหม — ความรู้สึกจริง + วิธีลดเจ็บ | L2 | C | top | A | dental-filling |
 | 3.6.1.6 | → → ขูดหินปูนบ่อยแค่ไหน — Schedule ที่แนะนำ | L2 | C | mid | A | dental-filling |
 | 3.6.1.7 | → → ขูดหินปูนใช้สิทธิประกันสังคม / สปสช | L2 | C | bottom | D | dental-filling |
@@ -433,7 +426,6 @@
 | 3.7.3 | → ศัลยกรรมเหงือก — Gum Surgery | L2 | C | mid | A | periodontitis |
 | 3.7.4 | → เหงือกร่น — Gum Recession Treatment | L2 | C | mid | A | gum-recession |
 | 3.7.5 | → ความเชื่อมโยงโรคเหงือกกับรากฟันเทียม — Perio-Implant Connection 🌟 | L2 | C | mid | A | dental-implant |
-| 3.7.6 | → ราคารักษาโรคเหงือก SmileScape | L2 | D | bottom | D | periodontitis |
 | 3.7.7 | → Peri-Implantitis Service — รักษาการติดเชื้อรอบรากเทียม 🌟 (hub) | L2 | B | mid | A | peri-implantitis-treatment |
 | | → → DFS-validated 140/mo TH LOW competition (R3 dedicated service hub) | | — | — | — |
 | 3.7.7.1 | → → การวินิจฉัย Peri-Implantitis — Probing / BoP / X-ray / CBCT | L2 | C | mid | A | peri-implantitis |
@@ -877,6 +869,21 @@
 |---|-----------|-------|------|-------|-----------|----------------|
 | 5.13 | ค่าใช้จ่ายและสิทธิ์การรักษา (hub) | L4 | B | bottom | A | dental-implant |
 | 5.13.1 | → ราคาทำฟันแต่ละประเภท — ค่าใช้จ่ายโดยประมาณ | L4 | C | bottom | D | dental-implant |
+| 5.13.1.1 | → → อุดฟัน ราคา — เปรียบเทียบราคาวัสดุแต่ละแบบ | L4 | C | bottom | D | dental-filling |
+| 5.13.1.2 | → → ถอนฟัน ราคา — ค่าใช้จ่ายและสิ่งที่รวมอยู่ | L4 | C | bottom | D | tooth-extraction |
+| 5.13.1.3 | → → ผ่าฟันคุด ราคา — เปรียบเทียบตามระดับความยาก | L4 | C | bottom | D | wisdom-tooth-removal |
+| 5.13.1.4 | → → ครอบฟัน ราคา — เปรียบเทียบราคาวัสดุแต่ละแบบ | L4 | C | bottom | D | dental-crown |
+| 5.13.1.5 | → → รักษารากฟัน ราคา — ค่าใช้จ่ายตามจำนวนคลองราก | L4 | C | bottom | D | root-canal-treatment |
+| 5.13.1.6 | → → ฟอกฟันขาว ราคา — เปรียบเทียบแต่ละวิธี | L4 | C | bottom | D | teeth-whitening |
+| 5.13.1.7 | → → ราคารากฟันเทียม SmileScape — โปรโมชั่นและแผนผ่อนชำระ *(ย้ายจาก §3)* | L4 | C | bottom | D | dental-implant |
+| 5.13.1.8 | → → ราคา All-on-X SmileScape — แผนผ่อนชำระ *(ย้ายจาก §3)* | L4 | C | bottom | D | dental-implant |
+| 5.13.1.9 | → → ขูดหินปูน ราคา — เปรียบเทียบราคาแต่ละแบบ *(ย้ายจาก §3)* | L4 | C | bottom | D | dental-scaling |
+| 5.13.1.10 | → → ราคารักษาโรคเหงือก SmileScape *(ย้ายจาก §3)* | L4 | C | bottom | D | periodontitis |
+| 5.13.1.11 | → → วีเนียร์ ราคา — เปรียบเทียบราคาแต่ละแบบ *(ย้ายจาก §3)* | L4 | C | bottom | D | dental-veneer |
+| 5.13.1.12 | → → ราคาทันตกรรมเพื่อความสวยงาม SmileScape *(ย้ายจาก §3)* | L4 | C | bottom | D | digital-smile-design |
+| 5.13.1.13 | → → ราคาจัดฟันใส SmileScape *(ย้ายจาก §3)* | L4 | C | bottom | D | clear-aligner |
+| 5.13.1.14 | → → ราคาจัดฟัน SmileScape — เปรียบเทียบแต่ละแบบ *(ย้ายจาก §3)* | L4 | C | bottom | D | orthodontics |
+| 5.13.1.15 | → → ระยะเวลา & ค่าใช้จ่าย ผ่าตัดขากรรไกร *(ย้ายจาก §3)* | L4 | C | bottom | D | orthognathic-surgery |
 | 5.13.2 | → สิทธิ์ประกันสังคมทำฟัน — Hub ครอบจักรวาล 🌟 (sub-hub) | L4 | B | mid | A | social-security-dental-benefit |
 | 5.13.2.1 | → → ประกันสังคม 900 บาท/ปี — ครอบคลุมอะไรบ้าง (DFS 110/mo) | L4 | C | top | A | social-security-dental-benefit |
 | 5.13.2.2 | → → ขูดหินปูน / อุดฟัน / ถอนฟัน ใช้ประกันสังคม (→ link 3.6.1.7) | L4 | C | mid | A | social-security-dental-benefit |
@@ -1180,6 +1187,8 @@
 | 6.2.4.11 | → ตรวจฟันประจำปี — ทำไมสำคัญ | L5 | D | top | A | dental-implant |
 | 6.2.4.12 | → ฟอกสีฟัน — Cool Light vs Home Bleaching | L5 | D | top | A | cool-light-whitening-unit |
 | 6.2.4.13 | → ครอบฟันทองคำ vs Zirconia — เลือกแบบไหนดี (R3) | L5 | C | mid | D | gold-crown |
+| 6.2.4.14 | → → ถอนฟัน เจ็บไหม — ความรู้สึกจริงและวิธีลดเจ็บ | L4 | C | mid | A | tooth-extraction |
+| 6.2.4.15 | → → รักษารากฟัน เจ็บไหม — ความรู้สึกจริงและวิธีลดเจ็บ | L4 | C | mid | A | root-canal-treatment |
 
 #### 6.2.5 Orthodontic Insights (was top-level 6.6, ดัก brand search intent)
 
@@ -1441,24 +1450,16 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 8.2 | SmileScape สาขารัตนาธิเบศร์ — คลินิกรากฟันเทียมนนทบุรี (Local SEO hub) | L1 | B | bottom | B | smilescape-rattanathibet |
-| 8.2.1 | → แผนที่และการเดินทาง — ติด MRT สีม่วง แยกนนทบุรี 1 | L1 | D | bottom | D | smilescape-rattanathibet |
 | 8.2.2 | → รากฟันเทียมนนทบุรี — ทำไมต้อง SmileScape | L1 | C | bottom | D | dental-implant |
 | 8.2.3 | → ทำฟันนนทบุรี — บริการทันตกรรมครบวงจร | L1 | D | bottom | D | smilescape-rattanathibet |
-| 8.2.4 | → จัดฟันนนทบุรี | L1 | D | bottom | D | smilescape-rattanathibet |
-| 8.2.5 | → คลินิกทำฟันใกล้ MRT สีม่วง | L1 | D | bottom | D | smilescape-rattanathibet |
-| 8.2.6 | → ทำฟันประกันสังคม สาขารัตนาธิเบศร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
 
 ### 8.3 สาขาศรีนครินทร์ (กรุงเทพฯ)
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 8.3 | SmileScape สาขาศรีนครินทร์ — คลินิกรากฟันเทียมศรีนครินทร์ (Local SEO hub) | L1 | B | bottom | B | smilescape-srinakarin |
-| 8.3.1 | → แผนที่และการเดินทาง — ใกล้ MRT สีเหลือง สวนหลวง ร.9 | L1 | D | bottom | D | smilescape-srinakarin |
 | 8.3.2 | → รากฟันเทียมศรีนครินทร์ — ทำไมต้อง SmileScape | L1 | C | bottom | D | smilescape-srinakarin |
 | 8.3.3 | → ทำฟันศรีนครินทร์ — บริการทันตกรรมครบวงจร | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.4 | → จัดฟันศรีนครินทร์ | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.5 | → คลินิกทำฟันใกล้ MRT สีเหลือง | L1 | D | bottom | D | smilescape-srinakarin |
-| 8.3.6 | → ทำฟันประกันสังคม สาขาศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย ★ 🌟 | L1 | C | bottom | A | sso-direct-billing-q-clinic |
 
 ---
 
@@ -1481,3 +1482,45 @@
 - **Total Section 3:** 240 pages
 
 > **Implant focus (3.2+3.3) = 86 pages = 35.8% ของ Section 3** — 3.2 รากฟันเทียมเป็น subsection ใหญ่สุดของไซต์ (30.8%) สะท้อน positioning "ตัวจริงด้านรากฟันเทียม"
+
+
+---
+
+## Section 9: HYPER-LOCAL (T18 Programmatic Local Service) — 6 หน้า
+> เพิ่ม 2026-08-15 · ย้ายมาจาก §8 ตามมติ operator — **§8 เก็บเฉพาะ** 8.1 ติดต่อ · 8.2/8.3 หน้าสาขา · 8.2.2/8.2.3/8.3.2/8.3.3 บริการเรือธง×สาขา · **นอกนั้น hyperlocal ทั้งหมด**
+>
+> แพตเทิร์นจาก Deezy (`docs/PLAN-section9-hyperlocal.md` · DZ-DR-043/044):
+> - §9 = `{บริการ} × {สาขา}` · `content_format=T18` · `page_type=local_service_page`
+> - **ตัด hub ของ §9 ทิ้ง** — intent ซ้ำกับ §3 pillar 100% · หน้าที่ของมันแทนด้วย locator block "ค้นหา{บริการ}ใกล้คุณ" บนหน้า §3 ⇒ `parent_page_fp` ของหน้า §9 ชี้ไปหน้าบริการ §3 โดยตรง
+> - **ไม่โชว์ใน nav**
+> - ต้องผ่าน **uniqueness scan ≥30%** ก่อน build (DZ-DR-044) เทียบกับหน้าพี่น้องบริการเดียวกัน + หน้าสาขา · ตอนนี้ทุกหน้าติดธง `uniqueness-check-needed`
+> - target keyword ไม่จำเป็นต้องเป็นชื่อสาขา ให้ตามดีมานด์จริง
+
+| # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity | Parent (§3) |
+|---|-----------|-------|------|--------|-----------|----------------|-------------|
+| 9.1.1 | จัดฟัน รัตนาธิเบศร์ — SmileScape สาขานนทบุรี | L2 | C | bottom | C | orthodontics | 3.10 จัดฟัน |
+| 9.1.2 | จัดฟัน ศรีนครินทร์ — SmileScape สาขาศรีนครินทร์ | L2 | C | bottom | C | orthodontics | 3.10 จัดฟัน |
+| 9.2.1 | ทำฟันประกันสังคม รัตนาธิเบศร์ — Q-Clinic ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
+| 9.2.2 | ทำฟันประกันสังคม ศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
+| 9.3.1 | คลินิกทำฟันใกล้ MRT สีม่วง — สาขารัตนาธิเบศร์ | L2 | C | bottom | C | general-dentistry | 3.4 ทันตกรรมทั่วไป |
+| 9.3.2 | คลินิกทำฟันใกล้ MRT สีเหลือง — สาขาศรีนครินทร์ | L2 | C | bottom | C | general-dentistry | 3.4 ทันตกรรมทั่วไป |
+
+---
+
+## ⚠️ หมายเหตุความไม่ตรงกันระหว่างเอกสารนี้กับฐานข้อมูล (พบ 2026-08-15)
+
+**เลขโหนดของ §3 ในเอกสารนี้ ไม่ตรงกับ `seo_website_page_master` ของจริง** เช่น
+
+| หน้า | เลขในเอกสารนี้ | เลขใน DB |
+|---|---|---|
+| ตรวจฟันและขูดหินปูน (hub) | 3.6.1 | **3.4.1** |
+| ขูดหินปูน ราคา | 3.6.1.4 | **3.4.1.4** |
+| ราคาจัดฟันใส | 3.5.1.5 | **3.10.1.5** |
+| ระยะเวลา & ค่าใช้จ่าย (ผ่าตัดขากรรไกร) | 3.5.8.8 | **3.10.8.8** |
+| ราคาทันตกรรมเพื่อความสวยงาม | 3.4.10 | **3.9.6** |
+| วีเนียร์ ราคา | *(ไม่มีในเอกสาร)* | **3.9.2.3** |
+
+§1 · §2 · §5 · §6 · §7 · §8 ตรวจแล้ว**ตรงกัน** — ต่างเฉพาะ §3 (และ §4 ยังไม่ได้ตรวจ)
+
+⇒ **ห้ามแก้เอกสารนี้โดยอ้างเลขโหนดจาก DB ใน §3** ต้องจับคู่ด้วยชื่อหน้า มิฉะนั้นจะลบผิดแถว (เคยเกิดขึ้นแล้วตอนซิงก์รอบนี้ กู้คืนจาก backup ทัน)
+⇒ ต้องมีรอบ reconcile เลขโหนด §3 ทั้งบล็อกแยกต่างหาก — ยังไม่ได้ทำ
