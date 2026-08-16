@@ -1370,3 +1370,47 @@ T12 (FAQ/glossary hub) · T13 (ราคา) · T16 (ประกัน) · T19 
 
 เติม 10 แถวที่ **หลายหน้าใช้ร่วมกันมากที่สุด** (ครอบคลุม 204 การผูก) — 146 → **136**
 เรียงลำดับตาม `count(distinct page_fp)` เพื่อให้แต่ละ wave คุ้มที่สุด · ทำต่อได้จาก `tmp/ss-sem/pubmed.json`
+
+## Wave 16aa — ใส่ FK จริงให้ `seo_website_page_master` (2026-08-16)
+
+operator ถามกลับว่า *"ทำไมคอลัมน์ที่อ้างกลับไปตารางอื่น ไม่ใช้ FK ไปเลย"* — คำถามถูก และคำตอบคือ
+**ไม่มีเหตุผลที่ดีเลย มันคือช่องโหว่ ไม่ใช่การตัดสินใจ**
+
+**หลักฐานที่ชี้ชัด:** ใน `seo_page_citations` ตารางเดียวกันนั้น `citation_fp` **มี FK จริงมาตลอด**
+(→ `seo_citations.fingerprint` ON DELETE CASCADE) มีแต่ฝั่ง `page_fp` ที่ไม่มี ·
+ฝั่ง citation จึงใส่ผิดไม่ได้ แต่ฝั่งหน้าใส่อะไรก็ผ่าน — นั่นคือเหตุผลที่ 3 แถวของ vth-biodent รอดมาได้
+
+**เหตุผลเชิงประวัติที่น่าจะทำให้เลี่ยง FK:** `page_fingerprint` เปลี่ยนค่าตอน renumber (§13.3)
+FK ธรรมดา (`NO ACTION`) จะบล็อก → **`ON UPDATE CASCADE` แก้ได้ และทำให้ renumber ดีขึ้นกว่าเดิม**
+
+**ตรวจก่อนใส่ — ทั้ง 5 คอลัมน์พร้อมอยู่แล้ว** `page_fingerprint` มี unique index อยู่แล้ว ·
+orphan 0 · null 0 · index บนคอลัมน์ลูกมีครบทุกตัว (ไม่ต้องสร้างเพิ่ม)
+
+**ที่ต้องซ่อมก่อน 2 แถว:** `ad_landing_page_fp` ของ smile-scape ชี้ `smilescape-3.10.7` และ `smilescape-8.2.5`
+ซึ่งถูกยุบ/ย้ายตอนผมรื้อ §8 → §9 เอง (รูปคีย์ถูก แต่เลข node ตาย = โฆษณาที่ปลายทางหาย)
+ชี้ใหม่ไป `smilescape-3.10` (หน้ารวมจัดฟัน) และ `smilescape-9.1.1` (จัดฟัน รัตนาธิเบศร์)
+
+**FK ที่ใส่ 7 ตัว** (migration `add_real_fks_to_page_master`) — `ON UPDATE CASCADE` ทุกตัว
+
+| คอลัมน์ | ON DELETE | เหตุผล |
+|---|---|---|
+| `seo_page_citations.page_fp` | CASCADE | แถวลูกแท้ ไม่มีความหมายถ้าหน้าหาย |
+| `seo_editorial_reviews.page_fp` | CASCADE | เช่นกัน |
+| `seo_page_internal_links.from_page_fp` / `to_page_fp` | CASCADE | เช่นกัน |
+| `seo_website_page_master.parent_page_fp` | **SET NULL** | ⚠️ CASCADE จะลบลูกหลานทั้งกิ่งเมื่อลบ hub เดียว |
+| `seo_x_ads_keywords_contextual_master.ad_landing_page_fp` | **SET NULL** | คีย์เวิร์ดมีชีวิตของตัวเอง หน้าหายก็ยังอยู่ |
+| `seo_x_voice_search.optimized_for_page_fp` | **SET NULL** | เช่นกัน |
+
+operator เลือก DELETE CASCADE — ผมทำตามเฉพาะตารางลูกแท้ **แต่ไม่ทำตามใน 3 ตัวหลัง**
+เพราะ CASCADE ที่ `parent_page_fp` แปลว่าลบหน้า hub เดียว = ลบทั้งกิ่ง ซึ่งเกือบแน่นอนว่าไม่ใช่เจตนา
+
+**ทดสอบบนของจริงแล้ว 3 ข้อ** — ใส่คีย์ผิดตัวถูกปฏิเสธด้วย `foreign_key_violation` ·
+renumber หน้าที่มี citation แล้วบริวารย้ายตามครบ · ยอดแถวไม่ขยับ (6,309 / 2,095 / 16,564) ไม่มีเศษ probe ค้าง
+
+**ผลต่อ §13.3:** เขียน `page_fingerprint` ที่เดียว บริวารตามเอง → จาก 7 จุดเหลือไล่มือแค่
+**`planned_outbound_fps`** ตัวเดียว (เป็น `text[]` Postgres ทำ FK กับสมาชิกใน array ไม่ได้) ·
+ยังต้อง 2-phase (`zzz-<new>`) เหมือนเดิมเพราะคอลัมน์เป็น UNIQUE
+
+**⚠️ ผลที่ ETL ทุกแบรนด์ต้องรู้:** ต้อง insert หน้าก่อนบริวารเสมอ ไม่งั้น error —
+ของที่เคยหลุดเงียบจะพังดัง ๆ แทน ซึ่งดีกว่า แต่ต้องรู้ล่วงหน้า · แจ้งไว้ใน
+`eywa-protocol-spec/BROADCAST-2026-08-16-page_fp.md` แล้ว
