@@ -1,9 +1,29 @@
 ---
-interface Props { items: { label: string }[]; }
+interface Props { items: { label: string; icon?: string }[]; }
 const { items } = Astro.props;
 ---
-<div class="bg-brand-ice border-y border-brand-neutral-200">
-  <ul data-reveal class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-brand-anchor">
-    {items.map((it) => <li class="flex items-center gap-1.5"><span class="text-brand-primary" aria-hidden="true">✓</span>{it.label}</li>)}
+<div class="trustbar relative border-b border-brand-neutral-200 bg-brand-paper">
+  <ul
+    data-reveal
+    class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-y-3 px-4 py-5 text-sm font-medium text-brand-anchor sm:py-6"
+  >
+    {items.map((it, i) => (
+      <li class:list={['trustbar-item flex items-center gap-2', i > 0 && 'sm:border-l sm:border-brand-neutral-200']}>
+        <span class="trustbar-mark" aria-hidden="true"></span>
+        <span>{it.label}</span>
+      </li>
+    ))}
   </ul>
 </div>
+
+<style>
+  /* slim divided credibility strip — bridges the navy hero into the light page */
+  .trustbar-item { padding: 0 1.15rem; }
+  @media (max-width: 639px) { .trustbar-item { padding: 0 .7rem; } }
+  .trustbar-mark {
+    flex: none; width: 8px; height: 8px; border-radius: 1px;
+    transform: rotate(45deg);
+    background: #217dea;                 /* brand primary */
+    box-shadow: 0 0 0 3px rgba(33, 125, 234, .12);
+  }
+</style>

@@ -5,11 +5,17 @@ meta:
     种植体终身保固、0% 分期付款。两家分院：Rattanathibet 与 Srinagarindra。
 hero:
   eyebrow: The Lifetime Foundation
-  title: 稳固的牙齿根基，成就一生自信笑容
+  title: 稳固的牙齿根基
+  titleAccent: 成就一生自信笑容
   body: 以种植牙为核心的牙科诊所，由具备国际资历的专科医师主理，严谨诊断、长期照护。
   primaryCta: { label: 预约免费咨询, href: '#booking' }
   secondaryCta: { label: 了解 Blue Diamond 种植牙, href: /en/lp/dental-implant/ }
-  image: { alt: SmileScape 诊所, label: hero }
+  image: { src: /images/lp/doctor-haam-cutout.png, alt: 'Worapat 医师（Ham 医师）— 首席种植牙专家' }
+  badges:
+    - { value: 5.0★, label: Google 评价 }
+    - { value: 金牌, label: 玛希隆一等荣誉 }
+    - { value: 终身, label: 种植体保固 }
+  microTrust: 免费咨询 · 两家分院邻近 MRT
 trustBar:
   - { label: Google 5.0★ 评价 }
   - { label: 2 家分院 邻近 MRT }

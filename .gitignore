@@ -103,3 +103,4 @@ data-snapshots/
 # Keep these heavy source archives local-only as provenance.
 docs/CV Dr/
 design/Smile Scape_Logo/
+!.secrets/README.md

@@ -1,0 +1,177 @@
+{
+  "name": "Media Sync — Notion → R2 → Supabase (multi-account)",
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [ { "field": "minutes", "minutesInterval": 5 } ] }
+      },
+      "id": "node-schedule",
+      "name": "Every 5 min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-720, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// CONFIG — the only place that knows about accounts.\n// Add account #3 = add one row here + a NOTION_TOKEN_<workspace> n8n Variable.\nreturn [\n  { json: { workspace: 'marketing_vt', dataSourceId: '20e248f7-4b65-44eb-bfd4-90dac48a79d7' } },\n  { json: { workspace: 'gifted',       dataSourceId: 'REPLACE_WITH_GIFTED_MEDIA_LIBRARY_DATASOURCE_ID' } }\n];"
+      },
+      "id": "node-config",
+      "name": "CONFIG (accounts)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-520, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.notion.com/v1/data_sources/{{ $json.dataSourceId }}/query",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "Authorization", "value": "=Bearer {{ $vars['NOTION_TOKEN_' + $json.workspace] }}" },
+          { "name": "Notion-Version", "value": "2025-09-03" },
+          { "name": "Content-Type", "value": "application/json" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"filter\":{\"property\":\"Status\",\"select\":{\"equals\":\"Pending\"}},\"page_size\":50}",
+        "options": {}
+      },
+      "id": "node-query-notion",
+      "name": "Query Notion (Pending)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-300, 300],
+      "notes": "Token chosen by expression → one node serves every account."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Explode Notion query results into one item per page, carrying account context.\nconst out = [];\nfor (const acct of $input.all()) {\n  const workspace = acct.json.workspace;\n  const dbId = acct.json.dataSourceId;\n  const results = (acct.json.results) || [];\n  for (const page of results) {\n    const p = page.properties || {};\n    const txt = (x) => (x && x.rich_text && x.rich_text[0] && x.rich_text[0].plain_text) || '';\n    const sel = (x) => (x && x.select && x.select.name) || '';\n    const chk = (x) => !!(x && x.checkbox);\n    const dt  = (x) => (x && x.date && x.date.start) || null;\n    const fileUrl = (() => { const f = p['Image'] && p['Image'].files && p['Image'].files[0]; if(!f) return ''; return (f.file && f.file.url) || (f.external && f.external.url) || ''; })();\n    out.push({ json: {\n      workspace, notion_database_id: dbId, notion_page_id: page.id,\n      media_type: sel(p['Media Type']) || 'other',\n      alt_th: txt(p['Alt (TH)']), alt_en: txt(p['Alt (EN)']),\n      caption_th: txt(p['Caption TH']), caption_en: txt(p['Caption EN']),\n      is_patient_image: chk(p['Patient image?']),\n      consent_status: sel(p['Consent status']) || null,\n      consent_doc_url: (p['Consent doc'] && p['Consent doc'].url) || null,\n      consent_obtained_at: dt(p['Consent date']),\n      usage_perpetual: chk(p['Use forever?']),\n      usage_expires_at: dt(p['Use until']),\n      patient_ref: txt(p['Patient ref']) || null,\n      image_url: fileUrl\n    }});\n  }\n}\nreturn out;"
+      },
+      "id": "node-explode",
+      "name": "Explode rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-80, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "version": 2 },
+          "combinator": "and",
+          "conditions": [
+            { "leftValue": "={{ $json.alt_th }}", "rightValue": "", "operator": { "type": "string", "operation": "notEmpty" } },
+            { "leftValue": "={{ $json.alt_en }}", "rightValue": "", "operator": { "type": "string", "operation": "notEmpty" } },
+            { "leftValue": "={{ $json.is_patient_image && $json.consent_status !== 'obtained' }}", "rightValue": "true", "operator": { "type": "string", "operation": "notEquals" } }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-valid",
+      "name": "Valid? (alt + consent)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [140, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Compute the R2 key — MUST namespace by workspace/brand to stay globally unique (gotcha #1).\nconst slugify = (s) => (s||'asset').toString().toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);\nfor (const it of $input.all()) {\n  const j = it.json;\n  const base = slugify(j.alt_en || j.alt_th || j.notion_page_id);\n  j.r2_key = `${j.workspace}/${j.media_type}/${base}.webp`;\n  j.cdn_url = `https://cdn.smilescapeclinic.com/${j.r2_key}`;\n  it.json = j;\n}\nreturn $input.all();"
+      },
+      "id": "node-key",
+      "name": "Compute r2_key",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [360, 220]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.image_url }}",
+        "options": { "response": { "response": { "responseFormat": "file" } } }
+      },
+      "id": "node-download",
+      "name": "Download image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [580, 220]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "bucketName": "={{ $vars.R2_BUCKET }}",
+        "fileName": "={{ $('Compute r2_key').item.json.r2_key }}",
+        "binaryData": true,
+        "binaryPropertyName": "data",
+        "additionalFields": {}
+      },
+      "id": "node-r2",
+      "name": "Upload to R2 (S3)",
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [800, 220],
+      "notes": "Use an S3 credential pointed at https://<R2_ACCOUNT_ID>.r2.cloudflarestorage.com, region=auto."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/seo_media_assets?on_conflict=notion_id",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "apikey", "value": "={{ $vars.SUPABASE_SERVICE_KEY }}" },
+          { "name": "Authorization", "value": "=Bearer {{ $vars.SUPABASE_SERVICE_KEY }}" },
+          { "name": "Content-Type", "value": "application/json" },
+          { "name": "Prefer", "value": "resolution=merge-duplicates,return=representation" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  notion_id: $('Compute r2_key').item.json.notion_page_id,\n  notion_workspace: $('Compute r2_key').item.json.workspace,\n  notion_database_id: $('Compute r2_key').item.json.notion_database_id,\n  notion_synced_at: $now.toISO(),\n  r2_key: $('Compute r2_key').item.json.r2_key,\n  cdn_url: $('Compute r2_key').item.json.cdn_url,\n  media_slug: $('Compute r2_key').item.json.r2_key,\n  fingerprint: $('Compute r2_key').item.json.r2_key,\n  fingerprint_display_name: $('Compute r2_key').item.json.alt_en,\n  alt_th: $('Compute r2_key').item.json.alt_th,\n  alt_en: $('Compute r2_key').item.json.alt_en,\n  caption_th: $('Compute r2_key').item.json.caption_th,\n  caption_en: $('Compute r2_key').item.json.caption_en,\n  media_type: $('Compute r2_key').item.json.media_type,\n  is_patient_image: $('Compute r2_key').item.json.is_patient_image,\n  consent_status: $('Compute r2_key').item.json.consent_status,\n  consent_doc_url: $('Compute r2_key').item.json.consent_doc_url,\n  consent_obtained_at: $('Compute r2_key').item.json.consent_obtained_at,\n  usage_perpetual: $('Compute r2_key').item.json.usage_perpetual,\n  usage_expires_at: $('Compute r2_key').item.json.usage_expires_at,\n  patient_ref: $('Compute r2_key').item.json.patient_ref,\n  source: 'notion',\n  status: 'active'\n}) }}",
+        "options": {}
+      },
+      "id": "node-supabase",
+      "name": "Upsert Supabase",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1020, 220]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/pages/{{ $('Compute r2_key').item.json.notion_page_id }}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "Authorization", "value": "=Bearer {{ $vars['NOTION_TOKEN_' + $('Compute r2_key').item.json.workspace] }}" },
+          { "name": "Notion-Version", "value": "2025-09-03" },
+          { "name": "Content-Type", "value": "application/json" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ properties: {\n  'CDN URL': { url: $('Compute r2_key').item.json.cdn_url },\n  'R2 Key': { rich_text: [ { text: { content: $('Compute r2_key').item.json.r2_key } } ] },\n  'Supabase ID': { rich_text: [ { text: { content: ($json.id || (Array.isArray($json) && $json[0] && $json[0].id) || '') + '' } } ] },\n  'Status': { select: { name: 'Active' } },\n  'Synced at': { date: { start: $now.toISO() } }\n} }) }}",
+        "options": {}
+      },
+      "id": "node-writeback",
+      "name": "Writeback Notion (Active)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1240, 220]
+    },
+    {
+      "parameters": {},
+      "id": "node-skip",
+      "name": "Skip (stays Pending)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [360, 420]
+    }
+  ],
+  "connections": {
+    "Every 5 min":            { "main": [ [ { "node": "CONFIG (accounts)", "type": "main", "index": 0 } ] ] },
+    "CONFIG (accounts)":      { "main": [ [ { "node": "Query Notion (Pending)", "type": "main", "index": 0 } ] ] },
+    "Query Notion (Pending)": { "main": [ [ { "node": "Explode rows", "type": "main", "index": 0 } ] ] },
+    "Explode rows":           { "main": [ [ { "node": "Valid? (alt + consent)", "type": "main", "index": 0 } ] ] },
+    "Valid? (alt + consent)": { "main": [ [ { "node": "Compute r2_key", "type": "main", "index": 0 } ], [ { "node": "Skip (stays Pending)", "type": "main", "index": 0 } ] ] },
+    "Compute r2_key":         { "main": [ [ { "node": "Download image", "type": "main", "index": 0 } ] ] },
+    "Download image":         { "main": [ [ { "node": "Upload to R2 (S3)", "type": "main", "index": 0 } ] ] },
+    "Upload to R2 (S3)":      { "main": [ [ { "node": "Upsert Supabase", "type": "main", "index": 0 } ] ] },
+    "Upsert Supabase":        { "main": [ [ { "node": "Writeback Notion (Active)", "type": "main", "index": 0 } ] ] }
+  }
+}

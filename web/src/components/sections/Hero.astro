@@ -2,27 +2,195 @@
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/ui/Image.astro';
 interface Props {
-  eyebrow: string; title: string; body: string;
+  eyebrow: string;
+  title: string;
+  titleAccent?: string;
+  body: string;
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; href: string };
   image: { src?: string; alt: string; label?: string };
+  badges?: { value: string; label: string }[];
+  microTrust?: string;
 }
-const { eyebrow, title, body, primaryCta, secondaryCta, image } = Astro.props;
+const {
+  eyebrow, title, titleAccent, body,
+  primaryCta, secondaryCta, image,
+  badges = [], microTrust,
+} = Astro.props;
 ---
-<section data-hero class="bg-brand-anchor text-brand-neutral-0 relative overflow-hidden">
+<section data-hero class="hero relative isolate overflow-hidden bg-brand-anchor text-brand-neutral-0">
+  <!-- atmosphere: navy mesh + light-tech blueprint grid + drifting sheen + soft glow -->
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-sheen" aria-hidden="true"></div>
-  <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center relative z-10">
-    <div data-reveal-stagger>
-      <p data-reveal class="font-display text-sm font-medium uppercase tracking-[0.2em] text-brand-highlight">{eyebrow}</p>
-      <h1 data-reveal class="mt-4 text-4xl md:text-5xl font-bold leading-tight">{title}</h1>
-      <p data-reveal class="mt-6 max-w-xl text-lg text-brand-neutral-200">{body}</p>
-      <div data-reveal class="mt-8 flex flex-wrap gap-4">
-        <Button href={primaryCta.href} variant="primary">{primaryCta.label}</Button>
-        <Button href={secondaryCta.href} variant="outline" class="!border-brand-neutral-0/40 !text-brand-neutral-0 hover:!bg-brand-neutral-0/10">{secondaryCta.label}</Button>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto grid max-w-6xl items-center gap-8 px-4 py-16 md:min-h-[88vh] md:grid-cols-[1.05fr_.95fr] md:gap-6 md:py-20">
+    <!-- ── copy ── -->
+    <div data-reveal-stagger class="max-w-xl">
+      <p data-reveal class="hero-eyebrow">
+        <span class="hero-eyebrow-diamond" aria-hidden="true"></span>{eyebrow}
+      </p>
+      <h1 data-reveal class="hero-title mt-5 text-[2.15rem] font-bold leading-[1.12] sm:text-5xl md:text-[3.2rem]">
+        {title}{titleAccent && (<><br /><span class="hero-accent">{titleAccent}</span></>)}
+      </h1>
+      <p data-reveal class="mt-6 max-w-lg text-base leading-relaxed text-brand-neutral-200 sm:text-lg">{body}</p>
+      <div data-reveal class="mt-8 flex flex-wrap gap-3">
+        <Button href={primaryCta.href} variant="primary" class="shadow-lg shadow-brand-primary/30">{primaryCta.label}</Button>
+        <Button
+          href={secondaryCta.href}
+          variant="outline"
+          class="!border-brand-neutral-0/35 !text-brand-neutral-0 hover:!bg-brand-neutral-0/10 hover:!border-brand-neutral-0/60"
+        >{secondaryCta.label}</Button>
       </div>
+      {microTrust && (
+        <p data-reveal class="hero-microtrust mt-6">
+          <span class="hero-check" aria-hidden="true">✓</span>{microTrust}
+        </p>
+      )}
     </div>
-    <div data-parallax="0.06">
-      <Image src={image.src} alt={image.alt} label={image.label} width={640} height={480} loading="eager" />
+
+    <!-- ── portrait stage ── -->
+    <div class="hero-stage relative">
+      <div class="hero-ring" aria-hidden="true"></div>
+      <div class="hero-portrait" data-parallax="0.04">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          label={image.label}
+          width={760}
+          height={835}
+          loading="eager"
+          rounded={false}
+          class="hero-portrait-img"
+        />
+      </div>
+      {badges.length > 0 && (
+        <div class="hero-badges">
+          {badges.map((b, i) => (
+            <div data-reveal class={`hero-badge hero-badge-${i + 1}`} style={`--reveal-delay:${0.35 + i * 0.13}s`}>
+              <span class="hero-badge-value">{b.value}</span>
+              <span class="hero-badge-label">{b.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 </section>
+
+<style>
+  /* SmileScape hero — premium clinical stage (web-skeleton). */
+  /* Atmosphere — literal brand hex (token-aligned) for layered effects.
+     anchor #14386B · primary #217DEA · highlight #7BA4DD · accent #EE9C9C */
+  .hero-mesh {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(120% 90% at 12% 0%, #1d57a0 0%, transparent 55%),
+      linear-gradient(150deg, #14386b 0%, #102f59 58%, #0c2748 100%);
+  }
+  /* light-tech blueprint dot grid, masked so it fades behind the portrait */
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .55;
+    background-image: radial-gradient(rgba(123, 164, 221, .20) 1px, transparent 1.5px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(125% 85% at 72% 28%, #000 0%, transparent 72%);
+            mask-image: radial-gradient(125% 85% at 72% 28%, #000 0%, transparent 72%);
+  }
+  .hero-glow {
+    position: absolute; z-index: 0; right: -8%; bottom: -20%;
+    width: 540px; height: 540px; pointer-events: none;
+    background: radial-gradient(circle, rgba(123, 164, 221, .40), transparent 62%);
+  }
+
+  /* Eyebrow — Latin only, so wide tracking is safe (never applied to Thai) */
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: .65rem;
+    font-family: 'Cabinet Grotesk', 'Google Sans', sans-serif;
+    font-size: .78rem; font-weight: 600; letter-spacing: .22em;
+    text-transform: uppercase; color: #b7d0ef;
+  }
+  .hero-eyebrow-diamond {
+    width: 9px; height: 9px; transform: rotate(45deg); border-radius: 2px;
+    background: #ee9c9c; box-shadow: 0 0 12px rgba(238, 156, 156, .75);
+  }
+
+  /* Headline stays in the body/Thai font (Cabinet Grotesk has no Thai glyphs) */
+  .hero-title { text-wrap: balance; }
+  .hero-accent {
+    position: relative; padding-bottom: .1em;
+    /* thick coral underline (clears Thai lower vowels), draws in on reveal */
+    background-image: linear-gradient(#ee9c9c, #ee9c9c);
+    background-repeat: no-repeat; background-position: 0 100%;
+    background-size: 0% .14em;
+    transition: background-size 1s cubic-bezier(.22, 1, .36, 1) .5s;
+  }
+  :global([data-reveal].is-in) .hero-accent { background-size: 100% .14em; }
+
+  .hero-microtrust {
+    display: flex; align-items: center; gap: .55rem;
+    font-size: .82rem; color: #c9d8ec;
+  }
+  .hero-check {
+    display: grid; place-items: center; width: 18px; height: 18px;
+    border-radius: 999px; background: rgba(123, 164, 221, .28);
+    color: #eaf3fb; font-size: .62rem; flex: none;
+  }
+
+  /* Portrait stage */
+  .hero-stage { min-height: 380px; }
+  .hero-ring {
+    position: absolute; left: 50%; top: 47%; transform: translate(-50%, -50%);
+    width: min(116%, 560px); aspect-ratio: 1; border-radius: 50%; z-index: 1;
+    background: radial-gradient(circle at 50% 45%, rgba(33, 125, 234, .42), rgba(20, 56, 107, 0) 70%);
+    filter: blur(8px);
+  }
+  .hero-portrait { position: relative; z-index: 2; display: flex; justify-content: center; }
+  /* :global reaches the <img> rendered by the child Image.astro (different scope);
+     descendant of scoped .hero-portrait still beats Image's `object-cover` utility */
+  .hero-portrait :global(.hero-portrait-img) {
+    width: 100%; height: auto; max-height: 620px;
+    object-fit: contain; object-position: bottom;
+    filter: drop-shadow(0 30px 55px rgba(7, 22, 46, .55));
+  }
+
+  /* Floating liquid-glass credibility cards */
+  .hero-badges { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .hero-badge {
+    position: absolute; pointer-events: auto;
+    display: flex; flex-direction: column; gap: 3px;
+    padding: .7rem .95rem; border-radius: 16px;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .22);
+    -webkit-backdrop-filter: blur(11px) saturate(140%);
+            backdrop-filter: blur(11px) saturate(140%);
+    box-shadow: 0 18px 40px rgba(7, 22, 46, .38);
+    transition: transform .26s cubic-bezier(.34, 1.56, .64, 1), box-shadow .26s ease;
+  }
+  @media (hover: hover) {
+    .hero-badge:hover { transform: translateY(-4px); box-shadow: 0 22px 48px rgba(7, 22, 46, .46); }
+  }
+  .hero-badge-value {
+    display: flex; align-items: center; gap: 7px;
+    font-weight: 700; font-size: 1rem; line-height: 1; color: #fff;
+  }
+  .hero-badge-value::before {
+    content: ""; flex: none; width: 7px; height: 7px; border-radius: 1px;
+    transform: rotate(45deg); background: #ee9c9c;
+  }
+  .hero-badge-label { font-size: .72rem; color: #cfe0f3; }
+  .hero-badge-1 { top: 5%; right: 0%; }
+  .hero-badge-2 { top: 43%; left: -4%; }
+  .hero-badge-3 { bottom: 7%; right: 5%; }
+
+  @media (max-width: 640px) {
+    .hero-stage { min-height: 320px; margin-top: .5rem; }
+    .hero-portrait-img { max-height: 440px; }
+    .hero-badge { padding: .5rem .7rem; border-radius: 13px; }
+    .hero-badge-value { font-size: .85rem; }
+    .hero-badge-label { font-size: .62rem; }
+    .hero-badge-2 { display: none; }   /* avoid left overflow on small screens */
+    .hero-badge-1 { top: 2%; right: -1%; }
+    .hero-badge-3 { bottom: 4%; right: 2%; }
+  }
+</style>

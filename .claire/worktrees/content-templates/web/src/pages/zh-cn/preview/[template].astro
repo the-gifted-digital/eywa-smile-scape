@@ -1,0 +1,15 @@
+---
+// web/src/pages/zh-cn/preview/[template].astro — zh-cn locale preview route.
+// noindex: renders the kitchen-sink demo fixture through the real template layout.
+import { TEMPLATES, TEMPLATE_BY_KEY } from '../../../lib/templates';
+import { getDemo } from '../../../lib/pages';
+
+export async function getStaticPaths() {
+  return TEMPLATES.map((t) => ({ params: { template: t.key } }));
+}
+
+const { template } = Astro.params;
+const data = await getDemo(template as any, 'zh-cn');
+const Template = TEMPLATE_BY_KEY[template!].component;
+---
+<Template data={data} locale="zh-cn" robots="noindex,nofollow" />

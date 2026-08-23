@@ -6,11 +6,17 @@ meta:
     branches: Rattanathibet & Srinagarindra.
 hero:
   eyebrow: The Lifetime Foundation
-  title: A stable foundation for a lifetime of confident smiles
+  title: A stable foundation
+  titleAccent: for a lifetime of confident smiles
   body: An implant-first dental clinic led by globally-trained specialists, with rigorous diagnostics and long-term care.
   primaryCta: { label: Book a free consultation, href: '#booking' }
   secondaryCta: { label: Explore Blue Diamond implants, href: /en/lp/dental-implant/ }
-  image: { alt: SmileScape clinic, label: hero }
+  image: { src: /images/lp/doctor-haam-cutout.png, alt: 'Dr. Worapat Jarangkul (Dr. Ham) — Lead Implantologist' }
+  badges:
+    - { value: 5.0★, label: Google reviews }
+    - { value: Gold Medal, label: First-class honours · Mahidol }
+    - { value: Lifetime, label: Implant warranty }
+  microTrust: Free consultation · 2 branches by the MRT
 trustBar:
   - { label: 5.0★ Google reviews }
   - { label: 2 branches by MRT }

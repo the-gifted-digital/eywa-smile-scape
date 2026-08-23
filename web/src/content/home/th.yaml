@@ -5,11 +5,17 @@ meta:
     เด่นด้านรากฟันเทียม Blue Diamond รับประกันตลอดชีพ ผ่อน 0%. สาขารัตนาธิเบศร์ และ ศรีนครินทร์.
 hero:
   eyebrow: The Lifetime Foundation
-  title: รากฐานฟันที่มั่นคง เพื่อความสุขที่ยั่งยืนตลอดชีวิต
+  title: รากฐานฟันที่มั่นคง
+  titleAccent: เพื่อความสุขที่ยั่งยืนตลอดชีวิต
   body: คลินิกทันตกรรมเฉพาะทางด้านรากฟันเทียม นำโดยทันตแพทย์ผู้เชี่ยวชาญระดับสากล ด้วยมาตรฐานการวินิจฉัยและการดูแลระยะยาว
   primaryCta: { label: จองคิวปรึกษาฟรี, href: '#booking' }
   secondaryCta: { label: ดูรากฟันเทียม Blue Diamond, href: /lp/dental-implant/ }
-  image: { alt: คลินิก SmileScape, label: hero }
+  image: { src: /images/lp/doctor-haam-cutout.png, alt: ทพ. วรภัทร จรางกุล (หมอแฮม) — Lead Implantologist }
+  badges:
+    - { value: 5.0★, label: รีวิว Google }
+    - { value: เหรียญทอง, label: เกียรตินิยม · มหิดล }
+    - { value: ตลอดชีพ, label: รับประกันรากเทียม }
+  microTrust: ปรึกษาฟรี ไม่มีค่าใช้จ่าย · 2 สาขา ติด MRT
 trustBar:
   - { label: รีวิว 5.0★ Google }
   - { label: 2 สาขา ติด MRT }

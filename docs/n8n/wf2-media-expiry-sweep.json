@@ -1,0 +1,147 @@
+{
+  "name": "Media Consent Expiry Sweep (SS-DR-016 L2)",
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [ { "field": "days", "triggerAtHour": 0, "triggerAtMinute": 5 } ] }
+      },
+      "id": "node-schedule",
+      "name": "Daily 00:05",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-700, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/seo_media_assets?select=*&is_patient_image=eq.true&status=eq.active&or=(and(usage_perpetual.eq.false,usage_expires_at.lt.{{ $now.toFormat('yyyy-MM-dd') }}),consent_status.eq.revoked)",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "apikey", "value": "={{ $vars.SUPABASE_SERVICE_KEY }}" },
+          { "name": "Authorization", "value": "=Bearer {{ $vars.SUPABASE_SERVICE_KEY }}" }
+        ] },
+        "options": {}
+      },
+      "id": "node-query",
+      "name": "Query expiring/revoked",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-480, 300],
+      "notes": "PostgREST: patient & active & (past expiry OR consent revoked)."
+    },
+    {
+      "parameters": {
+        "jsCode": "// One item per row to remove.\nconst rows = $input.first().json;\nconst arr = Array.isArray(rows) ? rows : (rows ? [rows] : []);\nreturn arr.map(r => ({ json: r }));"
+      },
+      "id": "node-explode",
+      "name": "Explode rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-260, 300]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "copy",
+        "sourcePath": "=/{{ $vars.R2_BUCKET }}/{{ $json.r2_key }}",
+        "destinationPath": "=/{{ $vars.R2_BUCKET }}/_quarantine/{{ $json.r2_key }}",
+        "additionalFields": {}
+      },
+      "id": "node-quarantine",
+      "name": "Copy → _quarantine/",
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [-40, 300],
+      "notes": "Grace copy before delete (30-day retention)."
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "delete",
+        "bucketName": "={{ $vars.R2_BUCKET }}",
+        "fileKey": "={{ $json.r2_key }}"
+      },
+      "id": "node-delete",
+      "name": "Delete original (→404)",
+      "type": "n8n-nodes-base.s3",
+      "typeVersion": 1,
+      "position": [180, 300],
+      "notes": "THE legal backstop — live URL now 404 regardless of build state."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.cloudflare.com/client/v4/zones/{{ $vars.CF_ZONE_ID }}/purge_cache",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "Authorization", "value": "=Bearer {{ $vars.CF_API_TOKEN }}" },
+          { "name": "Content-Type", "value": "application/json" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ files: [ $json.cdn_url ] }) }}",
+        "options": {}
+      },
+      "id": "node-purge",
+      "name": "Purge CF cache",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/seo_media_assets?id=eq.{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "apikey", "value": "={{ $vars.SUPABASE_SERVICE_KEY }}" },
+          { "name": "Authorization", "value": "=Bearer {{ $vars.SUPABASE_SERVICE_KEY }}" },
+          { "name": "Content-Type", "value": "application/json" },
+          { "name": "Prefer", "value": "return=minimal" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ status: ($json.consent_status === 'revoked' ? 'revoked' : 'expired'), expired_at: $now.toISO() }) }}",
+        "options": {}
+      },
+      "id": "node-supabase-update",
+      "name": "Supabase → expired",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [620, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.notion.com/v1/pages/{{ $json.notion_id }}",
+        "sendHeaders": true,
+        "headerParameters": { "parameters": [
+          { "name": "Authorization", "value": "=Bearer {{ $vars['NOTION_TOKEN_' + $json.notion_workspace] }}" },
+          { "name": "Notion-Version", "value": "2025-09-03" },
+          { "name": "Content-Type", "value": "application/json" }
+        ] },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ properties: { 'Status': { select: { name: 'Expired' } } } }) }}",
+        "options": {}
+      },
+      "id": "node-notion",
+      "name": "Notion → Expired (by workspace)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [840, 300],
+      "notes": "Token routed by the row's stored notion_workspace — single workflow, all accounts."
+    }
+  ],
+  "connections": {
+    "Daily 00:05":             { "main": [ [ { "node": "Query expiring/revoked", "type": "main", "index": 0 } ] ] },
+    "Query expiring/revoked":  { "main": [ [ { "node": "Explode rows", "type": "main", "index": 0 } ] ] },
+    "Explode rows":            { "main": [ [ { "node": "Copy → _quarantine/", "type": "main", "index": 0 } ] ] },
+    "Copy → _quarantine/":     { "main": [ [ { "node": "Delete original (→404)", "type": "main", "index": 0 } ] ] },
+    "Delete original (→404)":  { "main": [ [ { "node": "Purge CF cache", "type": "main", "index": 0 } ] ] },
+    "Purge CF cache":          { "main": [ [ { "node": "Supabase → expired", "type": "main", "index": 0 } ] ] },
+    "Supabase → expired":      { "main": [ [ { "node": "Notion → Expired (by workspace)", "type": "main", "index": 0 } ] ] }
+  }
+}
