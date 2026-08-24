@@ -19,7 +19,8 @@
     "check:anchors": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/audit-anchor-text.py --brand smile-scape-clinic",
     "audit:citation-bindings": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/audit-page-citations.py",
     "gen:page-taxonomy": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/derive-page-role-category.py --brand smile-scape-clinic",
-    "check:template-registry": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/check-template-registry.py --brand smile-scape-clinic"
+    "check:template-registry": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/check-template-registry.py --brand smile-scape-clinic",
+    "check:keyword-collisions": "python3 ../../../eywa-protocol-spec/scripts/citation-gates/check-keyword-collisions.py --brand smile-scape-clinic"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",

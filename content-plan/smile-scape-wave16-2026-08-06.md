@@ -2911,3 +2911,69 @@ harvest ของผมที่ verified ทั้งหมด      34
 แบรนด์อื่นที่ผูกกับ unverified ของเรา   0
 brand_scope ว่างเปล่าที่เหลือ           0
 ```
+
+---
+
+## Wave 16bf (2026-08-25) — อ่าน BROADCAST-2026-08-24b แล้วพบว่าผมทำผิดหลักไปรอบหนึ่ง
+
+### 🔴 ผมเขียน COMMENT ผิดลงตารางกลางที่ทุกแบรนด์อ่าน
+
+Wave 16bc ผมเขียน COMMENT ของ `citation_tier` ว่า **"อนุมานจากการกระจายตัวของข้อมูล ไม่มีเอกสารต้นทาง"**
+และให้ tier ตามด้วย `study_type` — **ผิดทั้งสองข้อ**
+
+ต้นทางจริงมีอยู่: **Bible §23.1 + Pamrel SOP §2** implement ที่ `TIER_BY_TYPE`
+ใน `eywa-protocol-spec/scripts/citation-gates/run-citation-qa-gates.py` บังคับด้วย G5
+และตัวที่กำหนด tier คือ **`citation_type`** ไม่ใช่ `study_type`
+
+`study_type` มีหน้าที่ตรงข้ามกับที่ผมเข้าใจ — **มันคือการอ่านครั้งที่สองที่เป็นอิสระ หน้าที่ของมันคือ "ขัดแย้ง"
+เมื่อ citation_type ผิด ซึ่ง G14 เป็นตัวรายงาน** แถวที่สองคอลัมน์ไม่ตรงกันจึงไม่ใช่ข้อผิดพลาด แต่เป็นสัญญาณที่ออกแบบไว้
+
+SOP §2 ยังระบุชัดว่า **tier มาจาก PubMed PublicationType โดยตรง ห้ามอ่านจากชื่อเรื่อง ห้ามใช้ดุลยพินิจผู้ตรวจ**
+— ซึ่งเป็นสิ่งที่ผมทำพอดี ผมอ่านบทคัดย่อแล้วตัดสินว่า "นี่คือ SR จริง" แล้วดัน tier ขึ้น
+
+### `reconcile-citation-tiers.py` เขียนทับของผมไปแล้ว และมันถูก
+
+หลักฐาน: `maintenance_log` ของผมยังเขียนว่า `6→1` อยู่ แต่ `citation_tier` เป็น **6**
+
+| PMID | ผมตั้ง | ตอนนี้ | เหตุผลตามกฎ |
+|---|---|---|---|
+| 40521425 | 1 | **6** `expert_opinion` | PubMed ติดแท็กแค่ `Review` |
+| 38002660 | 1 | **6** `expert_opinion` | เหมือนกัน |
+| 33671038 | 1 | **6** `expert_opinion` | เหมือนกัน |
+| 39654301 | 5 `scoping_review` | **1** `systematic_review` | — |
+
+ทั้งสามใบประกาศตัวเองในชื่อเรื่อง/บทคัดย่อว่าเป็น systematic review (PROSPERO + PRISMA ครบ)
+**แต่กฎเลือกจะเชื่อ PublicationType ไม่ใช่ชื่อเรื่อง — และนั่นคือเจตนาของกฎ** เพื่อกันการตัดสินด้วยความรู้สึก
+เขียนเคสทั้งสามไว้ใน COMMENT ใหม่แล้วเพื่อให้คนถัดไปไม่ "แก้" ซ้ำ
+
+เช็คทั้ง 40 แถวที่ผมเคยแตะกับแมป canonical → **G5 fail 0 ทุกแถว** ฐานสอดคล้องแล้ว
+
+### 🔴 smile-scape รันเกต canonical ไม่ได้เลยสักตัว (broadcast §8)
+
+`.secrets/` มีแต่ `README.md` ไม่มี `supabase.env` · เกต 7 ตัวต่อสายไว้ใน `web/package.json` แล้วแต่รันไม่ได้
+**ที่ผ่านมาผมตรวจด้วย SQL ที่เขียนเองล้วน ๆ** ซึ่งแปลว่าเกตชุดจริงไม่เคยรันกับแบรนด์นี้เลย
+— L30 ในระดับที่ใหญ่ที่สุด: ไม่ใช่เกตที่ผ่านทั้งที่ไม่ได้ตรวจ แต่เป็นเกตที่**ไม่เคยถูกเรียก**
+
+vth ระบุว่าจะไม่ก๊อปคีย์ข้ามรีโปให้ ถูกต้องแล้ว · **ต้องให้ operator provision เอง**
+
+### สคีมาขยับระหว่างเซสชัน
+
+`page_role` + `page_category` เป็นคอลัมน์ใหม่ (2026-08-24) — **ตอนผมไล่คอลัมน์ต้นเซสชันยังไม่มี**
+ตอนนี้ smile-scape เติมแล้ว 707/728 · T13 ทั้ง 16 หน้าได้ `pricing_page` ตาม DR-059 แล้ว
+
+**21 แถวที่ค้างเป็น T16 (ประกัน) ทั้งหมด** — สคริปต์จงใจไม่เดาเพราะ sibling ของเราเองขัดแย้งกัน
+(5 บอก `knowledge_article` · 1 บอก `service_page`) · deezy ค้างแบบเดียวกัน 11 แถว
+**`insurance_page` ไม่มีในคำศัพท์ที่อนุญาต** — ช่องโหว่แบบเดียวกับที่ DR-059 เพิ่งปิดให้ `pricing_page`
+
+ข้อสังเกตส่งกลับ vth: `page_role` ว่างตรงกับ `page_category` ว่างเป๊ะทุกแถว
+ทั้งที่ docstring บอกว่า role เป็น "pure function of the tree" — สองอย่างนี้ไม่ควรผูกกัน
+
+### สรุปเรื่องคอลัมน์ที่ว่าง — grep ทั้งไดเรกทอรีเกตแล้ว
+
+**ไม่มีสคริปต์ canonical ตัวไหนเติม** `content_topic_tier` · `product_regulatory_tier` ·
+`sensitive_topic_flag` · `page_language` · `authority_weight` · `content_format_name` ·
+`link_equity_score` · `orphan_risk_score` · `note_brief` · `content_brief`
+
+มีเครื่องมือ canonical แค่ 3 กลุ่ม: `derive-page-role-category.py` (role/category) ·
+`reconcile-citation-tiers.py` (tier/type) · `compute-citation-authority.py` (citation_authority_weight)
+ที่เหลือคือ deezy/vth เติมด้วยมือรายเซสชัน ไม่มีสูตร
