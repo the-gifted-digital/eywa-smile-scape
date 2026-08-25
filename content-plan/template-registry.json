@@ -1,0 +1,84 @@
+{
+  "$comment": [
+    "ทะเบียนโค้ดเทมเพลตของ smile-scape-clinic — บังคับโดย check:template-registry",
+    "DR-057 (2026-08-24): โค้ดเทมเพลตเป็นของแบรนด์ ไม่ใช่ของโปรโตคอล · vth 9 โค้ด · เรา 13 · deezy 21",
+    "ที่ห้ามคือโค้ดที่อยู่ใน page_master แต่ไม่มีนิยามในไฟล์นี้ (R1)",
+    "และหน้าที่ถือ page_category ที่ไม่อยู่ในลิสต์ของโค้ดตัวเอง (R2)",
+    "",
+    "`template` = คีย์เทมเพลตฝั่งเว็บ ตาม web/src/lib/template-keys.ts (branch content-templates)",
+    "`category` = หมวดที่โค้ดนี้ถือได้จริง — ดึงจากข้อมูลจริงใน page_master ไม่ได้เขียนจากความตั้งใจ",
+    "",
+    "T16 ใช้ insurance_page ซึ่งเป็นหมวดใหม่ — ก่อนหน้านี้ 27 หน้าประกันของเราถูกบังคับให้เลือกระหว่าง",
+    "knowledge_article กับ service_page แล้ว derive-page-role-category.py ทิ้งไว้กำกวม 21 แถว",
+    "เพราะพี่น้องบอกไม่ตรงกัน · deezy ค้างแบบเดียวกัน 11 แถว · รูปแบบเดียวกับที่ DR-059 ปิดให้ pricing_page"
+  ],
+  "brand_id": "smile-scape-clinic",
+  "updated": "2026-08-26",
+  "codes": {
+    "T1": {
+      "template": "concern",
+      "category": ["condition_pillar"],
+      "description": "หน้าอาการ/ปัญหาที่คนไข้รู้สึกเอง — เขียนจากมุมคนไข้ ไม่ใช่มุมคลินิก · §3 และ §5"
+    },
+    "T2": {
+      "template": "procedure",
+      "category": ["procedure_pillar"],
+      "description": "หน้าหัตถการ — ขั้นตอนการรักษาเรื่องหนึ่งตั้งแต่ต้นจนจบ · ส่วนใหญ่เป็น hub ของกลุ่มหัตถการ"
+    },
+    "T4": {
+      "template": "technology",
+      "category": ["technology_page"],
+      "description": "หน้าเครื่องมือ/เทคโนโลยีของคลินิก — §4 เป็นเจ้าของหมวดนี้ · หน้าใน §3/§5 ที่ใช้เทมเพลตนี้คือเครื่องมือที่ถูกอ้างในบริบทบริการ"
+    },
+    "T5": {
+      "template": "service",
+      "category": ["service_page"],
+      "description": "หน้าบริการ / money page — บริการที่จองได้จริง วัสดุหรือแบรนด์เป็นคุณสมบัติ ไม่ใช่ตัวสินค้า"
+    },
+    "T6": {
+      "template": "knowledge",
+      "category": ["knowledge_article"],
+      "description": "หน้าความรู้/อธิบาย — ตอบคำถามโดยไม่ขาย · §6 เป็นบ้านหลัก มีบางส่วนใน §3/§5"
+    },
+    "T8": {
+      "template": "caseStudy",
+      "category": ["evidence_case"],
+      "description": "เคสศึกษา/ผลงานจริง · §7 ทั้งหมด · หลักฐานคือเคสของคลินิกเอง ไม่ใช่วรรณกรรมคลินิก (ธง awaiting-real-cases)"
+    },
+    "T9": {
+      "template": "doctor",
+      "category": ["doctor_profile"],
+      "description": "โปรไฟล์ทันตแพทย์/ผู้เขียน — ฐาน E-E-A-T ของหน้าคลินิก"
+    },
+    "T10": {
+      "template": "branch",
+      "category": ["branch_landing"],
+      "description": "หน้าสาขา — NAP เวลาทำการ แผนที่ · §8"
+    },
+    "T11": {
+      "template": null,
+      "category": ["home", "about", "contact"],
+      "description": "หน้าสถาบัน/แบรนด์/นโยบาย — ไม่มีเทมเพลตสากล เป็นหน้า bespoke (AboutPage/ContactPage) + Organization schema ระดับเว็บ จึงไม่โผล่ใน /preview"
+    },
+    "T12": {
+      "template": "faq",
+      "category": ["knowledge_article"],
+      "description": "hub รวม FAQ (§6.5) และอภิธานศัพท์ (§6.3) · สองโหมดใช้โค้ดเดียวกันตามสเปก — faq_hub ให้ FAQPage · glossary_hub ให้ DefinedTermSet"
+    },
+    "T13": {
+      "template": "pricing",
+      "category": ["pricing_page"],
+      "description": "หน้าราคา · หมวด pricing_page มาจาก DR-059 · ⚠️ พ.ร.บ.สถานพยาบาล ม.38 — ห้ามลงตัวเลขราคาและ CTA"
+    },
+    "T16": {
+      "template": "insurance",
+      "category": ["insurance_page"],
+      "description": "หน้าสิทธิ/ความคุ้มครอง — ประกันสังคม บัตรทอง ประกันเอกชน สิทธิข้าราชการ · ไม่ใช่ทั้งบทความความรู้ล้วนและหน้าบริการล้วน จึงมีหมวดของตัวเอง · ⚠️ ตัวเลขสิทธิทุกตัวต้องยืนยันกับประกาศ สปส. ฉบับจริงก่อนเขียน"
+    },
+    "T18": {
+      "template": "localService",
+      "category": ["local_landing", "local_service_page"],
+      "description": "หน้า programmatic [บริการ] × [สาขา] · §8/§9 · ต้องผ่านเกณฑ์เนื้อหาไม่ซ้ำ ≥30% ตาม DR-016"
+    }
+  }
+}
