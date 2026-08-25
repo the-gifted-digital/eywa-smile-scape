@@ -103,4 +103,6 @@ data-snapshots/
 # Keep these heavy source archives local-only as provenance.
 docs/CV Dr/
 design/Smile Scape_Logo/
+# ===== Secrets (service-role key ครอบทั้งสามแบรนด์ — ห้าม commit) =====
+.secrets/*
 !.secrets/README.md
