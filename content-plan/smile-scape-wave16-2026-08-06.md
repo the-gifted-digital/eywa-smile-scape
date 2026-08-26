@@ -3201,3 +3201,23 @@ K3w_one_contains_other  9 → 24    ← ไม่ใช่ถอยหลัง
 K3w 24 → 23 (คู่ invisalign ปิด) · K6 0 · K1 0 · blocking 0
 A3 22 (ไม่ขยับ — เปลี่ยนชื่อหน้าไม่สร้าง finding ใหม่) · citations 0 · registry 0
 ```
+
+### เพิ่มคีย์จาก PAA — 1 ใน 3 คำที่ค้างปลดแล้ว
+
+operator ยืนยันว่าพบ `smilescape dental clinic มีกี่สาขา` ใน PAA ของ SERP จริง
+**PAA เป็นการวัด ไม่ใช่การแต่งคำขึ้นเอง** จึงเพิ่มได้โดยไม่ขัดกติกา
+
+ตั้งเป็น target ของ **8.1** · คีย์เดิม `ติดต่อ สไมล์สเคป` ย้ายลงเป็น semantic
+
+🔴 **ไม่ใส่ volume** — การโผล่ใน PAA บอกว่า*มีคนถาม* ไม่ได้บอกว่า*กี่คน* · บันทึกที่มาไว้ที่
+`predicted_serp_features = 'People Also Ask'` ซึ่งเป็นฟิลด์ที่ตรงความหมายที่สุดในตาราง
+
+**ตรวจว่าไม่สร้างการชนใหม่ก่อนจบ** — `smilescape` (target ของ 2.1) เป็นสตริงย่อยของคีย์ใหม่จริง
+แต่เกตไม่จับ · ไล่ดูโค้ดแล้วพบว่า **ไม่ใช่บั๊ก**: `CONTAIN_MIN_RATIO = 0.6` อัตราส่วนคู่นี้ 0.323
+คอมเมนต์ในโค้ดอธิบายเคสนี้ตรง ๆ — *"Below this it is a head term and its own long tail"*
+
+```
+K3w 23 → 22 · operator 20 → 19 · K1 0 · K6 0 · blocking 0 · pool 22,710 → 22,711
+```
+
+**เหลือ 2 คำที่ยังไม่มีวัดไว้:** `invisalign aligner` (4.6.2) · `smile scape clinic` (HOME semantic)

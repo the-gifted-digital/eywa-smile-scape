@@ -35,6 +35,24 @@ operator ตัดสินครบทุกกลุ่ม · บันทึ�
 |---|---|---|
 | `invisalign aligner` | 4.6.2 | ไม่มีในตารางคีย์ของแบรนด์ไหนเลย |
 | `smile scape clinic` | 1 (HOME) | ไม่มี (มีแต่ `smile scape` เฉย ๆ ซึ่งใส่ให้แล้ว) |
-| `Smilescape dental clinic มีกี่สาขา` | 8.1 | ไม่มี |
+| ~~`Smilescape dental clinic มีกี่สาขา`~~ | 8.1 | ✅ **แก้แล้ว** — operator ยืนยันว่าพบใน PAA จริง |
 
 ถ้าจะใช้จริง ต้องวัด volume/intent เข้าตารางคีย์เวิร์ดก่อน แล้วค่อยผูก
+
+## เพิ่มคีย์จาก PAA (2026-08-26)
+
+`smilescape dental clinic มีกี่สาขา` → target ของ **8.1** · คีย์เดิม `ติดต่อ สไมล์สเคป` ย้ายลงเป็น semantic
+
+| ฟิลด์ | ค่า | เหตุผล |
+|---|---|---|
+| `predicted_serp_features` | `People Also Ask` | บันทึกที่มาไว้ในฟิลด์ที่ตรงความหมาย |
+| `search_intent` | `navigational` | แบรนด์ + entity `smilescape-dental-clinic` เหมือน `ติดต่อ สไมล์สเคป` |
+| **volume** | **ไม่ใส่** | 🔴 การโผล่ใน PAA เป็นหลักฐานว่า**มีคนถาม** ไม่ใช่ค่า**ว่ากี่คน** — ไม่สร้างแถวใน snapshot |
+| `qualitative_kd` | ว่าง | ยังไม่ได้วัด |
+
+keyword ปรับเป็นตัวเล็กตามคอนเวนชันของตาราง (operator เขียนว่า "Smilescape...")
+
+**ตรวจแล้วว่าไม่สร้างการชนใหม่** — `smilescape` (target ของ 2.1) เป็นสตริงย่อยของคีย์ใหม่จริง
+แต่อัตราส่วน **0.323 < `CONTAIN_MIN_RATIO` 0.6** เกตจึงไม่นับเป็นการชน
+คอมเมนต์ในโค้ดอธิบายเคสนี้ตรง ๆ: *"Below this it is a head term and its own long tail"*
+`smilescape` = head term · คำ PAA = long tail ของมัน = คนละดีมานด์ **threshold ทำงานถูก ไม่ใช่บั๊ก**
