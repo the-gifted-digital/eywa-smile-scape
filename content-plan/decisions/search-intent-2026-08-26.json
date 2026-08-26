@@ -1,0 +1,1441 @@
+{
+ "note": "search_intent ที่จำแนกเมื่อ 2026-08-26 · borderline=true คือคำที่ผู้จำแนกบอกเองว่าก้ำกึ่ง ไม่ใช่คำที่ผิด · เก็บไว้เพื่อให้ย้อนดูได้ว่าตัดสินด้วยเหตุผลอะไร",
+ "distribution": {
+  "commercial": 43,
+  "transactional": 62,
+  "informational": 128,
+  "navigational": 5
+ },
+ "flipped_after_recheck": 14,
+ "borderline_count": 96,
+ "items": [
+  {
+   "kw": "all on 4 vs all on 6",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เทียบสองทางเลือกก่อนตัดสินใจ"
+  },
+  {
+   "kw": "all on 4 ก่อนหลัง",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "ดูผลลัพธ์ก่อนตัดสินใจ คล้ายรีวิว"
+  },
+  {
+   "kw": "all on 4 ราคา",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ถามราคา พร้อมใช้บริการ แต่หน้าเป็นบทความ"
+  },
+  {
+   "kw": "all on 6",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "all on x คืออะไร",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามคืออะไร หาความรู้"
+  },
+  {
+   "kw": "blue diamond ดีไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชั่งใจแบรนด์/เทคโนโลยี"
+  },
+  {
+   "kw": "class 3 จัดฟันก่อนหรือผ่าตัดก่อน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามลำดับการรักษา หาความรู้"
+  },
+  {
+   "kw": "clear aligner ได้ผลจริงไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชั่งใจว่าคุ้มไหม ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "cone beam ct",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคเครื่องมือ หาความรู้"
+  },
+  {
+   "kw": "ct scan ทันตกรรม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิค ยังไม่คิดจอง"
+  },
+  {
+   "kw": "ctg",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ตัวย่อเทคนิค แต่หน้าเป็น service"
+  },
+  {
+   "kw": "damon braces",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชื่อแบรนด์สินค้า กำลังเทียบยี่ห้อ"
+  },
+  {
+   "kw": "direct print vs thermoformed aligner",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เทียบสองเทคโนโลยี"
+  },
+  {
+   "kw": "direct sinus lift",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ศัพท์เทคนิคล้วน แต่หน้าเป็น service"
+  },
+  {
+   "kw": "fgg",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ตัวย่อเทคนิคล้วน"
+  },
+  {
+   "kw": "gingival recession",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ชื่อภาวะภาษาอังกฤษ หาความรู้"
+  },
+  {
+   "kw": "guided bone regeneration",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ศัพท์เทคนิคล้วน แต่หน้าเป็น service"
+  },
+  {
+   "kw": "implant supported denture",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "เป็นศัพท์เทคนิคภาษาอังกฤษล้วน ไม่มีคำบอกราคา/ทำเล/จอง คนไทยที่พิมพ์คำนี้ส่วนใหญ่เจอคำนี้จากหมอหรือบทความแล้วอยากรู้ว่ามันคืออะไร ต่างจากฟันปลอมธรรมดา/รากเทียมทั้งปากยังไง ยังไม่ถึงขั้นพร้อมจอง ต่างจาก \"ฟันปลอมติดรากเทียม ราคา\" ที่จะเป็น transactional จึงไม่เห็นด้วยกับ transactional เดิม แม้หน้าปลายทางจะเป็น service_page ก็ตาม (หมวดหน้าไม่ใช่ตัวตัดสิน)"
+  },
+  {
+   "kw": "invisalign ดีไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชั่งใจแบรนด์ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "laser dental",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ศัพท์อังกฤษกว้าง ไม่ชี้บริการชัด"
+  },
+  {
+   "kw": "neodent",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชื่อยี่ห้อรากเทียม กำลังเทียบแบรนด์"
+  },
+  {
+   "kw": "neodent ดีไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "\"ดีไหม\" = ชั่งใจก่อนตัดสินใจ"
+  },
+  {
+   "kw": "overdenture รากเทียม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ชื่อหัตถการที่จองได้ แม้ดูเป็นศัพท์เทคนิค"
+  },
+  {
+   "kw": "passive self ligating คือ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "\"คือ\" หานิยาม ศัพท์เทคนิค"
+  },
+  {
+   "kw": "peri-implantitis",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคล้วน หาความรู้เรื่องโรค"
+  },
+  {
+   "kw": "peri-implantitis รักษา",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาวิธีรักษา แต่มีเจตนาไปรักษาจริงปน"
+  },
+  {
+   "kw": "peri-implantitis วินิจฉัย",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หาเกณฑ์วินิจฉัย เชิงวิชาการ"
+  },
+  {
+   "kw": "root canal คืออะไร",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "\"คืออะไร\" หานิยามชัดเจน"
+  },
+  {
+   "kw": "sausage technique คืออะไร",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "\"คืออะไร\" แต่หน้าเป็น service_page"
+  },
+  {
+   "kw": "self ligating braces",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "ประเภทเครื่องมือจัดฟัน คนเทียบก่อนเลือก"
+  },
+  {
+   "kw": "sinus lift คือ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "\"คือ\" หานิยามหัตถการ"
+  },
+  {
+   "kw": "smilescape",
+   "intent": "navigational",
+   "borderline": false,
+   "why_th": "ชื่อแบรนด์คลินิกเรา"
+  },
+  {
+   "kw": "straumann",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ชื่อยี่ห้อรากเทียม กำลังเทียบแบรนด์"
+  },
+  {
+   "kw": "straumann รากฟันเทียม",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "แบรนด์+หัตถการ ใกล้เคียง transactional"
+  },
+  {
+   "kw": "strip graft ปลูกเหงือก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "\"strip graft\" เป็นศัพท์เทคนิคภาษาอังกฤษของเทคนิคย่อยในการปลูกเหงือก (แนวเดียวกับ fgg/ctg) คนพิมพ์กำลังหาว่ามันคืออะไร/ต่างจากเทคนิคอื่นยังไง ไม่ใช่คนที่พร้อมจอง — คนจะจองพิมพ์ \"ปลูกเหงือก\" หรือ \"ปลูกเหงือก ราคา/ที่ไหน\" เฉย ๆ ไม่ระบุชื่อเทคนิคย่อย คำว่า ปลูกเหงือก ที่ต่อท้ายทำหน้าที่แปลศัพท์ ไม่ได้เพิ่ม signal เชิงจอง หน้าปลายทางเป็น service_page แต่ตัดสินตามคีย์เวิร์ด → informational (ก้ำกึ่ง เพราะเป็นชื่อหัตถการที่จองได้ในหมวดบริการ)"
+  },
+  {
+   "kw": "surgical guide รากเทียม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ศัพท์เทคโนโลยี ไม่ใช่บริการที่จองตรง"
+  },
+  {
+   "kw": "titanium milled bar",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคอังกฤษล้วน"
+  },
+  {
+   "kw": "zirconia mill",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคอังกฤษล้วน"
+  },
+  {
+   "kw": "กระดูกพรุน ฝังรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามเงื่อนไขความเป็นไปได้ ยังไม่จอง"
+  },
+  {
+   "kw": "กลัวทำฟัน กลัวผ่าตัด",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ความกลัว หาข้อมูลปลอบใจ"
+  },
+  {
+   "kw": "กลัวฝังรากฟันเทียม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ความกลัว หาข้อมูลคลายกังวล ไม่ใช่พร้อมจอง"
+  },
+  {
+   "kw": "กลัวหมอฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ความกลัว หาข้อมูล/วิธีรับมือ"
+  },
+  {
+   "kw": "กลิ่นปาก รากฟันอักเสบ",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ+สาเหตุ ยังไม่ถึงขั้นจอง"
+  },
+  {
+   "kw": "แก๊สหัวเราะ ทำฟัน",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ไม่มีคำถามแบบ \"คืออะไร/ปลอดภัยไหม\" ในคีย์เวิร์ด — เป็นชื่อบริการเปล่า ๆ (แก๊สหัวเราะ + ทำฟัน) แบบเดียวกับ \"อุดฟัน\" \"ขูดหินปูน\" คนพิมพ์คำนี้ส่วนใหญ่กำลังหาว่าคลินิกไหนมีบริการดมแก๊สหัวเราะตอนทำฟันเพื่อไปใช้บริการ ไม่ใช่แค่หาความรู้ ตรงกับหน้าปลายทาง service_page ก้ำกึ่งจริง (มีกลุ่มกลัวหมอฟันที่ค้นเพื่อหาข้อมูลก่อน) แต่ตัวคีย์เวิร์ดเอนไปทาง transactional"
+  },
+  {
+   "kw": "ข้อต่อรากฟันเทียม abutment",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคชิ้นส่วน หาความรู้"
+  },
+  {
+   "kw": "ขั้นตอน all on 4",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามขั้นตอน หาความรู้ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "ขูดหินปูน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ขูดหินปูน เจ็บไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "เจ็บไหม = กลัว หาข้อมูล"
+  },
+  {
+   "kw": "ขูดหินปูน ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ถามราคา ใกล้ตัดสินใจใช้บริการ"
+  },
+  {
+   "kw": "ขูดหินปูน สิทธิบัตรทอง",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หาที่ใช้สิทธิทำจริง แต่ก็ปนหาข้อมูลสิทธิ"
+  },
+  {
+   "kw": "ขูดหินปูนเด็ก",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หัตถการ+กลุ่มผู้รับบริการ พาลูกไปทำ"
+  },
+  {
+   "kw": "ขูดหินปูนบ่อยแค่ไหน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามความถี่ หาความรู้"
+  },
+  {
+   "kw": "ขูดหินปูนอัลตราโซนิก",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "เป็นชื่อหัตถการที่จองได้ (\"ขูดหินปูน\") บวกคำขยายบอกเทคนิคที่คลินิกใช้โฆษณาบริการ ไม่ได้ถามว่าคืออะไรหรือขอเทียบวิธี คนพิมพ์คำนี้กำลังจะไปหาที่ทำ/ดูราคา จึงเป็น transactional และตรงกับหน้าปลายทาง service_page"
+  },
+  {
+   "kw": "คลินิกทันตกรรม น่าเชื่อถือ",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "กำลังคัดเลือกคลินิกก่อนตัดสินใจ"
+  },
+  {
+   "kw": "คลินิกทันตกรรม ศรีนครินทร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "บริการ+ทำเล พร้อมไปใช้บริการ"
+  },
+  {
+   "kw": "คลินิกทำฟัน ออกสื่อ",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "หาเครื่องยืนยันความน่าเชื่อถือก่อนเลือก"
+  },
+  {
+   "kw": "คลินิกรากฟันเทียม ศรีนครินทร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "บริการ+ทำเล พร้อมจอง"
+  },
+  {
+   "kw": "ความกังวลก่อนทำฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หาข้อมูลคลายกังวล ยังไม่ตัดสินใจ"
+  },
+  {
+   "kw": "ความรู้จัดฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ระบุชัดว่าหาความรู้"
+  },
+  {
+   "kw": "ความรู้ทันตกรรม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หาความรู้กว้าง ไม่มีเจตนาซื้อ"
+  },
+  {
+   "kw": "ความรู้รากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "คำว่า \"ความรู้\" ชัดว่าหาข้อมูล"
+  },
+  {
+   "kw": "ความรู้เรื่องฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หาความรู้ทั่วไป ยังไม่มีเจตนาซื้อ"
+  },
+  {
+   "kw": "คำถามที่พบบ่อย บริการทันตกรรม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "FAQ หาคำตอบ ไม่ใช่จอง"
+  },
+  {
+   "kw": "คู่มือวีเนียร์",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "\"คู่มือ\" = อ่านทำความเข้าใจก่อน"
+  },
+  {
+   "kw": "เคลือบฟลูออไรด์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "เคลือบหลุมร่องฟัน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า พร้อมใช้บริการ"
+  },
+  {
+   "kw": "เคสจริง การตัดสินใจรักษา",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "คีย์เวิร์ดไม่มีสัญญาณเปรียบเทียบเลย — ไม่มี \"ดีไหม\" \"แบบไหนดี\" \"vs\" \"รีวิว\" และไม่มีชื่อยี่ห้อ/หัตถการที่จองได้ให้ชั่งใจ สิ่งที่ถูกค้นคือ \"กระบวนการตัดสินใจรักษา\" ผ่านเคสจริง = อยากเข้าใจว่าหมอพิจารณาอะไรบ้าง ยังไม่ได้เล็งตัวเลือกใดตัวเลือกหนึ่ง จึงเป็น informational ไม่ใช่ commercial ผู้จำแนกเดิมเทียบกับ \"รีวิว\" ซึ่งคนละเรื่อง — รีวิวคือดูของที่จะซื้อ ส่วนเคสจริงเชิงการตัดสินใจคือดูวิธีคิด สอดคล้องกับหน้าปลายทาง knowledge_article ด้วย"
+  },
+  {
+   "kw": "จัดฟัน ข้อดีข้อเสีย",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "ชั่งข้อดีข้อเสียก่อนตัดสินใจ"
+  },
+  {
+   "kw": "จัดฟัน รัตนาธิเบศร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หัตถการ + ทำเล หาที่ทำ"
+  },
+  {
+   "kw": "จัดฟัน ศรีนครินทร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หัตถการ + ทำเล หาที่ทำ"
+  },
+  {
+   "kw": "จัดฟันเด็ก",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อบริการเปล่า พาลูกไปทำ"
+  },
+  {
+   "kw": "จัดฟันผู้ใหญ่ ใช้เวลานานไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามระยะเวลา หาข้อมูล แม้หน้าเป็น service"
+  },
+  {
+   "kw": "จัดฟันแล้วมีกลิ่นปาก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ/ปัญหา หาคำอธิบาย ไม่ใช่จอง"
+  },
+  {
+   "kw": "จัดฟันใส",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "จัดฟันใส เจ็บไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "กลัวเจ็บ หาข้อมูล ไม่ใช่เทียบยี่ห้อ"
+  },
+  {
+   "kw": "จัดฟันใส ยี่ห้อไหนดี",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "เทียบยี่ห้อก่อนตัดสินใจ"
+  },
+  {
+   "kw": "จัดฟันใส ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ถามราคา ใกล้ตัดสินใจใช้บริการ"
+  },
+  {
+   "kw": "จัดฟันใส เหมาะกับใคร",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "เช็คว่าเหมาะกับตัวเองไหม ยังหาข้อมูล"
+  },
+  {
+   "kw": "จำลองตำแหน่งรากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิคกระบวนการ หาความรู้"
+  },
+  {
+   "kw": "เช็คสิทธิ์ประกันสังคม ทันตกรรม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "เช็คสิทธิ์ก่อน ก้ำกึ่งกับพร้อมไปใช้"
+  },
+  {
+   "kw": "ใช้ชีวิตหลังทำฟัน",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาความรู้การใช้ชีวิต ไม่ใช่จองบริการ"
+  },
+  {
+   "kw": "ซอฟต์แวร์วางแผนรากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิค อยากรู้ว่าคืออะไร"
+  },
+  {
+   "kw": "ดมยาสลบทำฟัน เหมาะกับใคร",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามเงื่อนไขความเหมาะสม หาข้อมูล"
+  },
+  {
+   "kw": "ดูแลหลังฝังรากฟันเทียม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "วิธีดูแลหลังทำ ไม่ใช่คำค้นเพื่อจอง"
+  },
+  {
+   "kw": "ดูแลเหงือกรอบรากเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "วิธีดูแลตัวเอง หาความรู้"
+  },
+  {
+   "kw": "ตั้งครรภ์ ทำรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามข้อจำกัดความปลอดภัย ยังไม่ตัดสินใจ"
+  },
+  {
+   "kw": "ติดต่อ สไมล์สเคป",
+   "intent": "navigational",
+   "borderline": false,
+   "why_th": "ชื่อแบรนด์ + ติดต่อ"
+  },
+  {
+   "kw": "แต่งเหงือก",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ถอนฟัน ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ถามราคา พร้อมใช้บริการ"
+  },
+  {
+   "kw": "ถอนฟันน้ำนม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หัตถการเปล่า แต่พ่อแม่อาจหาข้อมูลก่อน"
+  },
+  {
+   "kw": "ถอนฟันแล้วไม่ใส่ฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อยากรู้ผลกระทบ ยังไม่ซื้อ"
+  },
+  {
+   "kw": "ถอนฟันแล้วเหงือกยุบ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อาการหลังถอน หาสาเหตุ"
+  },
+  {
+   "kw": "ถามที่พบบ่อย ทันตกรรม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "รวมคำถามความรู้ทั่วไป"
+  },
+  {
+   "kw": "ทพญ. พิชชาภา ผุดผ่อง",
+   "intent": "navigational",
+   "borderline": false,
+   "why_th": "ชื่อหมอเฉพาะเจาะจง"
+  },
+  {
+   "kw": "ท้อง ฉีดยาชาทำฟันได้ไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามความปลอดภัยขณะตั้งครรภ์"
+  },
+  {
+   "kw": "ท้อง เอกซเรย์ฟันได้ไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามความปลอดภัย หาข้อมูล"
+  },
+  {
+   "kw": "ทันตกรรมความงาม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หมวดบริการที่ไปทำได้ แต่หน้าเป็น technology"
+  },
+  {
+   "kw": "ทันตกรรมดิจิทัล",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "แนวคิด/เทคโนโลยี อยากรู้ว่าคืออะไร"
+  },
+  {
+   "kw": "ทันตกรรมประดิษฐ์",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "\"ทันตกรรมประดิษฐ์\" (prosthodontics) เป็นชื่อหมวดบริการที่คลินิกเปิดรับจริง เทียบเท่า \"ทันตกรรมจัดฟัน\" — คนพิมพ์คำนี้เปล่า ๆ ส่วนใหญ่กำลังหาที่ทำครอบฟัน/สะพานฟัน/ฟันปลอม ไม่ได้หาคำนิยาม ตามกฎ \"ชื่อหัตถการ/ชื่อบริการเปล่า ๆ = transactional\" และหน้าปลายทางเป็น procedure_pillar ก็สอดคล้อง ยอมรับว่าก้ำกึ่งเพราะเป็นศัพท์สาขาวิชา (มีคนค้นเชิงเรียน/นิยามอยู่บ้าง) แต่ intent หลักคือไปใช้บริการ จึงไม่เห็นด้วยกับ informational เดิม"
+  },
+  {
+   "kw": "ทันตแพทย์ทั่วไป",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "\"ทันตแพทย์ทั่วไป\" เป็นชื่อ \"สาขา/บทบาทวิชาชีพ\" ไม่ใช่ชื่อหัตถการที่จองได้ และไม่มีทำเล/คำว่าราคา/จอง คนพิมพ์คำนี้ส่วนใหญ่กำลังหาคำอธิบายว่าทันตแพทย์ทั่วไปคืออะไร ดูแลอะไรบ้าง ต่างจากทันตแพทย์เฉพาะทางยังไง — ขั้นถัดไปคืออ่าน ไม่ใช่จอง จึงเป็น informational (หน้าปลายทางหมวด about ก็สอดคล้อง) ถ้าจะ transactional ต้องมีตัวช่วย เช่น \"ทันตแพทย์ทั่วไป ใกล้ฉัน/ศรีนครินทร์\""
+  },
+  {
+   "kw": "ทันตแพทย์ปริทันต์ เฉพาะทาง",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หาหมอเฉพาะทางเพื่อไปรักษา ไม่ใช่อ่านประวัติ"
+  },
+  {
+   "kw": "ทันตแพทย์รักษารากฟัน เฉพาะทาง",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "มองหาหมอเฉพาะทางเพื่อเข้ารับบริการ"
+  },
+  {
+   "kw": "ทันตแพทย์ศัลยกรรมช่องปาก",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หาหมอศัลย์ช่องปากเพื่อไปทำ"
+  },
+  {
+   "kw": "ทันตแพทย์ใส่ฟัน เฉพาะทาง",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หาหมอใส่ฟันเพื่อไปใช้บริการ"
+  },
+  {
+   "kw": "ทำฟัน 900 ประกันสังคม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ตั้งใจไปใช้สิทธิ 900 บาททำฟัน"
+  },
+  {
+   "kw": "ทำฟันด้วยระบบดิจิทัล",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "คำขึ้นต้นด้วยกริยา \"ทำฟัน\" ซึ่งเป็นชื่อการรับบริการ ไม่ใช่ \"ระบบดิจิทัลคืออะไร\" — \"ด้วยระบบดิจิทัล\" เป็นตัวขยายวิธี/เทคโนโลยีที่คลินิกใช้ คนพิมพ์คำนี้กำลังมองหาที่ที่ทำฟันด้วยระบบดิจิทัลเพื่อไปใช้บริการ เข้าเกณฑ์ \"ชื่อหัตถการเปล่า ๆ = transactional\" ถ้าจะเป็น informational ต้องเป็น \"ทันตกรรมดิจิทัลคืออะไร\" และถ้าเป็น commercial ต้องมีสัญญาณเทียบ เช่น \"ดีไหม/ต่างกับแบบเดิมยังไง\" ซึ่งไม่มี หมวดหน้า about ขัดกับคีย์เวิร์ด จึงถือว่าก้ำกึ่งและตอบตามคีย์เวิร์ด"
+  },
+  {
+   "kw": "ทำฟันถูก ดีจริงไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "\"ดีจริงไหม\" คือกำลังชั่งใจก่อนตัดสินใจ"
+  },
+  {
+   "kw": "ทำฟันทั้งปาก ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ค้นราคา = พร้อมเทียบและจอง"
+  },
+  {
+   "kw": "ทำฟันแบบไม่รู้สึกตัว",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อบริการที่จองได้ คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ทำฟันประกันสังคม ใช้เอกสารอะไรบ้าง",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามเอกสาร = หาข้อมูลขั้นตอน"
+  },
+  {
+   "kw": "ทำฟันสวย",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ชื่อบริการกว้าง คนค้นเพื่อไปทำ ไม่ใช่หาเทคโนโลยี"
+  },
+  {
+   "kw": "ทำรากฟัน หรือ สะพานฟัน",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "X หรือ Y = เปรียบเทียบก่อนตัดสินใจ"
+  },
+  {
+   "kw": "ทำรากฟันเทียม นานไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามระยะเวลา = หาข้อมูล ยังไม่จอง"
+  },
+  {
+   "kw": "ทีมทันตแพทย์ smilescape",
+   "intent": "navigational",
+   "borderline": false,
+   "why_th": "มีชื่อแบรนด์ ตามหาหน้าทีมหมอ"
+  },
+  {
+   "kw": "เทคโนโลยีครอบฟันดิจิทัล",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคโนโลยี ต้องการความรู้"
+  },
+  {
+   "kw": "เทคโนโลยีทันตกรรมความงาม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หัวข้อเทคโนโลยีกว้าง ยังไม่เลือกบริการ"
+  },
+  {
+   "kw": "เทคโนโลยีผ่าตัดรากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อยากรู้เทคนิคการผ่าตัด ไม่ใช่จอง"
+  },
+  {
+   "kw": "เบาหวาน ฝังรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามข้อจำกัดสุขภาพ กังวล หาข้อมูล"
+  },
+  {
+   "kw": "ใบเสร็จทำฟัน ลดหย่อนภาษี",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามเรื่องภาษี ไม่ใช่จองบริการ"
+  },
+  {
+   "kw": "ประกันสังคม ทำฟัน ถามที่พบบ่อย",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หา FAQ สิทธิ = หาความรู้"
+  },
+  {
+   "kw": "ประวัติ smilescape",
+   "intent": "navigational",
+   "borderline": false,
+   "why_th": "ชื่อแบรนด์ + ประวัติ = ตามหาหน้าเฉพาะ"
+  },
+  {
+   "kw": "ปวดฟันมาก ทนไม่ไหว",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "เจ็บฉุกเฉิน พร้อมหาที่รักษาทันที"
+  },
+  {
+   "kw": "ปัญหาสุขภาพช่องปาก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "คำกว้าง หาความรู้ ไม่ใช่หัตถการที่จองได้"
+  },
+  {
+   "kw": "เป็นโรคเหงือก ทำรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามเงื่อนไข/ความเป็นไปได้ ยังไม่จอง"
+  },
+  {
+   "kw": "เปรียบเทียบแบรนด์รากฟันเทียม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เทียบยี่ห้อก่อนตัดสินใจ"
+  },
+  {
+   "kw": "เปลี่ยนฟันปลอมทั้งปาก เป็น all on 4",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ตั้งใจทำหัตถการเจาะจง แม้หน้าเป็นเคส"
+  },
+  {
+   "kw": "ผ่อนค่าทำฟัน ดอกเบี้ย 0",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หาเงื่อนไขจ่ายเงิน = พร้อมใช้บริการ"
+  },
+  {
+   "kw": "ผ่าตัดตัดแต่งเหงือกรอบรากเทียม",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ผ่าฟันคุดซับซ้อน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการ ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ผู้สูงอายุ ทำฟัน คำถามที่พบบ่อย",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "FAQ หาความรู้ล้วน"
+  },
+  {
+   "kw": "ผู้สูงอายุ ฝังรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามคุณสมบัติ/ข้อจำกัด ยังไม่จอง"
+  },
+  {
+   "kw": "ฝังรากทันทีหลังถอนฟัน ดีไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "\"ดีไหม\" = ชั่งใจเลือกวิธี"
+  },
+  {
+   "kw": "ฝังรากฟันเทียม เจ็บไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "กลัวเจ็บ หาข้อมูลคลายกังวล"
+  },
+  {
+   "kw": "ฝังรากฟันเทียม หลังฉายรังสี",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "เคสเฉพาะทางการแพทย์ หาความรู้ก่อน"
+  },
+  {
+   "kw": "พาลูกทำฟัน คำถามที่พบบ่อย",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "FAQ หาความรู้ล้วน"
+  },
+  {
+   "kw": "พาลูกไปหาหมอฟันครั้งแรก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาวิธีเตรียมตัว ไม่ใช่ชื่อหัตถการ"
+  },
+  {
+   "kw": "แพ้โลหะ ทำรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามข้อจำกัดสุขภาพ ยังไม่ตัดสินใจ"
+  },
+  {
+   "kw": "ฟันเก จัดฟันหรือวีเนียร์",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เทียบสองทางเลือกก่อนตัดสินใจ"
+  },
+  {
+   "kw": "ฟันคุด ประกันสังคม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "คนพิมพ์คำนี้ไม่ได้จะอ่านว่าฟันคุดคืออะไร แต่กำลังจะไปถอนฟันคุดโดยใช้สิทธิ ขั้นถัดไปคือหาที่ทำ/ส่วนเกินเท่าไหร่/นัดคิว = ชื่อหัตถการ + ช่องทางจ่ายเงิน ใกล้เคียง \"ถอนฟันคุด ราคา/ที่ไหน\" มากกว่าการหาความรู้ ผู้จำแนกเดิมมองมุม \"เช็คสิทธิ์ก่อน\" ซึ่งเป็นแค่ขั้นย่อยของการไปใช้บริการจริง ส่วน insurance_page เป็นมุมของเว็บ ไม่ใช่เจตนาคนค้น"
+  },
+  {
+   "kw": "ฟันคุดฝังในกระดูก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ชื่อภาวะ ไม่ใช่ชื่อหัตถการที่จองได้"
+  },
+  {
+   "kw": "ฟันน้ำนมขึ้นช้า",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการลูก หาสาเหตุ ไม่ใช่ชื่อบริการ ขัดกับ service_page"
+  },
+  {
+   "kw": "ฟันปลอม ประกันสังคม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาสิทธิ์/เงื่อนไขเบิก ยังไม่จอง"
+  },
+  {
+   "kw": "ฟันปลอมบนรากเทียม",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการ/บริการเปล่า คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ฟันปลอมแบบไหนดี",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "แบบไหนดี = กำลังเทียบก่อนตัดสินใจ"
+  },
+  {
+   "kw": "ฟันปลอมหลวม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ/ปัญหา หาสาเหตุก่อน ไม่ใช่ชื่อบริการ"
+  },
+  {
+   "kw": "ฟันผุ เกิดจากอะไร",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามสาเหตุตรงตัว"
+  },
+  {
+   "kw": "ฟันโยก",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อาการเปล่า หาสาเหตุ"
+  },
+  {
+   "kw": "ฟันสึก ฟันสั้น",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ ไม่ใช่ชื่อเทคโนโลยี ขัดกับ technology_page"
+  },
+  {
+   "kw": "ฟันหน้าแตก ซ่อม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "มีคำว่าซ่อม พร้อมไปทำ"
+  },
+  {
+   "kw": "ฟันห่าง แก้ยังไง",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามวิธีแก้ ยังไม่เลือกบริการ"
+  },
+  {
+   "kw": "ฟันเหลือง",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการเปล่า ไม่ใช่ชื่อบริการฟอกสีฟัน"
+  },
+  {
+   "kw": "มีโรคประจำตัว ทำรากฟันเทียมได้ไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามข้อจำกัดสุขภาพ ยังไม่จอง"
+  },
+  {
+   "kw": "ยกไซนัส",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ยกไซนัส รากฟันเทียม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ชื่อหัตถการคู่ ไม่ใช่เคสตัวอย่าง"
+  },
+  {
+   "kw": "ยกพื้นไซนัส",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า"
+  },
+  {
+   "kw": "ยิ้มเห็นเหงือก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ/ลักษณะ ยังไม่เลือกวิธีรักษา"
+  },
+  {
+   "kw": "รักษารากฟัน กี่ครั้ง",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามจำนวนครั้ง หาข้อมูล"
+  },
+  {
+   "kw": "รักษารากฟัน เจ็บไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "เจ็บไหม = กลัว หาข้อมูล"
+  },
+  {
+   "kw": "รักษารากฟัน หรือ ถอนฟัน",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "เทียบสองทางเลือกก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รักษารากฟัน หรือ รากเทียม",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "เทียบสองทางเลือก ไม่ใช่ความรู้ล้วน"
+  },
+  {
+   "kw": "รากเทียม straumann",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "ชื่อยี่ห้อรากเทียม กำลังเทียบแบรนด์ ไม่ใช่หาความรู้"
+  },
+  {
+   "kw": "รากเทียม เหงือกอักเสบ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อาการ/ภาวะแทรกซ้อน หาสาเหตุ"
+  },
+  {
+   "kw": "รากเทียมเกาหลี vs สวิส",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เปรียบเทียบก่อนตัดสินใจชัดเจน"
+  },
+  {
+   "kw": "รากเทียมขาว",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "เป็นชื่อหัตถการ/บริการเปล่า ๆ (\"รากเทียม\" + คำขยายชนิดวัสดุ) ไม่มีคำบ่งการชั่งใจอย่าง \"ดีไหม\" \"เทียบ\" \"vs\" \"รีวิว\" คนพิมพ์คำนี้ส่วนใหญ่รู้อยู่แล้วว่าต้องการรากเทียมสีขาว (เซอร์โคเนีย) แล้วกำลังมองหาที่ทำ/ราคา ตามกฎ \"ชื่อหัตถการเปล่า ๆ = transactional\" จึงไม่เห็นด้วยกับ commercial เดิม ก้ำกึ่งจริงเพราะเป็นชื่อวัสดุทางเลือกและหน้าปลายทางเป็น technology_page แต่ตัวคีย์เวิร์ดไม่มีสัญญาณเปรียบเทียบ ให้ตัดสินตามคีย์เวิร์ด"
+  },
+  {
+   "kw": "รากเทียมเซรามิก",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "\"รากเทียมเซรามิก\" เป็นชื่อหัตถการ/บริการเปล่า ๆ ที่จองทำได้จริง ไม่มีคำเทียบ (ดีไหม / vs / เทียบกับไทเทเนียม) อยู่ในคีย์เวิร์ด — คนพิมพ์คำนี้ส่วนใหญ่กำลังหาที่ทำและราคา จึงเป็น transactional ตามกฎ \"ชื่อหัตถการเปล่า ๆ = transactional\" หมวดหน้าปลายทาง technology_page เป็นแค่ข้อมูลประกอบ ถ้าอยากได้ commercial ต้องมีคำเปรียบเทียบต่อท้าย เช่น \"รากเทียมเซรามิก ดีไหม\" หรือ \"รากเทียมเซรามิก vs ไทเทเนียม\" (ก้ำกึ่งอยู่บ้างเพราะเป็นการเลือกวัสดุ)"
+  },
+  {
+   "kw": "รากเทียมไม่ใช่โลหะ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามเชิงบรรยาย ยังหาข้อมูลว่ามีไหม"
+  },
+  {
+   "kw": "รากเทียมยุโรป",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "เทียบแหล่งผลิต/ยี่ห้อ ก่อนเลือก"
+  },
+  {
+   "kw": "รากเทียมโยก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ค้นด้วยอาการ อยากรู้สาเหตุก่อน"
+  },
+  {
+   "kw": "รากเทียมรองรับฟันปลอม",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อบริการที่จองทำได้"
+  },
+  {
+   "kw": "รากฟันเทียม mri",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามข้อจำกัดทางการแพทย์ ไม่ใช่จะจอง"
+  },
+  {
+   "kw": "รากฟันเทียม ข้อควรรู้",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "หาความรู้ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รากฟันเทียม คืออะไร",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "นิยามล้วน แต่ปลายทางเป็นหน้าบริการ"
+  },
+  {
+   "kw": "รากฟันเทียม ดูแลยังไง",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "วิธีดูแล เป็นความรู้ ไม่ใช่หน้าบริการ"
+  },
+  {
+   "kw": "รากฟันเทียม ถามที่พบบ่อย",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "รวมคำถาม หาความรู้"
+  },
+  {
+   "kw": "รากฟันเทียม นนทบุรี",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หัตถการ + ทำเล พร้อมไปทำ"
+  },
+  {
+   "kw": "รากฟันเทียม ผู้สูงอายุ",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ไม่เห็นด้วย — คีย์เวิร์ดนี้คือ \"ชื่อหัตถการที่จองได้\" + ตัวขยายกลุ่มผู้รับบริการ ไม่มีคำถามเชิงหาความรู้ (\"ได้ไหม/เกิดจากอะไร/ต่างกันยังไง\") เลย คนพิมพ์ส่วนใหญ่คือลูกหลานที่กำลังหาที่ทำรากฟันเทียมให้พ่อแม่ ขั้นถัดไปคือดูราคา/นัดปรึกษา ไม่ใช่ตั้งใจอ่านบทความ ตัวขยาย \"ผู้สูงอายุ\" ทำหน้าที่เหมือนตัวกรองบริการ (คล้าย \"จัดฟัน ศรีนครินทร์\" ที่เป็นตัวขยายทำเล) จึงยังอยู่ฝั่ง transactional และสอดคล้องกับ page_category=service_page ถ้าจะเป็น informational ต้องเป็น \"ผู้สูงอายุทำรากฟันเทียมได้ไหม/อายุเท่าไหร่ทำได้\" ซึ่งไม่ใช่รูปที่พิมพ์มา — ยอมรับว่าก้ำกึ่งกับ informational อยู่บ้าง แต่เนื้อหาหน้าควรตอบความเหมาะสมของวัยแล้วปิดด้วย CTA จองปรึกษา"
+  },
+  {
+   "kw": "รากฟันเทียม แพ้ได้ไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "กังวลความปลอดภัย หาข้อมูล"
+  },
+  {
+   "kw": "รากฟันเทียม ฟันกราม",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หัตถการ + ตำแหน่งฟัน คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "รากฟันเทียม รัตนาธิเบศร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หัตถการ + ทำเล ไม่ใช่ชื่อแบรนด์"
+  },
+  {
+   "kw": "รากฟันเทียม ศรีนครินทร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "หัตถการ + ทำเล พร้อมใช้บริการ"
+  },
+  {
+   "kw": "รากฟันเทียม สำเร็จกี่เปอร์เซ็นต์",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามสถิติความสำเร็จ หาข้อมูล แต่หน้าเป็น service"
+  },
+  {
+   "kw": "รากฟันเทียม สูบบุหรี่",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาผลกระทบบุหรี่ต่อรากเทียม หน้าเป็น service"
+  },
+  {
+   "kw": "รากฟันเทียม ห้ามทำอะไร",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ข้อห้ามหลังทำ หาความรู้ล้วน"
+  },
+  {
+   "kw": "รากฟันเทียมขาว",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "ชื่อวัสดุเซอร์โคเนีย กำลังเทียบทางเลือก"
+  },
+  {
+   "kw": "รากฟันเทียมเซรามิก กับ ไทเทเนียม",
+   "intent": "commercial",
+   "borderline": true,
+   "why_th": "X vs Y เปรียบเทียบวัสดุก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รากฟันเทียมทั้งปาก ผู้สูงอายุ",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อบริการ + กลุ่มผู้รับบริการ พร้อมทำ"
+  },
+  {
+   "kw": "รากฟันเทียมล้มเหลว แก้ไข",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "หาที่แก้ไข แต่อาจแค่หาข้อมูลสาเหตุ"
+  },
+  {
+   "kw": "รากฟันเทียมอักเสบ ต้องผ่าตัดไหม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "กังวล ถามแนวทางรักษา หาข้อมูล"
+  },
+  {
+   "kw": "ราคาจัดฟัน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ค้นราคา พร้อมตัดสินใจใช้บริการ"
+  },
+  {
+   "kw": "ราคาทำฟัน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ค้นราคา พร้อมใช้บริการ"
+  },
+  {
+   "kw": "รีวิว all on 4 ทั้งปาก",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิว = ชั่งใจก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รีวิว all on 4 ผู้สูงอายุ",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวเฉพาะกลุ่ม กำลังเปรียบเทียบ"
+  },
+  {
+   "kw": "รีวิว all on 4 ฟันบน",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวเคสเฉพาะ ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รีวิว all on 4 ฟันล่าง",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวเคสเฉพาะ ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รีวิว smile makeover",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวบริการ กำลังชั่งใจ"
+  },
+  {
+   "kw": "รีวิว คลินิกทำฟัน คนกลัวหมอฟัน",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "เทียบคลินิกที่เหมาะกับคนกลัวหมอฟัน"
+  },
+  {
+   "kw": "รีวิว ทำฟัน ก่อนหลัง",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ดูผลก่อนหลังเพื่อประเมินก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รีวิว รากเทียม zygomatic",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวเทคนิคเฉพาะ กำลังเปรียบเทียบ"
+  },
+  {
+   "kw": "รีวิว รากฟันเทียม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวบริการ ชั่งใจก่อนทำ"
+  },
+  {
+   "kw": "รีวิว รากฟันเทียม ผู้สูงอายุ",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิวเฉพาะกลุ่ม ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "รีวิวคลินิกทำฟัน",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "รีวิว = เทียบคลินิกก่อนตัดสินใจ"
+  },
+  {
+   "kw": "โรคเหงือก",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ชื่อโรคเปล่า หาความรู้"
+  },
+  {
+   "kw": "โรคเหงือก รักษา",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "หาวิธีรักษา ยังไม่ระบุจอง"
+  },
+  {
+   "kw": "ลูกกลัวหมอฟัน",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "พ่อแม่หาวิธีรับมือ ไม่ใช่จอง"
+  },
+  {
+   "kw": "ลูกดูดนิ้ว ฟันเสียไหม",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "คำถามกังวล หาความรู้"
+  },
+  {
+   "kw": "ลูกปวดฟันตอนกลางคืน",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการเฉียบพลัน หาวิธีบรรเทา"
+  },
+  {
+   "kw": "เลือดออกตามไรฟัน ไม่ปวด",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อธิบายอาการ หาสาเหตุ"
+  },
+  {
+   "kw": "วัสดุปลูกกระดูก แบบไหนดี",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "แบบไหนดี = เทียบก่อนเลือก"
+  },
+  {
+   "kw": "วางแผนจัดฟันดิจิทัล",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิค อยากรู้กระบวนการ"
+  },
+  {
+   "kw": "วางแผนรากฟันเทียมดิจิทัล",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ไม่ใช่ศัพท์เทคนิคล้วนแบบ \"guided bone regeneration\" แต่เป็นชื่อบริการ/ขั้นตอนที่จองทำได้จริงในคลินิก (digital implant planning) — คนพิมพ์คำนี้ส่วนใหญ่กำลังหาที่ทำ/ที่มีเทคโนโลยีนี้ ไม่ใช่แค่หาความหมาย ไม่มีคำบ่งความรู้ (\"คืออะไร\") หรือคำเทียบ (\"ดีไหม\") กำกับ → transactional และตรงกับ service_page ที่เป็นหน้าปลายทาง (ก้ำกึ่งเล็กน้อยกับ informational เพราะเป็นคำเชิงเทคนิค)"
+  },
+  {
+   "kw": "วีเนียร์",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "วีเนียร์ ก่อนหลัง",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ดูผลลัพธ์ก่อนตัดสินใจ"
+  },
+  {
+   "kw": "วีเนียร์ กับ ครอบฟัน ต่างกันอย่างไร",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามความต่าง ยังไม่ชั่งใจซื้อ"
+  },
+  {
+   "kw": "วีเนียร์ ดีไหม",
+   "intent": "commercial",
+   "borderline": false,
+   "why_th": "ดีไหม = กำลังชั่งใจ"
+  },
+  {
+   "kw": "วีเนียร์ ติดทน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามความทนทาน หาความรู้"
+  },
+  {
+   "kw": "วีเนียร์ ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ราคา = พร้อมใช้บริการ"
+  },
+  {
+   "kw": "วีเนียร์คอมโพสิต",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการที่จองได้"
+  },
+  {
+   "kw": "วุฒิบัตรทันตแพทย์",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามเรื่องคุณวุฒิทั่วไป ไม่ระบุคน"
+  },
+  {
+   "kw": "สรุปคำถามทำฟัน",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "รวมคำถาม หาความรู้"
+  },
+  {
+   "kw": "ส่วนประกอบรากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์เทคนิค อธิบายโครงสร้าง"
+  },
+  {
+   "kw": "เสริมกระดูกฟัน",
+   "intent": "transactional",
+   "borderline": true,
+   "why_th": "ชื่อหัตถการเปล่า คนค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "ใส่ฟันทันทีหลังฝังราก",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามวิธี/ความเป็นไปได้ ยังหาข้อมูล"
+  },
+  {
+   "kw": "หลักฐานทางคลินิก ทันตกรรม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ศัพท์วิชาการล้วน หาความรู้"
+  },
+  {
+   "kw": "หลังจัดฟัน ใส่รีเทนเนอร์",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ดูแลหลังทำ ไม่ใช่จองบริการ"
+  },
+  {
+   "kw": "หลังผ่าตัดรากเทียม ห้ามกินอะไร",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามข้อห้าม เป็นความรู้ล้วน"
+  },
+  {
+   "kw": "หลังผ่าตัดเหงือก ดูแลยังไง",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ถามวิธีดูแล ไม่ใช่จะซื้อ"
+  },
+  {
+   "kw": "หลังผ่าฟันคุด ต้องทำยังไง",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "ทำแล้ว หาวิธีดูแลต่อ"
+  },
+  {
+   "kw": "เหงือกดำ",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ชื่ออาการ หาสาเหตุก่อน"
+  },
+  {
+   "kw": "เหงือกบวมปวด",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อาการ กำลังหาสาเหตุ"
+  },
+  {
+   "kw": "เหงือกบาง เห็นสีเทา",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "บรรยายอาการ หาคำอธิบาย"
+  },
+  {
+   "kw": "เหงือกไม่เท่ากัน",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "อาการ ยังไม่ระบุจะรักษา"
+  },
+  {
+   "kw": "เหงือกร่น",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ชื่อภาวะ หาความรู้"
+  },
+  {
+   "kw": "เหงือกร่น แก้",
+   "intent": "informational",
+   "borderline": true,
+   "why_th": "\"แก้\" = อยากรู้ว่าแก้ได้ไหม/แก้ยังไง ยังไม่มีสัญญาณพร้อมจ่ายหรือจอง — ไม่มี \"ราคา\" \"ที่ไหน\" \"คลินิก\" หรือทำเล และ \"เหงือกร่น\" เป็นชื่ออาการ ไม่ใช่ชื่อหัตถการที่จองได้ (ต่างจาก \"อุดฟัน\" \"วีเนียร์\") คนพิมพ์คำนี้ขั้นต่อไปคืออ่านว่าเกิดจากอะไร กลับมาเหมือนเดิมได้ไหม มีวิธีไหนบ้าง แล้วค่อยไปเทียบ/จอง ตรงกับหน้า condition_pillar พอดี ก้ำกึ่งจริงเพราะมี intent รักษาอยู่ แต่ยังอยู่ขั้นหาข้อมูล"
+  },
+  {
+   "kw": "เหงือกร่นรอบรากเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ภาวะแทรกซ้อนเฉพาะ หาข้อมูล"
+  },
+  {
+   "kw": "เหงือกอักเสบ กลิ่นปาก",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "อาการคู่ หาสาเหตุ"
+  },
+  {
+   "kw": "อัตรารอดรากฟันเทียม",
+   "intent": "informational",
+   "borderline": false,
+   "why_th": "ถามสถิติ ข้อมูลเชิงวิชาการ"
+  },
+  {
+   "kw": "อุดฟัน",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ชื่อหัตถการเปล่า ค้นเพื่อไปทำ"
+  },
+  {
+   "kw": "อุดฟัน ราคา",
+   "intent": "transactional",
+   "borderline": false,
+   "why_th": "ถามราคา พร้อมใช้บริการ"
+  }
+ ]
+}
