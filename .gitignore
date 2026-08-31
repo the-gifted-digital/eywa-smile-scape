@@ -103,6 +103,9 @@ data-snapshots/
 # Keep these heavy source archives local-only as provenance.
 docs/CV Dr/
 design/Smile Scape_Logo/
+# Pricing workbook (2MB, 18 sheets, operator-maintained source of truth).
+# Extracted to docs/pricing/ราคาค่าบริการ.md — that md is what the site uses.
+docs/*.xlsx
 # ===== Secrets (service-role key ครอบทั้งสามแบรนด์ — ห้าม commit) =====
 .secrets/*
 !.secrets/README.md
