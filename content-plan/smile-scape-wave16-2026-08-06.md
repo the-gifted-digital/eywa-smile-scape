@@ -3791,3 +3791,70 @@ vth-biodent                  0 →     0               0 →     0
 `BROADCAST-2026-09-04-tier-and-anchor.md` — มีส่วนที่เขียนถึง deezy โดยตรงเรื่องหนี้ 108 หน้า
 โดยระบุชัดว่า**ไม่ได้บอกว่าการอ่านของเขาผิด** เนื้อหาสุขภาพเป็น YMYL ตาม Google QRG จริง
 แต่การจัด T3 ด้วย page_category ยกกระดานทำให้ 29% ของ T3 ตั้งบาร์ที่ยังทำไม่ถึง
+
+---
+
+## Wave 16bu — มติ operator 5 ข้อ · สร้าง 2 ตาราง · เก็บกวาด
+
+### 1 · สร้าง `seo_service_prices` + `seo_payer_schemes` (migration `dr067_...`)
+
+**ทุกคอลัมน์มี `COMMENT ON COLUMN`** — เหตุผลอยู่ในฐาน ไม่ใช่แค่ในเอกสาร (ตามกฎที่ต้องอ่าน COMMENT ก่อนเขียนค่า)
+
+ช่องที่มีเพราะ audit เจอปัญหาจริง:
+```
+is_publishable + not_publishable_reason  CHECK บังคับว่า false ต้องมีเหตุผล
+                                          ค่าตั้งต้น false โดยเจตนา — ต้องเปิดทีละรายการ
+price_kind                                standalone/included_in_course/deposit/installment/addon
+                                          "ไม่มีค่าใช้จ่าย" ≠ ฟรี
+price_min/max + price_unit                18 แถวเป็นช่วง · หน่วยต่างกัน (ซี่/ขากรรไกร/sextant)
+branch_id nullable                        SOP §444 ราคาต่างรายสาขา
+entity_fp                                 SOP §368 หน้า §3 ดึงราคาย่อเอง — เหตุผลหลักที่ต้องมีตาราง
+verified_by + verified_at (payer_schemes) บังคับกรอก · มีเพราะ 12 หน้าเคยเคลมสถานะโดยไม่มีใครยืนยัน
+```
+
+ใส่แถวประกันสังคมแล้ว 1 แถว (ทุกสาขา · cashless=true · verified_by = ข้อความยืนยันของ operator)
+
+### 2 · 3.12.5 ถอดคำเคลม on-site ✅
+→ `ขั้นตอนและความปลอดภัย — ทีมวิสัญญีแพทย์ดูแลตลอดหัตถการ`
+
+### 3 · `has_medical_review` — trigger แทนการตั้งค่ามือ
+
+ตั้ง false ทั้ง 727 หน้า + สร้าง trigger ให้ `= (status='Live')` อัตโนมัติ · **ทดสอบแล้วทำงานจริง**
+
+🔴 **จำกัดขอบเขตเฉพาะ smile-scape โดยเจตนา** — vth ตั้ง true บนหน้า Planned 500 หน้า และ deezy มีหน้า Live
+ที่ false 3 หน้า · trigger แบบยิงทุกแบรนด์จะไปพลิกข้อมูลเขา ซึ่งผิดกฎห้ามแตะแบรนด์อื่น
+
+### 4 · ชื่อหมอแฮมอังกฤษ — ไม่มีข้อขัดแย้ง
+
+CV ตัดสินไว้แล้วและบันทึกในไฟล์เอง: *"Slug (SEO/entities): dr-woraphat-jarangkul — เรจิสทรีสะกด Woraphat
+ส่วน CV สะกด **Worapat** · Display name ตาม CV"* → **ชื่อแสดง = Worapat · slug = woraphat** และ DB ถูกอยู่แล้ว
+เหลือแค่เอกสารวางแผนภายในที่ใช้ slug เป็นชื่อแสดง (README/changelog/entities.md) ซึ่งไม่ขึ้นเว็บ
+
+⚠️ `วรพัฒน์ จรัสกุล` ใน `docs/research-deep-dive.md` เป็น**หมอของคลินิกคู่แข่ง** ไม่ใช่หมอแฮม (นามสกุลคนละอัน) — ไม่แก้
+
+### 5 · เก็บกวาด — และ audit จับผิดไป 2 กอง
+
+**✅ แก้แล้ว**
+- `3.7.1` entity → `gingivitis` · `3.7.2` → `periodontitis` (ชื่อหน้าคือโรค + target เพิ่งย้ายเป็นคำโรคในเวฟ 16bo)
+- **14 หน้าราคา** `cluster_id` implant-dentistry → cluster ของ entity ตัวเอง (orthodontics/endodontics/cosmetic ฯลฯ)
+  cluster เป็นตัวกำหนด hub/spoke ของ link engine หน้าราคาจึงเคยถูกวางเป็น spoke ของคลัสเตอร์ที่ไม่เกี่ยว
+- ลบ fp ผี `multiple-implants` ออกจาก `services_offered_fps` ทั้งสองสาขา
+
+**🔴 audit จับผิด — 7 หน้าไม่ใช่ข้อบกพร่อง**
+
+audit ว่า "10 หน้า condition_pillar ผูก entity หัตถการผิด" · ตรวจแล้วพบว่า **ทั้ง 9 หน้าเป็น `content_format=T1`
+และ registry ผูก T1 กับ `condition_pillar` เท่านั้น** เปลี่ยนหมวดจะพัง R2 ต้องเปลี่ยนเทมเพลตด้วย
+และ **3.7.4 มีบันทึกว่าตั้งใจทำแบบนี้**: *"§3 = บริการ → เปลี่ยน primary_entity_fp gum-recession → gum-graft"*
+→ เป็นคอนเวนชันของ §3 ที่ตัดสินไว้แล้ว ไม่ใช่ความผิดพลาด · แก้เฉพาะ 2 หน้าที่ผิดจริง
+
+**🟡 ติดธงไว้ ต้องตัดสินเชิงสถาปัตยกรรม**
+- `canonical-collision` 2 หน้า — 3.1.5 กับ 3.9.1 ชื่อเดียวกัน canonical เดียวกัน ทั้งคู่ T4 cluster เดียวกัน
+- `schema-physician-mismatch` 5 หน้า — 2.2 / 2.2.1 / 3.2.2 / 5.21.3 / 5.21.5 ประกาศ schema `Physician`
+  และ entity = หมอแฮม ทั้งที่ไม่ใช่โปรไฟล์ท่าน (5.21.3 คือบทความ "ทันตแพทย์ทั่วไป vs เฉพาะทาง")
+  ติดกับดักเดียวกับ T1 — `content_format=T9` ผูกกับ `doctor_profile` เปลี่ยนหมวดจะพัง registry
+
+### ผลเกต
+```
+keywords blocking 0 · registry blocking 0 · anchors blocking 0
+backup: _ss_hygiene_bak_20260905 · _ss_opdec2_bak_20260905
+```
