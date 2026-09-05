@@ -126,11 +126,11 @@ Round 2 sitemap expansion identified Internal Sinus Lift with Densah Bur (Osseod
 Promote Internal Sinus Lift with Densah Bur to **Signature Offering #5** in `brand-config.json`. Authority anchor: Dr. Salah Huwais (Versah, USA).
 
 **Implications:**
-- `brand-config.json` `signature_offerings[4]` entry added with `_operator_action_required` flag for Dr. Woraphat Versah training credential
+- `brand-config.json` `signature_offerings[4]` entry added with `_operator_action_required` flag for Dr. Worapat Versah training credential
 - Entity `densah-bur` (Device) + `osseodensification` (Procedure) + `internal-sinus-lift` (Procedure) — all `brand_scope=['smile-scape']`
 - Sitemap 3.2.9.4.2 (sub-page of Sinus Lift) + Tech section 4.4.4 (Densah Bur System) = anchored URLs
 - Knowledge: Section 6.2.1.14 (Implant Insights) + Section 6.4.12 (Evidence Summary: Huwais 2017+) = E-E-A-T support
-- Pending operator data: Dr. Woraphat Versah training certificate / Huwais workshop attendance — required to write Section 2.2.2 หมอแฮม credentials with this anchor
+- Pending operator data: Dr. Worapat Versah training certificate / Huwais workshop attendance — required to write Section 2.2.2 หมอแฮม credentials with this anchor
 
 **Rationale:**
 - Real capability (clinic uses, not aspirational)

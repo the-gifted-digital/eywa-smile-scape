@@ -565,11 +565,11 @@ All will gain edges in Phase D when content briefs are assigned.
 
 **Key semantic chains confirmed (incl. Round 2 additions):**
 - Tooth Loss → Dental Implant → Blue Diamond Implant System → Lifetime Implant Warranty (conversion funnel)
-- Horizontal Bone Deficiency → Sausage Technique → Dr. Woraphat Jarangkul (authority chain)
+- Horizontal Bone Deficiency → Sausage Technique → Dr. Worapat Jarangkul (authority chain)
 - CBCT 3D Scan → Acteon CBCT → Digital Implant Planning → Surgical Guide → Guided Implant Surgery (tech stack)
 - Gingivitis → Periodontitis → Alveolar Bone Loss → Guided Bone Regeneration (perio→bone→treatment chain)
 - **NEW:** Osseodensification → Densah Bur + Internal Sinus Lift → Signature Offering #5 (Huwais authority chain)
-- **NEW:** Soft Tissue Management → Strip Graft / Ice Berg / Garage → Dr. Woraphat (Urban authority chain — D-2 Hybrid)
+- **NEW:** Soft Tissue Management → Strip Graft / Ice Berg / Garage → Dr. Worapat (Urban authority chain — D-2 Hybrid)
 - **NEW:** Gum Recession → CAF / Tunneling / VISTA / TCAF → Soft Tissue Service (root coverage clinical pathway)
 - **NEW:** Dental Anxiety → Conscious Sedation / GA Dentistry (anxiety-to-care pathway)
 

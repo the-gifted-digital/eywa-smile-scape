@@ -6,15 +6,15 @@
     "language_note": "Fields ending _en are English (per CV English pages); _th are Thai (per CV Thai pages). Thai-year (พ.ศ./BE) values from the CV were converted to CE in the *_en lists (BE = CE + 543).",
     "contact_warning": "phone / email / personal_address fields are the PERSONAL contact details printed on each CV — NOT the clinic NAP. Do NOT publish as clinic contact. Clinic NAP lives in brand-config.json + content-plan/branches.md (Rattanathibet / Srinakarin). Confirm with each doctor before surfacing any personal detail publicly.",
     "discrepancies": [
-      "Name spelling: CV English reads 'Worapat Jarangkul'. The existing SEO entity registry (content-plan/entities.md, brand-config.json) uses slug 'dr-woraphat-jarangkul' (Woraphat). Slug kept for URL/entity continuity; display name follows the CV ('Worapat').",
+      "Name spelling: CV English reads 'Worapat Jarangkul' and is authoritative. Slug corrected to 'dr-worapat-jarangkul' on 2026-09-06 per operator instruction — display name, entity_slug, page slug and canonical URL now all read Worapat. NOTE: seo_entity_graph.entity_fingerprint is deliberately left as 'dr-woraphat-jarangkul' (internal identity key, referenced by 88 DB rows with FKs that have no ON UPDATE; it never appears on the site).",
       "Dr. Pitchapa — Thai education page (CV image 10) additionally lists 3 training items that also appear on Dr. Worapat's CV (Tachakorn Regeneration Course; FMR & TMD: Beyond the Teeth; International Full Arch Summit 2026). The English page (image 05) does NOT list them. Likely a layout copy-paste artifact — VERIFY with the doctors before publishing. The English list is treated as authoritative here."
     ]
   },
 
   "doctors": [
     {
-      "slug": "dr-woraphat-jarangkul",
-      "entities_slug": "dr-woraphat-jarangkul",
+      "slug": "dr-worapat-jarangkul",
+      "entities_slug": "dr-worapat-jarangkul",
       "nickname_th": "หมอแฮม",
       "nickname_en": "Dr. Ham",
       "name_en": "Worapat Jarangkul",

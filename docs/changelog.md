@@ -653,7 +653,7 @@ Patient: "จัดฟันใส TrioClear ราคา"
 **Strategic frame (Round 3):**
 - ZBL chose Brand Framework over Signature Offering #6 — preserves meaning of "signature technique" (named procedures). ZBL joins SMILE DNA + Family Standard as brand triad.
 - ขูดหินปูน goldmine discovery shows DFS-informed planning value before Phase next full DFS batch.
-- Authority anchors (Urban / Huwais / Linkevicius / Kern) all in place — SmileScape "Global Mastery" claim now has 4 referenceable masters supporting Dr. Woraphat's credentials.
+- Authority anchors (Urban / Huwais / Linkevicius / Kern) all in place — SmileScape "Global Mastery" claim now has 4 referenceable masters supporting Dr. Worapat's credentials.
 
 **Pending operator actions (added Round 3):**
 - หมอแฮม Linkevicius training credential / Zero Bone Loss textbook ownership (for Section 2.2.2 + brand-config clinical_protocols[0] anchor)
@@ -673,7 +673,7 @@ Patient: "จัดฟันใส TrioClear ราคา"
 - `content-plan/relationships.md` — 101 → 151 edges (+50). New parent_of hierarchies for specialty clusters. New uses edges for Densah/RPM/microscope. New evidenced_by edges anchoring Urban + Huwais authority. Osstem→Neodent edge swap.
 - `content-plan/egp-output-summary.md` — recalc all counts (cluster 18, entity 131, edge 151), updated domain coverage + entity type distribution + signature systems summary (5 instead of 4 — added Densah).
 - `docs/decision-records.md` — SS-DR-001 updated (Osstem out / Neodent in / 4-tier brand strategy). **SS-DR-007 added** (Densah/Osseodensification as Signature Offering #5).
-- `README.md` — page count ~414 → ~525. Added operator pending action: Dr. Woraphat Versah training credential confirmation for Densah signature anchor.
+- `README.md` — page count ~414 → ~525. Added operator pending action: Dr. Worapat Versah training credential confirmation for Densah signature anchor.
 - `docs/changelog.md` — this entry.
 
 **Trigger:** Operator review of 414p sitemap → 10-point feedback (Osstem swap, Neodent add, pediatric coverage, airflow scaling, cool light whitening, 3Shape IOS, Acteon CBCT, orthognathic surgery, GA dentistry, endodontist specialist) + soft tissue technique deep-dive (Urban Strip Graft/Ice Berg/Garage + classic CAF/Tunneling/VISTA/TCAF/VIPCT) + bone regen RPM membrane + Densah/Osseodensification signature decision + tooth-loss urgency + PSL clarification + black triangle + gum funnel concerns + Section 6 restructure.
@@ -683,7 +683,7 @@ Patient: "จัดฟันใส TrioClear ราคา"
 - Densah promoted to Signature #5 — pending operator confirmation of หมอแฮม Versah training certificate / Huwais workshop attendance.
 
 **Pending operator actions (added Round 2):**
-- Dr. Woraphat Versah training / Huwais workshop credential (for Section 2.2.2 + brand-config.json signature #5 anchor)
+- Dr. Worapat Versah training / Huwais workshop credential (for Section 2.2.2 + brand-config.json signature #5 anchor)
 - Pediatric Team / Endodontist Team specialist names + credentials (for Section 2.2.9 + 2.2.10)
 - Verify Neodent brand inventory (which series — GM / Drive / Easy Cone)
 - Verify 3Shape TRIOS model (TRIOS 5 / TRIOS 4 / TRIOS Move)

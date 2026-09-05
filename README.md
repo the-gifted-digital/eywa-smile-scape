@@ -106,8 +106,8 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 ## ⏭ Pending Actions (operator — Round 4)
 
 1. Final client review of ~569p sitemap (Round 4 Q-Clinic SSO cluster locked 2026-05-21)
-2. **Dr. Woraphat Versah training / Huwais workshop credential** (for Densah Signature #5 → Section 2.2.2 + brand-config signature_offerings[4])
-3. **Dr. Woraphat Linkevicius training / Zero Bone Loss textbook ownership** (R3 — for ZBL Brand Framework → Section 2.1.6 + brand-config clinical_protocols[0])
+2. **Dr. Worapat Versah training / Huwais workshop credential** (for Densah Signature #5 → Section 2.2.2 + brand-config signature_offerings[4])
+3. **Dr. Worapat Linkevicius training / Zero Bone Loss textbook ownership** (R3 — for ZBL Brand Framework → Section 2.1.6 + brand-config clinical_protocols[0])
 4. **บัตรทอง / 30 บาท SmileScape acceptance status** (R4 — affects 5.13.2.5 content)
 5. **ราชการ / CGA direct billing capability** (R4 — affects 5.13.5 + 3.12 service hub completeness)
 6. **Private insurer accepted list** (AIA / Cigna / Allianz / Muang Thai / etc.) (R4 — affects 5.13.6)

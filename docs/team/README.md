@@ -51,6 +51,6 @@ The rest of the dental team will be supplied later (CVs / bios to follow). When 
 
 ## Cross-references
 
-- `content-plan/entities.md` — entity #2 (Dr. Woraphat Jarangkul), #8 (Zero Bone Loss Concept).
+- `content-plan/entities.md` — entity #2 (Dr. Worapat Jarangkul), #8 (Zero Bone Loss Concept).
 - `brand-config.json` — `founders` block.
 - Dr. Praew's *Zero Bone Loss Concepts Protocol (2025)* training supports the brand's ZBL / Linkevicius E-E-A-T anchor.

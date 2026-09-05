@@ -68,7 +68,7 @@
 | Scope | Entities | % | Notes |
 |-------|----------|---|-------|
 | ['*'] — Universal | 110 | 84% | Reusable across all EYWA dental brands (incl. R2: pediatric / endo / anesthesia + classic soft tissue techniques + general procedures) |
-| ['smile-scape'] — Brand-specific | 21 | 16% | SmileScape-only: Blue Diamond, Neodent (R2), Sausage Technique, Strip Graft / Ice Berg / Garage (R2 Urban signatures), Densah Bur / Osseodensification / Internal Sinus Lift (R2 Huwais signature), Soft Tissue Management, TrioClear, Damon, Acteon CBCT (R2), 3Shape TRIOS (R2), Cool Light Whitening (R2), SmileScape Clinic + 2 branches, Dr. Woraphat, SMILE DNA, Family Standard, Lifetime Warranty |
+| ['smile-scape'] — Brand-specific | 21 | 16% | SmileScape-only: Blue Diamond, Neodent (R2), Sausage Technique, Strip Graft / Ice Berg / Garage (R2 Urban signatures), Densah Bur / Osseodensification / Internal Sinus Lift (R2 Huwais signature), Soft Tissue Management, TrioClear, Damon, Acteon CBCT (R2), 3Shape TRIOS (R2), Cool Light Whitening (R2), SmileScape Clinic + 2 branches, Dr. Worapat, SMILE DNA, Family Standard, Lifetime Warranty |
 
 ---
 
@@ -207,13 +207,13 @@ To run before flat-load to Supabase:
 - Fill brand-config.json TBD fields (founding year, address, phone, social media handles)
 - Compile Tier-5 internal case data for citation-pool-seed.md (clinic case series)
 - Verify Blue Diamond Implant System product specs (warranty terms, exact model names)
-- Confirm Dr. Woraphat Jarangkul credentials (graduation year, Mahidol medal details)
+- Confirm Dr. Worapat Jarangkul credentials (graduation year, Mahidol medal details)
 
 ---
 
 *Phase C complete. 4 files delivered. Ready for Stage 1.5 EUG preflight → Supabase flat-load. Per Handover §7.4 + Bible Part 2.6.*
 
-*Round 2 expansion (2026-05-21) — +3 clusters / +48 entities / +50 edges. SmileScape now has 5 signature offerings (added Densah/Osseodensification). Sitemap ~525 pages (was 414). Awaiting operator confirmation on Dr. Woraphat Versah training credential before locking Section 2.2.2 Densah authority anchor.*
+*Round 2 expansion (2026-05-21) — +3 clusters / +48 entities / +50 edges. SmileScape now has 5 signature offerings (added Densah/Osseodensification). Sitemap ~525 pages (was 414). Awaiting operator confirmation on Dr. Worapat Versah training credential before locking Section 2.2.2 Densah authority anchor.*
 
 *Round 3 expansion (2026-05-21) — DFS-informed batch. +8 entities (zero-bone-loss-concept, dr-tomas-linkevicius, gold-crown, peri-implantitis-treatment, implantoplasty, regenerative-peri-implantitis-surgery, resective-peri-implantitis-surgery, dental-laser-therapy) / +20 edges. Total: 18 clusters / 139 entities / 171 edges. **Zero Bone Loss added as clinical_protocols[0]** in brand-config (Brand Framework — separate from signature_offerings because ZBL = philosophy/protocol, not named-technique). DFS-validated additions: Peri-Implantitis service (140/mo TH), Gold Crown (320/mo TH), ขูดหินปูน cluster expansion (12,100/mo TH LOW competition — Round 3 traffic discovery). Sitemap ~544 pages (was 525 at R2). Pending: หมอแฮม Linkevicius training credential confirmation.*
 

@@ -95,7 +95,7 @@ Expected review topics for SmileScape (dental implant clinic):
 - เสริมกระดูก / GBR / bone-grafting
 
 **Staff praise:**
-- หมอแฮม (Dr. Woraphat) — Lead Implantologist
+- หมอแฮม (Dr. Worapat) — Lead Implantologist
 - หมอแพรว (Dr. Pitchapa) — Co-Founder
 - Front desk / clinic staff (anonymized in response)
 
