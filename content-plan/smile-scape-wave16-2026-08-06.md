@@ -3858,3 +3858,54 @@ audit ว่า "10 หน้า condition_pillar ผูก entity หัตถ�
 keywords blocking 0 · registry blocking 0 · anchors blocking 0
 backup: _ss_hygiene_bak_20260905 · _ss_opdec2_bak_20260905
 ```
+
+---
+
+## Wave 16bw — เลิกประกาศว่าหน้าเป็นหมอ · สลับคีย์ DSD
+
+### 5 หน้าเลิกใช้ schema Physician — แก้เทมเพลตด้วย
+
+**พี่น้องบอกคำตอบครบ ไม่ต้องประดิษฐ์อะไร**
+
+```
+§5.21 "เลือกหมอฟัน / เลือกคลินิก"  ลูก 6 ใน 8 หน้าเป็น T6/knowledge_article/WebPage อยู่แล้ว
+                                    5.21.3 กับ 5.21.5 เป็นข้อยกเว้นที่หลุดไป T9
+§2.2 ทีมทันตแพทย์                   2.2.4-2.2.10 (ทีมเฉพาะทาง) เป็น T11/about/AboutPage ทั้งหมด
+§2.3 Authority & Trust              2.3.1 Credentials · 2.3.2 International Training เป็น T11/about เหมือนกัน
+```
+
+| หน้า | เดิม | ใหม่ | tier |
+|---|---|---|---|
+| **2.2** ทีมทันตแพทย์ (hub) | T9 · doctor_profile · Physician | **T11 · about · AboutPage** | 1 |
+| **2.2.1** The Founders (สองคน) | T9 · doctor_profile · Physician | **T11 · about · AboutPage** | 1 |
+| **3.2.2** ทำไมต้อง SmileScape | T9 · doctor_profile · Physician | **T11 · about · AboutPage** | 1 |
+| **5.21.3** ทันตแพทย์ทั่วไป vs เฉพาะทาง | T9 · doctor_profile · Physician | **T6 · knowledge_article · WebPage** | 1→**2** |
+| **5.21.5** ดูยังไงว่าหมอฟันเก่งเรื่องราก | T9 · doctor_profile · Physician | **T6 · knowledge_article · WebPage** | 1→**2** |
+
+`primary_entity` ทั้ง 5 หน้า: หมอแฮม → **SmileScape Dental Clinic** · หมอแฮมย้ายไป `related_entities_fps`
+
+**หลักที่ใช้:** schema `mainEntity` ต้องเป็นสิ่งที่หน้านั้น**เป็น** ไม่ใช่สิ่งที่หน้านั้น**พูดถึง**
+🔴 5.21.3 คือบทความ "ทันตแพทย์ทั่วไป vs เฉพาะทาง" **ซึ่งไม่ได้พูดถึงหมอแฮมด้วยซ้ำ** แต่ประกาศ schema ว่าตัวเองคือท่าน
+ผลเสียจริง: เสีย eligibility ของ rich result ชนิดที่ควรได้ โดยไม่ได้ knowledge panel กลับมา และเป็นสัญญาณเอนทิตี้ที่ขัดกันเอง 5 หน้า
+
+tier ของ 5.21.3/5.21.5 ขยับ 1→2 ตาม DR-065 (ข้อ 2 หน้าองค์กร → ข้อ 9 ที่เหลือ) **ถูกแล้ว** เพราะเป็นเนื้อหาให้ความรู้
+
+### 🔴 ธง canonical-collision ที่ผมติดไว้ — ผิด ปลดแล้ว
+
+3.1.5 กับ 3.9.1 **ไม่ได้ชนกัน** ชื่อหน้า 3.1.5 ระบุเองว่า **"(→ canonical 3.9.1 Cosmetic DSD)"**
+เป็น canonical consolidation ที่ตั้งใจ เพราะ DSD อยู่สองโซนโดยธรรมชาติ — ขั้นตอนวินิจฉัย §3.1 และบริการความงาม §3.9
+
+**แต่คำวางสลับกันจริง** หน้าที่ไม่ถูก index ถือคำที่ดีกว่า:
+
+```
+เดิม   3.1.5 (ไม่ถูก index)  ออกแบบรอยยิ้ม  v12 38   ·  3.9.1 (canonical)  smile design   v12 0
+ใหม่   3.1.5                smile design   v12 0    ·  3.9.1              ออกแบบรอยยิ้ม  v12 38
+```
+
+`smile design` ลงเป็น semantic ของ 3.9.1 ด้วย (DR-051 ห้ามทิ้งคำ)
+
+### ผลเกต
+```
+registry R1/R2/R3w PASS · keywords blocking 0 · anchors blocking 0
+backup: _ss_schemafix_bak_20260906
+```
