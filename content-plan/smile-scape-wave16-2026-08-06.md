@@ -4254,3 +4254,65 @@ arbiter ของ `all-on-5` overrule ข้อทักที่ให้ "จ�
 **แต่ All-on-4 ที่อยู่ในฐานตอนนี้ใช้วลีนี้อยู่** และ "ช่วยฟื้นการเคี้ยว" ก็ไม่มีแหล่งกำกับ
 แปลว่า **676 แถวที่มี summary อยู่แล้วน่าจะมีข้อบกพร่องชั้นเดียวกัน** — ยังไม่ได้ตรวจ ยังไม่ได้แก้
 ถ้าจะกวาดทั้งฐาน ควรเริ่มจาก treatment/procedure ที่ผูกกับหน้า Live ก่อน
+
+---
+
+## Wave 16cc — operator ตอบ 2 ข้อค้าง แล้วเปิดเจออีก 4 จุด (2026-09-10)
+
+### 1. Iceberg — operator ชี้ต้นทางถูก ตัด "Ice Cube" ออก
+
+operator ส่ง **PMID 37552185** มา: "The 'Iceberg' Connective Tissue Graft Technique for
+Peri-implant Papilla Augmentation Following Interproximal Bone Reconstruction"
+Urban IA, Mancini L, Wang HL, Tavelli L · Int J Periodontics Restorative Dent 2024;44(5):510-519
+DOI 10.11607/prd.6731 (According to PubMed)
+
+ดึงบทคัดย่อเต็มทั้ง 4 ฉบับมาตรวจ — **ไม่มีฉบับไหนใช้คำว่า "ice cube" เลย ทุกฉบับใช้ "iceberg"**
+และทั้ง 4 มี Urban IA เป็นผู้เขียนร่วม ตรงกับที่หน้าเว็บระบุว่าเป็นเทคนิคของ Dr. Istvan Urban
+
+แก้: `entity_name` → "Iceberg Connective Tissue Graft (iCTG)" · หน้า 3.2.9.7.2.1 `page_name` +
+`seo_title` ตามกัน · เก็บ "Ice Cube technique" ไว้ใน aliases ให้ยังค้นเจอ ·
+**ไม่แตะ `entity_fingerprint`/`entity_slug`** เพราะเป็น join key ของ page_master และ keywords ·
+`slug` ของหน้ายังเดิม รอ operator ตัดสินเพราะเปลี่ยนแล้วกระทบ URL
+
+**ตรวจแล้วสรุปที่เขียนไปเมื่อวานไม่ผิด** ตอนแรกกลัวว่า "ฟันหน้าบน" จะเกินแหล่ง เพราะ 37552185
+พูดแค่ "anterior region" แต่ 37450676 เป็น anterior maxilla (MeSH `Maxilla`) และ 40147891
+เป็น maxillary anterior — รองรับชัด ไม่ต้องแก้
+
+### 2. Garage — คลินิกทำจริง ข้อกังวลตกไป
+
+operator วางกฎ: **"ถ้ามีอยู่ในไซต์แมป แปลว่าเราทำจริง"**
+หน้า 3.2.9.7.2.2 มีอยู่จริงใต้ sub-hub 3.2.9.7.2 คู่กับ Iceberg (.1) และ VIPCT (.3)
+ข้อกังวลเดิมตกไป · ที่ยังต้องระวังคือระดับหลักฐาน (case report 1 ราย) ไม่ใช่ว่าทำได้หรือไม่
+
+### 3. เจอตอนเช็คกฎไซต์แมป — `in_xml_sitemap` ของ smile-scape ว่างทั้งแบรนด์
+
+| แบรนด์ | in_xml_sitemap=true | false | รวม |
+|---|---|---|---|
+| deezy-dental | 833 | 36 | 869 |
+| vth-biodent | 758 | 3 | 761 |
+| smile-scape-clinic **(ก่อนแก้)** | **1** | **728** | 729 |
+
+แถวเดียวที่ true คือ 3.3.8 ที่เพิ่งสร้างเมื่อวาน แปลว่าคอลัมน์นี้**ไม่เคยถูกเติมของแบรนด์นี้**
+ไม่ใช่สัญญาณว่าหน้าเหล่านั้นไม่อยู่ในไซต์แมป — ถ้าอ่านผิดจะสรุปกลับด้านกับกฎที่ operator เพิ่งวางไว้
+
+ถอดกฎจากอีก 2 แบรนด์: `in_xml_sitemap = (index_directive = 'index')`
+— deezy false 36 แถวเป็น noindex ทั้งหมด · vth false 3 แถวเป็น noindex ทั้งหมด ·
+status ไม่เกี่ยว (vth มี Merged ที่ true ตั้ง 72 แถว)
+
+เติมตามกฎเดียวกัน: **smile-scape true 728 / false 1** (3.2.10.9 ที่ noindex+Merged+มี redirect)
+ไม่กระทบชั้น noindex ของ `go.` ซึ่งอยู่ที่ `Base.astro` + `worker/index.ts` คนละชั้นกัน
+
+### 4. เจอระหว่างอ่านหน้าเหล่านี้ — meta_description 3 หน้าอ้างเกินแหล่ง
+
+ติด `flag_review='content-rewrite-needed'` พร้อมเหตุผลใน `reconciliation_notes` **ไม่แก้เนื้อหาเอง**
+
+| หน้า | ข้อความที่มีปัญหา | ทำไมผิด |
+|---|---|---|
+| 3.2.9.7.2.3 VIPCT | "ทำให้เนื้อเยื่อรอด**สูงกว่า**" | เทียบว่าดีกว่าโดยไม่บอกว่าเทียบกับอะไร ไม่มีแหล่ง · RCT 2 ปี PMID 36852545 ไม่พบผลด้านความงามหรือการคงสภาพกระดูกที่ดีกว่าการไม่ปลูก |
+| 3.2.9.3 Sausage | เสริมสันกระดูกแนวกว้าง**ได้มาก** | อ้างขนาดผลโดยไม่มีตัวเลขหรือแหล่ง · หลักฐานทั้งชุดเป็น retrospective/case series ไม่มี RCT |
+| 3.2.9.7.2.1 Iceberg | เพิ่มความหนา "แนวตั้ง**และแนวนอน**ไปพร้อมกัน" | ขัดกับ 40147891 ที่ระบุว่าแนวนอนใช้ free CTG หรือ palatal pedicled flap ส่วน iceberg ใช้กับ**แนวดิ่ง** |
+
+นี่คือหลักฐานตรงว่าข้อกังวลเมื่อวานเรื่อง "แถวที่มีเนื้อหาอยู่แล้วน่าจะมีข้อบกพร่องชั้นเดียวกัน"
+ไม่ใช่แค่ทฤษฎี — สุ่มอ่าน 4 หน้าเจอ 3 หน้า
+
+เกตหลังแก้: keyword-collisions blocking 0 · anchor-text blocking 0 (2,827 เส้นเท่าเดิม)

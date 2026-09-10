@@ -164,7 +164,44 @@ overrule 5 ข้อที่ค้างจากรอบ 2 ทั้งหม
 
 ---
 
-## สองเรื่องที่ต้องให้ operator ตัดสิน
+## สองเรื่องที่เคยค้าง — operator ตอบแล้ว 2026-09-10
+
+### 1. ชื่อเอนทิตี `ice-berg-technique` — ยืนยันแล้วว่ารวมผิด แก้แล้ว
+
+operator ชี้ว่าต้นทางคือ **PMID 37552185** — "The 'Iceberg' Connective Tissue Graft Technique
+for Peri-implant Papilla Augmentation Following Interproximal Bone Reconstruction"
+Urban IA, Mancini L, Wang HL, Tavelli L · Int J Periodontics Restorative Dent 2024;44(5):510-519
+DOI 10.11607/prd.6731 (According to PubMed)
+
+ดึงบทคัดย่อเต็มทั้ง 4 ฉบับมาตรวจแล้ว **ไม่มีฉบับใดใช้คำว่า "ice cube" เลย ทุกฉบับใช้ "iceberg"**
+ทั้ง 4 ฉบับมี Urban IA เป็นผู้เขียนร่วม สอดคล้องกับที่หน้าเว็บระบุว่าเป็นเทคนิคของ Dr. Istvan Urban
+
+- 37552185 (2024) 'Iceberg' CTG · ผู้ป่วย 35 ปี · anterior region
+- 37450676 (2023) Hard- and Soft-Tissue Reconstruction in the **Anterior Maxilla** · MeSH `Maxilla` · เรียกตรงว่า "the 'iceberg' CTG approach"
+- 40147891 (2025) แนวทางจีน · **maxillary anterior** · ระบุว่าข้อบกพร่อง**แนวดิ่ง**ใช้ iceberg technique
+- 39058944 (2025) Iceberg **and 'Garage'** CTG · ผู้ป่วยหญิง 45 ปี · anterior region
+
+**แก้แล้ว**: `entity_name` เป็น "Iceberg Connective Tissue Graft (iCTG)" ·
+`page_name` 3.2.9.7.2.1 เป็น "Iceberg CTG (iCTG) — Dr. Istvan Urban" · `seo_title` ตามกัน
+เก็บ "Ice Cube technique" ไว้ใน `aliases` เพื่อให้ยังค้นเจอ
+**ไม่แตะ** `entity_fingerprint` และ `entity_slug` เพราะเป็น join key ของ page_master/keywords
+`slug` ของหน้ายังเป็น `ice-berg-technique` — เปลี่ยนแล้วกระทบ URL รอ operator ตัดสิน
+
+**ผลพลอยได้: "ฟันหน้าบน" ในสรุปมีแหล่งรองรับจริง** ตอนแรกกังวลว่า 37552185 พูดแค่ "anterior region"
+ไม่ระบุขากรรไกร แต่ 37450676 (anterior maxilla + MeSH Maxilla) และ 40147891 (maxillary anterior)
+รองรับชัดเจน ไม่ต้องแก้
+
+### 2. `garage-technique` — คลินิกทำจริง ข้อกังวลตกไป
+
+operator วางกฎว่า **"ถ้ามีอยู่ในไซต์แมป แปลว่าเราทำจริง"**
+หน้า `3.2.9.7.2.2 Garage Technique — Dr. Istvan Urban (Papilla Preservation)` มีอยู่ในโครงจริง
+อยู่ใต้ sub-hub `3.2.9.7.2 Increase Gingival Thickness` คู่กับ Iceberg (.1) และ VIPCT (.3)
+ข้อกังวลเดิมว่า "ไม่ควรขึ้นเป็นบริการเว้นแต่ทำจริง" จึงตกไป
+ข้อควรระวังที่ยังอยู่คือ**ระดับหลักฐาน** (case report 1 ราย) ไม่ใช่ว่าคลินิกทำได้หรือไม่
+
+---
+
+## (เก็บไว้เป็นบันทึก) ข้อความเดิมก่อน operator ตอบ
 
 ### 1. ชื่อเอนทิตี `ice-berg-technique` อาจรวมผิด
 ชื่อคือ "Ice Berg / Ice Cube Technique" แต่ไม่มีบทคัดย่อใดใน 4 PMID พูดถึง "ice cube technique"
