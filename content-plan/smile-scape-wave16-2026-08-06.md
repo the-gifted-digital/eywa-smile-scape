@@ -4490,3 +4490,14 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 เจอ 2 เรื่องให้เจ้าของ Bible/เกต: `narrative_review` ไม่อยู่ใน CHECK 17 ค่า · G9 จับงานอิสระที่ศึกษาสินค้าที่คลินิกใช้ (Tera Harz TC-85) เพราะตรวจชื่อเรื่องทั้งพูล
 
 **เรื่อง citation ที่ทำได้ทั้งหมด จบที่นี่**
+
+## Wave 16cg — 2026-09-17 — ช่วง B: 9 หน้าค้างจาก gap-fill (Sonnet คัด → Opus ตรวจ → แก้ inline)
+
+- ที่มา: 9 หน้าที่ช่วง A หาไม่พอ (3.3.8, 3.2.9.7.2.3, 3.2.9.3, 5.2.5, 6.2.1.12, 6.4.5, 7.2.7, 3.2.9.7.2.1, 3.2.9.7.2.2) — ใช้ corpus 52 abstracts จากรอบ entity summary + Urban 2016 (PMID 27238406)
+- Workflow: Sonnet (effort low) คัด pick + เขียน supports_claim ระดับ claim จาก abstract → Opus ตรวจ adversarial ทีละหน้า → ผลตรวจ 0/9 ผ่านตรง แต่ทุกจุดมี suggested_claim → **แก้ inline ไม่ยิง agent ซ้ำ** (ตามที่ตกลงเรื่องต้นทุน token)
+- ปัญหาที่ผู้ตรวจพบ 16 จุด: claim_unsupported 13 (Sonnet เขียนเกิน abstract — แทนด้วย suggested_claim ทั้งหมด) · tier_wrong 2 (40147891 → expert_opinion T6, 39058944 → case_report T6) · off_topic 1 (40940267 socket-shield บนหน้า garage 3.2.9.7.2.2 — ตัด)
+- ผลเขียน: citation ใหม่ 19 แถว (dedupe ตาม PMID กับ pool เดิม 22 รายการ) · ผูก 40 ลิงก์ stamp `wave16cg 2026-09-17 · ช่วง B ·` · ทุก key_findings มาจาก abstract PubMed ใน corpus_b.json
+- ตรวจหลังเขียน: ทุกหน้ามี T1–3 ≥1 (3.2.9.7.2.1 มี 1 = น้อยสุด) · placeholder 0 · 6.4.5 มี Urban 27238406 ✓
+- CHECK constraint กัดอีก 2 ค่า: `cohort` และ `systematic_review / meta_analysis` (Sonnet เขียนรวม) → map cohort→cohort_study, sr/ma→systematic_review
+- journal_name จาก corpus มี DOI ต่อท้าย `(DOI: …)` → ตัดออกก่อน insert
+- PMID ใหม่: 30328199, 36461704, 42645455, 41299501, 40510723, 25810597, 36752882, 41382211, 36852545, 41105044, 38920881, 37087707, 30884111, 31089897, 29498126, 37552185, 39058944, 37450676, 40147891
