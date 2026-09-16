@@ -4516,3 +4516,10 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 - ผ่าน 472 · ต้องแก้ 140 (ผูกกับหน้าเรา 39) · defect หลัก: benefit ไม่มีแหล่ง 57 · ขัด key_findings ใน pool 12 · superior 10 · **editorial note หลุดใน public text 10** · ราคา 7 · ภาษาอังกฤษ 2 · พบ entity ซ้ำ 16 คู่/กลุ่ม
 - ตัวเลขไม่ตรงคาด: heuristic flag 360 → ผิดจริง 140 (39%) และ device ที่ flag ว่าง 4 ตัวมี vendor claim → อ่านเองจำเป็น
 - ยังไม่เขียน DB — รายการ + note การแก้ใน `content-plan/decisions/entity-summary-audit-2026-09-17.md` · D3 = เขียนใหม่ 140 · D4 = เขียน 28 ตัวที่ไม่มี summary
+
+## Wave 16cj — 2026-09-17 — ช่วง D3: เขียน ai_entity_summary ใหม่ 140 แถว
+
+- Sonnet (implementer ×4 ขนาน, ~180k token/ตัว) เขียนตาม note ต่อ entity · checker เชิงกล (คำต้องห้าม/ภาษา/ความยาว/ครบ fp) · Opus อ่านทั้ง 140 → เกลาเอง 16 (outcome ที่ยัง "ทำให้/ช่วยให้", ยาวเกิน 2, safety จาก study ไม่ระบุ 1, ซ้ำคำ)
+- ตรวจ drift ก่อน PATCH (ไม่มีใครแก้ระหว่าง audit) → PATCH 140 · old→new + note ทั้งหมดใน `content-plan/decisions/entity-summary-rewrites-2026-09-17.json`
+- seo_entity_graph ไม่มี maintenance_log → provenance อยู่ในไฟล์นั้น + audit doc
+- ยังไม่ทำ: D4 เขียน 28 ตัวที่ว่าง · D5 dedupe 16 กลุ่ม
