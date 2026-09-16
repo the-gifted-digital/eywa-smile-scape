@@ -4510,3 +4510,9 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 - maintenance_log [PMID-VERIFY] 692 แถว · gates ดูด้านล่าง
 
 - gates หลังช่วง C: blocking 0 · G14_type_fields_disagree 31→26 · G6w 277→274
+
+## Wave 16ci — 2026-09-17 — ช่วง D2: อ่าน ai_entity_summary ครบ 612 (inline)
+
+- ผ่าน 472 · ต้องแก้ 140 (ผูกกับหน้าเรา 39) · defect หลัก: benefit ไม่มีแหล่ง 57 · ขัด key_findings ใน pool 12 · superior 10 · **editorial note หลุดใน public text 10** · ราคา 7 · ภาษาอังกฤษ 2 · พบ entity ซ้ำ 16 คู่/กลุ่ม
+- ตัวเลขไม่ตรงคาด: heuristic flag 360 → ผิดจริง 140 (39%) และ device ที่ flag ว่าง 4 ตัวมี vendor claim → อ่านเองจำเป็น
+- ยังไม่เขียน DB — รายการ + note การแก้ใน `content-plan/decisions/entity-summary-audit-2026-09-17.md` · D3 = เขียนใหม่ 140 · D4 = เขียน 28 ตัวที่ไม่มี summary
