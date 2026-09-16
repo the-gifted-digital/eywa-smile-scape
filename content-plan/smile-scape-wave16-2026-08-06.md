@@ -4530,3 +4530,7 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 - operator: ไม่รับบัตรทอง/ข้าราชการ (ข้าม 2 entity, brand-config accepted:false) · Blue Diamond ใส่ราคาโปรได้ · warranty นิยามกลาง · **Q-Clinic ไม่มีจริง เลิกใช้** → rename entity/alias, slug 6.2.7.2, ถอด target kw, ล้างเอกสาร 14 ไฟล์
 - Sonnet ร่าง 23 (2 agents ~220k token/ตัว) · Opus แก้ 10 + เขียนเอง 3 · PATCH 26
 - ค้าง operator: หน้า 6.5.4.4 / 5.13.2.5 / 5.13.5 ที่ใช้ entity บัตรทอง/ข้าราชการ
+
+## Wave 16cl — 2026-09-17 — ยุบ 3 หน้าบัตรทอง/ข้าราชการ + ล้าง 3.4.1.7 + ตัดราคา Blue Diamond
+
+- ตาม operator: ยุบ 5.13.2.5 / 5.13.5 / 6.5.4.4 (Merged·noindex·redirect·ถอด kw·ตัด citation 9 ลิงก์) · 3.4.1.7 ตัด "/ สปสช" + retarget เป็นคำวัดแล้ว "ขูดหินปูน ประกันสังคม ไม่ต้องสํารองจ่าย" · ถอด entity ต้องห้ามจาก related 17 หน้า · Blue Diamond summary ไม่มีราคา · gates 0 blocking

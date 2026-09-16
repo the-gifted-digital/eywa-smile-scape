@@ -206,3 +206,16 @@
 **ค้างให้ operator:** หน้าที่ใช้ entity บัตรทอง/ข้าราชการเป็น primary — `6.5.4.4`, `5.13.2.5` (ประกันสังคม vs บัตรทอง), `5.13.5` (ข้าราชการ) — ถ้า "ห้ามพูดถึง" หน้าเหล่านี้ควรยุบ/redirect หรือเก็บเป็นหน้าเปรียบเทียบ? ยังไม่แตะ (กฎ: ยุบ/ย้ายหน้าต้องถาม)
 
 รายละเอียด old(NULL)→new + sources ทุกตัว: `entity-summary-new-2026-09-17.json`
+
+### D4 follow-up (operator 2026-09-17, wave 16cl)
+
+- **ยุบ 3 หน้า** ที่ใช้ entity บัตรทอง/ข้าราชการ ตาม convention wave 16bk: `status=Merged` · `noindex` · `in_xml_sitemap=false` · `redirect_target` · ถอด target keyword · ตัด citation (T4 ทั่วไป 3 ใบ/หน้า ที่หน้าอื่นใช้อยู่แล้ว) · outbound ลบ · ไม่มีลูก/inbound
+  - 5.13.2.5 ประกันสังคม vs บัตรทอง → `/social-security-dental-coverage/` (5.13.2)
+  - 5.13.5 ราชการเบิกค่าทำฟัน → `/dental-costs-and-coverage/` (5.13)
+  - 6.5.4.4 FAQ บัตรทอง/ราชการ/ประกันเอกชน → `/faq-cost-insurance/` (6.5.4) — คำถามประกันเอกชนย้ายไป 6.5.4/5.13.6
+- **3.4.1.7** ชื่อ "ขูดหินปูนใช้สิทธิประกันสังคม / สปสช" → "ขูดหินปูนใช้สิทธิประกันสังคม" · target "ขูดหินปูน สิทธิบัตรทอง" → "ขูดหินปูน ประกันสังคม ไม่ต้องสํารองจ่าย" (วัดแล้ว wave16y, ว่าง, ตรงบทบาทหน้าบริการ) · seo_title/meta เขียนใหม่ไม่มีบัตรทอง
+- ถอด `universal-coverage-th` / `civil-servant-dental-benefit` ออกจาก `related_entities_fps` 17 หน้า SSO
+- keyword ที่ topic ปิด (คงแถว note ไว้): ประกันสังคม กับ บัตรทอง ต่างกัน · ข้าราชการ เบิกค่าทำฟัน · บัตรทอง ทำฟัน · ขูดหินปูน สิทธิบัตรทอง · ขูดหินปูน สิทธิข้าราชการ · q clinic ประกันสังคม
+- 6.2.7.2 target ว่าง — operator: "ค่อยวัดภายหลัง"
+- Blue Diamond: **ตัดราคาออกจาก entity summary** — operator: ราคาเป็นเรื่องของเนื้อหาในหน้า (T19 promo) ไม่ใช่ entity description
+- gates: keyword collisions blocking 0 (ไม่มีคู่ใหม่จากวันนี้) · citation gates blocking 0
