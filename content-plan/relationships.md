@@ -449,8 +449,8 @@
 | dental-abscess | evidenced_by | periodontitis | No | P14 Tonetti 2018 perio classification consensus |
 | dry-socket | evidenced_by | tooth-extraction | No | P14 Cochrane Daly 2012 local interventions SR |
 | pregnancy-gingivitis | evidenced_by | gingivitis | No | P14 hormonal gingivitis hormonal etiology consensus |
-| social-security-dental-benefit | evidenced_by | smilescape-dental-clinic | No | P13 sso.go.th regulatory database — Q-Clinic verification |
-| sso-direct-billing-q-clinic | evidenced_by | smilescape-dental-clinic | No | P13 Q-Clinic certificate (operator pending) |
+| social-security-dental-benefit | evidenced_by | smilescape-dental-clinic | No | P13 sso.go.th regulatory database — SSO Direct Billing verification |
+| sso-direct-billing-q-clinic | evidenced_by | smilescape-dental-clinic | No | P13 SSO Direct Billing certificate (operator pending) |
 
 ---
 
@@ -525,8 +525,8 @@
 
 | From Entity | Edge Type | To Entity | Bidirectional | Notes |
 |-------------|-----------|-----------|:---:|-------|
-| social-security-dental-benefit | parent_of | sso-direct-billing-q-clinic | No | Q-Clinic = SSO billing modality variant |
-| sso-direct-billing-q-clinic | related_to | smilescape-dental-clinic | Yes | SmileScape Q-Clinic status (R4 confirmed) — key conversion anchor |
+| social-security-dental-benefit | parent_of | sso-direct-billing-q-clinic | No | SSO Direct Billing = SSO billing modality variant |
+| sso-direct-billing-q-clinic | related_to | smilescape-dental-clinic | Yes | SmileScape SSO Direct Billing status (R4 confirmed) — key conversion anchor |
 | sso-direct-billing-q-clinic | related_to | smilescape-rattanathibet | Yes | Branch-level direct billing capability |
 | sso-direct-billing-q-clinic | related_to | smilescape-srinakarin | Yes | Branch-level direct billing capability |
 | social-security-dental-benefit | related_to | dental-filling | Yes | Covered procedure |

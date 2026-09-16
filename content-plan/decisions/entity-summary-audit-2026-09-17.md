@@ -183,3 +183,26 @@
 - `postural-rehab` Postural Rehabilitation [treatment] pages=0 · **benefit** — "ช่วยลดอาการปวด เพิ่มการเคลื่อนไหว" → "มุ่ง…"
 - `tmj-posture-recovery` TMJ Muscle and Posture Recovery [treatment] pages=0 · **benefit** — "ช่วยลดอาการปวด เพิ่มระยะอ้าปาก" → "มุ่ง…"
 - `zoom-whitening` Zoom Whitening [treatment] pages=0 · **contradicts_source** — เติม "หลักฐานชี้ว่าแสงกระตุ้นไม่จำเป็นต่อผลการฟอก (29893625)"
+
+---
+
+## D4 — เขียน summary ใหม่ 26 จาก 28 ตัวที่ว่างและหน้า smile-scape ใช้ (wave 16ck, 2026-09-17)
+
+ทั้ง 28 เป็น first-party (load_source `content-plan/entities.md`) ไม่ใช่เรื่องที่หาจาก PubMed แบบ All-on-5 → แหล่งต่อกลุ่ม:
+
+| กลุ่ม | จำนวน | แหล่ง | ใครร่าง |
+|---|---|---|---|
+| แบรนด์/สาขา/หมอ/แนวคิดคลินิก | 10 | `docs/brand-concept.md` · `docs/team/*.md` · `doctors.json` · `branches.md` · `site-nav.ts` | Sonnet → Opus แก้ 3 |
+| อุปกรณ์ที่คลินิกใช้ | 13 | entities.md (ตัวตน/ผู้ผลิต) + key_findings ของ citation ที่ผูกกับหน้าที่ใช้ (ตรวจ PubMed แล้วในช่วง C) | Sonnet → Opus แก้ 7 (ตัด survival % generic ที่ไปเกาะกับยี่ห้อ) |
+| สิทธิรักษา | 2 | gcc.go.th relay ประกาศ สปส. 2026-04-18 (มีผล 1 พ.ค. 2569) · hfocus | Opus |
+| KOL ภายนอก | 1 | PubMed (Linkevicius T, Vilnius University) + Open Library ISBN 9780867157994 | Opus |
+
+**ตัดสินใจโดย operator (2026-09-17):**
+- Lifetime warranty → นิยามกลาง ไม่มี "ตลอดชีพ" เป็นคำสัญญา จนกว่า compliance ผ่าน
+- **บัตรทอง (`universal-coverage-th`) และ ข้าราชการ (`civil-servant-dental-benefit`) — คลินิกไม่รับ ห้ามพูดถึง → ไม่เขียน summary** · brand-config.json `accepted: false`
+- Blue Diamond ใส่ราคาโปร 29,900 ได้ (ตามเงื่อนไขและช่วงเวลาที่คลินิกประกาศ) — ⚠️ entity description ไม่มีวันหมดอายุ ต้องอัปเดตเมื่อโปรเปลี่ยน
+- **"Q-Clinic" ไม่มีจริง สร้างความสับสน — เลิกใช้ทั้งหมด** → entity_name `Q-Clinic Direct Billing (SSO)` → `SSO Direct Billing (ไม่ต้องสำรองจ่าย)` · alias ตัด Q-Clinic · primary_entity_name 6 หน้า · slug 6.2.7.2 `what-is-a-q-clinic` → `what-is-an-sso-partner-clinic` · ถอด target keyword `q clinic ประกันสังคม` (คงแถว keyword ไว้เป็นหลักฐานว่าวัดแล้ว = 0) · เอกสารแผน/loader ล้างแล้ว (เว้น changelog/handover/reports = ประวัติ) · `entity_slug`/`entity_fingerprint` `sso-direct-billing-q-clinic` **คงไว้** เพราะเป็น join key ตาม COMMENT
+
+**ค้างให้ operator:** หน้าที่ใช้ entity บัตรทอง/ข้าราชการเป็น primary — `6.5.4.4`, `5.13.2.5` (ประกันสังคม vs บัตรทอง), `5.13.5` (ข้าราชการ) — ถ้า "ห้ามพูดถึง" หน้าเหล่านี้ควรยุบ/redirect หรือเก็บเป็นหน้าเปรียบเทียบ? ยังไม่แตะ (กฎ: ยุบ/ย้ายหน้าต้องถาม)
+
+รายละเอียด old(NULL)→new + sources ทุกตัว: `entity-summary-new-2026-09-17.json`

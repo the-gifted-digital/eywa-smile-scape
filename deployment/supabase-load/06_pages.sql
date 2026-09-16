@@ -266,7 +266,7 @@ values
 ('smilescape-3.13.3.8','Pre-Operative Medical Clearance Protocol — ใบรับรองแพทย์','3.13.3.8','medical-clearance-protocol','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.13.4','Special Needs Dentistry (comprehensive page)','3.13.4','special-needs-dentistry','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14','ทำฟันด้วยสิทธิ์ประกันสังคม ที่ SmileScape (hub)','3.14','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-3.14.1','ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape Q-Clinic','3.14.1','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
+('smilescape-3.14.1','ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape SSO Direct Billing','3.14.1','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2','ตรวจสิทธิ์ + เอกสารใช้สิทธิประกันสังคม (sub-hub)','3.14.2','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2.1','วิธีตรวจสิทธิประกันสังคม Online — sso.go.th + แอป SSO Connect (R9 DFS 2,400/mo)','3.14.2.1','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2.2','เอกสารที่ต้องเตรียม — Checklist + ID card / payslip / claim form (R9 DFS 720/mo)','3.14.2.2','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
@@ -435,7 +435,7 @@ values
 ('smilescape-5.13.2.7','ม.33 vs ม.39 vs ม.40 — สิทธิ์ทำฟันต่างกันยังไง','5.13.2.7','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-5.13.2.8','ทำฟันให้บุตร / คู่สมรส ใช้สิทธิ์ประกันสังคมได้ไหม (DFS spousal Q)','5.13.2.8','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-5.13.2.9','วิธีเบิกประกันสังคมทำฟัน — Online (SSO app) + Offline + เอกสาร','5.13.2.9','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-5.13.2.10','คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (Q-Clinic) คืออะไร (DFS hot) (→ link 3.14.1)','5.13.2.10','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
+('smilescape-5.13.2.10','คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (SSO Direct Billing) คืออะไร (DFS hot) (→ link 3.14.1)','5.13.2.10','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-5.13.3','ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร (R14 CANONICAL detail page for 0% — Section 2.4 + 6.5.4.2 cross-link here)','5.13.3','dental-implant','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-5.13.4','ประกันสุขภาพครอบคลุมทำฟันไหม','5.13.4','private-dental-insurance-th','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-5.13.5','ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA)','5.13.5','civil-servant-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
@@ -609,7 +609,7 @@ values
 ('smilescape-6.2.6.2','3Shape TRIOS คืออะไร — Digital impression มาตรฐานสากล','6.2.6.2','trios-intraoral-scanner','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-6.2.6.3','Cool Light Whitening คืออะไร — ทำไมไม่ทำให้ฟันร้อน','6.2.6.3','cool-light-whitening-unit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-6.2.7.1','ประกันสุขภาพและการครอบคลุมทันตกรรม — ภาพรวมระบบไทย','6.2.7.1','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-6.2.7.2','คลินิกทำฟัน Q-Clinic คืออะไร — ทำไมไม่ต้องสำรองจ่าย','6.2.7.2','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
+('smilescape-6.2.7.2','คลินิกทำฟัน SSO Direct Billing คืออะไร — ทำไมไม่ต้องสำรองจ่าย','6.2.7.2','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-6.2.7.3','ใบเสร็จที่ใช้เบิกได้ — ใบรับรองแพทย์ + รายละเอียดที่ต้องระบุ','6.2.7.3','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-6.3','พจนานุกรมศัพท์ทันตกรรม A-Z (hub)','6.3','dental-implant','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-6.3.1','ศัพท์รากฟันเทียม A-Z','6.3.1','dental-implant','Planned','smile-scape-clinic','Smile Scape Clinic'),
@@ -718,14 +718,14 @@ values
 ('smilescape-8.2.3','ทำฟันนนทบุรี — บริการทันตกรรมครบวงจร','8.2.3','smilescape-rattanathibet','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.2.4','จัดฟันนนทบุรี','8.2.4','smilescape-rattanathibet','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.2.5','คลินิกทำฟันใกล้ MRT สีม่วง','8.2.5','smilescape-rattanathibet','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-8.2.6','ทำฟันประกันสังคม สาขารัตนาธิเบศร์ — Q-Clinic ไม่ต้องสำรองจ่าย','8.2.6','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
+('smilescape-8.2.6','ทำฟันประกันสังคม สาขารัตนาธิเบศร์ — SSO Direct Billing ไม่ต้องสำรองจ่าย','8.2.6','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3','SmileScape สาขาศรีนครินทร์ — คลินิกรากฟันเทียมศรีนครินทร์ (Local SEO hub)','8.3','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3.1','แผนที่และการเดินทาง — ใกล้ MRT สีเหลือง สวนหลวง ร.9','8.3.1','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3.2','รากฟันเทียมศรีนครินทร์ — ทำไมต้อง SmileScape','8.3.2','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3.3','ทำฟันศรีนครินทร์ — บริการทันตกรรมครบวงจร','8.3.3','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3.4','จัดฟันศรีนครินทร์','8.3.4','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-8.3.5','คลินิกทำฟันใกล้ MRT สีเหลือง','8.3.5','smilescape-srinakarin','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-8.3.6','ทำฟันประกันสังคม สาขาศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย','8.3.6','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic')
+('smilescape-8.3.6','ทำฟันประกันสังคม สาขาศรีนครินทร์ — SSO Direct Billing ไม่ต้องสำรองจ่าย','8.3.6','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic')
 on conflict (page_fingerprint) do nothing;
 
 -- authoritative cluster: page inherits its primary entity's topic_cluster_id

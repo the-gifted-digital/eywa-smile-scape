@@ -4523,3 +4523,10 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 - ตรวจ drift ก่อน PATCH (ไม่มีใครแก้ระหว่าง audit) → PATCH 140 · old→new + note ทั้งหมดใน `content-plan/decisions/entity-summary-rewrites-2026-09-17.json`
 - seo_entity_graph ไม่มี maintenance_log → provenance อยู่ในไฟล์นั้น + audit doc
 - ยังไม่ทำ: D4 เขียน 28 ตัวที่ว่าง · D5 dedupe 16 กลุ่ม
+
+## Wave 16ck — 2026-09-17 — ช่วง D4: summary ใหม่ 26 ตัว + เลิกใช้ "Q-Clinic"
+
+- 28 ตัวที่ว่างเป็น first-party ทั้งหมด → แหล่ง = repo docs / ผู้ผลิต / ประกาศ สปส. / PubMed (Linkevicius) — ไม่ใช่ PubMed-sourcing แบบ All-on-5
+- operator: ไม่รับบัตรทอง/ข้าราชการ (ข้าม 2 entity, brand-config accepted:false) · Blue Diamond ใส่ราคาโปรได้ · warranty นิยามกลาง · **Q-Clinic ไม่มีจริง เลิกใช้** → rename entity/alias, slug 6.2.7.2, ถอด target kw, ล้างเอกสาร 14 ไฟล์
+- Sonnet ร่าง 23 (2 agents ~220k token/ตัว) · Opus แก้ 10 + เขียนเอง 3 · PATCH 26
+- ค้าง operator: หน้า 6.5.4.4 / 5.13.2.5 / 5.13.5 ที่ใช้ entity บัตรทอง/ข้าราชการ

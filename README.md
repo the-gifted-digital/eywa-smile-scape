@@ -105,14 +105,14 @@ website_state: smilescapeclinic.com (~4-5 pages, SEO=0 — full rebuild required
 
 ## ⏭ Pending Actions (operator — Round 4)
 
-1. Final client review of ~569p sitemap (Round 4 Q-Clinic SSO cluster locked 2026-05-21)
+1. Final client review of ~569p sitemap (Round 4 SSO Direct Billing SSO cluster locked 2026-05-21)
 2. **Dr. Worapat Versah training / Huwais workshop credential** (for Densah Signature #5 → Section 2.2.2 + brand-config signature_offerings[4])
 3. **Dr. Worapat Linkevicius training / Zero Bone Loss textbook ownership** (R3 — for ZBL Brand Framework → Section 2.1.6 + brand-config clinical_protocols[0])
 4. **บัตรทอง / 30 บาท SmileScape acceptance status** (R4 — affects 5.13.2.5 content)
 5. **ราชการ / CGA direct billing capability** (R4 — affects 5.13.5 + 3.12 service hub completeness)
 6. **Private insurer accepted list** (AIA / Cigna / Allianz / Muang Thai / etc.) (R4 — affects 5.13.6)
 7. **Annual SSO cap verification** — 900 vs 1,200 บาท (2026 status — affects 5.13.2.1)
-8. **Q-Clinic registration number** for website verification badge
+8. **SSO Direct Billing registration number** for website verification badge
 9. Doctor Praeo (หมอแพรว) full credentials
 10. ✅ R10 RESOLVED: Pediatric Dentist CONFIRMED on staff (was 2.2.10 pending)
 11. ✅ R9 RESOLVED: Periodontist + Endodontist specialists CONFIRMED on staff (was 2.2.7 + 2.2.9 pending)

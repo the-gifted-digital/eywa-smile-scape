@@ -6,7 +6,7 @@
 > **DR-022:** Two-Layer classification (Volume-Immune vs Volume-Driven) applied at section level — see each section header
 > **Round 2 (2026-05-21):** Pediatric (3.9) / Sedation (3.10) / Endo Specialist (3.11) sections + Soft Tissue D-2 Hybrid (3.2.9.7) + Densah signature (3.2.9.4.2 + 4.4.4) + Section 6 restructure (Clinical Guides / Insights / Glossary / Evidence / FAQ / Case-based)
 > **Round 3 (2026-05-21):** Peri-Implantitis Service (3.7.7 — DFS 140/mo) + Gold Crown (3.4.4.4 — DFS 320/mo) + Zero Bone Loss brand framework (2.1.6 + Linkevicius authority) + ขูดหินปูน cluster expansion (3.6.1 — DFS goldmine 12,100/mo LOW competition)
-> **Round 4 (2026-05-21):** Q-Clinic SSO cluster — 3.12 SSO Service Hub + 5.13 expansion + Branch SSO pages + 6.2.7 Insurance Insights + 6.5.5 FAQ. SmileScape = Q-Clinic confirmed → "ไม่ต้องสำรองจ่าย" hero positioning
+> **Round 4 (2026-05-21):** SSO Direct Billing SSO cluster — 3.12 SSO Service Hub + 5.13 expansion + Branch SSO pages + 6.2.7 Insurance Insights + 6.5.5 FAQ. SmileScape = SSO Direct Billing confirmed → "ไม่ต้องสำรองจ่าย" hero positioning
 > **Round 5 (2026-05-21):** ⭐ **Section 5 Concern Universe deep-expansion** — Re-tier 7 pages based on DFS (5.6.2 ฟันผุ A / 5.6.3 เหงือกบวม A / 5.11.1 เหงือกร่น A) + 12 new concern clusters (5.14 Acute Pain / 5.15 TMJ / 5.16 Wear-Trauma / 5.17 Halitosis / 5.18 Xerostomia / 5.19 Post-Op / 5.20 Pregnancy / 5.21 Choose Dentist / 5.22 Lifestyle) + W1-2 deep + W11 medical comorbidities. Rationale: bidirectional internal linking (DR-021) requires comprehensive concern hooks at planning time. DFS goldmine ~73k/mo combined LOW competition unlocked
 > **Round 6 (2026-05-21):** Citation pool Pillars 6-15 expansion — +10 pillars + 17 evidenced_by edges (no page count change)
 > **Round 7 (2026-05-21):** ⭐ **FAQ Canonical Source (SS-DR-009)** — Section 5.9 deprecated, Section 6.5 restructured into 5 sub-hubs (Service / Concern / Patient Group / Cost-Insurance / Quick Reference) = 29 canonical FAQ pages
@@ -516,14 +516,14 @@
 
 ### 3.12 บริการทำฟันด้วยสิทธิ์ประกันสังคม / สปสช 🌟
 > 🔒 **DR-022 Layer 1: VOLUME-IMMUNE** — service-side / conversion bridge
-> ⭐ **Q-Clinic Confirmed (R4 2026-05-21)** — SmileScape เป็น Q-Clinic, direct-bill SSO, ผู้ป่วยไม่ต้องสำรองจ่าย
+> ⭐ **SSO Direct Billing Confirmed (R4 2026-05-21)** — SmileScape เป็น SSO Direct Billing, direct-bill SSO, ผู้ป่วยไม่ต้องสำรองจ่าย
 
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 3.12 | ทำฟันด้วยสิทธิ์ประกันสังคม ที่ SmileScape 🌟 (hub) | L2 | B | mid | A | social-security-dental-benefit |
 | | → → R9 hub-consolidated: บริการที่ครอบคลุม + ตัวอย่างค่าใช้จ่าย (in-page sections) | | — | — | — |
-| 3.12.2 | → ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape Q-Clinic ★ 🌟 | L2 | **B** | bottom | A | sso-direct-billing-q-clinic |
-| | → → DFS hot intent / Q-Clinic positioning hero / Step-by-step direct billing flow | | — | — | — |
+| 3.12.2 | → ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape SSO Direct Billing ★ 🌟 | L2 | **B** | bottom | A | sso-direct-billing-q-clinic |
+| | → → DFS hot intent / SSO Direct Billing positioning hero / Step-by-step direct billing flow | | — | — | — |
 | 3.12.3 | → ตรวจสิทธิ์ + เอกสารใช้สิทธิประกันสังคม (sub-hub) 🌟 ★ | L2 | **B** | mid | A | social-security-dental-benefit |
 | | → → R9 DFS goldmine: ตรวจสิทธิประกันสังคม 2,400/mo TH LOW + เอกสารประกันสังคม 720/mo TH LOW = 3,120/mo combined | | — | — | — |
 | 3.12.3.1 | → → วิธีตรวจสิทธิประกันสังคม Online — sso.go.th + แอป SSO Connect (R9 DFS 2,400/mo) | L2 | B | mid | A | social-security-dental-benefit |
@@ -894,7 +894,7 @@
 | 5.13.2.7 | → → ม.33 vs ม.39 vs ม.40 — สิทธิ์ทำฟันต่างกันยังไง | L4 | C | top | A | social-security-dental-benefit |
 | 5.13.2.8 | → → ทำฟันให้บุตร / คู่สมรส ใช้สิทธิ์ประกันสังคมได้ไหม (DFS spousal Q) | L4 | C | mid | A | social-security-dental-benefit |
 | 5.13.2.9 | → → วิธีเบิกประกันสังคมทำฟัน — Online (SSO app) + Offline + เอกสาร | L4 | C | mid | A | social-security-dental-benefit |
-| 5.13.2.10 | → → คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (Q-Clinic) คืออะไร 🌟 (DFS hot) (→ link 3.12.2) | L4 | B | bottom | A | sso-direct-billing-q-clinic |
+| 5.13.2.10 | → → คลินิกทำฟัน "ไม่ต้องสำรองจ่าย" (SSO Direct Billing) คืออะไร 🌟 (DFS hot) (→ link 3.12.2) | L4 | B | bottom | A | sso-direct-billing-q-clinic |
 | 5.13.3 | → ผ่อนค่าทำฟัน 0% — เงื่อนไขและวิธีสมัคร (R14 CANONICAL detail page for 0% — Section 2.4 + 6.5.4.2 cross-link here) | L4 | **B** | bottom | A | dental-implant |
 | 5.13.4 | → ประกันสุขภาพครอบคลุมทำฟันไหม | L4 | D | bottom | A | private-dental-insurance-th |
 | 5.13.5 | → ราชการเบิกค่าทำฟัน — สำหรับข้าราชการ + ครอบครัว (CGA) | L4 | C | bottom | A | civil-servant-dental-benefit |
@@ -1219,7 +1219,7 @@
 | # | Page Name | Layer | Tier | Funnel | Page Type | Primary Entity |
 |---|-----------|-------|------|-------|-----------|----------------|
 | 6.2.7.1 | → ประกันสุขภาพและการครอบคลุมทันตกรรม — ภาพรวมระบบไทย | L5 | D | top | A | social-security-dental-benefit |
-| 6.2.7.2 | → คลินิกทำฟัน Q-Clinic คืออะไร — ทำไมไม่ต้องสำรองจ่าย | L5 | D | top | A | sso-direct-billing-q-clinic |
+| 6.2.7.2 | → คลินิกทำฟัน SSO Direct Billing คืออะไร — ทำไมไม่ต้องสำรองจ่าย | L5 | D | top | A | sso-direct-billing-q-clinic |
 | 6.2.7.3 | → ใบเสร็จที่ใช้เบิกได้ — ใบรับรองแพทย์ + รายละเอียดที่ต้องระบุ | L5 | D | mid | A | social-security-dental-benefit |
 
 ---
@@ -1477,7 +1477,7 @@
 - **3.9 Pediatric:** 14 pages (5.8%)
 - **3.10 Sedation:** 8 pages (3.3%)
 - **3.11 Endodontics:** 10 pages (4.2%)
-- **3.12 SSO / Q-Clinic:** 8 pages (3.3%)
+- **3.12 SSO / SSO Direct Billing:** 8 pages (3.3%)
 - **3.13 Demographic-Specific:** 18 pages (7.5%)
 - **Total Section 3:** 240 pages
 
@@ -1500,8 +1500,8 @@
 |---|-----------|-------|------|--------|-----------|----------------|-------------|
 | 9.1.1 | จัดฟัน รัตนาธิเบศร์ — SmileScape สาขานนทบุรี | L2 | C | bottom | C | orthodontics | 3.10 จัดฟัน |
 | 9.1.2 | จัดฟัน ศรีนครินทร์ — SmileScape สาขาศรีนครินทร์ | L2 | C | bottom | C | orthodontics | 3.10 จัดฟัน |
-| 9.2.1 | ทำฟันประกันสังคม รัตนาธิเบศร์ — Q-Clinic ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
-| 9.2.2 | ทำฟันประกันสังคม ศรีนครินทร์ — Q-Clinic ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
+| 9.2.1 | ทำฟันประกันสังคม รัตนาธิเบศร์ — SSO Direct Billing ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
+| 9.2.2 | ทำฟันประกันสังคม ศรีนครินทร์ — SSO Direct Billing ไม่ต้องสำรองจ่าย | L2 | C | bottom | C | social-security-dental-benefit | 3.14 ประกันสังคม |
 | 9.3.1 | คลินิกทำฟันใกล้ MRT สีม่วง — สาขารัตนาธิเบศร์ | L2 | C | bottom | C | general-dentistry | 3.4 ทันตกรรมทั่วไป |
 | 9.3.2 | คลินิกทำฟันใกล้ MRT สีเหลือง — สาขาศรีนครินทร์ | L2 | C | bottom | C | general-dentistry | 3.4 ทันตกรรมทั่วไป |
 

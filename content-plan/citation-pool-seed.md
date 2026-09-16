@@ -376,14 +376,14 @@ Both layers grow `seo_citations` pool. Federation: citations marked `brand_scope
 
 ---
 
-## Pillar 13 — Insurance / Q-Clinic / Social Security Dental (Section 3.12)
+## Pillar 13 — Insurance / SSO Direct Billing / Social Security Dental (Section 3.12)
 
 **Goal:** Government/regulatory citations (Tier 1) — NOT primarily PubMed
 
 **Main claims to back:**
 1. ประกันสังคมครอบคลุมขูดหินปูน/อุดฟัน/ถอนฟัน/ฟันปลอม
 2. Annual cap 900 บาท (verify if 1,200 updated)
-3. Q-Clinic direct billing ทำให้ผู้ป่วยไม่ต้องสำรองจ่าย
+3. SSO Direct Billing direct billing ทำให้ผู้ป่วยไม่ต้องสำรองจ่าย
 4. ม.33/ม.39/ม.40 ต่างกันที่สิทธิ์ดูแลสุขภาพ
 
 **Citations:**
@@ -393,10 +393,10 @@ Both layers grow `seo_citations` pool. Federation: citations marked `brand_scope
 | 1 | 1 | **สำนักงานประกันสังคม (Social Security Office)** | current | sso.go.th | All — primary regulatory source |
 | 2 | 1 | กระทรวงแรงงาน — ระเบียบประกันสังคม | current | mol.go.th | All |
 | 3 | 1 | ประกาศคณะกรรมการการแพทย์ ตาม พรบ.ประกันสังคม | various years | sso.go.th announcements | 1, 2 |
-| 4 | 1 | SSO Q-Clinic registration database | current | sso.go.th/eform | 3 |
-| 5 | 5 | SmileScape Q-Clinic certificate | TBD operator | internal documentation | 3 |
+| 4 | 1 | SSO SSO Direct Billing registration database | current | sso.go.th/eform | 3 |
+| 5 | 5 | SmileScape SSO Direct Billing certificate | TBD operator | internal documentation | 3 |
 
-**Operator action:** Pull current sso.go.th dental benefit announcement (latest "ประกาศประโยชน์ทดแทนกรณีทันตกรรม"). Verify SmileScape Q-Clinic registration number. Confirm annual cap year (900 vs 1,200).
+**Operator action:** Pull current sso.go.th dental benefit announcement (latest "ประกาศประโยชน์ทดแทนกรณีทันตกรรม"). Verify SmileScape SSO Direct Billing registration number. Confirm annual cap year (900 vs 1,200).
 
 ---
 
@@ -504,7 +504,7 @@ For topics where SmileScape takes a position not directly stated in cited source
 | "All-on-X immediate loading ปลอดภัย กลับบ้านได้ภายใน 1 วัน" | Abdunabi 2019 (PMID 31411262) + Cheng 2020 (PMID 31923299) | SmileScape All-on-X case audit TBD |
 | "SmileScape ใช้ Densah/Osseodensification เป็น Signature #5" (R3) | Huwais (concept) + Osseodensification SRs (PMID 37975644 + 38002660 + 40377845) | Densah sinus lift case audit TBD + หมอแฮม Versah training certificate TBD |
 | "SmileScape ใช้ Zero Bone Loss Concept เป็น Brand Framework" (R3) | Linkevicius 2019 textbook + Linkevicius papers (PMIDs 34076631/20605308/33527729/32250061/35476860) | Linkevicius training credential confirm + brand audit TBD |
-| "SmileScape เป็น Q-Clinic ประกันสังคม direct-bill ไม่ต้องสำรองจ่าย" (R4) | sso.go.th regulatory database | SmileScape Q-Clinic certificate TBD |
+| "SmileScape เป็น SSO Direct Billing ประกันสังคม direct-bill ไม่ต้องสำรองจ่าย" (R4) | sso.go.th regulatory database | SmileScape SSO Direct Billing certificate TBD |
 | "SmileScape รักษา Peri-Implantitis ด้วย multi-modal approach" (R3) | Schwarz EFP 2018 consensus (PMID 25626479) + 2023 SR (PMID 37271498) | Peri-implant salvage case audit TBD |
 | "ฟันผุระยะแรกรักษาได้โดยไม่ต้องอุด (Remineralization)" (R5) | WHO 2019 + Cochrane Walsh 2019 + Pitts 2017 Nat Rev DP | — universal claim |
 | "เหงือกบวมเลือดออกตามไรฟัน = สัญญาณโรคปริทันต์ที่ต้องรักษา" (R5) | Schwarz/EFP perio consensus + Tonetti 2018 perio classification | — universal claim |
@@ -564,7 +564,7 @@ stale_watch_list:
 14. **Pull AAPD Reference Manual current edition** — for Pillar 10 Pediatric Dentistry
 15. **Verify Thai pediatric dentistry guidelines** (ราชวิทยาลัย / สมาคมทันตแพทย์เด็กไทย)
 16. **Confirm SmileScape anesthesiologist team accreditation** + ASA 2018 moderate sedation guidelines (Pillar 12)
-17. **Pull current sso.go.th dental benefit announcement** (latest "ประกาศประโยชน์ทดแทนกรณีทันตกรรม") + verify SmileScape Q-Clinic registration number + annual cap year (900 vs 1,200)
+17. **Pull current sso.go.th dental benefit announcement** (latest "ประกาศประโยชน์ทดแทนกรณีทันตกรรม") + verify SmileScape SSO Direct Billing registration number + annual cap year (900 vs 1,200)
 18. **Acquire WHO 2019 caries implementation manual** + Pitts 2017 Nat Rev DP caries paper (Pillar 15)
 19. **Pull Tonetti 2018 perio classification** (BSP/EFP) — for เหงือกบวม claims
 20. **Search PubMed targeted:**

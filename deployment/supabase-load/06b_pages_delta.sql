@@ -51,7 +51,7 @@ values
 ('smilescape-3.13.1.2','ฟันปลอม / Overdenture สำหรับผู้สูงอายุ (→ link 3.2.8.7 + 3.5.4 Denture)','3.13.1.2','overdenture','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.13.2.1','Pregnancy Gingivitis Treatment (kept standalone — clinical condition + entity match + EFP evidence base) (→ link 5.20.4)','3.13.2.1','pregnancy-gingivitis','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14','ทำฟันด้วยสิทธิ์ประกันสังคม ที่ SmileScape (hub)','3.14','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
-('smilescape-3.14.1','ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape Q-Clinic','3.14.1','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
+('smilescape-3.14.1','ขั้นตอน "ไม่ต้องสำรองจ่าย" ที่ SmileScape SSO Direct Billing','3.14.1','sso-direct-billing-q-clinic','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2','ตรวจสิทธิ์ + เอกสารใช้สิทธิประกันสังคม (sub-hub)','3.14.2','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2.1','วิธีตรวจสิทธิประกันสังคม Online — sso.go.th + แอป SSO Connect (R9 DFS 2,400/mo)','3.14.2.1','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),
 ('smilescape-3.14.2.2','เอกสารที่ต้องเตรียม — Checklist + ID card / payslip / claim form (R9 DFS 720/mo)','3.14.2.2','social-security-dental-benefit','Planned','smile-scape-clinic','Smile Scape Clinic'),

@@ -1,0 +1,229 @@
+[
+ {
+  "fp": "smilescape-dental-clinic",
+  "summary": "SmileScape Dental Clinic คือคลินิกทันตกรรมที่เน้นด้านทันตกรรมรากฟันเทียมเป็นหลัก ควบคู่กับบริการทันตกรรมทั่วไป ทันตกรรมความงาม จัดฟัน และรักษาโรคเหงือก มีสาขาที่จังหวัดนนทบุรีและกรุงเทพมหานคร",
+  "sources": [
+   "docs/brand-concept.md §1 Core Positioning (line 38, \"Implant-First Clinic — ตัวจริงด้านรากฟันเทียม + ทันตกรรมครบวงจรเป็น supporting layer\")",
+   "web/src/lib/site-nav.ts lines 164-174 (EN services mega-panel: cosmetic, orthodontics, general & restorative, gums)",
+   "docs/brand-concept.md §9 Branches (lines 187-193, 2 สาขา: รัตนาธิเบศร์ / ศรีนครินทร์)",
+   "web/src/lib/site-nav.ts lines 137-142, 190-196 (branch provinces: นนทบุรี, กรุงเทพมหานคร)"
+  ]
+ },
+ {
+  "fp": "smilescape-rattanathibet",
+  "summary": "SmileScape สาขารัตนาธิเบศร์ เป็นสาขาหลักของคลินิกทันตกรรม SmileScape ตั้งอยู่ในจังหวัดนนทบุรี ใกล้ MRT สายสีม่วง สถานีรัตนาธิเบศร์ ให้บริการทันตกรรมรากฟันเทียม ทันตกรรมทั่วไป จัดฟัน และทันตกรรมความงาม",
+  "sources": [
+   "web/src/lib/site-nav.ts lines 137-139 (branch name, MRT สีม่วง · แยกนนทบุรี 1, province นนทบุรี)",
+   "content-plan/branches.md lines 38-39, 73 (city/region นนทบุรี; transit MRT สีม่วง สถานีรัตนาธิเบศร์)",
+   "content-plan/branches.md line 119 (\"Both branches offer the universal SmileScape service catalog\")"
+  ]
+ },
+ {
+  "fp": "smilescape-srinakarin",
+  "summary": "SmileScape สาขาศรีนครินทร์ เป็นสาขาของคลินิกทันตกรรม SmileScape ตั้งอยู่ในกรุงเทพมหานคร ใกล้ MRT สายสีเหลือง บริเวณสวนหลวง ร.9 ให้บริการทันตกรรมรากฟันเทียม ทันตกรรมทั่วไป จัดฟัน และทันตกรรมความงาม",
+  "sources": [
+   "web/src/lib/site-nav.ts lines 140-142 (branch name, MRT สีเหลือง · สวนหลวง ร.9, province กรุงเทพมหานคร)",
+   "content-plan/branches.md lines 57-58, 74 (city/region กรุงเทพมหานคร; transit MRT สีเหลือง (สวนหลวง ร.9))",
+   "content-plan/branches.md line 119 (\"Both branches offer the universal SmileScape service catalog\")"
+  ]
+ },
+ {
+  "fp": "dr-woraphat-jarangkul",
+  "summary": "ทพ. วรภัทร จรางกุล (หมอแฮม) เป็น Co-CEO และผู้อำนวยการฝ่ายการแพทย์ของคลินิกทันตกรรม SmileScape จบทันตแพทยศาสตรบัณฑิตเกียรตินิยมอันดับหนึ่งเหรียญทอง มหาวิทยาลัยมหิดล และปริญญาโทศัลยศาสตร์ช่องปากและรากฟันเทียมจากมหาวิทยาลัยมหิดลและ University of Duisburg-Essen ประเทศเยอรมนี",
+  "sources": [
+   "docs/team/dr-worapat-jarangkul.md lines 1-13 (name, nickname หมอแฮม, Role: Co-CEO / Medical Director & Lead Implantologist)",
+   "docs/team/dr-worapat-jarangkul.md lines 56-60 (education table: D.D.S. Mahidol first-class honors gold medal 2017; M.Sc. Oral Surgery & Implantology, Mahidol University 2021; M.Sc. Oral Surgery & Implantology, University of Duisburg-Essen, International Medical College, 2021)",
+   "web/src/data/doctors.json lines 16-27, 70-74 (mirrors same fields)",
+   "NOTE spelling discrepancy: docs/team/dr-worapat-jarangkul.md and doctors.json (CV, authoritative per rule 3) spell the name \"Worapat\"; the input fp/entities_md_row uses \"dr-woraphat-jarangkul\" (\"Woraphat\") — display name in this summary follows the CV spelling per instructions"
+  ]
+ },
+ {
+  "fp": "dr-pitchapa-phudphong",
+  "summary": "ทพญ. พิชชาภา ผุดผ่อง (หมอแพรว) เป็น Co-CEO และทันตแพทย์เฉพาะทางศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียลของคลินิกทันตกรรม SmileScape จบทันตแพทยศาสตรบัณฑิต มหาวิทยาลัยเชียงใหม่ และได้รับประกาศนียบัตรทันตแพทยสภาสาขาศัลยศาสตร์ช่องปากและแม็กซิลโลเฟเชียล (2566)",
+  "sources": [
+   "docs/team/dr-pitchapa-phudphong.md lines 1-13 (name, nickname หมอแพรว, Role: Co-CEO / Co-Founder; Title: Oral & Maxillofacial Surgeon)",
+   "docs/team/dr-pitchapa-phudphong.md lines 58, 61 (education table: D.D.S., Chiang Mai University 2011-2016; Diploma of the Thai Board of Oral and Maxillofacial Surgery, Thailand, 2023)",
+   "web/src/data/doctors.json lines 137-148, 191, 194 (mirrors same fields)"
+  ]
+ },
+ {
+  "fp": "smile-dna",
+  "summary": "SMILE DNA คือกรอบค่านิยมหลักของคลินิกทันตกรรม SmileScape ได้แก่ Sincere Care (ดูแลจริงใจ) Mastery (ความเชี่ยวชาญเฉพาะทาง) Integrity (ซื่อสัตย์ ไม่ over-treatment) Lifelong Learning (เรียนรู้ต่อเนื่อง) และ Efficiency (บริหารเวลาอย่างมีประสิทธิภาพ)",
+  "sources": [
+   "docs/brand-concept.md §2 Core Values — SMILE DNA table (lines 46-55)"
+  ]
+ },
+ {
+  "fp": "family-standard",
+  "summary": "Family Standard คือหลักจริยธรรมของคลินิกทันตกรรม SmileScape ที่ยึดแนวคิดว่าจะเลือกวิธีรักษาที่ดีที่สุดและเจ็บน้อยที่สุดให้คนไข้ เสมือนเป็นพ่อแม่ของตนเอง และจะไม่ทำหัตถการที่ไม่กล้าทำให้พ่อแม่ตนเอง",
+  "sources": [
+   "docs/brand-concept.md §1 Mission pillar 2 (line 32, \"Uncompromising Integrity — Family Standard: ถ้าเคสนี้เราไม่กล้าทำให้พ่อแม่ตัวเอง เราจะไม่ทำคนไข้เด็ดขาด\")",
+   "docs/brand-concept.md §5.1 Experiential Value — The Family Standard (lines 99-103, quote: \"ถ้าคนไข้คนนี้คือคุณพ่อคุณแม่ของผม ผมจะเลือกวิธีไหนที่ดีที่สุดและเจ็บน้อยที่สุดให้ท่าน\")"
+  ]
+ },
+ {
+  "fp": "lifetime-implant-warranty",
+  "summary": "Lifetime Implant Warranty คือชื่อเรียกนโยบายการรับประกันรากฟันเทียมของคลินิกทันตกรรม SmileScape ซึ่งเงื่อนไขความคุ้มครองกำหนดโดยคลินิก",
+  "sources": [
+   "docs/brand-concept.md §6 Hero Service (lines 127-131, existence of an implant warranty policy — wording deliberately kept neutral per operator decision pending compliance review; duration/coverage/free-replacement details from the source were intentionally omitted, see report)"
+  ]
+ },
+ {
+  "fp": "in-house-aligner-lab",
+  "summary": "In-House Aligner Lab หมายถึงการผลิตอุปกรณ์จัดฟันใสของคลินิกทันตกรรม SmileScape ขึ้นเองภายในคลินิก แทนการส่งผลิตจากห้องปฏิบัติการภายนอก",
+  "sources": [
+   "entities_md_row for fp in-house-aligner-lab (aliases only: \"คลินิกผลิตจัดฟันใสเอง, in-house aligner production\" — used strictly for identity per task rules, since none of the allowed source files elaborate further; see report for this gap)"
+  ]
+ },
+ {
+  "fp": "zero-bone-loss-concept",
+  "summary": "Zero Bone Loss Concepts เป็นแนวทางการรักษารากฟันเทียมจากหนังสือของ Dr. Tomas Linkevicius (Quintessence, 2019) ที่มุ่งรักษาระดับกระดูกรอบรากฟันเทียมให้คงที่ โดยอาศัยปัจจัยจากงานวิจัยของผู้เขียน เช่น ความหนาของเนื้อเยื่ออ่อนแนวดิ่ง ความลึกในการวางราก และ platform switching คลินิก SmileScape ใช้เป็นกรอบแนวทางในการวางแผนรากฟันเทียม",
+  "sources": [
+   "Open Library: Zero Bone Loss Concepts, Linkevicius, Quintessence 2019, ISBN 9780867157994",
+   "PMID:24673875 (vertical soft tissue thickness & platform switching)",
+   "PMID:32250061 (subcrestal placement RCT)",
+   "PMID:34076631 (placement depth × soft tissue thickness)",
+   "docs/team/README.md line 56 + dr-pitchapa-phudphong.md line 111 (ZBL Protocol training 2025)"
+  ]
+ },
+ {
+  "fp": "blue-diamond-implant",
+  "summary": "Blue Diamond Implant System เป็นระบบรากฟันเทียมจากประเทศเกาหลีใต้ที่คลินิก SmileScape ใช้ทดแทนฟันที่สูญเสีย รองรับครอบฟัน สะพานฟัน หรือฟันปลอมบนรากเทียม ราคาโปรโมชันเริ่มต้น 29,900 บาท ตามเงื่อนไขและช่วงเวลาที่คลินิกประกาศ",
+  "sources": [
+   "content-plan/entities.md row (Korea origin)",
+   "operator 2026-09-17: อนุญาตราคาโปร 29,900",
+   "ตัด survival % จาก PMID:27860171 (ไม่จำเพาะยี่ห้อ)"
+  ]
+ },
+ {
+  "fp": "neodent-implant",
+  "summary": "Neodent Implant (Neodent GM) เป็นระบบรากฟันเทียมจากประเทศบราซิลในเครือ Straumann Group ใช้การเชื่อมต่อแบบ Grand Morse ฝังในกระดูกขากรรไกรเพื่อทดแทนฟันที่สูญเสีย รองรับครอบฟัน สะพานฟัน หรือฟันปลอมบนรากเทียม",
+  "sources": [
+   "content-plan/entities.md row (Brazil, Straumann Group, Grand Morse)",
+   "ตัด Cochrane stats จาก PMID:23543525 (ไม่จำเพาะยี่ห้อ)"
+  ]
+ },
+ {
+  "fp": "densah-bur",
+  "summary": "Densah Bur System (Versah) คือชุดหัวกรอกระดูกจากผู้ผลิต Versah สำหรับเทคนิค osseodensification ที่อัดเนื้อกระดูกให้แน่นแทนการกรอออก ใช้เตรียมโพรงกระดูกก่อนฝังรากฟันเทียม หลักฐานส่วนใหญ่มาจากการศึกษาในสัตว์ทดลอง ยังต้องการงานวิจัยในมนุษย์เพิ่ม",
+  "sources": [
+   "content-plan/entities.md row (Versah)",
+   "PMID:31737477 / 33671038 (osseodensification: animal-dominant evidence)"
+  ]
+ },
+ {
+  "fp": "photopolymer-resin-tc85",
+  "summary": "Photopolymer Resin TC-85 คือเรซินบ่มด้วยแสง (photopolymer) ใช้พิมพ์ถาดจัดฟันใสแบบพิมพ์ตรงด้วยเครื่องพิมพ์ 3 มิติ โดยไม่ผ่านการขึ้นรูปด้วยความร้อนแบบเดิม ผู้ผลิตระบุว่าวัสดุกลุ่มนี้ได้รับการรับรองจาก FDA (FDA-cleared) สำหรับงานทันตกรรมจัดฟัน",
+  "sources": [
+   "entities.md",
+   "generic-definition"
+  ]
+ },
+ {
+  "fp": "3d-printer-aligner",
+  "summary": "3D Printer (Aligner) คือเครื่องพิมพ์สามมิติระบบโฟโตพอลิเมอร์ ใช้ผลิตถาดจัดฟันใสแบบพิมพ์ตรงในห้องปฏิบัติการของคลินิก แทนการขึ้นรูปด้วยความร้อนแบบเดิม บทวิจารณ์ทางวิชาการระบุว่าข้อมูลทางเทคนิคและคลินิกของถาดพิมพ์ 3 มิติโดยตรงยังมีจำกัด",
+  "sources": [
+   "entities.md",
+   "generic-definition",
+   "PMID:33916462"
+  ]
+ },
+ {
+  "fp": "acteon-cbct",
+  "summary": "Acteon CBCT (X-Mind Trium) คือเครื่องเอกซเรย์คอมพิวเตอร์กรวยลำแสง (CBCT) จาก Acteon ฝรั่งเศส รวมภาพสามมิติ พาโนรามิก และเซฟาโลเมตริกในเครื่องเดียว ใช้วางแผนฝังรากฟันเทียมที่คลินิก แนวทางอ้างอิงระบุว่าควรถ่ายเมื่อจำเป็นและใช้รังสีต่ำสุดที่ยังวินิจฉัยได้",
+  "sources": [
+   "entities.md",
+   "generic-definition",
+   "PMID:25805884"
+  ]
+ },
+ {
+  "fp": "trios-intraoral-scanner",
+  "summary": "3Shape TRIOS Intraoral Scanner คือเครื่องสแกนช่องปากดิจิทัลจากผู้ผลิต 3Shape ประเทศเดนมาร์ก ใช้เก็บแบบจำลอง 3 มิติของฟันและเหงือกแทนการพิมพ์ปากด้วยวัสดุแบบเดิม และเชื่อมต่อกับกระบวนการออกแบบและผลิตด้วยคอมพิวเตอร์ (CAD/CAM)",
+  "sources": [
+   "content-plan/entities.md row (3Shape, Denmark)",
+   "generic-definition"
+  ]
+ },
+ {
+  "fp": "cool-light-whitening-unit",
+  "summary": "Cool Light Whitening Unit คือเครื่องฟอกสีฟันในคลินิกที่ใช้แสง LED ร่วมกับเจลฟอกสี งานทบทวนวรรณกรรมและวิเคราะห์อภิมานพบว่าการใช้แสงกระตุ้นไม่ทำให้ผลการเปลี่ยนสีฟันหรืออุบัติการณ์เสียวฟันต่างจากการไม่ใช้แสง แม้ความรุนแรงของอาการเสียวฟันจะลดลงเมื่อใช้แสง",
+  "sources": [
+   "content-plan/entities.md row",
+   "PMID:29893625 (no sig. diff color/sensitivity incidence; intensity decreased with light)"
+  ]
+ },
+ {
+  "fp": "bone-graft-substitute",
+  "summary": "Bone Graft Substitute (วัสดุปลูกถ่ายกระดูก) คือวัสดุทดแทนกระดูก เช่น allograft xenograft หรือวัสดุสังเคราะห์ ใช้เสริมหรือแทนกระดูกของผู้ป่วยเองในกระบวนการชักนำให้กระดูกงอกใหม่ (GBR) ก่อนหรือพร้อมกับการฝังรากฟันเทียม",
+  "sources": [
+   "content-plan/entities.md row",
+   "generic-definition"
+  ]
+ },
+ {
+  "fp": "ptfe-membrane",
+  "summary": "PTFE Membrane (เมมเบรน PTFE, e-PTFE) คือแผ่นเยื่อกั้นชนิดไม่สลายตัว ใช้ในกระบวนการ GBR โดยเฉพาะเสริมกระดูกแนวตั้งที่คลินิก งานวิเคราะห์อภิมานจาก 25 RCT (684 คน) รายงานว่าเยื่อชนิดนี้มีภาวะแทรกซ้อน เช่น เยื่อโผล่ สูงถึง 71% มากกว่าเยื่อชนิดสลายตัว",
+  "sources": [
+   "entities.md",
+   "generic-definition",
+   "PMID:41793737"
+  ]
+ },
+ {
+  "fp": "rpm-membrane",
+  "summary": "RPM Membrane (Reinforced Permanent Membrane) คือเยื่อกั้นไม่สลายตัวเสริมโครงไทเทเนียม ใช้รักษาช่องว่างปลูกกระดูกแนวตั้งในกระบวนการ GBR งานวิเคราะห์อภิมานจาก 25 RCT (684 คน) พบว่าเยื่อไม่สลายตัวมีภาวะแทรกซ้อน เช่น เยื่อโผล่ สูงถึง 71% มากกว่าเยื่อชนิดสลายตัว",
+  "sources": [
+   "entities.md",
+   "generic-definition",
+   "PMID:41793737"
+  ]
+ },
+ {
+  "fp": "endodontic-microscope",
+  "summary": "Endodontic Microscope (Dental Operating Microscope) คือกล้องจุลทรรศน์กำลังขยายสูงที่ใช้เพิ่มการมองเห็นในงานรักษารากฟัน เช่น การหาคลองรากฟันขนาดเล็กหรือซับซ้อน ใช้ในงานรักษารากฟันเฉพาะทางที่คลินิก",
+  "sources": [
+   "content-plan/entities.md row",
+   "generic-definition"
+  ]
+ },
+ {
+  "fp": "rotary-endodontic-system",
+  "summary": "Rotary Endodontic System (NiTi rotary file) คือชุดตะไบคลองรากฟันชนิดนิกเกิล-ไทเทเนียมที่ขับเคลื่อนด้วยมอเตอร์ ใช้ทำความสะอาดและขยายรูปทรงคลองรากฟันในงานรักษารากฟัน (root canal treatment) ที่คลินิก",
+  "sources": [
+   "entities.md",
+   "generic-definition"
+  ]
+ },
+ {
+  "fp": "sso-direct-billing-q-clinic",
+  "summary": "สถานพยาบาลที่ทำความตกลงกับสำนักงานประกันสังคม ให้ผู้ประกันตนใช้สิทธิทันตกรรมพื้นฐาน อุดฟัน ถอนฟัน ขูดหินปูน ได้โดยไม่ต้องสำรองจ่ายภายในวงเงินที่กำหนด ตั้งแต่ 1 พฤษภาคม 2569 วงเงินที่คลินิกเอกชนอยู่ที่ 900 บาทต่อปี ส่วนเกินผู้ประกันตนชำระเอง ผู้ประกันตนต้องส่งเงินสมทบครบ 3 เดือนภายใน 15 เดือนก่อนใช้สิทธิ คลินิก SmileScape ระบุว่าเป็นสถานพยาบาลที่ทำความตกลงดังกล่าว",
+  "sources": [
+   "gcc.go.th/?p=9380 (relay ประกาศ สปส. 2026-04-18 มีผล 2026-05-01: วงเงิน 900 บาท/ปี คลินิกเอกชน · สมทบ 3 ใน 15 เดือน)",
+   "hfocus.org/content/2026/05/37942",
+   "content-plan/entities.md row (SSO direct-billing status R4-confirmed → \"คลินิกระบุว่า\")",
+   "operator 2026-09-17: เลิกใช้คำ Q-Clinic"
+  ]
+ },
+ {
+  "fp": "private-dental-insurance-th",
+  "summary": "การใช้ประกันสุขภาพเอกชนกับค่ารักษาทางทันตกรรมในประเทศไทย ความคุ้มครองทันตกรรมมักเป็นสัญญาเพิ่มเติมของกรมธรรม์ วงเงินและรายการที่คุ้มครองต่างกันตามแต่ละกรมธรรม์ รูปแบบที่พบคือผู้เอาประกันชำระค่ารักษาก่อนแล้วนำใบเสร็จและใบรับรองแพทย์ไปเบิกคืน บางบริษัทมีสถานพยาบาลคู่สัญญาที่ไม่ต้องสำรองจ่าย เงื่อนไขเป็นไปตามกรมธรรม์",
+  "sources": [
+   "content-plan/entities.md row (reimbursement model, receipt + medical certificate)",
+   "generic-definition",
+   "DUP กับ private-insurance-dental (shared) — D5"
+  ]
+ },
+ {
+  "fp": "dr-tomas-linkevicius",
+  "summary": "ทพ. Tomas Linkevicius ทันตแพทย์ด้านรากฟันเทียมจากประเทศลิทัวเนีย สังกัด Institute of Odontology, Vilnius University และ Vilnius Implantology Center ผู้แต่งหนังสือ Zero Bone Loss Concepts (Quintessence, 2019) งานวิจัยของเขาศึกษาผลของความหนาของเนื้อเยื่ออ่อนแนวดิ่ง ความลึกในการวางรากฟันเทียม และ platform switching ต่อความคงตัวของกระดูกรอบรากฟันเทียม",
+  "sources": [
+   "PMID:24673875 (Vilnius University)",
+   "PMID:32250061",
+   "PMID:31624607 (Vilnius Implantology Center)",
+   "PMID:34076631",
+   "Open Library ISBN 9780867157994",
+   "Crossref DOI 10.1097/id.0000000000000947 (book review 2019)"
+  ]
+ }
+]
