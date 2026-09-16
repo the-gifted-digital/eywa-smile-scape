@@ -4501,3 +4501,12 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 - CHECK constraint กัดอีก 2 ค่า: `cohort` และ `systematic_review / meta_analysis` (Sonnet เขียนรวม) → map cohort→cohort_study, sr/ma→systematic_review
 - journal_name จาก corpus มี DOI ต่อท้าย `(DOI: …)` → ตัดออกก่อน insert
 - PMID ใหม่: 30328199, 36461704, 42645455, 41299501, 40510723, 25810597, 36752882, 41382211, 36852545, 41105044, 38920881, 37087707, 30884111, 31089897, 29498126, 37552185, 39058944, 37450676, 40147891
+
+## Wave 16ch — 2026-09-17 — ช่วง C: audit seo_citations เทียบ PubMed (inline ไม่ใช้ agent)
+
+- 908 แถวมี PMID → efetch จริงทั้งหมด · title ตรง 885 · แก้ title 20 (linked) · key_findings **อ่านเทียบ abstract 158 แถว linked ที่ heuristic ยืนยันไม่ได้ → ตรงทั้ง 158** · เติม key_findings NULL 2 · [TIER-FIX] 8 (in-vitro/narrative/scoping ที่ติด cohort/rct/SR)
+- ตัวเลขที่ต่างจากคาด: กลุ่ม "น่าสงสัย" จาก heuristic 60 แถว → อ่านแล้ว **0 ผิด** — heuristic ตกเพราะ key_findings ไทยไม่มีคำอังกฤษ ไม่ใช่เพราะเนื้อหาผิด · ข้อผิดพลาดที่เคยเจอ (2/618) ไม่พบซ้ำใน pool ปัจจุบัน
+- ไม่แตะ: vth-biodent scope 62 แถว · `*` ที่หน้าเราไม่ใช้ · รายละเอียด + backlog ใน `content-plan/decisions/citation-audit-pubmed-2026-09-17.md`
+- maintenance_log [PMID-VERIFY] 692 แถว · gates ดูด้านล่าง
+
+- gates หลังช่วง C: blocking 0 · G14_type_fields_disagree 31→26 · G6w 277→274
