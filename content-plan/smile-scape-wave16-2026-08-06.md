@@ -4534,3 +4534,7 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 ## Wave 16cl — 2026-09-17 — ยุบ 3 หน้าบัตรทอง/ข้าราชการ + ล้าง 3.4.1.7 + ตัดราคา Blue Diamond
 
 - ตาม operator: ยุบ 5.13.2.5 / 5.13.5 / 6.5.4.4 (Merged·noindex·redirect·ถอด kw·ตัด citation 9 ลิงก์) · 3.4.1.7 ตัด "/ สปสช" + retarget เป็นคำวัดแล้ว "ขูดหินปูน ประกันสังคม ไม่ต้องสํารองจ่าย" · ถอด entity ต้องห้ามจาก related 17 หน้า · Blue Diamond summary ไม่มีราคา · gates 0 blocking
+
+## Wave 16cl (ต่อ) — D5 entity dedupe ทำแล้ว
+
+- ยุบ 6 entity เข้า 4 ผู้ชนะตาม DR-046 (cbct→cbct-scan · private-dental-insurance-th→private-insurance-dental · dental-scaling+scaling→scaling-polishing · pregnancy-dental-care→pregnancy-dental · dental-anxiety→dental-phobia [rename "Dental Anxiety / Phobia"]) + drop 2 entity ต้องห้าม · repoint smile 83 หน้า + vth 32 หน้า + 89 คีย์ · backup `_ss_d5merge_bak_20260917_*` · เกต 0 ค้าง · รายละเอียด decisions/entity-dedupe-2026-09-17.md

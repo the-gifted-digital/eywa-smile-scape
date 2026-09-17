@@ -35,3 +35,31 @@ SOP: memory `similarity-layer-before-dedupe` + `eywa-vth-biodent/content-plan/si
 
 ## เกตปิดงาน (จาก SOP)
 trigram-pairs ที่ smile ใช้ทั้งสองฝั่ง = 0 · semantic cluster_conflict = 0 · embedding ที่ชี้ entity merged = 0
+
+## ✅ ทำแล้ว (operator "โอเค" A ทั้งหมด + D · 2026-09-17)
+
+backup: `_ss_d5merge_bak_20260917_{graph,pages,kw,rels,prices,proc,cond,emb}` (13 entity · 115 หน้า · 89 คีย์ · 23 rel · 6 ราคา · 5 proc · 2 cond · 8 emb)
+
+| loser → winner | หน้า repoint (ทุกแบรนด์ — entity แชร์) | คีย์ | rel | ราคา | ของที่ย้ายไปผู้ชนะ |
+|---|---|---|---|---|---|
+| `cbct` → `cbct-scan` | smile 29 · vth 22 | 2 | 14 | 3 | wikidata Q1224951 · wikipedia_url · proc ext: procedure_type/anesthesia/invasiveness/complications · alias |
+| `private-dental-insurance-th` → `private-insurance-dental` | smile 19 | 2 | 1 | – | **summary** (ของ loser ผ่าน D3 แล้ว ดีกว่า 113 ตัวอักษรของผู้ชนะ) · alias AIA/Cigna |
+| `dental-scaling` + `scaling` → `scaling-polishing` | smile 16 · vth 4 | 16+53 | 2 | 3 | **summary** จาก dental-scaling (ของผู้ชนะ 96 ตัวอักษรมี "ช่วยป้องกัน…ฟันผุ") · treats_conditions_fps · alias |
+| `pregnancy-dental-care` → `pregnancy-dental` | smile 8 | 2 | 2 | – | alias (summary ผู้ชนะยาว 432 — คิว length ถัดไป) |
+| `dental-anxiety` → `dental-phobia` | smile 11 | 14 | 4 | – | **rename ผู้ชนะ → "Dental Anxiety / Phobia"** · cond ext ของผู้ชนะครบกว่า (ICD F40.248 ถูก; ของ loser F40.218 = animal phobia ผิด) ทิ้ง |
+| D: `universal-coverage-th` · `civil-servant-dental-benefit` | 0 | – | – | – | `entity_lifecycle='dropped'` + เหตุผลใน competing_entities · embedding ลบ |
+
+- loser: `entity_lifecycle='merged'` + `competing_entities` "MERGED … into …" (convention เดียวกับ acute-pericoronitis) · embedding ลบ · ext row (proc/cond) ลบหลัง fill ผู้ชนะ
+- rel: ลบ edge ที่จะกลายเป็น self-edge · repoint · ลบ duplicate (from,to,edge_type)
+- reconciliation_notes ลงทุกหน้าที่โดน: smile 83 · **vth 32** (แจ้ง vth: cbct→cbct-scan 22 · scaling→scaling-polishing 4 · ที่เหลือ related) · deezy 0 (ใช้ผู้ชนะอยู่แล้ว)
+
+### เกตปิด
+- หน้าที่ยังชี้ loser (ทุกตาราง: pages/kw/rel/prices) = **0** · embedding บน merged/dropped = **0**
+- หน้าชี้ entity retired = 3 = tombstone ของหน้า Merged เอง (6.5.4.4 · 5.13.2.5 · 5.13.5) เหมือน 3.2.10.9 — ไม่ใช่ defect
+- trgm คู่ที่ smile ใช้ทั้งสองฝั่ง = 17 · semantic = 5 → **ทั้งหมดอยู่กลุ่ม C (หัวคำ vs คำมุม / ชนิดต่าง) ตั้งใจเก็บ** · semantic cluster_conflict = 1 (`dental-sealant⟷pediatric-sealant` — deezy ตัดสิน)
+- keyword collisions blocking 0 · citation gates blocking 0
+
+### พบระหว่างทาง (ไม่แก้ในรอบนี้)
+- 118 หน้า (deezy 85 · smile 18 · vth 15) มี `primary_entity_fp` ซ้ำอยู่ใน `related_entities_fps` — hygiene เก่า ไม่ได้เกิดจากรอบนี้
+- `v_entity_near_duplicates` คีย์ด้วย `fingerprint` (ent_…) แต่ `v_entity_semantic_duplicates` คีย์ด้วย `entity_fingerprint` (slug) — join ตรง ๆ ไม่เจอ ต้อง map ก่อน
+- `eywa-vth-biodent/web/scripts/embed-entities.mjs` ล้าสมัย (filter `.neq lifecycle` ที่ deezy พบว่าพลาด) — ตัวจริงอยู่ `eywa-protocol-spec/scripts/entity-identity/embed-entities.mjs` แต่ต้องรันข้าง node_modules (ใช้ symlink ที่ `/Volumes/SSD NN/CLAUDE AI/tmp/embed-run`)
