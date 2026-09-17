@@ -4538,3 +4538,7 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 ## Wave 16cl (ต่อ) — D5 entity dedupe ทำแล้ว
 
 - ยุบ 6 entity เข้า 4 ผู้ชนะตาม DR-046 (cbct→cbct-scan · private-dental-insurance-th→private-insurance-dental · dental-scaling+scaling→scaling-polishing · pregnancy-dental-care→pregnancy-dental · dental-anxiety→dental-phobia [rename "Dental Anxiety / Phobia"]) + drop 2 entity ต้องห้าม · repoint smile 83 หน้า + vth 32 หน้า + 89 คีย์ · backup `_ss_d5merge_bak_20260917_*` · เกต 0 ค้าง · รายละเอียด decisions/entity-dedupe-2026-09-17.md
+
+## Wave 16cn/16co — 2026-09-17 — citation gapfill 3 รอบ + contextual links + entity retag
+
+- reuse pass 2 รอบ (273 เส้น) + PubMed round (48 ใบใหม่ / 61 เส้น) → below-min 274→7 · no-T1–3 76→5 · CITATION EXEMPTION 70 หน้า · flag_review คำนวณใหม่ 185 หน้า · contextual links +330 → required in/out 0 ค้าง · retag primary_entity 34 หน้า (dental-implant ถูกใช้แบบเหมา) · เสนอ entity ใหม่ 8 · รายละเอียด decisions/readiness-2026-09-17.md

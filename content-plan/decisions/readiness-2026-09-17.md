@@ -96,3 +96,27 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 | `common-dental-problems` | concept | 5.6 (hub) |
 - ยังเหลือ `dental-implant` เป็น primary 81 หน้า — ทั้งหมดอยู่ section รากเทียม (3.2 · 3.3 · 5.7 · 6.2.1 · 7.2) ถูกต้อง
 - บทเรียน: การ audit "entity ตรงหน้าไหม" ไม่เคยทำเป็นระบบ — ทำได้ถูกสุดตอน agent อ่านหน้าอยู่แล้ว (ให้ทุก workflow ต่อหน้าคืนธง entity_mismatch)
+
+## ข้อ 6 — ปิด (wave 16cn รอบ 3: PubMed)
+- 59 หน้าที่ pool ไม่มีของตรง → workflow `citation-pubmed-gapfill` (Sonnet ค้น PubMed MCP + ร่าง key_findings/claim จากบทคัดย่อ → Opus ดึงบทคัดย่อเองซ้ำ ตรวจชนิด/tier/claim) · ชน session limit กลางทาง 33 verify → resume จาก cache สำเร็จ
+- ผล: **citation ใหม่ 48 ใบ** (SR 42 · MA 11 · RCT 7 · guideline 1 — นับรวม 61 เส้น) · Opus แก้ 53 / รับ 8 / ทิ้ง 1 · shortfall 15 เส้นบน 9 หน้า (หา T1–3 ไม่ได้จริง: torus 3.8.6/3.8.6.2 · 4.8 · 5.19.9 · 5.21.6 · 6.2.1.28–30 · 6.5.2.3 — `citation-gapfill2-shortfall-pubmed-2026-09-17.json`)
+- study_type ที่ agent เขียนเป็นคำบรรยาย → normalise เป็นคำศัพท์ (G14u 112→64) · authority weight คำนวณแล้ว 1,027 ใบ
+- **รวม 3 รอบ: +334 เส้น (reuse 273 · PubMed 61) · citation ใหม่ 48** · gate: ต่ำกว่าขั้นต่ำ 274 → **7** · ไม่มี T1–3 76 → **5** · blocking 0
+- `flag_review` citation-gap/evidence-tier-gap คำนวณใหม่จากสภาพจริง: 154/84 ธง → **7/5** (185 หน้าแก้ · backup `_ss_flagreview_bak_20260917`)
+
+## สรุปสภาพปิดวัน 2026-09-17 (724 หน้า active)
+| gate | ผล |
+|---|---|
+| keyword collisions | blocking 0 · K3w WARN 10 (หัวคำ vs คำมุม ตั้งใจเก็บ) |
+| citation QA | blocking 0 · below-min 7 · no-T1–3 5 · stale(G8) 213 (คิวแยก) |
+| anchor text | blocking 0 · monotony WARN 35 |
+| template registry | 0 |
+| internal links | ต่ำกว่า required in/out **0** · contextual 884 |
+| entity | dedupe ปิด · retag 34 · ENTITY GAP 11 หน้า รอ entity ใหม่ 8 ตัว |
+
+## ยังค้าง (ตัดสินใจ/คิวแยก)
+1. **entity ใหม่ 8 ตัว** (ตารางบน) — รอ operator
+2. **SERP snapshot = 0 แถว** สำหรับ smile-scape → §3.3 competitor/PAA เดินไม่ได้ · ต้องดึง DFS (มีค่าใช้จ่าย)
+3. writer packet (E) — พักไว้ตามคำสั่ง
+4. G8 stale 213 ใบ (T1 >5 ปี / T2,T5 >7 ปี) — refresh รอบถัดไป
+5. 9 หน้า shortfall T1–3 — ถ้าหาไม่ได้จริง ใส่ CITATION EXEMPTION เฉพาะที่ไม่มีข้ออ้าง หรือลด claim
