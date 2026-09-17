@@ -44,3 +44,16 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 - **CITATION EXEMPTION** ใส่แล้ว 70 หน้า: pricing_page 16 · insurance_page 24 (precedent BROADCAST 2026-08-24 SSO FAQ) · about 25 · เรื่องราวคนไข้ 7.6.x 5 — ถอน marker ทันทีถ้าเนื้อหาใส่สถิติ
 - หลัง: **264 หน้า ขาด 338 เส้น · 49 หน้าไม่มี T1–3** (knowledge 92 · service 71 · condition 50 · technology 26 · procedure 12 · evidence_case 3)
 - **257/264 เติมได้จาก pool เดิม** (citation T1–3 ที่ผูกอยู่กับหน้า entity เดียวกัน ยังไม่ผูกหน้านี้) · pool ว่างแค่ 6 หน้า → รอบนี้เป็น reuse pass ไม่ใช่ค้น PubMed ใหม่
+
+## ข้อ 1 — contextual link plan (wave 16co) ✅
+วัดตาม protocol (`required_min_outbound` นับ contextual · `required_min_inbound` นับทุก type): ขาด outbound 284 หน้า · ต่ำกว่า inbound 51 หน้า — ไม่ใช่ 613 ตามที่ประเมินรอบแรก (contextual-inbound ทุกหน้าไม่ใช่ข้อกำหนด)
+- planner `content-plan/etl/wave16co-links/gen.py` (deterministic ไม่ใช้ agent): เป้าหมาย = หน้าที่ primary entity อยู่ใน related_entities ของหน้าต้นทาง (+3) · entity เดียวกันคนละ category (+2) · edge ใน seo_entity_relationships (+2) · sibling (+1) · pillar/hub (+1) · ปลายทางต่ำกว่า inbound ที่ประกาศ (+2) · ปลายทางรับ contextual ≥15 แล้ว (−1) · ไม่ซ้ำลิงก์เดิม ไม่ชี้ parent (breadcrumb มีแล้ว)
+- anchor = คำเป้าหมายของหน้าปลายทาง (exact) หรือ alias ไทย/ชื่อ entity (topical) · หมุนกันซ้ำต่อปลายทาง · ห้ามเท่าชื่อหน้า (A3) · ≤60
+- ผล: **+328 เส้น** (entity-bridge 326) + 2 เส้นมือ (2.2.2→2.2.3 หมอแพรว · 3.10.1.3→4.6.0.6) → ต่ำกว่า outbound **0** · ต่ำกว่า inbound **0** · contextual 554→884 · ปลายทาง 125 หน้า (max 15/หน้า) · anchor gate blocking 0 (A6 monotony WARN 50→35) · backup `_ss_links_bak_20260917`
+- surrounding_text_snippet ยังว่างทั้ง 3,139 เส้น (A7 WARN) — เป็นงานของ writer ตอนเขียน ไม่ใช่ของแผน
+
+## ข้อ 6 — run 1 (wave 16cn)
+- workflow `citation-reuse-gapfill` 329 agents: haiku ที่โหลด index คืน JSON ตัดท้าย (182/264) → **บทเรียน: ส่ง list ผ่าน `args` ตรง ๆ ห้ามให้ agent อ่านไฟล์แล้วคืน JSON ยาว**
+- 182 หน้า: เขียน **168 เส้น** (Opus fix 157 · accept 11 · reject 3) · 46 หน้า shortfall 60 (pool ไม่มี citation ตรงประเด็น เช่น torus removal · loupes · piezo · habit appliance — รายการ `citation-gapfill2-shortfall-run1-2026-09-17.json` → คิวค้น PubMed รอบถัดไป)
+- run 2 (90 หน้าที่เหลือ) กำลังรัน `wf_e927a3c2-87c`
+- สคริปต์ `content-plan/etl/wave16cn-gapfill/{prep,apply}.py` · backup `_ss_gapfill2_bak_20260917_pc`
