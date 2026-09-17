@@ -57,3 +57,42 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 - 182 หน้า: เขียน **168 เส้น** (Opus fix 157 · accept 11 · reject 3) · 46 หน้า shortfall 60 (pool ไม่มี citation ตรงประเด็น เช่น torus removal · loupes · piezo · habit appliance — รายการ `citation-gapfill2-shortfall-run1-2026-09-17.json` → คิวค้น PubMed รอบถัดไป)
 - run 2 (90 หน้าที่เหลือ) กำลังรัน `wf_e927a3c2-87c`
 - สคริปต์ `content-plan/etl/wave16cn-gapfill/{prep,apply}.py` · backup `_ss_gapfill2_bak_20260917_pc`
+
+## entity ผิดหน้า — พบจาก PubMed round (wave 16cn)
+รอบค้น PubMed ให้ agent ตั้งธง `entity_mismatch` → 15/59 หน้า primary_entity ไม่ตรงเนื้อหา (นี่คือเหตุผลที่ pool ไม่มีของตรง) · ขยายดูทั้งแบรนด์: **`dental-implant` ถูกใช้เป็น entity ตั้งต้นแบบเหมา** บนหน้า FAQ/hub/glossary/ค่าใช้จ่าย/กลัวหมอฟัน ที่ไม่เกี่ยวกับรากเทียม
+
+### retag แล้ว 34 หน้า (backup `_ss_retag_bak_20260917`) — keyword เป้าหมายของหน้าย้าย entity ตาม
+| หน้า | เดิม → ใหม่ |
+|---|---|
+| 4.4.3 กล้องขยาย | surgical-guide → endodontic-microscope |
+| 5.11.2 เหงือกดำ | periodontitis → dark-gums |
+| 5.12 hub เด็ก | family-standard → pediatric-dentistry |
+| 5.13 hub ค่าใช้จ่าย · 5.13.1 · 6.5.4 | dental-implant → fee-transparency (5.13 เก็บ dental-implant เป็น related) |
+| 5.14.3 pulpitis | dental-caries → pulpitis |
+| 5.16.5 ฟันสึกจากกรด | tooth-fracture → tooth-erosion |
+| 5.19.7 รีเทนเนอร์ | clear-aligner → orthodontic-retainer |
+| 5.5.2 ฟันห่าง | digital-smile-design → diastema |
+| 6.2.4 hub ความรู้ · 6.2.4.3 · 6.1 | dental-implant → oral-hygiene |
+| 6.2.4.4 อาหาร | dental-implant → nutrition-oral |
+| 6.5.4.1 · 6.5.4.2 · 5.13.3 ผ่อน/ชำระ | dental-implant → dental-installment |
+| 6.5 · 6.5.1 · 6.5.2 · 6.5.3 · 6.5.5 · 6.5.5.1 · 6.5.5.2 FAQ hubs | dental-implant → smilescape-dental-clinic |
+| 6.5.3.1 FAQ ผู้สูงอายุ | dental-implant → geriatric-dentistry |
+| 6.5.3.4 FAQ โรคประจำตัว | dental-implant → medical-compromised-dentistry |
+| 5.4 · 5.4.3 กลัวทำฟัน | dental-implant → dental-phobia |
+| 6.6 case hub · 7.1 ผลงานจริง | dental-implant → before-after-smile |
+| 6.4 · 6.4.13 evidence hub | dental-implant → evidence-based-dentistry |
+| 6.2.4.11 ตรวจฟันประจำปี | dental-implant → dental-checkup |
+| 6.2.1.26 เส้นประสาทเสียหลังฝังราก | dental-implant → orofacial-paresthesia (เก็บ dental-implant เป็น related) |
+
+### ENTITY GAP 11 หน้า — กราฟไม่มี entity ที่ถูก (ติดธง `⚠️ ENTITY GAP` ใน notes) → **เสนอสร้าง 8 entity** (ขอ operator)
+| entity ใหม่ (fp) | type | ใช้กับหน้า |
+|---|---|---|
+| `piezosurgery` | device | 4.4.1 |
+| `lactation-dental-care` | concept | 5.20.5 · 5.20.6 |
+| `osteoradionecrosis` | condition | 5.8.10 |
+| `dental-glossary` | concept | 6.3 · 6.3.2 |
+| `dental-tax-deduction-th` | concept | 5.13.7 · 6.5.4.5 |
+| `post-treatment-care` | concept | 5.22 · 6.5.2.3 |
+| `common-dental-problems` | concept | 5.6 (hub) |
+- ยังเหลือ `dental-implant` เป็น primary 81 หน้า — ทั้งหมดอยู่ section รากเทียม (3.2 · 3.3 · 5.7 · 6.2.1 · 7.2) ถูกต้อง
+- บทเรียน: การ audit "entity ตรงหน้าไหม" ไม่เคยทำเป็นระบบ — ทำได้ถูกสุดตอน agent อ่านหน้าอยู่แล้ว (ให้ทุก workflow ต่อหน้าคืนธง entity_mismatch)
