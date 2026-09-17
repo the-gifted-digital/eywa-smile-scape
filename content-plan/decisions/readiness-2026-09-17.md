@@ -120,3 +120,9 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 3. writer packet (E) — พักไว้ตามคำสั่ง
 4. G8 stale 213 ใบ (T1 >5 ปี / T2,T5 >7 ปี) — refresh รอบถัดไป
 5. 9 หน้า shortfall T1–3 — ถ้าหาไม่ได้จริง ใส่ CITATION EXEMPTION เฉพาะที่ไม่มีข้ออ้าง หรือลด claim
+
+## ✅ entity ใหม่ 7 ตัวสร้างแล้ว (wave 16cp · operator "1 ต่อเลย")
+`piezosurgery` (device · dental-technology · ICD –) · `lactation-dental-care` (concept · demographic) · `osteoradionecrosis` (condition · demographic · ICD-10 M27.2) · `dental-glossary` (concept · cross-cutting · DefinedTermSet) · `dental-tax-deduction-th` (concept · insurance-access — summary ระบุชัดว่าค่ารักษาที่จ่ายเองโดยทั่วไป**ไม่**อยู่ในรายการลดหย่อน ต่างจากเบี้ยประกัน) · `post-treatment-care` (concept · cross-cutting) · `common-dental-problems` (concept · preventive)
+- lifecycle `emerging` · load_source `wave16cp` · related_entities ตั้งต้น · 11 หน้า repoint แล้ว (ENTITY GAP ปิดครบ) · keyword เป้าหมายย้าย entity ตาม · embedding 7 ตัวสด · similarity view: 0 คู่ชนกับ entity ใหม่
+- ⚠️ `embed-entities.mjs` (spec) ข้าม `merged` แต่**ไม่ข้าม `dropped`** → re-embed entity ต้องห้าม 2 ตัวกลับมา ลบทิ้งแล้ว — เจ้าของสคริปต์ควรเพิ่ม `dropped` ใน skip list
+- gates หลังสร้าง: keyword collisions blocking 0 · citation blocking 0

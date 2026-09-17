@@ -224,5 +224,54 @@
    "Open Library ISBN 9780867157994",
    "Crossref DOI 10.1097/id.0000000000000947 (book review 2019)"
   ]
+ },
+ {
+  "fp": "piezosurgery",
+  "name": "Piezosurgery (Piezoelectric Bone Surgery)",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "lactation-dental-care",
+  "name": "Dental Care During Breastfeeding",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "osteoradionecrosis",
+  "name": "Osteoradionecrosis of the Jaw",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "dental-glossary",
+  "name": "Dental Glossary",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "dental-tax-deduction-th",
+  "name": "Dental Expenses and Thai Tax Deduction",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "post-treatment-care",
+  "name": "Post-Treatment Care",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
+ },
+ {
+  "fp": "common-dental-problems",
+  "name": "Common Dental Problems",
+  "wave": "16cp 2026-09-17",
+  "reason": "ENTITY GAP พบจาก PubMed round (agent entity_mismatch) — operator อนุมัติ",
+  "summary": "(อยู่ใน DB: seo_entity_graph.ai_entity_summary)"
  }
 ]
