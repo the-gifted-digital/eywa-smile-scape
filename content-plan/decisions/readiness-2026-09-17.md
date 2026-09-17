@@ -31,3 +31,16 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 
 ## คิวถัดไป (หลังตัดสิน 4/5)
 6 citation gapfill รอบ 2 (knowledge 14 · condition_pillar 10 · service 12 · technology 9 · insurance 14 ที่ไม่มี T1–3) → 2 semantic kw 379 หน้า → 1 contextual link plan (613 หน้าไม่มี in-body inbound) → 3 writer packet (content_brief 725)
+
+## ✅ ข้อ 4 + 5 ทำแล้ว (operator "โอเค" 2026-09-17)
+- 4C: 3.2.12.7 → "รากฟันเทียม อยู่ได้กี่ปี" · 3.3.9 → "all on 4 ดูแล" · 3.2.12.6 → "รากฟันเทียม ติดเชื้อ" (use_as → target)
+- 4A/B/E: marker `[no-target: brand-page]` ×4 · `[no-target: evidence-page]` ×11 · `[no-target: pending-measure]` ×2 ใน reconciliation_notes
+- 4D: **3.11.13 ยุบเข้า 3.12.6** — Merged · noindex · redirect `/pediatric-general-anesthesia/` · citation 4 ใบย้าย (3 ซ้ำ) · links 4 เส้นลบ (backup `_ss_3_11_13_links_bak_20260917`) → active 724 หน้า
+- 5: 8.3 → "ทำฟัน ศรีนครินทร์" · 8.2 → "ทำฟัน รัตนาธิเบศร์" (คำ "รากฟันเทียม <สาขา>" ลงเป็น semantic ของ 8.3.2/8.2.2) · 3.7.4 → "เหงือกร่น รักษา" ("เหงือกร่น แก้" ลง semantic)
+- gate หลังทำ: K1/K2 0 · K3w WARN 10 (หัวคำ vs คำมุม ตั้งใจเก็บ) · citation blocking 0
+
+## ข้อ 6 — citation: วัดตามกฎ gate จริง (MIN_PER_LAYER: §5/§6 = 3 · §3/§4 = 2 · §7 = 1 · Live block / Planned warn)
+- ก่อน: G6w ต่ำกว่าขั้นต่ำ 274 หน้า · G7w ไม่มี T1–3 76
+- **CITATION EXEMPTION** ใส่แล้ว 70 หน้า: pricing_page 16 · insurance_page 24 (precedent BROADCAST 2026-08-24 SSO FAQ) · about 25 · เรื่องราวคนไข้ 7.6.x 5 — ถอน marker ทันทีถ้าเนื้อหาใส่สถิติ
+- หลัง: **264 หน้า ขาด 338 เส้น · 49 หน้าไม่มี T1–3** (knowledge 92 · service 71 · condition 50 · technology 26 · procedure 12 · evidence_case 3)
+- **257/264 เติมได้จาก pool เดิม** (citation T1–3 ที่ผูกอยู่กับหน้า entity เดียวกัน ยังไม่ผูกหน้านี้) · pool ว่างแค่ 6 หน้า → รอบนี้เป็น reuse pass ไม่ใช่ค้น PubMed ใหม่
