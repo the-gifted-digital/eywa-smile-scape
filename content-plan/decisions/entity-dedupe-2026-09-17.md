@@ -63,3 +63,6 @@ backup: `_ss_d5merge_bak_20260917_{graph,pages,kw,rels,prices,proc,cond,emb}` (1
 - 118 หน้า (deezy 85 · smile 18 · vth 15) มี `primary_entity_fp` ซ้ำอยู่ใน `related_entities_fps` — hygiene เก่า ไม่ได้เกิดจากรอบนี้
 - `v_entity_near_duplicates` คีย์ด้วย `fingerprint` (ent_…) แต่ `v_entity_semantic_duplicates` คีย์ด้วย `entity_fingerprint` (slug) — join ตรง ๆ ไม่เจอ ต้อง map ก่อน
 - `eywa-vth-biodent/web/scripts/embed-entities.mjs` ล้าสมัย (filter `.neq lifecycle` ที่ deezy พบว่าพลาด) — ตัวจริงอยู่ `eywa-protocol-spec/scripts/entity-identity/embed-entities.mjs` แต่ต้องรันข้าง node_modules (ใช้ symlink ที่ `/Volumes/SSD NN/CLAUDE AI/tmp/embed-run`)
+
+### เก็บตก 2026-09-17
+- `seo_page_internal_links` ยังมี 14 เส้นแตะ 3 หน้าที่ยุบ (5.13.2.5 · 5.13.5 · 6.5.4.4) — ลบแล้ว backup `_ss_d5links_bak_20260917` · เพิ่มลง convention ยุบหน้า: **ลบแถวใน internal_links ด้วย** ไม่ใช่แค่ planned_outbound_fps
