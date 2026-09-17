@@ -126,3 +126,8 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 - lifecycle `emerging` · load_source `wave16cp` · related_entities ตั้งต้น · 11 หน้า repoint แล้ว (ENTITY GAP ปิดครบ) · keyword เป้าหมายย้าย entity ตาม · embedding 7 ตัวสด · similarity view: 0 คู่ชนกับ entity ใหม่
 - ⚠️ `embed-entities.mjs` (spec) ข้าม `merged` แต่**ไม่ข้าม `dropped`** → re-embed entity ต้องห้าม 2 ตัวกลับมา ลบทิ้งแล้ว — เจ้าของสคริปต์ควรเพิ่ม `dropped` ใน skip list
 - gates หลังสร้าง: keyword collisions blocking 0 · citation blocking 0
+
+## operator 2026-09-17 (หลัง entity ใหม่): เรื่องลดหย่อนภาษีไม่ใช่มุมของแบรนด์ — มุมเดียวคือ "ประกันสังคมไม่ต้องสำรองจ่าย"
+- **ยุบ 5.13.7** (ค่าทำฟันลดหย่อนภาษีได้ไหม → `/dental-costs-and-coverage/`) และ **6.5.4.5** (FAQ ลดหย่อนภาษี → `/faq-cost-insurance/`) — convention เดิม · citation 4+4 ตัด · links 9 ลบ · keyword 2 คำ topic ปิด · backup `_ss_taxpages_bak_20260917_*`
+- entity `dental-tax-deduction-th` → `dropped` (สร้างแล้วยกเลิกในวันเดียว · row เก็บไว้ตาม DR-046) · embedding ลบ
+- active 722 หน้า · required inbound/outbound ยัง 0 ค้าง · gates 0 blocking
