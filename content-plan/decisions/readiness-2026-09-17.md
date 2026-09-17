@@ -131,3 +131,10 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 - **ยุบ 5.13.7** (ค่าทำฟันลดหย่อนภาษีได้ไหม → `/dental-costs-and-coverage/`) และ **6.5.4.5** (FAQ ลดหย่อนภาษี → `/faq-cost-insurance/`) — convention เดิม · citation 4+4 ตัด · links 9 ลบ · keyword 2 คำ topic ปิด · backup `_ss_taxpages_bak_20260917_*`
 - entity `dental-tax-deduction-th` → `dropped` (สร้างแล้วยกเลิกในวันเดียว · row เก็บไว้ตาม DR-046) · embedding ลบ
 - active 722 หน้า · required inbound/outbound ยัง 0 ค้าง · gates 0 blocking
+
+## shortfall 9 หน้า — ปิด (wave 16cq)
+- **4.8 มาตรฐานฆ่าเชื้อ · 5.21.6 เปลี่ยนหมอฟัน** → CITATION EXEMPTION (หน้าระเบียบ/มาตรฐาน — หลักฐานที่ถูกต้องคือ T4 ข้อบังคับวิชาชีพ ไม่ใช่งานวิจัยคลินิก)
+- **3.8.6 · 3.8.6.2 torus** → ผูก SR piezosurgery (T1 2024) claim แคบเฉพาะ "การเลือกเครื่องมือตัดกระดูก" · ระบุชัดว่าหลักฐานเฉพาะ torus ในวรรณกรรมเป็น T6 เท่านั้น
+- **5.19.9 · 6.2.1.28/29/30 · 6.5.2.3** (กิน/ออกกำลัง/เดินทางกับรากเทียม) → ผูก SR การป้องกันโรครอบรากเทียม (T1 2023) / MA อัตรารอด 20 ปี (T1 2024) / SR white diet หลังฟอกสี (T1 2025) — claim ล็อกว่า "งานนี้ไม่ได้ศึกษาเรื่องอาหาร/ออกกำลัง/เดินทาง" writer ต้อง hedge
+- ผล: **G7w (ไม่มี T1–3) = 0** · G6w เหลือ 5 หน้าขาด 1 ใบ (5.19.9 · 6.2.1.28–30 · 5.21.3) — ให้ writer เติมตอนเขียนเมื่อรู้ claim จริง · flag_review: citation-gap 5 · evidence-tier-gap 0
+- **G8 stale 213 ใบ: ตรวจสคริปต์แล้ว "G8 is warn-level and never blocks"** → ไม่ใช่ readiness blocker · refresh เป็นงานคุณภาพรอบหลัง ไม่รันตอนนี้
