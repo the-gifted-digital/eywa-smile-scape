@@ -138,3 +138,15 @@ primary entity · seo_title/meta ครบไม่ซ้ำ · page_type/role/c
 - **5.19.9 · 6.2.1.28/29/30 · 6.5.2.3** (กิน/ออกกำลัง/เดินทางกับรากเทียม) → ผูก SR การป้องกันโรครอบรากเทียม (T1 2023) / MA อัตรารอด 20 ปี (T1 2024) / SR white diet หลังฟอกสี (T1 2025) — claim ล็อกว่า "งานนี้ไม่ได้ศึกษาเรื่องอาหาร/ออกกำลัง/เดินทาง" writer ต้อง hedge
 - ผล: **G7w (ไม่มี T1–3) = 0** · G6w เหลือ 5 หน้าขาด 1 ใบ (5.19.9 · 6.2.1.28–30 · 5.21.3) — ให้ writer เติมตอนเขียนเมื่อรู้ claim จริง · flag_review: citation-gap 5 · evidence-tier-gap 0
 - **G8 stale 213 ใบ: ตรวจสคริปต์แล้ว "G8 is warn-level and never blocks"** → ไม่ใช่ readiness blocker · refresh เป็นงานคุณภาพรอบหลัง ไม่รันตอนนี้
+
+## E — writer packet ✅ (universal-first · operator "โอเค" 2026-09-17)
+| ชิ้น | อยู่ที่ | commit |
+|---|---|---|
+| `page-brief.mjs` brand-agnostic (`--brand` · ไม่มี dependency · ค่าแบรนด์อนุมานจากข้อมูล · `brands/<id>.json` สำหรับข้อห้าม/ข้อยกเว้น) + README | `eywa-protocol-spec/scripts/writer-brief/` | `6481f0a` · fixes `6cd3032` |
+| DR-068 + bootstrap Step 5.5 + BROADCAST-2026-09-17-writer-brief.md | `eywa-protocol-spec` | `6481f0a` |
+| `docs/CONTENT-WRITING-SOP.md` (879 บรรทัด) · `docs/template-block-standards.md` (609) · `web/scripts/brief.mjs` launcher + `npm run brief` | branch `content-templates` (worktree) | `6bf9827` · `42edb85` |
+- ทดสอบ: smile-scape 6 หน้า · vth `vth-6.1.3` เทียบ section ต่อ section กับสคริปต์เดิม ตรงทุกส่วนที่มีอยู่ก่อน · deezy `deezy-1` ไม่ crash
+- brief พ่นเพิ่ม: `supports_claim` ทุกใบ (placeholder 59 + ว่าง 130 ขึ้น ⚠️ พร้อม key_findings) · contextual links + anchor · related entities · semantic keywords · marker (`CITATION EXEMPTION`/`ENTITY GAP`/`[no-target:`/ยุบ/ข้อห้าม operator) · `forbidden_topics` (บัตรทอง/ข้าราชการ/ภาษี)
+- บั๊กที่เจอและแก้ในวันเดียว: `faq` → `FaqPage.astro` (T12-faq เคยข้าม render report เงียบ) · T12 สองโหมดเลือกด้วย `content_format_name` · คำใน comment ไม่นับว่า render (`byline` ใน Branch.astro) · marker `ห้าม` กว้างไป
+- เอกสารแบรนด์บันทึกช่องว่างที่ยังมี: T11 (27 หน้าใน DB แต่ code มีแค่ About/Contact) · §B ยังไม่มี T3/T6a/T7/T14/T15/T17/T19 (ยังไม่มีหน้าใช้) · สคริปต์แบรนด์ `check:density`/`scan:headings`/`check:links`/`gen:links`/`stamp:live` ยังไม่ port
+- แจ้ง vth/deezy ผ่าน BROADCAST: vth เปลี่ยน `"brief"` ชี้สคริปต์กลางแล้วลบสำเนา · deezy เพิ่ม `"brief"` ได้เลย

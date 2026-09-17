@@ -4542,3 +4542,7 @@ Sonnet ค้น+คัด · Opus ตรวจ — Sonnet เลือกบท
 ## Wave 16cn/16co — 2026-09-17 — citation gapfill 3 รอบ + contextual links + entity retag
 
 - reuse pass 2 รอบ (273 เส้น) + PubMed round (48 ใบใหม่ / 61 เส้น) → below-min 274→7 · no-T1–3 76→5 · CITATION EXEMPTION 70 หน้า · flag_review คำนวณใหม่ 185 หน้า · contextual links +330 → required in/out 0 ค้าง · retag primary_entity 34 หน้า (dental-implant ถูกใช้แบบเหมา) · เสนอ entity ใหม่ 8 · รายละเอียด decisions/readiness-2026-09-17.md
+
+## Wave 16cr — 2026-09-17 — writer packet universal (DR-068)
+
+- สคริปต์ brief กลางใน protocol (`scripts/writer-brief/`) + DR-068 + BROADCAST · เอกสารแบรนด์ 2 ไฟล์ + `npm run brief` บน branch content-templates · รายละเอียด decisions/readiness-2026-09-17.md §E
