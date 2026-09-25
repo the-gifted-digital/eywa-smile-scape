@@ -18,11 +18,10 @@ hero:
     - { value: Lifetime, label: Implant warranty }
   microTrust: Free consultation · 2 branches by the MRT
 trustBar:
-  - { label: 5.0★ Google reviews }
-  - { label: 2 branches by MRT }
-  - { label: Lifetime warranty }
-  - { label: 0% installments }
-  - { label: 100% digital planning }
+  - { icon: star, label: 5.0★ Google reviews }
+  - { icon: train, label: 2 branches by MRT }
+  - { icon: percent, label: 0% installments }
+  - { icon: scan, label: 100% digital planning }
 pillars:
   - { icon: implant, title: Implant Mastery, body: Precise implant outcomes with global degrees and 100% digital planning. }
   - { icon: shield, title: Family-Standard Integrity, body: 'If we wouldn''t do it for our own parents, we won''t do it for you — no over-treatment.' }

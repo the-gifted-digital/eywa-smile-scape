@@ -17,11 +17,10 @@ hero:
     - { value: ตลอดชีพ, label: รับประกันรากเทียม }
   microTrust: ปรึกษาฟรี ไม่มีค่าใช้จ่าย · 2 สาขา ติด MRT
 trustBar:
-  - { label: รีวิว 5.0★ Google }
-  - { label: 2 สาขา ติด MRT }
-  - { label: รับประกันตลอดชีพ }
-  - { label: ผ่อน 0% ไม่ใช้บัตร }
-  - { label: วางแผน Digital 100% }
+  - { icon: star, label: รีวิว 5.0★ Google }
+  - { icon: train, label: 2 สาขา ติด MRT }
+  - { icon: percent, label: ผ่อน 0% ไม่ใช้บัตร }
+  - { icon: scan, label: วางแผน Digital 100% }
 pillars:
   - { icon: implant, title: Implant Mastery, body: ผลลัพธ์รากฟันเทียมแม่นยำ ด้วยดีกรีระดับโลก + วางแผนดิจิทัล 100% }
   - { icon: shield, title: Family-Standard Integrity, body: 'มาตรฐานครอบครัว: เคสที่ไม่กล้าทำให้พ่อแม่ตัวเอง เราไม่ทำ — ไม่ over-treatment' }

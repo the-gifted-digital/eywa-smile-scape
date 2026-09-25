@@ -17,11 +17,10 @@ hero:
     - { value: 终身, label: 种植体保固 }
   microTrust: 免费咨询 · 两家分院邻近 MRT
 trustBar:
-  - { label: Google 5.0★ 评价 }
-  - { label: 2 家分院 邻近 MRT }
-  - { label: 终身保固 }
-  - { label: 0% 分期 免信用卡 }
-  - { label: 100% 数字化方案 }
+  - { icon: star, label: Google 5.0★ 评价 }
+  - { icon: train, label: 2 家分院 邻近 MRT }
+  - { icon: percent, label: 0% 分期 免信用卡 }
+  - { icon: scan, label: 100% 数字化方案 }
 pillars:
   - { icon: implant, title: Implant Mastery, body: 凭借全球学位与 100% 数字化规划，实现精准种植效果。 }
   - { icon: shield, title: Family-Standard Integrity, body: 不敢为自己父母做的方案，我们绝不为您做 — 拒绝过度治疗。 }

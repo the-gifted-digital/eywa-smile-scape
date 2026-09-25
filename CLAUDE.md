@@ -3,7 +3,9 @@
 > Auto-loaded by every Claude Code session in this repo. Read the banner first.
 > When the live deployment state changes, **update this banner** so all sessions stay in sync.
 
-## ⚡ CURRENT LIVE STATUS — updated 2026-06-12 (SS-DR-017)
+## ⚡ CURRENT LIVE STATUS — updated 2026-09-19 (SS-DR-017)
+
+- **Latest deploy (2026-09-19):** Home trust bar now has four equal-width items with star / train / percent / scan icons, a 2×2 mobile layout, and no lifetime-warranty item in the strip across TH / EN / zh-CN. Previous “Why SmileScape” icon and equal-height card polish remains live. Cloudflare version: `b4a49488-7720-45b8-879a-8892c523d7ed`. Verified all three Home routes return HTTP 200 with four trust-bar icons and the warranty item removed; `noindex` remains active.
 
 - **`go.smilescapeclinic.com` is the LIVE *temporary production* domain.** Astro → Cloudflare Workers + Static Assets. Treat it as real production (Google-Ads landing pages, demos, sharing) while content is filled in.
 - **WordPress still serves the apex `smilescapeclinic.com`.** Do **NOT** add an apex route or repoint apex DNS until the formal cutover.
