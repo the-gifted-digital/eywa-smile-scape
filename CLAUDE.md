@@ -3,9 +3,11 @@
 > Auto-loaded by every Claude Code session in this repo. Read the banner first.
 > When the live deployment state changes, **update this banner** so all sessions stay in sync.
 
-## ⚡ CURRENT LIVE STATUS — updated 2026-09-19 (SS-DR-017)
+## ⚡ CURRENT LIVE STATUS — updated 2026-10-01 (SS-DR-017)
 
-- **Latest deploy (2026-09-19):** Home trust bar now has four equal-width items with star / train / percent / scan icons, a 2×2 mobile layout, and no lifetime-warranty item in the strip across TH / EN / zh-CN. Previous “Why SmileScape” icon and equal-height card polish remains live. Cloudflare version: `b4a49488-7720-45b8-879a-8892c523d7ed`. Verified all three Home routes return HTTP 200 with four trust-bar icons and the warranty item removed; `noindex` remains active.
+- **Latest deploy (2026-10-01):** Selectively integrated Claude's shared UI fixes from `content-templates`: current-locale language labels (including ZH), self-hosted MiSans loaded only on zh-cn pages, sticky-header anchor offsets, and normal tracking on SectionHeading eyebrows. Source commits: `a3aa4da`, `4c7705c`, `36e656b` (CSS only), `34953dc` (SectionHeading only). Cloudflare version: `f5620826-3193-433a-8e3c-47032b5eac10`. Build passed; TH/EN/zh-cn checked on mobile and desktop. `npm run check` still reports the existing 25 errors outside the changed components. Previous live version was `6d5f6062-6833-434a-aba7-3de6202fae3b` (2026-09-25).
+- **Home polish retained:** four equal-width trust-bar items with star / train / percent / scan icons, a 2×2 mobile layout, and no lifetime-warranty item in the strip across TH / EN / zh-cn; four Why SmileScape cards with icons and equal heights. This integration does not replace Home with the older template-branch version.
+- **Parallel work still pending:** the full `content-templates` system and About/Contact routes remain unmerged. About/Contact contain placeholder content; Contact's `#booking` CTA has no target. Integrate them selectively before publishing. Do not deploy that branch wholesale over `go.`: its Home, navigation and deployment setup predate the current live app.
 
 - **`go.smilescapeclinic.com` is the LIVE *temporary production* domain.** Astro → Cloudflare Workers + Static Assets. Treat it as real production (Google-Ads landing pages, demos, sharing) while content is filled in.
 - **WordPress still serves the apex `smilescapeclinic.com`.** Do **NOT** add an apex route or repoint apex DNS until the formal cutover.

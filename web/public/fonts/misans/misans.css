@@ -1,0 +1,15 @@
+/**
+ * MiSans (Xiaomi) — Simplified-Chinese subset, self-hosted. Free for commercial use (MiSans license).
+ *
+ * Loaded ONLY on zh-cn pages via a conditional <link> in Base.astro — so TH/EN pages never fetch it.
+ * Subset by unicode-range exactly like Google Sans: the browser pulls only the glyph chunks that
+ * actually appear on the page (a typical page ≈ a handful of the 100 chunks per weight, not 1.9 MB).
+ * Declared weights are normalized to 400/500/600/700 to line up with the brand `font-sans` scale.
+ *
+ * Source: npm `misans@4.1.0` → lib/Normal (SC). Latin/Thai stay on the brand fonts (Google Sans /
+ * Cabinet Grotesk) — MiSans only renders CJK glyphs via the font-family fallback chain in tokens.json.
+ */
+@import url('/fonts/misans/MiSans-Regular.min.css');
+@import url('/fonts/misans/MiSans-Medium.min.css');
+@import url('/fonts/misans/MiSans-Semibold.min.css');
+@import url('/fonts/misans/MiSans-Bold.min.css');

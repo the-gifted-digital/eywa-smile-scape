@@ -9,6 +9,7 @@
 // Brand fonts (locked 2026-06-07) — self-hosted, no Google Fonts CDN.
 //   Body / UI (Latin + Thai): Google Sans     — public/fonts (src/styles/fonts.css) → font-sans
 //   Display (headings):       Cabinet Grotesk — public/fonts (src/styles/fonts.css) → font-display
+//   Chinese: MiSans (self-hosted SC subsets), loaded only on zh-cn pages.
 import '~/styles/fonts.css';
 import '~/styles/global.css';
 import AnalyticsHead from '~/components/AnalyticsHead.astro';
@@ -93,6 +94,7 @@ const ldNodes = [orgLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] :
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    {lang === 'zh-cn' && <link rel="stylesheet" href="/fonts/misans/misans.css" />}
 
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}

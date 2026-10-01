@@ -7,6 +7,8 @@ const alt = getAltLocales(Astro.url.pathname, Astro.site!.toString());
 const soonLabel = locale === 'en' ? 'soon' : 'เร็วๆ นี้';
 const liveLabel = locale === 'en' ? 'ready' : 'พร้อมใช้';
 const homeHref = locale === 'en' ? '/en/' : locale === 'zh-cn' ? '/zh-cn/' : '/';
+// Derive the current language from the route: Chinese navigation copy currently falls back to English.
+const langLabel = locale === 'zh-cn' ? 'ZH' : locale === 'en' ? 'EN' : 'TH';
 const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).map(([key, data]) => ({ key, data }));
 ---
 <header id="ssf-header" class="sticky top-0 z-[60]">
@@ -24,7 +26,7 @@ const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).
         <div class="relative">
           <button type="button" id="ssf-lang" aria-haspopup="true" aria-expanded="false"
             class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[13px] font-semibold text-white border border-white/25 hover:border-white">
-            <Icon name="globe" class="w-3.5 h-3.5 opacity-85" />{h.langLabel}<Icon name="chevron" class="w-2.5 h-2.5" />
+            <Icon name="globe" class="w-3.5 h-3.5 opacity-85" />{langLabel}<Icon name="chevron" class="w-2.5 h-2.5" />
           </button>
           <div id="ssf-lang-menu" class="hidden absolute top-[calc(100%+8px)] right-0 bg-white border border-brand-neutral-200 rounded-xl shadow-lg p-1.5 min-w-[140px] z-[70]">
             <a href={alt.th} class="block px-3 py-2 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">ไทย (TH)</a>
@@ -57,7 +59,7 @@ const panels: { key: string; data: MegaPanel }[] = Object.entries(h.megaPanels).
       <div class="lg:hidden ml-auto flex items-center gap-2">
         <div class="relative">
           <button type="button" id="ssf-mlang" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-1.5 h-[42px] px-3 rounded-xl bg-brand-ice text-brand-anchor text-sm font-bold">
-            <Icon name="globe" class="w-[17px] h-[17px] opacity-80" />{h.langLabel}<Icon name="chevron" class="w-[11px] h-[11px] opacity-70" />
+            <Icon name="globe" class="w-[17px] h-[17px] opacity-80" />{langLabel}<Icon name="chevron" class="w-[11px] h-[11px] opacity-70" />
           </button>
           <div id="ssf-mlang-menu" class="hidden absolute top-[calc(100%+8px)] right-0 bg-white border border-brand-neutral-200 rounded-xl shadow-lg p-1.5 min-w-[140px] z-[70]">
             <a href={alt.th} class="block px-3 py-2.5 rounded-lg text-sm text-brand-anchor hover:bg-brand-ice">ไทย (TH)</a>

@@ -42,16 +42,21 @@
     -moz-osx-font-smoothing: grayscale;
     /* Optimize Thai text rendering — prevent layout-shift when Thai font swaps */
     text-rendering: optimizeLegibility;
+    /* Keep anchor targets below the sticky header, including with reduced motion. */
+    scroll-padding-top: 5.5rem;
   }
 
   body {
     /* Mirrors tokens.json typography.fontFamily.sans. The Tailwind `font-sans`
      * utility resolves to the same stack — this default ensures elements outside
      * the utility cascade still render with the brand font (e.g. raw HTML/MD). */
-    font-family: 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
+    font-family: 'Google Sans', 'MiSans', system-ui, -apple-system, 'Segoe UI', Roboto,
       'Helvetica Neue', sans-serif;
   }
 }
+
+/* Desktop adds the utility bar above the main navigation. */
+@media (min-width: 1024px) { html { scroll-padding-top: 8rem; } }
 
 /* ===== Motion layer (style B — spring). Reduced-motion safe. ===== */
 /* Reveal + smooth-scroll only when motion is allowed; reduced-motion → elements
